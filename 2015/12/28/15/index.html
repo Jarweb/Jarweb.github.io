@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>browserify 笔记 | Jar-R</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Browserify 可以让你使用类似于 node 的 require() 的方式来组织浏览器端的 Javascript 代码，通过预编译让前端 Javascript 可以直接使用 Node NPM 安装的一些库。一种解决方法是使用UMD的方式，前端使用requirejs，同时兼容nodejs的情况,例如：
+
+1(function (window, factory) &amp;#123;&amp;#10;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="browserify 笔记">
+<meta property="og:url" content="http://Jarweb.com/2015/12/28/15/index.html">
+<meta property="og:site_name" content="Jar-R">
+<meta property="og:description" content="Browserify 可以让你使用类似于 node 的 require() 的方式来组织浏览器端的 Javascript 代码，通过预编译让前端 Javascript 可以直接使用 Node NPM 安装的一些库。一种解决方法是使用UMD的方式，前端使用requirejs，同时兼容nodejs的情况,例如：
+
+1(function (window, factory) &amp;#123;&amp;#10;">
+<meta property="og:updated_time" content="2016-03-03T14:25:13.643Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="browserify 笔记">
+<meta name="twitter:description" content="Browserify 可以让你使用类似于 node 的 require() 的方式来组织浏览器端的 Javascript 代码，通过预编译让前端 Javascript 可以直接使用 Node NPM 安装的一些库。一种解决方法是使用UMD的方式，前端使用requirejs，同时兼容nodejs的情况,例如：
+
+1(function (window, factory) &amp;#123;&amp;#10;">
+  
+    <link rel="alternative" href="/atom.xml" title="Jar-R" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">任先生在路上</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle" style="margin-bottom:20px;">Good things are coming !</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">列表</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger" style="display:none;"></div>
+  		<h1 class="header-author js-mobile-header hide">任先生在路上</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">任先生在路上</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Good things are coming !</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">列表</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-15" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/28/15/" class="article-date">
+  	<time datetime="2015-12-27T16:00:00.000Z" itemprop="datePublished">2015-12-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      browserify 笔记
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/browserify/">browserify</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>Browserify 可以让你使用类似于 node 的 require() 的方式来组织浏览器端的 Javascript 代码，通过预编译让前端 Javascript 可以直接使用 Node NPM 安装的一些库。<br>一种解决方法是使用UMD的方式，前端使用requirejs，同时兼容nodejs的情况,例如：</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(function (window, factory) &#123;&#10;    if (typeod exports === &#39;object&#39;) &#123;&#10;        module.exports = factory();&#10;    &#125; else if (typeof define === &#39;function&#39; &#38;&#38; define.amd) &#123;&#10;        define(factory);&#10;    &#125; else &#123;&#10;        window.eventUtil = factory();&#10;    &#125;&#10;&#125;)(this, function () &#123;&#10;//module ...&#10;&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>npm install -g browserify”。安装完成之后可以在命令行使用 browserify 命令。browserify 命令运行时以一个 JavaScript 文件作为输入，通过分析文件中对于require方法的调用来递归查找所依赖的其他模块。把输入文件所依赖的所有模块文件打包成单个文件并输出。如“browserify greet.js &gt; bundle.js”把 greet.js 及其所依赖的模块文件打包成单个 bundle.js 文件。</p>
+</blockquote>
+<p>命令<br>–outfile, -o: browserify日志打印到文件<br>–require, -r: 绑定模块名或文件，用逗号分隔<br>–entry, -e: 应用程序的入口<br>–ignore, -i: 省略输出<br>–external, -x: 从其他绑定引入文件<br>–transform, -t: 对上层文件进行转换<br>–command, -c: 对上层文件使用转换命令<br>–standalone -s: 生成一个UMB的绑定的接口，提供给其他模块使用。<br>–debug -d: 激活source maps调试文件<br>–help, -h: 显示帮助信息</p>
+<h3 id="一个例子"><a href="#一个例子" class="headerlink" title="一个例子"></a>一个例子</h3><p>multiply.js: 乘法计算<br>square.js: 平方计算，依赖multiply.js<br>index.js: node启动程序，调用square.js<br>index.html: 用于显示的HTML网页<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#26032;&#24314;&#25991;&#20214;&#65306;multiply.js&#10;~ vi multiply.js&#10;module.exports = function (a, b) &#123;&#10;    console.log(&#34;js:multiply&#34;);&#10;    return a * b;&#10;&#125;;&#10;//&#26032;&#24314;&#25991;&#20214;&#65306;square.js&#10;~ vi square.js&#10;var multiply = require(&#39;./multiply&#39;);&#10;module.exports = function (n) &#123;&#10;    console.log(&#34;js:square&#34;);&#10;    return multiply(n, n);&#10;&#125;;&#10;//&#26032;&#24314;&#25991;&#20214;&#65306;index.js&#10;~ vi index.js&#10;var square = require(&#39;./square&#39;);&#10;console.log(&#34;js:index&#34;);&#10;console.log(square(125));&#10;&#10;//&#22312;node&#29615;&#22659;&#20013;&#36816;&#34892; ~ node index.js&#10;&#10;//&#29992;browserify&#32534;&#35793;index.js&#25991;&#20214;&#21040;bundle.js  ~ browserify index.js &#62; bundle.js&#10;&#10;&#10;//&#29992;browserify&#32534;&#35793;multiply.js&#25991;&#20214;&#21040;bundle.js&#65292;&#20316;&#20026;&#27169;&#22359;&#10;&#10;&#26032;&#24314;multiply.js&#10;~ vi multiply.js&#10;module.exports = function (a, b) &#123;&#10;    console.log(&#34;js:multiply&#34;);&#10;    return a * b;&#10;&#125;;&#10;~ browserify -r ./multiply.js &#62; bundle.js</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/12/28/8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          git 笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/12/28/12/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">css 笔记</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div>&copy; 2016 任先生在路上 的博客 , 技术 
+        <a href="http://hexo.io/" target="_blank">Hexo</a>  
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
