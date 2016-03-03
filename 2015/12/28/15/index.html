@@ -16,7 +16,7 @@
 <meta property="og:description" content="Browserify 可以让你使用类似于 node 的 require() 的方式来组织浏览器端的 Javascript 代码，通过预编译让前端 Javascript 可以直接使用 Node NPM 安装的一些库。一种解决方法是使用UMD的方式，前端使用requirejs，同时兼容nodejs的情况,例如：
 
 1(function (window, factory) &amp;#123;&amp;#10;">
-<meta property="og:updated_time" content="2016-03-03T14:25:13.643Z">
+<meta property="og:updated_time" content="2016-03-03T14:38:38.156Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="browserify 笔记">
 <meta name="twitter:description" content="Browserify 可以让你使用类似于 node 的 require() 的方式来组织浏览器端的 Javascript 代码，通过预编译让前端 Javascript 可以直接使用 Node NPM 安装的一些库。一种解决方法是使用UMD的方式，前端使用requirejs，同时兼容nodejs的情况,例如：
@@ -170,6 +170,7 @@
 <p>Browserify 可以让你使用类似于 node 的 require() 的方式来组织浏览器端的 Javascript 代码，通过预编译让前端 Javascript 可以直接使用 Node NPM 安装的一些库。<br>一种解决方法是使用UMD的方式，前端使用requirejs，同时兼容nodejs的情况,例如：</p>
 </blockquote>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(function (window, factory) &#123;&#10;    if (typeod exports === &#39;object&#39;) &#123;&#10;        module.exports = factory();&#10;    &#125; else if (typeof define === &#39;function&#39; &#38;&#38; define.amd) &#123;&#10;        define(factory);&#10;    &#125; else &#123;&#10;        window.eventUtil = factory();&#10;    &#125;&#10;&#125;)(this, function () &#123;&#10;//module ...&#10;&#125;)</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <blockquote>
 <p>npm install -g browserify”。安装完成之后可以在命令行使用 browserify 命令。browserify 命令运行时以一个 JavaScript 文件作为输入，通过分析文件中对于require方法的调用来递归查找所依赖的其他模块。把输入文件所依赖的所有模块文件打包成单个文件并输出。如“browserify greet.js &gt; bundle.js”把 greet.js 及其所依赖的模块文件打包成单个 bundle.js 文件。</p>
 </blockquote>
