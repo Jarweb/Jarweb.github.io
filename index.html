@@ -41,7 +41,7 @@
 		</hgroup>
 
 		
-		<p class="header-subtitle" style="margin-bottom:40px;">Good things are coming !</p>
+		<p class="header-subtitle" style="margin-bottom:26px;">Good things are coming !</p>
 		
 
 		
@@ -124,11 +124,11 @@
 
       <div class="body-wrap">
   
-    <article id="post-3" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-11" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/02/3/" class="article-date">
-  	<time datetime="2016-03-01T16:32:46.019Z" itemprop="datePublished">2016-03-02</time>
+      <a href="/2016/01/27/11/" class="article-date">
+  	<time datetime="2016-01-26T16:00:00.000Z" itemprop="datePublished">2016-01-27</time>
 </a>
     </div>
   
@@ -141,7 +141,194 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/02/3/">mardown 笔记</a>
+      <a class="article-title" href="/2016/01/27/11/">DNS解析</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="域名了解"><a href="#域名了解" class="headerlink" title="域名了解"></a>域名了解</h3><p>Baidu.com就是一个顶级域名，而www.baidu.com却不是顶级域名，他是在baidu.com 这个域里的一叫做www的主机。一级域之后还有二级域，三级域，只要我买了一个顶级域，并且我搭建了自己BIND服务器（或者其他软件搭建的）注册到互联网中，那么我就可以随意在前面多加几个域了（当然长度是有限制的）。比如a.www.baidu.com，在这个网址中，www.baidu.com变成了一个二级域而不是一台主机，主机名是a。</p>
+<blockquote>
+<p>1.现在我有一台计算机，通过ISP接入了互联网，那么ISP就会给我分配一个DNS服务器，这个DNS服务器不是权威服务器，而是相当于一个代理的dns解析服务器，他会帮你迭代权威服务器返回的应答，然后把最终查到IP返回给你。<br>2.现在的我计算机要向这台ISPDNS发起请求查询www.baidu.com这个域名了。<br>3.ISPDNS拿到请求后，先检查一下自己的缓存中有没有这个地址，有的话就直接返回。这个时候拿到的ip地址，会被标记为非权威服务器的应答。<br>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DNS/">DNS</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/01/27/11/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-10" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/20/10/" class="article-date">
+  	<time datetime="2016-01-19T16:00:00.000Z" itemprop="datePublished">2016-01-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/20/10/">TCP/IP 协议</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="TCP术语："><a href="#TCP术语：" class="headerlink" title="TCP术语："></a>TCP术语：</h3><blockquote>
+<p>SYN(synchronous建立联机)<br>ACK(acknowledgement 确认)<br>PSH(push传送)<br>FIN(finish结束)<br>RST(reset重置)<br>URG(urgent紧急)<br>URG 紧急指针，告诉接收TCP模块紧要指针域指着紧要数据。<br>ACK 置1时表示确认号（为合法，为0的时候表示数据段不包含确认信息，确认号被忽略。<br>PSH 置1时请求的数据段在接收方得到后就可直接送到应用程序，而不必等到缓冲区满时才传送。<br>RST 置1时重建连接。如果接收到RST位时候，通常发生了某些错误。<br>SYN 置1时用来发起一个连接。<br>FIN 置1时表示发端完成发送任务。用来释放连接，表明发送方已经没有数据发送了。<br>另外还有 Sequence number(顺序号码) 、Acknowledge number(确认号码)在建立握手过程中发送的序列号。<br>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TCP-IP/">TCP/IP</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/01/20/10/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-9" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/12/9/" class="article-date">
+  	<time datetime="2016-01-11T16:00:00.000Z" itemprop="datePublished">2016-01-12</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/12/9/">http协议 状态码</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h3><blockquote>
+<p>100 客户端应当继续发送请求。这个临时响应是用来通知客户端它的部分请求已经被服务器接收，且仍未被拒绝。客户端应当继续发送请求的剩余部分，或者如果请求已经完成，忽略这个响应。服务器必须在请求完成后向客户端发送一个最终响应。</p>
+<p>101 服务器已经理解了客户端的请求，并将通过Upgrade消息头通知客户端采用不同的协议来完成这个请求。在发送完这个响应最后的空行后，服务器将会切换到在Upgrade 消息头中定义的那些协议。只有在切换新的协议更有好处的时候才应该采取类似措施。例如，切换到新的HTTP版本比旧版本更有优势，或者切换到一个实时且同步的协议以传送利用此类特性的资源。</p>
+<p>102 代表处理将被继续执行。</p>
+<p>200 请求已成功。<br>201 请求已经被实现，而且有一个新的资源已经依据请求的需要而建立，且其URI已经随Location头信息返回。假如需要的资源无法及时建立的话，应当返回 ‘202 Accepted’。<br>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/http/">http</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/01/12/9/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-3" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/29/3/" class="article-date">
+  	<time datetime="2015-12-28T16:00:00.000Z" itemprop="datePublished">2015-12-29</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/29/3/">mardown 笔记</a>
     </h1>
   
 
@@ -166,7 +353,7 @@
 
       
         <p class="article-more-link">
-          <a  href="/2016/03/02/3/#more">more >></a>
+          <a  href="/2015/12/29/3/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -185,11 +372,11 @@
 
 
   
-    <article id="post-2" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-8" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/02/29/2/" class="article-date">
-  	<time datetime="2016-02-29T07:57:34.294Z" itemprop="datePublished">2016-02-29</time>
+      <a href="/2015/12/28/8/" class="article-date">
+  	<time datetime="2015-12-27T16:00:00.000Z" itemprop="datePublished">2015-12-28</time>
 </a>
     </div>
   
@@ -202,7 +389,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/29/2/">js 基础 《javascript面向对象编程指南》</a>
+      <a class="article-title" href="/2015/12/28/8/">git 笔记</a>
     </h1>
   
 
@@ -211,8 +398,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>基本类型： number,string,boolean,undefined,null<br>非基本类型(引用类型)：object<br>typeof的返回结果：number,string,boolean,undefined,object,function<br>Infinity 代表超出js处理范围的数 typeof 结果是number,最大的数是Infinity 最小是-Infinity<br>js所能处理的最大值为1.79769313486e+308 最小是5e-324<br>NaN typeof 结果是number<br>优先级 先！再&amp;&amp; 后 || 结合括号<br>undefined： 不存在或未赋值的变量 就会得到undefined typeof的结果是undefined<br>1<em>undefined //NaN<br>1</em>null //0<br>!!undefined //false<br>!!null //false<br>null 的值是null<br>转布尔是为false ：“” null undefined 0 NaN false<br>
+        <p>命令：</p>
+<blockquote>
+<p>git config –global user.name “Your Name”<br>git config –global user.email “email@example.com”<br>git init  把这个目录变成git可以管理的仓库<br>git add readme.txt  添加到缓存区<br>git commit -m “注释描述”  提交到仓库<br>git status  来查看是否还有文件未提交<br>git diff readme.txt  查看该文件该了的内容<br>git log  显示从最近到最远的显示日志，我们可以看到最近三次提交<br>git reset –hard HEAD~100  版本回退操作 这里是退回到第100个版本<br>git reflog  即可获取到版本号<br>git rm b.txt 如果我想彻底从版本库中删掉了此文件的话，可以再执行commit命令 提交掉.<br>git push 实际上是把当前分支master推送到远程。<br>git branch 查看分支<br>git branch name 创建分支<br>git checkout name 切换分支<br>
       
     </div>
     
@@ -220,14 +408,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/02/29/2/#more">more >></a>
+          <a  href="/2015/12/28/8/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -290,6 +478,256 @@
       
         <p class="article-more-link">
           <a  href="/2015/12/25/1/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/24/2/" class="article-date">
+  	<time datetime="2015-12-23T16:00:00.000Z" itemprop="datePublished">2015-12-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/24/2/">js 基础 《javascript面向对象编程指南》</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>基本类型： number,string,boolean,undefined,null<br>非基本类型(引用类型)：object<br>typeof的返回结果：number,string,boolean,undefined,object,function<br>Infinity 代表超出js处理范围的数 typeof 结果是number,最大的数是Infinity 最小是-Infinity<br>js所能处理的最大值为1.79769313486e+308 最小是5e-324<br>NaN typeof 结果是number<br>优先级 先！再&amp;&amp; 后 || 结合括号<br>undefined： 不存在或未赋值的变量 就会得到undefined typeof的结果是undefined<br>1<em>undefined //NaN<br>1</em>null //0<br>!!undefined //false<br>!!null //false<br>null 的值是null<br>转布尔是为false ：“” null undefined 0 NaN false<br>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/12/24/2/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-5" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/23/5/" class="article-date">
+  	<time datetime="2015-12-22T16:00:00.000Z" itemprop="datePublished">2015-12-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/23/5/">bower 笔记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>.bowerrc<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#10;  &#34;directory&#34; : &#34;js/jslib&#34;,//&#35201;&#25226;&#21253;&#19979;&#36733;&#30340;&#30446;&#24405; &#26377;&#40664;&#35748;&#30340;&#19979;&#36733;&#30446;&#24405;&#10;  &#34;json&#34;      : &#34;&#34;,&#10;  &#34;endpoint&#34;  : &#34;&#34;,&#10;  &#34;searchpath&#34;  : &#34;&#34;,&#10;  &#34;shorthand_resolver&#34; : &#34;&#34;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bower/">bower</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/12/23/5/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-7" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/11/16/7/" class="article-date">
+  	<time datetime="2015-11-15T16:00:00.000Z" itemprop="datePublished">2015-11-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/16/7/">jade 毕竟</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>按tab书写 按空格书写 缩进标示嵌套</p>
+<p>.class.class.class#id css的写法<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//html&#10;&#60;span class=&#34;abc&#34;&#62;hi&#60;/span&#62;&#10;//jade&#10;span.abc hi</span><br></pre></td></tr></table></figure></p>
+<p>incude<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">doctype html&#10;html&#10;&#9;include ./header&#10;&#9;body&#10;&#9;include ./footer</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jade/">jade</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/11/16/7/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-6" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/11/15/6/" class="article-date">
+  	<time datetime="2015-11-14T16:00:00.000Z" itemprop="datePublished">2015-11-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/15/6/">Handlebar 笔记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>表达式<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;div class=&#34;entry&#34;&#62;&#10;    &#60;h1&#62;&#123;&#123;title&#125;&#125;&#60;/h1&#62;&#10;    &#60;div class=&#34;body&#34;&#62;&#10;        &#123;&#123;body&#125;&#125;&#10;    &#60;/div&#62;&#10;&#60;/div&#62;</span><br></pre></td></tr></table></figure></p>
+<p>“<script>“ 加载模版到浏览器中 node环境预编译 把html代码插入<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;script id=&#34;entry-template&#34; type=&#34;text/x-handlebars-template&#34;&#62;&#10;  template content&#10;&#60;/script&#62;&#10;var source   = $(&#34;#entry-template&#34;).html();&#10;var template = Handlebars.compile(source);</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Handlebar/">Handlebar</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/11/15/6/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
