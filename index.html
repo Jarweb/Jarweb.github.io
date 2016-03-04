@@ -499,69 +499,6 @@
 
 
   
-    <article id="post-15" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/12/28/15/" class="article-date">
-  	<time datetime="2015-12-27T16:00:00.000Z" itemprop="datePublished">2015-12-28</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/28/15/">browserify 笔记</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>Browserify 可以让你使用类似于 node 的 require() 的方式来组织浏览器端的 Javascript 代码，通过预编译让前端 Javascript 可以直接使用 Node NPM 安装的一些库。<br>一种解决方法是使用UMD的方式，前端使用requirejs，同时兼容nodejs的情况,例如：</p>
-</blockquote>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(function (window, factory) &#123;&#10;    if (typeod exports === &#39;object&#39;) &#123;&#10;        module.exports = factory();&#10;    &#125; else if (typeof define === &#39;function&#39; &#38;&#38; define.amd) &#123;&#10;        define(factory);&#10;    &#125; else &#123;&#10;        window.eventUtil = factory();&#10;    &#125;&#10;&#125;)(this, function () &#123;&#10;//module ...&#10;&#125;)</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/browserify/">browserify</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/12/28/15/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-12" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -608,6 +545,69 @@
       
         <p class="article-more-link">
           <a  href="/2015/12/28/12/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-15" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/28/15/" class="article-date">
+  	<time datetime="2015-12-27T16:00:00.000Z" itemprop="datePublished">2015-12-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/28/15/">browserify 笔记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>Browserify 可以让你使用类似于 node 的 require() 的方式来组织浏览器端的 Javascript 代码，通过预编译让前端 Javascript 可以直接使用 Node NPM 安装的一些库。<br>一种解决方法是使用UMD的方式，前端使用requirejs，同时兼容nodejs的情况,例如：</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(function (window, factory) &#123;&#10;    if (typeod exports === &#39;object&#39;) &#123;&#10;        module.exports = factory();&#10;    &#125; else if (typeof define === &#39;function&#39; &#38;&#38; define.amd) &#123;&#10;        define(factory);&#10;    &#125; else &#123;&#10;        window.eventUtil = factory();&#10;    &#125;&#10;&#125;)(this, function () &#123;&#10;//module ...&#10;&#125;)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/browserify/">browserify</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/12/28/15/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
