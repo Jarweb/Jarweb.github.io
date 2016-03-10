@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://Jarweb.com/2015/12/24/2/index.html">
 <meta property="og:site_name" content="Jar-R">
 <meta property="og:description" content="基本类型： number,string,boolean,undefined,null非基本类型(引用类型)：objecttypeof的返回结果：number,string,boolean,undefined,object,functionInfinity 代表超出js处理范围的数 typeof 结果是number,最大的数是Infinity 最小是-Infinityjs所能处理的最大值为1.797">
-<meta property="og:updated_time" content="2016-03-03T09:38:58.189Z">
+<meta property="og:updated_time" content="2016-03-08T16:03:59.653Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js 基础 《javascript面向对象编程指南》">
 <meta name="twitter:description" content="基本类型： number,string,boolean,undefined,null非基本类型(引用类型)：objecttypeof的返回结果：number,string,boolean,undefined,object,functionInfinity 代表超出js处理范围的数 typeof 结果是number,最大的数是Infinity 最小是-Infinityjs所能处理的最大值为1.797">
@@ -161,7 +161,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>基本类型： number,string,boolean,undefined,null<br>非基本类型(引用类型)：object<br>typeof的返回结果：number,string,boolean,undefined,object,function<br>Infinity 代表超出js处理范围的数 typeof 结果是number,最大的数是Infinity 最小是-Infinity<br>js所能处理的最大值为1.79769313486e+308 最小是5e-324<br>NaN typeof 结果是number<br>优先级 先！再&amp;&amp; 后 || 结合括号<br>undefined： 不存在或未赋值的变量 就会得到undefined typeof的结果是undefined<br>1<em>undefined //NaN<br>1</em>null //0<br>!!undefined //false<br>!!null //false<br>null 的值是null<br>转布尔是为false ：“” null undefined 0 NaN false<br><a id="more"></a></p>
+<p>基本类型： number,string,boolean,undefined,null<br>非基本类型(引用类型)：object<br>typeof的返回结果：number,string,boolean,undefined,object,function<br>Infinity 代表超出js处理范围的数 typeof 结果是number,最大的数是Infinity 最小是-Infinity<br>js所能处理的最大值为1.79769313486e+308 最小是5e-324<br>NaN typeof 结果是number<br>优先级 先！再&amp;&amp; 后 || 结合括号<br>undefined： 不存在或未赋值的变量 就会得到undefined typeof的结果是undefined<br>1<em>undefined //NaN<br>1</em>null //0<br>!!undefined //false<br>!!null //false<br>null 的值是null<br>转布尔是为false ：“” null undefined 0 NaN false</p>
+</blockquote>
+<a id="more"></a>
+<blockquote>
 <p>数组 typeof结果是object<br>增加长度来增加数组 值默认为undefined<br>三元操作符 var a = 条件？条件为真的结果：条件为假的结果<br>for(var i in items) 来遍历数组或者对象</p>
 <p>如果某fn没有显式返回值 那么默认return 的是undefined<br>函数声明 function sum(){}  function sum(a){}<br>函数调用 sum()  sum(a)<br>函数里用到本来要传进来的参数 但是括号里没写参数 那么花括号里的该参数就会被赋为undefined<br>但是括号里写多了 会被忽略掉<br>arguments 不是数组 是类似数组的对象</p>
 <p>parseInt()  从左往右 结果是数字或NaN 遇到第一个不是数字的就哭</p>
@@ -189,17 +192,15 @@
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function f()&#123;&#10;&#9;var a = []&#10;&#9;for(var i=0;i&#60;3;i++)&#123;&#10;&#9;&#9;a[i] = function()&#123;&#10;&#9;&#9;&#9;return i&#10;&#9;&#9;&#125;&#10;&#9;&#125;&#10;&#9;return a&#10;&#125;&#10;//&#20869;&#37096;&#20989;&#25968;&#26159;&#25343;&#21040;&#30340;i&#65292;for&#24490;&#29615;&#24050;&#32463;&#36941;&#21382;&#23436; &#36820;&#22238;i=3 &#37324;&#38754;&#30340;i&#21040;&#29238;&#32423;&#21435;&#25214;&#20540;&#26102; &#29238;&#32423;&#30340;i&#24050;&#32463;&#21464;&#25104;3&#10;function f()&#123;&#10;&#9;var a=[]&#10;&#9;for(var i=0;i&#60;3;i++)&#123;&#10;&#9;&#9;a[i] = (function(x)&#123;&#10;&#9;&#9;&#9;return function()&#123;&#10;&#9;&#9;&#9;&#9;return x&#10;&#9;&#9;&#9;&#125;&#10;&#9;&#9;&#125;)(i)&#10;&#9;&#125;&#10;&#9;return a&#10;&#125;&#10;//&#29992;&#21521;&#21311;&#21517;&#20989;&#25968;&#20256;&#21442;&#30340;&#26041;&#24335; &#37324;&#38754;&#30340;i&#21040;&#29238;&#32423;&#21435;&#25214;&#20540;&#26102; &#37117;&#32463;&#36807;&#21442;&#25968;x&#30340;&#26725;&#26753;&#25343;&#21040;&#20540;&#10;function f()&#123;&#10;&#9;var a=[]&#10;&#9;for(var i=0;i&#60;3;i++)&#123;&#10;&#9;&#9;a[i] = fn(i)&#10;&#9;&#125;&#10;&#9;function fn(i)&#123;&#10;&#9;&#9;return function()&#123;&#10;&#9;&#9;&#9;return i&#10;&#9;&#9;&#125;&#10;&#9;&#125;&#10;&#9;return a&#10;&#125;&#10;//&#21464;&#20307; &#21306;&#21035;&#23601;&#26159;&#20989;&#25968;&#30340;&#35843;&#29992; &#33258;&#25191;&#34892;&#19982;()&#35843;&#29992;</span><br></pre></td></tr></table></figure>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var get,set&#10;(function()&#123;&#10;&#9;var a=0&#10;&#9;get = function()&#123;&#10;&#9;&#9;return a&#10;&#9;&#125;&#10;&#9;set = function(v)&#123;&#10;&#9;&#9;a=v&#10;&#9;&#125;&#10;&#125;)()&#10;//&#36825;&#20010;&#33258;&#25191;&#34892;&#20989;&#25968;&#20869;&#30456;&#24403;&#19968;&#20010;&#20840;&#23616; a&#26159;&#20840;&#23616;&#21464;&#37327; &#20004;&#20010;&#20840;&#23616;&#20989;&#25968;&#37117;&#21487;&#20197;&#25343;&#21040;a</span><br></pre></td></tr></table></figure>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#36845;&#20195;&#22120;&#10;function next(x)&#123;&#10;&#9;var i = 0&#10;&#9;return function()&#123;&#10;&#9;&#9;return x[i++]&#10;&#9;&#125;&#10;&#125;&#10;//i&#20570;&#32034;&#24341; x&#26159;&#19968;&#20010;&#25968;&#32452; i&#27599;&#27425;&#37117;&#20250;&#20445;&#23384;&#19968;&#20010;&#20540; &#21487;&#20197;&#25226;x&#36941;&#21382;&#23436;</span><br></pre></td></tr></table></figure>
-<p>###对象</p>
-<blockquote>
+<h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><blockquote>
 <p>对象的属性可以是函数 因为函数也是一种数据<br>一般性数组 [1,2,3] 默认是有数字索引<br>关联性数组 字符串键值 哈希表<br>访问对象的属性 [] 和 . ，不确定的属性用[]<br>对象可以包含任何数据 包括对象</p>
 </blockquote>
-<p>###构造函数</p>
-<blockquote>
+<h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><blockquote>
 <p>可以用来创建对象的函数 new关键字<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function People()&#123;&#10;&#9;this.aihao = &#39;baskball&#39;&#10;&#125;&#10;var peo = new People()&#10;//&#27809;&#26377;new&#20250;&#36820;&#22238;undefined</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fn1 = new fn()&#123;&#125;&#10;&#10;fn = fn1.constructor()&#123;&#125;&#10;//&#21482;&#26377;&#26500;&#36896;&#22120;&#25165;&#26377;constructor&#23646;&#24615;&#10;//&#26377;&#26174;&#24335;&#26500;&#36896;&#22120;new &#20063;&#26377;&#38544;&#24335;&#30340; object()&#20989;&#25968;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>instanceof<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function Hero ()&#123;&#125;&#10;var b = new Hero()&#10;var o = &#123;&#125;&#10;&#62;&#62;h instanceof Hero //true&#10;&#62;&#62;h instanceof Object//true&#10;&#62;&#62;o instanceof Object//true</span><br></pre></td></tr></table></figure></p>
+<p>instanceof<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function Hero ()&#123;&#125;&#10;var h = new Hero()&#10;var o = &#123;&#125;&#10;&#62;&#62;h instanceof Hero //true&#10;&#62;&#62;h instanceof Object//true&#10;&#62;&#62;o instanceof Object//true</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var o = factory(a)&#10;&#62;&#62;o.constructor //Objecy()</span><br></pre></td></tr></table></figure>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function C()&#123;this.a = 1 return &#123;b:2&#125;&#125;&#10;var c = new C()&#10;typeof c.a //undefined&#10;c.b //2&#10;//&#22240;&#20026;&#26500;&#36896;&#20989;&#25968;&#36820;&#22238;&#30340;&#26159;&#19968;&#20010;&#23545;&#35937; &#36825;&#20010;&#23545;&#35937;&#27809;&#26377;a&#23646;&#24615;</span><br></pre></td></tr></table></figure>

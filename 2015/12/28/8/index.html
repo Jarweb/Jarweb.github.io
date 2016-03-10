@@ -16,7 +16,7 @@ git config –global user.name “Your Name”git config –global user.email �
 <meta property="og:description" content="命令：
 
 git config –global user.name “Your Name”git config –global user.email “email@example.com”git init  把这个目录变成git可以管理的仓库git add readme.txt  添加到缓存区git commit -m “注释描述”  提交到仓库git status  来查看是否还有文件未提交gi">
-<meta property="og:updated_time" content="2016-03-03T09:38:54.645Z">
+<meta property="og:updated_time" content="2016-03-09T01:02:14.351Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git 笔记">
 <meta name="twitter:description" content="命令：
@@ -168,7 +168,11 @@ git config –global user.name “Your Name”git config –global user.email �
       
         <p>命令：</p>
 <blockquote>
-<p>git config –global user.name “Your Name”<br>git config –global user.email “email@example.com”<br>git init  把这个目录变成git可以管理的仓库<br>git add readme.txt  添加到缓存区<br>git commit -m “注释描述”  提交到仓库<br>git status  来查看是否还有文件未提交<br>git diff readme.txt  查看该文件该了的内容<br>git log  显示从最近到最远的显示日志，我们可以看到最近三次提交<br>git reset –hard HEAD~100  版本回退操作 这里是退回到第100个版本<br>git reflog  即可获取到版本号<br>git rm b.txt 如果我想彻底从版本库中删掉了此文件的话，可以再执行commit命令 提交掉.<br>git push 实际上是把当前分支master推送到远程。<br>git branch 查看分支<br>git branch name 创建分支<br>git checkout name 切换分支<br><a id="more"></a><br>git merge name  合并某分支到当前分支<br>git branch –d name  删除分支<br>git push –u(第一次要用-u 以后不需要) origin master 把当前master分支推送到远程库<br>git remote 查看远程库的信息</p>
+<p>git config –global user.name “Your Name”<br>git config –global user.email “email@example.com”<br>git init  把这个目录变成git可以管理的仓库<br>git add readme.txt  添加到缓存区<br>git commit -m “注释描述”  提交到仓库<br>git status  来查看是否还有文件未提交<br>git diff readme.txt  查看该文件该了的内容<br>git log  显示从最近到最远的显示日志，我们可以看到最近三次提交<br>git reset –hard HEAD~100  版本回退操作 这里是退回到第100个版本<br>git reflog  即可获取到版本号<br>git rm b.txt 如果我想彻底从版本库中删掉了此文件的话，可以再执行commit命令 提交掉.<br>git push 实际上是把当前分支master推送到远程。<br>git branch 查看分支<br>git branch name 创建分支<br>git checkout name 切换分支</p>
+</blockquote>
+<a id="more"></a>
+<blockquote>
+<p>git merge name  合并某分支到当前分支<br>git branch –d name  删除分支<br>git push –u(第一次要用-u 以后不需要) origin master 把当前master分支推送到远程库<br>git remote 查看远程库的信息</p>
 <ol>
 <li>首先，可以试图用git push origin branch-name推送自己的修改.</li>
 <li>如 果推送失败，则因为远程分支比你的本地更新早，需要先用git pull试图合并。</li>

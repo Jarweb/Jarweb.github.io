@@ -14,7 +14,7 @@ SYN(synchronous建立联机)ACK(acknowledgement 确认)PSH(push传送)FIN(finish
 <meta property="og:site_name" content="Jar-R">
 <meta property="og:description" content="TCP术语：
 SYN(synchronous建立联机)ACK(acknowledgement 确认)PSH(push传送)FIN(finish结束)RST(reset重置)URG(urgent紧急)URG 紧急指针，告诉接收TCP模块紧要指针域指着紧要数据。ACK 置1时表示确认号（为合法，为0的时候表示数据段不包含确认信息，确认号被忽略。PSH 置1时请求的数据段在接收方得到后就可直接送到应用程">
-<meta property="og:updated_time" content="2016-03-03T09:39:00.378Z">
+<meta property="og:updated_time" content="2016-03-08T15:20:09.657Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TCP/IP 协议">
 <meta name="twitter:description" content="TCP术语：
@@ -167,7 +167,7 @@ SYN(synchronous建立联机)ACK(acknowledgement 确认)PSH(push传送)FIN(finish
 <p>SYN(synchronous建立联机)<br>ACK(acknowledgement 确认)<br>PSH(push传送)<br>FIN(finish结束)<br>RST(reset重置)<br>URG(urgent紧急)<br>URG 紧急指针，告诉接收TCP模块紧要指针域指着紧要数据。<br>ACK 置1时表示确认号（为合法，为0的时候表示数据段不包含确认信息，确认号被忽略。<br>PSH 置1时请求的数据段在接收方得到后就可直接送到应用程序，而不必等到缓冲区满时才传送。<br>RST 置1时重建连接。如果接收到RST位时候，通常发生了某些错误。<br>SYN 置1时用来发起一个连接。<br>FIN 置1时表示发端完成发送任务。用来释放连接，表明发送方已经没有数据发送了。<br>另外还有 Sequence number(顺序号码) 、Acknowledge number(确认号码)在建立握手过程中发送的序列号。<br><a id="more"></a></p>
 </blockquote>
 <h3 id="主机A-client-和主机B-server-开始建立握手过程："><a href="#主机A-client-和主机B-server-开始建立握手过程：" class="headerlink" title="主机A(client)和主机B(server)开始建立握手过程："></a>主机A(client)和主机B(server)开始建立握手过程：</h3><blockquote>
-<p>第一次握手：主机A发送位码为syn＝1,随机产生seq number=10001的数据包到服务器，主机B由SYN=1知道，A要求建立联机，此时状态为SYN_SENT；</p>
+<p>第一次握手:主机A发送位码为syn＝1 随机产生seq number=10001 的数据包到服务器，主机B由SYN=1知道，A要求建立联机，此时状态为SYN_SENT；</p>
 <p>第二次握手：主机B收到请求后要确认联机信息，向A发送ack number=(主机A的seq+1),syn=1,ack=1,随机产生seq=20001的包，此时状态由LISTEN变为SYN_RECV；</p>
 <p>第三次握手：主机A收到后检查ack number是否正确，即第一次发送的seq number+1,以及位码ack是否为1，若正确，主机A会再发送ack number=(主机B的seq+1),ack=1，主机B收到后确认seq值与ack=1则连接建立成功，双方状态ESTABLISHED。</p>
 <p>完成三次握手，主机A与主机B开始传送数据。进行HTTP协议</p>

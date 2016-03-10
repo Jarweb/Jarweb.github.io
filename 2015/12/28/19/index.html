@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>前端性能 总结 | Jar-R</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="图片
+使用 CSS Sprites 对图片优化 简单的说就是”利用 CSSbackground相关元素进行背景图绝对定位”，把多次HTTP 调用变为一次调用：因为CSS Sprites不要在 HTML 中缩放图片用工具压缩图片尽可能的使用PNG格式的图片，因为和GIF相比，PNG有更多的功能和更小的体积选择合适的图片(1. webP优于JPG 2. PNG8优于GIF)DNSlookup是很耗费时">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端性能 总结">
+<meta property="og:url" content="http://Jarweb.com/2015/12/28/19/index.html">
+<meta property="og:site_name" content="Jar-R">
+<meta property="og:description" content="图片
+使用 CSS Sprites 对图片优化 简单的说就是”利用 CSSbackground相关元素进行背景图绝对定位”，把多次HTTP 调用变为一次调用：因为CSS Sprites不要在 HTML 中缩放图片用工具压缩图片尽可能的使用PNG格式的图片，因为和GIF相比，PNG有更多的功能和更小的体积选择合适的图片(1. webP优于JPG 2. PNG8优于GIF)DNSlookup是很耗费时">
+<meta property="og:updated_time" content="2016-03-08T15:44:26.192Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端性能 总结">
+<meta name="twitter:description" content="图片
+使用 CSS Sprites 对图片优化 简单的说就是”利用 CSSbackground相关元素进行背景图绝对定位”，把多次HTTP 调用变为一次调用：因为CSS Sprites不要在 HTML 中缩放图片用工具压缩图片尽可能的使用PNG格式的图片，因为和GIF相比，PNG有更多的功能和更小的体积选择合适的图片(1. webP优于JPG 2. PNG8优于GIF)DNSlookup是很耗费时">
+  
+    <link rel="alternative" href="/atom.xml" title="Jar-R" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">任先生在路上</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle" style="margin-bottom:20px;">Good things are coming !</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">列表</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger" style="display:none;"></div>
+  		<h1 class="header-author js-mobile-header hide">任先生在路上</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">任先生在路上</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Good things are coming !</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">列表</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-19" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/28/19/" class="article-date">
+  	<time datetime="2015-12-27T16:00:00.000Z" itemprop="datePublished">2015-12-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      前端性能 总结
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端性能/">前端性能</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><blockquote>
+<p>使用 CSS Sprites 对图片优化 简单的说就是”利用 CSSbackground相关元素进行背景图绝对定位”，把多次HTTP 调用变为一次调用：因为CSS Sprites<br>不要在 HTML 中缩放图片<br>用工具压缩图片<br>尽可能的使用PNG格式的图片，因为和GIF相比，PNG有更多的功能和更小的体积<br>选择合适的图片(1. webP优于JPG 2. PNG8优于GIF)<br>DNSlookup是很耗费时间的 减少DNS 查找<br>使用智图( <a href="http://zhitu.tencent.com/" target="_blank" rel="external">http://zhitu.tencent.com/</a> )<br>使用其它方式代替图片(1. 使用CSS3 2. 使用SVG 3. 使用IconFont)<br>尽量避免重设图片大小 ，多次重设图片大小会引发图片的多次重绘，影响性能<br>DataURL图片没有使用图片的压缩算法文件会变大，并且要解码后再渲染，加载慢耗时长 合理使用<br>字体图标<br>内容图片多为照片之类的，适用于JPEG。而修饰图片通常更适合用无损压缩的PNG。而GIF基本上除了GIF动画外不要使用。且动画的话，也更建议用video元素和视频格式，或用SVG动画取代。<br>使用cdn，例如七牛<br>浏览器对单个域名下的请求并发数是有限制的，如果是图片量很多的页面，需要考虑使用多域名。<br>尽量使用png格式的图片来代替滤镜效果，因为开启滤镜会加大浏览器的开销。<br>方向代理nginx缓存静态文件<br>不要对image和pdf等二进制文件进行gzip压缩</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="css"><a href="#css" class="headerlink" title="css"></a>css</h2><blockquote>
+<p>把 CSS 放到代码页上端<br>避免 CSS 表达式  凡是只有IE能用的东西，都不是好东西。<br>使用<link>而不是 @import<br>避免使用CSS Filter<br>页面样式尽量交给CSS完成 能不用js就不用js<br>GPU加速 CSS中以下属性(transitions、transforms、Opacity、Canvas、WebGL、Vide来触发GPU渲染，请合理使用<br>高级选择器执行耗时长且不易读懂，避免使用<br>Web字体需要下载，解析，重绘当前页面，尽量减少使用<br>值为0时不需要任何单位<br>避免CSS表达式<br>避免行内样式<br>CSS写在头部 下载与解析同步<br>压缩合并<br>CDN内容分发<br>空Src会重新加载当前页面，影响速度和效率<br>移除空的CSS规则　　<br>Float在渲染时计算量比较大，尽量减少使用<br>Repaint就是在一个元素的外观被改变，但没有改变布局宽高的情况下发生，如改变visibility、outline、背景色等等。Reflow(重排)就是DOM的变化影响到了元素的几何属性（宽和高），浏览器会重新计算元素的几何属性，会使渲染树中受到影响的部分失效，浏览器会验证DOM树上的所有其它结点的visibility属性，这也是Reflow低效的原因。如：改变窗囗大小、改变文字大小、内容的改变、浏览器窗口变化，style属性的改变等等。如果Reflow的过于频繁，CPU使用率就会噌噌的往上涨，<br>不要使用frameset，少使用iframe</p>
+</blockquote>
+<h2 id="js"><a href="#js" class="headerlink" title="js"></a>js</h2><blockquote>
+<p>AJAX优化缓存AJAX：异步并不等于即时。请求使用GET：当使用XMLHttpRequest时，而URL长度不到2K，可以使用GET请求数据，GET相比POST更快速。POST类型请求要发送两个TCP数据包，先发送文件头。再发送数据。GET类型请求只需要发送一个TCP数据包<br>使用cloneNode在外部更新节点然后再通过replace与原始节点互换。<br>多个节点插入操作，即使在外面设置节点的元素和风格再插入，由于多个节点还是会引发多次reflow。<br>减少DOM元素数量<br>别用js操作css样式 或一次操作 别多次 多用更改元素的className。<br>使用事件委托来减少事件处理器的数量。<br>保存需要的变量<br>底部插入script 外部引用script<br>合并压缩<br>某些方法的使用， 多用innerHTML 少document.write()。。。<br>CDN内容分发<br>动态加载<br>使用touchstart、touchend代替click，因快影响速度快。但应注意Touch响应过快，易引发误操作<br>DOM操作触发频繁的reflow和repaint。layout发生在repaint之前，所以reflow相对来说会造成更多性能损耗。reflow就是计算页面元素的几何信息。repaint就是绘制页面元素。对DOM进行操作会导致浏览器执行回流reflow。<br>使用速度更快的API，比如querySelectorAll和firstElementChild<br>合理使用requestAnimationFrame动画代替setTimeout</p>
+<p><script>每次出现都会让页面等待脚本的解析和执行（不论JavaScript是内嵌的还是外链的），JavaScript代码执行完成后，才继续渲染页面。这个也就是JavaScript的阻塞特性。<br>模块化带来的最大弊端便是HTTP请求数增加，所以上线的时候必须合并文件。</p>
+</blockquote>
+<p>##　内容</p>
+<blockquote>
+<p>切分组件到多个域，主要的目的是提高页面组件并行下载能力，但注意，也不要同时使用过多的域名，否则就会出现第一条DNSlookup过多的问题，一般情况下两个域名就可以了。<br>各种广告跟踪代码，把网站前端性能拉低了一个等级。<br>减少DNS查找 当客户端的DNS缓存为空时，DNS查找的数量与Web页面中唯一主机名的数量相等。减少唯一主机名的数量就可以减少DNS查找的数量。 较少的域名来减少DNS查找（2-4个主机）<br>移动应用：保持单个内容小于25K ，打包组件成复合文本<br>你的背景图片保证不超过3个以上，你的css文件不超过2个，js文件不超过3个。而且良好的遵守web标准的一些规定，css放到head中，js文件放到</body>之前或者之后。<br>通过nginx来完成，从而减小node.js的负载，并通过nginx强大的缓存来节省您网站的流量从而提高网站的加载速度。如：gzip编码，静态文件，HTTP缓存，SSL处理，负载平衡和反向代理及多站点代理等，<br>请求数量：合并脚本和样式表，CSS Sprites，拆分初始化负载，划分主域<br>请求带宽：开启GZip，精简JavaScript，移除重复脚本，图像优化<br>缓存利用：使用CDN，使用外部JavaScript和CSS，添加Expires头，减少DNS查找，配置ETag，使AjaX可缓存<br>配置超长时间的本地缓存——节省带宽，提高性能。采用内容摘要作为缓存更新依据——精确的缓存。控制静态资源CDN部署——优化网络请求。更资源发布路径实现非覆盖式发布——平滑升级<br>把静态资源和动态网页分集群部署，静态资源会被部署到CDN节点上<br>前面用ngnix做负载均衡，后面用apache做web服务器。</p>
+</blockquote>
+<p>减少HTTP请求数的主要途径包括：　　</p>
+<blockquote>
+<p>(1). 从设计实现层面简化页面，如果你的页面像百度首页一样简单，那么接下来的规则基本上都用不着了。保持页面简洁、减少资源的使用时最直接的。如果不是这样，你的页面需要华丽的皮肤，则继续阅读下面的内容。　　<br>(2). 合理设置 HTTP缓存，缓存的力量是强大的，恰当的缓存设置可以大大的减少HTTP请求。以有啊首页为例，当浏览器没有缓存的时候访问一共会发出 78个请求，共600多K数据，而当第二次访问即浏览器已缓存之后访问则仅有10个请求，共20多 K数据。<br>怎样才算合理设置?<br>原则很简单，能缓存越多越好，能缓存越久越好。例如，很少变化的图片资源可以直接通过HTTPHeader中的Expires设置一个很长的过期头;变化不频繁而又可能会变的资源可以使用Last-Modifed来做请求验证。尽可能的让资源能够在缓存中待得更久。</p>
+</blockquote>
+<p>使用首屏加载<br>· 按需加载<br>将不影响首屏的资源和当前屏幕资源不用的资源放到用户需要时才加载，可以大大提升重要资源的显示速度和降低总体流量<br>PS：按需加载会导致大量重绘，影响渲染性能<br>a) LazyLoad<br>b) 滚屏加载<br>c) 通过Media Query加载<br>· 预加载<br>a) 可感知Loading(如进入空间游戏的Loading)<br>b) 不可感知的Loading(如提前加载下一页)</p>
+<blockquote>
+<p>因为手机浏览器同时响应请求为4个请求(Android支持4个，iOS 5后可支持6个)<br>所以要尽量减少页面的请求数，首次加载同时请求数不能超过4个</p>
+</blockquote>
+<h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2><blockquote>
+<p>减小Cookie体积 coockie可以用于权限验证和个性化身份等多种用途。coockie内的有关信息是通过HTTP文件头来在web服务器和浏览器之间进行交流的。因此保持coockie尽可能的小以减少用户的响应时间十分重要。使cookie体积尽量小；在合适的子域名上设置bookie，以免影响其他子域名下的响应；设置合理的过期时间，去掉不必要的cookie。<br>每个 Cookie最多4K，注意这里的4K根据不同的浏览器可能不是严格的4096。别扯远了，对于Cookie最重要的就是，尽量控制Cookie的大小，不要塞入一些无用的信息。<br>对于页面内容使用无coockie域名</p>
+</blockquote>
+<h2 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h2><p>服务器缓存：主要是基于web反向代理的静态服务器nginx和squid，还有apache2的mod_proxy和mod_cache模<br>浏览器缓存：包括页面html缓存和图片js，css等资源的缓存<br>PHP缓存：有很多免费的PHP缓冲加速工具，如apc eaccerlertor等<br>内存缓存：主要是采用memcache这种分布式缓存机制<br>数据库缓存：通过配置数据库缓存，以及数据存储过程，连接池技术等</p>
+<p>应用层缓存的架构也可以分几种：<br>1.嵌入式，也就是缓存和应用在同一个机器。比如单机的文件缓存，java中用hashMap来缓存数据等等。这种缓存速度快，没有网络消耗。<br>2.分布式缓存，把缓存的数据独立到不同的机器，通过网络来请求数据，比如常用的memcache就是这一类。<br>分布式缓存一般可以分为几种:<br>1.按应用切分数据到不同的缓存服务器，这是一种比较简单和实用的方式。<br>2.按照某种规则（hash,路由等等）把数据存储到不同的缓存服务器<br>3.代理模式，应用在获取数据的时候都由代理透明的处理，缓存机制有代理服务器来处理 </p>
+<p>页面缓存状态是由http header决定的，一个浏览器请求信息，一个是服务器响应信息。</p>
+<blockquote>
+<p>主要包括Pragma: no-cache、Cache-Control、Expires、Last-Modified、If-Modified-Since。其中Pragma:no-cache由HTTP/1.0规定，Cache-Control由HTTP/1.1规定。</p>
+</blockquote>
+<p>相关参数说明：</p>
+<blockquote>
+<p>Cache-Control的主要参数 Cache-Control: private/publicPublic响应会被缓存，并且在多用户间共享。Private 响应只能够作为私有的缓存，不能再用户间共享。<br>Cache-Control: no-cache：不进行缓存<br>Cache-Control: max-age=x：缓存时间 以秒为单位<br>Cache-Control: must-revalidate：如果页面是过期的 则去服务器进行获取。<br>Expires：显示的设置页面过期时间<br>Last-Modified：请求对象最后一次的修改时间 用来判断缓存是否过期 通常由服务器上文件的时间信息产生。<br>If-Modified-Since ：客户端发送请求附带的信息 指浏览器缓存请求对象的最后修改日期 用来和服务器端的Last-Modified做比较。<br>Etag：ETag是一个可以 与Web资源关联的记号（token），和Last-Modified功能才不多，也是一个标识符，一般和Last-Modified一起使用，加强服务器判断的准确度。</p>
+</blockquote>
+<p>原理主要分三步：<br>第一次请求：<br>浏览器通过http的header报头，附带Expires，Cache-Control，Last-Modified/Etag向服务器请求，此时服务器记录第一次请求的Last-Modified/Etag<br>第二次请求：<br>当浏览器再次请求的时候，附带Expires，Cache-Control，If-Modified-Since/Etag向服务器请求.<br>服务器根据第一次记录的Last-Modified/Etag和再次请求的If-Modified-Since/Etag做对比，判断是否需要更新，然后响应请求。</p>
+<p>图片，css，js，flash的缓存</p>
+<blockquote>
+<p>这个主要通过服务器的配置来实现这个技术，如果使用apache服务器的话，可以使用mod_expires模块来实现.<br>同样可以用nginx方式实现前端页面缓存，详情请看nginx利用proxy_cache来缓存文件。</p>
+</blockquote>
+<p>If-Modified-Since是标准的HTTP请求头标签，在发送HTTP请求时，把浏览器端缓存页面的最后修改时间一起发到服务器去，服务器会把这个时间与服务器上实际文件的最后修改时间进行比较。<br>如果时间一致，那么返回HTTP状态码304（不返回文件内容），客户端接到之后，就直接把本地缓存文件显示到浏览器中。<br>如果时间不一致，就返回HTTP状态码200和新的文件内容，客户端接到之后，会丢弃旧文件，把新文件缓存起来，并显示到浏览器中。</p>
+<p>（1）客户端发HTTP请求时，使用If-Modified-Since标签，把上次服务器告诉它的文件最后修改时间返回到服务器端了。<br>（2）因为文件被改动过，两边时间不一致，所以服务器返回的HTTP状态码是200，并发送新页面的全部内容。<br>（3）服务器返回的HTTP头标签中有Last-Modified，告诉客户端页面的新的最后修改时间。</p>
+<p>Expires格式:<br>Expires = “Expires” “:” HTTP-date<br>Expires: Thu, 01 Dec 1994 16:00:00 GMT<br>Note: if a response includes a Cache-Control field with the max-age directive that directive overrides the Expires field.<br>Cache-Control格式：<br>Cache-Control   = “Cache-Control” “:” 1#cache-directive<br>Cache-Control: public<br>具体的标准定义可以参考http1.1中的定义，简单来说Expires控制过期时间是多久，Cache-Control控制什么地方可以缓存<br>设置 Etags<br>客户端在请求一份文件的时候，服务端会检查客户端是否存在该文件，如果客户端不存在该文件，则下载该文件并返回200；如果客户端存在该文件并且该文件在规定期限内没有被修改（Inode，MTime和Size），则服务端只返回一个304，并不返回资源内容，客户端将会使用之前的缓存文件。而etags就是判断该文件是否被修改的记号，与服务器端的资源一一关联，所以etags对于CGI类型的页面缓存尤其有用。</p>
+<p>缓存的过期包含<br>1.时间过期 我们在缓存数据的时候我们可以指定数据缓存的最大时间，如果超过这个时间，我们就认为缓存是失效的。<br>1.基于规则的过期 我们在缓存中存储了某些数据来标明数据的版本。比如存取的时间，更新的时间，数据的版本信息等等。然后比较这些信息是否有变化来判断是否过期。</p>
+<p>缓存的更新<br>1.被动<br>当缓存失效的时候我们的应用程序重新从主存储器中取数据，然后重新放回缓存中。<br>1.主动<br>当数据一更新的时候，我们的应用主动的去更新我们的缓存内容。<br>1.被动和主动结合（基于版本）<br>当数据以更新的时候，我们更新一个数据被更新的标志。然后根据上面讲到的“基于规则的过期”来更新数据。</p>
+</script></p></blockquote>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/12/29/3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          mardown 笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/12/28/8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">git 笔记</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div>&copy; 2016 任先生在路上 的博客 , 技术 
+        <a href="http://hexo.io/" target="_blank">Hexo</a>  
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

@@ -6,16 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>DNS解析 | Jar-R</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="域名了解Baidu.com就是一个顶级域名，而www.baidu.com却不是顶级域名，他是在baidu.com 这个域里的一叫做www的主机。一级域之后还有二级域，三级域，只要我买了一个顶级域，并且我搭建了自己BIND服务器（或者其他软件搭建的）注册到互联网中，那么我就可以随意在前面多加几个域了（当然长度是有限制的）。比如a.www.baidu.com，在这个网址中，www.baidu.com变">
+  <meta name="description" content="域名了解Baidu.com就是一个顶级域名，而www.baidu.com却不是顶级域名，他是在baidu.com 这个域里的一叫做www的主机。一级域之后还有二级域，三级域，只要我买了一个顶级域，并且我搭建了自己BIND服务器注册到互联网中，那么我就可以随意在前面多加几个域了（当然长度是有限制的）。比如a.www.baidu.com，在这个网址中，www.baidu.com变成了一个二级域而不是一">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DNS解析">
 <meta property="og:url" content="http://Jarweb.com/2016/01/27/11/index.html">
 <meta property="og:site_name" content="Jar-R">
-<meta property="og:description" content="域名了解Baidu.com就是一个顶级域名，而www.baidu.com却不是顶级域名，他是在baidu.com 这个域里的一叫做www的主机。一级域之后还有二级域，三级域，只要我买了一个顶级域，并且我搭建了自己BIND服务器（或者其他软件搭建的）注册到互联网中，那么我就可以随意在前面多加几个域了（当然长度是有限制的）。比如a.www.baidu.com，在这个网址中，www.baidu.com变">
-<meta property="og:updated_time" content="2016-03-03T09:39:02.140Z">
+<meta property="og:description" content="域名了解Baidu.com就是一个顶级域名，而www.baidu.com却不是顶级域名，他是在baidu.com 这个域里的一叫做www的主机。一级域之后还有二级域，三级域，只要我买了一个顶级域，并且我搭建了自己BIND服务器注册到互联网中，那么我就可以随意在前面多加几个域了（当然长度是有限制的）。比如a.www.baidu.com，在这个网址中，www.baidu.com变成了一个二级域而不是一">
+<meta property="og:updated_time" content="2016-03-08T15:22:42.463Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DNS解析">
-<meta name="twitter:description" content="域名了解Baidu.com就是一个顶级域名，而www.baidu.com却不是顶级域名，他是在baidu.com 这个域里的一叫做www的主机。一级域之后还有二级域，三级域，只要我买了一个顶级域，并且我搭建了自己BIND服务器（或者其他软件搭建的）注册到互联网中，那么我就可以随意在前面多加几个域了（当然长度是有限制的）。比如a.www.baidu.com，在这个网址中，www.baidu.com变">
+<meta name="twitter:description" content="域名了解Baidu.com就是一个顶级域名，而www.baidu.com却不是顶级域名，他是在baidu.com 这个域里的一叫做www的主机。一级域之后还有二级域，三级域，只要我买了一个顶级域，并且我搭建了自己BIND服务器注册到互联网中，那么我就可以随意在前面多加几个域了（当然长度是有限制的）。比如a.www.baidu.com，在这个网址中，www.baidu.com变成了一个二级域而不是一">
   
     <link rel="alternative" href="/atom.xml" title="Jar-R" type="application/atom+xml">
   
@@ -160,9 +160,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="域名了解"><a href="#域名了解" class="headerlink" title="域名了解"></a>域名了解</h3><p>Baidu.com就是一个顶级域名，而www.baidu.com却不是顶级域名，他是在baidu.com 这个域里的一叫做www的主机。一级域之后还有二级域，三级域，只要我买了一个顶级域，并且我搭建了自己BIND服务器（或者其他软件搭建的）注册到互联网中，那么我就可以随意在前面多加几个域了（当然长度是有限制的）。比如a.www.baidu.com，在这个网址中，www.baidu.com变成了一个二级域而不是一台主机，主机名是a。</p>
+        <h3 id="域名了解"><a href="#域名了解" class="headerlink" title="域名了解"></a>域名了解</h3><p>Baidu.com就是一个顶级域名，而www.baidu.com却不是顶级域名，他是在baidu.com 这个域里的一叫做www的主机。一级域之后还有二级域，三级域，只要我买了一个顶级域，并且我搭建了自己BIND服务器注册到互联网中，那么我就可以随意在前面多加几个域了（当然长度是有限制的）。比如a.www.baidu.com，在这个网址中，www.baidu.com变成了一个二级域而不是一台主机，主机名是a。</p>
 <blockquote>
-<p>1.现在我有一台计算机，通过ISP接入了互联网，那么ISP就会给我分配一个DNS服务器，这个DNS服务器不是权威服务器，而是相当于一个代理的dns解析服务器，他会帮你迭代权威服务器返回的应答，然后把最终查到IP返回给你。<br>2.现在的我计算机要向这台ISPDNS发起请求查询www.baidu.com这个域名了。<br>3.ISPDNS拿到请求后，先检查一下自己的缓存中有没有这个地址，有的话就直接返回。这个时候拿到的ip地址，会被标记为非权威服务器的应答。<br><a id="more"></a><br>4.如果缓存中没有的话，ISPDNS会从配置文件里面读取13个根域名服务器的地址，这些地址是不变的，直接在BIND的配置文件中<br>5.然后向其中一台发起请求。<br>6.根服务器拿到这个请求后，知道他是com.这个顶级域名下的，所以就会返回com域中的NS记录，一般来说是13台主机名和IP。<br>7.然后ISPDNS向其中一台再次发起请求，com域的服务器发现你这请求是baidu.com这个域的，我一查发现了这个域的NS，那我就返回给你，你再去查。<br>（目前百度有4台baidu.com的顶级域名服务器）。<br>8.ISPDNS不厌其烦的再次向baidu.com这个域的权威服务器发起请求，baidu.com收到之后，查了下有www的这台主机，就把这个IP返回给你了，<br>9.然后ISPDNS拿到了之后，将其返回给了客户端，并且把这个保存在高速缓存中。</p>
+<p>1.现在我有一台计算机，通过ISP接入了互联网，那么ISP就会给我分配一个DNS服务器，这个DNS服务器不是权威服务器，而是相当于一个代理的dns解析服务器，他会帮你迭代权威服务器返回的应答，然后把最终查到IP返回给你。</p>
+<p>2.现在的我计算机要向这台ISPDNS发起请求查询www.baidu.com这个域名了。</p>
+<p>3.ISPDNS拿到请求后，先检查一下自己的缓存中有没有这个地址，有的话就直接返回。这个时候拿到的ip地址，会被标记为非权威服务器的应答。</p>
+</blockquote>
+<a id="more"></a>
+<blockquote>
+<p>4.如果缓存中没有的话，ISPDNS会从配置文件里面读取13个根域名服务器的地址，这些地址是不变的，直接在BIND的配置文件中</p>
+<p>5.然后向其中一台发起请求。</p>
+<p>6.根服务器拿到这个请求后，知道他是com.这个顶级域名下的，所以就会返回com域中的NS记录，一般来说是13台主机名和IP。</p>
+<p>7.然后ISPDNS向其中一台再次发起请求，com域的服务器发现你这请求是baidu.com这个域的，我一查发现了这个域的NS，那我就返回给你，你再去查。</p>
+<p>8.ISPDNS不厌其烦的再次向baidu.com这个域的权威服务器发起请求，baidu.com收到之后，查了下有www的这台主机，就把这个IP返回给你了</p>
+<p>9.然后ISPDNS拿到了之后，将其返回给了客户端，并且把这个保存在高速缓存中。</p>
 </blockquote>
 <h3 id="用户在浏览器中输入域名并按下回车键后"><a href="#用户在浏览器中输入域名并按下回车键后" class="headerlink" title="用户在浏览器中输入域名并按下回车键后"></a>用户在浏览器中输入域名并按下回车键后</h3><blockquote>
 <p>第1步，浏览器会检查缓存中有没有这个域名对应的解析过的IP地址，如果缓存中有，这个解析过程就将结束。浏览器缓存域名也是有限制的，不仅浏览器缓存大小有限制，而且缓存的时间也有限制，通常情况下为几分钟到几小时不等，域名被缓存的时间限制可以通过TTL属性来设置。这个缓存时间太长和太短都不好，如果缓存时间太长，一旦域名被解析到的IP有变化，会导致被客户端缓存的域名无法解析到变化后的IP地址，以致该域名不能正常解析，这段时间内有可能会有一部分用户无法访问网站。如果时间设置太短，会导致用户每次访问网站都要重新解析一次域名。</p>
@@ -173,7 +184,8 @@
 <p>第6步，本地域名服务器（Local DNS Server）再向上一步返回的gTLD服务器发送请求。</p>
 <p>第7步，接受请求的gTLD服务器查找并返回此域名对应的Name Server域名服务器的地址，这个NameServer通常就是你注册的域名服务器，例如你在某个域名服务提供商申请的域名，那么这个域名解析任务就由这个域名提供商的服务器来完成。</p>
 <p>第8步，NameServer域名服务器会查询存储的域名和IP的映射关系表，正常情况下都根据域名得到目标IP记录，连同一个TTL值返回给DNSServer域名服务器。</p>
-<p>第9步，返回该域名对应的IP和TTL值，Local DNS Server会缓存这个域名和IP的对应关系，缓存的时间由TTL值控制。<br>第10步，把解析的结果返回给用户，用户根据TTL值缓存在本地系统缓存中，域名解析过程结束。</p>
+<p>第9步，返回该域名对应的IP和TTL值，Local DNS Server会缓存这个域名和IP的对应关系，缓存的时间由TTL值控制。</p>
+<p>第10步，把解析的结果返回给用户，用户根据TTL值缓存在本地系统缓存中，域名解析过程结束。</p>
 </blockquote>
 
       
