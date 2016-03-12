@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://Jarweb.com/2016/03/12/21/index.html">
 <meta property="og:site_name" content="Jar-R">
 <meta property="og:description" content="!important (功能有限)随着IE7对!important的支持, !important 方法现在只针对IE6的兼容.例如:1#example &amp;#123;&amp;#10;&amp;#9;width: 100px !important; /* IE7+FF */&amp;#10;&amp;#9;width: 103px; /* IE6 */&amp;#10;&amp;#125;">
-<meta property="og:updated_time" content="2016-03-12T08:16:12.262Z">
+<meta property="og:updated_time" content="2016-03-12T08:22:21.944Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css js兼容性">
 <meta name="twitter:description" content="!important (功能有限)随着IE7对!important的支持, !important 方法现在只针对IE6的兼容.例如:1#example &amp;#123;&amp;#10;&amp;#9;width: 100px !important; /* IE7+FF */&amp;#10;&amp;#9;width: 103px; /* IE6 */&amp;#10;&amp;#125;">
@@ -127,7 +127,7 @@
   
     <div class="article-meta">
       <a href="/2016/03/12/21/" class="article-date">
-  	<time datetime="2016-03-12T08:16:12.262Z" itemprop="datePublished">2016-03-12</time>
+  	<time datetime="2016-03-12T08:22:21.944Z" itemprop="datePublished">2016-03-12</time>
 </a>
     </div>
   
@@ -200,7 +200,7 @@
 <p>水平居中<br>IE6：使用text-align不但能使文本居中，还能使嵌套的块元素居中。<br>FF2：使用text-align只能使文本居中。<br>解决方法：在需要居中的块元素添加margin:0 auto;</p>
 <p>div高度自适应问题<br>IE6：如果内容的高度超过父元素的高度，父元素的高度会增加。<br>FF2 : 如果内容的高度超过父元素的高度，内容不会隐藏，父元素的高度也不会增加。<br>解决方法：（假定最小高度为50px）<br>在父元素添加min-height:50px;height:auto !important;height:50px;visibility:hidden;</p>
 <p>我们还没有设置#mydiv的padding，它们理所当然是紧贴边框的。但在IE中，“段落”文字并未紧紧贴住#left。在实际中可能会因此导致内部元素宽度超出外部div固定宽度而引发布局问题。<br>解决问题：是把#mydiv设置为display:inline-block。</p>
-<p>CSS透明<br>IE：filter:progid:DXImageTransform.Microsoft.Alpha(style=0,opacity=60)。<br>FF：opacity:0.6。 </p>
+<p>CSS透明<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IE&#65306;filter:progid:DXImageTransform.Microsoft.Alpha(style=0,opacity=60)&#12290; &#10;FF&#65306;opacity:0.6&#12290;</span><br></pre></td></tr></table></figure></p>
 <p>ul和ol列表缩进问题<br>消除ul、ol等列表的缩进时，样式应写成: {list-style:none;margin:0px;padding:0px;}</p>
 <p>背景透明问题<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IE: filter: progid: DXImageTransform.Microsoft.Alpha(style=0,opacity=60);&#10;IE: filter: alpha(opacity=10);&#10;FF: opacity:0.6;&#10;FF: -moz-opacity:0.10;&#10;&#26368;&#22909;&#20004;&#20010;&#37117;&#20889;&#65292;&#24182;&#23558;opacity&#23646;&#24615;&#25918;&#22312;&#19979;&#38754;</span><br></pre></td></tr></table></figure></p>
 <p>CSS双线凹凸边框<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IE&#65306;border:2px outset;&#12290;&#10;FF&#65306;-moz-border-top-colors:#d4d0c8 white;-moz-border-left-colors:#d4d0c8 white;-moz-border-right-colors:#404040 #808080;-moz-border-bottom-colors:#404040 #808080;</span><br></pre></td></tr></table></figure></p>
