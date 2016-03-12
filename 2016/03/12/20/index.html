@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>angular 笔记一 | Jar-R</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="特性一：双向的数据绑定
+我们想象一下Model是你的应用中的简单事实。你的Model是你用来读取或者更新的部分。数据绑定指令提供了你的Model投射到view的方法。这些投射可以无缝的，毫不影响的应用到web应用中。
+
+特性二：模板
+在AngularJS中，一个模板就是一个HTML文件。但是HTML的内容扩展了，包含了很多帮助你映射model到view的内容.HTML模板将会被浏览器解析到DOM中">
+<meta property="og:type" content="article">
+<meta property="og:title" content="angular 笔记一">
+<meta property="og:url" content="http://Jarweb.com/2016/03/12/20/index.html">
+<meta property="og:site_name" content="Jar-R">
+<meta property="og:description" content="特性一：双向的数据绑定
+我们想象一下Model是你的应用中的简单事实。你的Model是你用来读取或者更新的部分。数据绑定指令提供了你的Model投射到view的方法。这些投射可以无缝的，毫不影响的应用到web应用中。
+
+特性二：模板
+在AngularJS中，一个模板就是一个HTML文件。但是HTML的内容扩展了，包含了很多帮助你映射model到view的内容.HTML模板将会被浏览器解析到DOM中">
+<meta property="og:updated_time" content="2016-03-12T04:11:04.214Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="angular 笔记一">
+<meta name="twitter:description" content="特性一：双向的数据绑定
+我们想象一下Model是你的应用中的简单事实。你的Model是你用来读取或者更新的部分。数据绑定指令提供了你的Model投射到view的方法。这些投射可以无缝的，毫不影响的应用到web应用中。
+
+特性二：模板
+在AngularJS中，一个模板就是一个HTML文件。但是HTML的内容扩展了，包含了很多帮助你映射model到view的内容.HTML模板将会被浏览器解析到DOM中">
+  
+    <link rel="alternative" href="/atom.xml" title="Jar-R" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">任先生在路上</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle" style="margin-bottom:20px;">Good things are coming !</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">列表</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger" style="display:none;"></div>
+  		<h1 class="header-author js-mobile-header hide">任先生在路上</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">任先生在路上</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Good things are coming !</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">列表</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-20" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/12/20/" class="article-date">
+  	<time datetime="2016-03-12T04:11:05.052Z" itemprop="datePublished">2016-03-12</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      angular 笔记一
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="特性一：双向的数据绑定"><a href="#特性一：双向的数据绑定" class="headerlink" title="特性一：双向的数据绑定"></a>特性一：双向的数据绑定</h3><blockquote>
+<p>我们想象一下Model是你的应用中的简单事实。你的Model是你用来读取或者更新的部分。数据绑定指令提供了你的Model投射到view的方法。这些投射可以无缝的，毫不影响的应用到web应用中。</p>
+</blockquote>
+<h3 id="特性二：模板"><a href="#特性二：模板" class="headerlink" title="特性二：模板"></a>特性二：模板</h3><blockquote>
+<p>在AngularJS中，一个模板就是一个HTML文件。但是HTML的内容扩展了，包含了很多帮助你映射model到view的内容.<br>HTML模板将会被浏览器解析到DOM中。DOM然后成为AngularJS编译器的输入。AngularJS将会遍历DOM模板来生成一些指导，即，directive（指令）。所有的指令都负责针对view来设置数据绑定。</p>
+</blockquote>
+<p>###特性三：MVC</p>
+<blockquote>
+<p>针对客户端应用开发AngularJS吸收了传统的MVC基本原则。MVC或者Model-View-Controll设计模式针对不同的人可能意味不同的东西。AngularJS并不执行传统意义上的MVC，更接近于MVVM（Moodel-View-ViewModel)。</p>
+</blockquote>
+<a id="more"></a>
+<blockquote>
+<p>Model<br>model是应用中的简单数据。一般是简单的javascript对象。这里没有必要继承框架的classes，使用proxy对象封装或者使用特别的setter/getter方法来访问。事实上我们处理vanilla javascript的方法就是一个非常好的特性，这种方法使得我们更少使用应用的原型。<br>ViewModel<br>viewmodel是一个用来提供特别数据和方法从而维护指定view的对象。<br>viewmodel是$scope的对象，只存在于AnguarJS的应用中。$scope只是一个简单的js对象，这个对象使用简单的API来侦测和广播状态变化。<br>Controller<br>controller负责设置初始状态和参数化$scope方法用以控制行为。需要指出的controller并不保存状态也不和远程服务互动。<br>View<br>view是AngularJS解析后渲染和绑定后生成的HTML。这个部分帮助你创建web应用的架构。$scope拥有一个针对数据的参考，controller定义行为，view处理布局和互动。</p>
+</blockquote>
+<h3 id="特性四：服务和依赖注入"><a href="#特性四：服务和依赖注入" class="headerlink" title="特性四：服务和依赖注入"></a>特性四：服务和依赖注入</h3><blockquote>
+<p>AngularJS服务其作用就是对外提供某个特定的功能.AngularJS拥有内建的依赖注入（DI）子系统，可以帮助开发人员更容易的开发，理解和测试应用。<br>DI允许你请求你的依赖，而不是自己找寻它们。比如，我们需要一个东西，DI负责找创建并且提供给我们。<br>为了而得到核心的AngularJS服务，只需要添加一个简单服务作为参数，AngularJS会侦测并且提供给你：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function EditCtrl($scope, $location, $routeParams) &#123;&#10;// Something clever here...&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="特性五：指令（Directives）"><a href="#特性五：指令（Directives）" class="headerlink" title="特性五：指令（Directives）"></a>特性五：指令（Directives）</h3><blockquote>
+<p>指令可以用来创建自定义的标签。它们可以用来装饰元素或者操作DOM属性。可以作为标签、属性、注释和类名使用。<br>如下：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myModule.directive(&#39;myComponent&#39;, function(mySharedService) &#123;&#10;&#9;return &#123;&#10;&#9;&#9;restrict: &#39;EACM&#39;,&#10;&#9;&#9;controller: function($scope, $attrs, mySharedService) &#123;&#10;&#9;&#9;&#9;$scope.$on(&#39;handleBroadcast&#39;, function() &#123;&#10;&#9;&#9;&#9;$scope.message = &#39;Directive: &#39; + mySharedService.message; &#125;);&#10;&#9;&#9;&#125;,&#10;&#9;&#9;replace: true,&#10;&#9;&#9;template: &#39;&#39;&#10;&#9;&#125;;&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>$scope是一个把view（一个DOM元素）连结到controller上的对象。在我们的MVC结构里，这个$scope将成为model，它提供一个绑定到DOM元素（以及其子元素）上的excecution context<br>尽管听起来有点复杂，但$scope实际上就是一个JavaScript对象，controller和view都可以访问它，所以我们可以利用它在两者间传递信息。在这个 $scope 对象里，我们既存储数据，又存储将要运行在view上的函数。</p>
+<p>每一个Angular应用都会有一个 $rootScope。这个 $rootScope 是最顶级的scope，它对应着含有 ng-app 指令属性的那个DOM元素。</p>
+<p>$watch没有产生作用或者只生效一次.这种情况一般来说是监听一个字符串或者数字的时候会出现,$scope.$watch(“name”,function(){}).没有生效或者只生效一次,解决方法是$watch尽量监听的是一个对象,将你要监听的值附在一个Object下即可.</p>
+<p>当你使用angularui中的modal时这个比较明显具体的原因是因为$scope的继承因为modal相当于在当前页面的controller中又创建了一个scope,所以对于字面量没法检索追溯原型链,想解决就要有一个对象,才能通过原型链实现跨父子scope的数据刷新绑定.</p>
+<p>用ngif代替ngshowv 一些长列表数据 可能有一些东西是通过默认隐藏点击显示的形式展现的 而这部分可控制显隐的内容中也会伴随很多数据绑定.这个在页面渲染的时候非常影响性能.</p>
+<p>举一个列子,比如说通常angular建议一个页面的数据绑定不超过2000个,假如现在有一个页面直接绑定了2000个model,然后你加载,会发现非常卡.如果你将每100的model设置为ng-show,默认情况下不显示,你会发现还是很卡.然后你将所有的ng-show换成ng-if,你会发现性能瞬间快的像两个应用.原因在ng-show还是会执行其中的所有绑定,ng-if则会在等于true,也就是显示的时候再去执行其中的绑定.这样一来性能就有很大的提高,我之前通过这个简单的修改,页面加载快了10倍左右.</p>
+<p>关于ng-bind-html 通常情况下为html元素绑定数据,有ng-bind就够了,但一些情境下需要绑定的不是一般的数据,而是html.那么ng-bind就不够用了,需要使用ng-bind-html,它会将内容作为html格式输出.比如想输出带有class的html,那么就使用ng-bind-html,而且还需要ngSanitize的配合,需要引入相应的文件.</p>
+<p>获取ng-repeat数据filter后的结果 这个一般在搜索的时候需要用到,比如多重ng-repeat数据形成列表.然后filter一个字段,现在要得到filter之后的结果<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng-repeat=&#34;food in foodCategory._displayfoods = (foodCategory.foods | filter: &#123; &#39;name&#39;: searchobj.foodfilter &#125; | orderBy: food.sort_order)</span><br></pre></td></tr></table></figure></p>
+<p>$resource和$http的$promise<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$q.all([&#10;  resource.query().$promise,&#10;  resource2.query().$promise&#10;]).then(functon(success)&#123;&#10;  console.log(success);&#10;&#125;,functon(error)&#123;&#10;  console.log(error);&#10;&#125;);&#10;&#10;foodFactory.food.save(f).$promise.then(function(result)&#123;&#10;  foodFactory.food.get(&#123;id:result.id&#125;).$promise.then(function(data)&#123;&#125;);&#10;&#125;);&#10;&#10;$scope.$watch(function($scope) &#123;&#10;    return $scope.people.map(function(obj) &#123;&#10;        return obj.persions.map(function(g)&#123;&#10;            return g.name&#10;        &#125;);&#10;    &#125;);&#10;&#125;, function (newVal) &#123;&#10;    $scope.count++;&#10;    $scope.msg = &#39;person name was changed&#39;+ $scope.count;&#10;&#125;, true);</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.controller(&#39;MainCtrl&#39;, function ($scope, $http) &#123;&#10;  $http.get(....).then(.....);&#10;&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>自定义provider　<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#26041;&#27861; 1 &#23545;&#35937;&#23383;&#38754;&#37327;&#10;$provide.provider(&#39;test&#39;, &#123;&#10;   n:1,&#10;   $get: function () &#123;&#10;    &#9; return n;&#10;    &#125;&#10;&#125;);&#10;// &#26041;&#27861; 2 this&#10;$provide.provider(&#39;test&#39;, function () &#123;&#10;   this.n = 2;&#10;   this.$get = function () &#123;&#10;  &#9;&#9; return n;&#10;&#9;&#125;;&#10;&#125;);&#10;// &#20351;&#29992;&#10;app.controller(&#39;MainCtrl&#39;, function ($scope, test) &#123;&#10;    $scope.test = test;&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>provider 的内部实现代码<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function provider(name, provider_) &#123;&#10;  if (isFunction(provider_)) &#123;&#10;      provider_ = providerInjector.instantiate(provider_);&#10;  &#125;&#10;  if (!provider_.$get) &#123;&#10;       throw Error(&#39;Provider &#39; + name + &#39; must define $get factory method.&#39;);&#10;   &#125;&#10;   return providerCache[name + providerSuffix] = provider_;&#10;&#125;&#10;//provider &#30340;&#22522;&#26412;&#21407;&#21017;&#23601;&#26159;&#36890;&#36807;&#23454;&#29616; $get &#26041;&#27861;&#26469;&#36827;&#34892;&#21333;&#20363;&#27880;&#20837;&#65292;&#20351;&#29992;&#26102;&#33719;&#24471;&#30340;&#23601;&#26159; $get &#25191;&#34892;&#21518;&#30340;&#32467;&#26524;&#12290;</span><br></pre></td></tr></table></figure></p>
+<p>定义 factory factory 可以说是 provider 的变种， 方法中的第二个参数就是 $get 中的内容。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$provide.factory(&#39;dd&#39;, function () &#123;&#10;   return new Date();&#10;&#125;);&#10;// &#20351;&#29992;&#10;app.controller(&#39;MainCtrl&#39;, function ($scope, dd) &#123;&#10;    $scope.mydate = dd; &#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>factory 的实现源代码：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function factory(name, factoryFn) &#123;&#10; return provider(name, &#123;&#10;  &#9; $get: factoryFn&#10;&#9;&#9;&#125;);&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>定义 service 在factory的中我们还是需要new 一个对象返回，而service就更简单了,这一步都帮你省了，他的第二个参数就是你要返回的对象类，也就是new的哦给你工作都不用你做了。够清爽吧？<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$provide.service(&#39;dd&#39;, Date);</span><br></pre></td></tr></table></figure></p>
+<p>service 的实现源代码：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function service(name, constructor) &#123;&#10;  return factory(name, [&#39;$injector&#39;, function($injector) &#123;&#10;       return $injector.instantiate(constructor);&#10;   &#125;]);&#10;&#125;&#10;//&#28982;&#21518; factory &#21644; service &#24102;&#26469;&#20195;&#30721;&#31934;&#31616;&#30340;&#21516;&#26102;&#20063;&#25439;&#22833;&#20102;&#19968;&#20123;&#29305;&#24615;&#12290; provider &#23450;&#20041;&#30340;&#26381;&#21153;&#26159;&#21487;&#20197;&#36890;&#36807;&#27169;&#22359; config &#26469;&#37197;&#32622;&#30340;&#12290;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="AngularJS-事件广播与接收"><a href="#AngularJS-事件广播与接收" class="headerlink" title="AngularJS 事件广播与接收　"></a>AngularJS 事件广播与接收　</h3><blockquote>
+<p>发送消息： $scope.$emit(name, data) 或者 $scope.$broadcast(name, data);<br>接收消息： $scope.on(name,function(event,data){ });<br>区别： $emit 广播给父controller   $broadcast 广播给子controller 就是事件传播冒泡和捕获</p>
+<p>broadcast 是从发送者向他的子scope广播一个事件。这里就是ParentController发送ParentController和ChildController 会接受到, 而MainController是不会收到的.</p>
+<p>$emit广播给父controller，父controller 是可以收到消息</p>
+<p>$on有两个参数function(event,msg)  第一个参数是事件对象，第二个参数是接收到消息信息<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">angular.module(&#39;onBroadcastEvent&#39;, [&#39;ng&#39;])&#10;     .controller(&#39;MainController&#39;, function($scope) &#123;&#10;       $scope.$on(&#39;To-MainController&#39;, function(event,msg) &#123;&#10;         console.log(&#39;MainController received:&#39; + msg);&#10;       &#125;);&#10;     &#125;)&#10;     .controller(&#39;ParentController&#39;, function($scope) &#123;&#10;       $scope.click = function (msg) &#123;&#10;         $scope.$emit(&#39;To-MainController&#39;,msg + &#39;,from ParentController to MainController&#39;);&#10;         $scope.$broadcast(&#39;To-ChildController&#39;, msg + &#39;,from ParentController to ChildController&#39;);&#10;         $scope.$broadcast(&#39;To-BrotherController&#39;, msg + &#39;,from ParentController to BrotherController&#39;);&#10;       &#125;&#10;     &#125;)&#10;     .controller(&#39;ChildController&#39;, function($scope)&#123;&#10;       $scope.$on(&#39;To-ChildController&#39;, function(event,msg) &#123;&#10;         console.log(&#39;ChildController received:&#39; + msg);&#10;       &#125;);&#10;     &#125;)&#10;     .controller(&#39;BrotherController&#39;, function($scope)&#123;&#10;       $scope.$on(&#39;To-BrotherController&#39;, function(event, msg) &#123;&#10;         console.log(&#39;BrotherController received:&#39; + msg);&#10;       &#125;);&#10;     &#125;);</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="scope作用域"><a href="#scope作用域" class="headerlink" title="scope作用域"></a>scope作用域</h3><blockquote>
+<p>1、AngularJS中，子作用域一般都会通过JavaScript原型继承机制继承其父作用域的属性和方法。但有一个例外：在directive中使用scope: { … }，这种方式创建的作用域是一个独立的”Isolate”作用域，它也有父作用域，但父作用域不在其原型链上，不会对父作用域进行原型继承。这种方式定义作用域通常用于构造可复用的directive组件.</p>
+<p>2、如果我们在子作用域中访问一个父作用域中定义的属性，JavaScript首先在子作用域中寻找该属性，没找到再从原型链上的父作用域中寻找，如果还没找到会再往上一级原型链的父作用域寻找。在AngularJS中，作用域原型链的顶端是$rootScope，JavaScript寻找到$rootScope为止.</p>
+<p>3、scope:{…}directive创建一个独立的“Isolate”作用域，没有原型继承。这是创建可复用directive组件的最佳选择。因为它不会直接访问/修改父作用域的属性，不会产生意外的副作用。</p>
+</blockquote>
+<h3 id="Isolate-scope-引用修饰符"><a href="#Isolate-scope-引用修饰符" class="headerlink" title="Isolate scope 引用修饰符"></a>Isolate scope 引用修饰符</h3><blockquote>
+<p>1、 = or =attr “Isolate”作用域的属性与父作用域的属性进行双向绑定，任何一方的修改均影响到对方，这是最常用的方式；</p>
+<p>2、 @ or @attr“Isolate”作用域的属性与父作用域的属性进行单向绑定，即“Isolate”作用域只能读取父作用域的值，并且该值永远的String类型；</p>
+<p>3、 &amp; or &amp;attr “Isolate”作用域把父作用域的属性包装成一个函数，从而以函数的方式读写父作用域的属性，包装方法是$parse</p>
+</blockquote>
+<h3 id="directive-与-controller-数据传递和通信"><a href="#directive-与-controller-数据传递和通信" class="headerlink" title="directive 与 controller 数据传递和通信"></a>directive 与 controller 数据传递和通信</h3><blockquote>
+<p>1、父controller监听全局scope(父scope)变量, 并广播事件给子scope(directive scope,每个directvie都有自己独立的scope作用域)</p>
+<p>2、directive 定义本地scope,通过=、@、&amp;(方法)字符显示引用全局scope</p>
+<p>3、directive scope(子scope)通过parent[$scope.$parent.xxx]引用全局scope的属性</p>
+<p>4、directive监听全局scope变量变化,可以通过$scope.$parent.$watch方法</p>
+<p>restrict 它限制directive为指定的声明方式。如果省略的话，directive将仅仅允许通过属性声明<br>E - 元素名称： <my-directive></my-directive><br>A - 属性名： <div my-directive="exp"></div><br>C - class名： <div class="my-directive:exp;"></div><br>M - 注释 ： <!-- directive: my-directive exp --></p>
+<p>angular.bind(self, fn, args)作用：返回一个新的函数，绑定这个函数的this指向self<br>参数：<br>self：新函数的上下文对象<br>fn：需要绑定的函数<br>args：传递给函数的参数<br>返回值：this指向self的新函数<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;&#10;    name: &#39;xxx&#39;,&#10;    print: function (country) &#123;&#10;        console.log(this.name + &#39; is form &#39; + country);&#10;    &#125;&#10;&#125;;&#10;var self = &#123;&#10;    name: &#39;yyy&#39;&#10;&#125;;&#10;var bindFn = angular.bind(self, obj.print, &#39;China&#39;);&#10;//var bindFn = angular.bind(self, obj.print, [&#39;China&#39;]);&#10;obj.print(&#39;American&#39;); //$ xxx is form American&#10;bindFn();&#10;//&#27880;&#24847;&#65306;bind&#20250;&#26681;&#25454;&#20320;&#30340;&#21442;&#25968;&#31867;&#22411;&#26469;&#20915;&#23450;&#35843;&#29992;call&#25110;apply&#65292;&#25152;&#20197;args&#21487;&#20197;&#26159;&#19968;&#20010;&#20010;&#25968;&#25454;&#65292;&#20063;&#21487;&#20197;&#26159;&#19968;&#20010;&#25968;&#32452;&#12290;</span><br></pre></td></tr></table></figure></p>
+<p>angular.copy(source, [destination])作用：对象的深拷贝<br>参数：<br>source：源对象<br>destination：拷贝的对象<br>返回值：拷贝的对象<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;&#10;    name: &#39;xxx&#39;,&#10;    age: 50&#10;&#125;;&#10;var copyObj = angular.copy(obj);&#10;console.log(copyObj); //$ Object &#123;name: &#34;xxx&#34;, age: 50&#125;</span><br></pre></td></tr></table></figure></p>
+<p>angular.equals(o1, o2)作用：正常比较和对象的深比较<br>参数：<br>o1：比较的对象<br>o2：比较的对象<br>返回值：boolean<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">angular.equals(3, 3); //$ true&#10;angular.equals(NaN,NaN); //$ true&#10;angular.equals(&#123;name:&#39;xxx&#39;&#125;,&#123;name:&#39;xxx&#39;&#125;); //$ true&#10;angular.equals(&#123;name:&#39;xxx&#39;&#125;,&#123;name:&#39;yyy&#39;&#125;); //$ false</span><br></pre></td></tr></table></figure></p>
+<p>angular.extend(dst, src)作用：对象的拓展<br>参数：<br>dst：拓展的对象<br>src：源对象<br>返回值：拓展的对象<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var dst = &#123;name: &#39;xxx&#39;, country: &#39;China&#39;&#125;;&#10;var src = &#123;name: &#39;yyy&#39;, age: 10&#125;;&#10;angular.extend(dst, src);&#10;console.log(src); //$ Object &#123;name: &#34;yyy&#34;, age: 10&#125;&#10;console.log(dst); //$ Object &#123;name: &#34;yyy&#34;, country: &#34;China&#34;, age: 10&#125;</span><br></pre></td></tr></table></figure></p>
+<p>angular.forEach(obj, iterator, [context])作用：对象的遍历<br>参数：<br>obj：对象<br>iterator：迭代函数<br>context：迭代函数中上下文<br>返回值：obj<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;name: &#39;xxx&#39;, country: &#39;China&#39;&#125;;&#10;angular.forEach(obj, function (value, key) &#123;&#10;    console.log(key + &#39;:&#39; + value);&#10;&#125;);&#10;//$ name:xxx&#10;//$ country:China&#10;var array = [&#39;xxx&#39;, &#39;yyy&#39;];&#10;angular.forEach(array, function (item, index) &#123;&#10;    console.log(index + &#39;:&#39; + item + &#39; form &#39; + this.country);&#10;&#125;, obj);&#10;//$ 0:xxx form China&#10;//$ 1:yyy form China</span><br></pre></td></tr></table></figure></p>
+<p>angular.fromJson(string)作用：字符串转json对象<br>参数：<br>string：字符串<br>返回值：json对象<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var json = angular.fromJson(&#39;&#123;&#34;name&#34;:&#34;xxx&#34;,&#34;age&#34;:34&#125;&#39;);&#10;console.log(json); //$ Object &#123;name: &#34;xxx&#34;, age: 34&#125;</span><br></pre></td></tr></table></figure></p>
+<p>angular.toJson(json,pretty)作用：json对象转字符串<br>参数：<br>json：json<br>pretty：boolean number 控制字符串输出格式<br>返回值：字符串<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">angular.toJson(&#123;name:&#39;xxx&#39;&#125;);&#10;//$ &#34;&#123;&#34;name&#34;:&#34;xxx&#34;&#125;&#34;&#10;angular.toJson(&#123;name:&#39;xxx&#39;&#125;,true);&#10;//$ &#34;&#123;&#10;//$    &#34;name&#34;: &#34;xxx&#34;&#10;//$ &#125;&#34;&#10;angular.toJson(&#123;name:&#39;xxx&#39;&#125;,10);&#10;//$ &#34;&#123;&#10;//$            &#34;name&#34;: &#34;xxx&#34;&#10;//$ &#125;&#34;</span><br></pre></td></tr></table></figure></p>
+<p>angular.identity(value)作用：返回这个函数的第一个参数<br>参数：<br>value：参数<br>返回值：第一个参数<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(angular.identity(&#39;xxx&#39;,&#39;yyy&#39;)); //$ xxx</span><br></pre></td></tr></table></figure></p>
+<p>angular.isArray(value)作用：判断一个数据是否是数组<br>参数：<br>value：数据<br>返回值：boolean<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">angular.isArray(3); //$ false&#10;angular.isArray([]); //$ true&#10;angular.isArray([1, 2, 3]); //$ true&#10;angular.isArray(&#123;name: &#39;xxx&#39;&#125;); //$ false</span><br></pre></td></tr></table></figure></p>
+<p>angular.isDate(value)作用：判断一个数据是否是Date类型<br>参数：<br>value：数据<br>返回值：boolean<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">angular.isDate(&#39;2012-12-02&#39;); //$ false&#10;angular.isDate(new Date()); //$ true</span><br></pre></td></tr></table></figure></p>
+<p>angular.isDefined(value)作用：判断一个数据是否是defined类型<br>参数：<br>value：数据<br>返回值：boolean<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">angular.isDefined(undefined) //$ false&#10;angular.isDefined([]); //$ true</span><br></pre></td></tr></table></figure></p>
+<p>angular.isUndefined(value)作用：判断一个数据是否是undefined类型<br>参数：<br>value：数据<br>返回值：boolean<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">angular.isUndefined(undefined) //$ true&#10;angular.isUndefined([]); //$ false</span><br></pre></td></tr></table></figure></p>
+<p>angular.isFunction(value)作用：判断一个数据是否是函数<br>参数：<br>value：数据<br>返回值：boolean<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">angular.isFunction(function()&#123;&#125;); //$ true&#10;angular.isFunction(3); //$ false</span><br></pre></td></tr></table></figure></p>
+<p>angular.isNumber(value)作用：判断一个数据是否是Number类型<br>参数：<br>value：数据<br>返回值：boolean<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">angular.isNumber(4); //$ true&#10;angular.isNumber(&#39;xxx&#39;); //$ false&#10;angular.isNumber(new Number(4)); //$ false&#10;angular.isNumber(Number(4)); //$ true</span><br></pre></td></tr></table></figure></p>
+<p>angular.isObject(value)作用：判断一个数据是否是对象<br>参数：<br>value：数据<br>返回值：boolean<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">angular.isObject(&#39;xxx&#39;); //$ false      &#10;angular.isObject(null); //$ false&#10;angular.isObject([]); //$ true&#10;angular.isObject(function()&#123;&#125;); //$ false&#10;angular.isObject(&#123;name:&#39;xxx&#39;&#125;); //$ true</span><br></pre></td></tr></table></figure></p>
+<p>angular.isString(value)作用：判断一个数据是否是字符串<br>参数：<br>value：数据<br>返回值：boolean<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">angular.isString(4); //$ false&#10;angular.isString(&#39;xxx&#39;); //$ true&#10;angular.isString(new String(&#39;xxx&#39;)); //$ false&#10;angular.isString(String(&#39;xxx&#39;)); //$ true</span><br></pre></td></tr></table></figure></p>
+<p>angular.lowercase(string)作用：将字符串大写字母变小写<br>参数：<br>string：字符串<br>返回值：改变后的新字符串<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var newString = angular.lowercase(&#39;XXyyZZ&#39;);&#10;console.log(newString); //$ xxyyzz</span><br></pre></td></tr></table></figure></p>
+<p>angular.uppercase(string)作用：将字符串小写字母变大写<br>参数：<br>string：字符串<br>返回值：改变后的新字符串<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var newString = angular.uppercase(&#39;XXyyZZ&#39;);&#10;console.log(newString); //$ XXYYZZ</span><br></pre></td></tr></table></figure></p>
+<p>angular.noop()作用：空函数<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var flag = false;&#10;flag ? console.log(&#39;xxx&#39;) : angular.noop();</span><br></pre></td></tr></table></figure></p>
+<p>为了让form以及控件、ngModel富有样式，可以增加以下class：<br>ng-valid<br>ng-invalid<br>ng-pristine（从未输入过）<br>ng-dirty（输入过）</p>
+<p>angular为大多数公共的HTML表单域（input，text,number,url,email,radio,checkbox）类型提供了实现，也有一些为了表单验证的directive（required，pattern,，inlength，maxlength，min，max）。</p>
+<p>可以通过定义增加定制验证函数到ngModel controller（这里是连在一起的ngModelController吗？）中的directive来定义我们自己的验证插件。为了得到一个controller，directive如下面的例子那样指定了依赖（directive定义对象中的require属性）。<br>Model到View更新 - 无论什么时候Model发生改变，所有在ngModelController.$formatters（当model发生改变时触发数据有效性验证和格式化转换）数组中的function将排队执行，所以在这里的每一个function都有机会去格式化model的值，并且通过NgModelController.$setValidity（<a href="http://code.angularjs.org/1.0.2/docs/api/ng.directive:ngModel.NgModelController#$setValidity）修改控件的验证状态。" target="_blank" rel="external">http://code.angularjs.org/1.0.2/docs/api/ng.directive:ngModel.NgModelController#$setValidity）修改控件的验证状态。</a><br>View到Model更新 - 一个相似的方式，无论任何时候，用户与一个控件发生交互，将会触发NgModelController.$setViewValue。这时候轮到执行NgModelController$parsers（当控件从DOM中取得值之后，将会执行这个数组中所有的方法，对值进行审查过滤或转换，也进行验证）数组中的所有方法。</p>
+</blockquote>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/03/12/21/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          css js兼容性
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/01/27/11/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">DNS解析</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div>&copy; 2016 任先生在路上 的博客 , 技术 
+        <a href="http://hexo.io/" target="_blank">Hexo</a>  
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
