@@ -6,19 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>css js兼容性 | Jar-R</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="!important (功能有限)随着IE7对!important的支持, !important 方法现在只针对IE6的兼容.例如:1#example &amp;#123;&amp;#10;&amp;#9;width: 100px !important; /* IE7+FF */&amp;#10;&amp;#9;width: 103px; /* IE6 */&amp;#10;&amp;#125;
-所有浏览器 通用 height: 100px;IE6 专">
+  <meta name="description" content="!important (功能有限)随着IE7对!important的支持, !important 方法现在只针对IE6的兼容.例如:1#example &amp;#123;&amp;#10;&amp;#9;width: 100px !important; /* IE7+FF */&amp;#10;&amp;#9;width: 103px; /* IE6 */&amp;#10;&amp;#125;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="css js兼容性">
 <meta property="og:url" content="http://Jarweb.com/2016/03/12/21/index.html">
 <meta property="og:site_name" content="Jar-R">
-<meta property="og:description" content="!important (功能有限)随着IE7对!important的支持, !important 方法现在只针对IE6的兼容.例如:1#example &amp;#123;&amp;#10;&amp;#9;width: 100px !important; /* IE7+FF */&amp;#10;&amp;#9;width: 103px; /* IE6 */&amp;#10;&amp;#125;
-所有浏览器 通用 height: 100px;IE6 专">
-<meta property="og:updated_time" content="2016-03-12T06:05:27.734Z">
+<meta property="og:description" content="!important (功能有限)随着IE7对!important的支持, !important 方法现在只针对IE6的兼容.例如:1#example &amp;#123;&amp;#10;&amp;#9;width: 100px !important; /* IE7+FF */&amp;#10;&amp;#9;width: 103px; /* IE6 */&amp;#10;&amp;#125;">
+<meta property="og:updated_time" content="2016-03-12T08:16:12.262Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css js兼容性">
-<meta name="twitter:description" content="!important (功能有限)随着IE7对!important的支持, !important 方法现在只针对IE6的兼容.例如:1#example &amp;#123;&amp;#10;&amp;#9;width: 100px !important; /* IE7+FF */&amp;#10;&amp;#9;width: 103px; /* IE6 */&amp;#10;&amp;#125;
-所有浏览器 通用 height: 100px;IE6 专">
+<meta name="twitter:description" content="!important (功能有限)随着IE7对!important的支持, !important 方法现在只针对IE6的兼容.例如:1#example &amp;#123;&amp;#10;&amp;#9;width: 100px !important; /* IE7+FF */&amp;#10;&amp;#9;width: 103px; /* IE6 */&amp;#10;&amp;#125;">
   
     <link rel="alternative" href="/atom.xml" title="Jar-R" type="application/atom+xml">
   
@@ -130,7 +127,7 @@
   
     <div class="article-meta">
       <a href="/2016/03/12/21/" class="article-date">
-  	<time datetime="2016-03-12T06:05:28.654Z" itemprop="datePublished">2016-03-12</time>
+  	<time datetime="2016-03-12T08:16:12.262Z" itemprop="datePublished">2016-03-12</time>
 </a>
     </div>
   
@@ -165,6 +162,9 @@
       
         <blockquote>
 <p>!important (功能有限)随着IE7对!important的支持, !important 方法现在只针对IE6的兼容.<br>例如:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#example &#123;&#10;&#9;width: 100px !important; /* IE7+FF */&#10;&#9;width: 103px; /* IE6 */&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<a id="more"></a>
+<blockquote>
 <p>所有浏览器 通用 height: 100px;<br>IE6 专用 _height: 100px;<br>IE7 专用 <em>+height: 100px;<br>IE6、IE7 共用 </em>height: 100px;<br>IE7、FF 共用 height: 100px !important;<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#example &#123; height:100px; &#125; /* FF */&#10;* html #example &#123; height:200px; &#125; /* IE6 */&#10;*+html #example &#123; height:300px; &#125; /* IE7 */&#10;//IE6 - IE7+FF&#10;#example &#123;&#10;height:100px; /* FF+IE7 */&#10;_height:200px; /* IE6 */&#10;&#125;&#10;#example &#123;&#10;height:100px !important; /* FF+IE7 */&#10;height:200px; /* IE6 */&#10;&#125;&#10;//IE6+IE7 - FF&#10;#example &#123;&#10;height:100px; /* FF */&#10;*height:200px; /* IE6+IE7 */&#10;&#125;&#10;//IE6+FF - IE7&#10;#example &#123;&#10;height:100px; /* IE6+FF */&#10;*+height:200px; /* IE7 */&#10;&#125;&#10;//IE6 IE7 FF &#21508;&#19981;&#30456;&#21516;&#10;#example &#123;&#10;height:100px; /* FF */&#10;_height:200px; /* IE6 */&#10;*+height:300px; /* IE7 */&#10;&#125;&#10;&#25110;&#65306;&#10;#example &#123;&#10;height:100px; /* FF */&#10;*height:300px; /* IE7 */&#10;_height:200px; /* IE6 */&#10;&#125;&#10;//&#27880;&#24847;:&#20195;&#30721;&#30340;&#39034;&#24207;&#19968;&#23450;&#19981;&#33021;&#39072;&#20498;&#20102;&#12290;&#22240;&#20026;&#27983;&#35272;&#22120;&#22312;&#35299;&#37322;&#31243;&#24207;&#30340;&#26102;&#20505;&#65292;&#22914;&#26524;&#37325;&#21517;&#30340;&#35805;&#65292;&#20250;&#29992;&#21518;&#38754;&#30340;&#35206;&#30422;&#21069;&#38754;&#30340;</span><br></pre></td></tr></table></figure></p>
 <p>使用IE专用的条件注释<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;!--&#20854;&#20182;&#27983;&#35272;&#22120; --&#62;&#10;&#60;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;css.css&#34; /&#62;&#10;&#60;!--[if IE 7]&#62;&#10;&#60;!-- &#36866;&#21512;&#20110;IE7 --&#62;&#10;&#60;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;ie7.css&#34; /&#62;&#10;&#60;![endif]--&#62;&#10;&#60;!--[if lte IE 6]&#62;&#10;&#60;!-- &#36866;&#21512;&#20110;IE6&#21450;&#20197;&#19979; --&#62;&#10;&#60;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;ie.css&#34; /&#62;&#10;&#60;![endif]--&#62;&#10;//IE&#30340;if&#26465;&#20214;Hack&#10;&#60;!--[if !IE]&#62;&#60;!--&#62; &#38500;IE&#22806;&#37117;&#21487;&#35782;&#21035; &#60;!--&#60;![endif]--&#62;&#10;&#60;!--[if IE]&#62; &#25152;&#26377;&#30340;IE&#21487;&#35782;&#21035; &#60;![endif]--&#62;&#10;&#60;!--[if IE 5.0]&#62; &#21482;&#26377;IE5.0&#21487;&#20197;&#35782;&#21035; &#60;![endif]--&#62;&#10;&#60;!--[if IE 5]&#62; &#20165;IE5.0&#19982;IE5.5&#21487;&#20197;&#35782;&#21035; &#60;![endif]--&#62;&#10;&#60;!--[if gt IE 5.0]&#62; IE5.0&#20197;&#21450;IE5.0&#20197;&#19978;&#29256;&#26412;&#37117;&#21487;&#20197;&#35782;&#21035; &#60;![endif]--&#62;&#10;&#60;!--[if IE 6]&#62; &#20165;IE6&#21487;&#35782;&#21035; &#60;![endif]--&#62;&#10;&#60;!--[if lt IE 6]&#62; IE6&#20197;&#21450;IE6&#20197;&#19979;&#29256;&#26412;&#21487;&#35782;&#21035; &#60;![endif]--&#62;&#10;&#60;!--[if gte IE 6]&#62; IE6&#20197;&#21450;IE6&#20197;&#19978;&#29256;&#26412;&#21487;&#35782;&#21035; &#60;![endif]--&#62;&#10;&#60;!--[if IE 7]&#62; &#20165;IE7&#21487;&#35782;&#21035; &#60;![endif]--&#62;&#10;&#60;!--[if lt IE 7]&#62; IE7&#20197;&#21450;IE7&#20197;&#19979;&#29256;&#26412;&#21487;&#35782;&#21035; &#60;![endif]--&#62;&#10;&#60;!--[if gte IE 7]&#62; IE7&#20197;&#21450;IE7&#20197;&#19978;&#29256;&#26412;&#21487;&#35782;&#21035; &#60;![endif]--&#62;</span><br></pre></td></tr></table></figure></p>
 <p>clearing float<br>１、给父DIV也设上float<br>2、在所有子DIV后新加一个空DIV(不推荐，有些浏览器可以看见空DIV产生的空隙)<br>3、万能 float 闭合<br>给需要闭合的div加上 class=”clearfix” 即可<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.clearfix:after &#123;&#10;content:&#34;.&#34;;&#10;display:block;&#10;height:0;&#10;clear:both;&#10;visibility:hidden;&#10;&#125;&#10;.clearfix &#123;&#10;display:inline-block;&#10;&#125;&#10;/* Hide from IE Mac \*/&#10;.clearfix &#123;display:block;&#125;&#10;/* End hide from IE Mac */&#10;/* end of clearfix */</span><br></pre></td></tr></table></figure></p>
@@ -202,11 +202,11 @@
 <p>我们还没有设置#mydiv的padding，它们理所当然是紧贴边框的。但在IE中，“段落”文字并未紧紧贴住#left。在实际中可能会因此导致内部元素宽度超出外部div固定宽度而引发布局问题。<br>解决问题：是把#mydiv设置为display:inline-block。</p>
 <p>CSS透明<br>IE：filter:progid:DXImageTransform.Microsoft.Alpha(style=0,opacity=60)。<br>FF：opacity:0.6。 </p>
 <p>ul和ol列表缩进问题<br>消除ul、ol等列表的缩进时，样式应写成: {list-style:none;margin:0px;padding:0px;}</p>
-<p>背景透明问题<br>IE: filter: progid: DXImageTransform.Microsoft.Alpha(style=0,opacity=60);<br>IE: filter: alpha(opacity=10);<br>FF: opacity:0.6;<br>FF: -moz-opacity:0.10;<br>最好两个都写，并将opacity属性放在下面</p>
-<p>CSS双线凹凸边框<br>IE：border:2px outset;。<br>FF：-moz-border-top-colors:#d4d0c8 white;-moz-border-left-colors:#d4d0c8 white;-moz-border-right-colors:#404040 #808080;-moz-border-bottom-colors:#404040 #808080;</p>
+<p>背景透明问题<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IE: filter: progid: DXImageTransform.Microsoft.Alpha(style=0,opacity=60);&#10;IE: filter: alpha(opacity=10);&#10;FF: opacity:0.6;&#10;FF: -moz-opacity:0.10;&#10;&#26368;&#22909;&#20004;&#20010;&#37117;&#20889;&#65292;&#24182;&#23558;opacity&#23646;&#24615;&#25918;&#22312;&#19979;&#38754;</span><br></pre></td></tr></table></figure></p>
+<p>CSS双线凹凸边框<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IE&#65306;border:2px outset;&#12290;&#10;FF&#65306;-moz-border-top-colors:#d4d0c8 white;-moz-border-left-colors:#d4d0c8 white;-moz-border-right-colors:#404040 #808080;-moz-border-bottom-colors:#404040 #808080;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <h3 id="JavaScript兼容"><a href="#JavaScript兼容" class="headerlink" title="JavaScript兼容"></a>JavaScript兼容</h3><blockquote>
-<p>children与childNodes<br>IE提供的children、childNodes和firefox下的childNodes的行为是有区别的，firefox下childNodes会把换行和空白字符都算作父节点的子节点，而IE的childNodes和children不会。<br>要在firefox下模拟children的属性我们可以这样做：<br>if (typeof(HTMLElement) != “undefined” &amp;&amp; !window.opera) {<br>  HTMLElement.prototype.<strong>defineGetter</strong>(“children”, function() {<br>    for (var a = [], j = 0, n, i = 0; i &lt; this.childNodes.length; i++) {<br>      n = this.childNodes[i];<br>      if (n.nodeType == 1) {<br>        a[j++] = n;<br>        if (n.name) {<br>          if (!a[n.name])<br>            a[n.name] = [];<br>          a[n.name][a[n.name].length] = n;<br>        }<br>        if (n.id)<br>          a[n.id] = n;<br>      }<br>    }<br>    return a;<br>  });<br>}</p>
+<p>children与childNodes<br>IE提供的children、childNodes和firefox下的childNodes的行为是有区别的，firefox下childNodes会把换行和空白字符都算作父节点的子节点，而IE的childNodes和children不会。<br>要在firefox下模拟children的属性我们可以这样做：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if (typeof(HTMLElement) != &#34;undefined&#34; &#38;&#38; !window.opera) &#123;&#10;  HTMLElement.prototype.__defineGetter__(&#34;children&#34;, function() &#123;&#10;    for (var a = [], j = 0, n, i = 0; i &#60; this.childNodes.length; i++) &#123;&#10;      n = this.childNodes[i];&#10;      if (n.nodeType == 1) &#123;&#10;        a[j++] = n;&#10;        if (n.name) &#123;&#10;          if (!a[n.name])&#10;            a[n.name] = [];&#10;          a[n.name][a[n.name].length] = n;&#10;        &#125;&#10;        if (n.id)&#10;          a[n.id] = n;&#10;      &#125;&#10;    &#125;&#10;    return a;&#10;  &#125;);&#10;&#125;</span><br></pre></td></tr></table></figure></p>
 <p>FireFox获取方式document.getElementById(“idName”)<br>ie使用document.idname或者document.getElementById(“idName”)<br>解决办法：统一使用document.getElementById(“idName”);</p>
 <p>frame问题</p>
 <p><frame src="xxx.html" id="frameId" name="frameName"><br>a)访问frame对象<br>IE：使用window.frameId或者window.frameName来访问这个frame对象，frameId和frameName可以同名；<br>Firefox：只能使用window.frameName来访问这个frame对象；<br>另外，在IE和Firefox中都可以使用window.document.getElementById(“frameId”)来访问这个frame对象；</p>
@@ -214,15 +214,15 @@
 <p>b) 切换frame内容<br>在 IE和Firefox中都可以使用window.document.getElementById(“testFrame”).src = “xxx.html”或window.frameName.location = “xxx.html”来切换frame的内容；<br>如果需要将frame中的参数传回父窗口（注意不是opener，而是parent），可以在frame中使用parent来访问父窗口。例如：<br>parent.document.form1.filename.value=”Aqing”;</p>
 <blockquote>
 <p>firefox与IE的父元素(parentElement)的区别<br>IE：obj.parentElement<br>firefox：obj.parentNode<br>解决方法：因为firefox与IE都支持DOM，因此全部使用obj.parentNode</p>
-<p>innerText的问题<br>innerText在IE中能正常工作，但是innerText在FireFox中却不行，需用textContent；<br>解决方法：<br>if (navigator.appName.indexOf(“Explorer”) &gt; -1) {<br>  document.getElementById(‘element’).innerText = “my text”;<br>} else {<br>  document.getElementById(‘element’).textContent = “my text”;<br>}</p>
-<p>AJAX获取XMLHTTP的区别<br>var xmlhttp;<br>if (window.XMLHttpRequest) {<br>  xmlhttp = new XMLHttpRequest();<br>} elseif (window.ActiveXObject) { // IE的获取方式<br>  xmlhttp = new ActiveXObject(“Microsoft.XMLHTTP”);<br>}</p>
+<p>innerText的问题<br>innerText在IE中能正常工作，但是innerText在FireFox中却不行，需用textContent；<br>解决方法：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if (navigator.appName.indexOf(&#34;Explorer&#34;) &#62; -1) &#123;&#10;  document.getElementById(&#39;element&#39;).innerText = &#34;my text&#34;;&#10;&#125; else &#123;&#10;  document.getElementById(&#39;element&#39;).textContent = &#34;my text&#34;;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>AJAX获取XMLHTTP的区别<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var xmlhttp;&#10;if (window.XMLHttpRequest) &#123;&#10;  xmlhttp = new XMLHttpRequest();&#10;&#125; elseif (window.ActiveXObject) &#123; // IE&#30340;&#33719;&#21462;&#26041;&#24335;&#10;  xmlhttp = new ActiveXObject(&#34;Microsoft.XMLHTTP&#34;);&#10;&#125;</span><br></pre></td></tr></table></figure></p>
 <p>event.x与event.y问题<br>说明:IE下,even对象有x,y属性,但是没有pageX,pageY属性;<br>Firefox下,even对象有pageX,pageY属性,但是没有x,y属性.<br>解决方法:使用mX(mX = event.x ? event.x :event.pageX;)来代替IE下的event.x或者Firefox下的event.pageX. </p>
 <p>window.location.href问题<br>说明:IE或者Firefox2.0.x下,可以使用window.location或window.location.href;<br>Firefox1.5.x下,只能使用window.location.<br>解决方法:使用window.location来代替window.location.href. </p>
 <p>firefox不支持hand，但ie支持pointer<br>解决方法:   统一使用pointer</p>
 <p>FireFox中设置HTML标签的style时，所有位置性和字体尺寸的值必须后跟px。这个ie也是支持的。</p>
 <p>document.form.item 问题<br>问题：<br>代码中存在 document.formName.item(“itemName”) 这样的语句，不能在FF下运行<br>解决方法：<br>改用 document.formName.elements[“elementName”]</p>
 <p>集合类对象问题<br>问题：<br>代码中许多集合类对象取用时使用()，IE能接受，FF不能<br>解决方法：<br>改用 [] 作为下标运算，例：<br>document.getElementsByName(“inputName”)(1) 改为 document.getElementsByName(“inputName”)[1]</p>
-<p>window.event<br>问题：<br>使用 window.event 无法在FF上运行<br>解决方法：<br>FF的 event 只能在事件发生的现场使用，此问题暂无法解决。可以把 event 传到函数里变通解决：<br>onMouseMove = “functionName(event)”<br>function functionName (e) {<br>    e = e || window.event;<br>    ……<br>}</p>
+<p>window.event<br>问题：<br>使用 window.event 无法在FF上运行<br>解决方法：<br>FF的 event 只能在事件发生的现场使用，此问题暂无法解决。可以把 event 传到函数里变通解决：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">onMouseMove = &#34;functionName(event)&#34;&#10;function functionName (e) &#123;&#10;    e = e || window.event;&#10;    ......&#10;&#125;</span><br></pre></td></tr></table></figure></p>
 <p>HTML对象的 id 作为对象名的问题<br>问题：<br>在IE中，HTML对象的 ID 可以作为 document 的下属对象变量名直接使用，在FF中不能<br>解决方法：<br>使用对象变量时全部用标准的 getElementById(“idName”)</p>
 <p>关于frame<br>问题：<br>在IE中可以用 window.testFrame 取得该frame，FF中不行<br>解决方法：<br>window.top.document.getElementById(“testFrame”).src = ‘xx.htm’<br>window.top.frameName.location = ‘xx.htm’</p>
 <p>取得元素的属性<br>在FF中，自己定义的属性必须 getAttribute() 取得</p>
@@ -234,11 +234,11 @@
 <p>innerText的问题<br>问题：<br>innerText 在IE中能正常工作，但是 innerText 在FireFox中却不行<br>解决方法：<br>在非IE浏览器中使用textContent代替innerText</p>
 <p>event.srcElement和event.toElement问题<br>问题：<br>IE下，even对象有srcElement属性，但是没有target属性；Firefox下，even对象有target属性，但是没有srcElement属性<br>解决方法：<br>var source = e.target || e.srcElement;<br>var target = e.relatedTarget || e.toElement;</p>
 <p>禁止选取网页内容<br>问题：<br>FF需要用CSS禁止，IE用JS禁止<br>解决方法：<br>IE: obj.onselectstart = function() {return false;}<br>FF: -moz-user-select:none;</p>
-<p>捕获事件<br>问题：<br>FF没有setCapture()、releaseCapture()方法<br>解决方法：<br>IE:<br>obj.setCapture();<br>obj.releaseCapture();<br>FF:<br>window.captureEvents(Event.MOUSEMOVE|Event.MOUSEUP);<br>window.releaseEvents(Event.MOUSEMOVE|Event.MOUSEUP);<br>if (!window.captureEvents) {<br>       o.setCapture();<br>}else {<br>       window.captureEvents(Event.MOUSEMOVE|Event.MOUSEUP);<br>}<br>if (!window.captureEvents) {<br>       o.releaseCapture();<br>}else {<br>       window.releaseEvents(Event.MOUSEMOVE|Event.MOUSEUP);<br>}</p>
-<p>window.event问题<br>说明:window.event只能在IE下运行,而不能在Firefox下运行,这是因为Firefox的event只能在事件发生的现场使用.   Firefox必须从源处加入event作参数传递。Ie忽略该参数，用window.event来读取该event。<br>解决方法:<br>function Submitted(evt){<br>evt=evt?evt:(window.event?window.event:null);<br>}</p>
+<p>捕获事件<br>问题：<br>FF没有setCapture()、releaseCapture()方法<br>解决方法：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IE:&#10;obj.setCapture();&#10;obj.releaseCapture();&#10;FF:&#10;window.captureEvents(Event.MOUSEMOVE|Event.MOUSEUP);&#10;window.releaseEvents(Event.MOUSEMOVE|Event.MOUSEUP);&#10;if (!window.captureEvents) &#123;&#10;       o.setCapture();&#10;&#125;else &#123;&#10;       window.captureEvents(Event.MOUSEMOVE|Event.MOUSEUP);&#10;&#125;&#10;if (!window.captureEvents) &#123;&#10;       o.releaseCapture();&#10;&#125;else &#123;&#10;       window.releaseEvents(Event.MOUSEMOVE|Event.MOUSEUP);&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>window.event问题<br>说明:window.event只能在IE下运行,而不能在Firefox下运行,这是因为Firefox的event只能在事件发生的现场使用.   Firefox必须从源处加入event作参数传递。Ie忽略该参数，用window.event来读取该event。<br>解决方法:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function Submitted(evt)&#123;&#10;evt=evt?evt:(window.event?window.event:null);&#10;&#125;</span><br></pre></td></tr></table></figure></p>
 <p>event.srcElement问题<br>说明:IE下,event对象有srcElement属性,但是没有target属性;<br>Firefox下,even对象有target属性,但是没有srcElement属性.<br>解 决方法:使用obj(obj = event.srcElement ? event.srcElement : event.target;)来代替IE下的event.srcElement或者Firefox下的event.target. 请同时注意event的兼容性问题。</p>
 <p>事件委托方法<br>IE：document.body.onload = inject;   //Function   inject()在这之前已被实现<br>Firefox：document.body.onload = inject();</p>
-<p>ie,firefox以及其它浏览器对于table标签的操作都各不相同，在ie中不允许对table和tr的innerHTML赋值，使用js增加一个tr时，使用appendChild方法也不管用。<br>解决方法：<br>//向table追加一个空行：<br>var row = otable.insertRow(-1);<br>var cell = document.createElement(“td”);<br>cell.innerHTML =””;<br>cell.className =”XXXX”;<br>row.appendChild(cell);</p>
+<p>ie,firefox以及其它浏览器对于table标签的操作都各不相同，在ie中不允许对table和tr的innerHTML赋值，使用js增加一个tr时，使用appendChild方法也不管用。<br>解决方法：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#21521;table&#36861;&#21152;&#19968;&#20010;&#31354;&#34892;&#65306;&#10;var row = otable.insertRow(-1);&#10;var cell = document.createElement(&#34;td&#34;);&#10;cell.innerHTML =&#34;&#34;;&#10;cell.className =&#34;XXXX&#34;;&#10;row.appendChild(cell);</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 
       
@@ -249,18 +249,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/03/12/22/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          移动开发知识
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/03/12/20/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">angular 笔记一</div>
+    <a href="/2016/03/12/22/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">移动开发知识</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
