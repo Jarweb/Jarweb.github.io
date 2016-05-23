@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>了解Object | Jar-R</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Object从上面的输出中挑选出一些常用方法和属性，会得到下面的列表：
+
+
+create⑤
+defineProperty⑤
+defineProperties⑤
+getPrototypeOf⑤
+getOwnPropertyDescriptor⑤
+keys⑤
+getOwnPropertyNames⑤
+preventExtensions⑤
+isExtensible⑤
+seal⑤
+isSealed⑤
+fr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="了解Object">
+<meta property="og:url" content="http://Jarweb.com/2016/05/24/了解Object/index.html">
+<meta property="og:site_name" content="Jar-R">
+<meta property="og:description" content="Object从上面的输出中挑选出一些常用方法和属性，会得到下面的列表：
+
+
+create⑤
+defineProperty⑤
+defineProperties⑤
+getPrototypeOf⑤
+getOwnPropertyDescriptor⑤
+keys⑤
+getOwnPropertyNames⑤
+preventExtensions⑤
+isExtensible⑤
+seal⑤
+isSealed⑤
+fr">
+<meta property="og:updated_time" content="2016-05-23T17:31:03.388Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="了解Object">
+<meta name="twitter:description" content="Object从上面的输出中挑选出一些常用方法和属性，会得到下面的列表：
+
+
+create⑤
+defineProperty⑤
+defineProperties⑤
+getPrototypeOf⑤
+getOwnPropertyDescriptor⑤
+keys⑤
+getOwnPropertyNames⑤
+preventExtensions⑤
+isExtensible⑤
+seal⑤
+isSealed⑤
+fr">
+  
+    <link rel="alternative" href="/atom.xml" title="Jar-R" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">任先生在路上</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle" style="margin-bottom:20px;">Good things are coming !</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">列表</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger" style="display:none;"></div>
+  		<h1 class="header-author js-mobile-header hide">任先生在路上</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">任先生在路上</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Good things are coming !</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">列表</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-了解Object" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/24/了解Object/" class="article-date">
+  	<time datetime="2016-05-23T17:31:03.388Z" itemprop="datePublished">2016-05-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      了解Object
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>Object从上面的输出中挑选出一些常用方法和属性，会得到下面的列表：</p>
+</blockquote>
+<ul>
+<li>create⑤</li>
+<li>defineProperty⑤</li>
+<li>defineProperties⑤</li>
+<li>getPrototypeOf⑤</li>
+<li>getOwnPropertyDescriptor⑤</li>
+<li>keys⑤</li>
+<li>getOwnPropertyNames⑤</li>
+<li>preventExtensions⑤</li>
+<li>isExtensible⑤</li>
+<li>seal⑤</li>
+<li>isSealed⑤</li>
+<li>freeze⑤</li>
+<li>isFrozen⑤</li>
+</ul>
+<blockquote>
+<p>带⑤的为es5新增的方法。</p>
+</blockquote>
+<a id="more"></a>
+<blockquote>
+<p>createObject.create() 方法创建一个拥有指定原型和若干个指定属性的对象。<br>Object.create(proto [, propertiesObject ])</p>
+</blockquote>
+<ul>
+<li>proto 为新创建对象的原型对象，设置为null可创建没有原型的空对象。</li>
+<li>propertiesObject 包涵若干个属性的描述符和defineProperties的第二个参数一样。<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object.create(Object.prototype, &#123; a: &#123; value: 1, writable: true, configurable: true &#125; &#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>创建一个继承自Object.prototype的对象，有一个属性a，其可写，可配置，不可枚举，值为1。</p>
+<blockquote>
+<p>definePropertyObject.defineProperty() 方法直接在一个对象上定义一个新属性，或者修改一个已经存在的属性， 并返回这个对象。<br>Object.defineProperty(obj, prop, descriptor)</p>
+</blockquote>
+<p>descriptor 可包含4个属性，如下： </p>
+<ul>
+<li>configurable当且仅当这个属性描述符值为true时，该属性可能会改变，也可能会被从相应的对象删除。默认为 false。 </li>
+<li>enumerable true 当且仅当该属性出现在相应的对象枚举属性中。默认为 false。 </li>
+<li>value 属性的值 - writable 定义属性值是否可写。 </li>
+<li>get一个给属性提供getter的方法，如果没有getter则为undefined。方法将返回用作属性的值。默认为 undefined。 </li>
+<li>set 同get一起使用，功能互补。</li>
+</ul>
+<p>其中value和writable一组，get和set一组，不可同时出现。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#26174;&#24335;&#10;Object.defineProperty(obj, &#34;key&#34;, &#123;&#10;        enumerable: false,&#10;        configurable: false,&#10;        writable: false,&#10;        value: &#34;static&#34;&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>上面给obj对象定义了一个属性key，其不可枚举，不可配置，只读，值为static。</p>
+<blockquote>
+<p>definePropertiesObject.defineProperties()方法在一个对象上添加或修改一个或者多个自有属性，并返回该对象。<br>Object.defineProperties(obj, props)</p>
+<p>getPrototypeOfObject.getPrototypeOf() 方法返回指定对象的原型（也就是该对象内部属性[[Prototype]]的值）。<br>Object.getPrototypeOf(object)可以用来获取对象的原型。</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object.getPrototypeOf(&#123;&#125;) === Object.prototype&#10;// &#62; true</span><br></pre></td></tr></table></figure>
+<p>在es5之前，要达到上面同样的方法，只能使用 constructor。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(&#123;&#125;).constructor.prototype === Object.prototype&#10;// &#62; true</span><br></pre></td></tr></table></figure>
+<p>但对于自定义的构造函数，如果复写了prototype，可能导致获取的constructor不正确</p>
+<blockquote>
+<p>getOwnPropertyDescriptorObject.getOwnPropertyDescriptor() 返回指定对象上一个自有属性对应的属性描述符。（自有属性指的是直接赋予该对象的属性，不需要从原型链上进行查找的属性）<br>Object.getOwnPropertyDescriptor(obj, prop)</p>
+</blockquote>
+<p>可用来获取或查看对象属性的特性。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;a: 1&#125;;&#10;Object.getOwnPropertyDescriptor(obj, &#39;a&#39;);&#10;// &#62; Object &#123;value: 1, writable: true, enumerable: true, configurable: true&#125;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>keysObject.keys() 方法会返回一个由给定对象的所有可枚举自身属性的属性名组成的数组，数组中属性名的排列顺序和使用for-in循环遍历该对象时返回的顺序一致（两者的主要区别是for-in还会遍历出一个对象从其原型链上继承到的可枚举属性）。<br>Object.keys(obj)</p>
+</blockquote>
+<p>典型的用法如下：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;a: 1, b: 2&#125;;&#10;console.log(Object.keys(obj));&#10;// &#62; [&#34;a&#34;, &#34;b&#34;]</span><br></pre></td></tr></table></figure></p>
+<p>keys可以用来代替原来的for in循环，借助es5新增的数组方法，可提升代码可读性。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object.keys(obj).forEach(function (val) &#123;console.log(val)&#125;);&#10;`</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>getOwnPropertyNamesObject.getOwnPropertyNames()方法返回一个由指定对象的所有自身属性的属性名（包括不可枚举属性）组成的数组。<br>Object.getOwnPropertyNames(obj)</p>
+</blockquote>
+<p>其和Object.keys的区别就是能够获取自身的全部属性，包括不可枚举属性。</p>
+<blockquote>
+<p>preventExtensionsObject.preventExtensions() 方法让一个对象变的不可扩展，也就是永远不能再添加新的属性。<br>Object.preventExtensions(obj)</p>
+</blockquote>
+<p>需要注意的是不可扩展的对象的属性通常仍然可以被删除。<br>尝试给一个不可扩展对象添加新属性的操作将会失败，在非严格模式下是静默的，在严格模式下会抛出TypeError异常。</p>
+<blockquote>
+<p>Object.preventExtensions 只能阻止一个对象不能再添加新的自身属性，仍然可以为该对象的原型添加属性。<br>在 ECMAScript 5 中可扩展的对象可以变得不可扩展，但反过来不行。</p>
+<p>isExtensibleObject.isExtensible() 方法判断一个对象是否是可扩展的（是否可以在它上面添加新的属性）。</p>
+<p>sealObject.seal() 方法可以让一个对象密封，并返回被密封后的对象。密封对象是指那些不能添加新的属性，不能删除已有属性，以及不能修改已有属性的可枚举性、可配置性、可写性，但可能可以修改已有属性的值的对象。<br>Object.seal(obj)</p>
+</blockquote>
+<p>密封一个对象会让这个对象变的变为不可扩展的，且所有已有属性会变的不可配置。属性不可配置的效果就是属性变的不可删除，以及一个数据属性不能被重新定义成为访问器属性，或者反之。但属性的值仍然可以修改。<br>尝试删除一个密封对象的属性或者将某个密封对象的属性从数据属性转换成访问器属性，结果会静默失败或抛出TypeError异常（严格模式）。</p>
+<blockquote>
+<p>isSealedObject.isSealed() 方法判断一个对象是否是密封的（sealed）。</p>
+<p>freezeObject.freeze() 方法可以冻结一个对象。冻结对象是指那些不能添加新的属性，不能修改已有属性的值，不能删除已有属性，以及不能修改已有属性的可枚举性、可配置性、可写性的对象。也就是说，这个对象永远是不可变的。该方法返回被冻结的对象。<br>Object.freeze(obj)</p>
+</blockquote>
+<p>冻结对象是不可扩展的，密封的，同时期值属性的writable会被设置为false，set也将失效，总之会变为不可更改。任何尝试修改该对象的操作都会失败，可能是静默失败，也可能会抛出异常（严格模式）。</p>
+<blockquote>
+<p>isFrozenObject.isFrozen() 方法判断一个对象是否被冻结（frozen）。</p>
+<p>Object.prototypeObject.prototype上的方法，都是实例方法，必须在对象实例上调用。</p>
+<p>hasOwnPropertyhasOwnProperty() 方法用来判断某个对象是否含有指定的自身属性。<br>obj.hasOwnProperty(prop)</p>
+</blockquote>
+<p>在没有Object.keys之前，借助hasOwnProperty，可以让for in 达到类似的效果，代码如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for(var key in obj) &#123;&#10;    if (obj.hasOwnProperty(key)) &#123;&#10;            //&#36807;&#28388;&#25481;&#21407;&#22411;&#19978;&#30340;&#26041;&#27861;&#10;    &#125;       &#10;&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>isPrototypeOfisPrototypeOf() 方法测试一个对象是否存在于另一个对象的原型链上。<br>prototype.isPrototypeOf(object)</p>
+<p>propertyIsEnumerablepropertyIsEnumerable() 方法返回一个布尔值，表明指定的属性名是否是当前对象可枚举的自身属性。<br>obj.propertyIsEnumerable(prop)</p>
+</blockquote>
+<p>从原型链上继承的属性,所以该方法会返回false。<br>如果对象没有指定的属性，该方法返回 false。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/05/24/判断类型/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          判断类型
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/05/24/快捷/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">sublime快捷键</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div>&copy; 2016 任先生在路上 的博客 , 技术 
+        <a href="http://hexo.io/" target="_blank">Hexo</a>  
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
