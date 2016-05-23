@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>关于对象 | Jar-R</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="对象字面值不能正确解析问题：{a:1}.a报错，错误Uncaught SyntaxError: Unexpected token .
+
+解决：({a:1}.a) // 或({a:1}).a
+原因：就是声明对象字面值时，语句开头不应该用{，因为js解释器会认为这是语句块（block）的开始。同理，类似问题{ name: “mc”, id: 1 }会报错Uncaught SyntaxError: Un">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于对象">
+<meta property="og:url" content="http://Jarweb.com/2016/03/22/关于对象/index.html">
+<meta property="og:site_name" content="Jar-R">
+<meta property="og:description" content="对象字面值不能正确解析问题：{a:1}.a报错，错误Uncaught SyntaxError: Unexpected token .
+
+解决：({a:1}.a) // 或({a:1}).a
+原因：就是声明对象字面值时，语句开头不应该用{，因为js解释器会认为这是语句块（block）的开始。同理，类似问题{ name: “mc”, id: 1 }会报错Uncaught SyntaxError: Un">
+<meta property="og:updated_time" content="2016-05-23T17:56:41.265Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于对象">
+<meta name="twitter:description" content="对象字面值不能正确解析问题：{a:1}.a报错，错误Uncaught SyntaxError: Unexpected token .
+
+解决：({a:1}.a) // 或({a:1}).a
+原因：就是声明对象字面值时，语句开头不应该用{，因为js解释器会认为这是语句块（block）的开始。同理，类似问题{ name: “mc”, id: 1 }会报错Uncaught SyntaxError: Un">
+  
+    <link rel="alternative" href="/atom.xml" title="Jar-R" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">任先生在路上</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle" style="margin-bottom:20px;">Good things are coming !</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">列表</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger" style="display:none;"></div>
+  		<h1 class="header-author js-mobile-header hide">任先生在路上</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">任先生在路上</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Good things are coming !</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">列表</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-关于对象" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/22/关于对象/" class="article-date">
+  	<time datetime="2016-03-21T16:00:00.000Z" itemprop="datePublished">2016-03-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      关于对象
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>对象字面值不能正确解析问题：<br>{a:1}.a报错，错误Uncaught SyntaxError: Unexpected token .</li>
+</ol>
+<p>解决：<br>({a:1}.a) // 或({a:1}).a</p>
+<p>原因：<br>就是声明对象字面值时，语句开头不应该用{，因为js解释器会认为这是语句块（block）的开始。<br>同理，类似问题{ name: “mc”, id: 1 }会报错Uncaught SyntaxError: Unexpected token :也是这个道理。({ name: “mc”, id: 1 })即可正确解析。但稍注意下，{name: “mc”}是不会报错的，它等同于name: “mc”，并返回一个字符串”mc”。</p>
+<a id="more"></a>
+<ol>
+<li>数字的点操作符问题：123.toFixed(2)报错，<br>错误Uncaught SyntaxError: Unexpected token ILLEGAL</li>
+</ol>
+<p>解决：<br>(123).toFixed(2) // &gt;&gt; “123.00” // 以下两种都可以，但完全不推荐 123..toFixed(2) 123 .toFixed(2)</p>
+<p>原因：<br>很简单，js解释器会把数字后的.当做小数点而不是点操作符。</p>
+<ol>
+<li>连等赋值问题问题：尝试解释下连等赋值的过程。下面的代码为什么是这样的输出？<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;n: 1&#125;; var b = a; a.x = a = &#123;n: 2&#125;; console.log(a.x);&#10;// --&#62; undefined  console.log(b.x);&#10;// --&#62; &#123;n:2&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>原因：<br>我们可以先尝试交换下连等赋值顺序（a = a.x = {n: 2};），可以发现输出不变，即顺序不影响结果。<br>那么现在来解释对象连等赋值的问题：按照es5规范，题中连等赋值等价于<br>a.x = (a = {n: 2});，按优先获取左引用（lref），然后获取右引用（rref）的顺序，a.x和a中的a都指向了{n: 1}。至此，至关重要或者说最迷惑的一步明确。(a = {n: 2})执行完成后，变量a指向{n: 2}，并返回{n: 2};接着执行a.x = {n: 2}，这里的a就是b（指向{n: 1}），所以b.x就指向了{n: 2}。</p>
+<ol>
+<li>逗号操作符问题： 下面的代码返回什么，为什么？<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var x = 20; var temp = &#123;&#10;    x: 40, foo: function() &#123; var x = 10; return this.x;&#10;    &#125;&#10;&#125;;&#10;(temp.foo, temp.foo)(); // 20&#65292;&#32780;&#19981;&#26159;40</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>原因：<br>即逗号操作符会从左到右计算它的操作数，返回最后一个操作数的值。所以(temp.foo, temp.foo)();等价于var fun = temp.foo; fun();，fun调用时this指向window，所以返回20。</p>
+<ol>
+<li>parseInt传入数字问题： parseInt传入数字时为什么有以下输出？<br>parseInt(0.000008) // &gt;&gt; 0 parseInt(0.0000008) // &gt;&gt; 8</li>
+</ol>
+<p>原因：<br>parseInt(arg)时会调用arg.toString()。<br>(0.000008).toString() // “0.000008” (0.0000008).toString() // “8e-7”</p>
+<ol>
+<li>前端面试题，利用给定接口获得闭包内部对象问题： 前端面试题，利用给定接口获得闭包内部对象<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var o = (function() &#123; &#10;    var person = &#123;&#10;        name: &#39;Vincent&#39;,&#10;        age: 24,&#10;    &#125;; &#10;    return &#123; &#10;        run: function(k) &#123; &#10;            return person[k];&#10;        &#125;,&#10;    &#125;&#10;&#125;());</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>在不改变上面的代码情况下， 怎么得到原有的 person 对象？<br>解决：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object.defineProperty(Object.prototype, &#39;self&#39;, &#123; &#10;    get: function() &#123; &#10;            return this;&#10;    &#125;,&#10;    configurable: true &#10;&#125;); &#10;o.run(&#39;self&#39;); // &#36755;&#20986; person</span><br></pre></td></tr></table></figure></p>
+<p>但如果加上person.<strong>proto</strong> = null，目前还没找到解决方法。</p>
+<ol>
+<li>原型链导致的属性更改无效问题： 看下面的代码，为什么obj.x = 100的赋值无效？<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var proto = Object.create(&#123;&#125;, &#123;&#10;    x: &#123;&#10;        value: 1,&#10;        writable: false &#10;    &#125;&#10;&#125;); &#10;var obj = Object.create(proto); &#10;obj.x = 100; // &#26080;&#25928;&#65292;strict mode&#19979;&#25253;&#38169;&#65306; Uncaught TypeError &#10;console.log(obj.x); // 1</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>原因：<br>本题中，obj.x实际指向proto.x，writable: false阻止了赋值。</p>
+<ol>
+<li>位操作符问题： 实现浮点数转整数，或者说取出数字的整数部分。比如-12.921 –&gt; -12，12.921 –&gt; 12等等。</li>
+</ol>
+<p>解决：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function convertToInt(num) &#123; &#10;    return num &#62;&#62; 0;&#10;&#125; &#10;convertToInt(-Math.PI); // -3 &#10;convertToInt(12.921); // 12</span><br></pre></td></tr></table></figure></p>
+<p>原因：<br>没有什么高达上，就是神奇的位操作符：有符号右移&gt;&gt;，The Signed Right Shift Operator ( &gt;&gt; ) ：</p>
+<ol>
+<li>Let lnum be ToInt32(lval).<br>本题利用了有符号右移会将左操作数转换为32位整数。<br>补充：<br>同理，num | 0也是可以的。</li>
+</ol>
+<ol>
+<li>IEEE-754精度问题问题： 0.1 + 0.2 ！== 0.3 // true<br>原因：<br>所有使用IEEE-754数字实现的编程语言都有这个问题。<br>0.1和0.2的二进制浮点数表示并不是精确的，所以相加后不等于0.3。这个相加的结果接近0.30000000000000004。</li>
+</ol>
+<p>那么你一定想要比较相加后的结果和预期数字怎么办？宽容比较，即允许一定误差，这个误差值一般是2^-52 (2.220446049250313e-16)。</p>
+<ol>
+<li>Function.prototype.call/apply 的 this 问题问题： 下列情况中this为什么是这样的？<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function nsm() &#123;&#10;console.log(this);&#125; &#10;nsm(); &#10;// Window&#123;top: xxxx&#125; &#10;nsm.call(null/undefined); &#10;// Window&#123;top: xxxx&#125; nsm.call(1); &#10;// Number &#123;[[PrimitiveValue]]: 1&#125; &#10;function sm() &#123;&#39;use strict&#39;; console.log(this);&#125; sm(); &#10;// undefined sm.call(null); &#10;// null sm.call(undefined); &#10;// undefined sm.call(1); // 1</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>原因：<br>非严格模式下，this默认指向全局对象，call/apply显式指定this参数时也会强制转换参数为对象（如果不是对象）。其中，null/undefined被替换为全局对象，基础类型被转换为包装对象。</p>
+<p>严格模式下，this默认为undefined，且call/apply显式指定this参数时也不会有强制转换。</p>
+<ol>
+<li>给基础类型添加属性无效问题： 为什么给基础类型添加属性不报错但又无效？<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var num = 1; num.prop = 2; num.prop // undefined</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>原因：<br>num.prop 等同于 Object(num).prop，也就是说我们添加属性到一个新建的对象上，与num没任何关系。</p>
+<ol>
+<li>数组的展开/扁平问题： <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[1,2,[2,3,[4,5]]]---&#62;[1,2,2,3,4,5]&#10;function flatten(arr) &#123; &#10;    if(!isArray(arr) || !arr.length) &#123; &#10;        return [];&#10;    &#125; else &#123; &#10;        return Array.prototype.concat.apply([], arr.map(function(val) &#123; &#10;                return isArray(val) ? flatten(val) : val;&#10;        &#125;));&#10;    &#125; &#10;    function isArray(arr) &#123; &#10;        return Object.prototype.toString.call(arr).slice(8, -1).toLowerCase() === &#39;array&#39;;&#10;    &#125;&#10;&#125; &#10;flatten([1,2,[2,3,[4,5]]]); // [1, 2, 2, 3, 4, 5]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>另外，看到一种方法：利用array.toString()然后重新解析也可以完成，但此时数组元素类型丢失。这种方法利用了ToString(array)会转换成”x,y,z…”。</p>
+<ol>
+<li>jQuery.trigger的extraParameters为undefined的问题问题： 下面slider为什么是undefined？<br>// self 为 某对象<br>$slider.trigger(‘slideend’, self);<br>// 监听<br>$dom.on(‘slideend’, function(ev, slider) {<br>// Uncaught TypeError: Cannot read property ‘value’ of undefined<br>console.log(slider.value);<br>// slider 为 undefined });<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;&#21018;&#30475;&#21040;&#38169;&#35823;&#26102;&#24863;&#35273;&#33707;&#21517;&#20854;&#22937;&#65306;&#24590;&#20040;&#23601;&#38169;&#20102;&#65311;jQuery&#29992;&#30340;&#24456; 6 &#22909;&#19981;&#22909;&#65311;&#10;&#35843;&#35797;&#65281;&#25171;&#20102;&#20960;&#20010;&#26029;&#28857;&#65292;&#25214;&#21040;&#20102;&#21407;&#22240;&#65306;&#10;data = data != null ? jQuery.makeArray( data ) : []; data.unshift( event );&#10;&#10;trigger&#20013;&#30340;self&#20250;&#34987;makeArray&#22788;&#29702;&#65292;&#36825;&#26412;&#26469;&#27809;&#20160;&#20040;&#65292;&#22353;&#29241;&#30340;&#26159; self&#26377;&#20010;&#23646;&#24615;&#65306; self.length = 100&#65292;&#28982;&#21518;&#24754;&#21095;&#20102;&#65292;makeArray&#20043;&#21518;data&#21464;&#25104;[undefined, undefined, ...]&#12290;&#10;&#22909;&#20102;&#65292;debug&#23436;&#27605;&#65292;&#38382;&#39064;&#30475;&#36215;&#26469;&#24456;&#31616;&#21333;&#65292;&#20294;&#24635;&#32467;&#20986;&#20010;&#36947;&#29702;&#65306;&#38169;&#35823;&#24120;&#24120;&#20986;&#29616;&#22312;&#20320;&#24819;&#19981;&#21040;/&#24573;&#35270;&#30340;&#22320;&#26041;&#12290;&#10;&#10;&#10;14. delete&#25805;&#20316;&#31526;&#38382;&#39064;&#65306; &#35797;&#30528;&#35299;&#37322;&#19979;&#38754;&#20195;&#30721;&#30340;&#32467;&#26524;&#65311;&#10;```dash&#10;(function(x)&#123; &#10;    delete x; return x;&#10;&#125;)(1); // &#36820;&#22238; 1</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>delete x其实是尝试删除局部变量x，局部变量是non-configurable的，所以无法删除，在严格模式下，题中代码将报错。<br>更正：对局部变量和函数名delete是无效的，delete只能删除属性。delete obj.propName 才是合法的形式。下面以代码详细解释：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function(x) &#123; &#39;use strict&#39;; &#10;    delete x;&#10;&#125;)(1);</span><br></pre></td></tr></table></figure></p>
+<p>在严格模式下，删除不合法的标识符x（x是变量）<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(function () &#123; &#39;use strict&#39;; &#10;    var obj = &#123;&#125;; &#10;    Object.defineProperty(obj, &#39;x&#39;, &#123;&#10;            configurable: false,&#10;            writable: true,&#10;            enumerable: true,&#10;            value: &#39;hi&#39; &#125;); &#10;    delete obj.x;&#10;&#125;)() // Uncaught TypeError: Cannot delete property &#39;x&#39; of #&#60;Object&#62;</span><br></pre></td></tr></table></figure></p>
+<p>合法的删除形式，但属性x是non-configurable的，严格模式下报错 </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.x = 100; window.y = 100;&#10;(function(x) &#123; &#10;    console.log(x, window.x, window.y); &#10;    console.log(delete x, delete y); &#10;    console.log(x, window.x, window.y); return x;&#10;&#125;)(1); // 1 100 100 // false true // 1 100 undefined // delete</span><br></pre></td></tr></table></figure>
+<p>x失败，因为x是变量（函数内局部变量x覆盖全局变量x），delete y成功，y是全局对象window的属性。 // 非严格模式下，可以 delete y 的写法，但此时是尝试删除全局对象的同名属性y（y在作用域中不是变量或函数名）</p>
+<ol>
+<li>jQuery.fn.offset不支持获取和设置display:none元素的坐标不支持获取很好理解，display:none元素不在文档流中，获取位置自然是undefined。而$(hiddenElement).offset()会返回{top: 0, left: 0}以提高程序健壮性。<br>不过问题核心是为什么无法正确设置display:none元素的坐标，具体点，即为什么$(hiddenElement).offset(options)设置的真实值是指定值的两倍？<br>var offset = {top: 10, left: 10}; $dom.offset(offset); // $dom 是 display none 的 // 实际情况，$dom被设置成 left: 20px; top: 20px;</li>
+</ol>
+<p>如上面代码所示，隐藏的元素实际被设置打坐标是给定值的2倍，为什么？来看下jQuery关于offset部分的源码：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curOffset = curElem.offset();&#10;curCSSTop = jQuery.css( elem, &#34;top&#34; );&#10;curCSSLeft = jQuery.css( elem, &#34;left&#34; );&#10; ... &#10;if ( options.top != null ) &#123; &#10;    props.top = ( options.top - curOffset.top ) + curTop;&#10;&#125; if ( options.left != null ) &#123;&#10;    props.left = ( options.left - curOffset.left ) + curLeft;&#10;&#125; if ( &#34;using&#34; in options ) &#123; &#10;    options.using.call( elem, props );&#10;&#125; else &#123; &#10;    curElem.css( props );&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>原因就是$el.offset(options)并不简单采用options.left和options.top，而会计算( options.top - curOffset.top ) + curTop作为top（left同理）。隐藏元素的 css属性部分的left和top可以正常取到，但curOffset则是{top: 0, left: 0}，所以( options.top - curOffset.top ) + curTop –&gt; options.top + curTop造成一倍误差。</p>
+<ol>
+<li>找出字符串中出现最多的字母这个问题看起来用到的地方挺多，至少我遇到过不止一次，索性在这里讲一讲。先具体描述下问题：<br>假设字符串’ababccdeajxac’，请找出出现次数最多的字符？<br>最先想到的解法是用map纪录每个字符的次数，然后找出最多的即可：</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function getMaxNumberOfChar(str) &#123; &#10;    return (str + &#39;&#39;).split(&#39;&#39;).reduce(function(pre, cur, index, arr) &#123;&#10;        cur in pre ? pre[cur]++ : (pre[cur] = 1);&#10;        pre[cur] &#62; pre.value &#38;&#38; (pre.char = cur, pre.value = pre[cur]); &#10;        return pre;&#10;    &#125;, &#123;value: 0&#125;);&#10;&#125; &#10;getMaxNumberOfChar(&#39;ababccdeajxac&#39;) &#10;// Object &#123;value: 4, a: 4, char: &#34;a&#34;, b: 2, c: 3&#8230;&#125;</span><br></pre></td></tr></table></figure>
+<p>此外，可以考虑用正则来辅助处理：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function getMaxNumberOfChar(str) &#123; &#10;    return (str + &#39;&#39;).split(&#39;&#39;).sort().join(&#39;&#39;).match(/(\w)\1*/g).reduce(function(pre, cur) &#123; &#10;        return cur.length &#62; pre.value ? &#123;value: cur.length, char: cur[0]&#125; : pre;&#10;    &#125;, &#123;&#10;        value: 0&#10;    &#125;)&#10;&#125; &#10;getMaxNumberOfChar(&#39;ababccdeajxac&#39;) &#10;// Object &#123;value: 4, char: &#34;a&#34;&#125;</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>storage event当你用localStorage或sessionStorage的API去更改Storage时，会触发storage事件：<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(&#39;storage&#39;, function(e) &#123; &#10;    console.log(&#39;storage&#39;, e);&#10;&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>这里没有什么特别的，但基本所有问题的根源，或者说要特别注意的是：本页面更改Storage只能在同域名的其它页面去捕获storage事件。</p>
+<ol>
+<li>一个函数柯里化问题及更多C君出了这样一个题，要求实现sum函数如下：<br>sum(1) // 1<br>sum(1)(2) // 3<br>sum(1)(2)(3) // 6<br>第一眼，这不是函数柯里化吗，小case，然后我挥笔写下：<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function sum(item) &#123; &#10;    var cur = item; &#10;    var inner = function(next) &#123; &#10;        return next == null ? cur : (cur += next, inner);&#10;    &#125;; &#10;    return item == null ? undefined : inner;&#10;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>运行下：<br>所以最后答案是：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function sum(item) &#123; &#10;    var cur = item; &#10;    var inner = function(next) &#123; &#10;    if (next != null) cur += next; &#10;    return inner;&#10;    &#125;; &#10;    inner.toString = function() &#123; &#10;        return  cur;&#10;    &#125; return inner;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>运算符优先级问题普通的运算符优先级对大家应该不成问题，另外也推荐用括号来明确运算符优先级和代码意图，写出更可读的代码。<br>但之所以有这个问题，是涉及到typeof运算符，比较新颖。<br>问题：<br>var str = ‘why I am ‘ + typeof + ‘’; // so what is str?<br>str是why I am number，思考一下，上面的代码应该等同于’why I am ‘ + (typeof (+ ‘’))。好，现在问题归结到运算符优先级，查看文档验证：</li>
+</ol>
+<p>typeof运算符优先级高于+，并且是right-to-left。</p>
+<ol>
+<li>Prefix Increment Operator(++)的问题关于前自增运算符的一个有意思的问题：<br>++’52’.split(‘’)[0] //返回的是？<br>这道题来自Another JavaScript quiz第8题，主要是优先级问题，应该返回6，看完答案应该没什么难理解的。但是，题目的某个注意点:<br>++’5’ // Uncaught ReferenceError: Invalid left-hand side expression in prefix operation</li>
+</ol>
+<p>却非常有意思。所以问题是为什么++’5’报错而++’52’.split(‘’)[0]可以正确执行？<br>阅读<a href="http://es5.github.io/#x11.4.4，可以看到Prefix" target="_blank" rel="external">http://es5.github.io/#x11.4.4，可以看到Prefix</a> Increment Operator操作的第5步PutValue(expr, newValue)要求expr是引用。<br>而在这里，</p>
+<ul>
+<li>‘5’是值，不是引用，所以报错。</li>
+<li>‘52’.split(‘’)[0]返回的是[‘5’,’2’][0]，对象的属性访问返回的是引用，所以可以正确执行。</li>
+</ul>
+<p>var x = ‘5’; ++x // 6 ++’5’[0] // 6</p>
+<ol>
+<li>你真的了解String.prototype.split吗？<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var classIdSplit = /([\.#]?[a-zA-Z0-9\u007F-\uFFFF_:-]+)/;&#10;&#39;div.btn#submit&#39;.split(classIdSplit); &#10;// -&#62; [&#34;&#34;, &#34;div&#34;, &#34;&#34;, &#34;.btn&#34;, &#34;&#34;, &#34;#submit&#34;, &#34;&#34;]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>var result = str.split(separator);，<br>separator是带捕获的正则时，每次命中，都添加到结果数组result中。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/03/22/22/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          移动开发知识
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/03/19/作用域/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">作用域</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div>&copy; 2016 任先生在路上 的博客 , 技术 
+        <a href="http://hexo.io/" target="_blank">Hexo</a>  
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

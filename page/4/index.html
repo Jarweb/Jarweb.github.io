@@ -124,199 +124,10 @@
 
       <div class="body-wrap">
   
-    <article id="post-4" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-8" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/01/03/4/" class="article-date">
-  	<time datetime="2016-01-02T16:00:00.000Z" itemprop="datePublished">2016-01-03</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/03/4/">js模块化</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="commonjs-AMD-CMD"><a href="#commonjs-AMD-CMD" class="headerlink" title="commonjs AMD CMD"></a>commonjs AMD CMD</h2><h4 id="node-用commonjs"><a href="#node-用commonjs" class="headerlink" title="node 用commonjs"></a>node 用commonjs</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&#39;express&#39;)&#10;//&#21516;&#27493;&#20840;&#37096;&#21152;&#36733;&#27169;&#22359; &#22312;&#26381;&#21153;&#22120;&#31471;&#27809;&#20107; &#22312;&#21069;&#31471;&#19981;ok</span><br></pre></td></tr></table></figure>
-<h3 id="AMD-requirejs"><a href="#AMD-requirejs" class="headerlink" title="AMD requirejs"></a>AMD requirejs</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">require([&#8216;jquery&#8217;, &#8216;underscore&#8217;, &#8216;backbone&#8217;], function ($, _, Backbone)&#123;&#10;&#12288;&#12288;&#12288;&#12288;// &#24178;&#27963;&#10;&#12288;&#125;)&#10;//&#24322;&#27493;&#21435;&#21152;&#36733;3&#20010;&#27169;&#22359; &#21152;&#36733;&#23436;&#20102;&#25165;&#25191;&#34892;&#22238;&#35843; &#22238;&#35843;&#37324;&#26159;&#25972;&#20010;&#31243;&#24207;&#20381;&#36182;&#21069;&#38754;&#27169;&#22359;&#35201;&#20570;&#30340;&#20107;</span><br></pre></td></tr></table></figure>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//module.js&#10;define([&#20381;&#36182;&#27169;&#22359;],funciton(&#20381;&#36182;&#27169;&#22359;)&#123;&#10;&#9;//&#23548;&#20986;&#32473;&#21035;&#30340;&#27169;&#22359;&#24341;&#29992;&#30340;&#26041;&#27861;&#10;&#125;)&#10;&#10;//main.js&#10;require([&#39;module&#39;],function(module)&#123;&#10;&#9;//do something&#10;&#125;)</span><br></pre></td></tr></table></figure>
-<p>所以 依赖的模块必须要符合AMD的规范 引入了才起作用</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/模块化/">模块化</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/01/03/4/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-13" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/12/30/13/" class="article-date">
-  	<time datetime="2015-12-29T16:00:00.000Z" itemprop="datePublished">2015-12-30</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/30/13/">HTML笔记</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>格式化标签<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;br&#62;&#10;&#60;hr&#62;&#10;&#60;i&#62;&#60;/i&#62;&#10;&#60;b&#62;&#60;/b&#62;&#10;&#60;tt&#62;&#60;/tt&#62;&#10;&#60;big&#62;&#60;/big&#62;&#10;&#60;small&#62;&#60;/small&#62;&#10;&#60;strong&#62;&#60;/strong&#62;&#10;&#60;sub&#62;&#60;/sub&#62;&#10;&#60;sup&#62;&#60;/sup&#62;&#10;&#60;bdo dir=&#34;ltr rtl&#34;&#62;&#60;/bdo&#62;&#10;&#60;pre&#62;&#60;/pre&#62;&#10;&#60;code&#62;&#60;/code&#62;&#10;&#60;var&#62;&#60;/var&#62;&#10;&#60;samp&#62;&#60;/samp&#62;&#10;&#60;abbr title=&#34;&#34;&#62;&#60;/abbr&#62;&#10;&#60;address&#62;&#60;/address&#62;&#10;&#60;blockquote&#62;&#60;/blockquote&#62;&#10;&#60;q&#62;&#60;/q&#62;&#10;&#60;ins&#62;&#60;/ins&#62;&#10;&#60;del&#62;&#60;/del&#62;&#10;&#60;cite&#62;&#60;/cite&#62;</span><br></pre></td></tr></table></figure></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/12/30/13/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-3" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/12/29/3/" class="article-date">
-  	<time datetime="2015-12-28T16:00:00.000Z" itemprop="datePublished">2015-12-29</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/29/3/">mardown 笔记</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>‘&gt; 1~6个# 1~6级标题’</p>
-<p>‘&gt;区块panel ‘<br>‘&gt;&gt;子区块’</p>
-<p>‘## 二级标题’</p>
-<p>‘&gt;1. 有序列表’<br>‘&gt;2. 有序列表’</p>
-<p>代码实例：</p>
-<p>‘&gt; return shell_exec(“echo $input | $markdown_script”);’</p>
-<p>‘&gt;* red’<br>‘&gt;+ Green’<br>‘&gt;- blue’<br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/12/29/3/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-19" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/12/28/19/" class="article-date">
+      <a href="/2015/12/28/8/" class="article-date">
   	<time datetime="2015-12-27T16:00:00.000Z" itemprop="datePublished">2015-12-28</time>
 </a>
     </div>
@@ -330,7 +141,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/28/19/">前端性能 总结</a>
+      <a class="article-title" href="/2015/12/28/8/">git 笔记</a>
     </h1>
   
 
@@ -339,8 +150,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><blockquote>
-<p>使用 CSS Sprites 对图片优化 简单的说就是”利用 CSSbackground相关元素进行背景图绝对定位”，把多次HTTP 调用变为一次调用：因为CSS Sprites<br>不要在 HTML 中缩放图片<br>用工具压缩图片<br>尽可能的使用PNG格式的图片，因为和GIF相比，PNG有更多的功能和更小的体积<br>选择合适的图片(1. webP优于JPG 2. PNG8优于GIF)<br>DNSlookup是很耗费时间的 减少DNS 查找<br>使用智图( <a href="http://zhitu.tencent.com/">http://zhitu.tencent.com/</a> )<br>使用其它方式代替图片(1. 使用CSS3 2. 使用SVG 3. 使用IconFont)<br>尽量避免重设图片大小 ，多次重设图片大小会引发图片的多次重绘，影响性能<br>DataURL图片没有使用图片的压缩算法文件会变大，并且要解码后再渲染，加载慢耗时长 合理使用<br>字体图标<br>内容图片多为照片之类的，适用于JPEG。而修饰图片通常更适合用无损压缩的PNG。而GIF基本上除了GIF动画外不要使用。且动画的话，也更建议用video元素和视频格式，或用SVG动画取代。<br>使用cdn，例如七牛<br>浏览器对单个域名下的请求并发数是有限制的，如果是图片量很多的页面，需要考虑使用多域名。<br>尽量使用png格式的图片来代替滤镜效果，因为开启滤镜会加大浏览器的开销。<br>方向代理nginx缓存静态文件<br>不要对image和pdf等二进制文件进行gzip压缩</p>
+        <p>命令：</p>
+<blockquote>
+<p>git config –global user.name “Your Name”<br>git config –global user.email “email@example.com”<br>git init  把这个目录变成git可以管理的仓库<br>git add readme.txt  添加到缓存区<br>git commit -m “注释描述”  提交到仓库<br>git status  来查看是否还有文件未提交<br>git diff readme.txt  查看该文件该了的内容<br>git log  显示从最近到最远的显示日志，我们可以看到最近三次提交<br>git reset –hard HEAD~100  版本回退操作 这里是退回到第100个版本<br>git reflog  即可获取到版本号<br>git rm b.txt 如果我想彻底从版本库中删掉了此文件的话，可以再执行commit命令 提交掉.<br>git push 实际上是把当前分支master推送到远程。<br>git branch 查看分支<br>git branch name 创建分支<br>git checkout name 切换分支</p>
 </blockquote>
       
     </div>
@@ -349,14 +161,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端性能/">前端性能</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2015/12/28/19/#more">more >></a>
+          <a  href="/2015/12/28/8/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -439,69 +251,6 @@
 
 
   
-    <article id="post-8" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/12/28/8/" class="article-date">
-  	<time datetime="2015-12-27T16:00:00.000Z" itemprop="datePublished">2015-12-28</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/28/8/">git 笔记</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>命令：</p>
-<blockquote>
-<p>git config –global user.name “Your Name”<br>git config –global user.email “email@example.com”<br>git init  把这个目录变成git可以管理的仓库<br>git add readme.txt  添加到缓存区<br>git commit -m “注释描述”  提交到仓库<br>git status  来查看是否还有文件未提交<br>git diff readme.txt  查看该文件该了的内容<br>git log  显示从最近到最远的显示日志，我们可以看到最近三次提交<br>git reset –hard HEAD~100  版本回退操作 这里是退回到第100个版本<br>git reflog  即可获取到版本号<br>git rm b.txt 如果我想彻底从版本库中删掉了此文件的话，可以再执行commit命令 提交掉.<br>git push 实际上是把当前分支master推送到远程。<br>git branch 查看分支<br>git branch name 创建分支<br>git checkout name 切换分支</p>
-</blockquote>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/12/28/8/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-15" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -565,6 +314,68 @@
 
 
   
+    <article id="post-19" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/28/19/" class="article-date">
+  	<time datetime="2015-12-27T16:00:00.000Z" itemprop="datePublished">2015-12-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/28/19/">前端性能 总结</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><blockquote>
+<p>使用 CSS Sprites 对图片优化 简单的说就是”利用 CSSbackground相关元素进行背景图绝对定位”，把多次HTTP 调用变为一次调用：因为CSS Sprites<br>不要在 HTML 中缩放图片<br>用工具压缩图片<br>尽可能的使用PNG格式的图片，因为和GIF相比，PNG有更多的功能和更小的体积<br>选择合适的图片(1. webP优于JPG 2. PNG8优于GIF)<br>DNSlookup是很耗费时间的 减少DNS 查找<br>使用智图( <a href="http://zhitu.tencent.com/">http://zhitu.tencent.com/</a> )<br>使用其它方式代替图片(1. 使用CSS3 2. 使用SVG 3. 使用IconFont)<br>尽量避免重设图片大小 ，多次重设图片大小会引发图片的多次重绘，影响性能<br>DataURL图片没有使用图片的压缩算法文件会变大，并且要解码后再渲染，加载慢耗时长 合理使用<br>字体图标<br>内容图片多为照片之类的，适用于JPEG。而修饰图片通常更适合用无损压缩的PNG。而GIF基本上除了GIF动画外不要使用。且动画的话，也更建议用video元素和视频格式，或用SVG动画取代。<br>使用cdn，例如七牛<br>浏览器对单个域名下的请求并发数是有限制的，如果是图片量很多的页面，需要考虑使用多域名。<br>尽量使用png格式的图片来代替滤镜效果，因为开启滤镜会加大浏览器的开销。<br>方向代理nginx缓存静态文件<br>不要对image和pdf等二进制文件进行gzip压缩</p>
+</blockquote>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端性能/">前端性能</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/12/28/19/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-16" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -610,6 +421,133 @@
       
         <p class="article-more-link">
           <a  href="/2015/12/25/16/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-关于promise" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/25/关于promise/" class="article-date">
+  	<time datetime="2015-12-24T16:00:00.000Z" itemprop="datePublished">2015-12-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/25/关于promise/">关于promise</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(function test() &#123; &#10;&#9;setTimeout(function() &#123;&#10;&#9;&#9;console.log(4)&#10;&#9;&#125;, 0); &#10;&#9;new Promise(function executor(resolve) &#123; &#10;&#9;&#9;console.log(1); &#10;&#9;&#9;for( var i=0 ; i&#60;10000 ; i++ ) &#123;&#10;            i == 9999 &#38;&#38; resolve();&#10;       &#9;&#125; &#10;    &#9;console.log(2);&#10;    &#125;).then(function() &#123; &#10;    &#9;console.log(5);&#10;    &#125;); &#10;    console.log(3);&#10;&#125;)()</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/12/25/关于promise/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据类型深入" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/25/数据类型深入/" class="article-date">
+  	<time datetime="2015-12-24T16:00:00.000Z" itemprop="datePublished">2015-12-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/25/数据类型深入/">数据类型</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.原始类型和引用类型1.1 什么是类型原始类型 保存为简单数据值。 引用类型 保存为对象，其本质是指向内存位置的引用。<br>为了让开发者能够把原始类型和引用类型按相同的方式处理，JavaScript花费了很大的努力来保证语言的一致性。<br>其他编程语言用栈存原始类型，用对存储引用类型。而JavaScript则完全不同：它使用一个变量对象追踪变量的生存期。原始值被直接保存在变量对象内，而引用值则作为一个指针保存在变量对象内，该指针指向实际对象在内存中的存储位置。<br>1.2 原始类型原始类型代表照原样保存的一些简单数据。 JavaScript共有 5 种原始类型：</p>
+<ul>
+<li>boolean 布尔，值为 true or false</li>
+<li>number 数字，值为任何整型或浮点数值</li>
+<li>string 字符串，值为由单引号或双引号括住的单个字符或连续字符</li>
+<li>null 空类型，仅有一个值：null</li>
+<li>undefined 未定义，只有一个值：undefined（undefined会被赋给一个还没有初始化的变量）</li>
+</ul>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/12/25/数据类型深入/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -734,6 +672,70 @@
       
         <p class="article-more-link">
           <a  href="/2015/12/23/5/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-7" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/11/16/7/" class="article-date">
+  	<time datetime="2015-11-15T16:00:00.000Z" itemprop="datePublished">2015-11-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/16/7/">jade 笔记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>按tab书写 按空格书写 缩进标示嵌套</p>
+<p>.class.class.class#id css的写法<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//html&#10;&#60;span class=&#34;abc&#34;&#62;hi&#60;/span&#62;&#10;//jade&#10;span.abc hi</span><br></pre></td></tr></table></figure></p>
+<p>incude<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">doctype html&#10;html&#10;&#9;include ./header&#10;&#9;body&#10;&#9;include ./footer</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jade/">jade</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/11/16/7/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
