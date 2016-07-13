@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>angular 作用域 | Jar-R</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Angular应用是分层的，主要有三个层面：视图，模型，视图模型。其中，视图很好理解，就是直接可见的界面，模型就是数据，那么视图模型是什么呢？是一种把数据包装给视图调用的东西。所谓作用域
+每个Angular应用默认有一个根作用域，也就是说，如果用户未指定自己的控制器，变量就是直接挂在这个层级上的。作用域在一个Angular应用中是以树的形状体现的，根作用域位于最顶层，从它往下挂着各级作用域。每一级">
+<meta property="og:type" content="article">
+<meta property="og:title" content="angular 作用域">
+<meta property="og:url" content="http://Jarweb.com/2016/03/10/angular作用域与事件/index.html">
+<meta property="og:site_name" content="Jar-R">
+<meta property="og:description" content="Angular应用是分层的，主要有三个层面：视图，模型，视图模型。其中，视图很好理解，就是直接可见的界面，模型就是数据，那么视图模型是什么呢？是一种把数据包装给视图调用的东西。所谓作用域
+每个Angular应用默认有一个根作用域，也就是说，如果用户未指定自己的控制器，变量就是直接挂在这个层级上的。作用域在一个Angular应用中是以树的形状体现的，根作用域位于最顶层，从它往下挂着各级作用域。每一级">
+<meta property="og:updated_time" content="2016-07-13T16:57:52.170Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="angular 作用域">
+<meta name="twitter:description" content="Angular应用是分层的，主要有三个层面：视图，模型，视图模型。其中，视图很好理解，就是直接可见的界面，模型就是数据，那么视图模型是什么呢？是一种把数据包装给视图调用的东西。所谓作用域
+每个Angular应用默认有一个根作用域，也就是说，如果用户未指定自己的控制器，变量就是直接挂在这个层级上的。作用域在一个Angular应用中是以树的形状体现的，根作用域位于最顶层，从它往下挂着各级作用域。每一级">
+  
+    <link rel="alternative" href="/atom.xml" title="Jar-R" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">任先生在路上</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle" style="margin-bottom:20px;">Good things are coming !</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">列表</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger" style="display:none;"></div>
+  		<h1 class="header-author js-mobile-header hide">任先生在路上</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">任先生在路上</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Good things are coming !</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">列表</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-angular作用域与事件" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/10/angular作用域与事件/" class="article-date">
+  	<time datetime="2016-03-09T16:00:00.000Z" itemprop="datePublished">2016-03-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      angular 作用域
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Angular应用是分层的，主要有三个层面：视图，模型，视图模型。其中，视图很好理解，就是直接可见的界面，模型就是数据，那么视图模型是什么呢？是一种把数据包装给视图调用的东西。<br>所谓作用域</p>
+<p>每个Angular应用默认有一个根作用域，也就是说，如果用户未指定自己的控制器，变量就是直接挂在这个层级上的。<br>作用域在一个Angular应用中是以树的形状体现的，根作用域位于最顶层，从它往下挂着各级作用域。每一级作用域上面挂着变量和方法，供所属的视图调用。<br>如果想要在代码中显式使用根作用域，可以注入$rootScope。</p>
+<a id="more"></a>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function RootService($rootScope) &#123;&#10;    $rootScope.$watch(&#34;rootA&#34;, function(newVal) &#123;&#10;        alert(newVal);&#10;    &#125;);&#10;&#125;&#10;&#10;&#60;div ng-controller=&#34;OuterCtrl&#34;&#62;&#10;    &#60;span&#62;&#123;&#123;a&#125;&#125;&#60;/span&#62;&#10;    &#60;div ng-controller=&#34;InnerCtrl&#34;&#62;&#10;        &#60;span&#62;&#123;&#123;a&#125;&#125;&#60;/span&#62;&#10;    &#60;/div&#62;&#10;&#60;/div&#62;&#10;&#10;function OuterCtrl($scope) &#123;&#10;    $scope.a = 1;&#10;&#125;&#10;function InnerCtrl($scope) &#123;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>注意结果，我们可以看到界面显示了两个1，而我们只在OuterCtrl的作用域里定义了a变量，但界面给我们的结果是，两个a都有值<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;div ng-controller=&#34;OuterCtrl&#34;&#62;&#10;    &#60;span&#62;&#123;&#123;a&#125;&#125;&#60;/span&#62;&#10;    &#60;div ng-controller=&#34;InnerCtrl&#34;&#62;&#10;        &#60;span&#62;&#123;&#123;a&#125;&#125;&#60;/span&#62;&#10;        &#60;button ng-click=&#34;a=a+1&#34;&#62;a++&#60;/button&#62;&#10;    &#60;/div&#62;&#10;&#60;/div&#62;&#10;function OuterCtrl($scope) &#123;&#10;    $scope.a = 1;&#10;&#125; function InnerCtrl($scope) &#123;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>点了按钮之后，两个a不一致了，里面的变了，外面的没变</p>
+<p>它有两个过程，取值的时候，因为inner自身上面没有，所以沿着原型往上取到了1，然后自增了之后，赋值给自己，这个赋值的时候就不同了，有a就赋值，没有a，创造一个a也要赋值。<br>所以这么一来，inner上面就被赋值了一个新的a，outer里面的仍然保持原样，这也就导致了刚才看到的结果。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function Outer() &#123;&#10;    this.data = &#123; a: 1 &#125;;&#10;&#125;&#10;function Inner() &#123; &#125;&#10;var outer = new Outer();&#10;Inner.prototype = outer;&#10;var inner = new Inner();</span><br></pre></td></tr></table></figure>
+<p>这次的结果就跟上次不同了，原因是什么呢？因为两者的data是同一个引用，对这个对象上面的属性修改，是可以反映到两级对象上的。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;div ng-controller=&#34;OuterCtrl&#34;&#62;&#10;    &#60;span&#62;&#123;&#123;data.a&#125;&#125;&#60;/span&#62;&#10;    &#60;div ng-controller=&#34;InnerCtrl&#34;&#62;&#10;        &#60;span&#62;&#123;&#123;data.a&#125;&#125;&#60;/span&#62;&#10;        &#60;button ng-click=&#34;data.a=data.a+1&#34;&#62;increase a&#60;/button&#62;&#10;    &#60;/div&#62;&#10;&#60;/div&#62;&#10;function OuterCtrl($scope) &#123;&#10;    $scope.data = &#123;&#10;        a: 1 &#125;;&#10;&#125;&#10;function InnerCtrl($scope) &#123;&#10;&#125;&#10;&#10;&#60;div&#62;outer: &#123;&#123;sum1&#125;&#125;&#60;/div&#62;&#10;&#60;ul&#62;&#10;    &#60;li ng-repeat=&#34;item in arr track by $index&#34;&#62; &#123;&#123;item&#125;&#125;&#10;        &#60;button ng-click=&#34;sum1=sum1+item&#34;&#62;increase&#60;/button&#62;&#10;        &#60;div&#62;inner: &#123;&#123;sum1&#125;&#125;&#60;/div&#62;&#10;    &#60;/li&#62;&#10;&#60;/ul&#62;&#10;&#10;&#60;div&#62;outer: &#123;&#123;sum2&#125;&#125;&#60;/div&#62;&#10;&#60;ul&#62;&#10;    &#60;li ng-repeat=&#34;item in arr track by $index&#34;&#62; &#123;&#123;item&#125;&#125;&#10;        &#60;button ng-click=&#34;$parent.sum2=sum2+item&#34;&#62;increase&#60;/button&#62;&#10;        &#60;div&#62;inner: &#123;&#123;sum2&#125;&#125;&#60;/div&#62;&#10;    &#60;/li&#62;&#10;&#60;/ul&#62;</span><br></pre></td></tr></table></figure></p>
+<p>通过事件来通信比作用域解耦</p>
+<p>事件的接收与阻止无论是$emit还是$broadcast发送的事件，都可以被接收，接收这两种事件的方式是一样的：<br>$scope.$on(“someEvent”, function(e) { // 这里从e上可以取到发送过来的数据 });<br>注意，事件被接收了，并不代表它就中止了，它仍然会沿着原来的方向继续传播，也就是：</p>
+<ul>
+<li>$emit的事件将继续向上传播</li>
+<li>$broadcast的事件将继续向下传播</li>
+</ul>
+<p>有时候，我们希望某一级收到事件之后，就让它停下来，不再传播，可以把事件中止。这时候，两种事件的区别就体现出来了，只有$emit发出的事件是可以被中止的，$broadcast发出的不可以。<br>如果想要阻止$emit事件的继续传播，可以调用事件对象的stopPropagation()方法。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$scope.$on(&#34;someEvent&#34;, function(e) &#123;&#10;    e.stopPropagation();&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>但是，想要阻止$broadcast事件的传播，就麻烦了，我们只能通过变通的方式：<br>首先，调用事件对象的preventDefault()方法，然后，在收取这个事件对象的时候，判断它的defaultPrevented属性，如果为true，就忽略此事件。这个过程比较麻烦，其实我们一般是不需要管的，只要不监听对应的事件就可以了。在实际使用过程中，也应当尽量少使用事件的广播，尤其是从较高的层级进行广播。<br>上级作用域</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$scope.$on(&#34;someEvent&#34;, function(e) &#123;&#10;    e.preventDefault();&#10;&#125;);&#10;&#10;//&#19979;&#32423;&#20316;&#29992;&#22495;&#10;$scope.$on(&#34;someEvent&#34;, function(e) &#123;&#10;    if (e.defaultPrevented) &#123;&#10;        return;&#10;    &#125;&#10;&#125;);</span><br></pre></td></tr></table></figure>
+<p>在Angular中，不同层级作用域之间的数据通信有多种方式，可以通过原型继承的一些特征，也可以收发事件，还可以使用服务来构造单例对象进行通信。<br>前面提到的这个军队的例子，有些时候沟通效率比较低，特别是层级多的时候。想象一下，刚才这个只有三层，如果更复杂，一个排长的消息都一定要报告到军长那边再下发到其他基层主官，必定贻误军情，更何况有很多下级根本不需要知道这个消息。<br>那怎么办呢，难道是直接打电话沟通吗？这个效率高是高，就是容易乱，这也就相当于界面块之间的直接通过id调用。<br>Angular的作用域树类似于传统的组织架构树，一个大型企业，一般都会有若干层级，近年来有很多管理的方法论，比如说组织架构的扁平化。<br>我们能不能这样：搞一个专门负责通讯的机构，大家的消息都发给它，然后由它发给相关人员，其他人员在理念上都是平级关系。<br>这就是一个很典型的订阅发布模式，接收方在这里订阅消息，发布方在这里发布消息。</p>
+<p>把它做成一个公共模块，就可以被各种业务方调用了：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.factory(&#34;EventBus&#34;, function() &#123;&#10;var eventMap = &#123;&#125;;&#10;var EventBus = &#123;&#10;    on : function(eventType, handler) &#123;&#10;    //multiple event listener&#10;        if (!eventMap[eventType]) &#123;&#10;            eventMap[eventType] = [];&#10;        &#125;&#10;        eventMap[eventType].push(handler);&#10;    &#125;,&#10;    off : function(eventType, handler) &#123;&#10;        for (var i = 0; i &#60; eventMap[eventType].length; i++) &#123;&#10;            if (eventMap[eventType][i] === handler) &#123;&#10;                eventMap[eventType].splice(i, 1); break;&#10;            &#125;&#10;        &#125;&#10;    &#125;,&#10;    fire : function(event) &#123;&#10;        var eventType = event.type;&#10;        if (eventMap &#38;&#38; eventMap[eventType]) &#123;&#10;            for (var i = 0; i &#60; eventMap[eventType].length; i++) &#123;&#10;                eventMap[eventType][i](event);&#10;                &#125;&#10;            &#125;&#10;        &#125;&#10;    &#125;;&#10;    return EventBus;&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>事件订阅代码：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">EventBus.on(&#34;someEvent&#34;, function(event) &#123;&#10;    // &#36825;&#37324;&#22788;&#29702;&#20107;&#20214;&#10;    var c = event.data.a + event.data.b;&#10;&#125;);&#10;//&#20107;&#20214;&#21457;&#24067;&#20195;&#30721;&#65306;&#10;EventBus.fire(&#123;&#10;    type: &#34;someEvent&#34;,&#10;    data: &#123;&#10;        aaa: 1,&#10;        bbb: 2 &#125;&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/03/10/js异步回调/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          js异步
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/03/10/js原型/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js原型</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div>&copy; 2016 任先生在路上 的博客 , 技术 
+        <a href="http://hexo.io/" target="_blank">Hexo</a>  
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

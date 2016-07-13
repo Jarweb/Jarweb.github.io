@@ -124,11 +124,11 @@
 
       <div class="body-wrap">
   
-    <article id="post-8" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-npm" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/12/28/8/" class="article-date">
-  	<time datetime="2015-12-27T16:00:00.000Z" itemprop="datePublished">2015-12-28</time>
+      <a href="/2016/04/07/npm/" class="article-date">
+  	<time datetime="2016-04-06T16:00:00.000Z" itemprop="datePublished">2016-04-07</time>
 </a>
     </div>
   
@@ -141,7 +141,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/28/8/">git 笔记</a>
+      <a class="article-title" href="/2016/04/07/npm/">npm</a>
     </h1>
   
 
@@ -150,10 +150,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>命令：</p>
-<blockquote>
-<p>git config –global user.name “Your Name”<br>git config –global user.email “email@example.com”<br>git init  把这个目录变成git可以管理的仓库<br>git add readme.txt  添加到缓存区<br>git commit -m “注释描述”  提交到仓库<br>git status  来查看是否还有文件未提交<br>git diff readme.txt  查看该文件该了的内容<br>git log  显示从最近到最远的显示日志，我们可以看到最近三次提交<br>git reset –hard HEAD~100  版本回退操作 这里是退回到第100个版本<br>git reflog  即可获取到版本号<br>git rm b.txt 如果我想彻底从版本库中删掉了此文件的话，可以再执行commit命令 提交掉.<br>git push 实际上是把当前分支master推送到远程。<br>git branch 查看分支<br>git branch name 创建分支<br>git checkout name 切换分支</p>
-</blockquote>
+        <p>使用nmp来代替gulp等<br>postcss</p>
+<p>npm install –save-dev node-sass<br>node-sass –output-style compressed -o dist/css src/scss<br>npm install –save-dev postcss-cli autoprefixer<br>npm install –save-dev eslint<br>npm i -D uglify-js<br>npm i -D imagemin-cli<br>npm i -D svgo svg-sprite-generator<br>npm i -D browser-sync<br>npm i -D onchange<br>npm i -D parallelshell</p>
+<p>“scripts”: {<br>    “scss”: “node-sass –output-style compressed -o dist/css src/scss”<br>    “autoprefixer”: “postcss -u autoprefixer -r dist/css/<em>“<br>    “lint”: “eslint src/js”<br>    “uglify”: “mkdir -p dist/js &amp;&amp; uglifyjs src/js/</em>.js -m -o dist/js/app.js”<br>    “imagemin”: “imagemin src/images dist/images -p”,<br>    “icons”: “svgo -f src/images/icons &amp;&amp; mkdir -p dist/images &amp;&amp; svg-sprite-generate -d src/images/icons -o dist/images/icons.svg”<br>    “serve”: “browser-sync start –server –files ‘dist/css/<em>.css, dist/js/</em>.js’”</p>
+<pre><code>&quot;build:css&quot;: &quot;npm run scss &amp;&amp; npm run autoprefixer&quot;
+&quot;build:js&quot;: &quot;npm run lint &amp;amp;&amp;amp; npm run uglify&quot;, 
+&quot;build:images&quot;: &quot;npm run imagemin &amp;&amp; npm run icons&quot;, 
+&quot;build:all&quot;: &quot;npm run build:css &amp;&amp; npm run build:js &amp;&amp; npm run build:images&quot;
+&quot;watch:css&quot;: &quot;onchange &apos;src/scss/*.scss&apos; -- npm run build:css&quot;, 
+&quot;watch:js&quot;: &quot;onchange &apos;src/js/*.js&apos; -- npm run build:js&quot;,
+&quot;watch:all&quot;: &quot;parallelshell &apos;npm run serve&apos; &apos;npm run watch:css&apos; &apos;npm run watch:js&apos;&quot;
+&quot;postinstall&quot;: &quot;npm run watch:all&quot;
+</code></pre><p>}</p>
+
       
     </div>
     
@@ -161,14 +170,80 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm/">npm</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-影响性能关键" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/06/影响性能关键/" class="article-date">
+  	<time datetime="2016-04-05T16:00:00.000Z" itemprop="datePublished">2016-04-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/06/影响性能关键/">影响网页渲染的关键</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>路径为了显示一张网页，浏览器必须获取网页所需的所有资源。一个简单的例子：一个网页需要一张图片，一个CSS文件，一个JavaScript文件。<br>我们来看看这张网页在展示之前经历的路径：</p>
+<ol>
+<li>浏览器下载html文件</li>
+<li>浏览器读取html文件，发现里面涉及一个CSS文件，一个JavaScript文件和一张图片</li>
+<li>浏览器开始下载这张图片</li>
+<li>浏览器发现不获取CSS和JavaScript文件就无法显示网页</li>
+<li>浏览器下载CSS文件并读取之，确保除此之外没有别的文件需要被访问</li>
+<li>浏览器发现不获取JavaScript文件还是无法显示网页</li>
+<li>浏览器下载JavaScript文件并读取之，确保除此之外没有别的文件需要被访问</li>
+<li>浏览器发现现在可以显示网页了</li>
+</ol>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/性能/">性能</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2015/12/28/8/#more">more >></a>
+          <a  href="/2016/04/06/影响性能关键/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -187,11 +262,11 @@
 
 
   
-    <article id="post-12" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-性能优化的几点" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/12/28/12/" class="article-date">
-  	<time datetime="2015-12-27T16:00:00.000Z" itemprop="datePublished">2015-12-28</time>
+      <a href="/2016/04/06/性能优化的几点/" class="article-date">
+  	<time datetime="2016-04-05T16:00:00.000Z" itemprop="datePublished">2016-04-06</time>
 </a>
     </div>
   
@@ -204,7 +279,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/28/12/">css 笔记</a>
+      <a class="article-title" href="/2016/04/06/性能优化的几点/">页面性能优化</a>
     </h1>
   
 
@@ -213,11 +288,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h3><p>id: 0100<br>class: 0010<br>属性: 0010<br>伪类: 0010<br>伪元素 : 0001<br>元素: 0001</p>
-<ul>
-<li>: 0000<br>文内样式: 1000<br>!important 优先级最高<br>同优先级 比较先后顺序 后来居上</li>
-</ul>
-<p>h2{color:red;} 0001<br>h2.caption {color:red;} 0011</p>
+        <p>最小化请求所有在你的网站加载时用来渲染页面（外部CSS或JS文件、web字体、图片等等）的资源，都是不同的HTTP请求。一般的网站平均有 93个请求！<br>我的目标是减少HTTP请求。一种方法是分别编译或连接（组合、合并）CSS和javascript到一个文件中。让这个过程自动化（例如使用构建工具 Grunt 或 Gulp）是理想的效果，但至少也应该在生产环境下手动完成。</p>
+<p>压缩、优化现在我找到了减少请求的方法，我开始寻找各种方法来减重。文件越小，加载速度越快。通常平均的页面大小为1950KB。按照内容分类：</p>
       
     </div>
     
@@ -225,14 +297,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/性能/">性能</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2015/12/28/12/#more">more >></a>
+          <a  href="/2016/04/06/性能优化的几点/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -251,11 +323,11 @@
 
 
   
-    <article id="post-15" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-哈希表" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/12/28/15/" class="article-date">
-  	<time datetime="2015-12-27T16:00:00.000Z" itemprop="datePublished">2015-12-28</time>
+      <a href="/2016/04/03/哈希表/" class="article-date">
+  	<time datetime="2016-04-02T16:00:00.000Z" itemprop="datePublished">2016-04-03</time>
 </a>
     </div>
   
@@ -268,7 +340,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/28/15/">browserify 笔记</a>
+      <a class="article-title" href="/2016/04/03/哈希表/">哈希表</a>
     </h1>
   
 
@@ -277,195 +349,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>Browserify 可以让你使用类似于 node 的 require() 的方式来组织浏览器端的 Javascript 代码，通过预编译让前端 Javascript 可以直接使用 Node NPM 安装的一些库。<br>一种解决方法是使用UMD的方式，前端使用requirejs，同时兼容nodejs的情况,例如：</p>
-</blockquote>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(function (window, factory) &#123;&#10;    if (typeod exports === &#39;object&#39;) &#123;&#10;        module.exports = factory();&#10;    &#125; else if (typeof define === &#39;function&#39; &#38;&#38; define.amd) &#123;&#10;        define(factory);&#10;    &#125; else &#123;&#10;        window.eventUtil = factory();&#10;    &#125;&#10;&#125;)(this, function () &#123;&#10;//module ...&#10;&#125;)</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/browserify/">browserify</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/12/28/15/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-19" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/12/28/19/" class="article-date">
-  	<time datetime="2015-12-27T16:00:00.000Z" itemprop="datePublished">2015-12-28</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/28/19/">前端性能 总结</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><blockquote>
-<p>使用 CSS Sprites 对图片优化 简单的说就是”利用 CSSbackground相关元素进行背景图绝对定位”，把多次HTTP 调用变为一次调用：因为CSS Sprites<br>不要在 HTML 中缩放图片<br>用工具压缩图片<br>尽可能的使用PNG格式的图片，因为和GIF相比，PNG有更多的功能和更小的体积<br>选择合适的图片(1. webP优于JPG 2. PNG8优于GIF)<br>DNSlookup是很耗费时间的 减少DNS 查找<br>使用智图( <a href="http://zhitu.tencent.com/">http://zhitu.tencent.com/</a> )<br>使用其它方式代替图片(1. 使用CSS3 2. 使用SVG 3. 使用IconFont)<br>尽量避免重设图片大小 ，多次重设图片大小会引发图片的多次重绘，影响性能<br>DataURL图片没有使用图片的压缩算法文件会变大，并且要解码后再渲染，加载慢耗时长 合理使用<br>字体图标<br>内容图片多为照片之类的，适用于JPEG。而修饰图片通常更适合用无损压缩的PNG。而GIF基本上除了GIF动画外不要使用。且动画的话，也更建议用video元素和视频格式，或用SVG动画取代。<br>使用cdn，例如七牛<br>浏览器对单个域名下的请求并发数是有限制的，如果是图片量很多的页面，需要考虑使用多域名。<br>尽量使用png格式的图片来代替滤镜效果，因为开启滤镜会加大浏览器的开销。<br>方向代理nginx缓存静态文件<br>不要对image和pdf等二进制文件进行gzip压缩</p>
-</blockquote>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端性能/">前端性能</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/12/28/19/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-16" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/12/25/16/" class="article-date">
-  	<time datetime="2015-12-24T16:00:00.000Z" itemprop="datePublished">2015-12-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/25/16/">gulp 总结</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>gulp</p>
-</blockquote>
-<h3 id="单个输出"><a href="#单个输出" class="headerlink" title="单个输出"></a>单个输出</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var gulp = requrie(&#39;gulp&#39;)&#10;var coffee = requrie(&#39;gulp-coffee&#39;)&#10;var uglify = requrie(&#39;gulp-uglify&#39;)&#10;&#10;gulp.task(&#39;js,function()&#123;&#10;&#9;return gulp.src(&#39;&#36335;&#24452;&#39;)&#10;&#9;&#9;.pipe(coffee())&#10;&#9;&#9;.pipe(uglify())&#10;&#9;&#9;.pipe(gulp.dest(&#39;&#36335;&#24452;&#39;)&#10;&#125;)&#10;gulp.task(&#39;watch&#39;,function()&#123;&#10;&#9;gulp.watch(&#39;&#36335;&#24452;&#39;,[&#39;&#36335;&#24452;&#39;])&#10;&#125;)</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gulp/">gulp</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/12/25/16/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-关于promise" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/12/25/关于promise/" class="article-date">
-  	<time datetime="2015-12-24T16:00:00.000Z" itemprop="datePublished">2015-12-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/25/关于promise/">关于promise</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(function test() &#123; &#10;&#9;setTimeout(function() &#123;&#10;&#9;&#9;console.log(4)&#10;&#9;&#125;, 0); &#10;&#9;new Promise(function executor(resolve) &#123; &#10;&#9;&#9;console.log(1); &#10;&#9;&#9;for( var i=0 ; i&#60;10000 ; i++ ) &#123;&#10;            i == 9999 &#38;&#38; resolve();&#10;       &#9;&#125; &#10;    &#9;console.log(2);&#10;    &#125;).then(function() &#123; &#10;    &#9;console.log(5);&#10;    &#125;); &#10;    console.log(3);&#10;&#125;)()</span><br></pre></td></tr></table></figure>
+        <p>散列表（Hash table，也叫哈希表），是根据关键字（Key value）而直接访问在内存存储位置的数据结构。摘自 Wiki<br>Hash Map通常在JavaScript中作为一个简单的来存储键值对的地方。然而，Object并不是一个真正的哈希映射，如果使用不当可能会带来潜在的问题。而且JavaScript可能不提供本地哈希映射（至少不是跨浏览器兼容的），有一个更好的声明对象属性的方法。</p>
+<p>在Object声明成员的问题<br>该问题可能缘于对象原型链的继承机制。就拿toString方法来说，如果使用in操作符来判断对象是否存在的话：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var map = &#123;&#125;;&#10;&#39;toString&#39; in map; // true</span><br></pre></td></tr></table></figure></p>
+<p>因为in操作符会从所有原型继续对象查找该对象是否存在。要解决这个问题，可使用hasOwnProperty方法检测该对象是否存在：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var map = &#123;&#125;;&#10;map.hasOwnProperty(&#39;toString&#39;); // false</span><br></pre></td></tr></table></figure></p>
       
     </div>
     
@@ -480,7 +366,7 @@
 
       
         <p class="article-more-link">
-          <a  href="/2015/12/25/关于promise/#more">more >></a>
+          <a  href="/2016/04/03/哈希表/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -499,11 +385,11 @@
 
 
   
-    <article id="post-数据类型深入" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-原型链" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/12/25/数据类型深入/" class="article-date">
-  	<time datetime="2015-12-24T16:00:00.000Z" itemprop="datePublished">2015-12-25</time>
+      <a href="/2016/03/31/原型链/" class="article-date">
+  	<time datetime="2016-03-30T16:00:00.000Z" itemprop="datePublished">2016-03-31</time>
 </a>
     </div>
   
@@ -516,7 +402,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/25/数据类型深入/">数据类型</a>
+      <a class="article-title" href="/2016/03/31/原型链/">原型链</a>
     </h1>
   
 
@@ -525,14 +411,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1.原始类型和引用类型1.1 什么是类型原始类型 保存为简单数据值。 引用类型 保存为对象，其本质是指向内存位置的引用。<br>为了让开发者能够把原始类型和引用类型按相同的方式处理，JavaScript花费了很大的努力来保证语言的一致性。<br>其他编程语言用栈存原始类型，用对存储引用类型。而JavaScript则完全不同：它使用一个变量对象追踪变量的生存期。原始值被直接保存在变量对象内，而引用值则作为一个指针保存在变量对象内，该指针指向实际对象在内存中的存储位置。<br>1.2 原始类型原始类型代表照原样保存的一些简单数据。 JavaScript共有 5 种原始类型：</p>
-<ul>
-<li>boolean 布尔，值为 true or false</li>
-<li>number 数字，值为任何整型或浮点数值</li>
-<li>string 字符串，值为由单引号或双引号括住的单个字符或连续字符</li>
-<li>null 空类型，仅有一个值：null</li>
-<li>undefined 未定义，只有一个值：undefined（undefined会被赋给一个还没有初始化的变量）</li>
-</ul>
+        <p>Function.<strong>proto</strong> === Object.prototype // false<br>擦，假设失败了呢，让我们来看看为什么不对，Function.<strong>proto</strong>到底指哪去了<br>Function.<strong>proto</strong> === Function.prototype //true<br>原来指向自己的prototype了呢，那就意味着…<br>Function instanceof Function //true<br>yes，然而 Function instanceof Object似乎也能解释了<br>Function.<strong>proto</strong> === Function.prototype Function.<strong>proto</strong>.<strong>proto</strong> === Object.prototype </p>
+<p>所以如果我们让<br>Function.<strong>proto</strong>.<strong>proto</strong> = null Function instanceof Object //false<br>这回知道为什么不要用 <strong>proto</strong> 了吧，一不小心重写了会导致所有继承自它的对象都受影响。<br>为了养成良好的习惯，实际项目最好使用 getPrototypeOf 取原型链，这里只是为了方便我采用<strong>proto</strong></p>
       
     </div>
     
@@ -547,7 +427,7 @@
 
       
         <p class="article-more-link">
-          <a  href="/2015/12/25/数据类型深入/#more">more >></a>
+          <a  href="/2016/03/31/原型链/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -566,11 +446,11 @@
 
 
   
-    <article id="post-2" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-原型继承" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/12/24/2/" class="article-date">
-  	<time datetime="2015-12-23T16:00:00.000Z" itemprop="datePublished">2015-12-24</time>
+      <a href="/2016/03/30/原型继承/" class="article-date">
+  	<time datetime="2016-03-29T16:00:00.000Z" itemprop="datePublished">2016-03-30</time>
 </a>
     </div>
   
@@ -583,7 +463,68 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/24/2/">js 基础 《javascript面向对象编程指南》</a>
+      <a class="article-title" href="/2016/03/30/原型继承/">原型继承</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;&#125;; &#10;console.log(a.prototype); &#10;//=&#62; undefined &#10;var b = function()&#123;&#125;; &#10;console.log(b.prototype); &#10;//=&#62; &#123;&#125; &#10;var c = &#39;Hello&#39;; &#10;console.log(c.prototype); &#10;/=&#62; undefined</span><br></pre></td></tr></table></figure>
+<p>prototype是每个function定义时自带的属性，但是Js中function本身也是对象，我们先来看一下下面几个概念的差别：</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/03/30/原型继承/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-单例" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/29/单例/" class="article-date">
+  	<time datetime="2016-03-28T16:00:00.000Z" itemprop="datePublished">2016-03-29</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/29/单例/">单例</a>
     </h1>
   
 
@@ -593,7 +534,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>基本类型： number,string,boolean,undefined,null<br>非基本类型(引用类型)：object<br>typeof的返回结果：number,string,boolean,undefined,object,function<br>Infinity 代表超出js处理范围的数 typeof 结果是number,最大的数是Infinity 最小是-Infinity<br>js所能处理的最大值为1.79769313486e+308 最小是5e-324<br>NaN typeof 结果是number<br>优先级 先！再&amp;&amp; 后 || 结合括号<br>undefined： 不存在或未赋值的变量 就会得到undefined typeof的结果是undefined<br>1<em>undefined //NaN<br>1</em>null //0<br>!!undefined //false<br>!!null //false<br>null 的值是null<br>转布尔是为false ：“” null undefined 0 NaN false</p>
+<ol>
+<li>单一职责（Single Responsibility）<br>简单说，就是一个类只要负责一种职责即可，如果有多个职责需要处理，那就分离另外一个类。<br>之前我们有讲过JavaScript的面向对象特性，通过对象的封装，我们可以把单一职责在一个对象实现即可。这就完美符合了单一职责。<br>这么说起来，很多程序员肯定会很鄙视，这有什么好说的？ 其实单一职责表面上很简单，任何人都能信手拈来，但是它作为设计原则中最基础的原则，是有原因的！<br>封装并不困难，困难的是在任何时候能准确的分离职责。举个例子：<br>单就系统登录功能，我们把它作为一个职责来看！ 但是随着需求的复杂，会有更多的情况出现:<br>添加了验证码功能，要不要分离职责？<br>添加用户有效期验证，要不要分离？<br>增加用户邮箱验证功能，要不要分离？<br>如果你一直不分离，随着需求的增加，你会被拖入万劫不复的境地，不要认为这是危言耸听！ 但是反过来说，要如何分离，如何做到恰到好处的分离，是需要多年软件经验才能做到的。<br>基础招式的出神入化，虽不能让你杀敌于千里之外，但会让你立于不败之地！</li>
+</ol>
 </blockquote>
       
     </div>
@@ -609,7 +552,7 @@
 
       
         <p class="article-more-link">
-          <a  href="/2015/12/24/2/#more">more >></a>
+          <a  href="/2016/03/29/单例/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -628,11 +571,11 @@
 
 
   
-    <article id="post-5" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-判断类型" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/12/23/5/" class="article-date">
-  	<time datetime="2015-12-22T16:00:00.000Z" itemprop="datePublished">2015-12-23</time>
+      <a href="/2016/03/27/判断类型/" class="article-date">
+  	<time datetime="2016-03-26T16:00:00.000Z" itemprop="datePublished">2016-03-27</time>
 </a>
     </div>
   
@@ -645,7 +588,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/23/5/">bower 笔记</a>
+      <a class="article-title" href="/2016/03/27/判断类型/">判断类型</a>
     </h1>
   
 
@@ -654,9 +597,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>.bowerrc<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#10;  &#34;directory&#34; : &#34;js/jslib&#34;,//&#35201;&#25226;&#21253;&#19979;&#36733;&#30340;&#30446;&#24405; &#26377;&#40664;&#35748;&#30340;&#19979;&#36733;&#30446;&#24405;&#10;  &#34;json&#34;      : &#34;&#34;,&#10;  &#34;endpoint&#34;  : &#34;&#34;,&#10;  &#34;searchpath&#34;  : &#34;&#34;,&#10;  &#34;shorthand_resolver&#34; : &#34;&#34;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
+        <p>1、使用 typeof bar === “object” 判断 bar 是不是一个对象有神马潜在的弊端？如何避免这种弊端？<br>使用 typeof 的弊端是显而易见的(这种弊端同使用 instanceof)：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let obj = &#123;&#125;;&#10;let arr = [];&#10;console.log(typeof obj === &#39;object&#39;);  &#10;//trueconsole.log(typeof arr === &#39;object&#39;);  &#10;//trueconsole.log(typeof null === &#39;object&#39;);  &#10;//true</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -664,14 +606,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bower/">bower</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2015/12/23/5/#more">more >></a>
+          <a  href="/2016/03/27/判断类型/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -690,11 +632,11 @@
 
 
   
-    <article id="post-7" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-函数编程" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/11/16/7/" class="article-date">
-  	<time datetime="2015-11-15T16:00:00.000Z" itemprop="datePublished">2015-11-16</time>
+      <a href="/2016/03/25/函数编程/" class="article-date">
+  	<time datetime="2016-03-24T16:00:00.000Z" itemprop="datePublished">2016-03-25</time>
 </a>
     </div>
   
@@ -707,7 +649,68 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/16/7/">jade 笔记</a>
+      <a class="article-title" href="/2016/03/25/函数编程/">函数编程</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="纯函数式相同的参数返回相同的结果，它的执行不依赖于系统的状态"><a href="#纯函数式相同的参数返回相同的结果，它的执行不依赖于系统的状态" class="headerlink" title="纯函数式相同的参数返回相同的结果，它的执行不依赖于系统的状态"></a>纯函数式相同的参数返回相同的结果，它的执行不依赖于系统的状态</h1><p>1) 非纯净的<br>let number = 1;<br>const increment = () =&gt; number += 1;<br>increment();<br>// 2</p>
+<p>2) 纯净的<br>const increment = n =&gt; n + 1;<br>increment(1);<br>// 2</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/03/25/函数编程/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-22" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/22/22/" class="article-date">
+  	<time datetime="2016-03-22T03:01:46.953Z" itemprop="datePublished">2016-03-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/22/22/">移动开发知识</a>
     </h1>
   
 
@@ -717,9 +720,13 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>按tab书写 按空格书写 缩进标示嵌套</p>
-<p>.class.class.class#id css的写法<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//html&#10;&#60;span class=&#34;abc&#34;&#62;hi&#60;/span&#62;&#10;//jade&#10;span.abc hi</span><br></pre></td></tr></table></figure></p>
-<p>incude<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">doctype html&#10;html&#10;&#9;include ./header&#10;&#9;body&#10;&#9;include ./footer</span><br></pre></td></tr></table></figure></p>
+<p>app应用前端开发要注重meta标签<br>webkit内核中有一些私有的meta标签，这些meta标签在开发webapp时起到非常重要的作用 。</p>
+<p><meta content="email=no" name="format-detection" /> //去除Android平台中对邮箱地址的识别怎么做</p>
+<p><meta name="apple-mobile-web-app-capable" content="yes"> //作用是让普通移动网页被添加到主屏幕后</p>
+<p>舍弃CSS float属性<br>在项目开发过程中可以会遇到内容排列显示的布局，假如你遇见这样的视觉稿，建议你放弃float，可以直接使用display:inline-block。</p>
+<p>利用CSS3边框背景属性<br>在app的前端开发中，这个按钮有圆角效果，有内发光效果还有高光效果，这样的按钮使用CSS3写是无法写出来的，当然圆角可以使用CSS3来写，但高光和内发光却无法使用CSS3编写， 这个时候你不妨使用-webkit-border-image来定义这个按钮的样式。</p>
+<p>使用webkit-box<br>webkit为display属性提供了一个webkit-box的值，做到盒子模型灵活控制。</p>
+<p>很多属性极限突破可以使用缩放，倾斜这种手段来hack，比如最小字体，比如各种自己画的伪类图标。<br>能css画的不要用图。<br>能flex布局的不要用浮动，不要用绝对定位（不利于页面布局的扩展）</p>
 </blockquote>
       
     </div>
@@ -728,14 +735,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jade/">jade</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/移动开发/">移动开发</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2015/11/16/7/#more">more >></a>
+          <a  href="/2016/03/22/22/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -756,7 +763,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
     </nav>
   
 </div>

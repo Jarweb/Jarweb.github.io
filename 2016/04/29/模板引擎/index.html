@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>模板引擎 | Jar-R</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="什么是模板引擎，说的简单点，就是一个字符串中有几个变量待定。比如：1var tpl = &amp;#39;Hei, my name is &amp;#60;%name%&amp;#62;, and I\&amp;#39;m &amp;#60;%age%&amp;#62; years old.&amp;#39;;&amp;#10;//&amp;#36890;&amp;#36807;&amp;#27169;&amp;#26495;&amp;#24341;&amp;#25806;&amp;#20989;&amp;#25968;&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="模板引擎">
+<meta property="og:url" content="http://Jarweb.com/2016/04/29/模板引擎/index.html">
+<meta property="og:site_name" content="Jar-R">
+<meta property="og:description" content="什么是模板引擎，说的简单点，就是一个字符串中有几个变量待定。比如：1var tpl = &amp;#39;Hei, my name is &amp;#60;%name%&amp;#62;, and I\&amp;#39;m &amp;#60;%age%&amp;#62; years old.&amp;#39;;&amp;#10;//&amp;#36890;&amp;#36807;&amp;#27169;&amp;#26495;&amp;#24341;&amp;#25806;&amp;#20989;&amp;#25968;&amp;">
+<meta property="og:updated_time" content="2016-07-13T16:52:41.659Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="模板引擎">
+<meta name="twitter:description" content="什么是模板引擎，说的简单点，就是一个字符串中有几个变量待定。比如：1var tpl = &amp;#39;Hei, my name is &amp;#60;%name%&amp;#62;, and I\&amp;#39;m &amp;#60;%age%&amp;#62; years old.&amp;#39;;&amp;#10;//&amp;#36890;&amp;#36807;&amp;#27169;&amp;#26495;&amp;#24341;&amp;#25806;&amp;#20989;&amp;#25968;&amp;">
+  
+    <link rel="alternative" href="/atom.xml" title="Jar-R" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">任先生在路上</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle" style="margin-bottom:20px;">Good things are coming !</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">列表</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger" style="display:none;"></div>
+  		<h1 class="header-author js-mobile-header hide">任先生在路上</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">任先生在路上</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Good things are coming !</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">列表</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-模板引擎" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/29/模板引擎/" class="article-date">
+  	<time datetime="2016-04-28T16:00:00.000Z" itemprop="datePublished">2016-04-29</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      模板引擎
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>什么是模板引擎，说的简单点，就是一个字符串中有几个变量待定。比如：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var tpl = &#39;Hei, my name is &#60;%name%&#62;, and I\&#39;m &#60;%age%&#62; years old.&#39;;&#10;//&#36890;&#36807;&#27169;&#26495;&#24341;&#25806;&#20989;&#25968;&#25226;&#25968;&#25454;&#22622;&#36827;&#21435;&#65292;&#10;var data = &#123; &#34;name&#34;: &#34;Barret Lee&#34;, &#34;age&#34;: &#34;20&#34; &#125;;&#10;var result = tplEngine(tpl, data);&#10;//Hei, my name is Barret Lee, and I&#39;m 20 years old.</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>JS模板引擎应该做哪些事情？看看下面一串代码：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var tpl = &#39;&#60;% for(var i = 0; i &#60; this.posts.length; i++) &#123;&#39; +&#12288;&#10;    &#39;var post = posts[i]; %&#62;&#39; +&#10;    &#39;&#60;% if(!post.expert)&#123; %&#62;&#39; +&#10;        &#39;&#60;span&#62;post is null&#60;/span&#62;&#39; +&#10;    &#39;&#60;% &#125; else &#123; %&#62;&#39; +&#10;        &#39;&#60;a href=&#34;#&#34;&#62;&#60;% post.expert %&#62; at &#60;% post.time %&#62;&#60;/a&#62;&#39; +&#10;    &#39;&#60;% &#125; %&#62;&#39; +&#10;&#39;&#60;% &#125; %&#62;&#39;;&#10;&#10;//&#19968;&#20010;&#22522;&#26412;&#30340;&#27169;&#26495;&#24341;&#25806;&#33267;&#23569;&#21487;&#20197;&#20445;&#35777;&#19978;&#38754;&#30340;&#20195;&#30721;&#21487;&#20197;&#27491;&#24120;&#35299;&#26512;&#12290;&#22914;&#36865;&#20837;&#30340;&#25968;&#25454;&#26159;&#65306;&#10;var data = &#123; &#34;posts&#34;: [&#10;    &#123; &#34;expert&#34;: &#34;content 1&#34;, &#34;time&#34;: &#34;yesterday&#34; &#125;,&#10;    &#123; &#34;expert&#34;: &#34;content 2&#34;, &#34;time&#34;: &#34;today&#34; &#125;,&#10;    &#123; &#34;expert&#34;: &#34;content 3&#34;, &#34;time&#34;: &#34;tomorrow&#34; &#125;,&#10;    &#123; &#34;expert&#34;: &#34;&#34;, &#34;time&#34;: &#34;eee&#34; &#125;]&#10;&#125;;&#10;&#10;//&#21487;&#20197;&#36755;&#20986;&#65306;&#10;&#60;a href=&#34;#&#34;&#62;content 1 at yesterday&#60;/a&#62; &#60;a href=&#34;#&#34;&#62;content 2 at today&#60;/a&#62; &#60;a href=&#34;#&#34;&#62;content 3 at tomorrow&#60;/a&#62; &#60;span&#62;post is null&#60;/span&#62;</span><br></pre></td></tr></table></figure></p>
+<p>二、JS模板引擎的实现原理1.正则抠出要匹配的内容针对这一串代码，通过正则获取内容<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var tpl = &#39;Hei, my name is &#60;%name%&#62;, and I\&#39;m &#60;%age%&#62; years old.&#39;;&#10;var data = &#123; &#34;name&#34;: &#34;Barret Lee&#34;, &#34;age&#34;: &#34;20&#34; &#125;;&#10;//&#26368;&#31616;&#21333;&#30340;&#26041;&#24335;&#23601;&#26159;&#36890;&#36807;replace&#20989;&#25968;&#20102;&#65306;&#10;var result = tpl.replace(/&#60;%([^%&#62;]+)?%&#62;/g, function(s0, s1)&#123; return data[s1];&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>通过正则替换，我们很轻松的拿到了result，你可以去试一试，他正式我们想要的结果。但是这里又有了一个问题，改一下data和tpl，<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var tpl = &#39;Hei, my name is &#60;%name%&#62;, and I\&#39;m &#60;%info.age%&#62; years old.&#39;;&#10;var data = &#123; &#34;name&#34;: &#34;Barret Lee&#34;, &#34;info&#34;: &#123; age&#34;: &#34;20&#34;&#125;&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>再用上面的方式去获取结果，呵呵，不行了吧~ 这里data[“info.age”]本身就是undefined，所以我们需要换一种方式来处理这个问题，那就是将它转换成真正的JS代码。如：<br>return ‘Hei, my name is ‘ + data.name + ‘, and I\’m ‘ + data.info.age’ + ‘ years old.’<br>但是接着又有一个问题来了，当我们的代码中出现for循环和if的时候，上面的转换明显是不起作用的，如：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var tpl = &#39;Posts: &#39; +&#10;  &#39;&#60;% for(var i = 0; i &#60; post.length; i++) &#123;&#39;+&#10;    &#39;&#60;a href=&#34;#&#34;&#62;&#60;% post[i].expert %&#62;&#60;/a&#62;&#39; +&#10;  &#39;&#60;% &#125; %&#62;&#39;&#10;//&#22914;&#26524;&#32487;&#32493;&#37319;&#29992;&#19978;&#38754;&#30340;&#26041;&#24335;&#65292;&#24471;&#21040;&#30340;&#32467;&#26524;&#20415;&#26159;&#65306;&#10;return &#39;Posts: &#39; + for(var i = 0; i &#60; post.length; i++) &#123; +&#10;    &#39;&#60;a href=&#34;#&#34;&#62;&#39; + post[i].exper + &#39;&#60;/a&#62;&#39; + &#125;</span><br></pre></td></tr></table></figure></p>
+<p>这显然不是我们愿意看到的，稍微观察一下上面的结构，如果可以返回一个这样的结果也挺不错哦：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#39;Posts: &#39; for(var i = 0; i &#60; post.length; i++) &#123; &#39;&#60;a href=&#34;#&#34;&#62;&#39; + post[i].exper + &#39;&#60;/a&#62;&#39; &#125;</span><br></pre></td></tr></table></figure></p>
+<p>但是我们需要得到的是一个字符串，而不是上面这样零散的片段，因此可以把这些东西装入数组中。</p>
+<p>2.装入数组<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var r = [];&#10;r.push(&#39;Posts: &#39; );&#10;r.push(for(var i = 0; i &#60; post.length; i++) &#123;);&#10;r.push(&#39;&#60;a href=&#34;#&#34;&#62;&#39;);&#10;r.push(post[i].exper);&#10;r.push(&#39;&#60;/a&#62;&#39;);&#10;r.push(&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>有人看到上面的代码就要笑了，第三行和最后一行代码的逻辑明显是不正确的嘛，那肿么办呢？呵呵，很简单，不放进去就行了呗，<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var r = [];&#10;r.push(&#39;Posts: &#39; ); for(var i = 0; i &#60; post.length; i++) &#123;&#10;    r.push(&#39;&#60;a href=&#34;#&#34;&#62;&#39;);&#10;    r.push(post[i].exper);&#10;    r.push(&#39;&#60;/a&#62;&#39;);&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样的逻辑就十分完善了，不存在太多的漏洞，但是这个转化的过程是如何实现的？我们必须还是要写一个解析的模板函数出来。</p>
+<p>3.分辨js逻辑部分<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var r = [];&#10;tpl.replace(/&#60;%([^%&#62;]+)?%&#62;/g, function(s0, s1)&#123;&#10;//&#23436;&#34507;&#20102;&#65292;&#36825;&#37324;&#35980;&#20284;&#21448;&#35201;&#22238;&#21040;&#19978;&#38754;&#37027;&#21487;&#31505;&#30340;&#36923;&#36753;&#26377;&#38169;&#35823;&#30340;&#19968;&#27493;&#21862;... &#35813;&#24590;&#20040;&#22788;&#29702;&#27604;&#36739;&#22909;&#65311; &#125;);&#10;var fn = new Function(&#34;data&#34;, &#34;var r = []; for(var i in data)&#123; r.push(data[i]); &#125; return r.join(&#39; &#39;)&#34;);&#10;fn(&#123;&#34;name&#34;: &#34;barretlee&#34;, &#34;age&#34;: &#34;20&#34;&#125;);&#10;// barretlee 20</span><br></pre></td></tr></table></figure></p>
+<p>知道了这个就好办了，我们可以把逻辑部分和非逻辑部分的代码链接成一个字符串，然后利用类似fn的函数直接编译代码。而/&lt;%([^%&gt;]+)?%&gt;/g，这一个正则只能把逻辑部分匹配出来，要想把所有的代码都组合到一起，必须还得匹配非逻辑部分代码。replace函数虽然很强大，他也可以完成这个任务，但是实现的逻辑比较晦涩，所以我们换另外一种方式来处理。<br>先看一个简单的例子：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var reg = /&#60;%([^%&#62;]+)?%&#62;/g; var tpl = &#39;Hei, my name is &#60;%name%&#62;, and I\&#39;m &#60;%age%&#62; years old.&#39;; var match = reg.exec(tpl);&#10;console.log(match);&#10;//&#30475;&#21040;&#30340;&#26159;&#65306;&#10;[ 0: &#34;&#60;%name%&#62;&#34;, 1: name,&#10;    index: 16,&#10;    input: &#34;Hei, my name is &#60;%name%&#62;, and I&#39;m &#60;%age%&#62; years old.&#34; length: 2 ]</span><br></pre></td></tr></table></figure></p>
+<p>这。。。我们可是想得到所有的匹配啊，他竟然只获取了name而忽略了后面的age，好吧，对正则稍微熟悉点的童鞋一定会知道应该这样处理：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var reg = /&#60;%([^%&#62;]+)?%&#62;/g; while(match = reg.exec(tpl)) &#123;&#10;    console.log(match);&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>关于正则表达式的内容就不在这里细说了，有兴趣的同学可以多去了解下match,exec,search等正则的相关函数。这里主要是靠match的index属性来定位遍历位置，然后利用while循环获取所有的内容。</p>
+<p>4.引擎函数所以我们的引擎函数雏形差不多就出来了：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var tplEngine = function(tpl, data)&#123; var reg = /&#60;%([^%&#62;]+)?%&#62;/g,&#10;    code = &#39;var r=[];\n&#39;,&#10;    cursor = 0;&#10;    //&#20027;&#35201;&#30340;&#20316;&#29992;&#26159;&#23450;&#20301;&#20195;&#30721;&#26368;&#21518;&#19968;&#25130;&#10;    var add = function(line) &#123;&#10;        code += &#39;r.push(&#34;&#39; + line.replace(/&#34;/g, &#39;\\&#34;&#39;) + &#39;&#34;);\n&#39;;&#10;    &#125;;&#10;     while(match = reg.exec(tpl)) &#123;&#10;        add(tpl.slice(cursor, match.index));&#10;        //&#28155;&#21152;&#38750;&#36923;&#36753;&#37096;&#20998;&#10;        add(match[1]);&#10;        //&#28155;&#21152;&#36923;&#36753;&#37096;&#20998;&#10;        match[0] = &#34;&#60;%&#34; + match[1] + &#34;%&#62;&#34;;&#10;        cursor = match.index + match[0].length;&#10;    &#125;&#10;&#10;    add(tpl.substr(cursor, tpl.length - cursor));&#10;    //&#20195;&#30721;&#30340;&#26368;&#21518;&#19968;&#25130; &#22914;:&#34; years old.&#34;  &#10;    code += &#39;return r.join(&#34;&#34;);&#39;;&#10;    // &#36820;&#22238;&#32467;&#26524;&#65292;&#22312;&#36825;&#37324;&#25105;&#20204;&#23601;&#25343;&#21040;&#20102;&#35013;&#20837;&#25968;&#32452;&#21518;&#30340;&#20195;&#30721;  &#10;    console.log(code); return tpl;&#10;&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>这样一来，测试一个小demo:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> var tpl = &#39;&#60;% for(var i = 0; i &#60; this.posts.length; i++) &#123;&#39; +&#12288;&#10;        &#39;var post = posts[i]; %&#62;&#39; +&#10;        &#39;&#60;% if(!post.expert)&#123; %&#62;&#39; +&#10;            &#39;&#60;span&#62;post is null&#60;/span&#62;&#39; +&#10;        &#39;&#60;% &#125; else &#123; %&#62;&#39; +&#10;            &#39;&#60;a href=&#34;#&#34;&#62;&#60;% post.expert %&#62; at &#60;% post.time %&#62;&#60;/a&#62;&#39; +&#10;        &#39;&#60;% &#125; %&#62;&#39; +&#10;    &#39;&#60;% &#125; %&#62;&#39;;&#10;tplEngine(tpl, data);&#10;&#10;//&#36820;&#22238;&#30340;&#32467;&#26524;&#35753;&#20154;&#24456;&#28385;&#24847;&#65306;&#10;var r=[];&#10;r.push(&#34;&#34;);&#10;r.push(&#34; for(var i = 0; i &#60; this.posts.length; i++) &#123;var post = posts[i]; &#34;);&#10;r.push(&#34;&#34;);&#10;r.push(&#34; if(!post.expert)&#123; &#34;);&#10;r.push(&#34;&#60;span&#62;post is null&#60;/span&#62;&#34;);&#10;r.push(&#34; &#125; else &#123; &#34;);&#10;r.push(&#34;&#60;a href=\&#34;#\&#34;&#62;&#34;);&#10;r.push(&#34; post.expert &#34;);&#10;r.push(&#34; at &#34;);&#10;r.push(&#34; post.time &#34;);&#10;r.push(&#34;&#60;/a&#62;&#34;);&#10;r.push(&#34; &#125; &#34;);&#10;r.push(&#34;&#34;);&#10;r.push(&#34; &#125; &#34;);&#10;r.push(&#34;&#34;); return r.join(&#34;&#34;);</span><br></pre></td></tr></table></figure></p>
+<p>不过我们并需要for，if，switch等这些东西也push到r数组中去，所以呢，还得改善下上面的代码，如果在line中发现了包含js逻辑的代码，我们就不应该让他进门：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">regOut = /(^( )?(if|for|else|switch|case|break|&#123;|&#125;))(.*)?/g;&#10;var add = function(line, js) &#123;&#10;    js? code += line.match(regOut) ? line + &#39;\n&#39; : &#39;r.push(&#39; + line + &#39;);\n&#39; :&#10;        code += &#39;r.push(&#34;&#39; + line.replace(/&#34;/g, &#39;\\&#34;&#39;) + &#39;&#34;);\n&#39;;&#10;&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>所以我们只剩下最后一步工作了，把data扔进去！</p>
+<p>5.把data扔进去没有比完成这东西更简单的事情啦，通过上面对Function这个函数的讲解，大家应该也知道怎么做了。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">return new Function(code).apply(data);</span><br></pre></td></tr></table></figure></p>
+<p>使用apply的作用就是让code中的一些变量作用域绑定到data上，不然作用域就会跑到global上，这样得到的数据索引就会出问题啦~ 当然我们可以再优化一下：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">return new Function(code.replace(/[\r\t\n]/g, &#39;&#39;)).apply(data);&#10;var tplEngine = function(tpl, data) &#123; var reg = /&#60;%([^%&#62;]+)?%&#62;/g,&#10;        regOut = /(^( )?(if|for|else|switch|case|break|&#123;|&#125;))(.*)?/g,&#10;        code = &#39;var r=[];\n&#39;,&#10;        cursor = 0; var add = function(line, js) &#123;&#10;        js? (code += line.match(regOut) ? line + &#39;\n&#39; : &#39;r.push(&#39; + line + &#39;);\n&#39;) :&#10;            (code += line != &#39;&#39; ? &#39;r.push(&#34;&#39; + line.replace(/&#34;/g, &#39;\\&#34;&#39;) + &#39;&#34;);\n&#39; : &#39;&#39;); return add;&#10;    &#125; while(match = reg.exec(tpl)) &#123;&#10;        add(tpl.slice(cursor, match.index))(match[1], true);&#10;        cursor = match.index + match[0].length;&#10;    &#125;&#10;    add(tpl.substr(cursor, tpl.length - cursor));&#10;    code += &#39;return r.join(&#34;&#34;);&#39;; return new Function(code.replace(/[\r\t\n]/g, &#39;&#39;)).apply(data);&#10;&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>三、应用场景毕竟是前端代码，所以写出来是要为前端服务的，平时我们处理的一般是一个html的模板，通常的情况下，模板代码是放在script标签或者textarea中，所以首先是要获取到这里头的东西，然后再来做解析。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var barretTpl = function(str, data) &#123;&#10;//&#33719;&#21462;&#20803;&#32032;&#10;var element = document.getElementById(str);&#10;    if (element) &#123;&#10;        //textarea&#25110;input&#21017;&#21462;value&#65292;&#20854;&#23427;&#24773;&#20917;&#21462;innerHTML&#10;        var html = /^(textarea|input)$/i.test(element.nodeName) ? element.value : element.innerHTML; return tplEngine(html, data);&#10;    &#125; else &#123;&#10;        //&#26159;&#27169;&#26495;&#23383;&#31526;&#20018;&#65292;&#21017;&#29983;&#25104;&#19968;&#20010;&#20989;&#25968;&#10;        //&#22914;&#26524;&#30452;&#25509;&#20256;&#20837;&#23383;&#31526;&#20018;&#20316;&#20026;&#27169;&#26495;&#65292;&#21017;&#21487;&#33021;&#21464;&#21270;&#36807;&#22810;&#65292;&#22240;&#27492;&#19981;&#32771;&#34385;&#32531;&#23384;&#10;        return tplEngine(str, data);&#10;    &#125;&#10;    var tplEngine = function(tpl, data) &#123; // content above  &#125;;&#10;&#125;;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/04/30/理解单例模式/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          理解单例模式
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/04/28/模块化深入/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">模块化深入</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div>&copy; 2016 任先生在路上 的博客 , 技术 
+        <a href="http://hexo.io/" target="_blank">Hexo</a>  
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

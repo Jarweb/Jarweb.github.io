@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>js异步 | Jar-R</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1const fs = require(&amp;#39;fs&amp;#39;)&amp;#10;console.log(&amp;#39;start reading a file...&amp;#39;)&amp;#10;fs.readFile(&amp;#39;file.md&amp;#39;, &amp;#39;utf-8&amp;#39;, function (err, content) &amp;#123;  &amp;#10;  if (err) &amp;#123;&amp;#10;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js异步">
+<meta property="og:url" content="http://Jarweb.com/2016/03/10/js异步回调/index.html">
+<meta property="og:site_name" content="Jar-R">
+<meta property="og:description" content="1const fs = require(&amp;#39;fs&amp;#39;)&amp;#10;console.log(&amp;#39;start reading a file...&amp;#39;)&amp;#10;fs.readFile(&amp;#39;file.md&amp;#39;, &amp;#39;utf-8&amp;#39;, function (err, content) &amp;#123;  &amp;#10;  if (err) &amp;#123;&amp;#10;">
+<meta property="og:updated_time" content="2016-07-13T17:08:46.878Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js异步">
+<meta name="twitter:description" content="1const fs = require(&amp;#39;fs&amp;#39;)&amp;#10;console.log(&amp;#39;start reading a file...&amp;#39;)&amp;#10;fs.readFile(&amp;#39;file.md&amp;#39;, &amp;#39;utf-8&amp;#39;, function (err, content) &amp;#123;  &amp;#10;  if (err) &amp;#123;&amp;#10;">
+  
+    <link rel="alternative" href="/atom.xml" title="Jar-R" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">任先生在路上</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle" style="margin-bottom:20px;">Good things are coming !</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">列表</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger" style="display:none;"></div>
+  		<h1 class="header-author js-mobile-header hide">任先生在路上</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">任先生在路上</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Good things are coming !</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">列表</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-js异步回调" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/10/js异步回调/" class="article-date">
+  	<time datetime="2016-03-09T16:00:00.000Z" itemprop="datePublished">2016-03-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      js异步
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const fs = require(&#39;fs&#39;)&#10;console.log(&#39;start reading a file...&#39;)&#10;fs.readFile(&#39;file.md&#39;, &#39;utf-8&#39;, function (err, content) &#123;  &#10;  if (err) &#123;&#10;    console.log(&#39;error happened during reading the file&#39;)&#10;    return console.log(err)&#10;  &#125;&#10;&#10;  console.log(content)&#10;&#125;)</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>将一个函数作为另一个函数的参数，在这个函数的内部可以调用被传递进来的函数（即回调函数）。 这也正是回调函数诞生的原因：如果你将一个函数作为参数传递给另一个函数（此时它被称为高阶函数），那么在函数内部， 你可以调用这个函数来来完成相应的任务。回调函数没有返回值（不要试图用return），仅仅被用来在函数内部执行某些动作。</p>
+<p>async<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">async.map([1, 2, 3], AsyncSquaringLibrary.square,  &#10;&#9;function(err, result)&#123;&#10;&#9;&#9;// result will be [1, 4, 9]&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>Promise<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Something.save()  &#10;&#9;.then(function() &#123;&#10;&#9;&#9;console.log(&#39;success&#39;);&#10;&#9;&#125;)&#10;&#9;.catch(function() &#123;&#10;&#9;&#9;//error handling&#10;&#9;&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>Generators/ yield</p>
+<p>在执行一个函数的时候，你可以在某个点暂停函数的执行，并且做一些其他工作，然后再返回这个函数继续执行， 甚至是携带一些新的值，然后继续执行。</p>
+<p>当我们调用一个生成器函数的时候，它并不会立即执行， 而是需要我们手动的去执行迭代操作（next方法）。也就是说，你调用生成器函数，它会返回给你一个迭代器。迭代器 会遍历每个中断点。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function* foo () &#123;  &#10;&#9;var index = 0;&#10;&#9;while (index &#60; 2) &#123;&#10;&#9;&#9;yield index++; //&#26242;&#20572;&#20989;&#25968;&#25191;&#34892;&#65292;&#24182;&#25191;&#34892;yield&#21518;&#30340;&#25805;&#20316;&#10;&#9;&#125;&#10;&#125;&#10;var bar =  foo(); // &#36820;&#22238;&#30340;&#20854;&#23454;&#26159;&#19968;&#20010;&#36845;&#20195;&#22120;&#10;&#10;console.log(bar.next());    // &#123; value: 0, done: false &#125;  &#10;console.log(bar.next());    // &#123; value: 1, done: false &#125;  &#10;console.log(bar.next());    // &#123; value: undefined, done: true &#125;</span><br></pre></td></tr></table></figure></p>
+<p>co<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">co(function* ()&#123;  &#10;&#9;yield Something.save();&#10;&#125;).then(function() &#123;&#10;&#9;// success&#10;&#125;)&#10;  .catch(function(err) &#123;&#10;&#9;//error handling&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>Async/ await<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">async function save(Something) &#123;  &#10;&#9;try &#123;&#10;&#9;&#9;await Something.save(); // &#31561;&#24453;await&#21518;&#38754;&#30340;&#20195;&#30721;&#25191;&#34892;&#23436;&#65292;&#31867;&#20284;&#20110;yield&#10;&#9;&#125; catch (ex) &#123;&#10;&#9;&#9;//error handling&#10;&#9;&#125;&#10;&#9;console.log(&#39;success&#39;);&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>promise<br>它表示如A调用一个长时间任务B的时候，B将返回一个”承诺“给A，A不用关心整个实施的过程，继续做自己的任务；当B实施完成的时候，会通过A，并将执行A之间的预先约定的回调。而deferred在英语中语义为：”延迟“，这也说明promise解决的问题是一种带有延迟的事件，这个事件会被延迟到未来某个合适点再执行。</p>
+<p>Promise/A+规范：</p>
+<ul>
+<li>Promise 对象有三种状态： Pending – Promise对象的初始状态，等到任务的完成或者被拒绝；Fulfilled – 任务执行完成并且成功的状态；Rejected – 任务执行完成并且失败的状态；</li>
+<li>Promise的状态只可能从“Pending”状态转到“Fulfilled”状态或者“Rejected”状态，而且不能逆向转换，同时“Fulfilled”状态和“Rejected”状态也不能相互转换；</li>
+<li>Promise对象必须实现then方法，then是promise规范的核心，而且then方法也必须返回一个Promise对象，同一个Promise对象可以注册多个then方法，并且回调的执行顺序跟它们的注册顺序一致；</li>
+<li>then方法接受两个回调函数，它们分别为：成功时的回调和失败时的回调；并且它们分别在：Promise由“Pending”状态转换到“Fulfilled”状态时被调用和在Promise由“Pending”状态转换到“Rejected”状态时被调用。</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$http.get(&#39;/demo1&#39;) .then(function(data)&#123;&#10;  console.log(&#39;demo1&#39;, data);&#10;  return $http.get(&#39;/demo2&#39;, &#123;params: data.result&#125;); &#125;)&#10;          .then(function(data)&#123;&#10;          console.log(&#39;demo2&#39;, data);&#10;                return $http.get(&#39;/demo3&#39;, &#123;params: data.result&#125;); &#125;)&#10;                        .then(function(data)&#123;&#10;  console.log(&#39;demo3&#39;, data.result);&#10;&#125;);&#10;&#10;$q.all([$http.get(&#39;/demo1&#39;), $http.get(&#39;/demo2&#39;), $http.get(&#39;/demo3&#39;) ])&#10;.then(function(results)&#123;&#10;    console.log(&#39;result 1&#39;, results[0]);&#10;    console.log(&#39;result 2&#39;, results[1]);&#10;    console.log(&#39;result 3&#39;, results[2]);&#10;&#125;);</span><br></pre></td></tr></table></figure>
+<p>在Angular中的路由机制ngRoute、uiRoute的resolve机制也是采用同样的原理：在路由执行的时候，会将获取模板的Promise、获取所有resolve数据的Promise都拼接在一起，同时并行的获取它们，然后等待它们都结束的时候，才开始初始化ng-view、ui-view指令的scope对象，以及compile模板节点，并插入页面DOM中，完成一次路由的跳转并且切换了View，将静态的HTML模板变为动态的网页展示出来。</p>
+<p>使用Promise的方式包装，使得项目Service的返回接口统一。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var data = $window.localStorage.getItem(&#39;data-api-key&#39;); return $q.when(data);</span><br></pre></td></tr></table></figure></p>
+<p>对于延迟任务的Promise DSL语义化封装<br>Promise是延迟到未来执行某些特定任务，在调用时候则给消费者返回一个”承诺“，消费者线程并不会被阻塞。在消费者接受到”承诺“之后，消费者就不用再关心这些任务是如何完成的，以及督促生产者的任务执行状态等。直到任务完成后，消费者手中的这个”承诺“就被兑现了。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$modal.open(&#123; templateUrl: &#39;/templates/modal.html&#39;, controller: &#39;ModalController&#39;, controllerAs: &#39;modal&#39;, resolve: &#123; &#125; &#125;)&#10;.result&#10;.then(function ok(data) &#123; // &#29992;&#25143;&#28857;&#20987;ok&#25353;&#38062;&#20107;&#20214; &#125;, function cancel()&#123; // &#29992;&#25143;&#28857;&#20987;cancel&#25353;&#38062;&#20107;&#20214; &#125;);</span><br></pre></td></tr></table></figure></p>
+<p>这是因为modal在open方法的返回值中给了我们一个Promise的result对象（承诺）。等到用户在模态窗口中点击了ok按钮，则Bootstrap会使用$q的defer来resolve来执行ok事件；相反，如果用户点击了cancel按钮，则会使用$q的defer来reject执行cancel事件。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function open(data)&#123;&#10;  var defer = $q.defer();&#10;  // resolve or reject defer;&#10;  var promise = defer.promise;&#10;  promise.ok = function(func)&#123;&#10;    promise.then(func);&#10;    return promise;&#10;  &#125;;&#10;  promise.cancel = function(func)&#123;&#10;    promise.then(null, func);&#10;    return promise;&#10;  &#125;;&#10;  return promise;&#10;&#125;;&#10;&#10;$modal.open(item)&#10;.ok(function(data)&#123; // ok&#36923;&#36753; &#125;)&#10;.cancel(function(data)&#123; // cancel &#36923;&#36753; &#125;);&#10;&#10;promise.success = function(fn) &#123;&#10;  promise.then(function(response) &#123;&#10;    fn(response.data, response.status, response.headers, config); &#125;);&#10;    return promise;&#10;  &#125;;&#10;  promise.error = function(fn) &#123;&#10;    promise.then(null, function(response) &#123;&#10;    fn(response.data, response.status, response.headers, config);&#10;  &#125;);&#10;  return promise;&#10;&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#27880;&#20876;&#19968;&#20010;&#25318;&#25130;&#22120;&#26381;&#21153;&#10;$provide.factory(&#39;myHttpInterceptor&#39;, function($q, dependency1, dependency2) &#123;&#10;  return &#123;&#10;      // &#21487;&#36873;&#26041;&#27861;&#10;      &#39;request&#39;: function(config) &#123;&#10;          // &#35831;&#27714;&#25104;&#21151;&#21518;&#22788;&#29702;&#10;          return config;&#10;      &#125;,&#10;      // &#21487;&#36873;&#26041;&#27861;&#10;      &#39;requestError&#39;: function(rejection) &#123;&#10;          // &#35831;&#27714;&#22833;&#36133;&#21518;&#30340;&#22788;&#29702;&#10;          if (canRecover(rejection)) &#123;&#10;            return responseOrNewPromise&#10;          &#125;&#10;            return $q.reject(rejection);&#10;      &#125;,&#10;      // &#21487;&#36873;&#26041;&#27861;&#10;      &#39;response&#39;: function(response) &#123;&#10;          // &#36820;&#22238;&#22238;&#22478;&#22788;&#29702;&#10;          return response;&#10;      &#125;,&#10;      // &#21487;&#36873;&#26041;&#27861;&#10;      &#39;responseError&#39;: function(rejection) &#123;&#10;          // &#36820;&#22238;&#22833;&#36133;&#30340;&#22788;&#29702;&#10;          if (canRecover(rejection)) &#123;&#10;          return responseOrNewPromise&#10;      &#125;&#10;      return $q.reject(rejection);&#10;      &#125;&#10;  &#125;;&#10;&#125;);&#10;// &#23558;&#26381;&#21153;&#27880;&#20876;&#21040;&#25318;&#25130;&#22120;&#38142;&#20013;&#10;$httpProvider.interceptors.push(&#39;myHttpInterceptor&#39;);&#10;// &#21516;&#26679;&#20063;&#21487;&#20197;&#23558;&#25318;&#25130;&#22120;&#27880;&#20876;&#20026;&#19968;&#20010;&#24037;&#21378;&#26041;&#27861;&#12290; &#20294;&#19978;&#19968;&#20013;&#26041;&#24335;&#26356;&#20026;&#25512;&#33616;&#12290;&#10;$httpProvider.interceptors.push([&#39;$q&#39;, function($q) &#123;&#10;   return &#123; &#39;request&#39;: function(config) &#123; // &#21516;&#19978; &#125;,&#10;            &#39;response&#39;: function(response) &#123; // &#21516;&#19978; &#125;&#10;   &#125;;&#10; &#125;]);</span><br></pre></td></tr></table></figure>
+<p>这样就可以实现对Angular中的$http或者是$resource的Ajax请求拦截了。但在Angular内部是是如何实现这种拦截方式的呢？Angular使用的就是Promise机制，形成异步管道流，将真实的Ajax请求放置在request、requestError和response、responseError的管道中间，因此就产生了对Ajax请求的拦截。</p>
+<p>其源码实现如下：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var interceptorFactories = this.interceptors = [];&#10;var responseInterceptorFactories = this.responseInterceptors = [];&#10;this.$get = [&#39;$httpBackend&#39;, &#39;$browser&#39;, &#39;$cacheFactory&#39;, &#39;$rootScope&#39;, &#39;$q&#39;, &#39;$injector&#39;,&#10;  function($httpBackend, $browser, $cacheFactory, $rootScope, $q, $injector) &#123;&#10;    var defaultCache = $cacheFactory(&#39;$http&#39;);&#10;    var reversedInterceptors = [];&#10;    forEach(interceptorFactories, function(interceptorFactory) &#123;&#10;      reversedInterceptors.unshift(isString(interceptorFactory) ? $injector.get(interceptorFactory) : $injector.invoke(interceptorFactory));&#10;    &#125;);&#10;    forEach(responseInterceptorFactories, function(interceptorFactory, index) &#123;&#10;      var responseFn = isString(interceptorFactory) ? $injector.get(interceptorFactory) : $injector.invoke(interceptorFactory);&#10;      reversedInterceptors.splice(index, 0, &#123;&#10;        response: function(response) &#123;&#10;          return responseFn($q.when(response));&#10;        &#125;,&#10;        responseError: function(response) &#123;&#10;          return responseFn($q.reject(response));&#10;        &#125;&#10;      &#125;);&#10;    &#125;);&#10;    ...&#10;function $http(requestConfig) &#123;&#10;  ...&#10;  var chain = [serverRequest, undefined];&#10;  var promise = $q.when(config);&#10;  // apply interceptors&#10;  forEach(reversedInterceptors, function(interceptor) &#123;&#10;    if (interceptor.request || interceptor.requestError) &#123;&#10;      chain.unshift(interceptor.request, interceptor.requestError);&#10;    &#125;&#10;    if (interceptor.response || interceptor.responseError) &#123;&#10;      chain.push(interceptor.response, interceptor.responseError);&#10;    &#125;&#10;  &#125;);&#10;  while (chain.length) &#123;&#10;    var thenFn = chain.shift();&#10;    var rejectFn = chain.shift();&#10;&#10;    promise = promise.then(thenFn, rejectFn);&#10;  &#125;&#10;  promise.success = function(fn) &#123;&#10;    promise.then(function(response) &#123;&#10;      fn(response.data, response.status, response.headers, config);&#10;    &#125;);&#10;    return promise;&#10;  &#125;;&#10;  promise.error = function(fn) &#123;&#10;    promise.then(null, function(response) &#123;&#10;      fn(response.data, response.status, response.headers, config);&#10;    &#125;);&#10;    return promise;&#10;  &#125;;&#10;&#10;  return promise;&#10;&#125;;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/03/10/bootstrap datetime piker api/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          datetime
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/03/10/angular作用域与事件/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">angular 作用域</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div>&copy; 2016 任先生在路上 的博客 , 技术 
+        <a href="http://hexo.io/" target="_blank">Hexo</a>  
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

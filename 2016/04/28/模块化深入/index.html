@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>模块化深入 | Jar-R</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="装饰者（Decorator）模式：1// mylib/UpdatableObservable&amp;#65306;dojo/store/Observable &amp;#30340;&amp;#19968;&amp;#20010;&amp;#35013;&amp;#39280;&amp;#32773;&amp;#10;define([&amp;#39;dojo&amp;#39;, &amp;#39;dojo/store/Observable&amp;#39;], function ( do">
+<meta property="og:type" content="article">
+<meta property="og:title" content="模块化深入">
+<meta property="og:url" content="http://Jarweb.com/2016/04/28/模块化深入/index.html">
+<meta property="og:site_name" content="Jar-R">
+<meta property="og:description" content="装饰者（Decorator）模式：1// mylib/UpdatableObservable&amp;#65306;dojo/store/Observable &amp;#30340;&amp;#19968;&amp;#20010;&amp;#35013;&amp;#39280;&amp;#32773;&amp;#10;define([&amp;#39;dojo&amp;#39;, &amp;#39;dojo/store/Observable&amp;#39;], function ( do">
+<meta property="og:updated_time" content="2016-07-13T16:54:55.012Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="模块化深入">
+<meta name="twitter:description" content="装饰者（Decorator）模式：1// mylib/UpdatableObservable&amp;#65306;dojo/store/Observable &amp;#30340;&amp;#19968;&amp;#20010;&amp;#35013;&amp;#39280;&amp;#32773;&amp;#10;define([&amp;#39;dojo&amp;#39;, &amp;#39;dojo/store/Observable&amp;#39;], function ( do">
+  
+    <link rel="alternative" href="/atom.xml" title="Jar-R" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">任先生在路上</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle" style="margin-bottom:20px;">Good things are coming !</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">列表</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger" style="display:none;"></div>
+  		<h1 class="header-author js-mobile-header hide">任先生在路上</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">任先生在路上</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Good things are coming !</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">列表</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-模块化深入" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/28/模块化深入/" class="article-date">
+  	<time datetime="2016-04-27T16:00:00.000Z" itemprop="datePublished">2016-04-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      模块化深入
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/模块化/">模块化</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>装饰者（Decorator）模式：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// mylib/UpdatableObservable&#65306;dojo/store/Observable &#30340;&#19968;&#20010;&#35013;&#39280;&#32773;&#10;define([&#39;dojo&#39;, &#39;dojo/store/Observable&#39;], function ( dojo, Observable ) &#123;&#10;    return function UpdatableObservable ( store ) &#123;&#10;        var observable = dojo.isFunction(store.notify) ? store :new Observable(store);&#10;        observable.updated = function( object ) &#123;&#10;            dojo.when(object, function ( itemOrArray ) &#123;&#10;                dojo.forEach( [].concat(itemOrArray), this.notify, this );&#10;            &#125;;&#10;        &#125;;&#10;        return observable; // &#35753; `new` &#25104;&#20026;&#21487;&#36873;&#30340;&#10;    &#125;;&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#35013;&#39280;&#32773;&#20351;&#29992;&#32773;// mylib/UpdatableObservable &#30340;&#19968;&#20010;&#20351;&#29992;&#32773;&#10;define([&#39;mylib/UpdatableObservable&#39;], function ( makeUpdatable ) &#123;&#10;    var observable, updatable, someItem;&#10;    // ... &#33719;&#21462;&#25110;&#24471;&#21040; `observable` &#30340;&#20195;&#30721;&#10;    // ... &#35753; observable store &#20063;&#21464;&#24471; updatable&#10;    updatable = makeUpdatable(observable); // `new` is optional!&#10;    // ... &#20043;&#21518;&#65292;&#24403;&#19968;&#26465; cometd &#28040;&#24687;&#24102;&#30528;&#26032;&#30340;&#25968;&#25454;&#39033;&#21040;&#36798;&#26102;&#10;    updatable.updated(updatedItem);&#10;&#125;);</span><br></pre></td></tr></table></figure>
+<p>适配器（Adapter）模式<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#39;mylib/Array&#39; &#23558; `each` &#20989;&#25968;&#36866;&#37197;&#20026;&#20223; jQuery &#30340;&#25509;&#21475;:&#10;define([&#39;dojo/_base/lang&#39;, &#39;dojo/_base/array&#39;], function (lang, array) &#123;&#10;    return lang.delegate(array, &#123;&#10;        each: function (arr, lambda) &#123;&#10;            array.forEach(arr, function (item, i) &#123;&#10;                lambda.call(item, i, item); // &#23601;&#20687; jQuery &#30340; each&#10;            &#125;)&#10;        &#125;&#10;    &#125;);&#10;&#125;);&#10;// &#36866;&#37197;&#22120;&#20351;&#29992;&#32773;&#10;// &#39;myapp/my-module&#39;:&#10;define([&#39;mylib/Array&#39;], function ( array ) &#123;&#10;    array.each([&#39;uno&#39;, &#39;dos&#39;, &#39;tres&#39;], function (i, esp) &#123;&#10;        // &#36825;&#37324; `this` == item&#10;    &#125;);&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">define([&#39;js/jquery.js&#39;,&#39;js/jquery.color.js&#39;,&#39;js/underscore.js&#39;], function($, colorPlugin, _)&#123;&#10;    // &#36825;&#37324;&#25105;&#20204;&#20256;&#20837;&#20102; jQuery&#12289;color &#25554;&#20214;&#20197;&#21450; Underscore&#10;    // &#25105;&#20204;&#22312;&#20840;&#23616;&#20316;&#29992;&#22495;&#20013;&#26080;&#27861;&#35775;&#38382;&#20854;&#20013;&#30340;&#20219;&#20309;&#19968;&#20010;&#65292;&#20294;&#25105;&#20204;&#21487;&#20197;&#36731;&#26131;&#22320;&#22312;&#10;    // &#20266;&#38543;&#26426;&#29983;&#25104;&#19968;&#20010;&#39068;&#33394;&#25968;&#32452;&#65292;&#36873;&#20013;&#25171;&#20081;&#21518;&#25968;&#32452;&#20013;&#30340;&#31532;&#19968;&#39033;&#10;    var shuffleColor = _.first(_.shuffle([&#39;#666&#39;,&#39;#333&#39;,&#39;#111&#39;]));&#10;    // &#32473;&#39029;&#38754;&#20013;&#20219;&#24847; class &#24102;&#26377; &#39;item&#39; &#30340;&#20803;&#32032;&#29992;&#38543;&#26426;&#24471;&#21040;&#30340;&#39068;&#33394;&#20026;&#10;    // background-color &#28155;&#21152;&#21160;&#30011;&#25928;&#26524;&#10;    $(&#39;.item&#39;).animate(&#123;&#39;backgroundColor&#39;: shuffleColor &#125;);&#10;    return &#123;&#125;;&#10;    // &#25105;&#20204;&#36820;&#22238;&#30340;&#19996;&#35199;&#21487;&#20197;&#34987;&#20854;&#23427;&#27169;&#22359;&#25152;&#20351;&#29992;&#10;&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#35753;&#25991;&#26723;&#20013;&#23384;&#22312;&#22810;&#20010; jQuery &#30340;&#20840;&#23616;&#23454;&#20363;&#65292;&#20197;&#20415;&#27979;&#35797; .noConflict()&#10;var jQuery = this.jQuery || &#34;jQuery&#34;, $ = this.$ || &#34;$&#34;,&#10;    originaljQuery = jQuery, original$ = $,&#10;    amdDefined;&#10;define([&#39;jquery&#39;] , function ($) &#123; $(&#39;.items&#39;).css(&#39;background&#39;,&#39;green&#39;);&#10;return function () &#123;&#125;; &#125;);&#10;// &#26131;&#23454;&#29616;&#30340;&#22768;&#26126;&#25903;&#25345;&#30340;&#26631;&#24535;&#65292;&#20250;&#34987; AMD &#21152;&#36733;&#22120;&#25152;&#20351;&#29992;&#10;define.amd = &#123; jQuery: true &#125;;</span><br></pre></td></tr></table></figure>
+<p>理解 CJS：require() 与 exports// package/lib 是我们须要的一个依赖项<br>var lib = require(‘package/lib’);<br>// 我们的模块的一些行为<br>function foo(){<br>    lib.log(‘hello world!’);<br>}<br>// 把 foo 导出（暴露）给其它模块<br>exports.foo = foo;<br>exports 的基本用法// 定义我们希望暴露的更多行为function foobar(){<br>    this.foo = function(){<br>            console.log(‘Hello foo’);<br>    }</p>
+<pre><code>this.bar = function(){
+        console.log(&apos;Hello bar&apos;);
+}
+</code></pre><p>}<br>// 把 foobar 暴露给其它模块<br>exports.foobar = foobar;<br>// 一个使用了 ‘foobar’ 的应用<br>// 相对于使用文件与模块文件所在的同一目录路径获取模块<br>var foobar = require(‘./foobar’).foobar,<br>    test   = new foobar();<br>test.bar(); // ‘Hello bar’<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;&#10;&#10;&#31532;&#19968;&#20010; CJS &#20363;&#23376;&#30340; AMD &#31561;&#20215;&#20889;&#27861;&#10;```dash&#10;define([&#39;package/lib&#39;], function(lib)&#123;&#10;    // &#25105;&#20204;&#30340;&#27169;&#22359;&#30340;&#19968;&#20123;&#34892;&#20026;&#10;    function foo()&#123;&#10;        lib.log(&#39;hello world!&#39;);&#10;    &#125;&#10;    // &#25226; foo &#23548;&#20986;&#65288;&#26292;&#38706;&#65289;&#32473;&#20854;&#23427;&#27169;&#22359;&#10;    return &#123;&#10;        foobar: foo&#10;    &#125;;&#10;&#125;);&#10;`</span><br></pre></td></tr></table></figure></p>
+<p>使用多个依赖项app.js<br>var modA = require(‘./foo’);<br>var modB = require(‘./bar’);<br>exports.app = function(){<br>    console.log(‘Im an application!’);<br>}<br>exports.foo = function(){<br>    return modA.helloWorld();<br>}<br>bar.js<br>exports.name = ‘bar’;<br>foo.jsrequire(‘./bar’);<br>exports.helloWorld = function(){<br>    return ‘Hello World!!’’<br>}<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;&#10;AMD/CommonJS &#36890;&#29992;&#27169;&#22359;&#23450;&#20041;&#65288;&#21464;&#20307; 2&#65292;UMDjs&#65289;/**&#10; * &#22914;&#26524;&#20320;&#38656;&#35201;&#20570;&#19968;&#20123;&#24490;&#29615;&#20381;&#36182;&#25110;&#26159;&#38656;&#35201;&#20860;&#23481;&#38750; Node &#30340;&#31867;&#10; * commonjs &#29615;&#22659;&#65292;&#23548;&#20986;&#22522;&#20110;&#23545;&#35937;&#30340;&#29256;&#26412;&#12290;&#10; */&#10;```dash&#10;(function (define) &#123;&#10;    //&#39;id&#39; &#26159;&#21487;&#36873;&#30340;&#65292;&#20294;&#22914;&#26524;&#36825;&#26159;&#19968;&#20010;&#27969;&#34892;&#30340; web &#31867;&#24211;&#32780;&#19988;&#10;    //&#36890;&#24120;&#34987;&#29992;&#20110;&#38750; AMD/Node &#30340;&#29615;&#22659;&#19979;&#65292;&#36824;&#26159;&#25512;&#33616;&#32473;&#20986;&#12290;&#28982;&#10;    //&#32780;&#22914;&#26524;&#24076;&#26395;&#29983;&#25104;&#21311;&#21517;&#27169;&#22359;&#65292;&#21435;&#25481;&#19979;&#38754;&#30340; &#39;id&#39;&#65292;&#24182;&#19988;&#21435;&#25481;&#10;    //define &#20860;&#23481;&#26041;&#26696;&#20013;&#20351;&#29992;&#30340; id&#12290;&#10;    define(&#39;id&#39;, function (require, exports) &#123;&#10;        //&#22914;&#26524;&#26377;&#20860;&#23481;&#39033;&#65292;&#25226;&#23427;&#20204;&#21152;&#36733;&#36827;&#26469;&#10;        var a = require(&#39;a&#39;);&#10;        //&#32473; exports &#32465;&#23450;&#23646;&#24615;&#12290;&#10;        exports.name = value;&#10;    &#125;);&#10;&#125;(typeof define === &#39;function&#39; &#38;&#38; define.amd ? define : function (id, factory) &#123;&#10;    if (typeof exports !== &#39;undefined&#39;) &#123;&#10;        //commonjs&#10;        factory(require, exports);&#10;    &#125; else &#123;&#10;        //&#21019;&#24314;&#19968;&#20010;&#20840;&#23616;&#20989;&#25968;&#12290;&#20165;&#22312;&#20195;&#30721;&#27809;&#26377;&#20381;&#36182;&#39033;&#12289;&#25110;&#10;        //&#26159;&#20381;&#36182;&#39033;&#31526;&#21512;&#19979;&#38754;&#30340;&#35843;&#29992;&#27169;&#24335;&#26102;&#21487;&#29992;&#12290;&#10;        factory(function(value) &#123;&#10;            return window[value];&#10;        &#125;, (window[id] = &#123;&#125;));&#10;    &#125;&#10;&#125;));</span><br></pre></td></tr></table></figure></p>
+<p>可扩展的 UMD 插件（Thomas Davis 和我自己修改的变体）core.js<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">;(function ( name, definition )&#123;&#10;  var theModule = definition(),&#10;      // &#36825;&#34987;&#35748;&#20026;&#26159;&#8220;&#23433;&#20840;&#8221;&#30340;:&#10;      hasDefine = typeof define === &#39;function&#39; &#38;&#38; define.amd,&#10;      // hasDefine = typeof define === &#39;function&#39;,&#10;      hasExports = typeof module !== &#39;undefined&#39; &#38;&#38; module.exports;&#10;  if ( hasDefine )&#123; // AMD &#27169;&#22359;&#10;    define(theModule);&#10;  &#125; else if ( hasExports ) &#123; // Node.js &#27169;&#22359;&#10;    module.exports = theModule;&#10;  &#125; else &#123; // &#20998;&#37197;&#21040;&#24120;&#35265;&#30340;&#21629;&#21517;&#31354;&#38388;&#65292;&#25110;&#31616;&#21333;&#22320;&#20998;&#37197;&#21040;&#20840;&#23616;&#23545;&#35937;&#65288;window&#65289;&#10;    (this.jQuery || this.ender || this.$ || this)[name] = theModule;&#10;  &#125;&#10;&#125;)( &#39;core&#39;, function () &#123;&#10;    var module = this;&#10;    module.plugins = [];&#10;    module.highlightColor = &#34;yellow&#34;;&#10;    module.errorColor = &#34;red&#34;;&#10;  // &#22312;&#36825;&#37324;&#23450;&#20041; core &#27169;&#22359;&#24182;&#36820;&#22238;&#20844;&#29992; API&#10;  // &#36825;&#26159; core &#30340;&#26041;&#27861; highlightAll() &#21644;&#25152;&#26377;&#25554;&#20214;&#20351;&#29992;&#30340; highlight &#26041;&#27861;&#10;  // &#29992;&#26469;&#25226;&#20803;&#32032;&#39640;&#20142;&#26174;&#31034;&#20026;&#19981;&#21516;&#39068;&#33394;&#10;  module.highlight = function(el,strColor)&#123;&#10;    // &#36825;&#20010;&#27169;&#22359;&#20351;&#29992;&#20102; jQuery&#65292;&#20294;&#26159;&#32769;&#24335;&#30340;&#26222;&#36890; JavaScript &#25110;&#32773; Dojo&#10;    // &#20063;&#21487;&#20197;&#24456;&#31616;&#21333;&#22320;&#20351;&#29992;&#12290;&#10;    if(this.jQuery)&#123;&#10;      jQuery(el).css(&#39;background&#39;, strColor);&#10;    &#125;&#10;  &#125;&#10;  return &#123;&#10;      highlightAll:function()&#123;&#10;        module.highlight(&#39;div&#39;, module.highlightColor);&#10;      &#125;&#10;  &#125;;&#10;&#125;);&#10;&#10;myExtension.js&#10;;(function ( name, definition ) &#123;&#10;    var theModule = definition(),&#10;        hasDefine = typeof define === &#39;function&#39;,&#10;        hasExports = typeof module !== &#39;undefined&#39; &#38;&#38; module.exports;&#10;    if ( hasDefine ) &#123; // AMD &#27169;&#22359;&#10;        define(theModule);&#10;    &#125; else if ( hasExports ) &#123; // Node.js &#27169;&#22359;&#10;        module.exports = theModule;&#10;    &#125; else &#123; // // &#20998;&#37197;&#21040;&#24120;&#35265;&#30340;&#21629;&#21517;&#31354;&#38388;&#65292;&#25110;&#31616;&#21333;&#22320;&#20998;&#37197;&#21040;&#20840;&#23616;&#23545;&#35937;&#65288;window&#65289;&#10;        // for &#24490;&#29615;&#29992;&#26469;&#22788;&#29702;&#25153;&#24179;&#25991;&#20214;/&#20840;&#23616;&#27169;&#22359;&#25193;&#23637;&#21517;&#10;        var obj = null;&#10;        var namespaces = name.split(&#34;.&#34;);&#10;        var scope = (this.jQuery || this.ender || this.$ || this);&#10;        for (var i = 0; i &#60; namespaces.length; i++) &#123;&#10;            var packageName = namespaces[i];&#10;            if (obj &#38;&#38; i == namespaces.length - 1) &#123;&#10;                obj[packageName] = theModule;&#10;            &#125; else if (typeof scope[packageName] === &#34;undefined&#34;) &#123;&#10;                scope[packageName] = &#123;&#125;;&#10;            &#125;&#10;            obj = scope[packageName];&#10;        &#125;&#10;    &#125;&#10;&#125;)(&#39;core.plugin&#39;, function () &#123;&#10;    // &#22312;&#36825;&#37324;&#23450;&#20041;&#20320;&#30340;&#27169;&#22359;&#24182;&#36820;&#22238;&#20844;&#29992; API&#10;    // &#36825;&#27573;&#20195;&#30721;&#21487;&#20197;&#36731;&#26131;&#22320;&#19982; core &#20195;&#30721;&#30456;&#36866;&#24212;&#65292;&#26469;&#20801;&#35768;&#37027;&#20123;&#35206;&#30422;/&#25193;&#23637; core&#10;    // &#21151;&#33021;&#30340;&#26041;&#27861;&#65292;&#35753;&#20320;&#22312;&#38656;&#35201;&#26102;&#25193;&#23637; highlight &#26041;&#27861;&#26469;&#20570;&#26356;&#22810;&#20107;&#12290;&#10;    return &#123;&#10;        setGreen: function ( el ) &#123;&#10;            highlight(el, &#39;green&#39;);&#10;        &#125;,&#10;        setRed: function ( el ) &#123;&#10;            highlight(el, errorColor);&#10;        &#125;&#10;    &#125;;&#10;&#125;);&#10;//app.js&#10;$(function()&#123;&#10;    // &#39;core&#39; &#25554;&#20214;&#22312;&#26412;&#20363;&#20013;&#34987;&#26292;&#38706;&#22312;&#20102;&#19968;&#20010;&#21629;&#21517;&#31354;&#38388; core &#19979;&#65292;&#25105;&#20204;&#10;    // &#20808;&#23558;&#23427;&#32531;&#23384;&#36215;&#26469;&#10;    var core = $.core;&#10;    // &#28982;&#21518;&#20351;&#29992;&#19968;&#20123;&#21407;&#29983;&#30340; core &#21151;&#33021;&#26469;&#29992;&#40644;&#33394;&#39640;&#20142;&#39029;&#38754;&#20013;&#25152;&#26377;&#30340; div&#10;    core.highlightAll();&#10;    // &#35775;&#38382;&#34987;&#36733;&#20837; core &#27169;&#22359;&#30340; &#39;plugin&#39; &#21629;&#21517;&#31354;&#38388;&#30340;&#25554;&#20214;&#65288;&#25193;&#23637;&#65289;&#65306;&#10;    // &#25226;&#39029;&#38754;&#20013;&#30340;&#31532;&#19968;&#20010; div &#35774;&#20026;&#32511;&#33394;&#32972;&#26223;&#12290;&#10;    core.plugin.setGreen(&#34;div:first&#34;);&#10;    // &#36825;&#37324;&#25105;&#20204;&#36890;&#36807;&#19968;&#20010;&#22312;&#20854;&#20043;&#21518;&#21152;&#36733;&#30340;&#25554;&#20214;&#20174;&#24213;&#23618;&#20351;&#29992; core &#30340; &#39;highlight&#39; &#26041;&#27861;&#10;    // &#25226;&#26368;&#21518;&#19968;&#20010; div &#30340;&#32972;&#26223;&#33394;&#35774;&#20026;&#25105;&#20204;&#22312; core &#27169;&#22359;/&#25554;&#20214;&#20013;&#23450;&#20041;&#30340;&#10;    // &#39;errorColor&#39; &#23646;&#24615;&#30340;&#39068;&#33394;&#12290;&#22914;&#26524;&#20320;&#26356;&#20180;&#32454;&#22320;&#26597;&#30475;&#20195;&#30721;&#65292;&#23601;&#20250;&#21457;&#29616;&#10;    // &#22312; core &#21644;&#20854;&#23427;&#25554;&#20214;&#38388;&#20351;&#29992;&#23646;&#24615;&#21644;&#26041;&#27861;&#26159;&#22810;&#20040;&#31616;&#21333;&#10;    core.plugin.setRed(&#39;div:last&#39;);&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+ <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module staff&#123;&#10;    // &#25351;&#23450;&#20854;&#23427;&#27169;&#22359;&#21487;&#20197;&#20351;&#29992;&#30340;&#65288;&#20844;&#29992;&#65289;&#23548;&#20986;&#10;    export var baker = &#123;&#10;        bake: function( item )&#123;&#10;            console.log(&#39;Woo! I just baked &#39; + item);&#10;        &#125;&#10;    &#125;   &#10;&#125;&#10;module skills&#123;&#10;    export var specialty = &#34;baking&#34;;&#10;    export var experience = &#34;5 years&#34;;&#10;&#125;&#10;module cakeFactory&#123;&#10;&#10;    // &#25351;&#23450;&#20381;&#36182;&#39033;&#10;    import baker from staff;&#10;&#10;    // &#36890;&#36807;&#36890;&#37197;&#31526;&#23548;&#20837;&#25152;&#26377;&#19996;&#35199;&#10;    import * from skills;&#10;&#10;    export var oven = &#123;&#10;        makeCupcake: function( toppings )&#123;&#10;            baker.bake(&#39;cupcake&#39;, toppings);&#10;        &#125;,&#10;        makeMuffin: function( mSize )&#123;&#10;            baker.bake(&#39;muffin&#39;, size);&#10;        &#125;&#10;    &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>针对服务器的类 CommonJS 模块对于面向服务器的开发者来说，在 ES.next 中提出的模块系统并非局限于对浏览器端模块的关注。通过下面的例子，你可以看见一个被提出用于服务器的类 CJS 模块：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// io/File.js&#10;export function open(path) &#123; ... &#125;;&#10;export function close(hnd) &#123; ... &#125;;&#10;// compiler/LexicalHandler.jsmodule file from &#39;io/File&#39;;&#10;import &#123; open, close &#125; from file;&#10;export function scan(in) &#123;&#10;    try &#123;&#10;        var h = open(in) ...&#10;    &#125;&#10;    finally &#123; close(h) &#125;&#10;&#125;&#10;module lexer from &#39;compiler/LexicalHandler&#39;;&#10;module stdlib from &#39;@std&#39;;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/04/29/模板引擎/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          模板引擎
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/04/27/js作用域/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js作用域</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div>&copy; 2016 任先生在路上 的博客 , 技术 
+        <a href="http://hexo.io/" target="_blank">Hexo</a>  
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

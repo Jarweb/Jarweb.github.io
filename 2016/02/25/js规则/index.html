@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>js规则 | Jar-R</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="避免双重求值标准动态执行代码方法1var num_1 =5,&amp;#10;num_2 = 6;&amp;#10;&amp;#10;eval()&amp;#10;result = eval (&amp;#34;num_1 + num_2&amp;#34;);&amp;#10;&amp;#10;Function() &amp;#26500;&amp;#36896;&amp;#20989;&amp;#25968;&amp;#10;sum = new Function(&amp;#34;arg1&amp;#34;,&amp;#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js规则">
+<meta property="og:url" content="http://Jarweb.com/2016/02/25/js规则/index.html">
+<meta property="og:site_name" content="Jar-R">
+<meta property="og:description" content="避免双重求值标准动态执行代码方法1var num_1 =5,&amp;#10;num_2 = 6;&amp;#10;&amp;#10;eval()&amp;#10;result = eval (&amp;#34;num_1 + num_2&amp;#34;);&amp;#10;&amp;#10;Function() &amp;#26500;&amp;#36896;&amp;#20989;&amp;#25968;&amp;#10;sum = new Function(&amp;#34;arg1&amp;#34;,&amp;#">
+<meta property="og:updated_time" content="2016-07-13T17:39:32.708Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js规则">
+<meta name="twitter:description" content="避免双重求值标准动态执行代码方法1var num_1 =5,&amp;#10;num_2 = 6;&amp;#10;&amp;#10;eval()&amp;#10;result = eval (&amp;#34;num_1 + num_2&amp;#34;);&amp;#10;&amp;#10;Function() &amp;#26500;&amp;#36896;&amp;#20989;&amp;#25968;&amp;#10;sum = new Function(&amp;#34;arg1&amp;#34;,&amp;#">
+  
+    <link rel="alternative" href="/atom.xml" title="Jar-R" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">任先生在路上</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle" style="margin-bottom:20px;">Good things are coming !</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">列表</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger" style="display:none;"></div>
+  		<h1 class="header-author js-mobile-header hide">任先生在路上</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">任先生在路上</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Good things are coming !</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">列表</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-js规则" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/25/js规则/" class="article-date">
+  	<time datetime="2016-02-24T16:00:00.000Z" itemprop="datePublished">2016-02-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      js规则
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>避免双重求值标准动态执行代码方法<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var num_1 =5,&#10;num_2 = 6;&#10;&#10;eval()&#10;result = eval (&#34;num_1 + num_2&#34;);&#10;&#10;Function() &#26500;&#36896;&#20989;&#25968;&#10;sum = new Function(&#34;arg1&#34;,&#34;arg2&#34;,&#34;return arg1 +arg2&#34;);&#10;&#10;setTimeout()&#10;setTimeout(&#34;sum = num_1 + num_2&#34;,100);&#10;&#10;setInterval()&#10;setInterval(&#34;sum = num_1 + num_2&#34;,100);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<a id="more"></a>
+<p>因为在执行一段javascript代码时去执行另外一个javascript代码,会导致双重求值的性能消耗.</p>
+<p>尽可能不用eval和Function,setTimeout和setInterval建议使用匿名函数.</p>
+<ol>
+<li>使用Object/Array直接量<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var my_object =new Object();&#10;my_object.name =&#39;404_K&#39;;&#10;var my_array =new Array();&#10;my_array[0] = 1;&#10;my_array[1] = 2;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>使用直接量.<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var my_object = &#123; &#39;name&#39; : &#39;404_K&#39; &#125;;&#10;var my_array = [&#39;1&#39;,2];</span><br></pre></td></tr></table></figure></p>
+<p>3 避免重复工作<br>最常见的重复工作为浏览器判断<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function add_handler(target,event_type,handler)&#123;&#10;&#9;if(target.addEventListener)&#123; //DOM2 Events&#10;&#9;&#9;target.addEventListener(event_type,handler,false);&#10;&#9;&#125; else &#123; //IE&#10;&#9;    target.attachEvent(&#34;on&#34; +eventType,handler);&#10;&#9;&#125;&#10;&#125;&#10;function remove_handler(target,event_type,handler)&#123;&#10;&#9;if(target.removeEventListener)&#123;&#10;&#9;&#9;target.removeEventListener(event_type,hanlder,false);&#10;    &#125;else &#123;&#10;    &#9;target.detachEvent(&#34;on&#34;+eventType,handelr);&#10;    &#125;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>每次运行方法都熬做方法的判断<br>解决办法</p>
+<ol>
+<li>延迟加载<br>在函数被调用前,没有必要判断用哪种方式执行.<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function add_handler(target,evnet_type,handler)&#123;&#10;&#9;if(target.addEventListener)&#123;&#10;&#9;&#9;add_handler = function(target,event_type,handler)&#123;&#10;&#9;&#9;&#9;target.addEventListener(evenet_type,handler,false);&#10;&#9;    &#125;&#10;    &#125;else &#123;&#10;    &#9;add_handler = function(target,event_type,handler)&#123;&#10;    &#9;&#9;target.attachEvent(&#34;on&#34;+event_type,handler);&#10;        &#125;&#10;    &#125;&#10;    addhandler(target,event_type,handler);&#10;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>这里就第一次执行add_handler去判断该如何操作.</p>
+<ol>
+<li><p>条件预加载<br>和延迟加载类似,不过判断条件是提前执行的,以保证每次执行该函数的速度一致.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var add_handler = document.body.addEventLister ?&#10;&#9;function(target,event_type,handler)&#123;&#10;&#9;&#9;target.addEventLister(event_type,handler,false);&#10;    &#125; :&#10;    function(target,evnet_type,handler)&#123;&#10;        target.attachEvent(&#34;on&#34;+evenet_type,handler);&#10;    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>位操作javascript中的数字都依照IEEE-754标准以64位格式存储,在位操作中,数字被转换为有符号的32位格式<br>var num_1 =25 alert(num_2.toString(2));//会忽略最高位的0<br>逻辑操作符</p>
+</li>
+<li><p>按位与 &amp;</p>
+</li>
+<li>按位或 |</li>
+<li>按位异或 ^ (两个操作数的对应位只有一个为1,则该位为1)</li>
+<li>按位取反 ~</li>
+<li>&lt;&lt;</li>
+<li><blockquote>
+<p>&gt;</p>
+</blockquote>
+</li>
+<li><p>无符号右移</p>
+</li>
+<li><p>判断奇偶<br>if(i%2)… if(i&amp;1)… //优化</p>
+</li>
+<li><p>位掩码<br>处理存在多个布尔选项的情形,思路为使用单个数字的每一位来判断是否选项成立.掩码中的每个选项的值都等于2的幂.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var OPTION_A = 1; //1&#10;var OPTION_B = 2; //10&#10;var OPTION_C = 4; //100 //&#23450;&#20041;&#21487;&#36873;&#39033;&#10;var options =OPTION_A | OPTION_C; // 101&#10;if(options &#38; OPTION_A)&#123; // 101 &#38; 001 ...&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/03/10/es6/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          ES6入门
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/02/20/20/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">angular 笔记一</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div>&copy; 2016 任先生在路上 的博客 , 技术 
+        <a href="http://hexo.io/" target="_blank">Hexo</a>  
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

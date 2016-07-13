@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>flexbox 制作footer | Jar-R</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="解决方法解决该问题的最好方法是采用 flexbox——CSS3提供的一种先进布局模型，旨在建立具有适应性的布局。如果你对 flexbox 还不怎么熟悉，文章最后有一些扩展阅读链接，可以帮助你了解 flexbox。我们的演示页面应该具备 Header、主体内容区域和 Footer，下面是该页面的 HTML1&amp;#60;body&amp;#62;&amp;#10;    &amp;#60;header&amp;#62;...&amp;#60;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="flexbox 制作footer">
+<meta property="og:url" content="http://Jarweb.com/2015/12/25/flexbox制作footer/index.html">
+<meta property="og:site_name" content="Jar-R">
+<meta property="og:description" content="解决方法解决该问题的最好方法是采用 flexbox——CSS3提供的一种先进布局模型，旨在建立具有适应性的布局。如果你对 flexbox 还不怎么熟悉，文章最后有一些扩展阅读链接，可以帮助你了解 flexbox。我们的演示页面应该具备 Header、主体内容区域和 Footer，下面是该页面的 HTML1&amp;#60;body&amp;#62;&amp;#10;    &amp;#60;header&amp;#62;...&amp;#60;">
+<meta property="og:updated_time" content="2016-07-13T16:59:45.104Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="flexbox 制作footer">
+<meta name="twitter:description" content="解决方法解决该问题的最好方法是采用 flexbox——CSS3提供的一种先进布局模型，旨在建立具有适应性的布局。如果你对 flexbox 还不怎么熟悉，文章最后有一些扩展阅读链接，可以帮助你了解 flexbox。我们的演示页面应该具备 Header、主体内容区域和 Footer，下面是该页面的 HTML1&amp;#60;body&amp;#62;&amp;#10;    &amp;#60;header&amp;#62;...&amp;#60;">
+  
+    <link rel="alternative" href="/atom.xml" title="Jar-R" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">任先生在路上</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle" style="margin-bottom:20px;">Good things are coming !</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">列表</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger" style="display:none;"></div>
+  		<h1 class="header-author js-mobile-header hide">任先生在路上</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">任先生在路上</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Good things are coming !</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">列表</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-flexbox制作footer" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/25/flexbox制作footer/" class="article-date">
+  	<time datetime="2015-12-24T16:00:00.000Z" itemprop="datePublished">2015-12-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      flexbox 制作footer
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>解决方法解决该问题的最好方法是采用 flexbox——CSS3提供的一种先进布局模型，旨在建立具有适应性的布局。如果你对 flexbox 还不怎么熟悉，文章最后有一些扩展阅读链接，可以帮助你了解 flexbox。<br>我们的演示页面应该具备 Header、主体内容区域和 Footer，下面是该页面的 HTML<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;body&#62;&#10;    &#60;header&#62;...&#60;/header&#62;&#10;    &#60;section class=&#34;main-content&#34;&#62;...&#60;/section&#62;&#10;    &#60;footer&#62;...&#60;/footer&#62;&#10;&#60;/body&#62;</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>为了启用 flex模式，我们将 body 的 display 属性设置为 flex, 然后将方向属性设置为列, （默认是行，也就是横向布局）。同时，将html 和 body 元素的高度设置为100%，使其充满整个屏幕。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">html&#123;&#10;    height: 100%;&#10;&#125;&#10;&#10;body&#123;&#10;    display: flex;&#10;    flex-direction: column;&#10;    height: 100%;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>现在，我们需要调整各个区域占用的页面空间，我们将通过flex 属性来达到这一目的，该属性实际包含了三个属性，分别是：</p>
+<ul>
+<li>flex-grow：元素在同一容器中对可分配空间的分配比率，及扩展比率</li>
+<li>flex-shrink：如果空间不足，元素的收缩比率</li>
+<li>flex-basis：元素的伸缩基准值</li>
+</ul>
+<p>我们希望 header 和footer 只占用他们应该占用的空间，将剩余的空间全部交给主体内容区域<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">header&#123;&#10;   /* &#25105;&#20204;&#24076;&#26395; header &#37319;&#29992;&#22266;&#23450;&#30340;&#39640;&#24230;&#65292;&#21482;&#21344;&#29992;&#24517;&#39035;&#30340;&#31354;&#38388; */&#10;   /* 0 flex-grow, 0 flex-shrink, auto flex-basis */&#10;   flex: 0 0 auto;&#10;&#125;&#10;&#10;.main-content&#123;&#10;   /* &#23558; flex-grow &#35774;&#32622;&#20026;1&#65292;&#35813;&#20803;&#32032;&#20250;&#21344;&#29992;&#25152;&#26377;&#30340;&#21487;&#20351;&#29992;&#31354;&#38388;&#10;      &#32780;&#20854;&#20182;&#20803;&#32032;&#35813;&#23646;&#24615;&#20540;&#20026;0&#65292;&#22240;&#27492;&#19981;&#20250;&#24471;&#21040;&#22810;&#20313;&#30340;&#31354;&#38388;*/&#10;   /* 1 flex-grow, 0 flex-shrink, auto flex-basis */&#10;   flex: 1 0 auto;&#10;&#125;&#10;&#10;footer&#123;&#10;   /* &#21644; header &#19968;&#26679;&#65292;footer &#20063;&#37319;&#29992;&#22266;&#23450;&#39640;&#24230;*/&#10;   /* 0 flex-grow, 0 flex-shrink, auto flex-basis */&#10;   flex: 0 0 auto;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/12/25/js date/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          js Date
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/12/25/js代码技巧/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js代码技巧</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div>&copy; 2016 任先生在路上 的博客 , 技术 
+        <a href="http://hexo.io/" target="_blank">Hexo</a>  
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

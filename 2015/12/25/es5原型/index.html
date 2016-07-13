@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>es5原型 | Jar-R</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ES5.1 之后加了几个新的 API 帮助我们操作对象的 [[Prototype]]，
+
+Object.prototype.isPrototypeOf
+Object.create
+Object.getPrototypeOf
+Object.setPrototypeOf
+
+Object.create 创建 child 对象，并把 [[Prototype]] 设置为 parent 对象。Object.g">
+<meta property="og:type" content="article">
+<meta property="og:title" content="es5原型">
+<meta property="og:url" content="http://Jarweb.com/2015/12/25/es5原型/index.html">
+<meta property="og:site_name" content="Jar-R">
+<meta property="og:description" content="ES5.1 之后加了几个新的 API 帮助我们操作对象的 [[Prototype]]，
+
+Object.prototype.isPrototypeOf
+Object.create
+Object.getPrototypeOf
+Object.setPrototypeOf
+
+Object.create 创建 child 对象，并把 [[Prototype]] 设置为 parent 对象。Object.g">
+<meta property="og:updated_time" content="2016-07-13T16:59:14.708Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="es5原型">
+<meta name="twitter:description" content="ES5.1 之后加了几个新的 API 帮助我们操作对象的 [[Prototype]]，
+
+Object.prototype.isPrototypeOf
+Object.create
+Object.getPrototypeOf
+Object.setPrototypeOf
+
+Object.create 创建 child 对象，并把 [[Prototype]] 设置为 parent 对象。Object.g">
+  
+    <link rel="alternative" href="/atom.xml" title="Jar-R" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">任先生在路上</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle" style="margin-bottom:20px;">Good things are coming !</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">列表</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger" style="display:none;"></div>
+  		<h1 class="header-author js-mobile-header hide">任先生在路上</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">任先生在路上</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Good things are coming !</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">列表</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-es5原型" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/25/es5原型/" class="article-date">
+  	<time datetime="2015-12-24T16:00:00.000Z" itemprop="datePublished">2015-12-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      es5原型
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>ES5.1 之后加了几个新的 API 帮助我们操作对象的 [[Prototype]]，</p>
+<ul>
+<li>Object.prototype.isPrototypeOf</li>
+<li>Object.create</li>
+<li>Object.getPrototypeOf</li>
+<li>Object.setPrototypeOf</li>
+</ul>
+<p>Object.create 创建 child 对象，并把 [[Prototype]] 设置为 parent 对象。<br>Object.getPrototypeOf 可以直接获取对象的 [[Prototype]]。<br>isPrototypeOf 能够判断一个对象是否在另一个对象的原型链上。</p>
+<a id="more"></a>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var parent = &#123;&#10;_name: &#39;David&#39;,&#10;getName: function() &#123; return this._name &#125;,&#10;&#125;&#10;var child = Object.create(parent)&#10;Object.getPrototypeOf(child) // parent&#10;parent.isPrototypeOf(child) // true&#10;Object.prototype.isPrototypeOf(child) // true&#10;child instanceof Object // true</span><br></pre></td></tr></table></figure>
+<p>既然有 Object.getPrototypeOf，自然也有 Object.setPrototypeOf 。这个函数可以修改任何对象的 [[Prototype]] ，包括内建类型。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var anotherParent = &#123; name: &#39;Alex&#39; &#125;&#10;Object.setPrototypeOf(child, anotherParent)&#10;Object.getPrototypeOf(child) // anotherParent&#10;// &#20462;&#25913;&#25968;&#32452;&#30340; [[Prototype]]&#10;var a = []&#10;Object.setPrototypeOf(a, anotherParent)&#10;a instanceof Array // false&#10;Object.getPrototypeOf(a) // anotherParent</span><br></pre></td></tr></table></figure></p>
+<p>我们可以非常轻松地创建原型链，或者在已知原型链中插入自定义的对象，玩法只取决于想象力。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function Parent() &#123;&#125;&#10;function Child() &#123;&#125;&#10;Child.prototype = Object.create(Parent.prototype)&#10;Child.prototype.constructor = Child</span><br></pre></td></tr></table></figure></p>
+<p>因为 Object.create(..) 传入的参数会作为 [[Prototype]] ，所以这里有一个有意思的小技巧。我们可以用 Object.create(null)创建一个没有任何属性的对象。这个技巧适合做 proxy 对象，有点类似 Ruby 中的 BasicObject。</p>
+<p>尴尬的私生子 proto说到操作 [[Prototype]] 就不得不提 <strong>proto</strong> 。这个属性是一个 getter/setter ，可以用来获取和设置任意对象的 [[Prototype]] 。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">child.__proto__&#10;// equal to&#10;Object.getPrototypeOf(child)&#10;child.__proto__ = parent&#10;// equal to&#10;Object.setPrototypeOf(child, parent)</span><br></pre></td></tr></table></figure></p>
+<p>它本来不是 ES 的标准，无奈众多浏览器早早地都实现了这个属性，而且应用得还挺广泛的。到了 ES6 为了向下兼容性只好接纳它成为标准的一部分。<br><strong>proto</strong> 是不被推荐的用法。大部分情况下我们仍然应该用<br>Object.getPrototypeOf 和 Object.setPrototypeOf 。什么是少数情况，待会再讲。</p>
+<p>ES6: class 语法糖不得不说开发者世界受 OO 的影响非常之深，虽然 ES5 给了我们足够灵活的 API ，但是：</p>
+<ul>
+<li>很多人还是倾向于用 class 来组织代码。</li>
+<li>很多类库、框架创造了自己的 API 来实现 class 的功能。</li>
+</ul>
+<p>产生这一现象的原因有很多，但事实如此。而且如果用别人的轮子，有些事是我们无法选择的。也许是看到了这一现象，ES6 时代终于有了 class 语法，有望统一各个类库和框架不一致的类实现方式。来看一个例子</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class User &#123;&#10;&#9;constructor(firstName, lastName) &#123;&#10;&#9;this.firstName = firstName this.lastName = lastName&#10;&#125;&#10;fullName() &#123;&#10;&#9;return `$&#123;this.firstName&#125; $&#123;this.lastName&#125;` &#125;&#10;&#125;&#10;let user = new User(&#39;David&#39;, &#39;Chen&#39;)&#10;user.fullName()&#10;// David Chen</span><br></pre></td></tr></table></figure>
+<p>以上的类定义语法非常直观，它跟以下的 ES5 语法是一个意思：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function User(firstName, lastName) &#123;&#10;&#9;this.firstName = firstName&#10;&#9;this.lastName = lastName&#10;&#125;&#10;User.prototype.fullName = function() &#123;&#10;&#9;return &#39;&#39; + this.firstName + this.lastName&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>ES6 并没有改变 JavaScript 基于原型的本质，只是在此之上提供了一些语法糖。class 就是其中之一。其他的还有 extends，super 和 static 。它们大多数都可以转换成等价的 ES5 语法。<br>我们来看看另一个继承的例子：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class Child extends Parent &#123;&#10;&#9;constructor(firstName, lastName, age) &#123;&#10;&#9;&#9;super(firstName, lastName) this.age = age&#10;&#9;&#125;&#10;&#125;&#10;//&#20854;&#22522;&#26412;&#31561;&#20215;&#20110;&#65306;&#10;function Child(firstName, lastName, age) &#123;&#10;&#9;Parent.call(this, firstName, lastName)&#10;&#9;this.age = age&#10;&#125;&#10;Child.prototype = Object.create(Parent.prototype)&#10;Child.constructor = Child</span><br></pre></td></tr></table></figure></p>
+<p>无疑上面的例子更加直观，代码组织更加清晰。这也是加入新语法的目的。不过虽然新语法的本质还是基于原型的，但新加入的概念或多或少会引起一些连带的影响。<br>extends 继承内建类的能力因为语言内部设计原因，我们没有办法自定义一个类来继承 JavaScript 的内建类的。继承类往往会有各种问题。ES6 的 extends 的最大的卖点，就是不仅可以继承自定义类，还可以继承 JavaScript 的内建类，比如这样：<br>class MyArray extends Array { }</p>
+<p>这种方式可以让开发者继承内建类的功能创造出符合自己想要的类。所有 Array 已有的属性和方法都会对继承类生效。这确实是个不错的诱惑，也是继承最大的吸引力。<br>但现实总是悲催的。extends 内建类会引发一些奇怪的问题，很多属性和方法没办法在继承类中正常工作。举个例子：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var a = new Array(1, 2, 3)&#10;a.length&#10;// 3&#10;var b = new MyArray(1, 2, 3)&#10;b.length&#10;// 0</span><br></pre></td></tr></table></figure></p>
+<p>如果说语法糖可以用 Babel.js 这种 transpiler 去编译成 ES5 解决 ，扩充的 API 可以用 polyfill 解决，但是这种内建类的继承机制显然是需要浏览器支持的。而目前唯一支持这个特性的浏览器是………… Microsoft Edge 。<br>好在这并不是什么致命的问题。大多数此类需求都可以用封装类去解决，无非是多写一点 wrapper API 而已。而且个人认为封装和组合反而是比继承更灵活的解决方案。</p>
+<p>super 带来的新概念（坑？）super 在 constructor 和普通方法里的不同在 constructor 里面，super 的用法是 super(..)。它相当于一个函数，调用它等于调用父类的 constructor 。但在普通方法里面，super 的用法是 super.prop 或者 super.method()。它相当于一个指向对象的 [[Prototype]] 的属性。这是 ES6 标准的规定。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class Parent &#123;&#10;&#9;constructor(firstName, lastName) &#123;&#10;&#9;this.firstName = firstName this.lastName = lastName&#10;&#125;&#10;fullName() &#123;&#10;&#9;return `$&#123;this.firstName&#125; $&#123;this.lastName&#125;` &#125;&#10;&#125;&#10;class Child extends Parent &#123;&#10;&#9;constructor(firstName, lastName, age) &#123;&#10;&#9;super(firstName, lastName)&#10;&#9;this.age = age&#10;&#125;&#10;fullName() &#123;&#10;&#9;return `$&#123;super.fullName()&#125; ($&#123;this.age&#125;)` &#125;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>注意：Babel.js 对方法里调用 super(..) 也能编译出正确的结果，但这应该是 Babel.js 的 bug ，我们不该以此得出 super(..) 也可以在非 constructor 里用的结论。<br>super 在子类的 constructor 里必须先于 this 调用如果写子类的 constructor 需要操作 this ，那么 super 必须先调用！这是 ES6 的规则。所以写子类的 constructor 时尽量把super 写在第一行。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class Child extends Parent &#123;&#10;&#9;constructor() &#123; this.xxx() // invalid super() &#125;&#10;&#125;&#10;&#10;class Child extends Parent &#123; fullName() &#123; super.fullName() &#125; &#125;</span><br></pre></td></tr></table></figure></p>
+<p>以上代码中 fullName 方法的 ES5 等价代码是：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fullName() &#123; Parent.prototype.fullName.call(this) &#125;&#10;&#10;//&#32780;&#19981;&#26159;&#10;fullName() &#123; Object.getPrototypeOf(this).fullName.call(this) &#125;</span><br></pre></td></tr></table></figure></p>
+<p>这就是 super 编译时确定的特性。不过为什么要这样设计？个人理解是，函数的 this 只有在运行时才能确定。因此在运行时根据this 的原型链去获得上层方法并不太符合 class 的常规思维，在某些情况下更容易产生错误。比如 child.fullName.call(anotherObj) 。<br>super 对 static 的影响，和类的原型链static 相当于类方法。因为编译时确定的特性，以下代码中：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class Child extends Parent &#123; static findAll() &#123; return super.findAll() &#125; &#125;&#10;//findAll &#30340; ES5 &#31561;&#20215;&#20195;&#30721;&#26159;&#65306;&#10;findAll() &#123; return Parent.findAll() &#125;</span><br></pre></td></tr></table></figure></p>
+<p>static 貌似和原型链没关系，但这不妨碍我们讨论一个问题：类的原型链是怎样的？我没查到相关的资料，不过我们可以测试一下：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object.getPrototypeOf(Child) === Parent // true&#10;Object.getPrototypeOf(Parent) === Object // false&#10;Object.getPrototypeOf(Parent) === Object.prototype // false&#10;proto = Object.getPrototypeOf(Parent) typeof proto // function&#10;proto.toString() //&#10;function () &#123;&#125; proto === Object.getPrototypeOf(Object) // true&#10;proto === Object.getPrototypeOf(String) // true&#10;new proto() //TypeError: function () &#123;&#125; is not a constructor</span><br></pre></td></tr></table></figure></p>
+<p>可见自定义类的话，子类的 [[Prototype]] 是父类，而所有顶层类的 [[Prototype]] 都是同一个函数对象，不管是内建类如 Object 还是自定义类如 Parent 。但这个函数是不能用 new 关键字初始化的。虽然这种设计没有 Ruby 的对象模型那么巧妙，不过也是能够自圆其说的。<br>直接定义 object 并设定 [[Prototype]]除了通过 class 和 extends 的语法设定 [[Prototype]] 之外，现在定义对象也可以直接设定 [[Prototype]] 了。这就要用到 <strong>proto</strong> 属性了。“定义对象并设置 [[Prototype]]” 是唯一建议用 <strong>proto</strong> 的地方。另外，另外注意 super 只有在 method() {} 这种语法下才能用。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let parent = &#123; method1() &#123; .. &#125;, method2() &#123; .. &#125;, &#125;&#10;let child = &#123; __proto__: parent, // valid&#10;method1() &#123; return super.method1() &#125;, // invalid&#10;method2: function() &#123; return super.method2() &#125;, &#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/12/25/js代码技巧/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          js代码技巧
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/12/25/js优化/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js优化</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div>&copy; 2016 任先生在路上 的博客 , 技术 
+        <a href="http://hexo.io/" target="_blank">Hexo</a>  
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>js依赖注入 | Jar-R</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="网页的生成过程，大致可以分成五步。
+
+HTML代码转化成DOM
+CSS代码转化成CSSOM（CSS Object Model）
+结合DOM和CSSOM，生成一棵渲染树（包含每个节点的视觉信息）
+生成布局（layout），即将所有渲染树的所有节点进行平面合成
+将布局绘制（paint）在屏幕上
+
+这五步里面，第一步到第三步都非常快，耗时的是第四步和第五步。“生成布局”（flow）和”绘制”（paint">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js依赖注入">
+<meta property="og:url" content="http://Jarweb.com/2016/03/10/js依赖注入/index.html">
+<meta property="og:site_name" content="Jar-R">
+<meta property="og:description" content="网页的生成过程，大致可以分成五步。
+
+HTML代码转化成DOM
+CSS代码转化成CSSOM（CSS Object Model）
+结合DOM和CSSOM，生成一棵渲染树（包含每个节点的视觉信息）
+生成布局（layout），即将所有渲染树的所有节点进行平面合成
+将布局绘制（paint）在屏幕上
+
+这五步里面，第一步到第三步都非常快，耗时的是第四步和第五步。“生成布局”（flow）和”绘制”（paint">
+<meta property="og:updated_time" content="2016-07-13T17:08:15.045Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js依赖注入">
+<meta name="twitter:description" content="网页的生成过程，大致可以分成五步。
+
+HTML代码转化成DOM
+CSS代码转化成CSSOM（CSS Object Model）
+结合DOM和CSSOM，生成一棵渲染树（包含每个节点的视觉信息）
+生成布局（layout），即将所有渲染树的所有节点进行平面合成
+将布局绘制（paint）在屏幕上
+
+这五步里面，第一步到第三步都非常快，耗时的是第四步和第五步。“生成布局”（flow）和”绘制”（paint">
+  
+    <link rel="alternative" href="/atom.xml" title="Jar-R" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">任先生在路上</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle" style="margin-bottom:20px;">Good things are coming !</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">列表</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger" style="display:none;"></div>
+  		<h1 class="header-author js-mobile-header hide">任先生在路上</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">任先生在路上</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Good things are coming !</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">列表</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-js依赖注入" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/10/js依赖注入/" class="article-date">
+  	<time datetime="2016-03-09T16:00:00.000Z" itemprop="datePublished">2016-03-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      js依赖注入
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>网页的生成过程，大致可以分成五步。</p>
+<ol>
+<li>HTML代码转化成DOM</li>
+<li>CSS代码转化成CSSOM（CSS Object Model）</li>
+<li>结合DOM和CSSOM，生成一棵渲染树（包含每个节点的视觉信息）</li>
+<li>生成布局（layout），即将所有渲染树的所有节点进行平面合成</li>
+<li>将布局绘制（paint）在屏幕上</li>
+</ol>
+<p>这五步里面，第一步到第三步都非常快，耗时的是第四步和第五步。<br>“生成布局”（flow）和”绘制”（paint）这两步，合称为”渲染”（render）。</p>
+<a id="more"></a>
+<p>二、重排和重绘网页生成的时候，至少会渲染一次。用户访问的过程中，还会不断重新渲染。<br>以下三种情况，会导致网页重新渲染。</p>
+<ul>
+<li>修改DOM</li>
+<li>修改样式表</li>
+<li>用户事件（比如鼠标悬停、页面滚动、输入框键入文字、改变窗口大小等等）</li>
+</ul>
+<p>重新渲染，就需要重新生成布局和重新绘制。前者叫做”重排”（reflow），后者叫做”重绘”（repaint）。<br>需要注意的是，”重绘”不一定需要”重排”，比如改变某个网页元素的颜色，就只会触发”重绘”，不会触发”重排”，因为布局没有改变。但是，”重排”必然导致”重绘”，比如改变一个网页元素的位置，就会同时触发”重排”和”重绘”，因为布局改变了。</p>
+<p>三、对于性能的影响重排和重绘会不断触发，这是不可避免的。但是，它们非常耗费资源，是导致网页性能低下的根本原因。<br>提高网页性能，就是要降低”重排”和”重绘”的频率和成本，尽量少触发重新渲染。<br>前面提到，DOM变动和样式变动，都会触发重新渲染。但是，浏览器已经很智能了，会尽量把所有的变动集中在一起，排成一个队列，然后一次性执行，尽量避免多次重新渲染。<br>div.style.color = ‘blue’; div.style.marginTop = ‘30px’;<br>上面代码中，div元素有两个样式变动，但是浏览器只会触发一次重排和重绘。<br>如果写得不好，就会触发两次重排和重绘。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">div.style.color = &#39;blue&#39;;&#10;var margin = parseInt(div.style.marginTop);&#10;div.style.marginTop = (margin + 10) + &#39;px&#39;;</span><br></pre></td></tr></table></figure></p>
+<p>上面代码对div元素设置背景色以后，第二行要求浏览器给出该元素的位置，所以浏览器不得不立即重排。<br>一般来说，样式的写操作之后，如果有下面这些属性的读操作，都会引发浏览器立即重新渲染。</p>
+<ul>
+<li>offsetTop/offsetLeft/offsetWidth/offsetHeight</li>
+<li>scrollTop/scrollLeft/scrollWidth/scrollHeight</li>
+<li>clientTop/clientLeft/clientWidth/clientHeight</li>
+<li>getComputedStyle()</li>
+</ul>
+<p>所以，从性能角度考虑，尽量不要把读操作和写操作，放在一个语句里面。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// bad&#10;div.style.left = div.offsetLeft + 10 + &#34;px&#34;;&#10;div.style.top = div.offsetTop + 10 + &#34;px&#34;;  &#10;// good&#10;var left = div.offsetLeft;&#10;var top = div.offsetTop;&#10;div.style.left = left + 10 + &#34;px&#34;;&#10;div.style.top = top + 10 + &#34;px&#34;;</span><br></pre></td></tr></table></figure></p>
+<p>一般的规则是：</p>
+<ul>
+<li>样式表越简单，重排和重绘就越快。</li>
+<li>重排和重绘的DOM元素层级越高，成本就越高。</li>
+<li>table元素的重排和重绘成本，要高于div元素</li>
+</ul>
+<p>四、提高性能的九个技巧有一些技巧，可以降低浏览器重新渲染的频率和成本。<br>第一条是上一节说到的，DOM 的多个读操作（或多个写操作），应该放在一起。不要两个读操作之间，加入一个写操作。<br>第二条，如果某个样式是通过重排得到的，那么最好缓存结果。避免下一次用到的时候，浏览器又要重排。<br>第三条，不要一条条地改变样式，而要通过改变class，或者csstext属性，一次性地改变样式。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// bad&#10;var left = 10;&#10;var top = 10;&#10;el.style.left = left + &#34;px&#34;;&#10;el.style.top = top + &#34;px&#34;;  &#10;// good&#10;el.className += &#34; theclassname&#34;;  &#10;// good&#10;el.style.cssText += &#34;;&#10;left: &#34; + left + &#34;px;&#10;top: &#34; + top + &#34;px;&#34;;</span><br></pre></td></tr></table></figure>
+<p>第四条，尽量使用离线DOM，而不是真实的网面DOM，来改变元素样式。比如，操作Document Fragment对象，完成后再把这个对象加入DOM。再比如，使用 cloneNode() 方法，在克隆的节点上进行操作，然后再用克隆的节点替换原始节点。</p>
+<p>第五条，先将元素设为 display: none （需要1次重排和重绘），然后对这个节点进行100次操作，最后再恢复显示（需要1次重排和重绘）。这样一来，你就用两次重新渲染，取代了可能高达100次的重新渲染。</p>
+<p>第六条，position属性为absolute或fixed的元素，重排的开销会比较小，因为不用考虑它对其他元素的影响。</p>
+<p>第七条，只在必要的时候，才将元素的display属性为可见，因为不可见的元素不影响重排和重绘。另外，visibility : hidden 的元素只对重排有影响，不影响重绘。</p>
+<p>第八条，使用虚拟DOM的脚本库，比如React等。</p>
+<p>第九条，使用 window.requestAnimationFrame()、window.requestIdleCallback() 这两个方法调节重新渲染</p>
+<p>window.requestAnimationFrame()有一些JavaScript方法可以调节重新渲染，大幅提高网页性能。<br>其中最重要的，就是 window.requestAnimationFrame() 方法。它可以将某些代码放到下一次重新渲染时执行。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function doubleHeight(element) &#123;&#10;    var currentHeight = element.clientHeight;&#10;    element.style.height = (currentHeight * 2) + &#39;px&#39;;&#10;&#125;&#10;elements.forEach(doubleHeight);</span><br></pre></td></tr></table></figure></p>
+<p>上面的代码使用循环操作，将每个元素的高度都增加一倍。可是，每次循环都是，读操作后面跟着一个写操作。这会在短时间内触发大量的重新渲染，显然对于网页性能很不利。<br>我们可以使用window.requestAnimationFrame()，让读操作和写操作分离，把所有的写操作放到下一次重新渲染。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function doubleHeight(element) &#123;&#10;    var currentHeight = element.clientHeight;&#10;    window.requestAnimationFrame(function () &#123;&#10;        element.style.height = (currentHeight * 2) + &#39;px&#39;;&#10;    &#125;);&#10;&#125;&#10;elements.forEach(doubleHeight);</span><br></pre></td></tr></table></figure></p>
+<p>页面滚动事件（scroll）的监听函数，就很适合用 window.requestAnimationFrame() ，推迟到下一次重新渲染。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(window).on(&#39;scroll&#39;, function() &#123;&#10;    window.requestAnimationFrame(scrollHandler);&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>当然，最适用的场合还是网页动画。下面是一个旋转动画的例子，元素每一帧旋转1度。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var rAF = window.requestAnimationFrame;&#10;var degrees = 0;&#10;function update() &#123;&#10;    div.style.transform = &#34;rotate(&#34; + degrees + &#34;deg)&#34;;&#10;    console.log(&#39;updated to degrees &#39; + degrees);&#10;    degrees = degrees + 1;&#10;    rAF(update);&#10;&#125;&#10; rAF(update);</span><br></pre></td></tr></table></figure></p>
+<p>window.requestIdleCallback()还有一个函数window.requestIdleCallback()，也可以用来调节重新渲染。<br>它指定只有当一帧的末尾有空闲时间，才会执行回调函数。<br>requestIdleCallback(fn);</p>
+<p>上面代码中，只有当前帧的运行时间小于16.66ms时，函数fn才会执行。否则，就推迟到下一帧，如果下一帧也没有空闲时间，就推迟到下下一帧，以此类推。<br>它还可以接受第二个参数，表示指定的毫秒数。如果在指定 的这段时间之内，每一帧都没有空闲时间，那么函数fn将会强制执行。<br>requestIdleCallback(fn, 5000);</p>
+<p>上面的代码表示，函数fn最迟会在5000毫秒之后执行。<br>函数 fn 可以接受一个 deadline 对象作为参数。</p>
+<p>``dash<br>requestIdleCallback(<br>    function someHeavyComputation(deadline) {<br>        while(deadline.timeRemaining() &gt; 0) {<br>            doWorkIfNeeded();<br>        }<br>        if(thereIsMoreWorkToDo) {<br>            requestIdleCallback(someHeavyComputation);<br>        }<br>    }<br>);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;&#10;&#19978;&#38754;&#20195;&#30721;&#20013;&#65292;&#22238;&#35843;&#20989;&#25968; someHeavyComputation &#30340;&#21442;&#25968;&#26159;&#19968;&#20010; deadline &#23545;&#35937;&#12290;&#10;deadline&#23545;&#35937;&#26377;&#19968;&#20010;&#26041;&#27861;&#21644;&#19968;&#20010;&#23646;&#24615;&#65306;timeRemaining() &#21644; didTimeout&#12290;&#10;&#65288;1&#65289;timeRemaining() &#26041;&#27861;&#10;timeRemaining() &#26041;&#27861;&#36820;&#22238;&#24403;&#21069;&#24103;&#36824;&#21097;&#20313;&#30340;&#27627;&#31186;&#12290;&#36825;&#20010;&#26041;&#27861;&#21482;&#33021;&#35835;&#65292;&#19981;&#33021;&#20889;&#65292;&#32780;&#19988;&#20250;&#21160;&#24577;&#26356;&#26032;&#12290;&#22240;&#27492;&#21487;&#20197;&#19981;&#26029;&#26816;&#26597;&#36825;&#20010;&#23646;&#24615;&#65292;&#22914;&#26524;&#36824;&#26377;&#21097;&#20313;&#26102;&#38388;&#30340;&#35805;&#65292;&#23601;&#19981;&#26029;&#25191;&#34892;&#26576;&#20123;&#20219;&#21153;&#12290;&#19968;&#26086;&#36825;&#20010;&#23646;&#24615;&#31561;&#20110;0&#65292;&#23601;&#25226;&#20219;&#21153;&#20998;&#37197;&#21040;&#19979;&#19968;&#36718;requestIdleCallback&#12290;&#10;&#21069;&#38754;&#30340;&#31034;&#20363;&#20195;&#30721;&#20043;&#20013;&#65292;&#21482;&#35201;&#24403;&#21069;&#24103;&#36824;&#26377;&#31354;&#38386;&#26102;&#38388;&#65292;&#23601;&#19981;&#26029;&#35843;&#29992;doWorkIfNeeded&#26041;&#27861;&#12290;&#19968;&#26086;&#27809;&#26377;&#31354;&#38386;&#26102;&#38388;&#65292;&#20294;&#26159;&#20219;&#21153;&#36824;&#27809;&#26377;&#20840;&#25191;&#34892;&#65292;&#23601;&#20998;&#37197;&#21040;&#19979;&#19968;&#36718;requestIdleCallback&#12290;&#10;&#65288;2&#65289;didTimeout&#23646;&#24615;&#10;deadline&#23545;&#35937;&#30340; didTimeout &#23646;&#24615;&#20250;&#36820;&#22238;&#19968;&#20010;&#24067;&#23572;&#20540;&#65292;&#34920;&#31034;&#25351;&#23450;&#30340;&#26102;&#38388;&#26159;&#21542;&#36807;&#26399;&#12290;&#36825;&#24847;&#21619;&#30528;&#65292;&#22914;&#26524;&#22238;&#35843;&#20989;&#25968;&#30001;&#20110;&#25351;&#23450;&#26102;&#38388;&#36807;&#26399;&#32780;&#35302;&#21457;&#65292;&#37027;&#20040;&#20320;&#20250;&#24471;&#21040;&#20004;&#20010;&#32467;&#26524;&#12290;&#10;&#10;* timeRemaining&#26041;&#27861;&#36820;&#22238;0&#10;* didTimeout &#23646;&#24615;&#31561;&#20110; true&#10;&#10;&#10;&#10;&#22240;&#27492;&#65292;&#22914;&#26524;&#22238;&#35843;&#20989;&#25968;&#25191;&#34892;&#20102;&#65292;&#26080;&#38750;&#26159;&#20004;&#31181;&#21407;&#22240;&#65306;&#24403;&#21069;&#24103;&#26377;&#31354;&#38386;&#26102;&#38388;&#65292;&#25110;&#32773;&#25351;&#23450;&#26102;&#38388;&#21040;&#20102;&#12290;&#10;```dash&#10;function myNonEssentialWork (deadline) &#123;&#10;    while ((deadline.timeRemaining() &#62; 0 || deadline.didTimeout) &#38;&#38; tasks.length &#62; 0) doWorkIfNeeded();&#10;    if (tasks.length &#62; 0) requestIdleCallback(myNonEssentialWork);&#10;&#125;&#10;requestIdleCallback(myNonEssentialWork, 5000);</span><br></pre></td></tr></table></figure></p>
+<p>上面代码确保了，doWorkIfNeeded 函数一定会在将来某个比较空闲的时间（或者在指定时间过期后）得到反复执行。<br>requestIdleCallback 是一个很新的函数，刚刚引入标准，目前只有Chrome支持。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">define(&#39;moduleA&#39;, [&#39;moduleB&#39;], function(moduleB) &#123;&#10;    return &#123; init: function() &#123;&#10;        this.I_need = ModuleB.someFun();&#10;        &#125;&#10;    &#125;;&#10;&#125;);</span><br></pre></td></tr></table></figure>
+<p>define就是做这些事的：</p>
+<ol>
+<li>它负责初始化moduleB</li>
+<li>它通过函数参数的形式注入到moduleA里面去</li>
+</ol>
+<ol>
+<li>初始化被依赖的模块<br>如果不通过依赖注入模式来初始化被依赖的模块，那么就要依赖模块自己去初始化了<br>那么问题来了：依赖模块就耦合了被依赖模块的初始化信息了</li>
+<li><p>注入到依赖模块中<br>被依赖模块已经被其他管理器初始化了，那么依赖模块要怎么获取这个模块呢？<br>有两种方式：</p>
+</li>
+<li><p>自己去问</p>
+</li>
+<li>别人主动给你</li>
+</ol>
+<p>没用依赖注入模式的话是1，用了之后就是2<br>想想，你需要某个东西的时候，你去找别人要，你需要提供别人什么信息？<br>最简单的就是那个东西叫什么，是的，正式一点，你需要一个名称<br>没错，方式1的问题是：依赖模块耦合了被依赖模块的【名称】还有那个【别人】<br>而方式2解决了这个问题，让依赖模块只依赖需要的模块的接口<br>可以看到，注入的两个方式的主动权是相反的</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">require.config = &#123; path: &#123; jquery: &#39;common/jquery&#39; &#125; &#125;;&#10;// moduleA.js&#10;define(&#39;moduleA&#39;, [&#39;jquery&#39;], function($) &#123;&#10;    return &#123; init: function() &#123; this.$dom = $(&#39;#id&#39;); &#125; &#125;;&#10;&#125;);</span><br></pre></td></tr></table></figure>
+<p>moduleA依赖了jquery库，在模块加载器中，我们配置了jquery模块在哪里初始化<br>可以看到，jquery模块的代码是在本地的<br>现在，不管什么原因，我们想要使用一个线上代码库版本的jquery，怎么办？简单：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// config.js&#10;require.config = &#123;&#10;    path: &#123;&#10;        jquery: &#39;http://path/to/online/jquery&#39; &#125;&#10;&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>可以看到，我们只需要修改模块加载器的配置就可以了<br>这个配置就是被依赖模块（jquery）的初始化信息<br>这个就是依赖注入的第一个好处：依赖模块与被依赖模块的初始化信息解耦<br>这个例子也是很常见的代码：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// moduleA.js&#10;var $ = require(&#39;jquery&#39;);&#10;module.exports = &#123;&#10;    init: function() &#123; this.$dom = $(&#39;#id&#39;);&#10;    &#125;&#10;&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>聪明的同学已经看到问题在哪里了，没错，这个模块依赖了被依赖模块的名字<br>这里会有两个问题：</p>
+<ol>
+<li>模块重名问题，还记得那些年我们给模块起名字的日子吗？</li>
+<li>改变模块依赖方式</li>
+</ol>
+<p>像jquery这种库，有许多都是最先加载，并且全局使用的：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// moduleA.js&#10;module.exports = &#123;&#10;    init: function() &#123; this.$dom = $(&#39;#id&#39;);&#10;    &#125;&#10;&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>对于这种情况，我们的组件代码就得改动了<br>不同的模块依赖方式给通用组件的实现造成了很大的困扰<br>为了不改动组件代码，通常我们这样做：<br>// jquery.js<br>module.exports = window.$;</p>
+<p>当然，这是题外话了<br>从上面的例子应该可以知道，依赖注入帮助我们解决了依赖模块对被依赖模块的初始化解耦</p>
+<p>一般依赖注入模式都实现在某个容器中，在前端我们可以管它为模块管理器<br>组件容器负责管理所有的组件，管理他们的初始化，以及依赖，并提供接口获取组件<br>通常容器会把组件的初始化信息聚集在某个配置文件中，比如xml文件或者json文件等<br>这样做的好处是可以很轻易的修改组件的初始化信息，并且可以实现组件的热启动<br>对于前端来说，模块管理器，比如requireJs，就是负责模块的初始化工作的<br>但是模块加载器的重心不是依赖注入<br>因此这里提供一个依赖注入容器的简单例子：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// injector&#10;// APP Instance -- Global &#38; Singleton&#10;var injector = &#123;&#10;    set: function(name, factory) &#123;&#10;    // name: the dependency name&#10;    // factory: can be a factory function&#10;    // or just a value&#10;    &#125;,&#10;    get: function(name) &#123;&#125;&#10;&#125;;&#10; // a.js&#10; injector.set(&#39;env&#39;, &#39;dev&#39;);&#10; // b.js&#10; injector.set(&#39;b&#39;, function() &#123;&#10;    return &#123;&#10;        sayYes: function() &#123; console.log(&#39;Yes!&#39;);&#10;        &#125;,&#10;        sayNo: function() &#123; console.log(&#39;No!&#39;);&#10;        &#125;&#10;    &#125;;&#10;&#125;);&#10;// c.js&#10;injector.set(&#39;c&#39;, function(env, b) &#123;&#10;    if (env === &#39;dev&#39;) &#123;&#10;        b.sayYes();&#10;    &#125; else &#123;&#10;        b.sayNo();&#10;    &#125;&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>实现起来并没有难点，injector其实就只是个map<br>用factory函数的好处是可以延迟模块的初始化<br>另外一个难点是要读取函数的形参名，但是我们也可以这样改来避开这个难点：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// injector&#10;var injector = &#123;&#10;    set: function(name, array) &#123;&#10;    // name: the dependency name&#10;    &#125;,&#10;    get: function(name) &#123;&#125;&#10;&#125;;&#10;// c.js&#10;injector.set(&#39;c&#39;, [&#39;env&#39;, &#39;b&#39;, function(env, b) &#123;&#10;    if (env === &#39;dev&#39;) &#123;&#10;        b.sayYes();&#10;    &#125; else &#123;&#10;        b.sayNo();&#10;    &#125;&#10;&#125;]);</span><br></pre></td></tr></table></figure></p>
+<p>4.2. 初始化可以看到模块管理器实际上只是一个容器<br>现在我们需要一个初始化模块，下面提供一个小栗子：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// initializer.js&#10;function initializer() &#123;&#10;// to load the module in initializer.config&#10;&#125;&#10;initializer.config = &#123;&#10;    initList: [&#39;./a.js&#39;, &#39;./b.js&#39;, &#39;http://path/to/other/module.js&#39;],&#10;    map: &#123; &#39;jquery&#39;: &#39;http://path/to/online/jquery.js&#39; &#125;&#10;&#125;;&#10;initializer();</span><br></pre></td></tr></table></figure></p>
+<p>可以看到，如果文件内容本身就有注册模块的代码的话，initializer只需要加载js文件即可，比如上面的a.js和b.js文件<br>当然也可以加载线上资源<br>如果文件内容没有注册模块的代码的话，就需要initializer自己帮忙注册了<br>比如栗子中的jquery<br>如果系统是服务器端的nodejs代码的话，就可以实现模块的热插拔了</p>
+<p>4.3. 注入方式被依赖模块怎样赋值给依赖模块，主要有三种方式<br>4.3.1. 构造函数注入前面define和angular的依赖注入都是使用构造函数的注入方式，如下：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// define&#10;define(&#39;moduleA&#39;, [&#39;moduleB&#39;], function(moduleB) &#123;&#10;    return &#123;&#10;        init: function() &#123; this.I_need = ModuleB.someFun();&#10;        &#125;&#10;    &#125;;&#10;&#125;);&#10;// anguler&#10;someModule.controller(&#39;MyController&#39;, [&#39;$scope&#39;, &#39;greeter&#39;, function($scope, greeter) &#123; // ... &#125;]);</span><br></pre></td></tr></table></figure></p>
+<p>4.3.2. setter注入直接上例子：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// moduleA.js&#10;var moduleA = &#123;&#10;    do: function() &#123;&#10;        this.helper.doSomething();&#10;    &#125;,&#10;    setHelper: function(helper) &#123;&#10;        this.helper = helper;&#10;    &#125;&#10;&#125;;&#10;// initializer.js&#10;function initializer() &#123;&#10;    // ... moduleA.setHelper(new Helper());&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>4.3.3. 接口注入接口注入主要是把注入过程抽象成接口的形式，让注入方式可以被轻易扩展<br>在前端并不怎么使用接口，因此这种注入方式就不详述</p>
+<ol>
+<li>对比——服务定位模式 (Service Locator, SL)读者可能对服务定位模式不太了解，但是看了下面的代码就知道了<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var fs = require(&#39;fs&#39;);&#10;var path = require(&#39;path&#39;);&#10;var moduleB = require(&#39;./moduleB&#39;);&#10;var moduleC = require(&#39;path/to/moduleC&#39;);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>没错，require就是一个服务定位模式<br>所谓的服务定位模式就是把所有服务（模块）资源的管理都放到一个定位者那里<br>所有需要服务的模块都找它要就行了，就是这么简单<br>服务定位模式也能解决依赖注入的作用域问题<br>服务定位者负责初始化服务，它也提供服务资源<br>只是依赖注入是被动，服务定位模式需要模块自己主动去请求，详见【3. 依赖注入的作用】<br>对于前端来说，<br>服务定位模式肯定更常见，它的优点就是简单，缺点是所有模块都需要依赖定位者<br>依赖注入模式的优点是控制反转，更利于组件化，缺点是不是前端的基础能力</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/03/10/研究console/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          console研究
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/03/10/bootstrap datepiker/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">bootstrap datepiker</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div>&copy; 2016 任先生在路上 的博客 , 技术 
+        <a href="http://hexo.io/" target="_blank">Hexo</a>  
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

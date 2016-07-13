@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>js数据结构 | Jar-R</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="栈（Stack）是限定仅在表尾进行插入或删除操作的线性表。表尾为栈顶（top），表头为栈底（bottom），不含元素的空表为空栈。
+栈又称为后进先出（last in first out）的线性表。
+堆栈可以用链表和数组两种方式实现，一般为一个堆栈预先分配一个大小固定且较合适的空间并非难事，所以较流行的做法是 Stack 结构下含一个数组。如果空间实在紧张，也可用链表实现，且去掉表头。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js数据结构">
+<meta property="og:url" content="http://Jarweb.com/2016/02/12/js数据结构/index.html">
+<meta property="og:site_name" content="Jar-R">
+<meta property="og:description" content="栈（Stack）是限定仅在表尾进行插入或删除操作的线性表。表尾为栈顶（top），表头为栈底（bottom），不含元素的空表为空栈。
+栈又称为后进先出（last in first out）的线性表。
+堆栈可以用链表和数组两种方式实现，一般为一个堆栈预先分配一个大小固定且较合适的空间并非难事，所以较流行的做法是 Stack 结构下含一个数组。如果空间实在紧张，也可用链表实现，且去掉表头。">
+<meta property="og:updated_time" content="2016-07-13T17:07:39.302Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js数据结构">
+<meta name="twitter:description" content="栈（Stack）是限定仅在表尾进行插入或删除操作的线性表。表尾为栈顶（top），表头为栈底（bottom），不含元素的空表为空栈。
+栈又称为后进先出（last in first out）的线性表。
+堆栈可以用链表和数组两种方式实现，一般为一个堆栈预先分配一个大小固定且较合适的空间并非难事，所以较流行的做法是 Stack 结构下含一个数组。如果空间实在紧张，也可用链表实现，且去掉表头。">
+  
+    <link rel="alternative" href="/atom.xml" title="Jar-R" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">任先生在路上</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle" style="margin-bottom:20px;">Good things are coming !</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">列表</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger" style="display:none;"></div>
+  		<h1 class="header-author js-mobile-header hide">任先生在路上</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">任先生在路上</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Good things are coming !</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">列表</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-js数据结构" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/12/js数据结构/" class="article-date">
+  	<time datetime="2016-02-11T16:00:00.000Z" itemprop="datePublished">2016-02-12</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      js数据结构
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>栈（Stack）是限定仅在表尾进行插入或删除操作的线性表。表尾为栈顶（top），表头为栈底（bottom），不含元素的空表为空栈。</p>
+<p>栈又称为后进先出（last in first out）的线性表。</p>
+<p>堆栈可以用链表和数组两种方式实现，一般为一个堆栈预先分配一个大小固定且较合适的空间并非难事，所以较流行的做法是 Stack 结构下含一个数组。如果空间实在紧张，也可用链表实现，且去掉表头。</p>
+<a id="more"></a>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#25214;&#30340;&#38142;&#24335;&#34920;&#31034;&#10;function Stack() &#123;&#10;  this.top = null;&#10;  this.size = 0;&#10;&#125;&#10;module.exports = Stack;&#10;Stack.prototype = &#123;&#10;  constructor: Stack,&#10;  push: function (data) &#123;&#10;    var node = &#123;&#10;      data: data,&#10;      next: null&#10;    &#125;;&#10;&#10;    node.next = this.top;&#10;    this.top = node;&#10;    this.size++;&#10;  &#125;,&#10;  peek: function () &#123;&#10;    return this.top === null ?&#10;      null :&#10;      this.top.data;&#10;  &#125;,&#10;  pop: function () &#123;&#10;    if (this.top === null) return null;&#10;&#10;    var out = this.top;&#10;    this.top = this.top.next;&#10;&#10;    if (this.size &#62; 0) this.size--;&#10;&#10;    return out.data;&#10;  &#125;,&#10;  clear: function () &#123;&#10;    this.top = null;&#10;    this.size = 0;&#10;  &#125;,&#10;  displayAll: function () &#123;&#10;    if (this.top === null) return null;&#10;&#10;    var arr = [];&#10;    var current = this.top;&#10;&#10;    for (var i = 0, len = this.size; i &#60; len; i++) &#123;&#10;      arr[i] = current.data;&#10;      current = current.next;&#10;    &#125;&#10;&#10;    return arr;&#10;  &#125;&#10;&#125;;&#10;&#10;var stack = new Stack();&#10;&#10;stack.push(1);&#10;stack.push(&#39;asd&#39;);&#10;&#10;stack.pop();&#10;stack.push(&#123;a: 1&#125;);&#10;console.log(stack);</span><br></pre></td></tr></table></figure>
+<p>堆栈的应用</p>
+<p>回溯<br>递回<br>深度优先搜寻</p>
+<p>示例1：数值进制转换<br>公式： N = (N / d) * d + N % d N：十进制数值， d：需要转换的进制数<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function numTransform(number, rad) &#123;&#10;  var s = new Stack();&#10;&#10;  while (number) &#123;&#10;    s.push(number % rad);&#10;    number = parseInt(number / 8, 10);&#10;  &#125;&#10;&#10;  var arr = [];&#10;  while (s.top) &#123;&#10;    arr.push(s.pop());&#10;  &#125;&#10;  console.log(arr.join(&#39;&#39;));&#10;&#125;&#10;&#10;numTransform(1348, 8);&#10;numTransform(1348, 2);</span><br></pre></td></tr></table></figure></p>
+<p>示例2：括号匹配检查<br>在算法中设置一个栈，每读入一个括号，若是右括号，则或者使置于栈顶的最急迫的期待得以消解，或者是不合法的情况；若是左括号，则作为一个新的更急迫的期待压入栈中，自然使得原有的在栈中的所有未消解的期待的急迫性都降一级。另外，在算法开始和结束时，栈都应该是空的。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function bracketsMatch(str) &#123;&#10;  var stack = new Stack();&#10;  var text = &#39;&#39;;&#10;&#10;  for (var i = 0, len = str.length; i &#60; len; i++) &#123;&#10;    var c = str[i];&#10;    if (c === &#39;[&#39;) &#123;&#10;      stack.push(c);&#10;    &#125; else if (c === &#39;]&#39;) &#123;&#10;      if (!stack.top || stack.pop() !== &#39;[&#39;) throw new Error(&#39;unexpected brackets:&#39; + c);&#10;    &#125; else &#123;&#10;      text += c;&#10;    &#125;&#10;  &#125;&#10;  console.log(text);&#10;&#125;&#10;&#10;console.log(bracketsMatch(&#39;[asd]&#39;));</span><br></pre></td></tr></table></figure></p>
+<p>示例3：行编辑<br>当用户发现刚刚键入的一个字符是错的时，可补进一个退格符“#”,以表示前一个字符无效；如果发现当前键入的行内差错较多或难以补进，则可以键入一个退行符“@”，以表示当前行中的字符均无效。 为此，可设这个输入缓冲区为一个栈结构，每当从终端接收了一个字符之后先做如下判断：<br>如果它既不是”#”也不是”@”，则将字符压入栈；<br>如果是”#”，则从栈顶删去一个字符；<br>如果是”@”，则清空栈。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function LineEditor(str) &#123;&#10;  this.stack = new Stack();&#10;  this.str = str || &#39;&#39;&#10;&#125;&#10;LineEditor.prototype = &#123;&#10;  getResult: function () &#123;&#10;    var stack = this.stack;&#10;    var str = this.str;&#10;    for (var i = 0, len = str.length; i &#60; len; i++) &#123;&#10;      var c = str[i];&#10;      switch (c) &#123;&#10;        case &#39;#&#39;:&#10;          stack.pop();&#10;          break;&#10;        case &#39;@&#39;:&#10;          stack.clear();&#10;          break;&#10;        default:&#10;          stack.push(c);&#10;          break;&#10;      &#125;&#10;    &#125;&#10;&#10;    var result = &#39;&#39;;&#10;    var current = stack.top;&#10;    while (current) &#123;&#10;      result = current.data + result;&#10;      current = current.next;&#10;    &#125;&#10;&#10;    return result;&#10;  &#125;&#10;&#125;;&#10;&#10;var le = new LineEditor(&#39;whli##ilr#e(s#*s)\&#10;    \noutcha@putchar(*s=#++)&#39;);&#10;console.log(le.getResult());</span><br></pre></td></tr></table></figure></p>
+<p>示例4：表达式求值<br>表达式求值是程序设计语言编译中的一个最基本问题、它的实现是栈应用的又一个典型例子。这里介绍一种简单直观，广为使用的算法，通常称为“运算符优先法”。<br>// from： <a href="http://wuzhiwei.net/ds_app_stack/" target="_blank" rel="external">http://wuzhiwei.net/ds_app_stack/</a><br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var prioty = &#123;&#10;  &#34;+&#34;: 1,&#10;  &#34;-&#34;: 1,&#10;  &#34;%&#34;: 2,&#10;  &#34;*&#34;: 2,&#10;  &#34;/&#34;: 2,&#10;  &#34;^&#34;: 3,&#10;  &#34;(&#34;: 0,&#10;  &#34;)&#34;: 0,&#10;  &#34;`&#34;: -1&#10;&#125;;&#10;&#10;function doop(op, opn1, opn2) &#123;&#10;  switch (op) &#123;&#10;    case &#34;+&#34;:&#10;      return opn1 + opn2;&#10;    case &#34;-&#34;:&#10;      return opn1 - opn2;&#10;    case &#34;*&#34;:&#10;      return opn1 * opn2;&#10;    case &#34;/&#34;:&#10;      return opn1 / opn2;&#10;    case &#34;%&#34;:&#10;      return opn1 % opn2;&#10;    case &#34;^&#34;:&#10;      return Math.pow(opn1, opn2);&#10;    default:&#10;      return 0;&#10;  &#125;&#10;&#125;&#10;&#10;function opcomp(a, b) &#123;&#10;  return prioty[a] - prioty[b];&#10;&#125;&#10;&#10;function calInfixExpression(exp) &#123;&#10;  var cs = [];&#10;  var ns = [];&#10;  exp = exp.replace(/\s/g, &#34;&#34;);&#10;  exp += &#39;`&#39;;&#10;  if (exp[0] === &#39;-&#39;) &#123;&#10;    exp = &#34;0&#34; + exp;&#10;  &#125;&#10;  var c;&#10;  var op;&#10;  var opn1;&#10;  var opn2;&#10;  for (var i = 0; i &#60; exp.length; ++i) &#123;&#10;    c = exp[i];&#10;    // &#22914;&#26524;&#26159;&#25805;&#20316;&#31526;&#10;    if (c in prioty) &#123;&#10;      // &#22914;&#26524;&#21491;&#36793;&#19981;&#26159;&#24038;&#25324;&#21495;&#19988;&#25805;&#20316;&#31526;&#26632;&#30340;&#26632;&#39030;&#20803;&#32032;&#20248;&#20808;&#26435;&#27604;&#21491;&#36793;&#22823;&#10;      // &#24490;&#29615;&#36941;&#21382;&#36827;&#34892;&#36830;&#32493;&#36816;&#31639;&#10;      while (c != &#39;(&#39; &#38;&#38; cs.length &#38;&#38; opcomp(cs[cs.length - 1], c) &#62;= 0) &#123;&#10;        // &#20986;&#26632;&#30340;&#25805;&#20316;&#31526;&#10;        op = cs.pop();&#10;        // &#22914;&#26524;&#19981;&#26159;&#24038;&#25324;&#21495;&#25110;&#32773;&#21491;&#25324;&#21495;&#65292;&#35828;&#26126;&#26159;&#36816;&#31639;&#31526;&#10;        if (op != &#39;(&#39; &#38;&#38; op != &#39;)&#39;) &#123;&#10;          // &#20986;&#26632;&#20445;&#23384;&#25968;&#23383;&#30340;&#26632;&#30340;&#20004;&#20010;&#20803;&#32032;&#10;          opn2 = ns.pop();&#10;          opn1 = ns.pop();&#10;          // &#23558;&#19982;&#25805;&#20316;&#31526;&#36816;&#31639;&#21518;&#30340;&#32467;&#26524;&#20445;&#23384;&#21040;&#26632;&#39030;&#10;          ns.push(doop(op, opn1, opn2));&#10;        &#125;&#10;      &#125;&#10;      // &#22914;&#26524;&#21491;&#36793;&#19981;&#26159;&#21491;&#25324;&#21495;&#65292;&#20445;&#23384;&#21040;&#25805;&#20316;&#31526;&#26632;&#20013;&#10;      if (c != &#39;)&#39;) cs.push(c);&#10;    &#125; else &#123;&#10;      // &#22810;&#20301;&#25968;&#30340;&#25968;&#23383;&#30340;&#24773;&#20917;&#10;      while (!(exp[i] in prioty)) &#123;&#10;        i++;&#10;        c += exp[i];&#10;      &#125;&#10;      ns.push(parseFloat(c));&#10;      i--;&#10;    &#125;&#10;  &#125;&#10;  return ns.length ? ns[0] : NaN;&#10;&#125;&#10;&#10;var exp1 = calInfixExpression(&#39;5+3*4/2-2^3+5%2&#39;);&#10;console.log(exp1);</span><br></pre></td></tr></table></figure></p>
+<p>实际上有效的递归调用函数(或过程)应包括两部分：递推规则(方法)，终止条件。</p>
+<p>为保证递归调用正确执行，系统设立一个“递归工作栈”，作为整个递归调用过程期间使用的数据存储区。</p>
+<p>每一层递归包含的信息如：参数、局部变量、上一层的返回地址构成一个“工作记录” 。每进入一层递归，就产生一个新的工作记录压入栈顶；每退出一层递归，就从栈顶弹出一个工作记录。</p>
+<p>从被调函数返回调用函数的一般步骤：</p>
+<p>1若栈为空，则执行正常返回。</p>
+<p>2从栈顶弹出一个工作记录。</p>
+<p>3将“工作记录”中的参数值、局部变量值赋给相应的变量；读取返回地址。</p>
+<p>4将函数值赋给相应的变量。</p>
+<p>5转移到返回地址。</p>
+<p>1 队列的基本概念<br>队列(Queue)：也是运算受限的线性表。是一种先进先出(First In First Out ，简称FIFO)的线性表。只允许在表的一端进行插入，而在另一端进行删除。</p>
+<p>队首(front) ：允许进行删除的一端称为队首。</p>
+<p>队尾(rear) ：允许进行插入的一端称为队尾。 　　</p>
+<p>例如：排队购物。操作系统中的作业排队。先进入队列的成员总是先离开队列。</p>
+<p>队列中没有元素时称为空队列。在空队列中依次加入元素a1, a2, …, an之后，a1是队首元素，an是队尾元素。显然退出队列的次序也只能是a1, a2, …, an ，即队列的修改是依先进先出的原则进行的</p>
+<p>利用一组连续的存储单元(一维数组) 依次存放从队首到队尾的各个元素，称为顺序队列。</p>
+<p>队列的链式存储结构简称为链队列，它是限制仅在表头进行删除操作和表尾进行插入操作的单链表。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function Queue() &#123;&#10;  this.rear = this.front = null;&#10;  this.size = 0;&#10;&#125;&#10;exports.Queue = Queue;&#10;Queue.prototype = &#123;&#10;  clear: function () &#123;&#10;    this.rear = this.front = null;&#10;    this.size = 0;&#10;  &#125;,&#10;  getHead: function () &#123;&#10;    return this.front ? this.front.data : null;&#10;  &#125;,&#10;  enQueue: function (elem) &#123;&#10;    if (this.front === null) &#123;&#10;      this.rear = this.front = &#123;data: elem, next: null&#125;;&#10;    &#125; else &#123;&#10;      var p = &#123;data: elem, next: null&#125;;&#10;      this.rear.next = p;&#10;      this.rear = p;&#10;    &#125;&#10;    this.size++;&#10;  &#125;,&#10;  deQueue: function () &#123;&#10;    if (this.front) &#123;&#10;      var elem = this.front.data;&#10;      this.front = this.front.next;&#10;      if (this.front === null) &#123;&#10;        this.rear = null;&#10;      &#125;&#10;      this.size--;&#10;      return elem;&#10;    &#125; else &#123;&#10;      return null;&#10;    &#125;&#10;  &#125;,&#10;  queueTraverse: function (iterator) &#123;&#10;    var current = this.front;&#10;    while (current) &#123;&#10;      if (iterator(current.data)) break;&#10;      current = current.next;&#10;    &#125;&#10;  &#125;,&#10;  peekAt: function (index) &#123;&#10;    index = index || 0;&#10;&#10;    if (index &#60; this.size) &#123;&#10;      var current = this.front;&#10;      for (var i = 0; i &#60; index; i++) &#123;&#10;        current = current.next;&#10;      &#125;&#10;      return current.data;&#10;    &#125;&#10;&#10;    return null;&#10;  &#125;,&#10;  displayAll: function () &#123;&#10;    if (this.front === null) &#123;&#10;      return null;&#10;    &#125;&#10;&#10;    var arr = [];&#10;    var current = this.front;&#10;&#10;    for (var i = 0, len = this.size; i &#60; len; i++) &#123;&#10;      arr[i] = current.data;&#10;      current = current.next;&#10;    &#125;&#10;&#10;    return arr;&#10;  &#125;&#10;&#125;;&#10;&#10;var queue = new Queue();&#10;queue.enQueue(1);&#10;queue.deQueue();&#10;queue.enQueue(2);&#10;queue.enQueue(3);&#10;console.log(queue.peekAt(0));&#10;console.log(queue.peekAt(1));&#10;console.log(queue.peekAt(2));&#10;console.log(queue.peekAt(3));&#10;console.log(queue.displayAll().join());</span><br></pre></td></tr></table></figure>
+<p>循环队列</p>
+<p>顺序队列中存在“假溢出”现象。因为在入队和出队操作中，头、尾指针只增加不减小，致使被删除元素的空间永远无法重新利用。因此，尽管队列中实际元素个数可能远远小于数组大小，但可能由于尾指针巳超出向量空间的上界而不能做入队操作。该现象称为假溢出。</p>
+<p>为充分利用向量空间，克服上述“假溢出”现象的方法是：将为队列分配的向量空间看成为一个首尾相接的圆环，并称这种队列为循环队列(Circular Queue)。</p>
+<p>在循环队列中进行出队、入队操作时，队首、队尾指针仍要加1，朝前移动。只不过当队首、队尾指针指向向量上界(MAX_QUEUE_SIZE-1)时，其加1操作的结果是指向向量的下界0。</p>
+<p>用模运算可简化为：i=(i+1)%MAX_QUEUE_SIZE ;</p>
+<p>显然，为循环队列所分配的空间可以被充分利用，除非向量空间真的被队列元素全部占用，否则不会上溢。因此，真正实用的顺序队列是循环队列。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#24490;&#29615;&#38431;&#21015;&#10;function CycleQueue() &#123;&#10;  this.base = &#123;&#125;;&#10;  this.front = this.rear = 0;&#10;  this.MAXQSIZE = 100;&#10;&#125;&#10;exports.CycleQueue = CycleQueue;&#10;CycleQueue.prototype = &#123;&#10;  enQueue: function (data) &#123;&#10;    if ((this.rear + 1) % this.MAXQSIZE === 0) throw new Error(&#39;cycleQueue is already full!&#39;);&#10;&#10;    this.base[this.rear] = data;&#10;    this.rear = (this.rear + 1) % this.MAXQSIZE;&#10;  &#125;,&#10;  deQueue: function () &#123;&#10;    if (this.front === this.rear) throw new Error(&#39;cycleQueue is already empty&#39;);&#10;&#10;    var elem = this.base[this.front];&#10;    this.front = (this.front + 1) % this.MAXQSIZE;&#10;&#10;    return elem;&#10;  &#125;,&#10;  clear: function () &#123;&#10;    this.base = &#123;&#125;;&#10;    this.front = this.rear = 0;&#10;  &#125;,&#10;  size: function () &#123;&#10;    return (this.rear - this.front + this.MAXQSIZE) % this.MAXQSIZE;&#10;  &#125;,&#10;  peekAt: function (index) &#123;&#10;    index = (index || 0 + this.MAXQSIZE) % this.MAXQSIZE;&#10;&#10;    return this.base[index + this.front] || null;&#10;  &#125;,&#10;  getHead: function () &#123;&#10;    var elem = this.base[this.front];&#10;    return elem ? elem : null;&#10;  &#125;,&#10;  queueTraverse: function (iterator) &#123;&#10;    for (var i = this.front, len = this.rear = this.front; i &#60; len; i++) &#123;&#10;      if (iterator(this.base[i], i)) break;&#10;    &#125;&#10;  &#125;,&#10;  displayAll: function () &#123;&#10;    var base = [].slice.call(this.base);&#10;&#10;    return base.slice(this.front, this.rear - this.front);&#10;  &#125;&#10;&#125;;&#10;&#10;var queue = new CycleQueue();&#10;queue.enQueue(1);&#10;queue.deQueue();&#10;queue.enQueue(2);&#10;queue.enQueue(3);&#10;console.log(queue.peekAt(0));&#10;console.log(queue.peekAt(1));&#10;console.log(queue.peekAt(2));</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var List = require(&#39;../linkedList/complete-LinkedList&#39;);&#10;var Queue = require(&#39;./Queue&#39;).Queue;&#10;&#10;// &#20107;&#20214;&#31867;&#22411;&#65292;&#26377;&#24207;&#38142;&#34920;LinkList&#30340;&#25968;&#25454;&#20803;&#32032;&#31867;&#22411;&#10;function Event(occurTime, eventType) &#123;&#10;  // &#20107;&#20214;&#21457;&#29983;&#26102;&#21051;&#10;  this.occurTime = occurTime || 0;&#10;  // &#20107;&#20214;&#31867;&#22411;&#65292;0&#34920;&#31034;&#21040;&#36798;&#20107;&#20214;&#65292;1&#33267;4&#34920;&#31034;&#22235;&#20010;&#31383;&#21475;&#30340;&#31163;&#24320;&#20107;&#20214;&#10;  this.eventType = eventType || 0;&#10;&#125;&#10;&#10;// &#38431;&#21015;&#30340;&#25968;&#25454;&#20803;&#32032;&#31867;&#22411;&#10;function QueueElemType(arrivalTime, duration) &#123;&#10;  // &#21040;&#36798;&#26102;&#21051;&#10;  this.arrivalTime = arrivalTime || 0;&#10;  // &#21150;&#29702;&#20107;&#21153;&#25152;&#38656;&#26102;&#38388;&#10;  this.duration = duration || 0;&#10;&#125;&#10;&#10;function Bank() &#123;&#10;  // &#20107;&#20214;&#34920;&#10;  this.eventList = null;&#10;  this.event = null;&#10;  // 4&#20010;&#23458;&#25143;&#38431;&#21015;&#10;  this.queues = new Array(4);&#10;  this.totalTime = 0;&#10;  this.customerNum = 0;&#10;  this.closeTime = 0;&#10;&#125;&#10;Bank.prototype = &#123;&#10;  cmp: function (event1, event2) &#123;&#10;    if (event1.occurTime &#60; event2.occurTime)&#10;      return -1;&#10;    else if (event1.occurTime === event2.occurTime)&#10;      return 0;&#10;    else&#10;      return 1;&#10;  &#125;,&#10;  // &#21021;&#22987;&#21270;&#25805;&#20316;&#10;  openForDay: function () &#123;&#10;    // &#21021;&#22987;&#21270;&#32047;&#35745;&#26102;&#38388;&#21644;&#23458;&#25143;&#25968;&#20026;0&#10;    this.totalTime = 0;&#10;    this.customerNum = 0;&#10;    // &#21021;&#22987;&#21270;&#20107;&#20214;&#38142;&#34920;&#10;    this.eventList = new List();&#10;    // &#35774;&#23450;&#31532;&#19968;&#20010;&#29992;&#25143;&#21040;&#36798;&#20107;&#20214;&#10;    this.event = new Event(0, 0);&#10;    // &#25554;&#20837;&#21040;&#20107;&#20214;&#34920;&#10;    this.eventList.orderInsert(this.event, this.cmp);&#10;&#10;    // &#32622;&#31354;&#38431;&#21015;&#10;    for (var i = 0, len = this.queues.length; i &#60; len; i++)&#10;      this.queues[i] = new Queue();&#10;  &#125;,&#10;  // &#22788;&#29702;&#23458;&#25143;&#21040;&#36798;&#20107;&#20214;&#10;  customerArrived: function (durtime, intertime) &#123;&#10;    ++this.customerNum;&#10;&#10;    // &#29983;&#25104;&#38543;&#26426;&#25968;&#10;    durtime = durtime || Math.floor(Math.random() * 20) + 1;   // &#21150;&#29702;&#19994;&#21153;&#25152;&#38656;&#26102;&#38388;&#10;    intertime = intertime || Math.floor(Math.random() * 5) + 1;  // &#20004;&#20010;&#30456;&#37051;&#23458;&#25143;&#26102;&#38388;&#38388;&#38548;&#10;    // &#19979;&#19968;&#23458;&#25143;&#21040;&#36798;&#26102;&#21051;&#10;    var t = this.event.occurTime + intertime;&#10;    // &#38134;&#34892;&#23578;&#26410;&#20851;&#38376;&#65292;&#25554;&#20837;&#20107;&#20214;&#34920;&#65292;&#36825;&#37324;&#36824;&#21253;&#25324;&#23458;&#25143;&#30340;&#31163;&#24320;&#26102;&#38388;&#10;    if (t &#60; this.closeTime &#38;&#38; t + durtime &#60; this.closeTime) &#123;&#10;      this.eventList.orderInsert(new Event(t, 0), this.cmp);&#10;    &#125;&#10;&#10;    // &#27714;&#38271;&#24230;&#26368;&#30701;&#38431;&#21015;&#10;    var minQueueIndex = 0;&#10;    var allEqualed = false;&#10;    for(var i = 0, len = this.queues.length; i &#60; len &#38;&#38; this.queues[i + 1]; i++)&#123;&#10;      if(this.queues[i].size === 0) &#123;&#10;        minQueueIndex = i;&#10;        break;&#10;      &#125;&#10;      if(this.queues[i].size &#60; this.queues[i + 1].size)&#123;&#10;        minQueueIndex = i;&#10;        allEqualed = false;&#10;      &#125; else if(this.queues[i].size &#60; this.queues[i + 1].size)&#123;&#10;        minQueueIndex = i;&#10;        allEqualed = true;&#10;      &#125; else &#123;&#10;        minQueueIndex = i + 1;&#10;        allEqualed = false;&#10;      &#125;&#10;    &#125;&#10;    // &#22914;&#26524;&#25152;&#26377;&#38431;&#21015;&#38271;&#24230;&#37117;&#30456;&#31561;&#65292;&#21462;&#31532;&#19968;&#20010;&#10;    if(allEqualed) minQueueIndex = 0;&#10;&#10;    this.queues[minQueueIndex]&#10;      .enQueue(new QueueElemType(this.event.occurTime, durtime));&#10;&#10;    // &#35774;&#23450;&#31532;i&#38431;&#21015;&#30340;&#19968;&#20010;&#31163;&#24320;&#20107;&#20214;&#24182;&#25554;&#20837;&#20107;&#20214;&#34920;&#10;    if (this.queues[minQueueIndex].size === 1) &#123;&#10;      this.eventList.orderInsert(new Event(this.event.occurTime + durtime, minQueueIndex + 1), this.cmp);&#10;    &#125;&#10;    // &#20445;&#23384;&#26368;&#26032;&#23458;&#25143;&#30340;&#21040;&#36798;&#26102;&#38388;&#10;    this.event.occurTime = t;&#10;  &#125;,&#10;  // &#22788;&#29702;&#23458;&#25143;&#31163;&#24320;&#20107;&#20214;&#10;  customerDeparture: function (type) &#123;&#10;    // &#21024;&#38500;&#31532;i&#38431;&#21015;&#30340;&#25490;&#22836;&#23458;&#25143;&#10;    var i = type - 1 || 0;&#10;    var customer = this.queues[i].deQueue();&#10;    // &#32047;&#35745;&#23458;&#25143;&#36887;&#30041;&#26102;&#38388;&#10;    this.totalTime += this.event.occurTime - customer.arrivalTime;&#10;&#10;    // &#35774;&#23450;&#31532;i&#38431;&#21015;&#30340;&#19968;&#20010;&#31163;&#24320;&#20107;&#20214;&#24182;&#25554;&#20837;&#20107;&#20214;&#34920;&#10;    if (this.queues[i].size) &#123;&#10;      customer = this.queues[i].getHead();&#10;      this.eventList.orderInsert(new Event(this.event.occurTime + customer.duration, i), this.cmp);&#10;    &#125;&#10;  &#125;,&#10;  simulation: function (closeTime) &#123;&#10;    this.closeTime = closeTime || 0;&#10;    this.openForDay();&#10;    while (this.eventList.head) &#123;&#10;      var elem = this.eventList.delFirst().data;&#10;      if (elem.eventType === 0)&#10;        this.customerArrived();&#10;      else&#10;        this.customerDeparture(elem.eventType);&#10;    &#125;&#10;    console.log(&#39;The average time is &#39; + this.totalTime / this.customerNum);&#10;  &#125;&#10;&#125;;&#10;new Bank().simulation(20);</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/02/20/20/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          angular 笔记一
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/01/27/11/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">DNS解析</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div>&copy; 2016 任先生在路上 的博客 , 技术 
+        <a href="http://hexo.io/" target="_blank">Hexo</a>  
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

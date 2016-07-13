@@ -124,11 +124,11 @@
 
       <div class="body-wrap">
   
-    <article id="post-原型链" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-js new 发生了什么" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/31/原型链/" class="article-date">
-  	<time datetime="2016-03-30T16:00:00.000Z" itemprop="datePublished">2016-03-31</time>
+      <a href="/2016/04/26/js new 发生了什么/" class="article-date">
+  	<time datetime="2016-04-25T16:00:00.000Z" itemprop="datePublished">2016-04-26</time>
 </a>
     </div>
   
@@ -141,7 +141,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/31/原型链/">原型链</a>
+      <a class="article-title" href="/2016/04/26/js new 发生了什么/">js new 发生了什么</a>
     </h1>
   
 
@@ -150,133 +150,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Function.<strong>proto</strong> === Object.prototype // false<br>擦，假设失败了呢，让我们来看看为什么不对，Function.<strong>proto</strong>到底指哪去了<br>Function.<strong>proto</strong> === Function.prototype //true<br>原来指向自己的prototype了呢，那就意味着…<br>Function instanceof Function //true<br>yes，然而 Function instanceof Object似乎也能解释了<br>Function.<strong>proto</strong> === Function.prototype Function.<strong>proto</strong>.<strong>proto</strong> === Object.prototype </p>
-<p>所以如果我们让<br>Function.<strong>proto</strong>.<strong>proto</strong> = null Function instanceof Object //false<br>这回知道为什么不要用 <strong>proto</strong> 了吧，一不小心重写了会导致所有继承自它的对象都受影响。<br>为了养成良好的习惯，实际项目最好使用 getPrototypeOf 取原型链，这里只是为了方便我采用<strong>proto</strong></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/03/31/原型链/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-原型继承" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/30/原型继承/" class="article-date">
-  	<time datetime="2016-03-29T16:00:00.000Z" itemprop="datePublished">2016-03-30</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/30/原型继承/">原型继承</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;&#125;; &#10;console.log(a.prototype); &#10;//=&#62; undefined &#10;var b = function()&#123;&#125;; &#10;console.log(b.prototype); &#10;//=&#62; &#123;&#125; &#10;var c = &#39;Hello&#39;; &#10;console.log(c.prototype); &#10;/=&#62; undefined</span><br></pre></td></tr></table></figure>
-<p>prototype是每个function定义时自带的属性，但是Js中function本身也是对象，我们先来看一下下面几个概念的差别：</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/03/30/原型继承/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-单例" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/29/单例/" class="article-date">
-  	<time datetime="2016-03-28T16:00:00.000Z" itemprop="datePublished">2016-03-29</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/29/单例/">单例</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
+        <p>这样大概就明白了,当我们执行new A(‘testa’)的时候<br>JS会这样做</p>
 <ol>
-<li>单一职责（Single Responsibility）<br>简单说，就是一个类只要负责一种职责即可，如果有多个职责需要处理，那就分离另外一个类。<br>之前我们有讲过JavaScript的面向对象特性，通过对象的封装，我们可以把单一职责在一个对象实现即可。这就完美符合了单一职责。<br>这么说起来，很多程序员肯定会很鄙视，这有什么好说的？ 其实单一职责表面上很简单，任何人都能信手拈来，但是它作为设计原则中最基础的原则，是有原因的！<br>封装并不困难，困难的是在任何时候能准确的分离职责。举个例子：<br>单就系统登录功能，我们把它作为一个职责来看！ 但是随着需求的复杂，会有更多的情况出现:<br>添加了验证码功能，要不要分离职责？<br>添加用户有效期验证，要不要分离？<br>增加用户邮箱验证功能，要不要分离？<br>如果你一直不分离，随着需求的增加，你会被拖入万劫不复的境地，不要认为这是危言耸听！ 但是反过来说，要如何分离，如何做到恰到好处的分离，是需要多年软件经验才能做到的。<br>基础招式的出神入化，虽不能让你杀敌于千里之外，但会让你立于不败之地！</li>
+<li>var o = new Object();</li>
+<li>o.<strong>proto</strong> = A.prototype;//这里还记得之那个function里面的默认的属性么?</li>
+<li>A.call(o)//由于这里this是指向o,可以把什么this.name/getName绑定到o上.</li>
+<li>把这个o返回给a;//完成var a = new A()的过程.</li>
 </ol>
-</blockquote>
+<p>这里注意下,上面所谓的第4步其实是一个简化的说法.真正的过程是在第3步之后,如果发现A返回是一个Object类型(非primitive类型,即非string,boolean,number,null,undefined类型就是Object类型),则直接返回A的返回值,否则把第1步new的Object返回出去.(默认情况下,JS中函数默认返回值是undefined)<br>举个例子</p>
       
     </div>
     
@@ -291,7 +172,7 @@
 
       
         <p class="article-more-link">
-          <a  href="/2016/03/29/单例/#more">more >></a>
+          <a  href="/2016/04/26/js new 发生了什么/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -310,11 +191,11 @@
 
 
   
-    <article id="post-判断类型" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-this指向" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/27/判断类型/" class="article-date">
-  	<time datetime="2016-03-26T16:00:00.000Z" itemprop="datePublished">2016-03-27</time>
+      <a href="/2016/04/25/this指向/" class="article-date">
+  	<time datetime="2016-04-24T16:00:00.000Z" itemprop="datePublished">2016-04-25</time>
 </a>
     </div>
   
@@ -327,7 +208,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/27/判断类型/">判断类型</a>
+      <a class="article-title" href="/2016/04/25/this指向/">this指向</a>
     </h1>
   
 
@@ -336,8 +217,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1、使用 typeof bar === “object” 判断 bar 是不是一个对象有神马潜在的弊端？如何避免这种弊端？<br>使用 typeof 的弊端是显而易见的(这种弊端同使用 instanceof)：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let obj = &#123;&#125;;&#10;let arr = [];&#10;console.log(typeof obj === &#39;object&#39;);  &#10;//trueconsole.log(typeof arr === &#39;object&#39;);  &#10;//trueconsole.log(typeof null === &#39;object&#39;);  &#10;//true</span><br></pre></td></tr></table></figure>
+        <p>this指向的四中情况在javascript里面，this的指向可以归纳为以下四种情况。只要能牢记这四种情况，大部分情况下就已经够用了。</p>
+<p>1.在全局代码或者普通的函数调用中，this指向全局对象，在浏览器里面既为window对象<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(this);&#10;//&#36755;&#20986;window&#10;function foo()&#123;&#10;console.log(this);&#10;&#125;&#10;foo();&#10;//&#36755;&#20986;window</span><br></pre></td></tr></table></figure></p>
+<p>在浏览器环境里运行上述代码，两处输出结果均为window对象。</p>
       
     </div>
     
@@ -352,7 +234,7 @@
 
       
         <p class="article-more-link">
-          <a  href="/2016/03/27/判断类型/#more">more >></a>
+          <a  href="/2016/04/25/this指向/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -371,11 +253,11 @@
 
 
   
-    <article id="post-函数编程" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-模块加载器" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/25/函数编程/" class="article-date">
-  	<time datetime="2016-03-24T16:00:00.000Z" itemprop="datePublished">2016-03-25</time>
+      <a href="/2016/04/25/模块加载器/" class="article-date">
+  	<time datetime="2016-04-24T16:00:00.000Z" itemprop="datePublished">2016-04-25</time>
 </a>
     </div>
   
@@ -388,7 +270,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/25/函数编程/">函数编程</a>
+      <a class="article-title" href="/2016/04/25/模块加载器/">模块加载器实现</a>
     </h1>
   
 
@@ -397,8 +279,146 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="纯函数式相同的参数返回相同的结果，它的执行不依赖于系统的状态"><a href="#纯函数式相同的参数返回相同的结果，它的执行不依赖于系统的状态" class="headerlink" title="纯函数式相同的参数返回相同的结果，它的执行不依赖于系统的状态"></a>纯函数式相同的参数返回相同的结果，它的执行不依赖于系统的状态</h1><p>1) 非纯净的<br>let number = 1;<br>const increment = () =&gt; number += 1;<br>increment();<br>// 2</p>
-<p>2) 纯净的<br>const increment = n =&gt; n + 1;<br>increment(1);<br>// 2</p>
+        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">names = [&#34;Sunday&#34;, &#34;Monday&#34;, &#34;Tuesday&#34;, &#34;Wednesday&#34;, &#34;Thursday&#34;, &#34;Friday&#34;, &#34;Saturday&#34;];&#10;function dayName(number) &#123;&#10;    return names[number];&#10;&#125;&#10;console.log(dayName(1));</span><br></pre></td></tr></table></figure>
+<p>上面的程序，我们创建了一个函数dayName()来获取星期值。但问题是，names变量被暴露在全局作用域中。更多的时候，我们希望能够构造私有变量，而暴露公共函数作为接口。<br>对JavaScript中的函数而言，我们可以通过创建立即调用的函数表达式来达到这个效果，我们可以通过如下的方式重构上面的代码，使得私有作用域成为可能：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var dayName = function() &#123;&#10;    var names = [&#34;Sunday&#34;, &#34;Monday&#34;, &#34;Tuesday&#34;, &#34;Wednesday&#34;, &#34;Thursday&#34;, &#34;Friday&#34;, &#34;Saturday&#34;];&#10;    return &#123;&#10;        name: function(number) &#123;&#10;            return names[number];&#10;        &#125;,&#10;        number: function(name) &#123;&#10;            return names.indexOf(name);&#10;        &#125;&#10;    &#125;;&#10;&#125;();&#10;console.log(dayName.name(3));&#10;console.log(dayName.number(&#34;Sunday&#34;));</span><br></pre></td></tr></table></figure></p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/模块化/">模块化</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/25/模块加载器/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-LokiJS内存数据库介绍" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/24/LokiJS内存数据库介绍/" class="article-date">
+  	<time datetime="2016-04-23T16:00:00.000Z" itemprop="datePublished">2016-04-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/24/LokiJS内存数据库介绍/">LokiJS内存数据库介绍</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>LokiJS 是纯 JavaScript 实现的内存数据库，面向文档，支持 Node.js，浏览器和 Cordova。LokiJS 坚持的信条就是性能永远是第一考虑因素。</p>
+<p>LokiJS 是：</p>
+<ul>
+<li>浏览器的 NoSQL 数据库，包括同步和持久化特性</li>
+<li>一个 Redis 类型的 npm 安装方式存储 store an npm install away</li>
+<li>Cordova 的持久化 NoSQL 数据库</li>
+<li>可嵌入的 NoSQL 数据库，支持 node-webkit 持久化存储</li>
+</ul>
+<p>LokiJS 理想的应用场景：</p>
+<ol>
+<li>客户端内存数据库，比如 session 存储</li>
+<li>性能优先的应用</li>
+<li>cordova/phonegap 移动应用，利用 JavaScript 的特性来避免与原生数据库的交互</li>
+<li>浏览器页面加载的数据集</li>
+<li>node-webkit 桌面应用</li>
+</ol>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LokiJS/">LokiJS</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/24/LokiJS内存数据库介绍/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-js dom" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/23/js dom/" class="article-date">
+  	<time datetime="2016-04-22T16:00:00.000Z" itemprop="datePublished">2016-04-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/23/js dom/">js dom</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>每个Window对象都有一个document属性指向Document<br>Document对象表示窗口的内容.</p>
+<ol>
+<li>获取文档元素<br>//ID<br>//返回<code>element</code><br>document.getElementById(‘ID_K’);<br>//Name<br>//返回NodeList<br>document.getElementsByName(“name_K”);<br>//根据标签<br>//返回HTMLCollection 在&lt;<JavaScript权威指南>&gt;第六版第367页中写的是返回NodeList,但是查了官网API是返回HTMLCollection的.<br>//因为HTML不区分大小写,所以这个也不区分大小写.<br>var first_p = document.getElementsTagName(“p”)[0];<br>first_p_span = first_p.getElementsTagName(“span”);<br>//通过Class<br>document.getElementsByClassName(“K container”);<br>//通过CSS选择器 返回NodeList<br>document.querySelectorAll(“#K div”);<br>document.querySelector(“#K div”);<br>//返回第一个匹配的.</li>
+</ol>
       
     </div>
     
@@ -413,7 +433,7 @@
 
       
         <p class="article-more-link">
-          <a  href="/2016/03/25/函数编程/#more">more >></a>
+          <a  href="/2016/04/23/js dom/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -432,11 +452,11 @@
 
 
   
-    <article id="post-22" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-observe.js " class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/22/22/" class="article-date">
-  	<time datetime="2016-03-22T03:01:46.953Z" itemprop="datePublished">2016-03-22</time>
+      <a href="/2016/04/23/observe.js /" class="article-date">
+  	<time datetime="2016-04-22T16:00:00.000Z" itemprop="datePublished">2016-04-23</time>
 </a>
     </div>
   
@@ -449,7 +469,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/22/22/">移动开发知识</a>
+      <a class="article-title" href="/2016/04/23/observe.js /">observe.js</a>
     </h1>
   
 
@@ -458,15 +478,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>app应用前端开发要注重meta标签<br>webkit内核中有一些私有的meta标签，这些meta标签在开发webapp时起到非常重要的作用 。</p>
-<p><meta content="email=no" name="format-detection" /> //去除Android平台中对邮箱地址的识别怎么做</p>
-<p><meta name="apple-mobile-web-app-capable" content="yes"> //作用是让普通移动网页被添加到主屏幕后</p>
-<p>舍弃CSS float属性<br>在项目开发过程中可以会遇到内容排列显示的布局，假如你遇见这样的视觉稿，建议你放弃float，可以直接使用display:inline-block。</p>
-<p>利用CSS3边框背景属性<br>在app的前端开发中，这个按钮有圆角效果，有内发光效果还有高光效果，这样的按钮使用CSS3写是无法写出来的，当然圆角可以使用CSS3来写，但高光和内发光却无法使用CSS3编写， 这个时候你不妨使用-webkit-border-image来定义这个按钮的样式。</p>
-<p>使用webkit-box<br>webkit为display属性提供了一个webkit-box的值，做到盒子模型灵活控制。</p>
-<p>很多属性极限突破可以使用缩放，倾斜这种手段来hack，比如最小字体，比如各种自己画的伪类图标。<br>能css画的不要用图。<br>能flex布局的不要用浮动，不要用绝对定位（不利于页面布局的扩展）</p>
-</blockquote>
+        <p>用于观察任意对象的任意变化的类库，以轻巧、实用、强大而闻名。</p>
+<p>对象字面量<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123; a: 1 &#125;;&#10;//watch obj&#10;observe(obj, function (name, value) &#123;&#10;&#9;console.log(name + &#34;__&#34; + value);//a__2  &#10;&#125;);&#10;obj.a = 2;</span><br></pre></td></tr></table></figure></p>
+<p>数组<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1, 2, 3]; //watch obj&#10;observe(arr, function (name, value, old) &#123;&#10;&#9;console.log(name + &#34;__&#34; + value+&#34;__&#34;+old);&#10;&#125;);&#10;arr.push(4);//array__push_4  &#10;arr[3] = 5;//3__5_4</span><br></pre></td></tr></table></figure></p>
       
     </div>
     
@@ -474,14 +488,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/移动开发/">移动开发</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/observe-js/">observe.js</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/03/22/22/#more">more >></a>
+          <a  href="/2016/04/23/observe.js /#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -500,11 +514,11 @@
 
 
   
-    <article id="post-关于对象" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-oracle node模块" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/22/关于对象/" class="article-date">
-  	<time datetime="2016-03-21T16:00:00.000Z" itemprop="datePublished">2016-03-22</time>
+      <a href="/2016/04/22/oracle node模块/" class="article-date">
+  	<time datetime="2016-04-21T16:00:00.000Z" itemprop="datePublished">2016-04-22</time>
 </a>
     </div>
   
@@ -517,7 +531,67 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/22/关于对象/">关于对象</a>
+      <a class="article-title" href="/2016/04/22/oracle node模块/">oracle数据库</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var oracledb = require(&#39;oracledb&#39;);&#10;oracledb.getConnection( &#123;&#10;&#9;user : &#34;hr&#34;,&#10;&#9;password : &#34;welcome&#34;,&#10;&#9;connectString : &#34;localhost/XE&#34;&#10;&#125;,&#10;function(err, connection) &#123;&#10;&#9;if (err) &#123;&#10;&#9;console.error(err.message);&#10;&#9;return;&#10;&#9;&#125;&#10;&#9;connection.execute( &#34;SELECT department_id, department_name &#34; + &#34;FROM departments &#34; + &#34;WHERE department_id = :did&#34;, [180], function(err, result) &#123;&#10;&#9;&#9;if (err) &#123;&#10;&#9;&#9;&#9;console.error(err.message);&#10;&#9;&#9;return;&#10;&#9;&#9;&#125;&#10;&#9;&#9;console.log(result.rows);&#10;&#9;&#125;);&#10;&#125;);</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oracle数据库/">oracle数据库</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/22/oracle node模块/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-css动画库" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/21/css动画库/" class="article-date">
+  	<time datetime="2016-04-20T16:00:00.000Z" itemprop="datePublished">2016-04-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/21/css动画库/">css动画库</a>
     </h1>
   
 
@@ -527,10 +601,12 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ol>
-<li>对象字面值不能正确解析问题：<br>{a:1}.a报错，错误Uncaught SyntaxError: Unexpected token .</li>
+<li>Animate.cssAnimate.css 是当前最流行、最易用的CSS动画库。把Animate 库应用到你的项目中就如同为你项目中的元素添加一个类名这样简单。你也可以通过jQuery的事件来调用动画。</li>
 </ol>
-<p>解决：<br>({a:1}.a) // 或({a:1}).a</p>
-<p>原因：<br>就是声明对象字面值时，语句开头不应该用{，因为js解释器会认为这是语句块（block）的开始。<br>同理，类似问题{ name: “mc”, id: 1 }会报错Uncaught SyntaxError: Unexpected token :也是这个道理。({ name: “mc”, id: 1 })即可正确解析。但稍注意下，{name: “mc”}是不会报错的，它等同于name: “mc”，并返回一个字符串”mc”。</p>
+<p>Animate.css 是当前最流行、应用最广的CSS动画库，压缩后体积非常小，也可用于移动站点。就我个人而言，我觉得这是我所遇到的最好的动画库之一，我强烈推荐你在下一个项目中使用这个库。</p>
+<ol>
+<li>Bounce.jsBounce.js是一种工具和JavaScript库，专注于为你的网站提供独特的弹性CSS动画。</li>
+</ol>
       
     </div>
     
@@ -538,14 +614,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/03/22/关于对象/#more">more >></a>
+          <a  href="/2016/04/21/css动画库/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -564,11 +640,11 @@
 
 
   
-    <article id="post-作用域" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-模块化进化" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/19/作用域/" class="article-date">
-  	<time datetime="2016-03-18T16:00:00.000Z" itemprop="datePublished">2016-03-19</time>
+      <a href="/2016/04/21/模块化进化/" class="article-date">
+  	<time datetime="2016-04-20T16:00:00.000Z" itemprop="datePublished">2016-04-21</time>
 </a>
     </div>
   
@@ -581,7 +657,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/19/作用域/">作用域</a>
+      <a class="article-title" href="/2016/04/21/模块化进化/">模块化进化</a>
     </h1>
   
 
@@ -590,90 +666,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>原始数据类型和引用数据类型在进一步讨论作用域及作用域对象的之前，先简单的说明一下JS里的“赋值”和”引用”。</p>
-<p>JS里有两大类数据类型:原始数据类型和引用数据类型（及对象数据类型）。下面的代码试图说明这两者的区别:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var printSpace = require(&#39;./printspace&#39;);&#10;// &#20540;&#20256;&#36882;console.log(&#34;*****&#20540;&#20256;&#36882;*****&#34;);&#10;var num = 10; &#10;// num &#25345;&#26377;&#20102;&#25968;&#23383;10var a = num;  &#10;// a &#25345;&#26377;&#20102;&#25968;&#23383;10var b = num;  &#10;// b &#25345;&#26377;&#20102;&#25968;&#23383;10&#10;&#10;console.log(&#34;------&#21021;&#22987;-----&#34;);&#10;console.log(num);&#10;console.log(a);&#10;console.log(b);&#10;&#10;num = 8; // num &#25345;&#26377;&#30340;&#25968;&#23383;&#21464;&#20026;&#20102;8&#10;&#10;console.log(&#34;------num&#20540;&#25913;&#21464;&#21518;-----&#34;);&#10;console.log(num);&#10;console.log(a);&#10;console.log(b);&#10;&#10;printSpace();&#10;&#10;&#60;!--more--&#62;&#10;&#10;// &#23545;&#35937;&#30340;&#24341;&#29992;console.log(&#34;*****&#23545;&#35937;&#30340;&#24341;&#29992;*****&#34;);&#10;&#10;var yoho = &#123;// yoho &#24341;&#29992;&#20102;&#23545;&#35937; &#123;value: &#8220;&#28526;&#27969;&#8221;&#125;&#10;    value: &#34;&#28526;&#27969;&#34;&#10;&#125;&#10;&#10;var kris = yoho;&#10;// kris &#24341;&#29992;&#20102;&#23545;&#35937; &#123;value: &#8220;&#28526;&#27969;&#8221;&#125;&#10;var me = yoho;   &#10;// me &#24341;&#29992;&#20102;&#23545;&#35937; &#123;value: &#8220;&#28526;&#27969;&#8221;&#125;&#10;&#10;console.log(&#34;------&#21021;&#22987;----&#34;);&#10;console.log(yoho.value);&#10;console.log(kris.value);&#10;console.log(me.value);&#10;&#10;me.value = &#34;&#36824;&#26159;&#28526;&#27969;&#34;; // A&#34892;&#65292; &#34;&#34987;me &#24341;&#29992;&#30340;&#23545;&#35937;&#34;.value &#21457;&#29983;&#20102;&#10;&#10;console.log(&#34;------me.value&#25913;&#21464;&#21518;-----&#34;);&#10;console.log(yoho.value);&#10;console.log(kris.value);&#10;console.log(me.value);&#10;&#10;&#36816;&#34892;node reference&#65292;&#21487;&#20197;&#30475;&#21040;:*****&#20540;&#20256;&#36882;*****&#10;------&#21021;&#22987;-----&#10;10&#10;10&#10;10&#10;------num&#20540;&#25913;&#21464;&#21518;-----&#10;8&#10;10&#10;10&#10;&#10;*****&#23545;&#35937;&#30340;&#24341;&#29992;*****&#10;------&#21021;&#22987;----&#10;&#28526;&#27969;&#10;&#28526;&#27969;&#10;&#28526;&#27969;&#10;------me.value&#25913;&#21464;&#21518;-----&#10;&#36824;&#26159;&#28526;&#27969;&#10;&#36824;&#26159;&#28526;&#27969;&#10;&#36824;&#26159;&#28526;&#27969;</span><br></pre></td></tr></table></figure></p>
-<p>其实上面代码中，yoho、me、kris这三个变量是等同的，他们都指向同一块内存空间，既对象 { value: “潮流” }所在的内存空间。也就是yoho、me、kris三个变量同时引用了对象{ value: “潮流” }。<br>所以me.value、kris.value、yoho.value都是同一块内存空间，而那块内存里的值一开始的值是“潮流”, 然后在A行，这个值被改为了”还是潮流”。</p>
-<p>闭包很高兴你能看到这里。我们终于来到了闭包的概念。可是别激动，我还是只能提供一段最稀松平常的闭包代码，你一定看过类似下面这样的代码：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#27492;&#22788;&#26377;globalScope &#23545;&#35937;&#65307; .... &#19981;&#20877;&#36184;&#36848;var printSpace = require(&#39;./printspace&#39;);&#10;&#10;function outerFunc() &#123;&#10;    // &#20989;&#25968;&#34987;&#35843;&#29992;&#26102;&#65292;&#20135;&#29983;&#20102;&#26032;&#30340;outerScope&#23545;&#35937;, &#26082;outerScope = &#123;&#125;&#10;    //&#10;    // &#35774;&#32622;scope chain&#65292;&#26082; outerScope.parentScope = globalScope;&#10;    //&#10;    // &#25552;&#21319;&#24320;&#22987;&#65306; outerScope.counter = undefined;&#10;    // outerScope.counter = 0;&#10;    var counter = 0;&#10;&#10;    return function() &#123;&#10;        // &#20989;&#25968;&#34987;&#35843;&#29992;&#30340;&#35805;&#65292;&#20135;&#29983;&#26032;&#30340;insideScope = &#123;&#125;&#10;        //&#10;        // &#35774;&#32622;scope chain&#65292;&#26082; insideScope.parentScope = outerScope;&#10;        //&#10;        // &#27492;&#26102;&#23436;&#25972;&#30340;scope chain &#21487;&#20197;&#24819;&#25104;&#36825;&#26679;&#30340; insideScope.parentScope.parentScope&#10;        // &#26082; insideScope.outerScope.globalScope&#10;        //&#10;        // &#20989;&#25968;&#20869;&#37096;&#27809;&#26377; var &#23450;&#20041;&#30340;&#21464;&#37327;&#65292;&#25152;&#20197;insideScope&#27809;&#26377;&#21464;&#21270;&#10;&#10;        console.log(counter); // &#27492;&#22788;&#38656;&#35201;&#25171;&#21360;&#30340;&#26159; insideScope.outerScope.counter&#12290;&#26082;outerScope&#23545;&#35937;&#34987;&#24341;&#29992;&#20102;&#65281;&#65281;&#10;        counter += 1;&#10;    &#125;&#10;&#125;&#10;&#10;var insideFunc = outerFunc(); &#10;// &#22240;&#20026;outerFunc&#30340;&#35843;&#29992;&#65292;&#20869;&#37096;&#20989;&#25968;&#34987;return&#20986;&#26469;&#10;// return &#20986;&#26469;&#30340;&#20869;&#37096;&#20989;&#25968;&#34987;insideFunc&#24341;&#29992;&#10;// &#30001;&#20110;insideFunc &#24341;&#29992;&#30340;&#20989;&#25968;&#20869;&#37096;&#24341;&#29992;&#20102; outerScope&#19978;&#30340;&#23646;&#24615;counter,&#10;// &#25152;&#20197;outerScope&#23545;&#35937;&#19981;&#20250;&#34987;&#22238;&#25910;&#65292;&#20174;&#25928;&#26524;&#19978;&#26469;&#35762;&#23601;&#26159;&#23616;&#37096;&#21464;&#37327;counter&#19968;&#30452;&#23384;&#27963;&#20102;&#10;&#10;/*&#10; * &#19981;&#22952;&#20551;&#24819;&#25104;&#19979;&#38754;&#30340;&#20195;&#30721;&#10; *&#10; * var insideFunc = function() &#123;&#10; *     console.log(counter);&#10; *     counter += 1;&#10; * &#125;&#10; *&#10; * &#20854;&#20013;&#30340;counter&#21464;&#37327;&#26469;&#33258;outerFunc&#34987;&#35843;&#29992;&#26102;&#25152;&#21019;&#24314;&#30340;&#20316;&#29992;&#22495;&#23545;&#35937;&#10; *&#10; */&#10;printSpace();&#10;&#10;insideFunc();&#10;insideFunc();&#10;insideFunc();&#10;insideFunc();&#10;insideFunc();&#10;insideFunc();&#10;&#10;printSpace();&#10;&#10;var anotherInsideFunc = outerFunc(); //A&#34892;&#65292; outerFunc&#21448;&#34987;&#35843;&#29992;&#19968;&#27425;&#65292;&#20135;&#29983;&#20102;&#26032;&#30340;scope chain&#10;&#10;anotherInsideFunc();&#10;anotherInsideFunc();&#10;anotherInsideFunc();&#10;anotherInsideFunc();&#10;&#10;printSpace();&#10;&#36816;&#34892;&#19968;&#19979;node closure&#65292;&#30475;&#21040;&#19979;&#38754;&#30340;&#32467;&#26524;&#65306;&#10;0&#10;1&#10;2&#10;3&#10;4&#10;5&#10;&#10;0&#10;1&#10;2&#10;3</span><br></pre></td></tr></table></figure>
-<p>从结果上来讲，这段代码只是达到了将counter这个一般情况下会随着函数运行结束而被销毁的局部变量保留住了的效果。到底是怎么做到这点的呢，简单来说，过程是这样的:</p>
-<p>1.outerFunc被调用时创造了作用域对象，outerScope，以及由这个outerScope对象做为起点的一条作用域链</p>
-<ol>
-<li>outerFunc运行到最后时return了一个匿名函数, 而这个匿名函数使用(既引用)了outerScope对象上的属性counter。</li>
-<li>此时如果没有其他变量引用return的匿名函数，那么将不会有特别的事情发生，outerScope对象会被回收。</li>
-<li>但是，被return的匿名函数又被innerFunc这个变量引用，所以为了保证其在随后的代码中能被顺利被执行，必须让innerFunc引用的函数内的所有变量都有意义，既counter必须被保留，所以相当于outerScope对象被引用了, 那么outerScope就不会被释放。</li>
-<li>A行中，outerFunc又被调用了一次，则其又产生了一个新的outerScope对象，所以后面anotherInsideFunc执行时，counter又从0开始。</li>
-</ol>
-<p>总结为了理解闭包，需要想通下面几点:</p>
-<ol>
-<li>函数运行时会创建作用域对象及以此对象为起点的作用域链。</li>
-<li>借由函数一等公民的身份，JS函数内部的函数可以被传递给别的变量，既内部函数可以被引用。</li>
-<li>一旦内部函数被引用，并且该内部函数使用了自身作用域链上某个父级作用域对象上的属性，那么该父级作用域对象即使在外部函数运行结束后扔不会被回收。</li>
-<li>外部函数每被调用一次，都会创建新的作用域链。</li>
-<li>作用域链是树形的，下面这张简陋的图也许可以帮助你理解这一概念。</li>
-</ol>
-<p>要产生闭包，关键就是:</p>
-<ol>
-<li>至少有一个外部函数，外部函数内至少有一个内部函数。</li>
-<li>外部函数一定要运行至少一次，以此产生作用域对象并将内部函数传递给函数外部变量。</li>
-</ol>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-事件订阅发布" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/16/事件订阅发布/" class="article-date">
-  	<time datetime="2016-03-15T16:00:00.000Z" itemprop="datePublished">2016-03-16</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/16/事件订阅发布/">事件订阅发布</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>发布/订阅模式(Pub/Sub)是一种消息模式,它有两个参与者:发布者和订阅者。发布者向某个信道发布一条消息，订阅者绑定这个信道，当有消息发布至信道时就会接收到一个通知。最重要的一点是，发布者和订阅者是完全解耦的，彼此并不知晓对方 的存在。两者仅仅共享一个信道名称.</p>
-<p>理解起来很简单: 我去书报亭订了一份报纸,当他把报纸送给我了,我就去领了看.<br>这里,我就变成了订阅者,报亭就是发布者,当报纸送到的时候(状态发生改变,通知订阅者),我就去领了看(做一些操作)<br>废话说完了,我觉得我需要写一个,不然读者都以为我在吹牛,所以,装逼装到位,我就假装写一个吧(如有雷同纯属巧合)<br>一个发布者应该有三个主要的方法: 订阅,发布,退订.<br>先来写订阅:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var PubSub = &#123;&#125;; &#10;var eventObj = &#123;&#125;;  &#10;PubSub.subscribe = function(event, fn) &#123;  &#10;     eventObj[event] = fn;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>传统用法<script src="lodjs.js"></script></p>
+<p>Bower<br>$ bower install lodjs<br>$ bower install git://github.com/yanhaijing/lodjs.git<br>快速上手定义模块使用lodJS的全局函数define定义一个模块，例如在 mod.js中有如下代码：<br>define(function () {<br>    return 123;<br>});</p>
       
     </div>
     
@@ -688,7 +682,7 @@
 
       
         <p class="article-more-link">
-          <a  href="/2016/03/16/事件订阅发布/#more">more >></a>
+          <a  href="/2016/04/21/模块化进化/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -707,11 +701,11 @@
 
 
   
-    <article id="post-阳历农历转换" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-script异步加载" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/15/阳历农历转换/" class="article-date">
-  	<time datetime="2016-03-14T16:00:00.000Z" itemprop="datePublished">2016-03-15</time>
+      <a href="/2016/04/19/script异步加载/" class="article-date">
+  	<time datetime="2016-04-18T16:00:00.000Z" itemprop="datePublished">2016-04-19</time>
 </a>
     </div>
   
@@ -724,7 +718,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/15/阳历农历转换/">阳历农历转换</a>
+      <a class="article-title" href="/2016/04/19/script异步加载/">script异步加载</a>
     </h1>
   
 
@@ -733,9 +727,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="http://localhost:1337/?src=2015,1,15" target="_blank" rel="external">http://localhost:1337/?src=2015,1,15</a> (公历转农历，返回2014,11,25,0) 或者 <a href="http://localhost:1337/?src=2014,11,25,0" target="_blank" rel="external">http://localhost:1337/?src=2014,11,25,0</a> (农历转公历，返回2015,1,15)</p>
-<p>/<strong> <em>农历转公历 </em>/<br>this.LunarToSolar = function (lunar)<br>/</strong> <em>公历转农历 </em>/<br>this.SolarToLunar = function (solar)</p>
-
+        <p>DOM 渲染流程要理解异步脚本载入的用处首先要了解浏览器渲染DOM的流程，以及各阶段用户体验的差别。 一般地，一个包含外部样式表文件和外部脚本文件的HTML载入和渲染过程是这样的：</p>
+<ol>
+<li>浏览器下载HTML文件并开始解析DOM。</li>
+<li>遇到样式表文件link[rel=stylesheet]时，将其加入资源文件下载队列，继续解析DOM。</li>
+<li>遇到脚本文件时，暂停DOM解析并立即下载脚本文件。</li>
+<li>下载结束后立即执行脚本，在脚本中可访问当前<script>以上的DOM。</li>
+<li>脚本执行结束，继续解析DOM。</li>
+<li>整个DOM解析完成，触发DOMContentLoaded事件。</li>
+</ol>
+<p>上述步骤只是大致的描述，你可能还会关心下面两个问题：</p>
+<ul>
+<li>资源文件下载队列。样式表、图片等资源文件的下载不会暂停DOM解析。浏览器会并行地下载这些文件，但通常会限制并发下载数，一般为3-5个。可以在开发者工具的Network标签页中看到。</li>
+<li>执行脚本文件前，浏览器可能会等待该<script>之前的样式下载完成并渲染结束。</li>
+</ul>
       
     </div>
     
@@ -748,6 +753,10 @@
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/19/script异步加载/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -767,7 +776,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 </div>

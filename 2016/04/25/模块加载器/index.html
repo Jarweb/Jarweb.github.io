@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>模块加载器实现 | Jar-R</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1names = [&amp;#34;Sunday&amp;#34;, &amp;#34;Monday&amp;#34;, &amp;#34;Tuesday&amp;#34;, &amp;#34;Wednesday&amp;#34;, &amp;#34;Thursday&amp;#34;, &amp;#34;Friday&amp;#34;, &amp;#34;Saturday&amp;#34;];&amp;#10;function dayName(number) &amp;#123;&amp;#10;    return name">
+<meta property="og:type" content="article">
+<meta property="og:title" content="模块加载器实现">
+<meta property="og:url" content="http://Jarweb.com/2016/04/25/模块加载器/index.html">
+<meta property="og:site_name" content="Jar-R">
+<meta property="og:description" content="1names = [&amp;#34;Sunday&amp;#34;, &amp;#34;Monday&amp;#34;, &amp;#34;Tuesday&amp;#34;, &amp;#34;Wednesday&amp;#34;, &amp;#34;Thursday&amp;#34;, &amp;#34;Friday&amp;#34;, &amp;#34;Saturday&amp;#34;];&amp;#10;function dayName(number) &amp;#123;&amp;#10;    return name">
+<meta property="og:updated_time" content="2016-07-13T16:55:05.971Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="模块加载器实现">
+<meta name="twitter:description" content="1names = [&amp;#34;Sunday&amp;#34;, &amp;#34;Monday&amp;#34;, &amp;#34;Tuesday&amp;#34;, &amp;#34;Wednesday&amp;#34;, &amp;#34;Thursday&amp;#34;, &amp;#34;Friday&amp;#34;, &amp;#34;Saturday&amp;#34;];&amp;#10;function dayName(number) &amp;#123;&amp;#10;    return name">
+  
+    <link rel="alternative" href="/atom.xml" title="Jar-R" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">任先生在路上</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle" style="margin-bottom:20px;">Good things are coming !</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">列表</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger" style="display:none;"></div>
+  		<h1 class="header-author js-mobile-header hide">任先生在路上</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">任先生在路上</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Good things are coming !</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">列表</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-模块加载器" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/25/模块加载器/" class="article-date">
+  	<time datetime="2016-04-24T16:00:00.000Z" itemprop="datePublished">2016-04-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      模块加载器实现
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/模块化/">模块化</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">names = [&#34;Sunday&#34;, &#34;Monday&#34;, &#34;Tuesday&#34;, &#34;Wednesday&#34;, &#34;Thursday&#34;, &#34;Friday&#34;, &#34;Saturday&#34;];&#10;function dayName(number) &#123;&#10;    return names[number];&#10;&#125;&#10;console.log(dayName(1));</span><br></pre></td></tr></table></figure>
+<p>上面的程序，我们创建了一个函数dayName()来获取星期值。但问题是，names变量被暴露在全局作用域中。更多的时候，我们希望能够构造私有变量，而暴露公共函数作为接口。<br>对JavaScript中的函数而言，我们可以通过创建立即调用的函数表达式来达到这个效果，我们可以通过如下的方式重构上面的代码，使得私有作用域成为可能：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var dayName = function() &#123;&#10;    var names = [&#34;Sunday&#34;, &#34;Monday&#34;, &#34;Tuesday&#34;, &#34;Wednesday&#34;, &#34;Thursday&#34;, &#34;Friday&#34;, &#34;Saturday&#34;];&#10;    return &#123;&#10;        name: function(number) &#123;&#10;            return names[number];&#10;        &#125;,&#10;        number: function(name) &#123;&#10;            return names.indexOf(name);&#10;        &#125;&#10;    &#125;;&#10;&#125;();&#10;console.log(dayName.name(3));&#10;console.log(dayName.number(&#34;Sunday&#34;));</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>上面的程序中，我们通过将变量包括在一个函数中，这个函数会立即执行，并返回一个包含两个属性的对象，返回的对象会被赋值给dayName变量。在后面，我们可以通过dayName变量来访问暴露的两个函数接口name和number。<br>对代码进一步改进，我们可以利用一个exports对象来达到暴露公共接口的目的，这种方法可以通过如下方法实现，代码如下：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var weekDay = &#123;&#125;;&#10;(function(exports) &#123;&#10;    var names = [&#34;Sunday&#34;, &#34;Monday&#34;, &#34;Tuesday&#34;, &#34;Wednesday&#34;, &#34;Thursday&#34;, &#34;Friday&#34;, &#34;Saturday&#34;];&#10;    exports.name = function(number) &#123;&#10;        return names[number];&#10;    &#125;;&#10;    exports.number = function(name) &#123;&#10;        return names.indexOf(name);&#10;    &#125;;&#10;&#125;)(weekDay);&#10;// outside of a function, this refers to the global scope object&#10;console.log(weekDay.name(weekDay.number(&#34;Saturday&#34;)));</span><br></pre></td></tr></table></figure></p>
+<p>实现require方法了：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// module.js&#10;function require(name) &#123;&#10;    // &#35843;&#29992;&#19968;&#20010;&#27169;&#22359;&#65292;&#39318;&#20808;&#26816;&#26597;&#36825;&#20010;&#27169;&#22359;&#26159;&#21542;&#24050;&#34987;&#35843;&#29992;&#10;    if(name in require.cache) &#123;&#10;        return require.cache[name];&#10;    &#125;&#10;    var code = new Function(&#34;exports, module&#34;, readFile(name));&#10;    var exports = &#123;&#125;,&#10;        module = &#123;exports: exports&#125;;&#10;    code(exports, module);&#10;    require.cache[name] = module.exports;&#10;    return module.exports;&#10;&#125;&#10;// &#32531;&#23384;&#23545;&#35937;&#65292;&#20026;&#20102;&#24212;&#23545;&#37325;&#22797;&#35843;&#29992;&#30340;&#38382;&#39064;    &#10;require.cache = Object.create(null);&#10;// todo:function readFile(fileName) &#123; ... &#125;&#10;//&#22312;&#39029;&#38754;&#20013;&#20351;&#29992;require&#20989;&#25968;&#65306;&#10;&#60;!DOCTYPE html&#62;&#10;&#60;html lang=&#34;en&#34;&#62;&#10;&#60;head&#62;&#10;    &#60;meta charset=&#34;UTF-8&#34;&#62;&#10;    &#60;title&#62;demo&#60;/title&#62;&#10;    &#60;script src=&#34;module.js&#34;&#62;&#60;/script&#62;&#10;&#60;/head&#62;&#10;&#60;body&#62;&#10;    &#60;script&#62;&#10;        var weekDay = require(&#34;weekDay&#34;);&#10;        var today = require(&#34;today&#34;);&#10;&#10;        console.log(weekDay.name(today.dayNumber()));&#10;    &#60;/script&#62;&#10;&#60;/body&#62;&#10;&#60;/html&#62;</span><br></pre></td></tr></table></figure></p>
+<p>通过这种方式实现的模块化系统通常被称为是CommonJS模块风格的，Node.js正式使用了这种风格的模块化系统。这里只是提供了一个最简单的实现方法，在真实应用中会有更加精致的实现方法。<br>慢载入模块和AMD对浏览器编程而言，通常不会使用CommonJS风格的模块化系统，因为对于Web而言，加载一个资源远没有在服务端来的快，这收到网络性能的影响，尤其一个模块如果过大的话，可能会中断方法的执行。Browserify是解决这个问题的一个比较出名的模块化方案。<br>这个过程大概是这样的：首先检查模块中是否存在require其他模块的语句，如果有，就解析所有相关的模块，然后组装为一个大模块。网站本身为简单的加载这个组装后的大模块。<br>模块化的另一个解决方案是使用AMD，即异步模块定义，AMD允许通过异步的方式加载模块内容，这种就不会阻塞代码的执行。关于AMD的相关背景知识，可以参考这篇文章。<br>我们想要实现的功能大概是这个样子的：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// index.html &#20013;&#30340;&#37096;&#20998;&#20195;&#30721;&#10;define([&#34;weekDay.js&#34;, &#34;today.js&#34;], function (weekDay, today) &#123;&#10;    console.log(weekDay.name(today.dayNumber()));&#10;    document.write(weekDay.name(today.dayNumber()));&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>问题的核心是实现define方法，它的第一个参数是定义该模块说需要的依赖列表，参数而是该模块的具体工作函数。一旦所依赖的模块都被加载后，define便会执行参数2所定义的工作函数。weekDay模块的内容大概是下面的内容：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// weekDay.js&#10;define([], function() &#123;&#10;    var names = [&#34;Sunday&#34;, &#34;Monday&#34;, &#34;Tuesday&#34;, &#34;Wednesday&#34;, &#34;Thursday&#34;, &#34;Friday&#34;, &#34;Saturday&#34;];&#10;    return &#123;&#10;        name: function(number) &#123; return names[number]&#125;,&#10;        number: function(name) &#123; return names.indexOf(name)&#125;&#10;    &#125;&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>如何实现define()方法。为了实现这个方法，我们需要定义一个backgroundReadFile()方法来异步的获取文件内容。此外我们需要能够监视模块的加载状态，当模块加载完后能够告诉函数去执行具体的工作函数（回调）。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#36890;&#36807;Ajax&#26469;&#24322;&#27493;&#21152;&#36733;&#27169;&#22359;&#10;function backgroundReadFile(url, callback) &#123;&#10;    var req = new XMLHttpRequest();&#10;    req.open(&#34;GET&#34;, url, true);&#10;    req.addEventListener(&#34;load&#34;, function () &#123;&#10;        if (req.status &#60; 400)&#10;            callback(req.responseText);&#10;    &#125;);&#10;    req.send(null);&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>通过实现一个getModule函数，通过给定的模块名进行模块的调度运行工作。同样，我们需要通过缓存的方式避免同一个模块被重复的载入。实现代码如下：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// module.js &#30340;&#37096;&#20998;&#20869;&#23481;&#10;var defineCache = Object.create(null);&#10;var currentMod = null;&#10;function getModule(name) &#123;&#10;    if (name in defineCache) &#123;&#10;        return defineCache[name];&#10;    &#125;&#10;    var module = &#123;&#10;        exports: null,&#10;        loaded: false,&#10;        onLoad: []&#10;    &#125;;&#10;    defineCache[name] = module;&#10;    backgroundReadFile(name, function(code) &#123;&#10;        currentMod = module;&#10;        new Function(&#34;&#34;, code)();&#10;    &#125;);&#10;    return module;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>有了getModule()了函数之后，define方法可以借助该方法来为当前模块的依赖列表获取或创建模块对象。define方法的简单实现如下：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// module.js &#30340;&#37096;&#20998;&#20869;&#23481;&#10;function define(depNames, moduleFunction) &#123;&#10;    var myMod = currentMod;&#10;    var deps = depNames.map(getModule);&#10;&#10;    deps.forEach(function(mod) &#123;&#10;        if(!mod.loaded) &#123;&#10;            mod.onLoad.push(whenDepsLoaded);&#10;        &#125;&#10;    &#125;);&#10;&#10;    // &#29992;&#20110;&#26816;&#26597;&#26159;&#21542;&#25152;&#26377;&#30340;&#20381;&#36182;&#27169;&#22359;&#37117;&#34987;&#25104;&#21151;&#21152;&#36733;&#20102;&#10;    function whenDepsLoaded() &#123;&#10;        if(!deps.every(function(m) &#123; return m.loaded; &#125;)) &#123;&#10;            return;&#10;        &#125;&#10;        var args = deps.map(function(m) &#123; return m.exports; &#125;);&#10;        var exports = moduleFunction.apply(null, args);&#10;        if (myMod) &#123;&#10;            myMod.exports = exports;&#10;            myMod.loaded = true;&#10;            myMod.onLoad.forEach(function(f) &#123; f(); &#125;);&#10;        &#125;&#10;    &#125;&#10;    whenDepsLoaded();&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/04/25/this指向/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          this指向
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/04/24/LokiJS内存数据库介绍/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">LokiJS内存数据库介绍</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div>&copy; 2016 任先生在路上 的博客 , 技术 
+        <a href="http://hexo.io/" target="_blank">Hexo</a>  
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

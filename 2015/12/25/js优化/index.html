@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>js优化 | Jar-R</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="注意作用域避免全局查找1function updateUI()&amp;#123;&amp;#10;    var imgs = document.getElementByTagName(&amp;#34;img&amp;#34;);&amp;#10;    for(var i=0, len=imgs.length; i&amp;#60;len; i++)&amp;#123;&amp;#10;            imgs[i].title = docume">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js优化">
+<meta property="og:url" content="http://Jarweb.com/2015/12/25/js优化/index.html">
+<meta property="og:site_name" content="Jar-R">
+<meta property="og:description" content="注意作用域避免全局查找1function updateUI()&amp;#123;&amp;#10;    var imgs = document.getElementByTagName(&amp;#34;img&amp;#34;);&amp;#10;    for(var i=0, len=imgs.length; i&amp;#60;len; i++)&amp;#123;&amp;#10;            imgs[i].title = docume">
+<meta property="og:updated_time" content="2016-07-13T17:09:38.902Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js优化">
+<meta name="twitter:description" content="注意作用域避免全局查找1function updateUI()&amp;#123;&amp;#10;    var imgs = document.getElementByTagName(&amp;#34;img&amp;#34;);&amp;#10;    for(var i=0, len=imgs.length; i&amp;#60;len; i++)&amp;#123;&amp;#10;            imgs[i].title = docume">
+  
+    <link rel="alternative" href="/atom.xml" title="Jar-R" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">任先生在路上</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle" style="margin-bottom:20px;">Good things are coming !</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">列表</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger" style="display:none;"></div>
+  		<h1 class="header-author js-mobile-header hide">任先生在路上</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">任先生在路上</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Good things are coming !</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">列表</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-js优化" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/25/js优化/" class="article-date">
+  	<time datetime="2015-12-24T16:00:00.000Z" itemprop="datePublished">2015-12-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      js优化
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>注意作用域避免全局查找<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function updateUI()&#123;&#10;    var imgs = document.getElementByTagName(&#34;img&#34;);&#10;    for(var i=0, len=imgs.length; i&#60;len; i++)&#123;&#10;            imgs[i].title = document.title + &#34; image &#34; + i;&#10;        &#125;&#10;    var msg = document.getElementById(&#34;msg&#34;);&#10;    msg.innnerHTML = &#34;Update complete.&#34;;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>该函数可能看上去完全正常，但是它包含了三个对于全局document对象的引用。如果在页面上有多个图片，那么for循环中的document引用就会被执行多次甚至上百次，每次都会要进行作用域链查找。通过创建一个指向document对象的局部变量，就可以通过限制一次全局查找来改进这个函数的性能：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function updateUI()&#123;&#10;    var doc = document;&#10;    var imgs = doc.getElementByTagName(&#34;img&#34;);&#10;    for(var i=0, len=imgs.length; i&#60;len; i++)&#123;&#10;            imgs[i].title = doc.title + &#34; image &#34; + i;&#10;        &#125;&#10;    var msg = doc.getElementById(&#34;msg&#34;);&#10;    msg.innnerHTML = &#34;Update complete.&#34;;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这里，首先将document对象存在本地的doc变量中；然后在余下的代码中替换原来的document。与原来的版本相比，现在的函数只有一次全局查找，肯定更快。<br>选择正确方法1.避免不必要的属性查找<br>获取常量值是非常高效的过程<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var value = 5;&#10;var sum = 10 + value;&#10;alert(sum);</span><br></pre></td></tr></table></figure></p>
+<p>该代码进行了四次常量值查找：数字5，变量value，数字10和变量sum。<br>在JavaScript中访问数组元素和简单的变量查找效率一样。所以以下代码和前面的例子效率一样：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var value = [5,10];&#10;var sum = value[0] + value[1];&#10;alert(sum);</span><br></pre></td></tr></table></figure></p>
+<p>对象上的任何属性查找都比访问变量或者数组花费更长时间，因为必须在原型链中对拥有该名称的属性进行一次搜素。属性查找越多，执行时间就越长。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var values = &#123;first: 5, second: 10&#125;;&#10;var sum = values.first + values.second;&#10;alert(sum);</span><br></pre></td></tr></table></figure></p>
+<p>这段代码使用两次属性查找来计算sum的值。进行一两次属性查找并不会导致显著的性能问题，但是进行成百上千次则肯定会减慢执行速度。<br>注意获取单个值的多重属性查找。例如：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var query = window.location.href.substring(window.location.href.indexOf(&#34;?&#34;));</span><br></pre></td></tr></table></figure></p>
+<p>在这段代码中，有6次属性查找：<br>window.location.href.substring()有3次，<br>window.location.href.indexOf()又有3次。只要数一数代码中的点的数量，就可以确定查找的次数了。这段代码由于两次用到了window.location.href，同样的查找进行了两次，因此效率特别不好。<br>一旦多次用到对象属性，应该将其存储在局部变量中。之前的代码可以如下重写：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var url = window.locaiton.href;&#10;var query = url.substring(url.indexOf(&#34;?&#34;));</span><br></pre></td></tr></table></figure></p>
+<p>这个版本的代码只有4次属性查找，相对于原始版本节省了33%。<br>一般来讲，只要能减少算法的复杂度，就要尽可能减少。尽可能多地使用局部变量将属性查找替换为值查找，进一步奖，如果即可以用数字化的数组位置进行访问，也可以使用命名属性（诸如NodeList对象），那么使用数字位置。<br>2.优化循环<br>一个循环的基本优化步骤如下所示。<br>(1)减值迭代——大多数循环使用一个从0开始、增加到某个特定值的迭代器。在很多情况下，从最大值开始，在循环中不断减值的迭代器更加高效。<br>(2)简化终止条件——由于每次循环过程都会计算终止条件，所以必须保证它尽可能快。也就是说避免属性查找或其他操作。<br>(3)简化循环体——循环是执行最多的，所以要确保其最大限度地优化，确保其他某些可以被很容易移除循环的密集计算。<br>(4使用后测试循环——最常用for循环和while循环都是前测试循环。而如do-while这种后测试循环，可以避免最初终止条件的计算，因此运行更快。<br>以下是一个基本的for循环：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for(var i=0; i &#60; value.length; i++)&#123;&#10;    process(values[i]);&#10;&#125;&#10;&#10;//&#36825;&#27573;&#20195;&#30721;&#20013;&#21464;&#37327;i&#20174;0&#36882;&#22686;&#21040;values&#25968;&#32452;&#20013;&#30340;&#20803;&#32032;&#24635;&#25968;&#12290;&#24490;&#29615;&#21487;&#20197;&#25913;&#20026;i&#20943;&#20540;&#65292;&#22914;&#19979;&#25152;&#31034;&#65306;&#10;for(var i=value.length -1; i &#62;= 0; i--)&#123;&#10;    process(values[i]);&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>终止条件从value.length简化成了0。<br>循环还能改成后测试循环，如下：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var i=values.length -1;&#10;if (i&#62; -1)&#123;&#10;    do&#123;&#10;        process(values[i])&#10;    &#125;&#10;while(--i&#62;=0)&#10;//&#27492;&#22788;&#26377;&#20010;&#21208;&#35823;&#65292;&#20070;&#19978;&#32456;&#27490;&#26465;&#20214;&#20026;(--i&#62;0)&#65292;&#32463;&#27979;&#35797;&#65292;(--i&#62;=0)&#25165;&#26159;&#27491;&#30830;&#30340;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>此处最主要的优化是将终止条件和自减操作符组合成了单个语句，循环部分已经优化完全了。<br>记住使用“后测试”循环时必须确保要处理的值至少有一个，空数组会导致多余的一次循环而“前测试”循环则可以避免。</p>
+<p>3.展开循环<br>当循环的次数是确定的，消除循环并使用多次函数调用往往更快。假设values数组里面只有3个元素，直接对每个元素调用process()。这样展开循环可以消除建立循环和处理终止条件的额外开销，使代码运行更快。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#28040;&#38500;&#24490;&#29615; process(values[0]);&#10;process(values[1]);&#10;process(values[2]);</span><br></pre></td></tr></table></figure></p>
+<p>如果循环中的迭代次数不能事先确定，那可以考虑使用一种叫做Duff装置的技术。Duff装置的基本概念是通过计算迭代的次数是否为8的倍数将一个循环展开为一系列语句。<br>Andrew B.King提出了一个更快的Duff装置技术，将do-while循环分成2个单独的循环。以下是例子：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var iterations = Math.floor(values.length / 8);&#10;var leftover = values.length % 8;&#10;var i = 0; if(leftover&#62;0)&#123;&#10;    do&#123;&#10;        process(values[i++]);&#10;    &#125;&#10;    while(--leftover &#62; 0);&#10;&#125;&#10;do&#123;&#10;    process(values[i++]);&#10;    process(values[i++]);&#10;    process(values[i++]);&#10;    process(values[i++]);&#10;    process(values[i++]);&#10;    process(values[i++]);&#10;    process(values[i++]);&#10;    process(values[i++]);&#10;&#125;&#10;while(--iterations &#62; 0);</span><br></pre></td></tr></table></figure></p>
+<p>在这个实现中，剩余的计算部分不会在实际循环中处理，而是在一个初始化循环中进行除以8的操作。当处理掉了额外的元素，继续执行每次调用8次process()的主循环。<br>针对大数据集使用展开循环可以节省很多时间，但对于小数据集，额外的开销则可能得不偿失。它是要花更多的代码来完成同样的任务，如果处理的不是大数据集，一般来说不值得。</p>
+<p>4.避免双重解释<br>当JavaScript代码想解析KavaScript的时候就会存在双重解释惩罚。当使用eval()函数或者是Function构造函数以及使用setTimeout()传一个字符串参数时都会发生这种情况。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#26576;&#20123;&#20195;&#30721;&#27714;&#20540;&#8212;&#8212;&#36991;&#20813;&#65281;&#65281;&#10;eval(&#34;alert(&#39;Hello world!&#39;)&#34;);&#10;//&#21019;&#24314;&#26032;&#20989;&#25968;&#8212;&#8212;&#36991;&#20813;&#65281;&#65281;&#10;var sayHi = new Function(&#34;alert(&#39;Hello world!&#39;)&#34;);&#10;//&#35774;&#32622;&#36229;&#26102;&#8212;&#8212;&#36991;&#20813;&#65281;&#65281;&#10;setTimeout(&#34;alert(&#39;Hello world!&#39;)&#34;, 500);</span><br></pre></td></tr></table></figure></p>
+<p>在以上这些例子中，都要解析包含了JavaScript代码的字符串。这个操作是不能在初始的解析过程中完成的，因为代码是包含在字符串中的，也就是说在JavaScript代码运行的同时必须新启动一个解析器来解析新的代码。实例化一个新的解析器有不容忽视的开销，所以这种代码要比直接解析慢得多。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#24050;&#20462;&#27491;&#10;alert(&#39;Hello world!&#39;);&#10;//&#21019;&#24314;&#26032;&#20989;&#25968;&#8212;&#8212;&#24050;&#20462;&#27491;&#10;var sayHi = function()&#123;&#10;    alert(&#39;Hello world!&#39;);&#10;&#125;;&#10;//&#35774;&#32622;&#19968;&#20010;&#36229;&#26102;&#8212;&#8212;&#24050;&#20462;&#27491;&#10;setTimeout(function()&#123;&#10;    alert(&#39;Hello world!&#39;);&#10;&#125;, 500);</span><br></pre></td></tr></table></figure></p>
+<p>如果要提高代码性能，尽可能避免出现需要按照JavaScript解析的字符串。<br>5.性能的其他注意事项<br>(1)原生方法较快<br>(2)Switch语句较快<br>(3)位运算符较快<br>最小化语句数1.多个变量声明<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//4&#20010;&#35821;&#21477;&#8212;&#8212;&#24456;&#28010;&#36153;&#10;var count = 5;var color = &#34;blue&#34;;&#10;var values = [1,2,3];&#10;var now = new Date();&#10;//&#19968;&#20010;&#35821;&#21477;&#10;var count = 5&#65292;&#10;    color = &#34;blue&#34;&#65292;&#10;    values = [1,2,3]&#65292;&#10;    now = new Date();</span><br></pre></td></tr></table></figure></p>
+<p>2.插入迭代值<br>当使用迭代值的时候，尽可能合并语句。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var name = values[i];&#10;i++;</span><br></pre></td></tr></table></figure></p>
+<p>前面这2句语句各只有一个目的：第一个从values数组中获取值，然后存储在name中；第二个给变量i增加1.这两句可以通过迭代值插入第一个语句组合成一个语句。</p>
+<p>var name = values[i++];</p>
+<p>3.使用数组和对象字面量<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#29992;4&#20010;&#35821;&#21477;&#21019;&#24314;&#21644;&#21021;&#22987;&#21270;&#25968;&#32452;&#8212;&#8212;&#28010;&#36153;&#10;var values = new Array();&#10;values[0] = 123;&#10;values[1] = 456;&#10;values[2] = 789;&#10;//&#29992;4&#20010;&#35821;&#21477;&#21019;&#24314;&#21644;&#21021;&#22987;&#21270;&#23545;&#35937;&#8212;&#8212;&#28010;&#36153;&#10;var person = new Object();&#10;person.name = &#34;Nicholas&#34;;&#10;person.age = 29;&#10;person.sayName = function()&#123;&#10;    alert(this.name);&#10;&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>这段代码中，只创建和初始化了一个数组和一个对象。各用了4个语句：一个调用构造函数，其他3个分配数据。其实可以很容易地转换成使用字面量的形式。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#21482;&#26377;&#19968;&#26465;&#35821;&#21477;&#21019;&#24314;&#21644;&#21021;&#22987;&#21270;&#25968;&#32452;&#10;var values = [13,456,789];&#10;//&#21482;&#26377;&#19968;&#26465;&#35821;&#21477;&#21019;&#24314;&#21644;&#21021;&#22987;&#21270;&#23545;&#35937;&#10;var person = &#123;&#10;    name : &#34;Nicholas&#34;,&#10;    age : 29,&#10;    sayName : function()&#123;&#10;        alert(this.name);&#10;    &#125;&#10;&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>重写后的代码只包含两条语句，减少了75%的语句量，在包含成千上万行JavaScript的代码库中，这些优化的价值更大。<br>只要有可能，尽量使用数组和对象的字面量表达方式来消除不必要的语句。<br>优化DOM交互1.最小化现场更新<br>一旦你需要访问的DOM部分是已经显示的页面的一部分，那么你就是在进行一个现场更新。现场更新进行得越多，代码完成执行所花的事件就越长。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var list = document.getElementById(&#39;myList&#39;),&#10;    item,&#10;    i; for (var i = 0; i &#60; 10; i++) &#123;&#10;    item = document.createElement(&#34;li&#34;);&#10;    list.appendChild(item);&#10;    item.appendChild(document.createTextNode(&#34;Item&#34; + i));&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这段代码为列表添加了10个项目。添加每个项目时，都有2个现场更新：一个添加li元素，另一个给它添加文本节点。这样添加10个项目，这个操作总共要完成20个现场更新。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var list = document.getElementById(&#39;myList&#39;),&#10;    fragment = document.createDocumentFragment(),&#10;    item,&#10;    i; for (var i = 0; i &#60; 10; i++) &#123;&#10;    item = document.createElement(&#34;li&#34;);&#10;    fragment.appendChild(item);&#10;    item.appendChild(document.createTextNode(&#34;Item&#34; + i));&#10;&#125;&#10;list.appendChild(fragment);</span><br></pre></td></tr></table></figure></p>
+<p>在这个例子中只有一次现场更新，它发生在所有项目都创建好之后。文档片段用作一个临时的占位符，放置新创建的项目。当给appendChild()传入文档片段时，只有片段中的子节点被添加到目标，片段本身不会被添加的。<br>一旦需要更新DOM，请考虑使用文档片段来构建DOM结构，然后再将其添加到现存的文档中。</p>
+<p>2.使用innerHTML<br>有两种在页面上创建DOM节点的方法：使用诸如createElement()和appendChild()之类的DOM方法，以及使用innerHTML。对于小的DOM更改而言，两种方法效率都差不多。然而，对于大的DOM更改，使用innerHTML要比使用标准DOM方法创建同样的DOM结构快得多。<br>当把innerHTML设置为某个值时，后台会创建一个HTML解析器，然后使用内部的DOM调用来创建DOM结构，而非基于JavaScript的DOM调用。由于内部方法是编译好的而非解释执行的，所以执行快得多。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var list = document.getElementById(&#34;myList&#34;);&#10;    html = &#34;&#34;;&#10;    i; for (i=0; i &#60; 10; i++)&#123;&#10;    html += &#34;&#60;li&#62;Item &#34; + i +&#34;&#60;/li&#62;&#34;;&#10;&#125; list.innerHTML = html;&#10;&#10;//&#20351;&#29992;innerHTML&#30340;&#20851;&#38190;&#22312;&#20110;&#65288;&#21644;&#20854;&#20182;&#30340;DOM&#25805;&#20316;&#19968;&#26679;&#65289;&#26368;&#23567;&#21270;&#35843;&#29992;&#23427;&#30340;&#27425;&#25968;&#12290;&#10;var list = document.getElementById(&#34;myList&#34;);&#10;    i;&#10;    for (i=0; i &#60; 10; i++)&#123;&#10;    list.innerHTML += &#34;&#60;li&#62;Item &#34; + i +&#34;&#60;/li&#62;&#34;; //&#36991;&#20813;&#65281;&#65281;&#65281;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>这段代码的问题在于每次循环都要调用innerHTML，这是极其低效的。调用innerHTML实际上就是一次现场更新。构建好一个字符串然后一次性调用innerHTML要比调用innerHTML多次快得多。</p>
+<p>3.使用事件代理(根据第13章的概念，我认为此处应为“事件委托”更为妥当)<br>4.注意HTMLCollection<br>任何时候要访问HTMLCollection，不管它是一个属性还是一个方法，都是在文档上进行一个查询，这个查询开销很昂贵。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var images = document.getElementsByTagName(&#34;img&#34;),&#10;    image,&#10;    i,len;&#10;    for (i=0, len=images.length; i &#60; len; i++)&#123;&#10;    image = images[i]; //&#22788;&#29702;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>将length和当前引用的images[i]存入变量，这样就可以最小化对他们的访问。发生以下情况时会返回HTMLCollection对象：</p>
+<ul>
+<li>进行了对getElementsByTagName()的调用；</li>
+<li>获取了元素的childNodes属性；</li>
+<li>获取了元素的attributes属性；</li>
+<li>访问了特殊的集合，如document.forms、document.images等。</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/12/25/es5原型/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          es5原型
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/12/25/js基础/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js基础</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div>&copy; 2016 任先生在路上 的博客 , 技术 
+        <a href="http://hexo.io/" target="_blank">Hexo</a>  
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

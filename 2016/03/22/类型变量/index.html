@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>类型变量 | Jar-R</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="类型JavaScript中类型主要包括了primitive和object类型，其中primitive类型包括了：null、undefined、boolean、number、string和symbol(es6)。其他所有的都为object类型。
+类型判断类型检测主要包括了：typeof、instanceof和toString的三种方式来判断变量的类型。typeoftypeof接受一个值并返回它的类型">
+<meta property="og:type" content="article">
+<meta property="og:title" content="类型变量">
+<meta property="og:url" content="http://Jarweb.com/2016/03/22/类型变量/index.html">
+<meta property="og:site_name" content="Jar-R">
+<meta property="og:description" content="类型JavaScript中类型主要包括了primitive和object类型，其中primitive类型包括了：null、undefined、boolean、number、string和symbol(es6)。其他所有的都为object类型。
+类型判断类型检测主要包括了：typeof、instanceof和toString的三种方式来判断变量的类型。typeoftypeof接受一个值并返回它的类型">
+<meta property="og:updated_time" content="2016-07-13T16:51:08.751Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="类型变量">
+<meta name="twitter:description" content="类型JavaScript中类型主要包括了primitive和object类型，其中primitive类型包括了：null、undefined、boolean、number、string和symbol(es6)。其他所有的都为object类型。
+类型判断类型检测主要包括了：typeof、instanceof和toString的三种方式来判断变量的类型。typeoftypeof接受一个值并返回它的类型">
+  
+    <link rel="alternative" href="/atom.xml" title="Jar-R" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">任先生在路上</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle" style="margin-bottom:20px;">Good things are coming !</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">列表</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger" style="display:none;"></div>
+  		<h1 class="header-author js-mobile-header hide">任先生在路上</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">任先生在路上</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Good things are coming !</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">列表</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-类型变量" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/22/类型变量/" class="article-date">
+  	<time datetime="2016-03-21T16:00:00.000Z" itemprop="datePublished">2016-03-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      类型变量
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>类型JavaScript中类型主要包括了primitive和object类型，其中primitive类型包括了：<br>null、undefined、boolean、number、string和symbol(es6)。其他所有的都为object类型。</p>
+<p>类型判断类型检测主要包括了：typeof、instanceof和toString的三种方式来判断变量的类型。<br>typeoftypeof接受一个值并返回它的类型，它有两种可能的语法：</p>
+<ul>
+<li>typeof x</li>
+<li>typeof(x)</li>
+</ul>
+<a id="more"></a>
+<p>当在primitive类型上使用typeof检测变量类型时，我们总能得到我们想要的结果，比如：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">typeof 1; // &#34;number&#34;  &#10;typeof &#34;&#34;; // &#34;string&#34;  &#10;typeof true; // &#34;boolean&#34;  &#10;typeof bla; // &#34;undefined&#34;  &#10;typeof undefined; // &#34;undefined&#34;&#10;&#10;&#32780;&#24403;&#22312;object&#31867;&#22411;&#19978;&#20351;&#29992;typeof&#26816;&#27979;&#26102;&#65292;&#26377;&#26102;&#21487;&#33021;&#24182;&#19981;&#33021;&#24471;&#21040;&#20320;&#24819;&#35201;&#30340;&#32467;&#26524;&#65292;&#27604;&#22914;&#65306;&#10;typeof []; // &#34;object&#34;  &#10;typeof null; // &#34;object&#34;  &#10;typeof /regex/ // &#34;object&#34;  &#10;typeof new String(&#34;&#34;); // &#34;object&#34;  &#10;typeof function()&#123;&#125;; // &#34;function&#34;</span><br></pre></td></tr></table></figure></p>
+<p>这里的[]返回的确却是object，这可能并不是你想要的，因为数组是一个特殊的对象，有时候这可能并不是你想要的结果。对于这里的null返回的确却是object，wtf，有些人说null被认为是没有一个对象。<br>当你对于typeof检测数据类型不确定时，请谨慎使用。</p>
+<p>toStringtypeof的问题主要在于不能告诉你过多的对象信息，除了函数之外：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">typeof &#123;key:&#39;val&#39;&#125;; // Object is object  &#10;typeof [1,2]; // Array is object  &#10;typeof new Date; // Date object</span><br></pre></td></tr></table></figure></p>
+<p>而toString不管是对于object类型还是primitive类型，都能得到你想要的结果：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var toClass = &#123;&#125;.toString;&#10;console.log(toClass.call(123));  &#10;console.log(toClass.call(true));  &#10;console.log(toClass.call(Symbol(&#39;foo&#39;)));  &#10;console.log(toClass.call(&#39;some string&#39;));  &#10;console.log(toClass.call([1, 2]));  &#10;console.log(toClass.call(new Date()));  &#10;console.log(toClass.call(&#123;  &#10;    a: &#39;a&#39;&#10;&#125;));&#10;&#10;// output&#10;[object Number]&#10;[object Boolean]&#10;[object Symbol]&#10;[object String]&#10;[object Array]&#10;[object Date]&#10;[object Object]</span><br></pre></td></tr></table></figure></p>
+<p>在underscore中你会看到以下代码：<br>// Add some isType methods: isArguments, isFunction, isString, isNumber, isDate, isRegExp.<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">each([&#39;Arguments&#39;, &#39;Function&#39;, &#39;String&#39;, &#39;Number&#39;, &#39;Date&#39;, &#39;RegExp&#39;], function(name) &#123;&#10;  _[&#39;is&#39; + name] = function(obj) &#123;&#10;    return toString.call(obj) == &#39;[object &#39; + name + &#39;]&#39;;&#10;  &#125;;&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>这里就是使用toString来判断变量类型，比如你可以通过_.isFunction(someFunc)来判断someFunc是否为一个函数。从上面的代码我们可以看到toString是可依赖的，不管是object类型还是primitive类型，它都能告诉我们正确的结果。但它只可以用于判断内置的数据类型，对于我们自己构造的对象，它还是不能给出我们想要的结果，比如下面的代码：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function Person() &#123;&#125;&#10;&#10;var a = new Person();  &#10;// [object Object]console.log(&#123;&#125;.toString.call(a));  &#10;console.log(a instanceof Person);</span><br></pre></td></tr></table></figure></p>
+<p>我们这时候就要用到我们下面介绍的instanceof了。instanceof对于使用构造函数创建的对象，我们通常使用instanceof来判断某一实例是否属于某种类型，例如：a instanceof Person，其内部原理实际上是判断Person.prototype是否在a实例的原型链中，其原理可以用下面的函数来表达：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function instance_of(V, F) &#123;  &#10;  var O = F.prototype;&#10;  V = V.__proto__;&#10;  while (true) &#123;&#10;    if (V === null)&#10;      return false;&#10;    if (O === V)&#10;      return true;&#10;    V = V.__proto__;&#10;  &#125;&#10;&#125;&#10;&#10;// usefunction Person() &#123;  &#10;&#125;&#10;var a = new Person();&#10;&#10;// trueconsole.log(instance_of(a, Person));  &#10;`</span><br></pre></td></tr></table></figure></p>
+<p>类型转换因为JavaScript是动态类型，变量是没有类型的，可以随时赋予任意值。但是各种运算符或条件判断中是需要特定类型的，比如if判断时会将判断语句转换为布尔型。下面就来深入了解下JavaScript中类型转换。<br>ToPrimitive当我们需要将变量转换为原始类型时，就需要用到ToPrimitive，下面的代码说明了ToPrimitive的内部实现原理：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function ToPrimitive(x, hint) &#123;  &#10;  // Fast case check.&#10;  if (IS_STRING(x)) return x;&#10;  // Normal behavior.&#10;  if (!IS_SPEC_OBJECT(x)) return x;&#10;  if (IS_SYMBOL_WRAPPER(x)) throw MakeTypeError(kSymbolToPrimitive);&#10;  if (hint == NO_HINT) hint = (IS_DATE(x)) ? STRING_HINT : NUMBER_HINT;&#10;  return (hint == NUMBER_HINT) ? DefaultNumber(x) : DefaultString(x);&#10;&#125;&#10;&#10;// ECMA-262, section 8.6.2.6, page 28.&#10;function DefaultNumber(x) &#123;  &#10;  if (!IS_SYMBOL_WRAPPER(x)) &#123;&#10;    var valueOf = x.valueOf;&#10;    if (IS_SPEC_FUNCTION(valueOf)) &#123;&#10;      var v = %_CallFunction(x, valueOf);&#10;      if (IsPrimitive(v)) return v;&#10;    &#125;&#10;&#10;    var toString = x.toString;&#10;    if (IS_SPEC_FUNCTION(toString)) &#123;&#10;      var s = %_CallFunction(x, toString);&#10;      if (IsPrimitive(s)) return s;&#10;    &#125;&#10;  &#125;&#10;  throw MakeTypeError(kCannotConvertToPrimitive);&#10;&#125;&#10;&#10;// ECMA-262, section 8.6.2.6, page 28.&#10;function DefaultString(x) &#123;  &#10;  if (!IS_SYMBOL_WRAPPER(x)) &#123;&#10;    var toString = x.toString;&#10;    if (IS_SPEC_FUNCTION(toString)) &#123;&#10;      var s = %_CallFunction(x, toString);&#10;      if (IsPrimitive(s)) return s;&#10;    &#125;&#10;&#10;    var valueOf = x.valueOf;&#10;    if (IS_SPEC_FUNCTION(valueOf)) &#123;&#10;      var v = %_CallFunction(x, valueOf);&#10;      if (IsPrimitive(v)) return v;&#10;    &#125;&#10;  &#125;&#10;  throw MakeTypeError(kCannotConvertToPrimitive);&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上面代码的逻辑是这样的：</p>
+<ol>
+<li>如果变量为字符串，直接返回</li>
+<li>如果!IS_SPEC_OBJECT(x)，直接返回</li>
+<li>如果IS_SYMBOL_WRAPPER(x)，则抛出异常</li>
+<li><p>否则会根据传入的hint来调用DefaultNumber和DefaultString，比如如果为Date对象，会调用DefaultString</p>
+</li>
+<li><p>DefaultNumber：首先x.valueOf，如果为primitive，则返回valueOf后的值，否则继续调用x.toString，如果为primitive，则返回toString后的值，否则抛出异常</p>
+</li>
+<li>DefaultString：和DefaultNumber正好相反，先调用toString，如果不是primitive再调用valueOf</li>
+</ol>
+<p>那讲了实现原理，这个ToPrimitive有什么用呢？实际很多操作会调用ToPrimitive，比如加、相等或比较操。在进行加操作时会将左右操作数转换为primitive，然后进行相加。<br>下面来个实例，({}) + 1（将{}放在括号中是为了内核将其认为一个代码块）会输出啥？可能日常写代码并不会这样写，不过网上出过类似的面试题。<br>加操作只有左右运算符同时为String或Number时会执行对应的%_StringAdd或%NumberAdd，下面看下({}) + 1内部会经过哪些步骤：</p>
+<ol>
+<li>{}和1{首先会调用ToPrimitive</li>
+<li>{}会走到DefaultNumber，首先会调用valueOf，返回的是Object {}，不是primitive类型，从而继续走到toString，返回[object Object]，是String类型</li>
+<li>最后加操作}，结果为[object Object]1</li>
+</ol>
+<p>再比如有人问你[] + 1输出啥时，你可能知道应该怎么去计算了，先对[]调用ToPrimitive，返回空字符串，最后结果为”1”。<br>除了ToPrimitive之外，还有更细粒度的ToBoolean、ToNumber和ToString，比如在需要布尔型时，会通过ToBoolean来进行转换。看一下源码我们可以很清楚的知道这些布尔型、数字等之间转换是怎么发生：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// ECMA-262, section 9.2, page 30&#10;function ToBoolean(x) &#123;  &#10;  if (IS_BOOLEAN(x)) return x;&#10;  // &#23383;&#31526;&#20018;&#36716;&#24067;&#23572;&#22411;&#26102;&#65292;&#22914;&#26524;length&#19981;&#20026;0&#23601;&#36820;&#22238;true&#10;  if (IS_STRING(x)) return x.length != 0;&#10;  if (x == null) return false;&#10;  // &#25968;&#23383;&#36716;&#24067;&#23572;&#22411;&#26102;&#65292;&#21464;&#37327;&#19981;&#20026;0&#25110;NAN&#26102;&#36820;&#22238;true&#10;  if (IS_NUMBER(x)) return !((x == 0) || NUMBER_IS_NAN(x));&#10;  return true;&#10;&#125;&#10;&#10;// ECMA-262, section 9.3, page 31.&#10;function ToNumber(x) &#123;  &#10;  if (IS_NUMBER(x)) return x;&#10;  // &#23383;&#31526;&#20018;&#36716;&#25968;&#23383;&#35843;&#29992;StringToNumber&#10;  if (IS_STRING(x)) &#123;&#10;    return %_HasCachedArrayIndex(x) ? %_GetCachedArrayIndex(x)&#10;                                    : %StringToNumber(x);&#10;  &#125;&#10;  // &#24067;&#23572;&#22411;&#36716;&#25968;&#23383;&#26102;true&#36820;&#22238;1&#65292;false&#36820;&#22238;0&#10;  if (IS_BOOLEAN(x)) return x ? 1 : 0;&#10;  // undefined&#36820;&#22238;NAN&#10;  if (IS_UNDEFINED(x)) return NAN;&#10;  // Symbol&#25243;&#20986;&#24322;&#24120;&#65292;&#20363;&#22914;&#65306;Symbol() + 1&#10;  if (IS_SYMBOL(x)) throw MakeTypeError(kSymbolToNumber);&#10;  return (IS_NULL(x)) ? 0 : ToNumber(DefaultNumber(x));&#10;&#125;&#10;&#10;// ECMA-262, section 9.8, page 35.&#10;function ToString(x) &#123;  &#10;  if (IS_STRING(x)) return x;&#10;  // &#25968;&#23383;&#36716;&#23383;&#31526;&#20018;&#65292;&#35843;&#29992;&#20869;&#37096;&#30340;_NumberToString&#10;  if (IS_NUMBER(x)) return %_NumberToString(x);&#10;  // &#24067;&#23572;&#22411;&#36716;&#23383;&#31526;&#20018;&#65292;true&#36820;&#22238;&#23383;&#31526;&#20018;true&#10;  if (IS_BOOLEAN(x)) return x ? &#39;true&#39; : &#39;false&#39;;&#10;  // undefined&#36716;&#23383;&#31526;&#20018;&#65292;&#36820;&#22238;undefined&#10;  if (IS_UNDEFINED(x)) return &#39;undefined&#39;;&#10;  // Symbol&#25243;&#20986;&#24322;&#24120;&#10;  if (IS_SYMBOL(x)) throw MakeTypeError(kSymbolToString);&#10;  return (IS_NULL(x)) ? &#39;null&#39; : ToString(DefaultString(x));&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>讲了这么多原理，那这个ToPrimitive有什么卵用呢？这对于我们了解JavaScript内部的隐式转换和一些细节是非常有用的，比如：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var a = &#39;[object Object]&#39;;  &#10;if (a == &#123;&#125;) &#123;  &#10;    console.log(&#39;something&#39;);&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>你觉得会不会输出something呢，答案是会的，所以这也是为什么很多代码规范推荐使用===三等了。那这里为什么会相等呢，是因为进行相等操作时，对{}调用了ToPrimitive，返回的结果就是[object Object]，也就返回了true了。我们可以看下JavaScript中EQUALS的源码就一目了然了：<br>// ECMA-262 Section 11.9.3.<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">EQUALS = function EQUALS(y) &#123;  &#10;  if (IS_STRING(this) &#38;&#38; IS_STRING(y)) return %StringEquals(this, y);&#10;  var x = this;&#10;&#10;  while (true) &#123;&#10;    if (IS_NUMBER(x)) &#123;&#10;      while (true) &#123;&#10;        if (IS_NUMBER(y)) return %NumberEquals(x, y);&#10;        if (IS_NULL_OR_UNDEFINED(y)) return 1;  // not equal&#10;        if (IS_SYMBOL(y)) return 1;  // not equal&#10;        if (!IS_SPEC_OBJECT(y)) &#123;&#10;          // String or boolean.&#10;          return %NumberEquals(x, %$toNumber(y));&#10;        &#125;&#10;        y = %$toPrimitive(y, NO_HINT);&#10;      &#125;&#10;    &#125; else if (IS_STRING(x)) &#123;&#10;      // &#19978;&#38754;&#30340;&#20195;&#30721;&#23601;&#26159;&#36827;&#20837;&#20102;&#36825;&#37324;&#65292;&#23545;y&#35843;&#29992;&#20102;toPrimitive&#10;      while (true) &#123;&#10;        if (IS_STRING(y)) return %StringEquals(x, y);&#10;        if (IS_SYMBOL(y)) return 1;  // not equal&#10;        if (IS_NUMBER(y)) return %NumberEquals(%$toNumber(x), y);&#10;        if (IS_BOOLEAN(y)) return %NumberEquals(%$toNumber(x), %$toNumber(y));&#10;        if (IS_NULL_OR_UNDEFINED(y)) return 1;  // not equal&#10;        y = %$toPrimitive(y, NO_HINT);&#10;      &#125;&#10;    &#125; else if (IS_SYMBOL(x)) &#123;&#10;      if (IS_SYMBOL(y)) return %_ObjectEquals(x, y) ? 0 : 1;&#10;      return 1; // not equal&#10;    &#125; else if (IS_BOOLEAN(x)) &#123;&#10;      if (IS_BOOLEAN(y)) return %_ObjectEquals(x, y) ? 0 : 1;&#10;      if (IS_NULL_OR_UNDEFINED(y)) return 1;&#10;      if (IS_NUMBER(y)) return %NumberEquals(%$toNumber(x), y);&#10;      if (IS_STRING(y)) return %NumberEquals(%$toNumber(x), %$toNumber(y));&#10;      if (IS_SYMBOL(y)) return 1;  // not equal&#10;      // y is object.&#10;      x = %$toNumber(x);&#10;      y = %$toPrimitive(y, NO_HINT);&#10;    &#125; else if (IS_NULL_OR_UNDEFINED(x)) &#123;&#10;      return IS_NULL_OR_UNDEFINED(y) ? 0 : 1;&#10;    &#125; else &#123;&#10;      // x is an object.&#10;      if (IS_SPEC_OBJECT(y)) &#123;&#10;        return %_ObjectEquals(x, y) ? 0 : 1;&#10;      &#125;&#10;      if (IS_NULL_OR_UNDEFINED(y)) return 1;  // not equal&#10;      if (IS_SYMBOL(y)) return 1;  // not equal&#10;      if (IS_BOOLEAN(y)) y = %$toNumber(y);&#10;      x = %$toPrimitive(x, NO_HINT);&#10;    &#125;&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>所以了解变量如何转换为primitive类型的重要性也就可想而知了。具体的代码细节可以看这里：runtime.js。 ToObjectToObject顾名思义就是将变量转换为对象类型。可以看下它是如何将非对象类型转换为对象类型：<br>// ECMA-262, section 9.9, page 36.<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function ToObject(x) &#123;  &#10;  if (IS_STRING(x)) return new GlobalString(x);&#10;  if (IS_NUMBER(x)) return new GlobalNumber(x);&#10;  if (IS_BOOLEAN(x)) return new GlobalBoolean(x);&#10;  if (IS_SYMBOL(x)) return %NewSymbolWrapper(x);&#10;  if (IS_NULL_OR_UNDEFINED(x) &#38;&#38; !IS_UNDETECTABLE(x)) &#123;&#10;    throw MakeTypeError(kUndefinedOrNullToObject);&#10;  &#125;&#10;  return x;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/03/22/关于对象/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          关于对象
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/03/19/作用域/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">作用域</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div>&copy; 2016 任先生在路上 的博客 , 技术 
+        <a href="http://hexo.io/" target="_blank">Hexo</a>  
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
