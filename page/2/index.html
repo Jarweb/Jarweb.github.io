@@ -124,11 +124,11 @@
 
       <div class="body-wrap">
   
-    <article id="post-js new 发生了什么" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-模块加载器" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/26/js new 发生了什么/" class="article-date">
-  	<time datetime="2016-04-25T16:00:00.000Z" itemprop="datePublished">2016-04-26</time>
+      <a href="/2016/04/25/模块加载器/" class="article-date">
+  	<time datetime="2016-04-24T16:00:00.000Z" itemprop="datePublished">2016-04-25</time>
 </a>
     </div>
   
@@ -141,7 +141,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/26/js new 发生了什么/">js new 发生了什么</a>
+      <a class="article-title" href="/2016/04/25/模块加载器/">模块加载器实现</a>
     </h1>
   
 
@@ -150,14 +150,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>这样大概就明白了,当我们执行new A(‘testa’)的时候<br>JS会这样做</p>
-<ol>
-<li>var o = new Object();</li>
-<li>o.<strong>proto</strong> = A.prototype;//这里还记得之那个function里面的默认的属性么?</li>
-<li>A.call(o)//由于这里this是指向o,可以把什么this.name/getName绑定到o上.</li>
-<li>把这个o返回给a;//完成var a = new A()的过程.</li>
-</ol>
-<p>这里注意下,上面所谓的第4步其实是一个简化的说法.真正的过程是在第3步之后,如果发现A返回是一个Object类型(非primitive类型,即非string,boolean,number,null,undefined类型就是Object类型),则直接返回A的返回值,否则把第1步new的Object返回出去.(默认情况下,JS中函数默认返回值是undefined)<br>举个例子</p>
+        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">names = [&#34;Sunday&#34;, &#34;Monday&#34;, &#34;Tuesday&#34;, &#34;Wednesday&#34;, &#34;Thursday&#34;, &#34;Friday&#34;, &#34;Saturday&#34;];&#10;function dayName(number) &#123;&#10;    return names[number];&#10;&#125;&#10;console.log(dayName(1));</span><br></pre></td></tr></table></figure>
+<p>上面的程序，我们创建了一个函数dayName()来获取星期值。但问题是，names变量被暴露在全局作用域中。更多的时候，我们希望能够构造私有变量，而暴露公共函数作为接口。<br>对JavaScript中的函数而言，我们可以通过创建立即调用的函数表达式来达到这个效果，我们可以通过如下的方式重构上面的代码，使得私有作用域成为可能：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var dayName = function() &#123;&#10;    var names = [&#34;Sunday&#34;, &#34;Monday&#34;, &#34;Tuesday&#34;, &#34;Wednesday&#34;, &#34;Thursday&#34;, &#34;Friday&#34;, &#34;Saturday&#34;];&#10;    return &#123;&#10;        name: function(number) &#123;&#10;            return names[number];&#10;        &#125;,&#10;        number: function(name) &#123;&#10;            return names.indexOf(name);&#10;        &#125;&#10;    &#125;;&#10;&#125;();&#10;console.log(dayName.name(3));&#10;console.log(dayName.number(&#34;Sunday&#34;));</span><br></pre></td></tr></table></figure></p>
       
     </div>
     
@@ -165,14 +159,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/模块化/">模块化</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/04/26/js new 发生了什么/#more">more >></a>
+          <a  href="/2016/04/25/模块加载器/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -235,67 +229,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/04/25/this指向/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-模块加载器" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/25/模块加载器/" class="article-date">
-  	<time datetime="2016-04-24T16:00:00.000Z" itemprop="datePublished">2016-04-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/25/模块加载器/">模块加载器实现</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">names = [&#34;Sunday&#34;, &#34;Monday&#34;, &#34;Tuesday&#34;, &#34;Wednesday&#34;, &#34;Thursday&#34;, &#34;Friday&#34;, &#34;Saturday&#34;];&#10;function dayName(number) &#123;&#10;    return names[number];&#10;&#125;&#10;console.log(dayName(1));</span><br></pre></td></tr></table></figure>
-<p>上面的程序，我们创建了一个函数dayName()来获取星期值。但问题是，names变量被暴露在全局作用域中。更多的时候，我们希望能够构造私有变量，而暴露公共函数作为接口。<br>对JavaScript中的函数而言，我们可以通过创建立即调用的函数表达式来达到这个效果，我们可以通过如下的方式重构上面的代码，使得私有作用域成为可能：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var dayName = function() &#123;&#10;    var names = [&#34;Sunday&#34;, &#34;Monday&#34;, &#34;Tuesday&#34;, &#34;Wednesday&#34;, &#34;Thursday&#34;, &#34;Friday&#34;, &#34;Saturday&#34;];&#10;    return &#123;&#10;        name: function(number) &#123;&#10;            return names[number];&#10;        &#125;,&#10;        number: function(name) &#123;&#10;            return names.indexOf(name);&#10;        &#125;&#10;    &#125;;&#10;&#125;();&#10;console.log(dayName.name(3));&#10;console.log(dayName.number(&#34;Sunday&#34;));</span><br></pre></td></tr></table></figure></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/模块化/">模块化</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/04/25/模块加载器/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -389,6 +322,68 @@
 
 
   
+    <article id="post-observe.js " class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/23/observe.js /" class="article-date">
+  	<time datetime="2016-04-22T16:00:00.000Z" itemprop="datePublished">2016-04-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/23/observe.js /">observe.js</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>用于观察任意对象的任意变化的类库，以轻巧、实用、强大而闻名。</p>
+<p>对象字面量<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123; a: 1 &#125;;&#10;//watch obj&#10;observe(obj, function (name, value) &#123;&#10;&#9;console.log(name + &#34;__&#34; + value);//a__2  &#10;&#125;);&#10;obj.a = 2;</span><br></pre></td></tr></table></figure></p>
+<p>数组<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1, 2, 3]; //watch obj&#10;observe(arr, function (name, value, old) &#123;&#10;&#9;console.log(name + &#34;__&#34; + value+&#34;__&#34;+old);&#10;&#125;);&#10;arr.push(4);//array__push_4  &#10;arr[3] = 5;//3__5_4</span><br></pre></td></tr></table></figure></p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/observe-js/">observe.js</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/23/observe.js /#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-js dom" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -452,68 +447,6 @@
 
 
   
-    <article id="post-observe.js " class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/23/observe.js /" class="article-date">
-  	<time datetime="2016-04-22T16:00:00.000Z" itemprop="datePublished">2016-04-23</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/23/observe.js /">observe.js</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>用于观察任意对象的任意变化的类库，以轻巧、实用、强大而闻名。</p>
-<p>对象字面量<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123; a: 1 &#125;;&#10;//watch obj&#10;observe(obj, function (name, value) &#123;&#10;&#9;console.log(name + &#34;__&#34; + value);//a__2  &#10;&#125;);&#10;obj.a = 2;</span><br></pre></td></tr></table></figure></p>
-<p>数组<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1, 2, 3]; //watch obj&#10;observe(arr, function (name, value, old) &#123;&#10;&#9;console.log(name + &#34;__&#34; + value+&#34;__&#34;+old);&#10;&#125;);&#10;arr.push(4);//array__push_4  &#10;arr[3] = 5;//3__5_4</span><br></pre></td></tr></table></figure></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/observe-js/">observe.js</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/04/23/observe.js /#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-oracle node模块" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -556,6 +489,67 @@
       
         <p class="article-more-link">
           <a  href="/2016/04/22/oracle node模块/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-模块化进化" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/21/模块化进化/" class="article-date">
+  	<time datetime="2016-04-20T16:00:00.000Z" itemprop="datePublished">2016-04-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/21/模块化进化/">模块化进化</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>传统用法<script src="lodjs.js"></script></p>
+<p>Bower<br>$ bower install lodjs<br>$ bower install git://github.com/yanhaijing/lodjs.git<br>快速上手定义模块使用lodJS的全局函数define定义一个模块，例如在 mod.js中有如下代码：<br>define(function () {<br>    return 123;<br>});</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/21/模块化进化/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -640,67 +634,6 @@
 
 
   
-    <article id="post-模块化进化" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/21/模块化进化/" class="article-date">
-  	<time datetime="2016-04-20T16:00:00.000Z" itemprop="datePublished">2016-04-21</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/21/模块化进化/">模块化进化</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>传统用法<script src="lodjs.js"></script></p>
-<p>Bower<br>$ bower install lodjs<br>$ bower install git://github.com/yanhaijing/lodjs.git<br>快速上手定义模块使用lodJS的全局函数define定义一个模块，例如在 mod.js中有如下代码：<br>define(function () {<br>    return 123;<br>});</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/04/21/模块化进化/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-script异步加载" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -756,6 +689,70 @@
       
         <p class="article-more-link">
           <a  href="/2016/04/19/script异步加载/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-StackBlur高斯模糊的效果库" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/18/StackBlur高斯模糊的效果库/" class="article-date">
+  	<time datetime="2016-04-17T16:00:00.000Z" itemprop="datePublished">2016-04-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/18/StackBlur高斯模糊的效果库/">StackBlur高斯模糊的效果库</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>StackBlur.js 是 Mario Klingemann 创建的一个快速的、接近高斯模糊的效果库。</p>
+<p>NPM / Browserify使用 NPM 包管理器，安装包：<br>npm install –save stackblur-canvas</p>
+<p>在你需要的地方引用<br>var StackBlur = require(“stackblur-canvas”);</p>
+<p>Bower要使用 Bower package，安装包：<br>bower install stackblur-canvas</p>
+<p>然后在你的 HTML 页面中引入 dist/stackblur.js 或者 dist/stackblur.min.js 文件：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;script src=&#34;bower_components/stackblur-canvas/dist/stackblur.js&#34;&#62;&#60;/script&#62;</span><br></pre></td></tr></table></figure></p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/StackBlur/">StackBlur</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/18/StackBlur高斯模糊的效果库/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>

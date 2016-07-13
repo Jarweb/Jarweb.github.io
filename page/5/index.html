@@ -124,70 +124,6 @@
 
       <div class="body-wrap">
   
-    <article id="post-关于对象" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/22/关于对象/" class="article-date">
-  	<time datetime="2016-03-21T16:00:00.000Z" itemprop="datePublished">2016-03-22</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/22/关于对象/">关于对象</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>对象字面值不能正确解析问题：<br>{a:1}.a报错，错误Uncaught SyntaxError: Unexpected token .</li>
-</ol>
-<p>解决：<br>({a:1}.a) // 或({a:1}).a</p>
-<p>原因：<br>就是声明对象字面值时，语句开头不应该用{，因为js解释器会认为这是语句块（block）的开始。<br>同理，类似问题{ name: “mc”, id: 1 }会报错Uncaught SyntaxError: Unexpected token :也是这个道理。({ name: “mc”, id: 1 })即可正确解析。但稍注意下，{name: “mc”}是不会报错的，它等同于name: “mc”，并返回一个字符串”mc”。</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/03/22/关于对象/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-类型变量" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -534,127 +470,6 @@
 
 
   
-    <article id="post-bootstrap datetime piker api" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/10/bootstrap datetime piker api/" class="article-date">
-  	<time datetime="2016-03-09T16:00:00.000Z" itemprop="datePublished">2016-03-10</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/10/bootstrap datetime piker api/">datetime</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>引入<br>css、jq、插件</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#36755;&#20837;&#26694;&#24418;&#24335;&#10;&#60;input size=&#39;16&#39; type=&#34;text&#34; value=&#39;2012-06-15 14:45&#39; readonly class=&#34;form-datetime&#34;&#62;&#10;//&#20869;&#38142;&#24418;&#24335;&#10;&#60;div id=&#34;datetimepicker&#34;&#62;&#60;/div&#62;&#10;//&#32452;&#20214;&#24418;&#24335;&#10;&#60;div class=&#34;input-append date form_datetime&#34;&#62;&#10;    &#60;input size=&#34;16&#34; type=&#34;text&#34; value=&#34;&#34; readonly&#62; //&#26174;&#31034;&#26102;&#38388;&#21306;&#10;    &#60;span class=&#34;add-on&#34;&#62;&#60;i class=&#34;icon-remove&#34;&#62;&#60;/i&#62;&#60;/span&#62; //&#28165;&#38500;&#36873;&#25321;&#30340;&#22270;&#26631;&#10;    &#60;span class=&#34;add-on&#34;&#62;&#60;i class=&#34;icon-th&#34;&#62;&#60;/i&#62;&#60;/span&#62; //&#26085;&#21382;&#30340;&#22270;&#26631;&#10;&#60;/div&#62;&#10;&#60;input  id=&#34;mirror_field&#34; type=&#34;text&#34; value=&#34;&#34; readonly&#62;//&#38236;&#20687; &#36873;&#25321;&#26102;&#38388;&#21518;&#36825;&#37324;&#20063;&#20250;&#26174;&#31034; &#21487;&#20197;&#26377;&#22810;&#20010;&#10;&#60;script type=&#34;text/javascript&#34;&#62;&#10;    $(&#34;.form_datetime&#34;).datetimepicker(&#123;&#10;        format: &#34;dd MM yyyy - hh:ii&#34;,&#10;        autoclose: true,&#10;        todayBtn: true,&#10;        pickerPosition: &#34;bottom-left&#34;,&#10;        linkField: &#34;mirror_field&#34;,&#10;        linkFormat: &#34;yyyy-mm-dd hh:ii&#34;&#65292;&#10;        showMeridian: true,&#10;&#125;);&#10;&#60;/script&#62;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/插件/">插件</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/03/10/bootstrap datetime piker api/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-js异步回调" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/10/js异步回调/" class="article-date">
-  	<time datetime="2016-03-09T16:00:00.000Z" itemprop="datePublished">2016-03-10</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/10/js异步回调/">js异步</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const fs = require(&#39;fs&#39;)&#10;console.log(&#39;start reading a file...&#39;)&#10;fs.readFile(&#39;file.md&#39;, &#39;utf-8&#39;, function (err, content) &#123;  &#10;  if (err) &#123;&#10;    console.log(&#39;error happened during reading the file&#39;)&#10;    return console.log(err)&#10;  &#125;&#10;&#10;  console.log(content)&#10;&#125;)</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/03/10/js异步回调/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-angular作用域与事件" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -698,6 +513,189 @@
       
         <p class="article-more-link">
           <a  href="/2016/03/10/angular作用域与事件/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-bootstrap datepiker" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/10/bootstrap datepiker/" class="article-date">
+  	<time datetime="2016-03-09T16:00:00.000Z" itemprop="datePublished">2016-03-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/10/bootstrap datepiker/">bootstrap datepiker</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>输入框型<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;input type=&#34;text&#34; class=&#34;form-control&#34;&#62;</span><br></pre></td></tr></table></figure></p>
+<p>组件型<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;div class=&#34;input-group date&#34;&#62;&#10;  &#60;input type=&#34;text&#34; class=&#34;form-control&#34;&#62;&#60;span class=&#34;input-group-addon&#34;&#62;&#60;i class=&#34;glyphicon glyphicon-th&#34;&#62;&#60;/i&#62;&#60;/span&#62;&#10;&#60;/div&#62;&#10;$(&#39;#sandbox-container .input-group.date&#39;).datepicker(&#123;&#125;)</span><br></pre></td></tr></table></figure></p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/插件/">插件</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/03/10/bootstrap datepiker/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-研究console" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/10/研究console/" class="article-date">
+  	<time datetime="2016-03-09T16:00:00.000Z" itemprop="datePublished">2016-03-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/10/研究console/">console研究</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>console.dir()方法用来对一个对象进行检查，并以易于阅读和打印的格式显示。</p>
+<p>console.error(),console.warn()方法用于输出错误和警告信息，用法和常见的console.log方法一样，不同点在于输出时候的表现形式。一个是黄色的警告形式一个是红色的错误形式。而console.error()方法会标记为错误的地方。</p>
+<p>console.table()方法可以将传入的对象或数组这些复合数据以表格形式输出。</p>
+<p>console.time(),console.timeEnd()方法计算一个操作的执行的时间console.time()是开始，console.timeEnd()是结束。可以传一个参数，参数为计时器的名称。</p>
+<p>console.trace()方法用来追踪函数的调用过程。在复杂的架构中可以查找到对应的调用路径。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/调试/">调试</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-bootstrap datetime piker api" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/10/bootstrap datetime piker api/" class="article-date">
+  	<time datetime="2016-03-09T16:00:00.000Z" itemprop="datePublished">2016-03-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/10/bootstrap datetime piker api/">datetime</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>引入<br>css、jq、插件</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#36755;&#20837;&#26694;&#24418;&#24335;&#10;&#60;input size=&#39;16&#39; type=&#34;text&#34; value=&#39;2012-06-15 14:45&#39; readonly class=&#34;form-datetime&#34;&#62;&#10;//&#20869;&#38142;&#24418;&#24335;&#10;&#60;div id=&#34;datetimepicker&#34;&#62;&#60;/div&#62;&#10;//&#32452;&#20214;&#24418;&#24335;&#10;&#60;div class=&#34;input-append date form_datetime&#34;&#62;&#10;    &#60;input size=&#34;16&#34; type=&#34;text&#34; value=&#34;&#34; readonly&#62; //&#26174;&#31034;&#26102;&#38388;&#21306;&#10;    &#60;span class=&#34;add-on&#34;&#62;&#60;i class=&#34;icon-remove&#34;&#62;&#60;/i&#62;&#60;/span&#62; //&#28165;&#38500;&#36873;&#25321;&#30340;&#22270;&#26631;&#10;    &#60;span class=&#34;add-on&#34;&#62;&#60;i class=&#34;icon-th&#34;&#62;&#60;/i&#62;&#60;/span&#62; //&#26085;&#21382;&#30340;&#22270;&#26631;&#10;&#60;/div&#62;&#10;&#60;input  id=&#34;mirror_field&#34; type=&#34;text&#34; value=&#34;&#34; readonly&#62;//&#38236;&#20687; &#36873;&#25321;&#26102;&#38388;&#21518;&#36825;&#37324;&#20063;&#20250;&#26174;&#31034; &#21487;&#20197;&#26377;&#22810;&#20010;&#10;&#60;script type=&#34;text/javascript&#34;&#62;&#10;    $(&#34;.form_datetime&#34;).datetimepicker(&#123;&#10;        format: &#34;dd MM yyyy - hh:ii&#34;,&#10;        autoclose: true,&#10;        todayBtn: true,&#10;        pickerPosition: &#34;bottom-left&#34;,&#10;        linkField: &#34;mirror_field&#34;,&#10;        linkFormat: &#34;yyyy-mm-dd hh:ii&#34;&#65292;&#10;        showMeridian: true,&#10;&#125;);&#10;&#60;/script&#62;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/插件/">插件</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/03/10/bootstrap datetime piker api/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>

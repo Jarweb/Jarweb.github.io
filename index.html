@@ -124,72 +124,6 @@
 
       <div class="body-wrap">
   
-    <article id="post-js千分位" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/07/14/js千分位/" class="article-date">
-  	<time datetime="2016-07-13T17:16:03.669Z" itemprop="datePublished">2016-07-14</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/14/js千分位/">千位分</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>拿到小数的整数部分也就是起始位到小数点（非数字）之间的部分，可以这样实现：<br>^\d+</li>
-</ol>
-<ol>
-<li>为整数部分添加千分符这一步可以利用我们之前的实现，整合在一起如下：<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let milliFormat = (num) =&#62; &#123; return num &#38;&#38; num.toString() .replace(/^\d+/g, (m) =&#62; m.replace(/(?=(?!^)(\d&#123;3&#125;)+$)/g, &#39;,&#39;)) &#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/07/14/js千分位/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-21" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -402,8 +336,6 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>ie<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*&#123;  &#10;    scrollbar-face-color:#F3F3F3; /*&#38754;&#23376;*/  &#10;    scrollbar-arrow-color:#C0C0C0; /*&#31661;&#22836;*/  &#10;    scrollbar-3dlight-color:#C0C0C0; /*&#26368;&#22806;&#24038;*/  &#10;    scrollbar-highlight-color:#FFFFFF; /*&#24038;&#20108;*/  &#10;    scrollbar-shadow-color:#FFFFFF; /*&#21491;&#20108;*/  &#10;    scrollbar-darkshadow-color:#C0C0C0; /*&#21491;&#19968;*/  &#10;    scrollbar-track-color:#F3F3F3; /*&#28369;&#36947;*/  &#10;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>chrome<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/*&#28378;&#21160;&#26465;&#25972;&#20307;*/  &#10;::-webkit-scrollbar&#123;  &#10;    width:14px; /*&#28378;&#21160;&#26465;&#23485;&#24230;*/  &#10;&#125;  &#10;/*&#28378;&#21160;&#26465;&#25353;&#38062;*/  &#10;::-webkit-scrollbar-button &#123;  &#10;&#10;&#125;  &#10;::-webkit-scrollbar-track&#123;  &#10;    background-color:#F3F3F3;  /*&#28369;&#36947;&#20840;&#37096;*/  &#10;&#125;  &#10;::-webkit-scrollbar-track-piece&#123;  &#10;    background-color:#F3F3F3;  /*&#28369;&#36947;*/  &#10;    -webkit-border-radius:4px; /*&#28369;&#36947;&#22278;&#35282;&#23485;&#24230;*/  &#10;&#125;  &#10;::-webkit-scrollbar-thumb&#123;  &#10;    background-color:#F3F3F3; /*&#28369;&#21160;&#26465;&#34920;&#38754;*/  &#10;    border:solid 1px #C0C0C0; /*&#28369;&#21160;&#26465;&#36793;&#26694;*/  &#10;    border-radius:4px;  /*&#28369;&#21160;&#26465;&#22278;&#35282;&#23485;&#24230;*/  &#10;&#125;  &#10;/*&#27178;&#31446;&#28378;&#21160;&#26465;&#20132;&#35282;*/  &#10;::-webkit-scrollbar-corner &#123;  &#10;    background-color: #F3F3F3;  &#10;&#125;  &#10;/*&#27178;&#31446;&#28378;&#21160;&#26465;&#20132;&#35282;&#22270;&#26696;*/  &#10;::-webkit-resizer &#123;  &#10;    /*background-image: url(/public/img/resizer-inactive.png);*/  &#10;   background-repeat: no-repeat;  &#10;   background-position: bottom right;  &#10;&#125;  &#10;/*&#40736;&#26631;&#28369;&#36807;&#28369;&#21160;&#26465;*/  &#10;::-webkit-scrollbar-thumb:hover&#123;  &#10;    background-color:#F3F3E0;  &#10;&#125;</span><br></pre></td></tr></table></figure></p>
-
       
     </div>
     
@@ -416,6 +348,10 @@
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/05/01/滚动条样式/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -717,6 +653,73 @@
       
         <p class="article-more-link">
           <a  href="/2016/04/27/模块化分解/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-js new 发生了什么" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/26/js new 发生了什么/" class="article-date">
+  	<time datetime="2016-04-25T16:00:00.000Z" itemprop="datePublished">2016-04-26</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/26/js new 发生了什么/">js new 发生了什么</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这样大概就明白了,当我们执行new A(‘testa’)的时候<br>JS会这样做</p>
+<ol>
+<li>var o = new Object();</li>
+<li>o.<strong>proto</strong> = A.prototype;//这里还记得之那个function里面的默认的属性么?</li>
+<li>A.call(o)//由于这里this是指向o,可以把什么this.name/getName绑定到o上.</li>
+<li>把这个o返回给a;//完成var a = new A()的过程.</li>
+</ol>
+<p>这里注意下,上面所谓的第4步其实是一个简化的说法.真正的过程是在第3步之后,如果发现A返回是一个Object类型(非primitive类型,即非string,boolean,number,null,undefined类型就是Object类型),则直接返回A的返回值,否则把第1步new的Object返回出去.(默认情况下,JS中函数默认返回值是undefined)<br>举个例子</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/26/js new 发生了什么/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>

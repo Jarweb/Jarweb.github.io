@@ -124,10 +124,10 @@
 
       <div class="body-wrap">
   
-    <article id="post-js设计模式" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-js类" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/12/25/js设计模式/" class="article-date">
+      <a href="/2015/12/25/js类/" class="article-date">
   	<time datetime="2015-12-24T16:00:00.000Z" itemprop="datePublished">2015-12-25</time>
 </a>
     </div>
@@ -141,7 +141,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/25/js设计模式/">js设计模式</a>
+      <a class="article-title" href="/2015/12/25/js类/">js类</a>
     </h1>
   
 
@@ -150,11 +150,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1.弱类型语言</p>
-<ul>
-<li>在JavaScript中，定义变量时不必声明其类型。但这并不意味着变量没有类型。一个变量可以属于几种类型之一，这取决于其包含的数据。JavaScript中有三种原始类型：布尔型、数值型和字符串类型(不区分整数和浮点数是JavaScript与大多数其他主流语言的一个不同之处)。此外，还有对象类型和包含可执行代码的函数类型，前者是一种复合数据类型(数组是一种特殊的对象，它包含着一批值的有序集合)。最后，还有空类型(null)和未定义类型(undefined)这两种数据类型。原始数据类型按值传送，而其他数据类型则按引用传送。</li>
-<li>与其他弱类型语言一样，JavaScript中的变量可以根据所赋的值改变类型。原始类型之间也可以进行类型转换。toString可以把数值或布尔值转为字符串。parseFloat和parseInt函数可以把字符串转变为数值。双重“非”可以把字符串或数值转变为布尔值：var bool = !!num;</li>
-</ul>
+        <p>类的实现由于 JavaScript 本身是没有的类的感念的。所以我们如果要实现一个类，一般是通过构造函数来模拟类的实现：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function Person(name,age)&#123;  &#10;//&#23454;&#29616;&#19968;&#20010;&#31867;&#10;    this.name = name;&#10;    this.age = age;&#10;&#125;&#10;var you = new Person(&#39;you&#39;,23);&#10;//&#36890;&#36807; new &#26469;&#26032;&#24314;&#23454;&#20363;</span><br></pre></td></tr></table></figure></p>
       
     </div>
     
@@ -169,7 +165,7 @@
 
       
         <p class="article-more-link">
-          <a  href="/2015/12/25/js设计模式/#more">more >></a>
+          <a  href="/2015/12/25/js类/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>

@@ -124,10 +124,10 @@
 
       <div class="body-wrap">
   
-    <article id="post-研究console" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-es6" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/10/研究console/" class="article-date">
+      <a href="/2016/03/10/es6/" class="article-date">
   	<time datetime="2016-03-09T16:00:00.000Z" itemprop="datePublished">2016-03-10</time>
 </a>
     </div>
@@ -141,7 +141,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/10/研究console/">console研究</a>
+      <a class="article-title" href="/2016/03/10/es6/">ES6入门</a>
     </h1>
   
 
@@ -150,12 +150,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>console.dir()方法用来对一个对象进行检查，并以易于阅读和打印的格式显示。</p>
-<p>console.error(),console.warn()方法用于输出错误和警告信息，用法和常见的console.log方法一样，不同点在于输出时候的表现形式。一个是黄色的警告形式一个是红色的错误形式。而console.error()方法会标记为错误的地方。</p>
-<p>console.table()方法可以将传入的对象或数组这些复合数据以表格形式输出。</p>
-<p>console.time(),console.timeEnd()方法计算一个操作的执行的时间console.time()是开始，console.timeEnd()是结束。可以传一个参数，参数为计时器的名称。</p>
-<p>console.trace()方法用来追踪函数的调用过程。在复杂的架构中可以查找到对应的调用路径。</p>
-
+        <h3 id="let-const"><a href="#let-const" class="headerlink" title="let const"></a>let const</h3><h3 id="变量解构赋值"><a href="#变量解构赋值" class="headerlink" title="变量解构赋值"></a>变量解构赋值</h3><h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><h3 id="Reg"><a href="#Reg" class="headerlink" title="Reg"></a>Reg</h3><h3 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h3><h3 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h3><h3 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h3><h3 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h3><h3 id="Symbol"><a href="#Symbol" class="headerlink" title="Symbol"></a>Symbol</h3><h3 id="set-map"><a href="#set-map" class="headerlink" title="set map"></a>set map</h3><h3 id="for-of"><a href="#for-of" class="headerlink" title="for of"></a>for of</h3><h3 id="generator函数"><a href="#generator函数" class="headerlink" title="generator函数"></a>generator函数</h3><h3 id="promise对象"><a href="#promise对象" class="headerlink" title="promise对象"></a>promise对象</h3><h3 id="Async函数与异步"><a href="#Async函数与异步" class="headerlink" title="Async函数与异步"></a>Async函数与异步</h3><h3 id="Class"><a href="#Class" class="headerlink" title="Class"></a>Class</h3>
       
     </div>
     
@@ -163,7 +158,7 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/调试/">调试</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/">ES6</a></li></ul>
 	</div>
 
       
@@ -253,10 +248,10 @@
 
 
   
-    <article id="post-bootstrap datepiker" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-js异步回调" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/10/bootstrap datepiker/" class="article-date">
+      <a href="/2016/03/10/js异步回调/" class="article-date">
   	<time datetime="2016-03-09T16:00:00.000Z" itemprop="datePublished">2016-03-10</time>
 </a>
     </div>
@@ -270,7 +265,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/10/bootstrap datepiker/">bootstrap datepiker</a>
+      <a class="article-title" href="/2016/03/10/js异步回调/">js异步</a>
     </h1>
   
 
@@ -279,8 +274,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>输入框型<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;input type=&#34;text&#34; class=&#34;form-control&#34;&#62;</span><br></pre></td></tr></table></figure></p>
-<p>组件型<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;div class=&#34;input-group date&#34;&#62;&#10;  &#60;input type=&#34;text&#34; class=&#34;form-control&#34;&#62;&#60;span class=&#34;input-group-addon&#34;&#62;&#60;i class=&#34;glyphicon glyphicon-th&#34;&#62;&#60;/i&#62;&#60;/span&#62;&#10;&#60;/div&#62;&#10;$(&#39;#sandbox-container .input-group.date&#39;).datepicker(&#123;&#125;)</span><br></pre></td></tr></table></figure></p>
+        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const fs = require(&#39;fs&#39;)&#10;console.log(&#39;start reading a file...&#39;)&#10;fs.readFile(&#39;file.md&#39;, &#39;utf-8&#39;, function (err, content) &#123;  &#10;  if (err) &#123;&#10;    console.log(&#39;error happened during reading the file&#39;)&#10;    return console.log(err)&#10;  &#125;&#10;&#10;  console.log(content)&#10;&#125;)</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -288,71 +282,15 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/插件/">插件</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/03/10/bootstrap datepiker/#more">more >></a>
+          <a  href="/2016/03/10/js异步回调/#more">more >></a>
         </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-es6" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/10/es6/" class="article-date">
-  	<time datetime="2016-03-09T16:00:00.000Z" itemprop="datePublished">2016-03-10</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/10/es6/">ES6入门</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="let-const"><a href="#let-const" class="headerlink" title="let const"></a>let const</h3><h3 id="变量解构赋值"><a href="#变量解构赋值" class="headerlink" title="变量解构赋值"></a>变量解构赋值</h3><h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><h3 id="Reg"><a href="#Reg" class="headerlink" title="Reg"></a>Reg</h3><h3 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h3><h3 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h3><h3 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h3><h3 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h3><h3 id="Symbol"><a href="#Symbol" class="headerlink" title="Symbol"></a>Symbol</h3><h3 id="set-map"><a href="#set-map" class="headerlink" title="set map"></a>set map</h3><h3 id="for-of"><a href="#for-of" class="headerlink" title="for of"></a>for of</h3><h3 id="generator函数"><a href="#generator函数" class="headerlink" title="generator函数"></a>generator函数</h3><h3 id="promise对象"><a href="#promise对象" class="headerlink" title="promise对象"></a>promise对象</h3><h3 id="Async函数与异步"><a href="#Async函数与异步" class="headerlink" title="Async函数与异步"></a>Async函数与异步</h3><h3 id="Class"><a href="#Class" class="headerlink" title="Class"></a>Class</h3>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/">ES6</a></li></ul>
-	</div>
-
-      
-
       
       <div class="clearfix"></div>
     </div>
@@ -733,6 +671,72 @@
       
         <p class="article-more-link">
           <a  href="/2016/01/14/再看this/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-9" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/12/9/" class="article-date">
+  	<time datetime="2016-01-11T16:00:00.000Z" itemprop="datePublished">2016-01-12</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/12/9/">http协议 状态码</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h3><blockquote>
+<p>100 客户端应当继续发送请求。这个临时响应是用来通知客户端它的部分请求已经被服务器接收，且仍未被拒绝。客户端应当继续发送请求的剩余部分，或者如果请求已经完成，忽略这个响应。服务器必须在请求完成后向客户端发送一个最终响应。</p>
+<p>101 服务器已经理解了客户端的请求，并将通过Upgrade消息头通知客户端采用不同的协议来完成这个请求。在发送完这个响应最后的空行后，服务器将会切换到在Upgrade 消息头中定义的那些协议。只有在切换新的协议更有好处的时候才应该采取类似措施。例如，切换到新的HTTP版本比旧版本更有优势，或者切换到一个实时且同步的协议以传送利用此类特性的资源。</p>
+<p>102 代表处理将被继续执行。</p>
+<p>200 请求已成功。</p>
+<p>201 请求已经被实现，而且有一个新的资源已经依据请求的需要而建立，且其URI已经随Location头信息返回。假如需要的资源无法及时建立的话，应当返回 ‘202 Accepted’。</p>
+</blockquote>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/http/">http</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/01/12/9/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>

@@ -124,72 +124,6 @@
 
       <div class="body-wrap">
   
-    <article id="post-9" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/01/12/9/" class="article-date">
-  	<time datetime="2016-01-11T16:00:00.000Z" itemprop="datePublished">2016-01-12</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/12/9/">http协议 状态码</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h3><blockquote>
-<p>100 客户端应当继续发送请求。这个临时响应是用来通知客户端它的部分请求已经被服务器接收，且仍未被拒绝。客户端应当继续发送请求的剩余部分，或者如果请求已经完成，忽略这个响应。服务器必须在请求完成后向客户端发送一个最终响应。</p>
-<p>101 服务器已经理解了客户端的请求，并将通过Upgrade消息头通知客户端采用不同的协议来完成这个请求。在发送完这个响应最后的空行后，服务器将会切换到在Upgrade 消息头中定义的那些协议。只有在切换新的协议更有好处的时候才应该采取类似措施。例如，切换到新的HTTP版本比旧版本更有优势，或者切换到一个实时且同步的协议以传送利用此类特性的资源。</p>
-<p>102 代表处理将被继续执行。</p>
-<p>200 请求已成功。</p>
-<p>201 请求已经被实现，而且有一个新的资源已经依据请求的需要而建立，且其URI已经随Location头信息返回。假如需要的资源无法及时建立的话，应当返回 ‘202 Accepted’。</p>
-</blockquote>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/http/">http</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/01/12/9/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-4" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -613,6 +547,70 @@
       
         <p class="article-more-link">
           <a  href="/2015/12/28/19/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-js设计模式" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/25/js设计模式/" class="article-date">
+  	<time datetime="2015-12-24T16:00:00.000Z" itemprop="datePublished">2015-12-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/25/js设计模式/">js设计模式</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.弱类型语言</p>
+<ul>
+<li>在JavaScript中，定义变量时不必声明其类型。但这并不意味着变量没有类型。一个变量可以属于几种类型之一，这取决于其包含的数据。JavaScript中有三种原始类型：布尔型、数值型和字符串类型(不区分整数和浮点数是JavaScript与大多数其他主流语言的一个不同之处)。此外，还有对象类型和包含可执行代码的函数类型，前者是一种复合数据类型(数组是一种特殊的对象，它包含着一批值的有序集合)。最后，还有空类型(null)和未定义类型(undefined)这两种数据类型。原始数据类型按值传送，而其他数据类型则按引用传送。</li>
+<li>与其他弱类型语言一样，JavaScript中的变量可以根据所赋的值改变类型。原始类型之间也可以进行类型转换。toString可以把数值或布尔值转为字符串。parseFloat和parseInt函数可以把字符串转变为数值。双重“非”可以把字符串或数值转变为布尔值：var bool = !!num;</li>
+</ul>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/12/25/js设计模式/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
