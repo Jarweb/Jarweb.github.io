@@ -124,11 +124,11 @@
 
       <div class="body-wrap">
   
-    <article id="post-js代码书写" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-阳历农历转换" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/12/25/js代码书写/" class="article-date">
-  	<time datetime="2015-12-24T16:00:00.000Z" itemprop="datePublished">2015-12-25</time>
+      <a href="/2016/03/15/阳历农历转换/" class="article-date">
+  	<time datetime="2016-03-14T16:00:00.000Z" itemprop="datePublished">2016-03-15</time>
 </a>
     </div>
   
@@ -141,7 +141,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/25/js代码书写/">js代码书写</a>
+      <a class="article-title" href="/2016/03/15/阳历农历转换/">阳历农历转换</a>
     </h1>
   
 
@@ -150,8 +150,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>匿名函数的N种写法Js 的匿名函数是未声明函数名的自执行函数，格式如下：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(function()&#123;&#125;)();</span><br></pre></td></tr></table></figure></p>
-<p>在实际项目中我们经常会在前面加上“;”：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">;function()&#123;&#125;();</span><br></pre></td></tr></table></figure></p>
+        <p><a href="http://localhost:1337/?src=2015,1,15" target="_blank" rel="external">http://localhost:1337/?src=2015,1,15</a> (公历转农历，返回2014,11,25,0) 或者 <a href="http://localhost:1337/?src=2014,11,25,0" target="_blank" rel="external">http://localhost:1337/?src=2014,11,25,0</a> (农历转公历，返回2015,1,15)</p>
+<p>/<strong> <em>农历转公历 </em>/<br>this.LunarToSolar = function (lunar)<br>/</strong> <em>公历转农历 </em>/<br>this.SolarToLunar = function (solar)</p>
+
       
     </div>
     
@@ -164,10 +165,6 @@
 
       
 
-      
-        <p class="article-more-link">
-          <a  href="/2015/12/25/js代码书写/#more">more >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -185,11 +182,11 @@
 
 
   
-    <article id="post-js date" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-了解Object" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/12/25/js date/" class="article-date">
-  	<time datetime="2015-12-24T16:00:00.000Z" itemprop="datePublished">2015-12-25</time>
+      <a href="/2016/03/14/了解Object/" class="article-date">
+  	<time datetime="2016-03-13T16:00:00.000Z" itemprop="datePublished">2016-03-14</time>
 </a>
     </div>
   
@@ -202,7 +199,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/25/js date/">js Date</a>
+      <a class="article-title" href="/2016/03/14/了解Object/">了解Object</a>
     </h1>
   
 
@@ -211,135 +208,340 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>如何获得某个月的天数？不知道大家遇到过这个问题吗？我想如果你们写过日期组件一定有这个问题，我当时的解决方案是这样的：<br>以下的三个方法，month 参数我都根据 JS 本身对于 Date 的月份定义，采用0为1月<br>最老实的办法<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const EVERY_MONTH_DAYS = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];&#10;&#10;function getDays(year, month) &#123;&#10;  if (month === 1 &#38;&#38; isLeap(year)) return 29;&#10;  return EVERY_MONTH_DAYS[month];&#10;&#125;</span><br></pre></td></tr></table></figure></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/12/25/js date/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-js代码技巧" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/12/25/js代码技巧/" class="article-date">
-  	<time datetime="2015-12-24T16:00:00.000Z" itemprop="datePublished">2015-12-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/25/js代码技巧/">js代码技巧</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Boolean这个技巧用的很多，也非常的简单<br>!!’foo’</p>
-<p>通过两个取反，可以强制转换为Boolean类型。较为常用。</p>
-<p>number这个也特别简单，String转化为Number<br>+’45’</p>
-<p>+new Date<br>会自动转化为number类型的。较为常用。IIFE这个其实非常有实用价值，不算是装逼。只是其他语言里没有这么玩的，给不太了解js的同学看那可牛逼大了。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(function(arg) &#123;&#10;    // do something&#10;&#125;)(arg)</span><br></pre></td></tr></table></figure></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/12/25/js代码技巧/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-iconate.js" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/12/25/iconate.js/" class="article-date">
-  	<time datetime="2015-12-24T16:00:00.000Z" itemprop="datePublished">2015-12-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/25/iconate.js/">iconate.js</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>iconate.js：将 icons 增加动画效果的 JS 库</p>
+        <blockquote>
+<p>Object从上面的输出中挑选出一些常用方法和属性，会得到下面的列表：</p>
+</blockquote>
 <ul>
-<li>NPM: npm install iconate</li>
-<li>Bower: bower install iconate</li>
+<li>create⑤</li>
+<li>defineProperty⑤</li>
+<li>defineProperties⑤</li>
+<li>getPrototypeOf⑤</li>
+<li>getOwnPropertyDescriptor⑤</li>
+<li>keys⑤</li>
+<li>getOwnPropertyNames⑤</li>
+<li>preventExtensions⑤</li>
+<li>isExtensible⑤</li>
+<li>seal⑤</li>
+<li>isSealed⑤</li>
+<li>freeze⑤</li>
+<li>isFrozen⑤</li>
 </ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;link rel=&#34;stylesheet&#34; href=&#34;iconate.min.css&#34;&#62; &#60;script type=&#34;text/javascript&#34; src=&#34;iconate.min.js&#34;&#62;&#10;&#60;i id=&#34;icon&#34; class=&#34;fa fa-bars fa-lg&#34;&#62;&#60;/i&#62;&#10;var iconElement = document.getElementById(&#39;icon&#39;);&#10;var options = &#123;&#10;&#9;from: &#39;fa-bars&#39;,&#10;&#9;to: &#39;fa-arrow-right&#39;,&#10;&#9;animation: &#39;rubberBand&#39;&#10;&#125;;&#10;iconate(iconElement, options);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>带⑤的为es5新增的方法。</p>
+</blockquote>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/03/14/了解Object/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-js原型" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/10/js原型/" class="article-date">
+  	<time datetime="2016-03-09T16:00:00.000Z" itemprop="datePublished">2016-03-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/10/js原型/">js原型</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>proto</strong>和prototype</p>
+<p><strong>proto</strong>：对象<strong>proto</strong>属性的值就是它所对应的原型对象<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var one = &#123;x: 1&#125;;&#10;var two = new Object();&#10;one.__proto__ === Object.prototype // true&#10;two.__proto__ === Object.prototype // true&#10;one.toString === one.__proto__.toString // true</span><br></pre></td></tr></table></figure></p>
+<p>prototype：不像每个对象都有<strong>proto</strong>属性来标识自己所继承的原型，只有函数才有prototype属性。</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/03/10/js原型/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-angular作用域与事件" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/10/angular作用域与事件/" class="article-date">
+  	<time datetime="2016-03-09T16:00:00.000Z" itemprop="datePublished">2016-03-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/10/angular作用域与事件/">angular 作用域</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Angular应用是分层的，主要有三个层面：视图，模型，视图模型。其中，视图很好理解，就是直接可见的界面，模型就是数据，那么视图模型是什么呢？是一种把数据包装给视图调用的东西。<br>所谓作用域</p>
+<p>每个Angular应用默认有一个根作用域，也就是说，如果用户未指定自己的控制器，变量就是直接挂在这个层级上的。<br>作用域在一个Angular应用中是以树的形状体现的，根作用域位于最顶层，从它往下挂着各级作用域。每一级作用域上面挂着变量和方法，供所属的视图调用。<br>如果想要在代码中显式使用根作用域，可以注入$rootScope。</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/03/10/angular作用域与事件/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-研究console" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/10/研究console/" class="article-date">
+  	<time datetime="2016-03-09T16:00:00.000Z" itemprop="datePublished">2016-03-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/10/研究console/">console研究</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>console.dir()方法用来对一个对象进行检查，并以易于阅读和打印的格式显示。</p>
+<p>console.error(),console.warn()方法用于输出错误和警告信息，用法和常见的console.log方法一样，不同点在于输出时候的表现形式。一个是黄色的警告形式一个是红色的错误形式。而console.error()方法会标记为错误的地方。</p>
+<p>console.table()方法可以将传入的对象或数组这些复合数据以表格形式输出。</p>
+<p>console.time(),console.timeEnd()方法计算一个操作的执行的时间console.time()是开始，console.timeEnd()是结束。可以传一个参数，参数为计时器的名称。</p>
+<p>console.trace()方法用来追踪函数的调用过程。在复杂的架构中可以查找到对应的调用路径。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/调试/">调试</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-js依赖注入" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/10/js依赖注入/" class="article-date">
+  	<time datetime="2016-03-09T16:00:00.000Z" itemprop="datePublished">2016-03-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/10/js依赖注入/">js依赖注入</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>网页的生成过程，大致可以分成五步。</p>
+<ol>
+<li>HTML代码转化成DOM</li>
+<li>CSS代码转化成CSSOM（CSS Object Model）</li>
+<li>结合DOM和CSSOM，生成一棵渲染树（包含每个节点的视觉信息）</li>
+<li>生成布局（layout），即将所有渲染树的所有节点进行平面合成</li>
+<li>将布局绘制（paint）在屏幕上</li>
+</ol>
+<p>这五步里面，第一步到第三步都非常快，耗时的是第四步和第五步。<br>“生成布局”（flow）和”绘制”（paint）这两步，合称为”渲染”（render）。</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/03/10/js依赖注入/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-bootstrap datetime piker api" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/10/bootstrap datetime piker api/" class="article-date">
+  	<time datetime="2016-03-09T16:00:00.000Z" itemprop="datePublished">2016-03-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/10/bootstrap datetime piker api/">datetime</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>引入<br>css、jq、插件</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#36755;&#20837;&#26694;&#24418;&#24335;&#10;&#60;input size=&#39;16&#39; type=&#34;text&#34; value=&#39;2012-06-15 14:45&#39; readonly class=&#34;form-datetime&#34;&#62;&#10;//&#20869;&#38142;&#24418;&#24335;&#10;&#60;div id=&#34;datetimepicker&#34;&#62;&#60;/div&#62;&#10;//&#32452;&#20214;&#24418;&#24335;&#10;&#60;div class=&#34;input-append date form_datetime&#34;&#62;&#10;    &#60;input size=&#34;16&#34; type=&#34;text&#34; value=&#34;&#34; readonly&#62; //&#26174;&#31034;&#26102;&#38388;&#21306;&#10;    &#60;span class=&#34;add-on&#34;&#62;&#60;i class=&#34;icon-remove&#34;&#62;&#60;/i&#62;&#60;/span&#62; //&#28165;&#38500;&#36873;&#25321;&#30340;&#22270;&#26631;&#10;    &#60;span class=&#34;add-on&#34;&#62;&#60;i class=&#34;icon-th&#34;&#62;&#60;/i&#62;&#60;/span&#62; //&#26085;&#21382;&#30340;&#22270;&#26631;&#10;&#60;/div&#62;&#10;&#60;input  id=&#34;mirror_field&#34; type=&#34;text&#34; value=&#34;&#34; readonly&#62;//&#38236;&#20687; &#36873;&#25321;&#26102;&#38388;&#21518;&#36825;&#37324;&#20063;&#20250;&#26174;&#31034; &#21487;&#20197;&#26377;&#22810;&#20010;&#10;&#60;script type=&#34;text/javascript&#34;&#62;&#10;    $(&#34;.form_datetime&#34;).datetimepicker(&#123;&#10;        format: &#34;dd MM yyyy - hh:ii&#34;,&#10;        autoclose: true,&#10;        todayBtn: true,&#10;        pickerPosition: &#34;bottom-left&#34;,&#10;        linkField: &#34;mirror_field&#34;,&#10;        linkFormat: &#34;yyyy-mm-dd hh:ii&#34;&#65292;&#10;        showMeridian: true,&#10;&#125;);&#10;&#60;/script&#62;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -354,7 +556,7 @@
 
       
         <p class="article-more-link">
-          <a  href="/2015/12/25/iconate.js/#more">more >></a>
+          <a  href="/2016/03/10/bootstrap datetime piker api/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -373,11 +575,11 @@
 
 
   
-    <article id="post-flexbox制作footer" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-es6" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/12/25/flexbox制作footer/" class="article-date">
-  	<time datetime="2015-12-24T16:00:00.000Z" itemprop="datePublished">2015-12-25</time>
+      <a href="/2016/03/10/es6/" class="article-date">
+  	<time datetime="2016-03-09T16:00:00.000Z" itemprop="datePublished">2016-03-10</time>
 </a>
     </div>
   
@@ -390,7 +592,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/25/flexbox制作footer/">flexbox 制作footer</a>
+      <a class="article-title" href="/2016/03/10/es6/">ES6入门</a>
     </h1>
   
 
@@ -399,7 +601,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>解决方法解决该问题的最好方法是采用 flexbox——CSS3提供的一种先进布局模型，旨在建立具有适应性的布局。如果你对 flexbox 还不怎么熟悉，文章最后有一些扩展阅读链接，可以帮助你了解 flexbox。<br>我们的演示页面应该具备 Header、主体内容区域和 Footer，下面是该页面的 HTML<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;body&#62;&#10;    &#60;header&#62;...&#60;/header&#62;&#10;    &#60;section class=&#34;main-content&#34;&#62;...&#60;/section&#62;&#10;    &#60;footer&#62;...&#60;/footer&#62;&#10;&#60;/body&#62;</span><br></pre></td></tr></table></figure></p>
+        <h3 id="let-const"><a href="#let-const" class="headerlink" title="let const"></a>let const</h3><h3 id="变量解构赋值"><a href="#变量解构赋值" class="headerlink" title="变量解构赋值"></a>变量解构赋值</h3><h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><h3 id="Reg"><a href="#Reg" class="headerlink" title="Reg"></a>Reg</h3><h3 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h3><h3 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h3><h3 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h3><h3 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h3><h3 id="Symbol"><a href="#Symbol" class="headerlink" title="Symbol"></a>Symbol</h3><h3 id="set-map"><a href="#set-map" class="headerlink" title="set map"></a>set map</h3><h3 id="for-of"><a href="#for-of" class="headerlink" title="for of"></a>for of</h3><h3 id="generator函数"><a href="#generator函数" class="headerlink" title="generator函数"></a>generator函数</h3><h3 id="promise对象"><a href="#promise对象" class="headerlink" title="promise对象"></a>promise对象</h3><h3 id="Async函数与异步"><a href="#Async函数与异步" class="headerlink" title="Async函数与异步"></a>Async函数与异步</h3><h3 id="Class"><a href="#Class" class="headerlink" title="Class"></a>Class</h3>
       
     </div>
     
@@ -407,14 +609,70 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/">ES6</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-js异步回调" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/10/js异步回调/" class="article-date">
+  	<time datetime="2016-03-09T16:00:00.000Z" itemprop="datePublished">2016-03-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/10/js异步回调/">js异步</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const fs = require(&#39;fs&#39;)&#10;console.log(&#39;start reading a file...&#39;)&#10;fs.readFile(&#39;file.md&#39;, &#39;utf-8&#39;, function (err, content) &#123;  &#10;  if (err) &#123;&#10;    console.log(&#39;error happened during reading the file&#39;)&#10;    return console.log(err)&#10;  &#125;&#10;&#10;  console.log(content)&#10;&#125;)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2015/12/25/flexbox制作footer/#more">more >></a>
+          <a  href="/2016/03/10/js异步回调/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -433,11 +691,11 @@
 
 
   
-    <article id="post-js优化" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-bootstrap datepiker" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/12/25/js优化/" class="article-date">
-  	<time datetime="2015-12-24T16:00:00.000Z" itemprop="datePublished">2015-12-25</time>
+      <a href="/2016/03/10/bootstrap datepiker/" class="article-date">
+  	<time datetime="2016-03-09T16:00:00.000Z" itemprop="datePublished">2016-03-10</time>
 </a>
     </div>
   
@@ -450,7 +708,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/25/js优化/">js优化</a>
+      <a class="article-title" href="/2016/03/10/bootstrap datepiker/">bootstrap datepiker</a>
     </h1>
   
 
@@ -459,7 +717,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>注意作用域避免全局查找<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function updateUI()&#123;&#10;    var imgs = document.getElementByTagName(&#34;img&#34;);&#10;    for(var i=0, len=imgs.length; i&#60;len; i++)&#123;&#10;            imgs[i].title = document.title + &#34; image &#34; + i;&#10;        &#125;&#10;    var msg = document.getElementById(&#34;msg&#34;);&#10;    msg.innnerHTML = &#34;Update complete.&#34;;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>输入框型<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;input type=&#34;text&#34; class=&#34;form-control&#34;&#62;</span><br></pre></td></tr></table></figure></p>
+<p>组件型<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;div class=&#34;input-group date&#34;&#62;&#10;  &#60;input type=&#34;text&#34; class=&#34;form-control&#34;&#62;&#60;span class=&#34;input-group-addon&#34;&#62;&#60;i class=&#34;glyphicon glyphicon-th&#34;&#62;&#60;/i&#62;&#60;/span&#62;&#10;&#60;/div&#62;&#10;$(&#39;#sandbox-container .input-group.date&#39;).datepicker(&#123;&#125;)</span><br></pre></td></tr></table></figure></p>
       
     </div>
     
@@ -467,275 +726,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/插件/">插件</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2015/12/25/js优化/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-es5原型" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/12/25/es5原型/" class="article-date">
-  	<time datetime="2015-12-24T16:00:00.000Z" itemprop="datePublished">2015-12-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/25/es5原型/">es5原型</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>ES5.1 之后加了几个新的 API 帮助我们操作对象的 [[Prototype]]，</p>
-<ul>
-<li>Object.prototype.isPrototypeOf</li>
-<li>Object.create</li>
-<li>Object.getPrototypeOf</li>
-<li>Object.setPrototypeOf</li>
-</ul>
-<p>Object.create 创建 child 对象，并把 [[Prototype]] 设置为 parent 对象。<br>Object.getPrototypeOf 可以直接获取对象的 [[Prototype]]。<br>isPrototypeOf 能够判断一个对象是否在另一个对象的原型链上。</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/12/25/es5原型/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-js千分位" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/12/25/js千分位/" class="article-date">
-  	<time datetime="2015-12-24T16:00:00.000Z" itemprop="datePublished">2015-12-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/25/js千分位/">千位分</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>拿到小数的整数部分也就是起始位到小数点（非数字）之间的部分，可以这样实现：<br>^\d+</li>
-</ol>
-<ol>
-<li>为整数部分添加千分符这一步可以利用我们之前的实现，整合在一起如下：<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let milliFormat = (num) =&#62; &#123; return num &#38;&#38; num.toString() .replace(/^\d+/g, (m) =&#62; m.replace(/(?=(?!^)(\d&#123;3&#125;)+$)/g, &#39;,&#39;)) &#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/12/25/js千分位/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据类型深入" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/12/25/数据类型深入/" class="article-date">
-  	<time datetime="2015-12-24T16:00:00.000Z" itemprop="datePublished">2015-12-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/25/数据类型深入/">数据类型</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1.原始类型和引用类型1.1 什么是类型原始类型 保存为简单数据值。 引用类型 保存为对象，其本质是指向内存位置的引用。<br>为了让开发者能够把原始类型和引用类型按相同的方式处理，JavaScript花费了很大的努力来保证语言的一致性。<br>其他编程语言用栈存原始类型，用对存储引用类型。而JavaScript则完全不同：它使用一个变量对象追踪变量的生存期。原始值被直接保存在变量对象内，而引用值则作为一个指针保存在变量对象内，该指针指向实际对象在内存中的存储位置。<br>1.2 原始类型原始类型代表照原样保存的一些简单数据。 JavaScript共有 5 种原始类型：</p>
-<ul>
-<li>boolean 布尔，值为 true or false</li>
-<li>number 数字，值为任何整型或浮点数值</li>
-<li>string 字符串，值为由单引号或双引号括住的单个字符或连续字符</li>
-<li>null 空类型，仅有一个值：null</li>
-<li>undefined 未定义，只有一个值：undefined（undefined会被赋给一个还没有初始化的变量）</li>
-</ul>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/12/25/数据类型深入/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-js基础" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/12/25/js基础/" class="article-date">
-  	<time datetime="2015-12-24T16:00:00.000Z" itemprop="datePublished">2015-12-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/25/js基础/">js基础</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>ES5 严格模式中禁止使用八进制。目前各种引擎对 JS 的实现是存在差异的，部分支持八进制，部分不支持。八进制被禁止的原因：String 和 Number 之间经常被相互转换，而以0 开头的八进制数据特别容易让人迷惑，也容易让机器迷惑，比如 09 是该被转换成 9 还是直接报错？十六进制不存在这个问题，如 0x98。</p>
-<p>精度<br>JS 采用 IEEE-754 浮点数表示法，这是一种二进制表示法，由于精度原因 JS 不能表示所有的实数。它能展示的浮点数个数是有限的，比如它不能准确地表示三分之一的数值字面量。这也导致了它在浮点数的计算上存在误差，如 0.3-0.2 != 0.2-0.1，因为在计算的过程中，存在数据的溢出，丢失了精度。</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/12/25/js基础/#more">more >></a>
+          <a  href="/2016/03/10/bootstrap datepiker/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -756,7 +754,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/7/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/9/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/7/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/9/">Next &raquo;</a>
     </nav>
   
 </div>

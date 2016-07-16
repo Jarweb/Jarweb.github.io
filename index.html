@@ -124,11 +124,11 @@
 
       <div class="body-wrap">
   
-    <article id="post-21" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Express 4.X API" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/05/23/21/" class="article-date">
-  	<time datetime="2016-05-23T14:49:51.993Z" itemprop="datePublished">2016-05-23</time>
+      <a href="/2016/07/10/Express 4.X API/" class="article-date">
+  	<time datetime="2016-07-09T16:00:00.000Z" itemprop="datePublished">2016-07-10</time>
 </a>
     </div>
   
@@ -141,7 +141,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/23/21/">css js兼容性</a>
+      <a class="article-title" href="/2016/07/10/Express 4.X API/">Express 4.X API</a>
     </h1>
   
 
@@ -150,9 +150,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>!important (功能有限)随着IE7对!important的支持, !important 方法现在只针对IE6的兼容.<br>例如:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#example &#123;&#10;&#9;width: 100px !important; /* IE7+FF */&#10;&#9;width: 103px; /* IE6 */&#10;&#125;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
+        <p>Express 4.X API 翻译</p>
+<p>创建一个express应用<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&#39;express&#39;);&#10;var app = express();&#10; &#10;app.get(&#39;/&#39;,function(req,res)&#123;&#10;    res.send(&#39;hello world&#39;);&#10;&#125;);&#10;app.listen(3000);</span><br></pre></td></tr></table></figure></p>
       
     </div>
     
@@ -160,14 +159,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/兼容性/">兼容性</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/express/">express</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/05/23/21/#more">more >></a>
+          <a  href="/2016/07/10/Express 4.X API/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -186,11 +185,11 @@
 
 
   
-    <article id="post-localstore介绍" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-创建对象" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/05/05/localstore介绍/" class="article-date">
-  	<time datetime="2016-05-04T16:00:00.000Z" itemprop="datePublished">2016-05-05</time>
+      <a href="/2016/07/08/创建对象/" class="article-date">
+  	<time datetime="2016-07-07T16:00:00.000Z" itemprop="datePublished">2016-07-08</time>
 </a>
     </div>
   
@@ -203,7 +202,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/05/localstore介绍/">localstore介绍</a>
+      <a class="article-title" href="/2016/07/08/创建对象/">创建对象</a>
     </h1>
   
 
@@ -212,10 +211,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>store.js 是一个实现了浏览器的本地存储的 JavaScript 封装 API，不是通过 Cookie 和 Flash 技术实现，而是使用 localStorage。</p>
-<p>bower<br>$ bower install storejs</p>
-<p>npm<br>$ npm install storejs</p>
-<p>生成压缩文件和开发模式<br>$ npm run build    # 生成带UMD的js原文件 以及 min.js<br>$ npm run watch    # 监听文件改变自动压缩生成js</p>
+        <p>一个对象就是一系列属性的集合，一个属性包含一个名字(key)和一个值(value)。</p>
+<p>创建对象</p>
+<p>很多有关于JavaScript书在介绍对象创建的方法时，主要有：</p>
+<p>使用对象字面量创建对象(key-value)<br>使用new创建对象<br>使用Object.create()创建对象<br>使用函数创建对象<br>使用原型创建对象</p>
+<p>使用对象字面量创建对象</p>
+<p>对象字面量是创建对象最简单的一种形式，目的是在于简化创建包含大量属性的对象的过程。对象字面量由若干属性名(keys)和属性值(values)成对组成的映射表，key和value中间使用冒号(:)分隔，每对key/value之间使用逗号(,)分隔，整个映射表用花括号({})括起来。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;&#10;    property_1:   value_1,   // property_# &#21487;&#33021;&#26159;&#19968;&#20010;&#26631;&#35782;&#31526;...&#10;    2:            value_2,   // &#25110;&#32773;&#26159;&#19968;&#20010;&#25968;&#23383;&#10;    // ...,&#10;    &#34;property n&#34;: value_n    // &#25110;&#26159;&#19968;&#20010;&#23383;&#31526;&#20018;&#125;;</span><br></pre></td></tr></table></figure></p>
       
     </div>
     
@@ -223,14 +224,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/localstore/">localstore</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/05/05/localstore介绍/#more">more >></a>
+          <a  href="/2016/07/08/创建对象/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -249,11 +250,11 @@
 
 
   
-    <article id="post-lodash某些好方法" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-JavaScript学习笔记：数组去重" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/05/03/lodash某些好方法/" class="article-date">
-  	<time datetime="2016-05-02T16:00:00.000Z" itemprop="datePublished">2016-05-03</time>
+      <a href="/2016/07/07/JavaScript学习笔记：数组去重/" class="article-date">
+  	<time datetime="2016-07-06T16:00:00.000Z" itemprop="datePublished">2016-07-07</time>
 </a>
     </div>
   
@@ -266,7 +267,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/03/lodash某些好方法/">lodash某些好方法</a>
+      <a class="article-title" href="/2016/07/07/JavaScript学习笔记：数组去重/">数组去重</a>
     </h1>
   
 
@@ -275,7 +276,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>循环N次<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// 1. Basic for&#10;loop.for(var i = 0; i &#60; 5; i++) &#123;&#10;        // ....&#10;&#125;&#10;&#10;// 2. Using Array&#39;s join and split&#10;methodsArray.apply(null, Array(5)).forEach(function()&#123;&#10;        // ...&#10;&#125;);&#10;&#10;// Lodash&#10;_.times(5, function()&#123;&#10;        // ...&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+        <p>双重循环去重<br>这个方法使用了两个for循环做遍历。整个思路是：<br>构建一个空数组用来存放去重后的数组<br>外面的for循环对原数组做遍历，每次从数组中取出一个元素与结果数组做对比<br>如果原数组取出的元素与结果数组元素相同，则跳出循环;反之则将其存放到结果数组中<br>代码如下:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.unique1 = function () &#123;&#10;    // &#26500;&#24314;&#19968;&#20010;&#26032;&#25968;&#32452;&#65292;&#23384;&#25918;&#32467;&#26524;&#10;    var newArray = [this[0]];    // for&#24490;&#29615;&#65292;&#27599;&#27425;&#20174;&#21407;&#25968;&#32452;&#20013;&#21462;&#20986;&#19968;&#20010;&#20803;&#32032;&#10;    // &#29992;&#21462;&#20986;&#30340;&#20803;&#32032;&#24490;&#29615;&#19982;&#32467;&#26524;&#25968;&#32452;&#23545;&#27604;&#10;    for (var i = 1; i &#60; this.length; i++) &#123;        var repeat = false;        for (var j=0; j &#60; newArray.length; j++) &#123;            // &#21407;&#25968;&#32452;&#21462;&#20986;&#30340;&#20803;&#32032;&#19982;&#32467;&#26524;&#25968;&#32452;&#20803;&#32032;&#30456;&#21516;&#10;            if(this[i] == newArray[j]) &#123;&#10;                repeat = true;                break;&#10;            &#125;&#10;        &#125;        if(!repeat) &#123;            // &#22914;&#26524;&#32467;&#26524;&#25968;&#32452;&#20013;&#27809;&#26377;&#35813;&#20803;&#32032;&#65292;&#21017;&#23384;&#25918;&#21040;&#32467;&#26524;&#25968;&#32452;&#20013;&#10;            newArray.push(this[i]);&#10;        &#125;&#10;    &#125;    return newArray;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
       
     </div>
     
@@ -283,14 +284,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lodash/">lodash</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/05/03/lodash某些好方法/#more">more >></a>
+          <a  href="/2016/07/07/JavaScript学习笔记：数组去重/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -309,11 +310,11 @@
 
 
   
-    <article id="post-滚动条样式" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-gulp 常用插件" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/05/01/滚动条样式/" class="article-date">
-  	<time datetime="2016-04-30T16:00:00.000Z" itemprop="datePublished">2016-05-01</time>
+      <a href="/2016/07/06/gulp 常用插件/" class="article-date">
+  	<time datetime="2016-07-05T16:00:00.000Z" itemprop="datePublished">2016-07-06</time>
 </a>
     </div>
   
@@ -326,7 +327,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/01/滚动条样式/">滚动条样式</a>
+      <a class="article-title" href="/2016/07/06/gulp 常用插件/">gulp 常用插件</a>
     </h1>
   
 
@@ -335,7 +336,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>ie<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*&#123;  &#10;    scrollbar-face-color:#F3F3F3; /*&#38754;&#23376;*/  &#10;    scrollbar-arrow-color:#C0C0C0; /*&#31661;&#22836;*/  &#10;    scrollbar-3dlight-color:#C0C0C0; /*&#26368;&#22806;&#24038;*/  &#10;    scrollbar-highlight-color:#FFFFFF; /*&#24038;&#20108;*/  &#10;    scrollbar-shadow-color:#FFFFFF; /*&#21491;&#20108;*/  &#10;    scrollbar-darkshadow-color:#C0C0C0; /*&#21491;&#19968;*/  &#10;    scrollbar-track-color:#F3F3F3; /*&#28369;&#36947;*/  &#10;&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>例子一<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#39;use strict&#39;;&#10;&#10;var gulp        = require(&#39;gulp&#39;),&#10;    browserSync = require(&#39;browser-sync&#39;).create(),&#10;    SSI         = require(&#39;browsersync-ssi&#39;),&#10;    concat      = require(&#39;gulp-concat&#39;),&#10;    minify      = require(&#39;gulp-minify&#39;),&#10;    plumber     = require(&#39;gulp-plumber&#39;),&#10;    sass        = require(&#39;gulp-sass&#39;),&#10;    zip         = require(&#39;gulp-zip&#39;);&#10;&#10;&#10;gulp.task(&#39;serve&#39;, function() &#123;&#10;&#10;    browserSync.init(&#123;&#10;        server: &#123;&#10;            baseDir:[&#34;./dist&#34;],&#10;            middleware:SSI(&#123;&#10;                baseDir:&#39;./dist&#39;,&#10;                ext:&#39;.shtml&#39;,&#10;                version:&#39;2.10.0&#39;&#10;            &#125;)&#10;        &#125;&#10;    &#125;);&#10;&#10;    gulp.watch(&#34;app/scss/**/*.scss&#34;, [&#39;sass&#39;]);&#10;    gulp.watch(&#34;app/scripts/**/*.js&#34;, [&#39;js&#39;]);&#10;    gulp.watch(&#34;app/**/*.html&#34;, [&#39;html&#39;]);&#10;    gulp.watch(&#34;dist/**/*.html&#34;).on(&#34;change&#34;,browserSync.reload);&#10;&#125;);&#10;&#10;// Compile sass into CSS &#38; auto-inject into browsers&#10;gulp.task(&#39;sass&#39;, function() &#123;&#10;    &#10;    return gulp.src(&#34;app/scss/**/*.scss&#34;)&#10;        .pipe(plumber())&#10;        .pipe(sass.sync().on(&#39;error&#39;, sass.logError))&#10;        .pipe(sass(&#123;outputStyle:&#34;compact&#34;&#125;))&#10;        .pipe(gulp.dest(&#34;dist/styles&#34;))&#10;        .pipe(browserSync.stream());&#10;&#125;); &#10;&#10;// javscript files operate&#10;gulp.task(&#39;js&#39;, function()&#123;&#10;    return gulp.src(&#39;app/scripts/**/*.js&#39;)&#10;        .pipe(plumber())&#10;        .pipe(minify())&#10;        .pipe(gulp.dest(&#34;dist/scripts&#34;))&#10;        .pipe(browserSync.stream());&#10;&#125;);&#10;&#10;gulp.task(&#39;html&#39;, function() &#123;&#10;    &#10;    return gulp.src(&#34;app/*.html&#34;)&#10;        .pipe(plumber())        &#10;        .pipe(gulp.dest(&#34;dist/&#34;))&#10;        .pipe(browserSync.stream());&#10;&#125;);&#10;&#10;// publish&#10;gulp.task(&#39;publish&#39;, function()&#123;&#10;    return gulp.src(&#39;dist/**/*&#39;)&#10;        .pipe(plumber())&#10;        .pipe(zip(&#39;publish.zip&#39;))&#10;        .pipe(gulp.dest(&#39;release&#39;))&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
       
     </div>
     
@@ -343,14 +344,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gulp/">gulp</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/05/01/滚动条样式/#more">more >></a>
+          <a  href="/2016/07/06/gulp 常用插件/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -369,11 +370,11 @@
 
 
   
-    <article id="post-理解单例模式" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-labjs" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/30/理解单例模式/" class="article-date">
-  	<time datetime="2016-04-29T16:00:00.000Z" itemprop="datePublished">2016-04-30</time>
+      <a href="/2016/07/04/labjs/" class="article-date">
+  	<time datetime="2016-07-03T16:00:00.000Z" itemprop="datePublished">2016-07-04</time>
 </a>
     </div>
   
@@ -386,7 +387,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/30/理解单例模式/">理解单例模式</a>
+      <a class="article-title" href="/2016/07/04/labjs/">labjs</a>
     </h1>
   
 
@@ -395,7 +396,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>单例模式的含义是: 保证一个类只有一个实例,并提供一个访问它的全局访问点。实现的方法是:使用一个变量来标志当前是否已经为某个类创建过对象,如果创建了,则在下一次获取该类的实例时,直接返回之前创建的对象,否则就创建一个对象。这就确保了一个类只有一个实例对象。<br>比如如下代码是一个简单的单例模式代码实例:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var Singleton = function(name)&#123;&#10;    this.name = name;&#10;    // &#20351;&#29992;instance &#35813;&#26631;&#24535;&#26469;&#21028;&#26029;&#26159;&#21542;&#21019;&#24314;&#20102;&#19968;&#20010;&#23454;&#20363;&#10;    this.instance = null;&#10;&#125;;&#10;Singleton.prototype.getName = function()&#123;&#10;    console.log(this.name);&#10;&#125;;&#10;Singleton.getInstance = function(name) &#123;&#10;    if(!this.instance) &#123;&#10;        this.instance = new Singleton(name);&#10;    &#125;&#10;    return this.instance;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>labjs是一个js文件加载器，而requirejs和seajs则是模块加载器，模块加载器一般可以降级为文件加载器使用。labjs通过优雅的语法（script和wait 链式）实现了这两大特性，核心是性能优化，可以管理文件依赖，并且“异步”执行。下面通过具体的例子来简单讲讲这两大api的用法。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$LAB&#10;  .script(&#34;script1.js&#34;)&#10;  .script(&#34;script2.js&#34;);</span><br></pre></td></tr></table></figure>
+<p>如果说加载完两个文件（或者多个），你需要一个回调，这时候就要用到wait了：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$LAB&#10;  .script(&#34;script1.js&#34;)&#10;  .script(&#34;script2.js&#34;)&#10;  .script(&#34;script3.js&#34;)&#10;  .wait(function() &#123;  // &#31561;&#24453;&#25152;&#26377;script&#21152;&#36733;&#23436;&#20877;&#25191;&#34892;&#36825;&#20010;&#20195;&#30721;&#22359;&#10;      // ...&#10;  &#125;);</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -403,14 +407,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/插件/">插件</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/04/30/理解单例模式/#more">more >></a>
+          <a  href="/2016/07/04/labjs/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -429,11 +433,11 @@
 
 
   
-    <article id="post-模板引擎" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-express 中间件" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/29/模板引擎/" class="article-date">
-  	<time datetime="2016-04-28T16:00:00.000Z" itemprop="datePublished">2016-04-29</time>
+      <a href="/2016/07/03/express 中间件/" class="article-date">
+  	<time datetime="2016-07-02T16:00:00.000Z" itemprop="datePublished">2016-07-03</time>
 </a>
     </div>
   
@@ -446,7 +450,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/29/模板引擎/">模板引擎</a>
+      <a class="article-title" href="/2016/07/03/express 中间件/">express 中间件</a>
     </h1>
   
 
@@ -455,7 +459,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>什么是模板引擎，说的简单点，就是一个字符串中有几个变量待定。比如：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var tpl = &#39;Hei, my name is &#60;%name%&#62;, and I\&#39;m &#60;%age%&#62; years old.&#39;;&#10;//&#36890;&#36807;&#27169;&#26495;&#24341;&#25806;&#20989;&#25968;&#25226;&#25968;&#25454;&#22622;&#36827;&#21435;&#65292;&#10;var data = &#123; &#34;name&#34;: &#34;Barret Lee&#34;, &#34;age&#34;: &#34;20&#34; &#125;;&#10;var result = tplEngine(tpl, data);&#10;//Hei, my name is Barret Lee, and I&#39;m 20 years old.</span><br></pre></td></tr></table></figure></p>
+        <p>express 中间件：</p>
+<p>basicAuth()<br>基本的认证中间件，在req.user里添加用户名</p>
+<p>用户名和密码的例子:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(express.basicAuth(&#39;username&#39;, &#39;password&#39;));</span><br></pre></td></tr></table></figure></p>
+<p>校验回调:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(express.basicAuth(function(user, pass)&#123;&#10;  return &#39;tj&#39; == user &#38;&#38; &#39;wahoo&#39; == pass;&#10;&#125;));</span><br></pre></td></tr></table></figure></p>
+<p>异步校验接受参数fn(err, user), 下面的例子req.user 将会作为user对象传递.<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(connect.basicAuth(function(user, pass, fn)&#123;&#10;  User.authenticate(&#123; user: user, pass: pass &#125;, fn);&#10;&#125;))</span><br></pre></td></tr></table></figure></p>
       
     </div>
     
@@ -463,14 +471,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/express/">express</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/04/29/模板引擎/#more">more >></a>
+          <a  href="/2016/07/03/express 中间件/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -489,11 +497,11 @@
 
 
   
-    <article id="post-模块化深入" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-favico.js" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/28/模块化深入/" class="article-date">
-  	<time datetime="2016-04-27T16:00:00.000Z" itemprop="datePublished">2016-04-28</time>
+      <a href="/2016/07/02/favico.js/" class="article-date">
+  	<time datetime="2016-07-01T16:00:00.000Z" itemprop="datePublished">2016-07-02</time>
 </a>
     </div>
   
@@ -506,7 +514,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/28/模块化深入/">模块化深入</a>
+      <a class="article-title" href="/2016/07/02/favico.js/">favico.js</a>
     </h1>
   
 
@@ -515,7 +523,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>装饰者（Decorator）模式：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// mylib/UpdatableObservable&#65306;dojo/store/Observable &#30340;&#19968;&#20010;&#35013;&#39280;&#32773;&#10;define([&#39;dojo&#39;, &#39;dojo/store/Observable&#39;], function ( dojo, Observable ) &#123;&#10;    return function UpdatableObservable ( store ) &#123;&#10;        var observable = dojo.isFunction(store.notify) ? store :new Observable(store);&#10;        observable.updated = function( object ) &#123;&#10;            dojo.when(object, function ( itemOrArray ) &#123;&#10;                dojo.forEach( [].concat(itemOrArray), this.notify, this );&#10;            &#125;;&#10;        &#125;;&#10;        return observable; // &#35753; `new` &#25104;&#20026;&#21487;&#36873;&#30340;&#10;    &#125;;&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+        <p>使用方法<br>1、下载favico.js</p>
+<p>可以直接从github上下载 favico.js 文件或者用 bower 安装</p>
+<p>bower install favico.js</p>
+<p>2、引用 favico.js 文件</p>
+<script type="text/javascript" src="favico.js"></script>
+
+
+<p>3、调用方法<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var favicon=new Favico(&#123;&#10;    bgColor : &#39;#5CB85C&#39;,&#10;    textColor : &#39;#ff0&#39;,&#10;&#125;);&#10;favicon.badge(3);</span><br></pre></td></tr></table></figure></p>
       
     </div>
     
@@ -523,14 +538,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/模块化/">模块化</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/插件/">插件</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/04/28/模块化深入/#more">more >></a>
+          <a  href="/2016/07/02/favico.js/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -549,11 +564,11 @@
 
 
   
-    <article id="post-js作用域" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-express app.js" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/27/js作用域/" class="article-date">
-  	<time datetime="2016-04-26T16:00:00.000Z" itemprop="datePublished">2016-04-27</time>
+      <a href="/2016/07/01/express app.js/" class="article-date">
+  	<time datetime="2016-06-30T16:00:00.000Z" itemprop="datePublished">2016-07-01</time>
 </a>
     </div>
   
@@ -566,7 +581,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/27/js作用域/">js作用域</a>
+      <a class="article-title" href="/2016/07/01/express app.js/">express app.js</a>
     </h1>
   
 
@@ -575,8 +590,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>从概念上说，闭包有两个特点：<br> 1、函数<br> 2、能访问另外一个函数作用域中的变量<br> 在ES 6之前，Javascript只有函数作用域的概念，没有块级作用域（但catch捕获的异常 只能在catch块中访问）的概念（IIFE可以创建局部作用域）。每个函数作用域都是封闭的，即外部是访问不到函数作用域中的变量。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function getName() &#123;&#10;  var name = &#34;&#32654;&#22899;&#30340;&#21517;&#23383;&#34;;&#10;  console.log(name);     //&#34;&#32654;&#22899;&#30340;&#21517;&#23383;&#34;&#10;&#125;&#10;function displayName() &#123;&#10;    console.log(name);  //&#25253;&#38169;&#10;&#125;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&#39;express&#39;)&#10;var path=require(&#39;path&#39;)&#10;&#10;&#10;var mongoose=require(&#39;mongoose&#39;)&#10;var dbUrl=&#39;mongodb://127.0.0.1/zbyou&#39;&#10;&#9;mongoose.connect(dbUrl)&#10;&#10;var session = require(&#39;express-session&#39;)&#10;var mongoStore=require(&#39;connect-mongo&#39;)(session)&#10;&#10;var serveStatic = require(&#39;serve-static&#39;)&#10;var bodyParser=require(&#39;body-parser&#39;)&#10;var cookieParser=require(&#39;cookie-parser&#39;)&#10;&#10;var port=process.env.PORT||3001&#10;var app=express()&#10;&#9;app.listen(port)&#10;&#10;&#60;!--more--&#62;&#10;app.use(bodyParser.json())&#10;app.use(bodyParser.urlencoded(&#123;extended:false&#125;))&#10;app.use(function(req, res, next) &#123;&#10;    res.setHeader(&#39;Access-Control-Allow-Origin&#39;, &#39;*&#39;)&#10;    res.setHeader(&#39;Access-Control-Allow-Methods&#39;, &#39;GET, POST&#39;)&#10;    res.setHeader(&#39;Access-Control-Allow-Headers&#39;, &#39;X-Requested-With,content-type, Authorization&#39;);&#10;    next()&#10;&#125;)&#10;&#10;app.use(cookieParser())&#10;app.use(session(&#123;&#10;&#9;secret:&#39;zbyou&#39;,&#10;&#9;saveUninitialized: true,&#10;&#9;resave: false,&#10;&#9;store: new mongoStore(&#123;&#10;&#9;&#9;url:dbUrl,&#10;&#9;&#9;collection:&#39;sessions&#39;&#10;&#9;&#125;)&#10;&#125;))&#10;&#10;app.set(&#39;views&#39;, path.join(__dirname, &#39;../font-end/managem/views&#39;))//&#35774;&#32622;view&#30340;&#36335;&#24452; &#32534;&#35793;jade&#10;app.set(&#39;view engine&#39;, &#39;jade&#39;)&#10;&#10;app.use(serveStatic(path.join(__dirname,&#39;../&#39;)))//&#30456;&#23545;app.js&#26469;&#35828; &#35774;&#32622;&#38745;&#24577;&#36164;&#28304;&#30340;&#36335;&#21170;&#36215;&#28857;css jpg js&#31561;&#10;app.locals.moment=require(&#39;moment&#39;)&#10;&#10;require(&#39;./config/routes&#39;)(app)&#10;&#10;console.log(&#39;zbyou started on port &#39; + port)</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -584,14 +599,70 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/express/">express</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-co" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/30/co/" class="article-date">
+  	<time datetime="2016-06-29T16:00:00.000Z" itemprop="datePublished">2016-06-30</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/30/co/">co</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var co = require(&#39;co&#39;);&#10;&#10;co(function *()&#123;&#10;  // yield any promise&#10;  var result = yield Promise.resolve(true);&#10;&#125;).catch(onerror);&#10;&#10;co(function *()&#123;&#10;  // resolve multiple promises in parallel&#10;  var a = Promise.resolve(1);&#10;  var b = Promise.resolve(2);&#10;  var c = Promise.resolve(3);&#10;  var res = yield [a, b, c];&#10;  console.log(res);&#10;  // =&#62; [1, 2, 3]&#10;&#125;).catch(onerror);&#10;&#10;// errors can be try/catched&#10;co(function *()&#123;&#10;  try &#123;&#10;    yield Promise.reject(new Error(&#39;boom&#39;));&#10;  &#125; catch (err) &#123;&#10;    console.error(err.message); // &#34;boom&#34;&#10; &#125;&#10;&#125;).catch(onerror);&#10;&#10;function onerror(err) &#123;&#10;  // log any uncaught errors&#10;  // co will not throw any errors you do not handle!!!&#10;  // HANDLE ALL YOUR ERRORS!!!&#10;  console.error(err.stack);&#10;&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/插件/">插件</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/04/27/js作用域/#more">more >></a>
+          <a  href="/2016/06/30/co/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -610,11 +681,11 @@
 
 
   
-    <article id="post-模块化分解" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Cheerful" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/27/模块化分解/" class="article-date">
-  	<time datetime="2016-04-26T16:00:00.000Z" itemprop="datePublished">2016-04-27</time>
+      <a href="/2016/06/29/Cheerful/" class="article-date">
+  	<time datetime="2016-06-28T16:00:00.000Z" itemprop="datePublished">2016-06-29</time>
 </a>
     </div>
   
@@ -627,7 +698,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/27/模块化分解/">模块化分解</a>
+      <a class="article-title" href="/2016/06/29/Cheerful/">Cheerful</a>
     </h1>
   
 
@@ -636,8 +707,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>基本原理模块就是一些功能的集合，那么可以将一个大文件分割成一些小文件，在各个文件中定义不同的功能，然后在HTML中引入：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var module1 = new Object(&#123; _count : 0, m1 : function ()&#123; //... &#125;, m2 : function ()&#123; //... &#125; &#125;);</span><br></pre></td></tr></table></figure></p>
-<p>这样做的坏处是：把模块中所有的成员都暴露了！我们知道函数的本地变量是没法从外面进行访问的，那么可以用立即执行函数来优化：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var module1 = (function()&#123; var _count = 0; var m1 = function()&#123; //... &#125;;&#10;var m2 = function()&#123; //... &#125;;&#10;return &#123; m1 : m1, m2 : m2 &#125;; &#125;)();&#10;`</span><br></pre></td></tr></table></figure></p>
+        <p>Cheerful</p>
+<p>小巧的JavaScript与Native通信库（JavaScript端实现），拿去即可使用，已经过项目的实际检测。</p>
+<p>iOS实现</p>
+<p>如果你的iOS项目使用了WebViewJavascriptBridge，那么你可不必引入iOS-JavaScriptBridge.js文件，直接引入bridge.js文件即可。</p>
+<p>如果你的iOS项目未使用WebViewJavascriptBridge，那么你需要先引入iOS-JavaScriptBridge.js文件，并且需要在iOS端实现对 CUSTOM_PROTOCOL_SCHEME = ‘wvjbscheme’的截取，并且使用stringByEvaluatingJavaScriptFromString去执行截取的参数QUEUE_HAS_MESSAGE。</p>
+<p>Android 实现</p>
+<p>Android不会存在这个问题，因为它们使用的是对象映射来实现。</p>
+<p>public final String API_KEY = “jsApi”;<br>openWebView.addJavascriptInterface(baseJsApi, API_KEY);<br>不过如果在JS端获取响应，你依然必须在Android实现对JS端的执行：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JSONObject object = new JSONObject(jsonParam);&#10;androidResponseFunSigning = &#34;androidResponseFunSigning.&#34; + object.getString(&#34;funcKey&#34;);&#10;openWebView.loadUrl(&#34;javascript:window.NativeEvaluatingJavaScript.&#34; + androidResponseFunSigning + &#34;(&#39;&#34; + json + &#34;&#39;)&#34;);</span><br></pre></td></tr></table></figure></p>
       
     </div>
     
@@ -645,81 +722,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/插件/">插件</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/04/27/模块化分解/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-js new 发生了什么" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/26/js new 发生了什么/" class="article-date">
-  	<time datetime="2016-04-25T16:00:00.000Z" itemprop="datePublished">2016-04-26</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/26/js new 发生了什么/">js new 发生了什么</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>这样大概就明白了,当我们执行new A(‘testa’)的时候<br>JS会这样做</p>
-<ol>
-<li>var o = new Object();</li>
-<li>o.<strong>proto</strong> = A.prototype;//这里还记得之那个function里面的默认的属性么?</li>
-<li>A.call(o)//由于这里this是指向o,可以把什么this.name/getName绑定到o上.</li>
-<li>把这个o返回给a;//完成var a = new A()的过程.</li>
-</ol>
-<p>这里注意下,上面所谓的第4步其实是一个简化的说法.真正的过程是在第3步之后,如果发现A返回是一个Object类型(非primitive类型,即非string,boolean,number,null,undefined类型就是Object类型),则直接返回A的返回值,否则把第1步new的Object返回出去.(默认情况下,JS中函数默认返回值是undefined)<br>举个例子</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/04/26/js new 发生了什么/#more">more >></a>
+          <a  href="/2016/06/29/Cheerful/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -740,7 +750,7 @@
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 </div>

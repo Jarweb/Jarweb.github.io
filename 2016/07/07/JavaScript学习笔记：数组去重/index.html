@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>数组去重 | Jar-R</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="双重循环去重这个方法使用了两个for循环做遍历。整个思路是：构建一个空数组用来存放去重后的数组外面的for循环对原数组做遍历，每次从数组中取出一个元素与结果数组做对比如果原数组取出的元素与结果数组元素相同，则跳出循环;反之则将其存放到结果数组中代码如下:1Array.prototype.unique1 = function () &amp;#123;&amp;#10;    // &amp;#26500;&amp;#24314;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数组去重">
+<meta property="og:url" content="http://Jarweb.com/2016/07/07/JavaScript学习笔记：数组去重/index.html">
+<meta property="og:site_name" content="Jar-R">
+<meta property="og:description" content="双重循环去重这个方法使用了两个for循环做遍历。整个思路是：构建一个空数组用来存放去重后的数组外面的for循环对原数组做遍历，每次从数组中取出一个元素与结果数组做对比如果原数组取出的元素与结果数组元素相同，则跳出循环;反之则将其存放到结果数组中代码如下:1Array.prototype.unique1 = function () &amp;#123;&amp;#10;    // &amp;#26500;&amp;#24314;">
+<meta property="og:updated_time" content="2016-07-16T16:47:07.675Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数组去重">
+<meta name="twitter:description" content="双重循环去重这个方法使用了两个for循环做遍历。整个思路是：构建一个空数组用来存放去重后的数组外面的for循环对原数组做遍历，每次从数组中取出一个元素与结果数组做对比如果原数组取出的元素与结果数组元素相同，则跳出循环;反之则将其存放到结果数组中代码如下:1Array.prototype.unique1 = function () &amp;#123;&amp;#10;    // &amp;#26500;&amp;#24314;">
+  
+    <link rel="alternative" href="/atom.xml" title="Jar-R" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">任先生在路上</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle" style="margin-bottom:20px;">Good things are coming !</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">列表</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger" style="display:none;"></div>
+  		<h1 class="header-author js-mobile-header hide">任先生在路上</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">任先生在路上</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Good things are coming !</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">列表</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-JavaScript学习笔记：数组去重" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/07/JavaScript学习笔记：数组去重/" class="article-date">
+  	<time datetime="2016-07-06T16:00:00.000Z" itemprop="datePublished">2016-07-07</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      数组去重
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>双重循环去重<br>这个方法使用了两个for循环做遍历。整个思路是：<br>构建一个空数组用来存放去重后的数组<br>外面的for循环对原数组做遍历，每次从数组中取出一个元素与结果数组做对比<br>如果原数组取出的元素与结果数组元素相同，则跳出循环;反之则将其存放到结果数组中<br>代码如下:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.unique1 = function () &#123;&#10;    // &#26500;&#24314;&#19968;&#20010;&#26032;&#25968;&#32452;&#65292;&#23384;&#25918;&#32467;&#26524;&#10;    var newArray = [this[0]];    // for&#24490;&#29615;&#65292;&#27599;&#27425;&#20174;&#21407;&#25968;&#32452;&#20013;&#21462;&#20986;&#19968;&#20010;&#20803;&#32032;&#10;    // &#29992;&#21462;&#20986;&#30340;&#20803;&#32032;&#24490;&#29615;&#19982;&#32467;&#26524;&#25968;&#32452;&#23545;&#27604;&#10;    for (var i = 1; i &#60; this.length; i++) &#123;        var repeat = false;        for (var j=0; j &#60; newArray.length; j++) &#123;            // &#21407;&#25968;&#32452;&#21462;&#20986;&#30340;&#20803;&#32032;&#19982;&#32467;&#26524;&#25968;&#32452;&#20803;&#32032;&#30456;&#21516;&#10;            if(this[i] == newArray[j]) &#123;&#10;                repeat = true;                break;&#10;            &#125;&#10;        &#125;        if(!repeat) &#123;            // &#22914;&#26524;&#32467;&#26524;&#25968;&#32452;&#20013;&#27809;&#26377;&#35813;&#20803;&#32032;&#65292;&#21017;&#23384;&#25918;&#21040;&#32467;&#26524;&#25968;&#32452;&#20013;&#10;            newArray.push(this[i]);&#10;        &#125;&#10;    &#125;    return newArray;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>假设我们有一个这样的数组：<br>var arr = [1,2,3,4,’a’,’b’,1,3,4,56,32,34,2,’b’,’c’,5,’1’,<code>2</code>];</p>
+<p>arr.unique1(); // [1, 2, 3, 4, “a”, “b”, 56, 32, 34, “c”, 5]</p>
+<p>据说这种方法比较耗时，费性能。</p>
+<p>上面的方法可以使用forEach()方法和indexOf()方法模拟实现：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function unique1() &#123;&#10;    var newArray = [];    this.forEach(function (index) &#123;&#10;        if (newArray.indexOf(index) == -1) &#123;&#10;            newArray.push(index);&#10;        &#125;&#10;    &#125;);    return newArray;&#10;&#125;&#10;&#10;&#35843;&#29992;&#10;unique1.apply(arr)&#25110;unique1.call(arr)</span><br></pre></td></tr></table></figure></p>
+<p>不过这种方法效率要快得多几乎快了一半。</p>
+<p>排序遍历去重<br>先使用sort()方法对原数组做一个排序，排完序之后对数组做遍历，并且检查数组中的第i个元素与结果数组中最后一个元素是否相同。如果不同，则将元素放到结果数组中。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.unique2 = function () &#123;&#10;    // &#21407;&#25968;&#32452;&#20808;&#25490;&#24207;&#10;    this.sort();    // &#26500;&#24314;&#19968;&#20010;&#26032;&#25968;&#32452;&#23384;&#25918;&#32467;&#26524;&#10;    var newArray = [];    for (var i = 1; i &#60; this.length; i++) &#123;        // &#26816;&#26597;&#21407;&#25968;&#20013;&#30340;&#31532;i&#20010;&#20803;&#32032;&#19982;&#32467;&#26524;&#20013;&#30340;&#26368;&#21518;&#19968;&#20010;&#20803;&#32032;&#26159;&#21542;&#30456;&#21516;&#10;        // &#22240;&#20026;&#25490;&#24207;&#20102;&#65292;&#25152;&#20197;&#37325;&#22797;&#20803;&#32032;&#20250;&#22312;&#30456;&#37051;&#20301;&#32622;&#10;        if(this[i] !== newArray[newArray.length - 1]) &#123;            // &#22914;&#26524;&#19981;&#21516;&#65292;&#23558;&#20803;&#32032;&#25918;&#21040;&#32467;&#26524;&#25968;&#32452;&#20013;&#10;            newArray.push(this[i]);&#10;        &#125;&#10;    &#125;    return newArray;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>例如：<br>var arr = [1,2,3,4,’a’,’b’,1,3,4,56,32,34,2,’b’,’c’,5,’1’,’2’];<br>arr.unique2(); // [“1”, 1, 2, “2”, 3, 32, 34, 4, 5, 56, “a”, “b”, “c”]</p>
+<p>这种方法有两个特色：<br>去重后的数组会做排序，主要是因为原数在去重前做了排序<br>去重后的数组，与数字相同的数字字符无法区分，比如’1’和1<br>使用同样的方法，测试所费时间：1232ms。</p>
+<p>对象键值对法<br>这种去重方法实现思路是：<br>创建一个JavaScript对象以及新数组<br>使用for循环遍历原数组，每次取出一个元素与JavaScript对象的键做对比<br>如果不包含，将存入对象的元素的值推入到结果数组中,并且将存入object对象中该属性名的值设置为1<br>代码如下:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.unique3 = function () &#123;    // &#26500;&#24314;&#19968;&#20010;&#26032;&#25968;&#32452;&#23384;&#25918;&#32467;&#26524;&#10;    var newArray = [];    // &#21019;&#24314;&#19968;&#20010;&#31354;&#23545;&#35937;&#10;    var object = &#123;&#125;;    // for&#24490;&#29615;&#26102;&#65292;&#27599;&#27425;&#21462;&#20986;&#19968;&#20010;&#20803;&#32032;&#19982;&#23545;&#35937;&#36827;&#34892;&#23545;&#27604;&#10;    // &#22914;&#26524;&#36825;&#20010;&#20803;&#32032;&#19981;&#37325;&#22797;&#65292;&#21017;&#23558;&#23427;&#23384;&#25918;&#21040;&#32467;&#26524;&#25968;&#20013;&#10;    // &#21516;&#26102;&#25226;&#36825;&#20010;&#20803;&#32032;&#30340;&#20869;&#23481;&#20316;&#20026;&#23545;&#35937;&#30340;&#19968;&#20010;&#23646;&#24615;&#65292;&#24182;&#36171;&#20540;&#20026;1,&#10;    // &#23384;&#20837;&#21040;&#31532;2&#27493;&#24314;&#31435;&#30340;&#23545;&#35937;&#20013;&#10;    for (var i = 0; i &#60; this.length; i++)&#123;        // &#26816;&#27979;&#22312;object&#23545;&#35937;&#20013;&#26159;&#21542;&#21253;&#21547;&#36941;&#21382;&#21040;&#30340;&#20803;&#32032;&#30340;&#20540;&#10;        if(!object[typeof(this[i]) + this[i]]) &#123;            // &#22914;&#26524;&#19981;&#21253;&#21547;&#65292;&#23558;&#23384;&#20837;&#23545;&#35937;&#30340;&#20803;&#32032;&#30340;&#20540;&#25512;&#20837;&#21040;&#32467;&#26524;&#25968;&#32452;&#20013;&#10;            newArray.push(this[i]);            // &#22914;&#26524;&#19981;&#21253;&#21547;&#65292;&#23384;&#20837;object&#23545;&#35937;&#20013;&#35813;&#23646;&#24615;&#21517;&#30340;&#20540;&#35774;&#32622;&#20026;1&#10;            object[typeof(this[i]) + this[i]] = 1;&#10;        &#125;&#10;    &#125;    return newArray;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>运行前面的示例：<br>var arr = [1,2,3,4,’a’,’b’,1,3,4,56,32,34,2,’b’,’c’,5,’1’,’2’];<br>arr.unique3(); // [1, 2, 3, 4, “a”, “b”, 56, 32, 34, “c”, 5, “1”, “2”]</p>
+<p>同样的，不同的键可能会被误认为一样；例如： a[1]、a[“1”] 。这种方法所费时间：621ms。 这种方法所费时间是最短，但就是占用内存大一些。<br>除了上面几种方法，还有其他几种方法如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#26041;&#27861;&#22235;&#10;Array.prototype.unique4 = function () &#123;&#10;    // &#26500;&#24314;&#19968;&#20010;&#26032;&#25968;&#32452;&#23384;&#25918;&#32467;&#26524;&#10;    var newArray = [];    // &#36941;&#21382;&#25972;&#20010;&#25968;&#32452;&#10;    for (var i = 0; i &#60; this.length; i++) &#123;        // &#36941;&#21382;&#26159;&#21542;&#26377;&#37325;&#22797;&#30340;&#20540;&#10;        for (j = i + 1; j &#60; this.length; j++) &#123;            // &#22914;&#26524;&#26377;&#30456;&#21516;&#20803;&#32032;&#65292;&#33258;&#22686;i&#21464;&#37327;&#65292;&#36339;&#20986;i&#30340;&#24490;&#29615;&#10;            if(this[i] === this[j]) &#123;&#10;                j = ++i;&#10;            &#125;&#10;        &#125;        // &#22914;&#26524;&#27809;&#26377;&#30456;&#21516;&#20803;&#32032;&#65292;&#23558;&#20803;&#32032;&#25512;&#20837;&#21040;&#32467;&#26524;&#25968;&#32452;&#20013;&#10;        newArray.push(this[i]);&#10;    &#125;    return newArray;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>Chrome测试结果<br>var arr = [1,2,3,4,’a’,’b’,1,3,4,56,32,34,2,’b’,’c’,5,’1’,’2’];<br>arr.unique4(); // [“a”, 1, 3, 4, 56, 32, 34, 2, “b”, “c”, 5, “1”, “2”]</p>
+<p>同样的，1和’1’无法区分。</p>
+<p>// 方法五<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.unique5 = function () &#123;&#10;    // &#26500;&#24314;&#19968;&#20010;&#26032;&#25968;&#32452;&#23384;&#25918;&#32467;&#26524;&#10;    var newArray = [];    // &#36941;&#21382;&#25972;&#20010;&#25968;&#32452;&#10;    for (var i = 0; i &#60; this.length; i++) &#123;        // &#22914;&#26524;&#24403;&#21069;&#25968;&#32452;&#30340;&#31532;i&#20540;&#20445;&#23384;&#21040;&#20020;&#26102;&#25968;&#32452;&#65292;&#37027;&#20040;&#36339;&#36807;&#10;        var index = this[i];        // &#22914;&#26524;&#25968;&#32452;&#39033;&#19981;&#22312;&#32467;&#26524;&#25968;&#32452;&#20013;&#65292;&#23558;&#36825;&#20010;&#20540;&#25512;&#20837;&#32467;&#26524;&#25968;&#32452;&#20013;&#10;        if (newArray.indexOf(index) === -1) &#123;&#10;            newArray.push(index);&#10;        &#125;&#10;    &#125;    return newArray;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Chrome测试结果:<br>var arr = [1,2,3,4,’a’,’b’,1,3,4,56,32,34,2,’b’,’c’,5,’1’,’2’];<br>arr.unique6(); // [1, 2, 3, 4, “a”, “b”, 56, 32, 34, “c”, 5, “1”, “2”]</p>
+<p>同样的，类似于1和’1’无法区分。所费时间：14361ms。</p>
+<p>// 方法六<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.unique6 = function () &#123;&#10;    return this.reduce(function (newArray, index) &#123;&#10;        if(newArray.indexOf(index) &#60; 0) &#123;&#10;            newArray.push(index);&#10;        &#125;        return newArray;&#10;    &#125;,[]);&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>测试结果如下：<br>var arr = [1,2,3,4,’a’,’b’,1,3,4,56,32,34,2,’b’,’c’,5,’1’,’2’];<br>arr.unique6(); // [1, 2, 3, 4, “a”, “b”, 56, 32, 34, “c”, 5, “1”, “2”]<br>所费时间：16490ms。</p>
+<p>方法虽然很多种，但相比下来，下面这种方法是较为优秀的方案：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.unique3 = function () &#123;    // &#26500;&#24314;&#19968;&#20010;&#26032;&#25968;&#32452;&#23384;&#25918;&#32467;&#26524;&#10;    var newArray = [];    // &#21019;&#24314;&#19968;&#20010;&#31354;&#23545;&#35937;&#10;    var object = &#123;&#125;;    // for&#24490;&#29615;&#26102;&#65292;&#27599;&#27425;&#21462;&#20986;&#19968;&#20010;&#20803;&#32032;&#19982;&#23545;&#35937;&#36827;&#34892;&#23545;&#27604;&#10;    // &#22914;&#26524;&#36825;&#20010;&#20803;&#32032;&#19981;&#37325;&#22797;&#65292;&#21017;&#23558;&#23427;&#23384;&#25918;&#21040;&#32467;&#26524;&#25968;&#20013;&#10;    // &#21516;&#26102;&#25226;&#36825;&#20010;&#20803;&#32032;&#30340;&#20869;&#23481;&#20316;&#20026;&#23545;&#35937;&#30340;&#19968;&#20010;&#23646;&#24615;&#65292;&#24182;&#36171;&#20540;&#20026;1,&#10;    // &#23384;&#20837;&#21040;&#31532;2&#27493;&#24314;&#31435;&#30340;&#23545;&#35937;&#20013;&#10;    for (var i = 0; i &#60; this.length; i++)&#123;        // &#26816;&#27979;&#22312;object&#23545;&#35937;&#20013;&#26159;&#21542;&#21253;&#21547;&#36941;&#21382;&#21040;&#30340;&#20803;&#32032;&#30340;&#20540;&#10;        if(!object[typeof(this[i]) + this[i]]) &#123;            // &#22914;&#26524;&#19981;&#21253;&#21547;&#65292;&#23558;&#23384;&#20837;&#23545;&#35937;&#30340;&#20803;&#32032;&#30340;&#20540;&#25512;&#20837;&#21040;&#32467;&#26524;&#25968;&#32452;&#20013;&#10;            newArray.push(this[i]);            // &#22914;&#26524;&#19981;&#21253;&#21547;&#65292;&#23384;&#20837;object&#23545;&#35937;&#20013;&#35813;&#23646;&#24615;&#21517;&#30340;&#20540;&#35774;&#32622;&#20026;1&#10;            object[typeof(this[i]) + this[i]] = 1;&#10;        &#125;&#10;    &#125;    return newArray;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>但在ES6去重还有更简单，更优化的方案，比如：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// ES6&#10;function unique (arr) &#123;&#10;    const seen = new Map()    return arr.filter((a) =&#62; !seen.has(a) &#38;&#38; seen.set(a, 1))&#10;&#125;&#10;// or&#10;function unique (arr) &#123;&#10;    return Array.from(new Set(arr))&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/07/08/创建对象/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          创建对象
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/07/06/gulp 常用插件/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">gulp 常用插件</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div>&copy; 2016 任先生在路上 的博客 , 技术 
+        <a href="http://hexo.io/" target="_blank">Hexo</a>  
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

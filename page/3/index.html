@@ -124,11 +124,11 @@
 
       <div class="body-wrap">
   
-    <article id="post-类数组" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-渲染" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/17/类数组/" class="article-date">
-  	<time datetime="2016-04-16T16:00:00.000Z" itemprop="datePublished">2016-04-17</time>
+      <a href="/2016/06/17/渲染/" class="article-date">
+  	<time datetime="2016-06-16T16:00:00.000Z" itemprop="datePublished">2016-06-17</time>
 </a>
     </div>
   
@@ -141,205 +141,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/17/类数组/">类数组</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>什么是类数组类数组的定义，有如下两条：</p>
-<ul>
-<li>具有：指向对象元素的数字索引下标以及 length 属性告诉我们对象的元素个数</li>
-<li>不具有：诸如 push 、 forEach 以及 indexOf 等数组对象具有的方法Q</li>
-</ul>
-<p>这儿有三个典型的JavaScript类数组例子。</p>
-<ol>
-<li>DOM方法:<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#33719;&#21462;&#25152;&#26377;divlet&#10;arrayLike = document.querySelectorAll(&#39;div&#39;)&#10;console.log(Object.prototype.toString.call(arrayLike))  &#10;// [object NodeList]&#10;console.log(arrayLike.length) // 127&#10;console.log(arrayLike[0])&#10;// &#60;div id=&#34;js-pjax-loader-bar&#34; class=&#34;pjax-loader-bar&#34;&#62;&#60;/div&#62;&#10;console.log(Array.isArray(arrayLike)) // false&#10;arrayLike.push(&#39;push&#39;)&#10;// Uncaught TypeError: arrayLike.push is not a function(&#8230;)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/04/17/类数组/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-继承" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/15/继承/" class="article-date">
-  	<time datetime="2016-04-14T16:00:00.000Z" itemprop="datePublished">2016-04-15</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/15/继承/">继承</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>js里常用的如下两种继承方式：</p>
-<ul>
-<li>原型链继承（对象间的继承）</li>
-<li>类式继承（构造函数间的继承）</li>
-</ul>
-<p>原型式继承与类式继承类式继承是在子类型构造函数的内部调用超类型的构造函数。<br>严格的类式继承并不是很常见，一般都是组合着用：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function Super()&#123;&#10; this.colors=[&#34;red&#34;,&#34;blue&#34;];&#10;&#125;&#10;&#10;function Sub()&#123;&#10; Super.call(this);&#10;&#125;</span><br></pre></td></tr></table></figure></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/04/15/继承/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-跨域" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/15/跨域/" class="article-date">
-  	<time datetime="2016-04-14T16:00:00.000Z" itemprop="datePublished">2016-04-15</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/15/跨域/">跨域解决方法</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="跨域解决方法"><a href="#跨域解决方法" class="headerlink" title="跨域解决方法"></a>跨域解决方法</h2><ol>
-<li>JSONPJSONP的全称是 “JSON With Padding”， 词面意思上理解就是 “填充式的JSON”。它不是一个新鲜的东西，隶属于 JSON 的一种使用方法，或者说是一种使用模式，可以解决一些常见的浏览器端网页跨域问题。<br>正如他的名称一样，它是指被包含在调用函数中的JSON，比如这样:</li>
-</ol>
-<p>callback({“Name”: “小明”, “Id” : 1823, “Rank”: 7})</p>
-<p>由于 jQuery 的一些原因，使得 JSONP 常常与 Ajax 混淆。实际上，他们没有任何关系。<br>由于浏览器的同源策略，使得在网页端出现了这个“跨域”的问题，然而我们发现，所有的 src 属性并没有受到相关的限制，比如 img / script 等。</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/跨域/">跨域</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/04/15/跨域/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-消息通知框架" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/14/消息通知框架/" class="article-date">
-  	<time datetime="2016-04-13T16:00:00.000Z" itemprop="datePublished">2016-04-14</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/14/消息通知框架/">消息通知框架</a>
+      <a class="article-title" href="/2016/06/17/渲染/">渲染方式</a>
     </h1>
   
 
@@ -349,20 +151,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ol>
-<li>NOTYNoty 是一个很有用的 jQuery 插件，用于创建 alert, success, error和 confirmation 信息提示框，替换浏览器标准的对话框。每个提醒都是添加到队列并进行显示的。</li>
+<li>在服务器端渲染</li>
 </ol>
-<ol>
-<li>Alertify.jsJavaScript 警告/通知系统。</li>
-</ol>
-<ol>
-<li>Toastrtoastr是一个非阻塞通知JavaScript库。需要依赖jQuery，它的目标是创建一个简单的核心库，可以进行定制和扩展。</li>
-</ol>
-<ol>
-<li>Notie.jsNotie.js 是一个简单的JavaScript通知插件，不需要任何依赖。</li>
-</ol>
-<ol>
-<li>PNotify一个 JavaScript 的消息提醒插件，基于 Bootstrap 框架和 jQuery UI 框架。</li>
-</ol>
+<p>浏览器发送请求到服务器端，服务器端处理请求并准备好数据，然后将数据写进前端编写的模板中，从而生成html文件，将生成的html发回给浏览器。这样浏览器上就显示页面了。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;table class=&#34;table&#34;&#62;&#10;&#60;tr&#62;&#10;      &#60;td&#62;&#39033;&#30446;&#21517;&#31216;&#60;/td&#62;&#10;      &#60;td&#62;&#32452;&#38271;&#22995;&#21517;&#60;/td&#62;&#10;&#60;/tr&#62;&#10;&#60;% for(var i = 0; i &#60; project.length; i ++)&#123; %&#62;&#60;% &#125; %&#62;&#10;&#60;tr&#62;&#10;      &#60;td&#62;&#60;%= project[i][&#39;project&#39;] %&#62;&#60;/td&#62;&#10;      &#60;td&#62;&#60;%= project[i][&#39;leadername&#39;] %&#62;&#60;/td&#62;&#10;&#60;/tr &#62;&#10;&#60;% &#125; %&#62;&#10;&#60;/table&#62;</span><br></pre></td></tr></table></figure></p>
       
     </div>
     
@@ -370,14 +161,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/04/14/消息通知框架/#more">more >></a>
+          <a  href="/2016/06/17/渲染/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -396,11 +187,11 @@
 
 
   
-    <article id="post-栈" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-截屏方式" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/12/栈/" class="article-date">
-  	<time datetime="2016-04-11T16:00:00.000Z" itemprop="datePublished">2016-04-12</time>
+      <a href="/2016/06/16/截屏方式/" class="article-date">
+  	<time datetime="2016-06-15T16:00:00.000Z" itemprop="datePublished">2016-06-16</time>
 </a>
     </div>
   
@@ -413,7 +204,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/12/栈/">栈</a>
+      <a class="article-title" href="/2016/06/16/截屏方式/">截屏</a>
     </h1>
   
 
@@ -422,22 +213,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>栈。<br>栈是一种遵从后进先出原则(LIFO,全称为Last In First Out)的有序集合。栈顶永远是最新的元素。<br>举个例子就是:栈就像放在箱子里的一叠书 你要拿下面的书先要把上面的书拿开。(当然，你不能先拿下面的书。)<br>看图示也可明白。</p>
-<p>JavaScipt中栈的实现首先，创建一个构造函数。</p>
-<p>/**</p>
-<ul>
-<li>栈的构造函数<br>*/<br>function Stack() { // 用数组来模拟栈 var item = [];<br>}</li>
-</ul>
-<p>栈需要有如下的方法:</p>
-<ul>
-<li>push(element(s)): 添加几个元素到栈顶</li>
-<li>pop(): 移除并返回栈顶元素</li>
-<li>peek(): 返回栈顶元素</li>
-<li>isAmpty: 检查栈是否为空，为空则返回true</li>
-<li>clear: 移除栈中所有元素</li>
-<li>size: 返回栈中元素个数。</li>
-<li>print: 以字符串显示栈中所有内容</li>
-</ul>
+        <p>用过 phantomJS 的同学都知道，它提供了一个截屏函数，通过它可以整屏获取页面截图，而且他支持的格式也比较多：JPG/PNG/GIF/PDF。通过简单的两句命令就可以把一个网页截取下来：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// render.js&#10;var webPage = require(&#39;webpage&#39;);&#10;var page = webPage.create();&#10;&#10;page.viewportSize = &#123; width: 1920, height: 1080 &#125;;&#10;page.open(&#34;http://www.taobao.com&#34;, function start(status) &#123;&#10;  page.render(&#39;taobao_home.jpeg&#39;, &#123;format: &#39;jpeg&#39;, quality: &#39;100&#39;&#125;);&#10;  phantom.exit();&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>安装 phantomjs 之后执行下上面的文件：<br>
       
     </div>
     
@@ -445,14 +222,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/插件/">插件</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/04/12/栈/#more">more >></a>
+          <a  href="/2016/06/16/截屏方式/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -471,11 +248,11 @@
 
 
   
-    <article id="post-柯里化" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-居中" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/10/柯里化/" class="article-date">
-  	<time datetime="2016-04-09T16:00:00.000Z" itemprop="datePublished">2016-04-10</time>
+      <a href="/2016/06/14/居中/" class="article-date">
+  	<time datetime="2016-06-13T16:00:00.000Z" itemprop="datePublished">2016-06-14</time>
 </a>
     </div>
   
@@ -488,7 +265,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/10/柯里化/">柯里化</a>
+      <a class="article-title" href="/2016/06/14/居中/">css居中</a>
     </h1>
   
 
@@ -497,9 +274,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>f是一个普通函数，接受两个参数，并返回他们相加的结果<br>function f(x, y) {<br>  return x + y<br>}</p>
-<p>g是一个柯里化函数，接受一个参数，返回一个新的函数<br>function g(x) {<br>  return function(y) {<br>    return x + y<br>  }<br>}</p>
-<p>传统函数调用是接收多个参数返回一个值，而柯里化函数则是接收参数返回新的函数，新的函数又可以接受参数再返回新的函数，直至最后返回结果值使用柯里化函数的优势是我们可以”部分应用”(Partial Application)函数的参数，生成新的函数，这在函数编程中是至关重要的</p>
+        <p>水平居中<br>内联元素（inline or inline-*）居中?<br>你可以让他相对父级块级元素居中对齐<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.center-children &#123;&#10;  text-align: center;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>块级元素（block level）居中?<br>你可以通过设置margin-left和margin-right为auto让它居中（同时还要设置width，否则它就会承满整个容器，无法看出居中效果），如。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.center-me &#123;&#10;  margin: 0 auto;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
       
     </div>
     
@@ -507,14 +283,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/04/10/柯里化/#more">more >></a>
+          <a  href="/2016/06/14/居中/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -533,11 +309,11 @@
 
 
   
-    <article id="post-数据类型" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-匿名函数的N种写法" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/09/数据类型/" class="article-date">
-  	<time datetime="2016-04-08T16:00:00.000Z" itemprop="datePublished">2016-04-09</time>
+      <a href="/2016/06/11/匿名函数的N种写法/" class="article-date">
+  	<time datetime="2016-06-10T16:00:00.000Z" itemprop="datePublished">2016-06-11</time>
 </a>
     </div>
   
@@ -550,7 +326,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/09/数据类型/">数据类型变化</a>
+      <a class="article-title" href="/2016/06/11/匿名函数的N种写法/">js一些技巧</a>
     </h1>
   
 
@@ -559,9 +335,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>例1.1<br>var a = “apple”;<br>var b = a;<br>a = “banana”;<br>b<br>按理说，b = a后，a是啥值b就应该跟着是啥值了~<br>但，b结果是”apple”，还是一开始赋值时a的值。</p>
-<p>例1.2<br>var a = {name: “apple”};<br>var b = a;<br>a.name = “banana”;<br>b.name</p>
-<p>这回，b又不争气的跟着a变了，b.name结果是”banana”</p>
+        <p>Js 的匿名函数是未声明函数名的自执行函数，格式如下：<br>(function(){})();</p>
+<p>在实际项目中我们经常会在前面加上“;”：<br>;function(){}();<br>因为 Js 的语法是可以省略分号的，但是这种机制也会导致意外的错误。为了避免代码上线后合并压缩成一个文件造成语法错误，所以加上“;”可以避免未知错误。</p>
+<p>但有时我们看见别人的库或是插件里面会这样写匿名函数：<br>+function(){}();<br>“+”在这里是运算符，运算符具有极高的优先级，所以右边的函数声明加上括号的部分（实际上就是函数执行的写法）就直接执行了。其实不止前面可以是“+”号，“-”、“！”、“~”、“++”等运算符均可。这里只是做扩展介绍，具体用哪种写法看团队统一规范。</p>
       
     </div>
     
@@ -569,14 +345,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/04/09/数据类型/#more">more >></a>
+          <a  href="/2016/06/11/匿名函数的N种写法/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -595,11 +371,11 @@
 
 
   
-    <article id="post-this" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-深拷贝" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/09/this/" class="article-date">
-  	<time datetime="2016-04-08T16:00:00.000Z" itemprop="datePublished">2016-04-09</time>
+      <a href="/2016/06/08/深拷贝/" class="article-date">
+  	<time datetime="2016-06-07T16:00:00.000Z" itemprop="datePublished">2016-06-08</time>
 </a>
     </div>
   
@@ -612,7 +388,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/09/this/">this</a>
+      <a class="article-title" href="/2016/06/08/深拷贝/">克隆或者拷贝</a>
     </h1>
   
 
@@ -621,11 +397,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>global this</p>
-<ul>
-<li>在浏览器里，在全局范围内，this等价于window对象。</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;script type=&#34;text/javascript&#34;&#62;&#10;&#9;onsole.log(this === window);&#10;&#9;//true 3&#10;&#60;/script&#62;</span><br></pre></td></tr></table></figure>
+        <p>克隆或者拷贝分为2种：浅度克隆（拷贝），深度克隆（拷贝）；</p>
+<p>浅度克隆：基本类型为值传递，对象仍为引用传递。</p>
+<p>深度克隆：所有元素或属性均完全克隆，并于原引用类型完全独立，即，在后面修改对象的属性的时候，原对象不会被修改。</p>
       
     </div>
     
@@ -633,14 +407,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/this/">this</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/04/09/this/#more">more >></a>
+          <a  href="/2016/06/08/深拷贝/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -659,11 +433,11 @@
 
 
   
-    <article id="post-捕获冒泡" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-事件的执行顺序" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/07/捕获冒泡/" class="article-date">
-  	<time datetime="2016-04-06T16:00:00.000Z" itemprop="datePublished">2016-04-07</time>
+      <a href="/2016/06/05/事件的执行顺序/" class="article-date">
+  	<time datetime="2016-06-04T16:00:00.000Z" itemprop="datePublished">2016-06-05</time>
 </a>
     </div>
   
@@ -676,7 +450,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/07/捕获冒泡/">捕获与冒泡</a>
+      <a class="article-title" href="/2016/06/05/事件的执行顺序/">事件的执行顺序</a>
     </h1>
   
 
@@ -685,15 +459,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>总结就是：先捕获，后冒泡，捕获从上到下，冒泡从下到上（形象点说法：捕获像石头沉入海底，冒泡则像气泡冒出水面）</p>
-<p>问：假如去掉注释 event.stopPropagation();  结果又会输出什么？<br>答：去掉event.stopPropagation() 之后，由于事件有捕获和冒泡时先执行捕获，捕获到div之后，事件被阻止，后面就不在继续传播了。所以只输出divcallback.</p>
+        <p>问：点击Li，JS的执行顺序是什么？</p>
+<p>JavaScript捕获和冒泡探讨</p>
+<p>总结就是：先捕获，后冒泡，捕获从上到下，冒泡从下到上（形象点说法：捕获像石头沉入海底，冒泡则像气泡冒出水面）<br>问：假如去掉注释 event.stopPropagation();  结果又会输出什么？</p>
+<p>答：去掉event.stopPropagation() 之后，由于事件有捕获和冒泡时先执行捕获，捕获到div之后，事件被阻止，后面就不在继续传播了。所以只输出divcallback.</p>
+<p>在上面的代码如果增加一个div.addEventListener(‘click’,callbackdiv2,false);</p>
+<p>则div先执行捕获，接着执行上面这句冒泡，所以微博里的一个朋友评论说事件执行过捕获就不会执行冒泡其实是不对的。</p>
 <p>div.addEventListener(‘click’,callbackdiv,true);这一句只能是捕获才执行。</p>
-<p>事件不同浏览器处理函数</p>
-<ul>
-<li>element.addEventListener(type, listener[, useCapture]); // IE6~8不支持（捕获和冒泡通过useCapture,默认false）</li>
-<li>element.attachEvent(’on’ + type, listener); // IE6~10，IE11不支持(只执行冒泡事件)</li>
-<li>element[’on’ + type] = function(){} // 所有浏览器（默认执行冒泡事件）</li>
-</ul>
       
     </div>
     
@@ -701,14 +473,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/04/07/捕获冒泡/#more">more >></a>
+          <a  href="/2016/06/05/事件的执行顺序/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -727,11 +499,11 @@
 
 
   
-    <article id="post-npm" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-老ie解决方法" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/07/npm/" class="article-date">
-  	<time datetime="2016-04-06T16:00:00.000Z" itemprop="datePublished">2016-04-07</time>
+      <a href="/2016/05/30/老ie解决方法/" class="article-date">
+  	<time datetime="2016-05-29T16:00:00.000Z" itemprop="datePublished">2016-05-30</time>
 </a>
     </div>
   
@@ -744,7 +516,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/07/npm/">npm</a>
+      <a class="article-title" href="/2016/05/30/老ie解决方法/">老ie解决方法</a>
     </h1>
   
 
@@ -753,19 +525,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>使用nmp来代替gulp等<br>postcss</p>
-<p>npm install –save-dev node-sass<br>node-sass –output-style compressed -o dist/css src/scss<br>npm install –save-dev postcss-cli autoprefixer<br>npm install –save-dev eslint<br>npm i -D uglify-js<br>npm i -D imagemin-cli<br>npm i -D svgo svg-sprite-generator<br>npm i -D browser-sync<br>npm i -D onchange<br>npm i -D parallelshell</p>
-<p>“scripts”: {<br>    “scss”: “node-sass –output-style compressed -o dist/css src/scss”<br>    “autoprefixer”: “postcss -u autoprefixer -r dist/css/<em>“<br>    “lint”: “eslint src/js”<br>    “uglify”: “mkdir -p dist/js &amp;&amp; uglifyjs src/js/</em>.js -m -o dist/js/app.js”<br>    “imagemin”: “imagemin src/images dist/images -p”,<br>    “icons”: “svgo -f src/images/icons &amp;&amp; mkdir -p dist/images &amp;&amp; svg-sprite-generate -d src/images/icons -o dist/images/icons.svg”<br>    “serve”: “browser-sync start –server –files ‘dist/css/<em>.css, dist/js/</em>.js’”</p>
-<pre><code>&quot;build:css&quot;: &quot;npm run scss &amp;&amp; npm run autoprefixer&quot;
-&quot;build:js&quot;: &quot;npm run lint &amp;amp;&amp;amp; npm run uglify&quot;, 
-&quot;build:images&quot;: &quot;npm run imagemin &amp;&amp; npm run icons&quot;, 
-&quot;build:all&quot;: &quot;npm run build:css &amp;&amp; npm run build:js &amp;&amp; npm run build:images&quot;
-&quot;watch:css&quot;: &quot;onchange &apos;src/scss/*.scss&apos; -- npm run build:css&quot;, 
-&quot;watch:js&quot;: &quot;onchange &apos;src/js/*.js&apos; -- npm run build:js&quot;,
-&quot;watch:all&quot;: &quot;parallelshell &apos;npm run serve&apos; &apos;npm run watch:css&apos; &apos;npm run watch:js&apos;&quot;
-&quot;postinstall&quot;: &quot;npm run watch:all&quot;
-</code></pre><p>}</p>
-
+        <p>一行代码解决各种IE兼容问题,IE6,IE7,IE8,IE9,IE10</p>
+<p>x-ua-compatible 用来指定IE浏览器解析编译页面的model</p>
+<p>x-ua-compatible 头标签大小写不敏感，必须用在 head 中，必须在除 title 外的其他 meta 之前使用。</p>
+<p>1、使用一行代码来指定浏览器使用特定的文档模式。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;meta http-equiv=&#34;x-ua-compatible&#34; content=&#34;IE=9&#34; &#62;&#10;&#60;meta http-equiv=&#34;x-ua-compatible&#34; content=&#34;IE=8&#34; &#62;&#10;&#60;meta http-equiv=&#34;x-ua-compatible&#34; content=&#34;IE=7&#34; &#62;</span><br></pre></td></tr></table></figure></p>
+<p>2、在一些情况下，我们需要限定浏览器对文档的解析到某一特定版本，或者将浏览器限定到一些旧版本的表现中。可以用如下的方式：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;meta http-equiv=&#34;x-ua-compatible&#34; content=&#34;IE=EmulateIE9&#34; &#62;&#10;&#60;meta http-equiv=&#34;x-ua-compatible&#34; content=&#34;IE=EmulateIE8&#34; &#62;&#10;&#60;meta http-equiv=&#34;x-ua-compatible&#34; content=&#34;IE=EmulateIE7&#34; &#62;</span><br></pre></td></tr></table></figure></p>
       
     </div>
     
@@ -773,11 +537,200 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm/">npm</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/兼容/">兼容</a></li></ul>
 	</div>
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/05/30/老ie解决方法/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-21" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/23/21/" class="article-date">
+  	<time datetime="2016-05-23T14:49:51.993Z" itemprop="datePublished">2016-05-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/23/21/">css js兼容性</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>!important (功能有限)随着IE7对!important的支持, !important 方法现在只针对IE6的兼容.<br>例如:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#example &#123;&#10;&#9;width: 100px !important; /* IE7+FF */&#10;&#9;width: 103px; /* IE6 */&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/兼容性/">兼容性</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/05/23/21/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-localstore介绍" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/05/localstore介绍/" class="article-date">
+  	<time datetime="2016-05-04T16:00:00.000Z" itemprop="datePublished">2016-05-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/05/localstore介绍/">localstore介绍</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>store.js 是一个实现了浏览器的本地存储的 JavaScript 封装 API，不是通过 Cookie 和 Flash 技术实现，而是使用 localStorage。</p>
+<p>bower<br>$ bower install storejs</p>
+<p>npm<br>$ npm install storejs</p>
+<p>生成压缩文件和开发模式<br>$ npm run build    # 生成带UMD的js原文件 以及 min.js<br>$ npm run watch    # 监听文件改变自动压缩生成js</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/localstore/">localstore</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/05/05/localstore介绍/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-lodash某些好方法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/03/lodash某些好方法/" class="article-date">
+  	<time datetime="2016-05-02T16:00:00.000Z" itemprop="datePublished">2016-05-03</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/03/lodash某些好方法/">lodash某些好方法</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>循环N次<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// 1. Basic for&#10;loop.for(var i = 0; i &#60; 5; i++) &#123;&#10;        // ....&#10;&#125;&#10;&#10;// 2. Using Array&#39;s join and split&#10;methodsArray.apply(null, Array(5)).forEach(function()&#123;&#10;        // ...&#10;&#125;);&#10;&#10;// Lodash&#10;_.times(5, function()&#123;&#10;        // ...&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lodash/">lodash</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/05/03/lodash某些好方法/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -797,7 +750,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 </div>

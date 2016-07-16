@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>Express 4.X API | Jar-R</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Express 4.X API 翻译
+创建一个express应用1var express = require(&amp;#39;express&amp;#39;);&amp;#10;var app = express();&amp;#10; &amp;#10;app.get(&amp;#39;/&amp;#39;,function(req,res)&amp;#123;&amp;#10;    res.send(&amp;#39;hello world&amp;#39;);&amp;#10;&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Express 4.X API">
+<meta property="og:url" content="http://Jarweb.com/2016/07/10/Express 4.X API/index.html">
+<meta property="og:site_name" content="Jar-R">
+<meta property="og:description" content="Express 4.X API 翻译
+创建一个express应用1var express = require(&amp;#39;express&amp;#39;);&amp;#10;var app = express();&amp;#10; &amp;#10;app.get(&amp;#39;/&amp;#39;,function(req,res)&amp;#123;&amp;#10;    res.send(&amp;#39;hello world&amp;#39;);&amp;#10;&amp;">
+<meta property="og:updated_time" content="2016-07-16T16:48:04.608Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Express 4.X API">
+<meta name="twitter:description" content="Express 4.X API 翻译
+创建一个express应用1var express = require(&amp;#39;express&amp;#39;);&amp;#10;var app = express();&amp;#10; &amp;#10;app.get(&amp;#39;/&amp;#39;,function(req,res)&amp;#123;&amp;#10;    res.send(&amp;#39;hello world&amp;#39;);&amp;#10;&amp;">
+  
+    <link rel="alternative" href="/atom.xml" title="Jar-R" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">任先生在路上</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle" style="margin-bottom:20px;">Good things are coming !</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">列表</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger" style="display:none;"></div>
+  		<h1 class="header-author js-mobile-header hide">任先生在路上</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">任先生在路上</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Good things are coming !</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">列表</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-Express 4.X API" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/10/Express 4.X API/" class="article-date">
+  	<time datetime="2016-07-09T16:00:00.000Z" itemprop="datePublished">2016-07-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Express 4.X API
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/express/">express</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Express 4.X API 翻译</p>
+<p>创建一个express应用<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&#39;express&#39;);&#10;var app = express();&#10; &#10;app.get(&#39;/&#39;,function(req,res)&#123;&#10;    res.send(&#39;hello world&#39;);&#10;&#125;);&#10;app.listen(3000);</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>setting<br>以下的设置选项将为您展示如何改变Express的行为：<br>env 运行时环境，默认为process.env.NODE_ENV（NODE_ENV环境变量）或者”development”;<br>trust proxy 激活反向代理模式，默认为未激活；<br>jsonp callback name JSON回调函数替换体，默认为空；<br>case sensitive routing 用于激活路由大小写敏感，默认为未激活，”/Foo”和”/foo”是相同对待的；<br>strict routing 激活严格路由模式，默认”/foo”和”/foo/”是相同对待的；<br>view cache 激活模板引擎编译缓存，在生产模式默认是开启的；<br>view engine 缺省状态下默认的模板引擎<br>views 模板目录地址，默认为”process.cwd() + ‘/views’”</p>
+<p>app.set(name,value)<br>将设置项name的值设置为value<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.set(&#39;title&#39;,My Site);&#10;app.get(&#39;title&#39;);//=&#62;&#34;My Site&#34;</span><br></pre></td></tr></table></figure></p>
+<p>app.get(name)<br>获取设置项name的值<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.get(&#39;title&#39;);&#10;//=&#62; undefined&#10;app.set(&#39;title&#39;,&#39;My Site&#39;);&#10;app.get(&#39;title&#39;);&#10;//=&#62;&#34;My Site&#34;</span><br></pre></td></tr></table></figure></p>
+<p>app.enable(name)<br>将设置项name的值设为true<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.enable(&#39;trust proxy&#39;);&#10;app.get(&#39;trust proxy&#39;);&#10;//=&#62;true</span><br></pre></td></tr></table></figure></p>
+<p>app.disable(name)<br>将设置项name的值设置为false<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.disable(&#39;trust proxy&#39;);&#10;app.get(&#39;trust proxy&#39;);&#10;//=&#62;false</span><br></pre></td></tr></table></figure></p>
+<p>app.enabled(name)<br>检查设置项name的状态是否为激活状态<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.enabled(&#39;trust proxy&#39;);&#10;//=&#62;false&#10;app.enable(&#39;trust proxy&#39;);&#10;app.enabled(&#39;trust proxy&#39;);&#10;//=&#62;true</span><br></pre></td></tr></table></figure></p>
+<p>app.disabled(name)<br>检查设置项name的状态是否为未激活状态<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.disabled(&#39;trust proxy&#39;);&#10;//=&#62;true&#10;app.disable(&#39;trust proxy&#39;);&#10;app.disabled(&#39;trust proxy&#39;);&#10;//=&#62;false</span><br></pre></td></tr></table></figure></p>
+<p>app.use([path],function)<br>使用给定的中间件function，可选参数path，默认为”/”.<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&#39;express&#39;);&#10;var app = express();&#10; &#10;//simple logger&#10;app.use(function(req,res,next)&#123;&#10;    console.log(&#34;%s %s&#34;,req.method,req.url);&#10;    next();&#10;&#125;);&#10;app.use(function(req,res,next)&#123;&#10;    res.send(&#39;Hello World&#39;);&#10;&#125;);&#10;app.listen(3000);</span><br></pre></td></tr></table></figure></p>
+<p>现在“挂载”的路径是被剥去的和对于中间件来说是不可见的，也就是说挂载的路径不会在req路出现，对中间件function的回调参数req中找不到path。这么设计是为了让中间件可以在不需要更改任何代码就可以在任意前缀的路径下执行.<br>这里有个具体的例子，使用”./public”来管理静态文件，使用”express.static()”中间件</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//GET /javascript/jquery.js&#10;//GET /style.css&#10;//GET /favicon.ico&#10;app.use(express.static(__dirname + &#39;/public&#39;));</span><br></pre></td></tr></table></figure>
+<p>例如你想为所有的静态文件增加前缀”/static”,你可以使用“挂载”功能来支持者也操作。被挂载的中间件函数是不会被调用的除非req.url中包含这个前缀，当函数被调用时，这个前缀是被剥去的。当然，这只会影响这个函数，后面的中间件还是会看见req.url中的”/static”被包含的，除非这些中间件也被挂载在”/static”下。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//GET /static/javascripts/jquery.js&#10;//GET /static/style.css&#10;//GET /static/favicon.ico&#10;app.use(&#39;/static&#39;,express.static(__dirname + &#39;/public&#39;));</span><br></pre></td></tr></table></figure></p>
+<p>使用“被定义的”app.use()的顺序非常重要，它们将被顺序调用，因此app.use()调用的先后顺序决定了中间件的优先级。例如通常任何的日志记录中间件将被定义在任何被使用的中间件之前：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var logger = require(&#39;morgan&#39;);&#10; &#10;app.use(logger());&#10;app.use(express.static(__dirname + &#39;/public&#39;));&#10;app.use(function(req,res)&#123;&#10;   res.send(&#39;Hello&#39;);&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>现在假如你想忽略请求静态文件的记录，但是又想继续记录logger()被定义之后的路由和中间件，那么你只需要将static()移动到logger()之前就可以了。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(express.static(__dirname + &#39;/public&#39;));&#10;app.use(logger());&#10;app.use(function(req,res)&#123;&#10;   res.send(&#39;Hello&#39;);&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>另一个例子是你可能会使用多个文件夹提供静态文件服务，下面的例子将会才优先从”/public”文件夹选取静态文件。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(express.static(__dirname + &#39;/public&#39;));&#10;app.use(express.static(__dirname + &#39;/files&#39;));&#10;app.use(express.static(__dirname + &#39;uploads&#39;));&#10;&#10;&#10;app.engine(ext,callback)</span><br></pre></td></tr></table></figure></p>
+<p>注册模板引擎的callback来处理扩展名为ext的文件，默认情况下会根据文件的扩展名开引入相应的模板引擎。例如，如果你试图渲染一个”foo.jade”文件，Express将会在内部调用下面的代码，并且缓存require()以便提高在之后的调用的性能。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.engine(&#39;jade&#39;,require(&#39;jade&#39;).__express);</span><br></pre></td></tr></table></figure>
+<p>如果您使用的这个模板引擎没有提供 .__express的开箱即用的方法-或者如果你想要“映射”一个不同的扩展名用于模板引擎，你可以使用这个方法。例如映射EJS模板引擎来渲染”.html”文件</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.engine(&#39;html&#39;,require(&#39;ejs&#39;).renderFile);</span><br></pre></td></tr></table></figure>
+<p>在这个例子中，EJS提供了一个.renderFile()方法和Express预期的格式:(path,options,callback)一致，注意，这样可以在内部为ejs.__express取一个别名，因此你可以继续使用”.ejs”扩展名而不需要额外做任何事。</p>
+<p>一些模板引擎没有遵循这种转换约定，这里有个小项目consolidate.js专门把所有的node流行的模板引擎进行了包装，这样他们在Express内部看起来就一样了。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var engines = require(&#39;consolidate&#39;);&#10;app.engine(&#39;haml&#39;,engines.haml);&#10;app.engine(&#39;html&#39;,engines.hogan);</span><br></pre></td></tr></table></figure>
+<p>app.param([name],callback)<br>映射路由参数处理规则，例如当 :user 出现在了一个路由路径中，你也许会需要自动加载用户逻辑到req.user中，或者验证一下输入的参数是否正确。<br>下面的代码片段中展示的callback很像中间件，因此支持异步操作，然而却多增加了一个参数，这里被命名为 id 它会尝试加载用户信息，然后赋值给req.user，否则则传递一个错误给next(err)。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.param(&#39;user&#39;,function(req,res,next,id)&#123;&#10;   User.find(id,function(err,user)&#123;&#10;      if(err)&#123;&#10;          next(err);&#10;      &#125; else if(user)&#123;&#10;          req.user = user;&#10;          next();&#10;      &#125; else &#123;&#10;           next(new Error(&#39;failed to load user&#39;));&#10;      &#125;&#10;    &#125;);&#10;&#125;);</span><br></pre></td></tr></table></figure>
+<p>或者说你只是传递一个回调函数，在这种情况下，你将会有机会去改变app.param()的API，例如express-params定义了下面的回调情况，允许你通过正则表达式来限制给定的参数。</p>
+<p>这个例子有点高级，当检测到如果第二个参数为正则表达式的话，返回一个很像上面”user”例子的行为的回调函数</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.param(function(name,fn)&#123;&#10;     if(fn instanceof RegExp) &#123;&#10;         return function(req,res,next,val)&#123;&#10;            var captures;&#10;            if (captures = fn.exec(String(val)))&#123;&#10;                req.params[name] = captures;&#10;                next();&#10;            &#125; else&#123;&#10;                next(&#39;route&#39;);&#10;            &#125;&#10;        &#125;&#10;    &#125;&#10;&#125;);</span><br></pre></td></tr></table></figure>
+<p>这个函数现在可以非常有效的用来校验参数，或者提供正则捕获后的分组。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.param(&#39;id&#39;,/^\d+$/);&#10;app.get(&#39;/user/:id&#39;,function(req,res)&#123;&#10;    res.send(&#39;user&#39; + req.params.id);&#10;&#125;);&#10; &#10;app.apram(&#39;range&#39;,/^(\w+)\.\.(\W+)?$/);&#10; &#10;app.get(&#39;/range/:range&#39;,function(req,res)&#123;&#10;     var range = req.param.range;&#10;     res.send(&#39;from &#39; + range[1] + &#39;to &#39; + range[2] );&#10;&#125;);</span><br></pre></td></tr></table></figure>
+<p>app.VERB(path,[callback…],callback)</p>
+<p>app.VERB()方法为Express提供了路由方法，这里的VERB指的是一种HTTP动作，比如说app.post()。可以提供多个callback，这多个callback都将会被同等对待，他们的行为就像是中间件一样，但也有一个例外的情况，如果某一个callback调用了next(‘route’)，那么他后面的callback就会被忽略。这种情况会被应用在当满足一个路由前缀，但是不需要用这个回调函数处理这个路由，于是就把它向后传递。</p>
+<p>下面的这个代码片段演示了一个最简单的路由定义。Express会吧字符串表达式转换为正则表达式，然后在内部匹配传入的表达式。请求参数将不会被考虑进来。例如 “GET /”将会匹配下面的路由规则，同样 “GET /?name=tobi”也会被下面的规则匹配。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.get(&#39;/&#39;,function(req,res)&#123;&#10;   res.send(&#39;Hello World&#39;);&#10;&#125;);</span><br></pre></td></tr></table></figure>
+<p>正则表达式也是可以被使用的，尤其是在你有特别的限制时这将会是非常有用的，例如下面的例子将会匹配 “GET /commits/71dbb9c” 同样也会匹配 “GET /commits/71dbb9c..4c084f9″。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.get(/^\/commits\/(\w+)(?:\..\..(\w+))?$/,function(req,res)&#123;&#10;    var from = req.params[0];&#10;    var to = req.params[1] || &#39;HEAD&#39;;&#10;    res.send(&#39;commit range &#39; + from + &#39;...&#39; + to);&#10;&#125;);</span><br></pre></td></tr></table></figure>
+<p>可以传递一些回调，这对于复用一些加载资源、校验中间件很有作用</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.get(&#39;/user/:id&#39;,user.load,function()&#123;&#10;   //......&#10;&#125;);</span><br></pre></td></tr></table></figure>
+<p>如果你有众多的中间件为一个路由规则，你也可以使用路由ap的all()。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var middleware = [loadForum,loadThread];&#10; &#10;app.route(&#39;/forum/:fid/thread/:tid&#39;)&#10;   .all(loadForum)&#10;   .all(loadThread)&#10;   .get(function()&#123; //.....&#125;)&#10;   .post(function()&#123;//......&#125;)</span><br></pre></td></tr></table></figure>
+<p>所有的中间件规则将会被应用与GET 和 POST 请求。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.all(path,[callback...],callback)</span><br></pre></td></tr></table></figure></p>
+<p>这个方法函数就像是app.VERB()方法，但是不同的是他匹配所有的HTTP动作。<br>这个方法在将”全局”映射为特定路径的逻辑映射或者是任意映射是非常有用的。例如，如果你要把下面的路由定义放置在其他所有路由定义之前，这将导致从这个规则起所有的请求都将需要身份验证，并自动加载一个用户。请记住，所有的回调函数都不应该被当做终点，loadUser可以被当做是一个任务，然后去调用next()来继续匹配随后的路由规则。</p>
+<p>app.all(‘*’,requireAuthentication,loadUser);</p>
+<p>它相当于：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.all(&#39;*&#39;,requireAuthentication);&#10;app.all(&#39;*&#39;,loadUser);</span><br></pre></td></tr></table></figure></p>
+<p>另一个更好的例子就是全局白名单函数，这个例子很像之前的，然而它限制了前缀必须为”/api”:</p>
+<p>app.all(‘/api/*’,requireAuthentication);</p>
+<p>app.route(path)</p>
+<p>返回一个路由的实例然后可以用于处理HTTP动作使用可选择的中间件。使用app.route()是一个推荐的方法来避免重复命名路由规则以及由此带来的错误。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var app = express();&#10; &#10;app.route(&#39;/events&#39;)&#10;   .all(function(req,res,next)&#123;&#10;       //runs for all HTTP verbs first&#10;       //think of it as route specific middleware!&#10;   &#125;)&#10;   .get(function(req,res,next)&#123;&#10;       res.json(......);&#10;   &#125;)&#10;   .post(function(req,res,next)&#123;&#10;       //maybe add a new event....&#10;&#125;);</span><br></pre></td></tr></table></figure>
+<p>app.locals</p>
+<p>应用程序的本地变量会被附加给所有在这个应用程序内渲染的模板。这是一个非常有用的模板函数，就像是应用程序级的数据一样。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.locals.title = &#34;My App&#34;;&#10;app.locals.strftime = require(&#39;strftime&#39;);&#10;app.locals.emall = &#39;me@myapp.com&#39;;</span><br></pre></td></tr></table></figure>
+<p>app.locals<br>对象是一个Javascript对象。添加到它的属性，将会被当做局部变量在应用程序中被公开。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.locals.title&#10;//=&#62;&#39;My App&#39;&#10;app.locals.email&#10;// =&#62;&#39;me@myapp.com&#39;</span><br></pre></td></tr></table></figure>
+<p>默认情况下Express之有一个应用程序级的局部变量，那就是setting。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.set(&#39;title&#39;,&#39;My App&#39;);&#10;//use settings.title in a view</span><br></pre></td></tr></table></figure>
+<p>app.render(view,[options],callback)</p>
+<p>渲染 view，callback用来处理返回渲染后的字符串。这个是res.render()的应用程序级的版本，它们的行为是一样的。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.render(&#39;email&#39;,function(err,html)&#123;&#10;   //.......&#10;&#125;);&#10;app.render(&#39;email&#39;,&#123;name:&#39;Tobi&#39;&#125;,function(err,html)&#123;&#10;   //.......&#10;&#125;)</span><br></pre></td></tr></table></figure>
+<p>app.listen()</p>
+<p>在给定的主机和端口上监听请求，这个和node的文档http.Server#listen()是一致的<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&#39;express&#39;);&#10;var app = express();&#10;app.listen(3000);</span><br></pre></td></tr></table></figure></p>
+<p>通过express()返回的 app 事实上是一个Javascript函数，它被设计为传递给node的http Server作为处理请求的回调函数。由于app并不是通过HTTP或HTTPS继承来的，它只是一个简单的callback，所以这允许你很轻松的使用同样的代来处理HTTP和HTTPS请求。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&#39;express&#39;);&#10;var https = require(&#39;https&#39;);&#10;var http = require(&#39;http&#39;);&#10;var app = express();&#10; &#10;http.createServer(app).listen(80);&#10;https.createServer(options,app).listen(443);</span><br></pre></td></tr></table></figure>
+<p>app.listen()<br>方法只是被定义为一个简单的方法，如果你希望是用HTTPS协议或者同时使用HTTP和HTTPS，可以使用上面的技术。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.listen = function()&#123;&#10;    var server = http.createServer(this);&#10;    return server.listen.apply(server,arguments);&#10;&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/07/08/创建对象/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">创建对象</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div>&copy; 2016 任先生在路上 的博客 , 技术 
+        <a href="http://hexo.io/" target="_blank">Hexo</a>  
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

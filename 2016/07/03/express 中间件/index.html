@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>express 中间件 | Jar-R</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="express 中间件：
+basicAuth()基本的认证中间件，在req.user里添加用户名
+用户名和密码的例子:1app.use(express.basicAuth(&amp;#39;username&amp;#39;, &amp;#39;password&amp;#39;));
+校验回调:1app.use(express.basicAuth(function(user, pass)&amp;#123;&amp;#10;  return">
+<meta property="og:type" content="article">
+<meta property="og:title" content="express 中间件">
+<meta property="og:url" content="http://Jarweb.com/2016/07/03/express 中间件/index.html">
+<meta property="og:site_name" content="Jar-R">
+<meta property="og:description" content="express 中间件：
+basicAuth()基本的认证中间件，在req.user里添加用户名
+用户名和密码的例子:1app.use(express.basicAuth(&amp;#39;username&amp;#39;, &amp;#39;password&amp;#39;));
+校验回调:1app.use(express.basicAuth(function(user, pass)&amp;#123;&amp;#10;  return">
+<meta property="og:updated_time" content="2016-07-16T16:47:55.231Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="express 中间件">
+<meta name="twitter:description" content="express 中间件：
+basicAuth()基本的认证中间件，在req.user里添加用户名
+用户名和密码的例子:1app.use(express.basicAuth(&amp;#39;username&amp;#39;, &amp;#39;password&amp;#39;));
+校验回调:1app.use(express.basicAuth(function(user, pass)&amp;#123;&amp;#10;  return">
+  
+    <link rel="alternative" href="/atom.xml" title="Jar-R" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">任先生在路上</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle" style="margin-bottom:20px;">Good things are coming !</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">列表</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger" style="display:none;"></div>
+  		<h1 class="header-author js-mobile-header hide">任先生在路上</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">任先生在路上</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Good things are coming !</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">列表</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-express 中间件" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/03/express 中间件/" class="article-date">
+  	<time datetime="2016-07-02T16:00:00.000Z" itemprop="datePublished">2016-07-03</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      express 中间件
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/express/">express</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>express 中间件：</p>
+<p>basicAuth()<br>基本的认证中间件，在req.user里添加用户名</p>
+<p>用户名和密码的例子:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(express.basicAuth(&#39;username&#39;, &#39;password&#39;));</span><br></pre></td></tr></table></figure></p>
+<p>校验回调:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(express.basicAuth(function(user, pass)&#123;&#10;  return &#39;tj&#39; == user &#38;&#38; &#39;wahoo&#39; == pass;&#10;&#125;));</span><br></pre></td></tr></table></figure></p>
+<p>异步校验接受参数fn(err, user), 下面的例子req.user 将会作为user对象传递.<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(connect.basicAuth(function(user, pass, fn)&#123;&#10;  User.authenticate(&#123; user: user, pass: pass &#125;, fn);&#10;&#125;))</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>bodyParser()<br>支持 JSON, urlencoded和multipart requests的请求体解析中间件。 这个中间件是json(), urlencoded(),和multipart() 这几个中间件的简单封装</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(express.bodyParser());&#10;&#10;// &#31561;&#21516;&#20110;:&#10;app.use(express.json());&#10;app.use(express.urlencoded());&#10;app.use(express.multipart());</span><br></pre></td></tr></table></figure>
+<p>从安全上考虑，如果你的应用程序不需要文件上传功能，最好关闭它。我们只使用我们需要的中间件。例如：我们不使用bodyParser、multipart() 这两个中间件。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(express.json());&#10;app.use(express.urlencoded());</span><br></pre></td></tr></table></figure></p>
+<p>如果你的应用程序需要使用文件上传，设置一下就行。 一个简单的介绍如何使用.</p>
+<p>compress()<br>通过gzip / deflate压缩响应数据. 这个中间件应该放置在所有的中间件最前面以保证所有的返回都是被压缩的<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(express.logger());&#10;app.use(express.compress());&#10;app.use(express.methodOverride());&#10;app.use(express.bodyParser());</span><br></pre></td></tr></table></figure></p>
+<p>cookieParser()<br>解析请求头里的Cookie, 并用cookie名字的键值对形式放在 req.cookies 你也可以通过传递一个secret 字符串激活签名了的cookie<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(express.cookieParser());&#10;app.use(express.cookieParser(&#39;some secret&#39;));</span><br></pre></td></tr></table></figure></p>
+<p>cookieSession()<br>提供一个以cookie为基础的sessions, 设置在req.session里。 这个中间件有以下几个选项:</p>
+<p>key cookie 的名字，默认是 connect.sess<br>secret prevents cookie tampering<br>cookie session cookie 设置, 默认是 { path: ‘/‘, httpOnly: true, maxAge: null }<br>proxy 当设置安全cookies时信任反向代理 (通过 “x-forwarded-proto”)<br>app.use(express.cookieSession());<br>清掉一个cookie, 只需要在响应前把null赋值给session:</p>
+<p>req.session = null</p>
+<p>csrf()<br>CSRF 防护中间件</p>
+<p>默认情况下这个中间件会产生一个名为”_csrf”的标志，这个标志应该添加到那些需要服务器更改的请求里，可以放在一个表单的隐藏域，请求参数等。这个标志可以通过 req.csrfToken()方法进行校验。</p>
+<p>bodyParser() 中间件产生的 req.body , query()产生的req.query,请求头里的”X-CSRF-Token”是默认的 value 函数检查的项</p>
+<p>这个中间件需要session支持，因此它的代码应该放在session()之后.</p>
+<p>directory()<br>文件夹服务中间件，用 path 提供服务。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(express.directory(&#39;public&#39;))&#10;app.use(express.static(&#39;public&#39;))</span><br></pre></td></tr></table></figure></p>
+<p>这个中间件接收如下参数：</p>
+<p>hidden 显示隐藏文件，默认为false.<br>icons 显示图标，默认为false.<br>filter 在文件上应用这个过滤函数。默认为false.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var express=require(&#34;express&#34;);&#10;var fs=require(&#34;fs&#34;);&#10;var app=express();&#10;app.use(express.bodyParser());&#10;app.get(&#34;/index.html&#34;, function (req,res) &#123;&#10;  res.sendfile(__dirname+&#34;/1.html&#34;);&#10;&#125;);&#10;app.post(&#34;/index.html&#34;, function (req,res) &#123;&#10;  var file=req.files.myfile;&#10;  fs.readFile(file.path, function (err,data) &#123;&#10;      if(err) res.send(&#34;&#35835;&#25991;&#20214;&#25805;&#20316;&#22833;&#36133;&#34;);&#10;      else&#123;&#10;          fs.writeFile(file.name,data, function (err) &#123;&#10;              if(err) res.send(&#34;&#20889;&#25991;&#20214;&#25805;&#20316;&#22833;&#36133;.&#34;);&#10;              else res.send(&#34;&#25991;&#20214;&#19978;&#20256;&#25104;&#21151;&#34;);&#10;          &#125;)&#10;      &#125;&#10;  &#125;);&#10;&#125;);&#10;&#10;app.listen(1337,&#34;127.0.0.1&#34;, function () &#123;&#10;  console.log(&#34;&#24320;&#22987;&#30417;&#21548;&#34;);&#10;&#125;);</span><br></pre></td></tr></table></figure>
+<p>问题1：serve-static的setHeaders有什么用?<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&#39;express&#39;)  &#10;var serveStatic = require(&#39;serve-static&#39;)  &#10;//&#36825;&#20010;&#20013;&#38388;&#20214;&#20063;&#21487;&#20197;&#36890;&#36807;express.static&#26469;&#24341;&#20837;&#65292;&#31532;&#20108;&#20010;&#21442;&#25968;&#21516;&#26679;&#34920;&#31034;&#30340;&#26159;&#21644;serve-static&#21516;&#26679;&#30340;&#36873;&#39033;  &#10;var app = express()  &#10;//&#20026;&#19968;&#20123;&#38745;&#24577;&#25991;&#20214;&#35774;&#32622;&#19981;&#21516;&#30340;&#36807;&#26399;&#26102;&#38388;&#65292;&#32780;&#36825;&#20010;&#35774;&#32622;&#36890;&#36807;&#19968;&#20010;&#20989;&#25968;&#20063;&#23601;&#26159;setHeaders&#26469;&#23436;&#25104;&#30340;  &#10;//setHeaders&#29992;&#20110;&#35774;&#23450;&#33258;&#23450;&#20041;&#30340;&#21709;&#24212;&#22836;&#65292;&#20989;&#25968;&#31614;&#21517;&#20026;&#65306;fn(res, path, stat)&#31532;&#19968;&#20010;&#21442;&#25968;&#34920;&#31034;response&#23545;&#35937;&#65292;&#31532;&#20108;&#20010;&#34920;&#31034;&#36335;&#24452;&#65292;&#31532;&#19977;&#20010;&#34920;&#31034;&#25991;&#20214;&#30340;&#25551;&#36848;&#31526;  &#10;app.use(serveStatic(__dirname + &#39;/public&#39;, &#123;  &#10;  maxAge: &#39;1d&#39;,  &#10;  setHeaders: setCustomCacheControl  &#10;&#125;))  &#10;app.listen(3000)  &#10;function setCustomCacheControl(res, path) &#123;  &#10;    //&#36890;&#36807;serve-static&#30340;mime&#23545;&#35937;&#30340;lookup&#26041;&#27861;&#26597;&#30475;&#25991;&#20214;&#30340;mime&#31867;&#22411;  &#10;  if (serveStatic.mime.lookup(path) === &#39;text/html&#39;) &#123;  &#10;    // Custom Cache-Control for HTML files  &#10;    res.setHeader(&#39;Cache-Control&#39;, &#39;public, max-age=0&#39;)  &#10;  &#125;  &#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>注意：通过setHeaders可以指定一个函数，这个函数可以对不同的文件使用不同的缓存策略，这个函数的签名是fn(res, path, stat)。在内部可以通过serve-static的mime对象的lookup来判断文件的mime类型，然后选择不同的缓存策略</p>
+<p>问题2：如果为静态文件指定了多个目录那么我们如何设置?<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&#39;express&#39;)  &#10;var serveStatic = require(&#39;serve-static&#39;)  &#10;var app = express()  &#10;//&#22914;&#26524;&#20026;&#38745;&#24577;&#25991;&#20214;&#25351;&#23450;&#20102;&#22810;&#20010;&#30446;&#24405;&#37027;&#20040;&#25105;&#20204;&#22914;&#20309;&#35774;&#32622;  &#10;app.use(serveStatic(__dirname + &#39;/public-optimized&#39;))  &#10;app.use(serveStatic(__dirname + &#39;/public&#39;))  &#10;app.listen(3000)</span><br></pre></td></tr></table></figure></p>
+<p>注意：这时候我们就会首先查找public-optimized目录，然后查找public目录</p>
+<p>问题3：默认情况下访问会发送index.html，那么如何取消这种默认行为?<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&#39;express&#39;)  &#10;var serveStatic = require(&#39;serve-static&#39;)  &#10;var app = express()  &#10;//&#20854;&#20013;&#23545;&#20110;index&#21442;&#25968;&#26469;&#35828;&#65306;&#22914;&#26524;&#35775;&#38382;&#19968;&#20010;&#30446;&#24405;&#37027;&#20040;&#40664;&#35748;&#20250;&#21457;&#36865;index.html&#65292;&#20294;&#26159;&#25105;&#20204;&#21487;&#20197;&#25226;index&#35774;&#32622;&#20026;false&#25110;&#32773;&#25105;&#20204;&#32473;&#36825;&#20010;&#21442;&#25968;&#21457;&#36865;&#19968;&#20010;  &#10;//&#25968;&#32452;(&#25110;&#32773;string)&#65292;&#37027;&#20040;&#23601;&#20250;&#25353;&#29031;&#25968;&#32452;&#25351;&#23450;&#30340;&#39034;&#24207;&#36827;&#34892;&#36941;&#21382;&#65292;&#21069;&#38754;&#30340;&#20248;&#20808;&#32423;&#39640;&#20110;&#21518;&#32773;!  &#10;app.use(serveStatic(&#39;public/ftp&#39;, &#123;&#39;index&#39;: [&#39;default.html&#39;, &#39;default.htm&#39;]&#125;))  &#10;app.listen(3000)</span><br></pre></td></tr></table></figure></p>
+<p>注意：通过制定index参数就可以取消这种默认行为</p>
+<p>问题4：如果指定静态文件没有找到，是否可以继续查找其他后缀的文件作为备用文件?<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&#39;express&#39;)  &#10;var serveStatic = require(&#39;serve-static&#39;)  &#10;var app = express()  &#10;//&#20854;&#20013;&#23545;&#20110;index&#21442;&#25968;&#26469;&#35828;&#65306;&#22914;&#26524;&#35775;&#38382;&#19968;&#20010;&#30446;&#24405;&#37027;&#20040;&#40664;&#35748;&#20250;&#21457;&#36865;index.html&#65292;&#20294;&#26159;&#25105;&#20204;&#21487;&#20197;&#25226;index&#35774;&#32622;&#20026;false&#25110;&#32773;&#25105;&#20204;&#32473;&#36825;&#20010;&#21442;&#25968;&#21457;&#36865;&#19968;&#20010;  &#10;//&#25968;&#32452;(&#25110;&#32773;string)&#65292;&#37027;&#20040;&#23601;&#20250;&#25353;&#29031;&#25968;&#32452;&#25351;&#23450;&#30340;&#39034;&#24207;&#36827;&#34892;&#36941;&#21382;&#65292;&#21069;&#38754;&#30340;&#20248;&#20808;&#32423;&#39640;&#20110;&#21518;&#32773;!  &#10;app.use(serveStatic(&#39;public/ftp&#39;, &#123;&#39;extensions&#39;: [&#39;html&#39;, &#39;htm&#39;]&#125;))  &#10;app.listen(3000)</span><br></pre></td></tr></table></figure></p>
+<p>Extensions如果指定了true,那么指定的文件如果没有被找到，那么就会把指定的数组中的后缀添加进去继续查找，然后返回。如：[‘html’, ‘htm’]，默认是false。如果我如下指定了静态文件的目录：<br>app.use(express.static(path.join(__dirname, ‘public’)));<br>那么如果在静态文件中有这样的引用：</p>
+<p><link rel="stylesheet" href="/stylesheets/style.css"><br>那么就会查找public/stylesheets/style.css来获取文件。extensions我觉得可以用于如果没有找到jpg图片继续查找png图片的情况下,如[‘jpg’,’png’]</p>
+<p>问题5：fallthrough参数有什么用?<br>让有客户端错误的请求通过就像没有这个请求一样，或者也可以产生一个客户端的错误。如果把这个参数设置为true那么那些无效的客户端请求或者404请求就会简单的调用next()来触发下一个中间件，如果设置为false那么就会触发next(err)把错误消息传递给下一个中间件。一般情况下都是true,这时候我们可以把多个物理路径映射到相同的URL，当前面一个路径查询不到资源继续转换到下一个物理路径查找（这里是静态资源的查找）。如果你确定你只有一个路径来存放物理资源那么设置为false。这个中间件会处理所有的GET/POST/DELETE等请求，默认情况下为true!</p>
+<p>使用mysql数据库例子：<br>前提条件<br>1、安装mysql对应的驱动，npm install mysql</p>
+<p>2、安装第三方插件express-connection, npm install express-connection</p>
+<p>普通连接<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var mysql      = require(&#39;mysql&#39;);&#10;var connection = mysql.createConnection(&#123;&#10;  host     : &#39;localhost&#39;,&#10;  user     : &#39;root&#39;,&#10;  password : &#39;secret&#39;,&#10;  database : &#39;my_db&#39;&#10;&#125;);&#10;&#10;connection.connect();&#10;&#10;connection.query(&#39;select  * from solution&#39;, function(err, rows, fields) &#123;&#10;  if (err) throw err;&#10;    console.log(&#39;The solution is: &#39;, rows);&#10;&#125;);&#10;&#10;connection.end();</span><br></pre></td></tr></table></figure></p>
+<p>连接池<br>引入连接池后，最省事之处就是你不用每次用完以后去手动关闭connection。连接池的option还有很多选项，可以根据自己的需要来配置。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var mysql = require(&#39;mysql&#39;);&#10;var pool  = mysql.createPool(&#123;&#10;  connectionLimit : 10,&#10;  host            : &#39;example.org&#39;,&#10;  user            : &#39;bob&#39;,&#10;  password    : &#39;secret&#39;&#10;&#125;);&#10;&#10;pool.query(&#39;select  * from solution&#39;, function(err, rows, fields) &#123;&#10;  if (err) throw err;&#10;&#10;  console.log(&#39;The solution is: &#39;, rows);&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>当然如果你的应用没有那么多，而你对连接池回收机制又不放心，也可以手动关闭连接实现把连接放回到资源池里，调用connection.release()<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pool.getConnection(function(err, connection) &#123;&#10;  // Use the connection&#10;  connection.query( &#39;SELECT something FROM sometable&#39;, function(err, rows) &#123;&#10;    // And done with the connection.&#10;    connection.release();&#10;&#10;    // Don&#39;t use the connection here, it has been returned to the pool.&#10;  &#125;);&#10;&#125;);&#10;&#10;&#20851;&#38381;&#25972;&#20010;&#36830;&#25509;&#27744;&#30340;&#36830;&#25509;&#10;&#10;pool.end(function (err) &#123;&#10;  // all connections in the pool have ended&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>express-myconnection<br>express-myconnection是一个Connect/Express自动提供mysql 连接的中间件。 共提供三中策略管理db连接。</p>
+<p>single。<br>创建单数据库应用实例，连接从不会关闭，万一连接因故障断掉，它还会重新连接。</p>
+<p>pool。<br>基于应用程序实例创建连接池，并且对每一个请求从连接池里提供连接，连接在每次response会自动释放返回到连接池里去。</p>
+<p>request。<br>针对每个request创建新的连接， 并且在response结束时会自动关闭。</p>
+<p>这也是我在项目里所使用的方法，因为业务逻辑不复杂，没有封装db层，直接在app.js里配置，然后在路由层里直接调用。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.js&#10;&#10;var mysql = require(&#39;mysql&#39;), &#10;    myConnection = require(&#39;express-myconnection&#39;),&#10;    dbOptions = &#123;&#10;      host: &#39;localhost&#39;,&#10;      user: &#39;dbuser&#39;,&#10;      password: &#39;password&#39;,&#10;      port: 3306,&#10;      database: &#39;mydb&#39;&#10;    &#125;;&#10;  &#10;app.use(myConnection(mysql, dbOptions, &#39;single&#39;); &#10;//&#20316;&#20026;&#20013;&#38388;&#20214;&#26469;&#20351;&#29992;&#10;/router/order.js &#22312;&#36335;&#30001;&#25991;&#20214;&#37324;&#24212;&#29992;</span><br></pre></td></tr></table></figure>
+<p>在这里也可以调用存储过程：conn.query(‘call usp_test’,[传参数]，function(err,result))<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">router.get(&#39;/cost&#39;, function(req, res, next) &#123;&#10; &#10;    req.getConnection(function(err, conn) &#123;&#10;        if (err) &#123;&#10;           &#10;            return next(err);&#10;        &#125; else &#123;&#10;            conn.query(&#39;select * from test&#39;, [], function(err,result) &#123;&#10;                if (err) &#123;&#10;                    return next(err);&#10;                &#125; else &#123;&#10;                    res.Json(result); //&#21487;&#20197;&#30452;&#25509;&#25226;&#32467;&#26524;&#38598;&#36716;&#21270;Json&#36820;&#22238;&#32473;&#23458;&#25143;&#31471;&#10;                &#125;&#10;            &#125;);&#10;        &#125;&#10;    &#125;);&#10;&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>multer中间件：<br>multer是express官方推荐的文件上传中间件，它是在busboy的基础上开发的。目前multer的最新版本为：~1.1.0。<br>本文所有代码段均使用此版本。<br>multer的官方地址：GitHub</p>
+<p>配置</p>
+<p>在nodejs下的package.json中添加multer依赖，运行加载依赖库。<br>新建multerUtil.js,<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var  multer=require(&#39;multer&#39;);&#10;var storage = multer.diskStorage(&#123;&#10; //&#35774;&#32622;&#19978;&#20256;&#21518;&#25991;&#20214;&#36335;&#24452;&#65292;uploads&#25991;&#20214;&#22841;&#20250;&#33258;&#21160;&#21019;&#24314;&#12290;&#10;    destination: function (req, file, cb) &#123;&#10;        cb(null, &#39;./public/uploads&#39;)&#10;   &#125;, &#10; //&#32473;&#19978;&#20256;&#25991;&#20214;&#37325;&#21629;&#21517;&#65292;&#33719;&#21462;&#28155;&#21152;&#21518;&#32512;&#21517;&#10;  filename: function (req, file, cb) &#123;&#10;      var fileFormat = (file.originalname).split(&#34;.&#34;);&#10;      cb(null, file.fieldname + &#39;-&#39; + Date.now() + &#34;.&#34; + fileFormat[fileFormat.length - 1]);&#10;  &#125;&#10;&#125;);  &#10; //&#28155;&#21152;&#37197;&#32622;&#25991;&#20214;&#21040;muler&#23545;&#35937;&#12290;&#10; var upload = multer(&#123;&#10;      storage: storage&#10;&#125;);&#10;&#10;//&#22914;&#38656;&#20854;&#20182;&#35774;&#32622;&#65292;&#35831;&#21442;&#32771;multer&#30340;limits,&#20351;&#29992;&#26041;&#27861;&#22914;&#19979;&#12290;&#10;//var upload = multer(&#123;&#10;//    storage: storage,&#10;//    limits:&#123;&#125;&#10;// &#125;);&#10;&#10;//&#23548;&#20986;&#23545;&#35937;&#10;module.exports = upload;&#10;&#20351;&#29992;&#10;&#10;testController.js&#10;&#10;var muilter = require(&#39;./multerUtil&#39;);&#10;        //multer&#26377;single()&#20013;&#30340;&#21517;&#31216;&#24517;&#39035;&#26159;&#34920;&#21333;&#19978;&#20256;&#23383;&#27573;&#30340;name&#21517;&#31216;&#12290;&#10; var upload=muilter.single(&#39;file&#39;);       &#9;   &#10;      exports.dataInput = function (req, res) &#123;&#10;      upload(req, res, function (err) &#123;&#10;        //&#28155;&#21152;&#38169;&#35823;&#22788;&#29702;&#10;    if (err) &#123;&#10;         return  console.log(err);&#10;    &#125; &#10;        //&#25991;&#20214;&#20449;&#24687;&#22312;req.file&#25110;&#32773;req.files&#20013;&#26174;&#31034;&#12290;&#10;    console.log(req);&#10;  &#125;);&#10; &#125;&#10;app.js&#10;&#10;var testController=require(&#39;./testController&#39;);&#10;app.post(&#39;/dataInpute&#39;,testController.dataInput);</span><br></pre></td></tr></table></figure></p>
+<p>其他说明</p>
+<p>1.文件上传有以下方法</p>
+<p>muilter.single(‘file’), //适用于单文件上传<br>muilter.array(‘file’,num), //适用于多文件上传，num为最多上传个数，上传文件的数量可以小于num,<br>muilter.fields(fields), //适用于混合上传，比如A类文件1个，B类文件2个。官方API有详细说明。<br>2.file为上传字段名称，当使用form表单submit方式上传时，必须与表单上传的name属性保持一致。<br>表单记得加上  enctype=‘multipart/form-data’</p>
+<p>3.对上传文件大小限制，名称限制等均可在limits中加上，具体可加属性，请参考官方api。</p>
+<p>express中session中间件的使用方法：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(express.session(&#123;&#10;secret:&#8216;mysession&#8217;,&#10;store:new MongoStore(&#123;&#10;&#9;url:setting.mongodb.url,&#10;&#9;maxAge:1000 * 60 *10&#10;&#125;),&#10;cookie:&#123;&#10;maxAge:1000 * 60 * 10&#10;&#125;&#10;&#125;))</span><br></pre></td></tr></table></figure></p>
+<p>使用中间件：</p>
+<p>Express 是一个自身功能极简，完全是由路由和中间件构成一个的 web 开发框架：从本质上来说，一个 Express 应用就是在调用各种中间件。</p>
+<p>中间件（Middleware） 是一个函数，它可以访问请求对象（request object (req)）, 响应对象（response object (res)）, 和 web 应用中处于请求-响应循环流程中的中间件，一般被命名为 next 的变量。</p>
+<p>中间件的功能包括：</p>
+<p>执行任何代码。<br>修改请求和响应对象。<br>终结请求-响应循环。<br>调用堆栈中的下一个中间件。<br>如果当前中间件没有终结请求-响应循环，则必须调用 next() 方法将控制权交给下一个中间件，否则请求就会挂起。</p>
+<p>Express 应用可使用如下几种中间件：</p>
+<p>应用级中间件<br>路由级中间件<br>错误处理中间件<br>内置中间件<br>第三方中间件<br>使用可选则挂载路径，可在应用级别或路由级别装载中间件。另外，你还可以同时装在一系列中间件函数，从而在一个挂载点上创建一个子中间件栈。</p>
+<p>应用级中间件<br>应用级中间件绑定到 app 对象 使用 app.use() 和 app.METHOD()， 其中， METHOD 是需要处理的 HTTP 请求的方法，例如 GET, PUT, POST 等等，全部小写。例如：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var app = express();&#10;&#10;// &#27809;&#26377;&#25346;&#36733;&#36335;&#24452;&#30340;&#20013;&#38388;&#20214;&#65292;&#24212;&#29992;&#30340;&#27599;&#20010;&#35831;&#27714;&#37117;&#20250;&#25191;&#34892;&#35813;&#20013;&#38388;&#20214;&#10;app.use(function (req, res, next) &#123;&#10;  console.log(&#39;Time:&#39;, Date.now());&#10;  next();&#10;&#125;);&#10;&#10;// &#25346;&#36733;&#33267; /user/:id &#30340;&#20013;&#38388;&#20214;&#65292;&#20219;&#20309;&#25351;&#21521; /user/:id &#30340;&#35831;&#27714;&#37117;&#20250;&#25191;&#34892;&#23427;&#10;app.use(&#39;/user/:id&#39;, function (req, res, next) &#123;&#10;  console.log(&#39;Request Type:&#39;, req.method);&#10;  next();&#10;&#125;);&#10;&#10;// &#36335;&#30001;&#21644;&#21477;&#26564;&#20989;&#25968;(&#20013;&#38388;&#20214;&#31995;&#32479;)&#65292;&#22788;&#29702;&#25351;&#21521; /user/:id &#30340; GET &#35831;&#27714;&#10;app.get(&#39;/user/:id&#39;, function (req, res, next) &#123;&#10;  res.send(&#39;USER&#39;);&#10;&#125;);&#10;&#19979;&#38754;&#36825;&#20010;&#20363;&#23376;&#23637;&#31034;&#20102;&#22312;&#19968;&#20010;&#25346;&#36733;&#28857;&#35013;&#36733;&#19968;&#32452;&#20013;&#38388;&#20214;&#12290;&#10;&#10;// &#19968;&#20010;&#20013;&#38388;&#20214;&#26632;&#65292;&#23545;&#20219;&#20309;&#25351;&#21521; /user/:id &#30340; HTTP &#35831;&#27714;&#25171;&#21360;&#20986;&#30456;&#20851;&#20449;&#24687;&#10;app.use(&#39;/user/:id&#39;, function(req, res, next) &#123;&#10;  console.log(&#39;Request URL:&#39;, req.originalUrl);&#10;  next();&#10;&#125;, function (req, res, next) &#123;&#10;  console.log(&#39;Request Type:&#39;, req.method);&#10;  next();&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>作为中间件系统的路由句柄，使得为路径定义多个路由成为可能。在下面的例子中，为指向 /user/:id 的 GET 请求定义了两个路由。第二个路由虽然不会带来任何问题，但却永远不会被调用，因为第一个路由已经终止了请求-响应循环。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#19968;&#20010;&#20013;&#38388;&#20214;&#26632;&#65292;&#22788;&#29702;&#25351;&#21521; /user/:id &#30340; GET &#35831;&#27714;&#10;app.get(&#39;/user/:id&#39;, function (req, res, next) &#123;&#10;  console.log(&#39;ID:&#39;, req.params.id);&#10;  next();&#10;&#125;, function (req, res, next) &#123;&#10;  res.send(&#39;User Info&#39;);&#10;&#125;);&#10;&#10;// &#22788;&#29702; /user/:id&#65292; &#25171;&#21360;&#20986;&#29992;&#25143; id&#10;app.get(&#39;/user/:id&#39;, function (req, res, next) &#123;&#10;  res.end(req.params.id);&#10;&#125;);&#10;&#22914;&#26524;&#38656;&#35201;&#22312;&#20013;&#38388;&#20214;&#26632;&#20013;&#36339;&#36807;&#21097;&#20313;&#20013;&#38388;&#20214;&#65292;&#35843;&#29992; next(&#39;route&#39;) &#26041;&#27861;&#23558;&#25511;&#21046;&#26435;&#20132;&#32473;&#19979;&#19968;&#20010;&#36335;&#30001;&#12290; &#27880;&#24847;&#65306; next(&#39;route&#39;) &#21482;&#23545;&#20351;&#29992; app.VERB() &#25110; router.VERB() &#21152;&#36733;&#30340;&#20013;&#38388;&#20214;&#26377;&#25928;&#12290;&#10;&#10;// &#19968;&#20010;&#20013;&#38388;&#20214;&#26632;&#65292;&#22788;&#29702;&#25351;&#21521; /user/:id &#30340; GET &#35831;&#27714;&#10;app.get(&#39;/user/:id&#39;, function (req, res, next) &#123;&#10;  // &#22914;&#26524; user id &#20026; 0, &#36339;&#21040;&#19979;&#19968;&#20010;&#36335;&#30001;&#10;  if (req.params.id == 0) next(&#39;route&#39;);&#10;  // &#21542;&#21017;&#23558;&#25511;&#21046;&#26435;&#20132;&#32473;&#26632;&#20013;&#19979;&#19968;&#20010;&#20013;&#38388;&#20214;&#10;  else next(); //&#10;&#125;, function (req, res, next) &#123;&#10;  // &#28210;&#26579;&#24120;&#35268;&#39029;&#38754;&#10;  res.render(&#39;regular&#39;);&#10;&#125;);&#10;&#10;// &#22788;&#29702; /user/:id&#65292; &#28210;&#26579;&#19968;&#20010;&#29305;&#27530;&#39029;&#38754;&#10;app.get(&#39;/user/:id&#39;, function (req, res, next) &#123;&#10;  res.render(&#39;special&#39;);&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>路由级中间件<br>路由级中间件和应用级中间件一样，只是它绑定的对象为 express.Router()。</p>
+<p>var router = express.Router();<br>路由级使用 router.use() 或 router.VERB() 加载。</p>
+<p>上述在应用级创建的中间件系统，可通过如下代码改写为路由级：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var app = express();&#10;var router = express.Router();&#10;&#10;// &#27809;&#26377;&#25346;&#36733;&#36335;&#24452;&#30340;&#20013;&#38388;&#20214;&#65292;&#36890;&#36807;&#35813;&#36335;&#30001;&#30340;&#27599;&#20010;&#35831;&#27714;&#37117;&#20250;&#25191;&#34892;&#35813;&#20013;&#38388;&#20214;&#10;router.use(function (req, res, next) &#123;&#10;  console.log(&#39;Time:&#39;, Date.now());&#10;  next();&#10;&#125;);&#10;&#10;// &#19968;&#20010;&#20013;&#38388;&#20214;&#26632;&#65292;&#26174;&#31034;&#20219;&#20309;&#25351;&#21521; /user/:id &#30340; HTTP &#35831;&#27714;&#30340;&#20449;&#24687;&#10;router.use(&#39;/user/:id&#39;, function(req, res, next) &#123;&#10;  console.log(&#39;Request URL:&#39;, req.originalUrl);&#10;  next();&#10;&#125;, function (req, res, next) &#123;&#10;  console.log(&#39;Request Type:&#39;, req.method);&#10;  next();&#10;&#125;);&#10;&#10;// &#19968;&#20010;&#20013;&#38388;&#20214;&#26632;&#65292;&#22788;&#29702;&#25351;&#21521; /user/:id &#30340; GET &#35831;&#27714;&#10;router.get(&#39;/user/:id&#39;, function (req, res, next) &#123;&#10;  // &#22914;&#26524; user id &#20026; 0, &#36339;&#21040;&#19979;&#19968;&#20010;&#36335;&#30001;&#10;  if (req.params.id == 0) next(&#39;route&#39;);&#10;  // &#36127;&#36131;&#23558;&#25511;&#21046;&#26435;&#20132;&#32473;&#26632;&#20013;&#19979;&#19968;&#20010;&#20013;&#38388;&#20214;&#10;  else next(); //&#10;&#125;, function (req, res, next) &#123;&#10;  // &#28210;&#26579;&#24120;&#35268;&#39029;&#38754;&#10;  res.render(&#39;regular&#39;);&#10;&#125;);&#10;&#10;// &#22788;&#29702; /user/:id&#65292; &#28210;&#26579;&#19968;&#20010;&#29305;&#27530;&#39029;&#38754;&#10;router.get(&#39;/user/:id&#39;, function (req, res, next) &#123;&#10;  console.log(req.params.id);&#10;  res.render(&#39;special&#39;);&#10;&#125;);&#10;&#10;// &#23558;&#36335;&#30001;&#25346;&#36733;&#33267;&#24212;&#29992;&#10;app.use(&#39;/&#39;, router);</span><br></pre></td></tr></table></figure></p>
+<p>错误处理中间件<br>错误处理中间件有 4 个参数，定义错误处理中间件时必须使用这 4 个参数。即使不需要 next 对象，也必须在签名中声明它，否则中间件会被识别为一个常规中间件，不能处理错误。<br>错误处理中间件和其他中间件定义类似，只是要使用 4 个参数，而不是 3 个，其签名如下： (err, req, res, next)。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(function(err, req, res, next) &#123;&#10;  console.error(err.stack);&#10;  res.status(500).send(&#39;Something broke!&#39;);&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>请参考 错误处理 一章了解更多关于错误处理中间件的内容。</p>
+<p>内置中间件<br>从 4.x 版本开始，, Express 已经不再依赖 Connect 了。除了 express.static, Express 以前内置的中间件现在已经全部单独作为模块安装使用了。请参考 中间件列表。</p>
+<p>express.static(root, [options])</p>
+<p>express.static 是 Express 唯一内置的中间件。它基于 serve-static，负责在 Express 应用中提托管静态资源。</p>
+<p>参数 root 指提供静态资源的根目录。</p>
+<p>可选的 options 参数拥有如下属性。</p>
+<p>属性    描述    类型    缺省值<br>dotfiles    是否对外输出文件名以点（.）开头的文件。可选值为 “allow”、“deny” 和 “ignore”    String    “ignore”<br>etag    是否启用 etag 生成    Boolean    true<br>extensions    设置文件扩展名备份选项    Array    []<br>index    发送目录索引文件，设置为 false 禁用目录索引。    Mixed    “index.html”<br>lastModified    设置 Last-Modified 头为文件在操作系统上的最后修改日期。可能值为 true 或 false。    Boolean    true<br>maxAge    以毫秒或者其字符串格式设置 Cache-Control 头的 max-age 属性。    Number    0<br>redirect    当路径为目录时，重定向至 “/”。    Boolean    true<br>setHeaders    设置 HTTP 头以提供文件的函数。    Function<br>下面的例子使用了 express.static 中间件，其中的 options 对象经过了精心的设计。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var options = &#123;&#10;  dotfiles: &#39;ignore&#39;,&#10;  etag: false,&#10;  extensions: [&#39;htm&#39;, &#39;html&#39;],&#10;  index: false,&#10;  maxAge: &#39;1d&#39;,&#10;  redirect: false,&#10;  setHeaders: function (res, path, stat) &#123;&#10;    res.set(&#39;x-timestamp&#39;, Date.now());&#10;  &#125;&#10;&#125;&#10;&#10;app.use(express.static(&#39;public&#39;, options));&#10;&#27599;&#20010;&#24212;&#29992;&#21487;&#26377;&#22810;&#20010;&#38745;&#24577;&#30446;&#24405;&#12290;&#10;&#10;app.use(express.static(&#39;public&#39;));&#10;app.use(express.static(&#39;uploads&#39;));&#10;app.use(express.static(&#39;files&#39;));</span><br></pre></td></tr></table></figure></p>
+<p>更多关于 serve-static 和其参数的信息，请参考 serve-static 文档。</p>
+<p>第三方中间件<br>通过使用第三方中间件从而为 Express 应用增加更多功能。</p>
+<p>安装所需功能的 node 模块，并在应用中加载，可以在应用级加载，也可以在路由级加载。</p>
+<p>下面的例子安装并加载了一个解析 cookie 的中间件： cookie-parser</p>
+<p>$ npm install cookie-parser<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&#39;express&#39;);&#10;var app = express();&#10;var cookieParser = require(&#39;cookie-parser&#39;);&#10;&#10;// &#21152;&#36733;&#29992;&#20110;&#35299;&#26512; cookie &#30340;&#20013;&#38388;&#20214;&#10;app.use(cookieParser());</span><br></pre></td></tr></table></figure></p>
+<p>connect中间件例子：<br>Connect is an extensible HTTP server framework for node using “plugins” known as middleware.<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var connect = require(&#39;connect&#39;);&#10;var http = require(&#39;http&#39;);&#10;&#10;var app = connect();&#10;&#10;// gzip/deflate outgoing responses&#10;var compression = require(&#39;compression&#39;);&#10;app.use(compression());&#10;&#10;// store session state in browser cookie&#10;var cookieSession = require(&#39;cookie-session&#39;);&#10;app.use(cookieSession(&#123;&#10;    keys: [&#39;secret1&#39;, &#39;secret2&#39;]&#10;&#125;));&#10;&#10;// parse urlencoded request bodies into req.body&#10;var bodyParser = require(&#39;body-parser&#39;);&#10;app.use(bodyParser.urlencoded());&#10;&#10;// respond to all requests&#10;app.use(function(req, res)&#123;&#10;  res.end(&#39;Hello from Connect!\n&#39;);&#10;&#125;);&#10;&#10;//create node.js http server and listen on port&#10;http.createServer(app).listen(3000);</span><br></pre></td></tr></table></figure></p>
+<p>Install Connect</p>
+<p>$ npm install connect<br>Create an app</p>
+<p>The main component is a Connect “app”. This will store all the middleware added and is, itself, a function.</p>
+<p>var app = connect();</p>
+<p>Use middleware</p>
+<p>The core of Connect is “using” middleware. Middleware are added as a “stack” where incoming requests will execute each middleware one-by-one until a middleware does not call next() within it.<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(function middleware1(req, res, next) &#123;&#10;  // middleware 1&#10;  next();&#10;&#125;);&#10;app.use(function middleware2(req, res, next) &#123;&#10;  // middleware 2&#10;  next();&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>Mount middleware</p>
+<p>The .use() method also takes an optional path string that is matched against the beginning of the incoming request URL. This allows for basic routing.<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(&#39;/foo&#39;, function fooMiddleware(req, res, next) &#123;&#10;  // req.url starts with &#34;/foo&#34;&#10;  next();&#10;&#125;);&#10;app.use(&#39;/bar&#39;, function barMiddleware(req, res, next) &#123;&#10;  // req.url starts with &#34;/bar&#34;&#10;  next();&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>Error middleware</p>
+<p>There are special cases of “error-handling” middleware. There are middleware where the function takes exactly 4 arguments. Errors that occur in the middleware added before the error middleware will invoke this middleware when errors occur.<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(function onerror(err, req, res, next) &#123;&#10;  // an error occurred!&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>Create a server from the app</p>
+<p>The last step is to actually use the Connect app in a server. The .listen() method is a convenience to start a HTTP server.</p>
+<p>var server = app.listen(port);<br>The app itself is really just a function with three arguments, so it can also be handed to .createServer() in Node.js.</p>
+<p>var server = http.createServer(app);</p>
+<p>第三方中间件</p>
+<p>这里列出的是部分 Express 中间件组件：</p>
+<p>body-parser: previously express.bodyParser, json, and urlencoded. See also:<br>body<br>co-body<br>raw-body</p>
+<p>compression - previously express.compress</p>
+<p>connect-image-optimus: Connect/Express middleware for optimal image serving. Switches to webp/jpegxr if possible.</p>
+<p>connect-timeout: previously express.timeout</p>
+<p>cookie-parser: previously express.cookieParser</p>
+<p>cookie-session: previously express.cookieSession</p>
+<p>csurf: previousy express.csrf</p>
+<p>errorhandler: previously express.errorHandler</p>
+<p>express-debug: unobtrusive development tool that adds a tab with information about req, session, locals, and more to your application.</p>
+<p>express-partial-response: Express middleware for filtering-out parts of JSON responses based on the fields query-string; using Google API’s Partial Response.</p>
+<p>express-session: previously express.session</p>
+<p>express-simple-cdn: easily use a CDN for your static assets, with multiple host support (ex. cdn1.host.com, cdn2.host.com).</p>
+<p>express-slash: Express middleware for people who are strict about trailing slashes.</p>
+<p>express-stormpath: Express middleware for user storage, authentication, authorization, SSO, and data security.</p>
+<p>express-uncapitalize: redirect HTTP requests containing uppercase to a canonical lowercase form.</p>
+<p>join-io: join files on a fly to reduce requests count</p>
+<p>method-override: previously express.methodOverride</p>
+<p>morgan: previously logger</p>
+<p>passport: Express middleware for authentication.</p>
+<p>response-time: previously express.responseTime</p>
+<p>serve-favicon: previously express.favicon</p>
+<p>serve-index: previousy express.directory</p>
+<p>serve-static: for serving static content</p>
+<p>static-expiry: fingerprinted URLs/Caching Headers for static assets including external domain(s) support.</p>
+<p>vhost: previously express.vhost</p>
+<p>view-helpers: An express middleware that provides common helper methods to the views.</p>
+<p>express.cookieParser</p>
+<p>cookies and keygrip</p>
+<p>express.limit</p>
+<p>raw-body</p>
+<p>express.multipart</p>
+<p>connect-busboy</p>
+<p>multer</p>
+<p>connect-multiparty</p>
+<p>express.query</p>
+<p>qs</p>
+<p>express.staticCache</p>
+<p>st</p>
+<p>connect-static</p>
+<p>Modules</p>
+<p>Routers - routes HTTP traffic to different handlers<br>Request modules - modules that do stuff with req<br>Response modules - modules that do stuff with res<br>Route handlers - modules that are route handlers, like static servers<br>Templates - minimalist templating systems<br>Validators - modules that do HTTP body validation<br>Sessions - modules that associate sessions with a request<br>Modules - general modules for web servers.</p>
+<p>Routers</p>
+<p>routes<br>routes is the express.js router broken out into a standalone module. You can add route handlers and you can match an url on the router to get the right route handler</p>
+<p>routes-router<br>routes-router uses routes but creates a function handler(req, res) {} function that you can plug into your http server. It handles error handling (optionally with domains) &amp; 404’s for you by default. This is for convenience. It’s recommended you read the source code and write your own server request handler in your application.</p>
+<p>mapleTree<br>An alternative router that is tree based and might be more efficient. It’s also more flexible in how it finds the correct route handler for any given url.</p>
+<p>http-methods<br>http-methods is like a router but instead of routing on req.url it routes on the req.method. You can easily create a single route handler that dispatches to different functions based on method.</p>
+<p>egress<br>A “pragmatic router,” egress is uniquely designed for tree-like routing tables. It can be used on its own or as Connect middleware.</p>
+<p>Request modules</p>
+<p>body<br>A set of asynchronous functions that parses the body of out of a req. It can also parse form encoded &amp; json encoded bodies. body will limit the amount of body parsing to 1MB by default to prevent buffer overflows.</p>
+<p>raw-body<br>raw-body will parse the body of a readable stream as a Buffer. It has a limiting mechanism to limit the size of the body to prevent buffer overflows.</p>
+<p>cookies and keygrip<br>Read the cookies out of a req. Also has functionality to set cookies on the res. Use cookies with keygrip for signing cookies using rotated credentials.</p>
+<p>Response modules</p>
+<p>send-data<br>Send different types of resources to the client, like json or error or html. This module will set the headers properly on your behalf.</p>
+<p>redirecter<br>Sends a proper HTTP redirect response to a res.</p>
+<p>serve-favicon<br>Favicon serving middleware.</p>
+<p>serve-file-download<br>Sets appropriate content-disposition header and pipes data to res.</p>
+<p>Route handlers</p>
+<p>st<br>st is a static file handler. It’s efficient and handles cache headers properly.</p>
+<p>serve-browserify<br>serve-browserify is like a static file handler for javascript files but will browserify those files transparently on the fly. Optionally handles caching &amp; gzipping.</p>
+<p>npm-less<br>npm-less is like a static file handler for css files but will compile LESS files transparently on the fly. Optionally handles caching &amp; gzipping.</p>
+<p>filed<br>filed is a streaming file handler. This allows you to serve streaming files with the correct HTTP headers without caching the files in memory.</p>
+<p>request<br>request allows you to make HTTP client requests to other servers. You can use request in your web server to forward a HTTP response from a 3rd party server to your res</p>
+<p>Templates</p>
+<p>hyperscript<br>hyperscript is an easy way to create templates in javascript. This allows you to use require for template inheritance and functions for template re-use. It’s the simplest templating system that works as it’s pure javascript.</p>
+<p>consolidate.js<br>consolidate is a large wrapper around many popular templating languages that exposes the same API for each templating language.</p>
+<p>Validators</p>
+<p>validate-form<br>validate-form is a validation library that you can use to define a schema (a function) to validate arbitrary objects. validate-form is recursively made up of small functions so its really easy to add new validation logic.</p>
+<p>joi<br>joi is another validation library. It allows you to define complex schemas using a chaining syntax.</p>
+<p>is-my-json-valid<br>is-my-json-valid is a JSONSchema validator that uses code generation to be extremely fast.</p>
+<p>Sessions</p>
+<p>redsess<br>redsess is a redis backed session library. It creates an asynchronous session interface based upon a req/res pair. It will handle managing your session id &amp; cookies for you.</p>
+<p>level-session<br>level-session is a levelDB backed session library. It creates an asynchronous session interface based upon a req/res pair. It will handle managing your session id &amp; cookies for you.</p>
+<p>generic-session<br>generic-session is like redsess &amp; level-session but has a MemoryStore interface for storing sessions in memory. This is great for tests.</p>
+<p>pwd<br>pwd is a module for hashing a password. The first hash will generate a salt for it. You can then verify the password a second time with the salt to check hashes. This is great for a /login &amp; /signup flow.</p>
+<p>Modules</p>
+<p>config-chain<br>config-chain makes it easy to load configuration from anywhere. This is a great way of setting up a cascading config system for your production web server.</p>
+<p>static-config<br>static-config is a config loader for static application configuration. It has an accessible api to set up a rigid cascading config loader that can be modified to sanely integrate with tests.</p>
+<p>error<br>error makes it easy to create re-usable errors that contain meta information about what went wrong.</p>
+<p>bole<br>bole is a tiny flexible JSON logger that outputs ndjson.</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/07/04/labjs/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          labjs
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/07/02/favico.js/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">favico.js</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div>&copy; 2016 任先生在路上 的博客 , 技术 
+        <a href="http://hexo.io/" target="_blank">Hexo</a>  
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

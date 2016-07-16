@@ -124,11 +124,11 @@
 
       <div class="body-wrap">
   
-    <article id="post-模块加载器" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-canvas图片处理运用" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/25/模块加载器/" class="article-date">
-  	<time datetime="2016-04-24T16:00:00.000Z" itemprop="datePublished">2016-04-25</time>
+      <a href="/2016/06/27/canvas图片处理运用/" class="article-date">
+  	<time datetime="2016-06-26T16:00:00.000Z" itemprop="datePublished">2016-06-27</time>
 </a>
     </div>
   
@@ -141,7 +141,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/25/模块加载器/">模块加载器实现</a>
+      <a class="article-title" href="/2016/06/27/canvas图片处理运用/">canvas图片处理</a>
     </h1>
   
 
@@ -150,8 +150,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">names = [&#34;Sunday&#34;, &#34;Monday&#34;, &#34;Tuesday&#34;, &#34;Wednesday&#34;, &#34;Thursday&#34;, &#34;Friday&#34;, &#34;Saturday&#34;];&#10;function dayName(number) &#123;&#10;    return names[number];&#10;&#125;&#10;console.log(dayName(1));</span><br></pre></td></tr></table></figure>
-<p>上面的程序，我们创建了一个函数dayName()来获取星期值。但问题是，names变量被暴露在全局作用域中。更多的时候，我们希望能够构造私有变量，而暴露公共函数作为接口。<br>对JavaScript中的函数而言，我们可以通过创建立即调用的函数表达式来达到这个效果，我们可以通过如下的方式重构上面的代码，使得私有作用域成为可能：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var dayName = function() &#123;&#10;    var names = [&#34;Sunday&#34;, &#34;Monday&#34;, &#34;Tuesday&#34;, &#34;Wednesday&#34;, &#34;Thursday&#34;, &#34;Friday&#34;, &#34;Saturday&#34;];&#10;    return &#123;&#10;        name: function(number) &#123;&#10;            return names[number];&#10;        &#125;,&#10;        number: function(name) &#123;&#10;            return names.indexOf(name);&#10;        &#125;&#10;    &#125;;&#10;&#125;();&#10;console.log(dayName.name(3));&#10;console.log(dayName.number(&#34;Sunday&#34;));</span><br></pre></td></tr></table></figure></p>
+        <p>canvas图片处理运用<br>对于canvas来说，主要是两个方法对图片处理比较重要，一个是通过html5 canvas的 getImageData 方法获取图片的像素信息，可以很方便的通过方法导入到把网络图片或者本地的图片导入至canvas中并获取图片的像素信息，可以修改像素信息后通过另外一个重要的方法putImageData导出处理后的图片。</p>
+<p>1、获取canvas调用<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var c = document.createElement(&#39;canvas&#39;);&#10;context = c.getContext(&#39;2d&#39;);</span><br></pre></td></tr></table></figure></p>
+<p>2、获取导入图像信息<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var hiddenImage = new Image();&#10;hiddenImage.src=&#22270;&#29255;&#22320;&#22336;&#10; context .drawImage(hiddenImage, 0, 0, width, height);&#10;   hiddenImage .onload=function()&#123;&#10;    context.putImageData(hiddenImage, 0, 0);&#10;&#125;</span><br></pre></td></tr></table></figure></p>
       
     </div>
     
@@ -159,14 +160,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/模块化/">模块化</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/canvas/">canvas</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/04/25/模块加载器/#more">more >></a>
+          <a  href="/2016/06/27/canvas图片处理运用/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -185,11 +186,11 @@
 
 
   
-    <article id="post-this指向" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Gulp实现web服务器" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/25/this指向/" class="article-date">
-  	<time datetime="2016-04-24T16:00:00.000Z" itemprop="datePublished">2016-04-25</time>
+      <a href="/2016/06/27/Gulp实现web服务器/" class="article-date">
+  	<time datetime="2016-06-26T16:00:00.000Z" itemprop="datePublished">2016-06-27</time>
 </a>
     </div>
   
@@ -202,7 +203,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/25/this指向/">this指向</a>
+      <a class="article-title" href="/2016/06/27/Gulp实现web服务器/">Gulp实现web服务器</a>
     </h1>
   
 
@@ -211,9 +212,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>this指向的四中情况在javascript里面，this的指向可以归纳为以下四种情况。只要能牢记这四种情况，大部分情况下就已经够用了。</p>
-<p>1.在全局代码或者普通的函数调用中，this指向全局对象，在浏览器里面既为window对象<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(this);&#10;//&#36755;&#20986;window&#10;function foo()&#123;&#10;console.log(this);&#10;&#125;&#10;foo();&#10;//&#36755;&#20986;window</span><br></pre></td></tr></table></figure></p>
-<p>在浏览器环境里运行上述代码，两处输出结果均为window对象。</p>
+        <p>Gulp实现web服务器</p>
+<p>一：gulp实现web服务器配置：<br>二：添加实时刷新（livereload）支持</p>
+<p>一：gulp实现web服务器配置：<br>    对于前端开发而言，需要在本地搭建一个服务器作为开发使用，虽然有时候也可以直接打开页面进行预览效果，但是有时候页面需要在服务器运行，以前的做法是下载一个php，直接安装下即可，或者使用nodeJS作为web服务器，今天我门可以来学习下使用gulp的一个插件 gulp－connect来配置作为本地服务器来使用；当然该插件也是居于nodeJS环境中的。</p>
+<p>一：gulp实现web服务器配置：</p>
+<p>初始化安装</p>
+<p>首先，使用下面的命令来安装connect插件。</p>
+<p>npm  install –save-dev gulp-connect</p>
+<p>因此package.son内容代码变为如下：<br>
       
     </div>
     
@@ -221,14 +227,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gulp/">gulp</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/04/25/this指向/#more">more >></a>
+          <a  href="/2016/06/27/Gulp实现web服务器/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -247,11 +253,11 @@
 
 
   
-    <article id="post-LokiJS内存数据库介绍" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Array" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/24/LokiJS内存数据库介绍/" class="article-date">
-  	<time datetime="2016-04-23T16:00:00.000Z" itemprop="datePublished">2016-04-24</time>
+      <a href="/2016/06/26/Array/" class="article-date">
+  	<time datetime="2016-06-25T16:00:00.000Z" itemprop="datePublished">2016-06-26</time>
 </a>
     </div>
   
@@ -264,7 +270,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/24/LokiJS内存数据库介绍/">LokiJS内存数据库介绍</a>
+      <a class="article-title" href="/2016/06/26/Array/">array</a>
     </h1>
   
 
@@ -273,22 +279,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>LokiJS 是纯 JavaScript 实现的内存数据库，面向文档，支持 Node.js，浏览器和 Cordova。LokiJS 坚持的信条就是性能永远是第一考虑因素。</p>
-<p>LokiJS 是：</p>
-<ul>
-<li>浏览器的 NoSQL 数据库，包括同步和持久化特性</li>
-<li>一个 Redis 类型的 npm 安装方式存储 store an npm install away</li>
-<li>Cordova 的持久化 NoSQL 数据库</li>
-<li>可嵌入的 NoSQL 数据库，支持 node-webkit 持久化存储</li>
-</ul>
-<p>LokiJS 理想的应用场景：</p>
+        <p>一、Array 在内存中的堆栈模型</p>
 <ol>
-<li>客户端内存数据库，比如 session 存储</li>
-<li>性能优先的应用</li>
-<li>cordova/phonegap 移动应用，利用 JavaScript 的特性来避免与原生数据库的交互</li>
-<li>浏览器页面加载的数据集</li>
-<li>node-webkit 桌面应用</li>
+<li>Array 的获取</li>
 </ol>
+<p>Javascript 中如何产生 Array：</p>
+<p>[element0, element1, …, elementN]</p>
+<p>new Array(element0, element1, …, elementN)<br>new Array(arrayLength)</p>
+<p>直接定义，或者通过构造函数创建一个 Array，当然也可以使用其他的手段：</p>
+<p>“array”.split(“”);<br>“array”.match(/a|r/g);</p>
+<p>等等，方式有很多。但是 Array 内部是个什么样的结构，恐怕很多人还不是很清楚。</p>
       
     </div>
     
@@ -296,14 +296,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LokiJS/">LokiJS</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/04/24/LokiJS内存数据库介绍/#more">more >></a>
+          <a  href="/2016/06/26/Array/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -322,11 +322,11 @@
 
 
   
-    <article id="post-observe.js " class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-jQuery插件类型" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/23/observe.js /" class="article-date">
-  	<time datetime="2016-04-22T16:00:00.000Z" itemprop="datePublished">2016-04-23</time>
+      <a href="/2016/06/25/jQuery插件类型/" class="article-date">
+  	<time datetime="2016-06-24T16:00:00.000Z" itemprop="datePublished">2016-06-25</time>
 </a>
     </div>
   
@@ -339,7 +339,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/23/observe.js /">observe.js</a>
+      <a class="article-title" href="/2016/06/25/jQuery插件类型/">jQuery插件</a>
     </h1>
   
 
@@ -348,9 +348,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>用于观察任意对象的任意变化的类库，以轻巧、实用、强大而闻名。</p>
-<p>对象字面量<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123; a: 1 &#125;;&#10;//watch obj&#10;observe(obj, function (name, value) &#123;&#10;&#9;console.log(name + &#34;__&#34; + value);//a__2  &#10;&#125;);&#10;obj.a = 2;</span><br></pre></td></tr></table></figure></p>
-<p>数组<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1, 2, 3]; //watch obj&#10;observe(arr, function (name, value, old) &#123;&#10;&#9;console.log(name + &#34;__&#34; + value+&#34;__&#34;+old);&#10;&#125;);&#10;arr.push(4);//array__push_4  &#10;arr[3] = 5;//3__5_4</span><br></pre></td></tr></table></figure></p>
+        <p>jQuery插件类型</p>
+<p>通过$.extend()向jQuery添加新的方法<br>常见用法:$.myPlugin().比较典型的有$.ajax()<br>定义形式及调用方法如下所示:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.extend(&#123;&#10;&#9;&#9;myPlugin : function(a, b)&#123;&#10;&#9;&#9;&#9;return a + b;&#10;&#9;&#9;&#125;&#10;&#125;)&#10;&#10;//&#31561;&#20215;&#20026;&#10;$.myPlugin = function(a, b)&#123;&#10; return a + b;&#10;&#125;&#10;&#9;&#10;//&#19978;&#38754;&#20004;&#31181;&#24418;&#24335;&#37117;&#26159;&#32473;$&#22686;&#21152;&#20102;&#19968;&#20010;&#26041;&#27861;&#10;//&#35843;&#29992;&#10;$.myPlugin(1, 2)//3</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -358,14 +358,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/observe-js/">observe.js</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jq/">jq</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/04/23/observe.js /#more">more >></a>
+          <a  href="/2016/06/25/jQuery插件类型/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -384,11 +384,11 @@
 
 
   
-    <article id="post-js dom" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-BASE64编码图片" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/23/js dom/" class="article-date">
-  	<time datetime="2016-04-22T16:00:00.000Z" itemprop="datePublished">2016-04-23</time>
+      <a href="/2016/06/25/BASE64编码图片/" class="article-date">
+  	<time datetime="2016-06-24T16:00:00.000Z" itemprop="datePublished">2016-06-25</time>
 </a>
     </div>
   
@@ -401,7 +401,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/23/js dom/">js dom</a>
+      <a class="article-title" href="/2016/06/25/BASE64编码图片/">BASE64</a>
     </h1>
   
 
@@ -410,10 +410,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>每个Window对象都有一个document属性指向Document<br>Document对象表示窗口的内容.</p>
-<ol>
-<li>获取文档元素<br>//ID<br>//返回<code>element</code><br>document.getElementById(‘ID_K’);<br>//Name<br>//返回NodeList<br>document.getElementsByName(“name_K”);<br>//根据标签<br>//返回HTMLCollection 在&lt;<JavaScript权威指南>&gt;第六版第367页中写的是返回NodeList,但是查了官网API是返回HTMLCollection的.<br>//因为HTML不区分大小写,所以这个也不区分大小写.<br>var first_p = document.getElementsTagName(“p”)[0];<br>first_p_span = first_p.getElementsTagName(“span”);<br>//通过Class<br>document.getElementsByClassName(“K container”);<br>//通过CSS选择器 返回NodeList<br>document.querySelectorAll(“#K div”);<br>document.querySelector(“#K div”);<br>//返回第一个匹配的.</li>
-</ol>
+        <p>BASE64编码图片</p>
+<p>由build任务执行的最后一个任务是把CSS文件中的小图片替换为Base64编码文件。通过这种方式把图片嵌入CSS文件中减少额外请求。如果图片不大这种做法会大大加快页面载入速度。</p>
+<p>我在网页上用了很多小尺寸图案因为我很不喜欢扁平化设计方法。现实世界不是扁平的。几乎找不到扁平的地方。总是存在结构，图案，阴影和光线。我使用的图案来自超棒的网站Subtle Pattern。它们有接近一百个非常棒的图案。</p>
+<p>载入背景图案的SCSS如下：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%pattern-light-grey &#123;&#10;  background-color: $background-color;&#10;  background-image: url(&#39;/assets/images/patterns/light_grey.png&#39;);&#10;  background-size: 301px 621px;&#10;&#125;&#10;&#10;body &#123;&#10;  @extend %pattern-light-grey;&#10;&#125;&#10;&#29983;&#25104;&#30340;CSS&#22914;&#19979;&#65306;&#10;&#10;body &#123;&#10;  background-color: #fdfdfd;&#10;  background-image: url(&#34;/assets/images/patterns/light_grey.png&#34;);&#10;  background-size: 301px 621px;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
       
     </div>
     
@@ -421,14 +421,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gulp/">gulp</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/04/23/js dom/#more">more >></a>
+          <a  href="/2016/06/25/BASE64编码图片/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -447,11 +447,11 @@
 
 
   
-    <article id="post-oracle node模块" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-arguments对象" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/22/oracle node模块/" class="article-date">
-  	<time datetime="2016-04-21T16:00:00.000Z" itemprop="datePublished">2016-04-22</time>
+      <a href="/2016/06/24/arguments对象/" class="article-date">
+  	<time datetime="2016-06-23T16:00:00.000Z" itemprop="datePublished">2016-06-24</time>
 </a>
     </div>
   
@@ -464,7 +464,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/22/oracle node模块/">oracle数据库</a>
+      <a class="article-title" href="/2016/06/24/arguments对象/">arguments对象</a>
     </h1>
   
 
@@ -473,7 +473,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var oracledb = require(&#39;oracledb&#39;);&#10;oracledb.getConnection( &#123;&#10;&#9;user : &#34;hr&#34;,&#10;&#9;password : &#34;welcome&#34;,&#10;&#9;connectString : &#34;localhost/XE&#34;&#10;&#125;,&#10;function(err, connection) &#123;&#10;&#9;if (err) &#123;&#10;&#9;console.error(err.message);&#10;&#9;return;&#10;&#9;&#125;&#10;&#9;connection.execute( &#34;SELECT department_id, department_name &#34; + &#34;FROM departments &#34; + &#34;WHERE department_id = :did&#34;, [180], function(err, result) &#123;&#10;&#9;&#9;if (err) &#123;&#10;&#9;&#9;&#9;console.error(err.message);&#10;&#9;&#9;return;&#10;&#9;&#9;&#125;&#10;&#9;&#9;console.log(result.rows);&#10;&#9;&#125;);&#10;&#125;);</span><br></pre></td></tr></table></figure>
+        <p>不定参数我们通常使用可变参函数来构造API，可变参函数可接受任意数量的参数。例如，<br>String.prototype.concat</p>
+<p>方法就可以接受任意数量的字符串参数。ES6提供了一种编写可变参函数的新方式——不定参数。<br>我们通过一个简单的可变参数函数containsAll给大家演示不定参数的用法。函数containsAll可以检查一个字符串中是否包含若干个子串，</p>
+<p>例如：<br>containsAll(“banana”, “b”, “nan”)<br>返回true，<br>containsAll(“banana”, “c”, “nan”)返回false。</p>
+<p>首先使用传统方法来实现这个函数：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function containsAll(haystack) &#123;&#10;  for (var i = 1; i &#60; arguments.length; i++) &#123;&#10;    var needle = arguments[i];&#10;    if (haystack.indexOf(needle) === -1) &#123;&#10;      return false;&#10;    &#125;&#10;  &#125;&#10;  return true;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
       
     </div>
     
@@ -481,14 +484,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oracle数据库/">oracle数据库</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/04/22/oracle node模块/#more">more >></a>
+          <a  href="/2016/06/24/arguments对象/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -507,11 +510,11 @@
 
 
   
-    <article id="post-模块化进化" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Javascript将图片的绝对路径转换为base64编码" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/21/模块化进化/" class="article-date">
-  	<time datetime="2016-04-20T16:00:00.000Z" itemprop="datePublished">2016-04-21</time>
+      <a href="/2016/06/23/Javascript将图片的绝对路径转换为base64编码/" class="article-date">
+  	<time datetime="2016-06-22T16:00:00.000Z" itemprop="datePublished">2016-06-23</time>
 </a>
     </div>
   
@@ -524,7 +527,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/21/模块化进化/">模块化进化</a>
+      <a class="article-title" href="/2016/06/23/Javascript将图片的绝对路径转换为base64编码/">图片的绝对路径转换为base64编码</a>
     </h1>
   
 
@@ -533,8 +536,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>传统用法<script src="lodjs.js"></script></p>
-<p>Bower<br>$ bower install lodjs<br>$ bower install git://github.com/yanhaijing/lodjs.git<br>快速上手定义模块使用lodJS的全局函数define定义一个模块，例如在 mod.js中有如下代码：<br>define(function () {<br>    return 123;<br>});</p>
+        <p>我们可以使用canvas.toDataURL的方法将图片的绝对路径转换为base64编码；在这我们引用的是淘宝首页一张图片如下：</p>
+<p>var img = “<a href="https://img.alicdn.com/bao/uploaded/TB1qimQIpXXXXXbXFXXSutbFXXX.jpg">https://img.alicdn.com/bao/uploaded/TB1qimQIpXXXXXbXFXXSutbFXXX.jpg</a>“;</p>
+<p>我们如下编写代码：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function getBase64Image(img) &#123;&#10;        var canvas = document.createElement(&#34;canvas&#34;);&#10;        canvas.width = img.width;&#10;        canvas.height = img.height;&#10;        var ctx = canvas.getContext(&#34;2d&#34;);&#10;        ctx.drawImage(img, 0, 0, img.width, img.height);&#10;        var ext = img.src.substring(img.src.lastIndexOf(&#34;.&#34;)+1).toLowerCase();&#10;        var dataURL = canvas.toDataURL(&#34;image/&#34;+ext);&#10;        return dataURL;&#10;&#125;&#10;var img = &#34;https://img.alicdn.com/bao/uploaded/TB1qimQIpXXXXXbXFXXSutbFXXX.jpg&#34;;&#10;var image = new Image();&#10;image.src = img;&#10;image.onload = function()&#123;&#10;    var base64 = getBase64Image(image);&#10;    console.log(base64);&#10;&#125;</span><br></pre></td></tr></table></figure></p>
       
     </div>
     
@@ -542,14 +546,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/04/21/模块化进化/#more">more >></a>
+          <a  href="/2016/06/23/Javascript将图片的绝对路径转换为base64编码/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -568,11 +572,11 @@
 
 
   
-    <article id="post-css动画库" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Ajax" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/21/css动画库/" class="article-date">
-  	<time datetime="2016-04-20T16:00:00.000Z" itemprop="datePublished">2016-04-21</time>
+      <a href="/2016/06/22/Ajax/" class="article-date">
+  	<time datetime="2016-06-21T16:00:00.000Z" itemprop="datePublished">2016-06-22</time>
 </a>
     </div>
   
@@ -585,7 +589,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/21/css动画库/">css动画库</a>
+      <a class="article-title" href="/2016/06/22/Ajax/">ajax</a>
     </h1>
   
 
@@ -594,13 +598,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ol>
-<li>Animate.cssAnimate.css 是当前最流行、最易用的CSS动画库。把Animate 库应用到你的项目中就如同为你项目中的元素添加一个类名这样简单。你也可以通过jQuery的事件来调用动画。</li>
-</ol>
-<p>Animate.css 是当前最流行、应用最广的CSS动画库，压缩后体积非常小，也可用于移动站点。就我个人而言，我觉得这是我所遇到的最好的动画库之一，我强烈推荐你在下一个项目中使用这个库。</p>
-<ol>
-<li>Bounce.jsBounce.js是一种工具和JavaScript库，专注于为你的网站提供独特的弹性CSS动画。</li>
-</ol>
+        <p>输入参数<br>首先，我们定义一个Ajax函数，并设置了一些输入参数。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function ajax(options)&#123;&#10;&#10;    var url = options.url || &#34;&#34;, //&#35831;&#27714;&#30340;&#38142;&#25509;&#10;        type = (options.type || &#34;get&#34;).toLowerCase(), //&#35831;&#27714;&#30340;&#26041;&#27861;,&#40664;&#35748;&#20026;get&#10;        data = options.data || null, //&#35831;&#27714;&#30340;&#25968;&#25454;&#10;        contentType = options.contentType || &#34;&#34;, //&#35831;&#27714;&#22836;&#10;        dataType = options.dataType || &#34;&#34;, //&#35831;&#27714;&#30340;&#31867;&#22411;&#10;        async = options.async === undefined &#38;&#38; true, //&#26159;&#21542;&#24322;&#27493;&#65292;&#40664;&#35748;&#20026;true.&#10;        timeOut = options.timeOut, //&#36229;&#26102;&#26102;&#38388;&#12290; &#10;        before = options.before || function()&#123;&#125;, //&#21457;&#36865;&#20043;&#21069;&#25191;&#34892;&#30340;&#20989;&#25968;&#10;        error = options.error || function()&#123;&#125;, //&#38169;&#35823;&#25191;&#34892;&#30340;&#20989;&#25968;&#10;        success = options.success || function() &#123;&#125;; //&#35831;&#27714;&#25104;&#21151;&#30340;&#22238;&#35843;&#20989;&#25968;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
       
     </div>
     
@@ -608,14 +606,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/04/21/css动画库/#more">more >></a>
+          <a  href="/2016/06/22/Ajax/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -634,11 +632,11 @@
 
 
   
-    <article id="post-script异步加载" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-电商接口" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/19/script异步加载/" class="article-date">
-  	<time datetime="2016-04-18T16:00:00.000Z" itemprop="datePublished">2016-04-19</time>
+      <a href="/2016/06/20/电商接口/" class="article-date">
+  	<time datetime="2016-06-19T16:00:00.000Z" itemprop="datePublished">2016-06-20</time>
 </a>
     </div>
   
@@ -651,7 +649,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/19/script异步加载/">script异步加载</a>
+      <a class="article-title" href="/2016/06/20/电商接口/">一些接口</a>
     </h1>
   
 
@@ -660,20 +658,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>DOM 渲染流程要理解异步脚本载入的用处首先要了解浏览器渲染DOM的流程，以及各阶段用户体验的差别。 一般地，一个包含外部样式表文件和外部脚本文件的HTML载入和渲染过程是这样的：</p>
-<ol>
-<li>浏览器下载HTML文件并开始解析DOM。</li>
-<li>遇到样式表文件link[rel=stylesheet]时，将其加入资源文件下载队列，继续解析DOM。</li>
-<li>遇到脚本文件时，暂停DOM解析并立即下载脚本文件。</li>
-<li>下载结束后立即执行脚本，在脚本中可访问当前<script>以上的DOM。</li>
-<li>脚本执行结束，继续解析DOM。</li>
-<li>整个DOM解析完成，触发DOMContentLoaded事件。</li>
-</ol>
-<p>上述步骤只是大致的描述，你可能还会关心下面两个问题：</p>
-<ul>
-<li>资源文件下载队列。样式表、图片等资源文件的下载不会暂停DOM解析。浏览器会并行地下载这些文件，但通常会限制并发下载数，一般为3-5个。可以在开发者工具的Network标签页中看到。</li>
-<li>执行脚本文件前，浏览器可能会等待该<script>之前的样式下载完成并渲染结束。</li>
-</ul>
+        <p>电商接口</p>
+<p>京东获取单个商品价格接口：<br><a href="http://p.3.cn/prices/mgets?skuIds=J_商品ID&amp;type=1">http://p.3.cn/prices/mgets?skuIds=J_商品ID&amp;type=1</a><br>ps:商品ID这么获取:<a href="http://item.jd.com/954086.html">http://item.jd.com/954086.html</a></p>
+<p>物流接口</p>
+<p>快递接口：<br><a href="http://www.kuaidi100.com/query?type=快递公司代号&amp;postid=快递单号">http://www.kuaidi100.com/query?type=快递公司代号&amp;postid=快递单号</a><br>ps:快递公司编码:申通=”shentong” EMS=”ems” 顺丰=”shunfeng” 圆通=”yuantong” 中通=”zhongtong” 韵达=”yunda” 天天=”tiantian” 汇通=”huitongkuaidi” 全峰=”quanfengkuaidi” 德邦=”debangwuliu” 宅急送=”zhaijisong”</p>
+<p>谷歌接口</p>
+<p>FeedXml转json接口：<br><a href="http://ajax.googleapis.com/ajax/services/feed/load?q=Feed地址&amp;v=1.0">http://ajax.googleapis.com/ajax/services/feed/load?q=Feed地址&amp;v=1.0</a><br>备选参数:callback：&amp;callback=foo就会在json外面嵌套foo({})方便做jsonp使用。<br>备选参数:n：返回多少条记录。</p>
       
     </div>
     
@@ -681,14 +671,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其他/">其他</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/04/19/script异步加载/#more">more >></a>
+          <a  href="/2016/06/20/电商接口/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -707,11 +697,11 @@
 
 
   
-    <article id="post-StackBlur高斯模糊的效果库" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-状态代码" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/18/StackBlur高斯模糊的效果库/" class="article-date">
-  	<time datetime="2016-04-17T16:00:00.000Z" itemprop="datePublished">2016-04-18</time>
+      <a href="/2016/06/18/状态代码/" class="article-date">
+  	<time datetime="2016-06-17T16:00:00.000Z" itemprop="datePublished">2016-06-18</time>
 </a>
     </div>
   
@@ -724,7 +714,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/18/StackBlur高斯模糊的效果库/">StackBlur高斯模糊的效果库</a>
+      <a class="article-title" href="/2016/06/18/状态代码/">http状态码</a>
     </h1>
   
 
@@ -733,11 +723,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>StackBlur.js 是 Mario Klingemann 创建的一个快速的、接近高斯模糊的效果库。</p>
-<p>NPM / Browserify使用 NPM 包管理器，安装包：<br>npm install –save stackblur-canvas</p>
-<p>在你需要的地方引用<br>var StackBlur = require(“stackblur-canvas”);</p>
-<p>Bower要使用 Bower package，安装包：<br>bower install stackblur-canvas</p>
-<p>然后在你的 HTML 页面中引入 dist/stackblur.js 或者 dist/stackblur.min.js 文件：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;script src=&#34;bower_components/stackblur-canvas/dist/stackblur.js&#34;&#62;&#60;/script&#62;</span><br></pre></td></tr></table></figure></p>
+        <p>100    Continue    初始的请求已经接受，客户应当继续发送请求的其余部分。（HTTP 1.1新）</p>
+<p>101    Switching Protocols    服务器将遵从客户的请求转换到另外一种协议（HTTP 1.1新）</p>
+<p>200    OK    一切正常，对GET和POST请求的应答文档跟在后面。</p>
+<p>201    Created    服务器已经创建了文档，Location头给出了它的URL。</p>
+<p>202    Accepted    已经接受请求，但处理尚未完成。</p>
+<p>203    Non-Authoritative Information<br>文档已经正常地返回，但一些应答头可能不正确，因为使用的是文档的拷贝（HTTP 1.1新）。</p>
+<p>204    No Content    没有新文档，浏览器应该继续显示原来的文档。如果用户定期地刷新页面，而Servlet可以确定用户文档足够新，这个状态代码是很有用的。</p>
       
     </div>
     
@@ -745,14 +737,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/StackBlur/">StackBlur</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/http/">http</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/04/18/StackBlur高斯模糊的效果库/#more">more >></a>
+          <a  href="/2016/06/18/状态代码/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -773,7 +765,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 </div>

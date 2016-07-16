@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>gulp 常用插件 | Jar-R</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="例子一1&amp;#39;use strict&amp;#39;;&amp;#10;&amp;#10;var gulp        = require(&amp;#39;gulp&amp;#39;),&amp;#10;    browserSync = require(&amp;#39;browser-sync&amp;#39;).create(),&amp;#10;    SSI         = require(&amp;#39;browsersync-ssi&amp;#39;),&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gulp 常用插件">
+<meta property="og:url" content="http://Jarweb.com/2016/07/06/gulp 常用插件/index.html">
+<meta property="og:site_name" content="Jar-R">
+<meta property="og:description" content="例子一1&amp;#39;use strict&amp;#39;;&amp;#10;&amp;#10;var gulp        = require(&amp;#39;gulp&amp;#39;),&amp;#10;    browserSync = require(&amp;#39;browser-sync&amp;#39;).create(),&amp;#10;    SSI         = require(&amp;#39;browsersync-ssi&amp;#39;),&amp;">
+<meta property="og:updated_time" content="2016-07-16T15:14:43.495Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="gulp 常用插件">
+<meta name="twitter:description" content="例子一1&amp;#39;use strict&amp;#39;;&amp;#10;&amp;#10;var gulp        = require(&amp;#39;gulp&amp;#39;),&amp;#10;    browserSync = require(&amp;#39;browser-sync&amp;#39;).create(),&amp;#10;    SSI         = require(&amp;#39;browsersync-ssi&amp;#39;),&amp;">
+  
+    <link rel="alternative" href="/atom.xml" title="Jar-R" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">任先生在路上</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle" style="margin-bottom:20px;">Good things are coming !</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">列表</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger" style="display:none;"></div>
+  		<h1 class="header-author js-mobile-header hide">任先生在路上</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">任先生在路上</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Good things are coming !</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">列表</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-gulp 常用插件" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/06/gulp 常用插件/" class="article-date">
+  	<time datetime="2016-07-05T16:00:00.000Z" itemprop="datePublished">2016-07-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      gulp 常用插件
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gulp/">gulp</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>例子一<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#39;use strict&#39;;&#10;&#10;var gulp        = require(&#39;gulp&#39;),&#10;    browserSync = require(&#39;browser-sync&#39;).create(),&#10;    SSI         = require(&#39;browsersync-ssi&#39;),&#10;    concat      = require(&#39;gulp-concat&#39;),&#10;    minify      = require(&#39;gulp-minify&#39;),&#10;    plumber     = require(&#39;gulp-plumber&#39;),&#10;    sass        = require(&#39;gulp-sass&#39;),&#10;    zip         = require(&#39;gulp-zip&#39;);&#10;&#10;&#10;gulp.task(&#39;serve&#39;, function() &#123;&#10;&#10;    browserSync.init(&#123;&#10;        server: &#123;&#10;            baseDir:[&#34;./dist&#34;],&#10;            middleware:SSI(&#123;&#10;                baseDir:&#39;./dist&#39;,&#10;                ext:&#39;.shtml&#39;,&#10;                version:&#39;2.10.0&#39;&#10;            &#125;)&#10;        &#125;&#10;    &#125;);&#10;&#10;    gulp.watch(&#34;app/scss/**/*.scss&#34;, [&#39;sass&#39;]);&#10;    gulp.watch(&#34;app/scripts/**/*.js&#34;, [&#39;js&#39;]);&#10;    gulp.watch(&#34;app/**/*.html&#34;, [&#39;html&#39;]);&#10;    gulp.watch(&#34;dist/**/*.html&#34;).on(&#34;change&#34;,browserSync.reload);&#10;&#125;);&#10;&#10;// Compile sass into CSS &#38; auto-inject into browsers&#10;gulp.task(&#39;sass&#39;, function() &#123;&#10;    &#10;    return gulp.src(&#34;app/scss/**/*.scss&#34;)&#10;        .pipe(plumber())&#10;        .pipe(sass.sync().on(&#39;error&#39;, sass.logError))&#10;        .pipe(sass(&#123;outputStyle:&#34;compact&#34;&#125;))&#10;        .pipe(gulp.dest(&#34;dist/styles&#34;))&#10;        .pipe(browserSync.stream());&#10;&#125;); &#10;&#10;// javscript files operate&#10;gulp.task(&#39;js&#39;, function()&#123;&#10;    return gulp.src(&#39;app/scripts/**/*.js&#39;)&#10;        .pipe(plumber())&#10;        .pipe(minify())&#10;        .pipe(gulp.dest(&#34;dist/scripts&#34;))&#10;        .pipe(browserSync.stream());&#10;&#125;);&#10;&#10;gulp.task(&#39;html&#39;, function() &#123;&#10;    &#10;    return gulp.src(&#34;app/*.html&#34;)&#10;        .pipe(plumber())        &#10;        .pipe(gulp.dest(&#34;dist/&#34;))&#10;        .pipe(browserSync.stream());&#10;&#125;);&#10;&#10;// publish&#10;gulp.task(&#39;publish&#39;, function()&#123;&#10;    return gulp.src(&#39;dist/**/*&#39;)&#10;        .pipe(plumber())&#10;        .pipe(zip(&#39;publish.zip&#39;))&#10;        .pipe(gulp.dest(&#39;release&#39;))&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>例子二<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var gulp = require(&#39;gulp&#39;);&#10;var jade = require(&#39;gulp-jade&#39;);&#10;var styl = require(&#39;gulp-stylus&#39;);&#10;var babel = require(&#39;gulp-babel&#39;);&#10;var minify = require(&#39;gulp-minify-css&#39;);&#10;var uglify = require(&#39;gulp-uglify&#39;);&#10;var imagemin = require(&#39;gulp-imagemin&#39;);&#10;var utf8convert = require(&#39;gulp-utf8-convert&#39;);&#10;var bom = require(&#39;gulp-bom&#39;);&#10;var dirname = __dirname;&#10;/*browser-sync*/&#10;var browserSync = require(&#39;browser-sync&#39;).create();&#10;var reload = browserSync.reload;&#10;&#10;gulp.task(&#39;html&#39;, [&#39;img&#39;], function()&#123;&#10;    gulp.src(dirname + &#39;/src/html/**/*.html&#39;)&#10;        .pipe(gulp.dest(dirname + &#39;/build/html&#39;));&#10;&#125;);&#10;gulp.task(&#39;jade&#39;, [&#39;img&#39;], function()&#123;&#10;    gulp.src(dirname + &#39;/src/jade/**/*.jade&#39;)&#10;        .pipe(jade(&#123;pretty: true&#125;))&#10;        .pipe(gulp.dest(dirname + &#39;/build/html&#39;));&#10;&#125;);&#10;gulp.task(&#39;css&#39;, [&#39;img&#39;], function()&#123;&#10;    gulp.src(dirname + &#39;/src/css/**/*.css&#39;)&#10;        //.pipe(minify())&#10;        .pipe(utf8convert())&#10;        .pipe(gulp.dest(dirname + &#39;/build/css&#39;));&#10;&#125;);&#10;gulp.task(&#39;styl&#39;, [&#39;img&#39;], function()&#123;&#10;    gulp.src(dirname + &#39;/src/styl/**/*.styl&#39;)&#10;        .pipe(styl())&#10;        //.pipe(minify())&#10;        .pipe(utf8convert())&#10;        .pipe(gulp.dest(dirname + &#39;/build/css&#39;));&#10;&#125;);&#10;gulp.task(&#39;js&#39;, function()&#123;&#10;    gulp.src(dirname + &#39;/src/js/**/*.js&#39;)&#10;        //.pipe(uglify())&#10;        .pipe(utf8convert())&#10;        .pipe(bom())&#10;        .pipe(gulp.dest(dirname + &#39;/build/js&#39;));&#10;&#125;);&#10;gulp.task(&#39;ecma6&#39;, function()&#123;&#10;    gulp.src(dirname + &#39;/src/es/**/*.js&#39;)&#10;        .pipe(babel(&#123;presets: [&#39;es2015&#39;]&#125;))&#10;        //.pipe(uglify())&#10;        .pipe(utf8convert())&#10;        .pipe(bom())&#10;        .pipe(gulp.dest(dirname + &#39;/build/js&#39;));&#10;&#125;);&#10;&#10;gulp.task(&#39;img&#39;, function()&#123;&#10;    gulp.src(dirname + &#39;/src/img/**/*.*&#39;)&#10;        .pipe(imagemin())&#10;        .pipe(gulp.dest(dirname + &#39;/build/img&#39;));&#10;&#125;);&#10;&#10;/*browser-sync*/&#10;gulp.task(&#39;reload&#39;, function()&#123;&#10;    browserSync.reload();&#10;&#125;);&#10;gulp.task(&#39;browser-sync&#39;, function() &#123;&#10;    browserSync.init(&#123;&#10;        server: &#123;&#10;            baseDir: &#34;./build/&#34;,&#10;            index: &#34;html/index.html&#34;&#10;        &#125;,&#10;        files: &#39;./build/&#39;,&#10;        startPath: &#39;html/index.html&#39;&#10;    &#125;);&#10;    gulp.watch(dirname + &#39;/src/html/**/*.html&#39;, [&#39;html&#39;, &#39;reload&#39;]);&#10;    gulp.watch(dirname + &#39;/src/jade/**/*.jade&#39;, [&#39;jade&#39;, &#39;reload&#39;]);&#10;    gulp.watch(dirname + &#39;/src/css/**/*.css&#39;, [&#39;css&#39;, &#39;reload&#39;]);&#10;    gulp.watch(dirname + &#39;/src/styl/**/*.styl&#39;, [&#39;styl&#39;, &#39;reload&#39;]);&#10;    gulp.watch(dirname + &#39;/src/js/**/*.js&#39;, [&#39;js&#39;, &#39;reload&#39;]);&#10;    gulp.watch(dirname + &#39;/src/es/**/*.js&#39;, [&#39;ecma6&#39;, &#39;reload&#39;]);&#10;&#125;);&#10;&#10;gulp.task(&#39;default&#39;, [&#39;html&#39;, &#39;jade&#39;, &#39;css&#39;, &#39;styl&#39;, &#39;js&#39;, &#39;ecma6&#39;, &#39;img&#39;, &#39;browser-sync&#39;]);</span><br></pre></td></tr></table></figure></p>
+<p>例子三<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var gulp = require(&#39;gulp&#39;);&#10;var coffee = require(&#39;gulp-coffee&#39;);&#10;var concat = require(&#39;gulp-concat&#39;);&#10;var uglify = require(&#39;gulp-uglify&#39;);&#10;var imagemin = require(&#39;gulp-imagemin&#39;);&#10;var sourcemaps = require(&#39;gulp-sourcemaps&#39;);&#10;var del = require(&#39;del&#39;);&#10;&#10;var paths = &#123;&#10;  scripts: [&#39;client/js/**/*.coffee&#39;, &#39;!client/external/**/*.coffee&#39;],&#10;  images: &#39;client/img/**/*&#39;&#10;&#125;;&#10;&#10;// Not all tasks need to use streams&#10;// A gulpfile is just another node program and you can use any package available on npm&#10;gulp.task(&#39;clean&#39;, function() &#123;&#10;  // You can use multiple globbing patterns as you would with `gulp.src`&#10;  return del([&#39;build&#39;]);&#10;&#125;);&#10;&#10;gulp.task(&#39;scripts&#39;, [&#39;clean&#39;], function() &#123;&#10;  // Minify and copy all JavaScript (except vendor scripts)&#10;  // with sourcemaps all the way down&#10;  return gulp.src(paths.scripts)&#10;    .pipe(sourcemaps.init())&#10;      .pipe(coffee())&#10;      .pipe(uglify())&#10;      .pipe(concat(&#39;all.min.js&#39;))&#10;    .pipe(sourcemaps.write())&#10;    .pipe(gulp.dest(&#39;build/js&#39;));&#10;&#125;);&#10;&#10;// Copy all static images&#10;gulp.task(&#39;images&#39;, [&#39;clean&#39;], function() &#123;&#10;  return gulp.src(paths.images)&#10;    // Pass in options to the task&#10;    .pipe(imagemin(&#123;optimizationLevel: 5&#125;))&#10;    .pipe(gulp.dest(&#39;build/img&#39;));&#10;&#125;);&#10;&#10;// Rerun the task when a file changes&#10;gulp.task(&#39;watch&#39;, function() &#123;&#10;  gulp.watch(paths.scripts, [&#39;scripts&#39;]);&#10;  gulp.watch(paths.images, [&#39;images&#39;]);&#10;&#125;);&#10;&#10;// The default task (called when you run `gulp` from cli)&#10;gulp.task(&#39;default&#39;, [&#39;watch&#39;, &#39;scripts&#39;, &#39;images&#39;]);</span><br></pre></td></tr></table></figure></p>
+<p>例子四<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var gulp = require(&#39;gulp&#39;);&#10;var concat = require(&#39;gulp-concat&#39;);&#10;var order = require(&#39;gulp-order&#39;);&#10;var uglify = require(&#39;gulp-uglify&#39;);&#10;var autopolyfiller = require(&#39;gulp-autopolyfiller&#39;);&#10;var merge = require(&#39;event-stream&#39;).merge;&#10;&#10;gulp.task(&#39;default&#39;, function () &#123;&#10;    // Concat all required js files&#10;    var all = gulp.src(&#39;js/*.js&#39;)&#10;        .pipe(concat(&#39;all.js&#39;));&#10;&#10;    // Generate polyfills for all files&#10;    var polyfills = all&#10;        .pipe(autopolyfiller(&#39;polyfills.js&#39;));&#10;&#10;    // Merge polyfills and all files streams&#10;    return merge(polyfills, all)&#10;        // Order files. NB! polyfills MUST be first&#10;        .pipe(order([&#10;            &#39;polyfills.js&#39;,&#10;            &#39;all.js&#39;&#10;        ]))&#10;        // Make single file&#10;        .pipe(concat(&#39;all.min.js&#39;))&#10;        // Uglify it&#10;        .pipe(uglify())&#10;        // And finally write `all.min.js` into `build/` dir&#10;        .pipe(gulp.dest(&#39;build&#39;));&#10;&#125;);&#10;&#10;&#25110;&#32773;&#10;var autopolyfiller = require(&#39;gulp-autopolyfiller&#39;);&#10;gulp.src(&#39;./your/js/**/*.js&#39;)&#10;    .pipe(autopolyfiller(&#39;result_polyfill_file.js&#39;, &#123;&#10;        browsers: [&#39;last 2 version&#39;, &#39;ie 8&#39;, &#39;ie 9&#39;]&#10;    &#125;))&#10;    .pipe(gulp.dest(&#39;./dist&#39;));&#10;&#10;&#25110;&#32773;&#10;var autopolyfiller = require(&#39;gulp-autopolyfiller&#39;);&#10;gulp.src(&#39;./your/js/**/*.js&#39;)&#10;    .pipe(autopolyfiller(&#39;result_polyfill_file.js&#39;, &#123;&#10;        browsers: require(&#39;autoprefixer&#39;).default&#10;    &#125;))&#10;    .pipe(gulp.dest(&#39;./dist&#39;));&#10;&#10;&#10;&#25110;&#32773;&#10;var autopolyfiller = require(&#39;gulp-autopolyfiller&#39;);&#10;gulp.src(&#39;./your/js/**/*.js&#39;)&#10;    .pipe(autopolyfiller(&#39;polyfills_without_promises.js&#39;, &#123;&#10;        exclude: [&#39;Promise&#39;]&#10;    &#125;))&#10;    .pipe(gulp.dest(&#39;./dist&#39;));</span><br></pre></td></tr></table></figure></p>
+<p>插件列表：<br>gulp 插件基于 nodejs ，安装一个Gulp 插件和安装普通 Nodejs 包的方法是一样的。只需  $npm –save-dev install 插件名  就可以完成安装。</p>
+<p>1、gulp-sass<br>预编译 sass 文件为 css 文件，SASS 不多说，如果项目中有使用 sass ，那么这个插件应该是必备的。前面的一篇文章中，已经对该插件有所使用了，可配置编译后输出风格、是否输出sourcemap 等常用选项。类似的项目还有 gulp-scss / gulp-sassdoc / compass</p>
+<p>安装： $npm install –save-dev gulp-sass</p>
+<p>文档：<a href="https://www.npmjs.com/package/gulp-sass/" target="_blank" rel="external">https://www.npmjs.com/package/gulp-sass/</a></p>
+<p>2、browser-sync<br>保持多浏览器、多设备同步、在前端开发是非常有用，可谓是必备组件。</p>
+<p>安装：npm install browser-sync</p>
+<p>文档：<a href="http://www.browsersync.io" target="_blank" rel="external">http://www.browsersync.io</a></p>
+<p>3、gulp-imagemin<br>压缩 png/jpg/git/svg 格式图片文件</p>
+<p>安装：$ npm install –save-dev gulp-imagemin</p>
+<p>文档：github.com/sindresorhus/gulp-imagemin</p>
+<p>4、gulp-gzip<br>Gzip 插件</p>
+<p>安装：npm install gulp-gzip</p>
+<p>文档：github.com/jstuckey/gulp-gzip</p>
+<p>5、gulp-inject<br>一个 js/css/webComponet注入插件，browser-sync里面继承了该组件，如果使用browser-sync就不必要再单独安装gulp-inject了</p>
+<p>安装：npm install gulp-inject</p>
+<p>文档：github.com/klei/gulp-inject</p>
+<p>6、gulp-markdown<br>markdown 不用多说，这个基本上都要用到。</p>
+<p>安装：npm install gulp-markdown</p>
+<p>文档：github.com/sindresorhus/gulp-markdown</p>
+<p>7、gulp-plumber<br>错误处理插件，如果不希望总是因为错误而中断任务的话，那么它几乎是必备组件。</p>
+<p>安装：npm install gulp-plumber</p>
+<p>文档：github.com/floatdrop/gulp-plumber</p>
+<p>8、gulp-minify-css<br>压缩CSS文件，几乎也是必备</p>
+<p>安装：npm install gulp-minify-css</p>
+<p>文档：github.com/murphydanger/gulp-minify-css</p>
+<p>9、gulp-rename<br>重命名文件的插件，当要把一个文件存储为不同版本时可以使用。比如在需要一个style.css同时你有需要一个style.min.css</p>
+<p>安装：npm install gulp-rename</p>
+<p>文档：github.com/hparra/gulp-rename</p>
+<p>10、gulp-concat<br>顾名思义，用来整合文件用的。很常用</p>
+<p>安装：npm install gulp-concat</p>
+<p>文档：github.com/wearefractal/gulp-concat</p>
+<p>更多插件：<br>HTML&amp;CSS：</p>
+<p>autoprefixer<br>parse CSS and add vendor prefixes to rules by Can I Use.</p>
+<p>gulp-browser-sync<br>keep multiple browsers &amp; devices in sync when building websites.</p>
+<p>gulp-useref<br>parse build blocks in HTML files to replace references to non-optimized scripts or stylesheets.</p>
+<p>gulp-email-design<br>a workflow for designing and testing HTML email templates.</p>
+<p>gulp-uncss<br>remove unused CSS from your projects.</p>
+<p>gulp-csso<br>very cool CSS minificator. In addition, there are many CSS optimizers and benchmark tests (GitHub) for them. But recently I saw most powerful Shorthand utility without Gulp, which does folowing:</p>
+<p>a {<br>    font-family: Arial;<br>    font-style: italic;<br>    font-size: 14px;<br>    line-height: 18px;<br>    font-weight: bold;<br>    background-image: url(‘example.png’);<br>    background-color: red;<br>    background-size: cover;<br>    background-repeat: no-repeat;<br>}</p>
+<p>=&gt;</p>
+<p>a {<br>  font: italic bold 14px/18px Arial;<br>  background: red url(‘example.png’) no-repeat / cover;<br>}</p>
+<p>gulp-htmlmin<br>neat HTML minificator.</p>
+<p>gulp-csscomb<br>refines the structure of your CSS.</p>
+<p>gulp-csslint<br>CSS linter.</p>
+<p>gulp-htmlhint<br>HTML validator.</p>
+<p>gulp-processhtml<br>Process html files at build time to modify them as you wish.</p>
+<p>JavaScript：</p>
+<p>gulp-autopolyfiller<br>precise polyfills. This is like Autoprefixer, but for JavaScript polyfills.</p>
+<p>gulp-babel<br>transpiler for writing next generation JavaScript.</p>
+<p>gulp-jsfmt<br>for formatting, searching, and rewriting JavaScript.</p>
+<p>gulp-jscs<br>for checking JavaScript Code Style.</p>
+<p>gulp-modernizr<br>build out a lean, mean Modernizr machine.</p>
+<p>gulp-express<br>start (and supervise) an Express.js web server using, works well with socket.io</p>
+<p>gulp-requirejs and gulp-browserify<br>optimize the work with RequireJS and Browserify respectively.</p>
+<p>gulp-plato<br>generate static analysis reports.</p>
+<p>gulp-complexity<br>evaluates code maintainability using Halstead and Cyclomatic metrics.</p>
+<p>fixmyjs<br>automatically fix silly lint errors with help of JSHint (gulp-jshint).</p>
+<p>gulp-jscpd<br>copy/paste detector for programming source code.</p>
+<p>gulp-buddy.js<br>magic number detection for javascript.</p>
+<p>gulp-jsonlint<br>JSON validator.</p>
+<p>gulp-uglify<br>JavaScript compressor.</p>
+<p>gulp-concat<br>concatenate files.</p>
+<p>Unit Tests：</p>
+<p>gulp-nodeunit<br>gulp-jasmine<br>gulp-qunit<br>gulp-mocha<br>gulp-karma</p>
+<p>Graphics：</p>
+<p>gulpicon<br>mystical CSS icon solution.</p>
+<p>gulp-iconfont<br>SVG to webfont converter.</p>
+<p>gulp-responsive<br>produce images at different sizes for responsive websites.</p>
+<p>gulp-sharp<br>fastest module for work JPEG, PNG, WebP and TIFF images.</p>
+<p>gulp-svgstore<br>merge SVGs from a folder.</p>
+<p>gulp-imacss<br>application and library that transforms image files to data URIs.</p>
+<p>gulp-imagemin и gulp-tinypng or fimage compression.</p>
+<p>gulp-spritesmith<br>converting a set of images into a spritesheet and corresponding CSS variables.</p>
+<p>Others:</p>
+<p>gulp-grunt<br>able to run Grunt tasks from Gulp.</p>
+<p>gulp-watch<br>run tasks whenever watched files change.</p>
+<p>gulp-notify<br>automatic error messages in system notifications center when Gulp tasks fail.</p>
+<p>gulp-git<br>able to use Git commands.</p>
+<p>gulp-jsdoc<br>generate JavaScript documentation by running JSDoc3.</p>
+<p>gulp-rev<br>static file asset revisioning through content hashing.</p>
+<p>gulp-bump<br>increments versions in package JSON and gulp-update, which automatically updates packages.</p>
+<p>gulp-bower-files<br>inject Bower packages.</p>
+<p>gulp-removelogs<br>remove console logging statements.</p>
+<p>gulp-preprocess<br>preprocess files based off environment configuration.</p>
+<p>gulp-duration<br>displays the elapsed execution time of Gulp tasks.</p>
+<p>gulp-changed and gulp-newer<br>run Gulp tasks with only those source files modified since the last successful run.</p>
+<p>gulp-connect<br>simple static web server.</p>
+<p>gulp-shell<br>run Shell commands.</p>
+<p>gulp-ssh<br>provides the ability to connect via SSH and SFTP.</p>
+<p>gulp-zip<br>compress files and folders..</p>
+<p>gulp-clean and gulp-copy<br>respectively remove and copy sources.</p>
+<p>gulp-replace<br>Search and replace strings in text files.</p>
+<p>gulp-filesize<br>displays sizes of files in a readable format.</p>
+<p>gulp-util<br>utilities for developing Gulp plugins.</p>
+<p>Compilers:</p>
+<p>gulp-less<br>LESS in CSS.</p>
+<p>gulp-sass<br>SASS/SCSS in СSS.</p>
+<p>gulp-compass<br>SASS with Compass in CSS.</p>
+<p>gulp-stylus<br>Stylus in CSS.</p>
+<p>gulp-coffee<br>CoffeeScript in JavaScript.</p>
+<p>gulp-typescript<br>TypeScript in JavaScript.</p>
+<p>gulp-jade<br>Jade in HTML.</p>
+<p>gulp-handlebars<br>Handlebars templates in JST.</p>
+<p>gulp-jst<br>Underscore templates in JST.</p>
+<p>gulp-react<br>Facebook React’s JSX templates in JST.</p>
+<p>gulp-nunjucks<br>Nunjucks templates in JST.</p>
+<p>gulp-dustjs<br>Dust templates in JST.</p>
+<p>gulp-angular-templatecache<br>AngularJS templates in JST.</p>
+<p><a href="https://github.com/Pestov/essential-gulp-plugins" target="_blank" rel="external">https://github.com/Pestov/essential-gulp-plugins</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/07/07/JavaScript学习笔记：数组去重/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          数组去重
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/07/04/labjs/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">labjs</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div>&copy; 2016 任先生在路上 的博客 , 技术 
+        <a href="http://hexo.io/" target="_blank">Hexo</a>  
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
