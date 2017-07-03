@@ -124,11 +124,11 @@
 
       <div class="body-wrap">
   
-    <article id="post-原型链" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-9" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/31/原型链/" class="article-date">
-  	<time datetime="2016-03-30T16:00:00.000Z" itemprop="datePublished">2016-03-31</time>
+      <a href="/2016/01/12/9/" class="article-date">
+  	<time datetime="2016-01-11T16:00:00.000Z" itemprop="datePublished">2016-01-12</time>
 </a>
     </div>
   
@@ -141,7 +141,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/31/原型链/">原型链</a>
+      <a class="article-title" href="/2016/01/12/9/">http协议 状态码</a>
     </h1>
   
 
@@ -150,132 +150,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Function.<strong>proto</strong> === Object.prototype // false<br>擦，假设失败了呢，让我们来看看为什么不对，Function.<strong>proto</strong>到底指哪去了<br>Function.<strong>proto</strong> === Function.prototype //true<br>原来指向自己的prototype了呢，那就意味着…<br>Function instanceof Function //true<br>yes，然而 Function instanceof Object似乎也能解释了<br>Function.<strong>proto</strong> === Function.prototype Function.<strong>proto</strong>.<strong>proto</strong> === Object.prototype </p>
-<p>所以如果我们让<br>Function.<strong>proto</strong>.<strong>proto</strong> = null Function instanceof Object //false<br>这回知道为什么不要用 <strong>proto</strong> 了吧，一不小心重写了会导致所有继承自它的对象都受影响。<br>为了养成良好的习惯，实际项目最好使用 getPrototypeOf 取原型链，这里只是为了方便我采用<strong>proto</strong></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/03/31/原型链/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-原型继承" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/30/原型继承/" class="article-date">
-  	<time datetime="2016-03-29T16:00:00.000Z" itemprop="datePublished">2016-03-30</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/30/原型继承/">原型继承</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;&#125;; &#10;console.log(a.prototype); &#10;//=&#62; undefined &#10;var b = function()&#123;&#125;; &#10;console.log(b.prototype); &#10;//=&#62; &#123;&#125; &#10;var c = &#39;Hello&#39;; &#10;console.log(c.prototype); &#10;/=&#62; undefined</span><br></pre></td></tr></table></figure>
-<p>prototype是每个function定义时自带的属性，但是Js中function本身也是对象，我们先来看一下下面几个概念的差别：</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/03/30/原型继承/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-单例" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/29/单例/" class="article-date">
-  	<time datetime="2016-03-28T16:00:00.000Z" itemprop="datePublished">2016-03-29</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/29/单例/">单例</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<ol>
-<li>单一职责（Single Responsibility）<br>简单说，就是一个类只要负责一种职责即可，如果有多个职责需要处理，那就分离另外一个类。<br>之前我们有讲过JavaScript的面向对象特性，通过对象的封装，我们可以把单一职责在一个对象实现即可。这就完美符合了单一职责。<br>这么说起来，很多程序员肯定会很鄙视，这有什么好说的？ 其实单一职责表面上很简单，任何人都能信手拈来，但是它作为设计原则中最基础的原则，是有原因的！<br>封装并不困难，困难的是在任何时候能准确的分离职责。举个例子：<br>单就系统登录功能，我们把它作为一个职责来看！ 但是随着需求的复杂，会有更多的情况出现:<br>添加了验证码功能，要不要分离职责？<br>添加用户有效期验证，要不要分离？<br>增加用户邮箱验证功能，要不要分离？<br>如果你一直不分离，随着需求的增加，你会被拖入万劫不复的境地，不要认为这是危言耸听！ 但是反过来说，要如何分离，如何做到恰到好处的分离，是需要多年软件经验才能做到的。<br>基础招式的出神入化，虽不能让你杀敌于千里之外，但会让你立于不败之地！</li>
-</ol>
+        <h3 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h3><blockquote>
+<p>100 客户端应当继续发送请求。这个临时响应是用来通知客户端它的部分请求已经被服务器接收，且仍未被拒绝。客户端应当继续发送请求的剩余部分，或者如果请求已经完成，忽略这个响应。服务器必须在请求完成后向客户端发送一个最终响应。</p>
+<p>101 服务器已经理解了客户端的请求，并将通过Upgrade消息头通知客户端采用不同的协议来完成这个请求。在发送完这个响应最后的空行后，服务器将会切换到在Upgrade 消息头中定义的那些协议。只有在切换新的协议更有好处的时候才应该采取类似措施。例如，切换到新的HTTP版本比旧版本更有优势，或者切换到一个实时且同步的协议以传送利用此类特性的资源。</p>
+<p>102 代表处理将被继续执行。</p>
+<p>200 请求已成功。</p>
+<p>201 请求已经被实现，而且有一个新的资源已经依据请求的需要而建立，且其URI已经随Location头信息返回。假如需要的资源无法及时建立的话，应当返回 ‘202 Accepted’。</p>
 </blockquote>
       
     </div>
@@ -284,14 +164,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/http/">http</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/03/29/单例/#more">more >></a>
+          <a  href="/2016/01/12/9/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -310,11 +190,11 @@
 
 
   
-    <article id="post-判断类型" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-设计工具" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/27/判断类型/" class="article-date">
-  	<time datetime="2016-03-26T16:00:00.000Z" itemprop="datePublished">2016-03-27</time>
+      <a href="/2016/01/08/设计工具/" class="article-date">
+  	<time datetime="2016-01-07T16:00:00.000Z" itemprop="datePublished">2016-01-08</time>
 </a>
     </div>
   
@@ -327,7 +207,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/27/判断类型/">判断类型</a>
+      <a class="article-title" href="/2016/01/08/设计工具/">设计工具</a>
     </h1>
   
 
@@ -336,8 +216,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1、使用 typeof bar === “object” 判断 bar 是不是一个对象有神马潜在的弊端？如何避免这种弊端？<br>使用 typeof 的弊端是显而易见的(这种弊端同使用 instanceof)：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let obj = &#123;&#125;;&#10;let arr = [];&#10;console.log(typeof obj === &#39;object&#39;);  &#10;//trueconsole.log(typeof arr === &#39;object&#39;);  &#10;//trueconsole.log(typeof null === &#39;object&#39;);  &#10;//true</span><br></pre></td></tr></table></figure>
+        <h2 id="Figma"><a href="#Figma" class="headerlink" title="Figma"></a>Figma</h2><p>在会议中，团队成员同时在看一个项目，并实时提供反馈来修改项目，Figma将是最合适不过的解决方案。<br>官网: <a href="https://www.figma.com" target="_blank" rel="external">https://www.figma.com</a></p>
+<h2 id="Adobe-XD"><a href="#Adobe-XD" class="headerlink" title="Adobe XD"></a>Adobe XD</h2><p>官网: <a href="http://www.adobe.com/products/experience-design.html" target="_blank" rel="external">http://www.adobe.com/products/experience-design.html</a></p>
+<p>##Sketch &amp; Plugins<br>官网: <a href="https://www.sketchapp.com/" target="_blank" rel="external">https://www.sketchapp.com/</a><br>插件市场: <a href="https://speckyboy.com/plugins-sketch-app/" target="_blank" rel="external">https://speckyboy.com/plugins-sketch-app/</a></p>
+<h2 id="Zeplin"><a href="#Zeplin" class="headerlink" title="Zeplin"></a>Zeplin</h2><p>它可帮助开发人员轻松检查画板中的UI规格。 此外，他们可以直接通过Zeplin在画板上标注或下载必要的资源进行开发。<br>官网: <a href="https://zeplin.io" target="_blank" rel="external">https://zeplin.io</a></p>
+<h2 id="Stage-amp-Gallery"><a href="#Stage-amp-Gallery" class="headerlink" title="Stage &amp; Gallery"></a>Stage &amp; Gallery</h2><p>官网: <a href="https://material.io/stage/" target="_blank" rel="external">https://material.io/stage/</a>, <a href="https://material.io/gallery/" target="_blank" rel="external">https://material.io/gallery/</a></p>
+<h2 id="Framer"><a href="#Framer" class="headerlink" title="Framer"></a>Framer</h2><p>Framer是利用代码（Coffeescript）进行原型设计。<br>官网: <a href="https://framerjs.com/" target="_blank" rel="external">https://framerjs.com/</a></p>
+<h2 id="ProtoPie"><a href="#ProtoPie" class="headerlink" title="ProtoPie"></a>ProtoPie</h2><p>创建简单交互原型而无需输入任何代码成为可能。<br>官网: <a href="https://www.protopie.io/" target="_blank" rel="external">https://www.protopie.io/</a></p>
+
       
     </div>
     
@@ -345,15 +231,11 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
 	</div>
 
       
 
-      
-        <p class="article-more-link">
-          <a  href="/2016/03/27/判断类型/#more">more >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -371,11 +253,11 @@
 
 
   
-    <article id="post-函数编程" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-4" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/25/函数编程/" class="article-date">
-  	<time datetime="2016-03-24T16:00:00.000Z" itemprop="datePublished">2016-03-25</time>
+      <a href="/2016/01/03/4/" class="article-date">
+  	<time datetime="2016-01-02T16:00:00.000Z" itemprop="datePublished">2016-01-03</time>
 </a>
     </div>
   
@@ -388,7 +270,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/25/函数编程/">函数编程</a>
+      <a class="article-title" href="/2016/01/03/4/">js模块化</a>
     </h1>
   
 
@@ -397,8 +279,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="纯函数式相同的参数返回相同的结果，它的执行不依赖于系统的状态"><a href="#纯函数式相同的参数返回相同的结果，它的执行不依赖于系统的状态" class="headerlink" title="纯函数式相同的参数返回相同的结果，它的执行不依赖于系统的状态"></a>纯函数式相同的参数返回相同的结果，它的执行不依赖于系统的状态</h1><p>1) 非纯净的<br>let number = 1;<br>const increment = () =&gt; number += 1;<br>increment();<br>// 2</p>
-<p>2) 纯净的<br>const increment = n =&gt; n + 1;<br>increment(1);<br>// 2</p>
+        <h2 id="commonjs-AMD-CMD"><a href="#commonjs-AMD-CMD" class="headerlink" title="commonjs AMD CMD"></a>commonjs AMD CMD</h2><h4 id="node-用commonjs"><a href="#node-用commonjs" class="headerlink" title="node 用commonjs"></a>node 用commonjs</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&#39;express&#39;)&#10;//&#21516;&#27493;&#20840;&#37096;&#21152;&#36733;&#27169;&#22359; &#22312;&#26381;&#21153;&#22120;&#31471;&#27809;&#20107; &#22312;&#21069;&#31471;&#19981;ok</span><br></pre></td></tr></table></figure>
+<h3 id="AMD-requirejs"><a href="#AMD-requirejs" class="headerlink" title="AMD requirejs"></a>AMD requirejs</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">require([&#8216;jquery&#8217;, &#8216;underscore&#8217;, &#8216;backbone&#8217;], function ($, _, Backbone)&#123;&#10;&#12288;&#12288;&#12288;&#12288;// &#24178;&#27963;&#10;&#12288;&#125;)&#10;//&#24322;&#27493;&#21435;&#21152;&#36733;3&#20010;&#27169;&#22359; &#21152;&#36733;&#23436;&#20102;&#25165;&#25191;&#34892;&#22238;&#35843; &#22238;&#35843;&#37324;&#26159;&#25972;&#20010;&#31243;&#24207;&#20381;&#36182;&#21069;&#38754;&#27169;&#22359;&#35201;&#20570;&#30340;&#20107;</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//module.js&#10;define([&#20381;&#36182;&#27169;&#22359;],funciton(&#20381;&#36182;&#27169;&#22359;)&#123;&#10;&#9;//&#23548;&#20986;&#32473;&#21035;&#30340;&#27169;&#22359;&#24341;&#29992;&#30340;&#26041;&#27861;&#10;&#125;)&#10;&#10;//main.js&#10;require([&#39;module&#39;],function(module)&#123;&#10;&#9;//do something&#10;&#125;)</span><br></pre></td></tr></table></figure>
+<p>所以 依赖的模块必须要符合AMD的规范 引入了才起作用</p>
       
     </div>
     
@@ -406,14 +290,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/模块化/">模块化</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/03/25/函数编程/#more">more >></a>
+          <a  href="/2016/01/03/4/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -432,11 +316,11 @@
 
 
   
-    <article id="post-22" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-13" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/22/22/" class="article-date">
-  	<time datetime="2016-03-22T03:01:46.953Z" itemprop="datePublished">2016-03-22</time>
+      <a href="/2015/12/30/13/" class="article-date">
+  	<time datetime="2015-12-29T16:00:00.000Z" itemprop="datePublished">2015-12-30</time>
 </a>
     </div>
   
@@ -449,7 +333,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/22/22/">移动开发知识</a>
+      <a class="article-title" href="/2015/12/30/13/">HTML笔记</a>
     </h1>
   
 
@@ -458,14 +342,135 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>app应用前端开发要注重meta标签<br>webkit内核中有一些私有的meta标签，这些meta标签在开发webapp时起到非常重要的作用 。</p>
-<p><meta content="email=no" name="format-detection" /> //去除Android平台中对邮箱地址的识别怎么做</p>
-<p><meta name="apple-mobile-web-app-capable" content="yes"> //作用是让普通移动网页被添加到主屏幕后</p>
-<p>舍弃CSS float属性<br>在项目开发过程中可以会遇到内容排列显示的布局，假如你遇见这样的视觉稿，建议你放弃float，可以直接使用display:inline-block。</p>
-<p>利用CSS3边框背景属性<br>在app的前端开发中，这个按钮有圆角效果，有内发光效果还有高光效果，这样的按钮使用CSS3写是无法写出来的，当然圆角可以使用CSS3来写，但高光和内发光却无法使用CSS3编写， 这个时候你不妨使用-webkit-border-image来定义这个按钮的样式。</p>
-<p>使用webkit-box<br>webkit为display属性提供了一个webkit-box的值，做到盒子模型灵活控制。</p>
-<p>很多属性极限突破可以使用缩放，倾斜这种手段来hack，比如最小字体，比如各种自己画的伪类图标。<br>能css画的不要用图。<br>能flex布局的不要用浮动，不要用绝对定位（不利于页面布局的扩展）</p>
+        <p>格式化标签<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;br&#62;&#10;&#60;hr&#62;&#10;&#60;i&#62;&#60;/i&#62;&#10;&#60;b&#62;&#60;/b&#62;&#10;&#60;tt&#62;&#60;/tt&#62;&#10;&#60;big&#62;&#60;/big&#62;&#10;&#60;small&#62;&#60;/small&#62;&#10;&#60;strong&#62;&#60;/strong&#62;&#10;&#60;sub&#62;&#60;/sub&#62;&#10;&#60;sup&#62;&#60;/sup&#62;&#10;&#60;bdo dir=&#34;ltr rtl&#34;&#62;&#60;/bdo&#62;&#10;&#60;pre&#62;&#60;/pre&#62;&#10;&#60;code&#62;&#60;/code&#62;&#10;&#60;var&#62;&#60;/var&#62;&#10;&#60;samp&#62;&#60;/samp&#62;&#10;&#60;abbr title=&#34;&#34;&#62;&#60;/abbr&#62;&#10;&#60;address&#62;&#60;/address&#62;&#10;&#60;blockquote&#62;&#60;/blockquote&#62;&#10;&#60;q&#62;&#60;/q&#62;&#10;&#60;ins&#62;&#60;/ins&#62;&#10;&#60;del&#62;&#60;/del&#62;&#10;&#60;cite&#62;&#60;/cite&#62;</span><br></pre></td></tr></table></figure></p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/12/30/13/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-3" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/29/3/" class="article-date">
+  	<time datetime="2015-12-28T16:00:00.000Z" itemprop="datePublished">2015-12-29</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/29/3/">mardown 笔记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>‘&gt; 1~6个# 1~6级标题’</p>
+<p>‘&gt;区块panel ‘<br>‘&gt;&gt;子区块’</p>
+<p>‘## 二级标题’</p>
+<p>‘&gt;1. 有序列表’<br>‘&gt;2. 有序列表’</p>
+<p>代码实例：</p>
+<p>‘&gt; return shell_exec(“echo $input | $markdown_script”);’</p>
+<p>‘&gt;* red’<br>‘&gt;+ Green’<br>‘&gt;- blue’<br>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/12/29/3/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-8" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/28/8/" class="article-date">
+  	<time datetime="2015-12-27T16:00:00.000Z" itemprop="datePublished">2015-12-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/28/8/">git 笔记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>命令：</p>
+<blockquote>
+<p>git config –global user.name “Your Name”<br>git config –global user.email “email@example.com”<br>git init  把这个目录变成git可以管理的仓库<br>git add readme.txt  添加到缓存区<br>git commit -m “注释描述”  提交到仓库<br>git status  来查看是否还有文件未提交<br>git diff readme.txt  查看该文件该了的内容<br>git log  显示从最近到最远的显示日志，我们可以看到最近三次提交<br>git reset –hard HEAD~100  版本回退操作 这里是退回到第100个版本<br>git reflog  即可获取到版本号<br>git rm b.txt 如果我想彻底从版本库中删掉了此文件的话，可以再执行commit命令 提交掉.<br>git push 实际上是把当前分支master推送到远程。<br>git branch 查看分支<br>git branch name 创建分支<br>git checkout name 切换分支</p>
 </blockquote>
       
     </div>
@@ -474,14 +479,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/移动开发/">移动开发</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/03/22/22/#more">more >></a>
+          <a  href="/2015/12/28/8/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -500,11 +505,11 @@
 
 
   
-    <article id="post-类型变量" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-12" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/22/类型变量/" class="article-date">
-  	<time datetime="2016-03-21T16:00:00.000Z" itemprop="datePublished">2016-03-22</time>
+      <a href="/2015/12/28/12/" class="article-date">
+  	<time datetime="2015-12-27T16:00:00.000Z" itemprop="datePublished">2015-12-28</time>
 </a>
     </div>
   
@@ -517,7 +522,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/22/类型变量/">类型变量</a>
+      <a class="article-title" href="/2015/12/28/12/">css 笔记</a>
     </h1>
   
 
@@ -526,12 +531,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>类型JavaScript中类型主要包括了primitive和object类型，其中primitive类型包括了：<br>null、undefined、boolean、number、string和symbol(es6)。其他所有的都为object类型。</p>
-<p>类型判断类型检测主要包括了：typeof、instanceof和toString的三种方式来判断变量的类型。<br>typeoftypeof接受一个值并返回它的类型，它有两种可能的语法：</p>
+        <h3 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h3><p>id: 0100<br>class: 0010<br>属性: 0010<br>伪类: 0010<br>伪元素 : 0001<br>元素: 0001</p>
 <ul>
-<li>typeof x</li>
-<li>typeof(x)</li>
+<li>: 0000<br>文内样式: 1000<br>!important 优先级最高<br>同优先级 比较先后顺序 后来居上</li>
 </ul>
+<p>h2{color:red;} 0001<br>h2.caption {color:red;} 0011</p>
       
     </div>
     
@@ -539,14 +543,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/03/22/类型变量/#more">more >></a>
+          <a  href="/2015/12/28/12/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -565,11 +569,11 @@
 
 
   
-    <article id="post-关于对象" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-15" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/22/关于对象/" class="article-date">
-  	<time datetime="2016-03-21T16:00:00.000Z" itemprop="datePublished">2016-03-22</time>
+      <a href="/2015/12/28/15/" class="article-date">
+  	<time datetime="2015-12-27T16:00:00.000Z" itemprop="datePublished">2015-12-28</time>
 </a>
     </div>
   
@@ -582,7 +586,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/22/关于对象/">关于对象</a>
+      <a class="article-title" href="/2015/12/28/15/">browserify 笔记</a>
     </h1>
   
 
@@ -591,11 +595,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ol>
-<li>对象字面值不能正确解析问题：<br>{a:1}.a报错，错误Uncaught SyntaxError: Unexpected token .</li>
-</ol>
-<p>解决：<br>({a:1}.a) // 或({a:1}).a</p>
-<p>原因：<br>就是声明对象字面值时，语句开头不应该用{，因为js解释器会认为这是语句块（block）的开始。<br>同理，类似问题{ name: “mc”, id: 1 }会报错Uncaught SyntaxError: Unexpected token :也是这个道理。({ name: “mc”, id: 1 })即可正确解析。但稍注意下，{name: “mc”}是不会报错的，它等同于name: “mc”，并返回一个字符串”mc”。</p>
+        <blockquote>
+<p>Browserify 可以让你使用类似于 node 的 require() 的方式来组织浏览器端的 Javascript 代码，通过预编译让前端 Javascript 可以直接使用 Node NPM 安装的一些库。<br>一种解决方法是使用UMD的方式，前端使用requirejs，同时兼容nodejs的情况,例如：</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(function (window, factory) &#123;&#10;    if (typeod exports === &#39;object&#39;) &#123;&#10;        module.exports = factory();&#10;    &#125; else if (typeof define === &#39;function&#39; &#38;&#38; define.amd) &#123;&#10;        define(factory);&#10;    &#125; else &#123;&#10;        window.eventUtil = factory();&#10;    &#125;&#10;&#125;)(this, function () &#123;&#10;//module ...&#10;&#125;)</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -603,14 +606,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/browserify/">browserify</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/03/22/关于对象/#more">more >></a>
+          <a  href="/2015/12/28/15/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -629,11 +632,11 @@
 
 
   
-    <article id="post-作用域" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-19" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/19/作用域/" class="article-date">
-  	<time datetime="2016-03-18T16:00:00.000Z" itemprop="datePublished">2016-03-19</time>
+      <a href="/2015/12/28/19/" class="article-date">
+  	<time datetime="2015-12-27T16:00:00.000Z" itemprop="datePublished">2015-12-28</time>
 </a>
     </div>
   
@@ -646,7 +649,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/19/作用域/">作用域</a>
+      <a class="article-title" href="/2015/12/28/19/">前端性能 总结</a>
     </h1>
   
 
@@ -655,33 +658,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>原始数据类型和引用数据类型在进一步讨论作用域及作用域对象的之前，先简单的说明一下JS里的“赋值”和”引用”。</p>
-<p>JS里有两大类数据类型:原始数据类型和引用数据类型（及对象数据类型）。下面的代码试图说明这两者的区别:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var printSpace = require(&#39;./printspace&#39;);&#10;// &#20540;&#20256;&#36882;console.log(&#34;*****&#20540;&#20256;&#36882;*****&#34;);&#10;var num = 10; &#10;// num &#25345;&#26377;&#20102;&#25968;&#23383;10var a = num;  &#10;// a &#25345;&#26377;&#20102;&#25968;&#23383;10var b = num;  &#10;// b &#25345;&#26377;&#20102;&#25968;&#23383;10&#10;&#10;console.log(&#34;------&#21021;&#22987;-----&#34;);&#10;console.log(num);&#10;console.log(a);&#10;console.log(b);&#10;&#10;num = 8; // num &#25345;&#26377;&#30340;&#25968;&#23383;&#21464;&#20026;&#20102;8&#10;&#10;console.log(&#34;------num&#20540;&#25913;&#21464;&#21518;-----&#34;);&#10;console.log(num);&#10;console.log(a);&#10;console.log(b);&#10;&#10;printSpace();&#10;&#10;&#60;!--more--&#62;&#10;&#10;// &#23545;&#35937;&#30340;&#24341;&#29992;console.log(&#34;*****&#23545;&#35937;&#30340;&#24341;&#29992;*****&#34;);&#10;&#10;var yoho = &#123;// yoho &#24341;&#29992;&#20102;&#23545;&#35937; &#123;value: &#8220;&#28526;&#27969;&#8221;&#125;&#10;    value: &#34;&#28526;&#27969;&#34;&#10;&#125;&#10;&#10;var kris = yoho;&#10;// kris &#24341;&#29992;&#20102;&#23545;&#35937; &#123;value: &#8220;&#28526;&#27969;&#8221;&#125;&#10;var me = yoho;   &#10;// me &#24341;&#29992;&#20102;&#23545;&#35937; &#123;value: &#8220;&#28526;&#27969;&#8221;&#125;&#10;&#10;console.log(&#34;------&#21021;&#22987;----&#34;);&#10;console.log(yoho.value);&#10;console.log(kris.value);&#10;console.log(me.value);&#10;&#10;me.value = &#34;&#36824;&#26159;&#28526;&#27969;&#34;; // A&#34892;&#65292; &#34;&#34987;me &#24341;&#29992;&#30340;&#23545;&#35937;&#34;.value &#21457;&#29983;&#20102;&#10;&#10;console.log(&#34;------me.value&#25913;&#21464;&#21518;-----&#34;);&#10;console.log(yoho.value);&#10;console.log(kris.value);&#10;console.log(me.value);&#10;&#10;&#36816;&#34892;node reference&#65292;&#21487;&#20197;&#30475;&#21040;:*****&#20540;&#20256;&#36882;*****&#10;------&#21021;&#22987;-----&#10;10&#10;10&#10;10&#10;------num&#20540;&#25913;&#21464;&#21518;-----&#10;8&#10;10&#10;10&#10;&#10;*****&#23545;&#35937;&#30340;&#24341;&#29992;*****&#10;------&#21021;&#22987;----&#10;&#28526;&#27969;&#10;&#28526;&#27969;&#10;&#28526;&#27969;&#10;------me.value&#25913;&#21464;&#21518;-----&#10;&#36824;&#26159;&#28526;&#27969;&#10;&#36824;&#26159;&#28526;&#27969;&#10;&#36824;&#26159;&#28526;&#27969;</span><br></pre></td></tr></table></figure></p>
-<p>其实上面代码中，yoho、me、kris这三个变量是等同的，他们都指向同一块内存空间，既对象 { value: “潮流” }所在的内存空间。也就是yoho、me、kris三个变量同时引用了对象{ value: “潮流” }。<br>所以me.value、kris.value、yoho.value都是同一块内存空间，而那块内存里的值一开始的值是“潮流”, 然后在A行，这个值被改为了”还是潮流”。</p>
-<p>闭包很高兴你能看到这里。我们终于来到了闭包的概念。可是别激动，我还是只能提供一段最稀松平常的闭包代码，你一定看过类似下面这样的代码：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#27492;&#22788;&#26377;globalScope &#23545;&#35937;&#65307; .... &#19981;&#20877;&#36184;&#36848;var printSpace = require(&#39;./printspace&#39;);&#10;&#10;function outerFunc() &#123;&#10;    // &#20989;&#25968;&#34987;&#35843;&#29992;&#26102;&#65292;&#20135;&#29983;&#20102;&#26032;&#30340;outerScope&#23545;&#35937;, &#26082;outerScope = &#123;&#125;&#10;    //&#10;    // &#35774;&#32622;scope chain&#65292;&#26082; outerScope.parentScope = globalScope;&#10;    //&#10;    // &#25552;&#21319;&#24320;&#22987;&#65306; outerScope.counter = undefined;&#10;    // outerScope.counter = 0;&#10;    var counter = 0;&#10;&#10;    return function() &#123;&#10;        // &#20989;&#25968;&#34987;&#35843;&#29992;&#30340;&#35805;&#65292;&#20135;&#29983;&#26032;&#30340;insideScope = &#123;&#125;&#10;        //&#10;        // &#35774;&#32622;scope chain&#65292;&#26082; insideScope.parentScope = outerScope;&#10;        //&#10;        // &#27492;&#26102;&#23436;&#25972;&#30340;scope chain &#21487;&#20197;&#24819;&#25104;&#36825;&#26679;&#30340; insideScope.parentScope.parentScope&#10;        // &#26082; insideScope.outerScope.globalScope&#10;        //&#10;        // &#20989;&#25968;&#20869;&#37096;&#27809;&#26377; var &#23450;&#20041;&#30340;&#21464;&#37327;&#65292;&#25152;&#20197;insideScope&#27809;&#26377;&#21464;&#21270;&#10;&#10;        console.log(counter); // &#27492;&#22788;&#38656;&#35201;&#25171;&#21360;&#30340;&#26159; insideScope.outerScope.counter&#12290;&#26082;outerScope&#23545;&#35937;&#34987;&#24341;&#29992;&#20102;&#65281;&#65281;&#10;        counter += 1;&#10;    &#125;&#10;&#125;&#10;&#10;var insideFunc = outerFunc(); &#10;// &#22240;&#20026;outerFunc&#30340;&#35843;&#29992;&#65292;&#20869;&#37096;&#20989;&#25968;&#34987;return&#20986;&#26469;&#10;// return &#20986;&#26469;&#30340;&#20869;&#37096;&#20989;&#25968;&#34987;insideFunc&#24341;&#29992;&#10;// &#30001;&#20110;insideFunc &#24341;&#29992;&#30340;&#20989;&#25968;&#20869;&#37096;&#24341;&#29992;&#20102; outerScope&#19978;&#30340;&#23646;&#24615;counter,&#10;// &#25152;&#20197;outerScope&#23545;&#35937;&#19981;&#20250;&#34987;&#22238;&#25910;&#65292;&#20174;&#25928;&#26524;&#19978;&#26469;&#35762;&#23601;&#26159;&#23616;&#37096;&#21464;&#37327;counter&#19968;&#30452;&#23384;&#27963;&#20102;&#10;&#10;/*&#10; * &#19981;&#22952;&#20551;&#24819;&#25104;&#19979;&#38754;&#30340;&#20195;&#30721;&#10; *&#10; * var insideFunc = function() &#123;&#10; *     console.log(counter);&#10; *     counter += 1;&#10; * &#125;&#10; *&#10; * &#20854;&#20013;&#30340;counter&#21464;&#37327;&#26469;&#33258;outerFunc&#34987;&#35843;&#29992;&#26102;&#25152;&#21019;&#24314;&#30340;&#20316;&#29992;&#22495;&#23545;&#35937;&#10; *&#10; */&#10;printSpace();&#10;&#10;insideFunc();&#10;insideFunc();&#10;insideFunc();&#10;insideFunc();&#10;insideFunc();&#10;insideFunc();&#10;&#10;printSpace();&#10;&#10;var anotherInsideFunc = outerFunc(); //A&#34892;&#65292; outerFunc&#21448;&#34987;&#35843;&#29992;&#19968;&#27425;&#65292;&#20135;&#29983;&#20102;&#26032;&#30340;scope chain&#10;&#10;anotherInsideFunc();&#10;anotherInsideFunc();&#10;anotherInsideFunc();&#10;anotherInsideFunc();&#10;&#10;printSpace();&#10;&#36816;&#34892;&#19968;&#19979;node closure&#65292;&#30475;&#21040;&#19979;&#38754;&#30340;&#32467;&#26524;&#65306;&#10;0&#10;1&#10;2&#10;3&#10;4&#10;5&#10;&#10;0&#10;1&#10;2&#10;3</span><br></pre></td></tr></table></figure>
-<p>从结果上来讲，这段代码只是达到了将counter这个一般情况下会随着函数运行结束而被销毁的局部变量保留住了的效果。到底是怎么做到这点的呢，简单来说，过程是这样的:</p>
-<p>1.outerFunc被调用时创造了作用域对象，outerScope，以及由这个outerScope对象做为起点的一条作用域链</p>
-<ol>
-<li>outerFunc运行到最后时return了一个匿名函数, 而这个匿名函数使用(既引用)了outerScope对象上的属性counter。</li>
-<li>此时如果没有其他变量引用return的匿名函数，那么将不会有特别的事情发生，outerScope对象会被回收。</li>
-<li>但是，被return的匿名函数又被innerFunc这个变量引用，所以为了保证其在随后的代码中能被顺利被执行，必须让innerFunc引用的函数内的所有变量都有意义，既counter必须被保留，所以相当于outerScope对象被引用了, 那么outerScope就不会被释放。</li>
-<li>A行中，outerFunc又被调用了一次，则其又产生了一个新的outerScope对象，所以后面anotherInsideFunc执行时，counter又从0开始。</li>
-</ol>
-<p>总结为了理解闭包，需要想通下面几点:</p>
-<ol>
-<li>函数运行时会创建作用域对象及以此对象为起点的作用域链。</li>
-<li>借由函数一等公民的身份，JS函数内部的函数可以被传递给别的变量，既内部函数可以被引用。</li>
-<li>一旦内部函数被引用，并且该内部函数使用了自身作用域链上某个父级作用域对象上的属性，那么该父级作用域对象即使在外部函数运行结束后扔不会被回收。</li>
-<li>外部函数每被调用一次，都会创建新的作用域链。</li>
-<li>作用域链是树形的，下面这张简陋的图也许可以帮助你理解这一概念。</li>
-</ol>
-<p>要产生闭包，关键就是:</p>
-<ol>
-<li>至少有一个外部函数，外部函数内至少有一个内部函数。</li>
-<li>外部函数一定要运行至少一次，以此产生作用域对象并将内部函数传递给函数外部变量。</li>
-</ol>
-
+        <h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><blockquote>
+<p>使用 CSS Sprites 对图片优化 简单的说就是”利用 CSSbackground相关元素进行背景图绝对定位”，把多次HTTP 调用变为一次调用：因为CSS Sprites<br>不要在 HTML 中缩放图片<br>用工具压缩图片<br>尽可能的使用PNG格式的图片，因为和GIF相比，PNG有更多的功能和更小的体积<br>选择合适的图片(1. webP优于JPG 2. PNG8优于GIF)<br>DNSlookup是很耗费时间的 减少DNS 查找<br>使用智图( <a href="http://zhitu.tencent.com/">http://zhitu.tencent.com/</a> )<br>使用其它方式代替图片(1. 使用CSS3 2. 使用SVG 3. 使用IconFont)<br>尽量避免重设图片大小 ，多次重设图片大小会引发图片的多次重绘，影响性能<br>DataURL图片没有使用图片的压缩算法文件会变大，并且要解码后再渲染，加载慢耗时长 合理使用<br>字体图标<br>内容图片多为照片之类的，适用于JPEG。而修饰图片通常更适合用无损压缩的PNG。而GIF基本上除了GIF动画外不要使用。且动画的话，也更建议用video元素和视频格式，或用SVG动画取代。<br>使用cdn，例如七牛<br>浏览器对单个域名下的请求并发数是有限制的，如果是图片量很多的页面，需要考虑使用多域名。<br>尽量使用png格式的图片来代替滤镜效果，因为开启滤镜会加大浏览器的开销。<br>方向代理nginx缓存静态文件<br>不要对image和pdf等二进制文件进行gzip压缩</p>
+</blockquote>
       
     </div>
     
@@ -689,11 +668,15 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端性能/">前端性能</a></li></ul>
 	</div>
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2015/12/28/19/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -711,11 +694,11 @@
 
 
   
-    <article id="post-事件订阅发布" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-js优化" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/16/事件订阅发布/" class="article-date">
-  	<time datetime="2016-03-15T16:00:00.000Z" itemprop="datePublished">2016-03-16</time>
+      <a href="/2015/12/25/js优化/" class="article-date">
+  	<time datetime="2015-12-24T16:00:00.000Z" itemprop="datePublished">2015-12-25</time>
 </a>
     </div>
   
@@ -728,7 +711,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/16/事件订阅发布/">事件订阅发布</a>
+      <a class="article-title" href="/2015/12/25/js优化/">js优化</a>
     </h1>
   
 
@@ -737,8 +720,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>发布/订阅模式(Pub/Sub)是一种消息模式,它有两个参与者:发布者和订阅者。发布者向某个信道发布一条消息，订阅者绑定这个信道，当有消息发布至信道时就会接收到一个通知。最重要的一点是，发布者和订阅者是完全解耦的，彼此并不知晓对方 的存在。两者仅仅共享一个信道名称.</p>
-<p>理解起来很简单: 我去书报亭订了一份报纸,当他把报纸送给我了,我就去领了看.<br>这里,我就变成了订阅者,报亭就是发布者,当报纸送到的时候(状态发生改变,通知订阅者),我就去领了看(做一些操作)<br>废话说完了,我觉得我需要写一个,不然读者都以为我在吹牛,所以,装逼装到位,我就假装写一个吧(如有雷同纯属巧合)<br>一个发布者应该有三个主要的方法: 订阅,发布,退订.<br>先来写订阅:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var PubSub = &#123;&#125;; &#10;var eventObj = &#123;&#125;;  &#10;PubSub.subscribe = function(event, fn) &#123;  &#10;     eventObj[event] = fn;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>注意作用域避免全局查找<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function updateUI()&#123;&#10;    var imgs = document.getElementByTagName(&#34;img&#34;);&#10;    for(var i=0, len=imgs.length; i&#60;len; i++)&#123;&#10;            imgs[i].title = document.title + &#34; image &#34; + i;&#10;        &#125;&#10;    var msg = document.getElementById(&#34;msg&#34;);&#10;    msg.innnerHTML = &#34;Update complete.&#34;;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
       
     </div>
     
@@ -753,7 +735,7 @@
 
       
         <p class="article-more-link">
-          <a  href="/2016/03/16/事件订阅发布/#more">more >></a>
+          <a  href="/2015/12/25/js优化/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -774,14 +756,14 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/8/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/8/">Next &raquo;</a>
     </nav>
   
 </div>
       <footer id="footer">
   <div class="outer">
     <div id="footer-info">
-      <div>&copy; 2016 任先生在路上 的博客 , 技术 
+      <div>&copy; 2017 任先生在路上 的博客 , 技术 
         <a href="http://hexo.io/" target="_blank">Hexo</a>  
       </div>
     </div>

@@ -16,7 +16,7 @@
 <meta property="og:description" content="每个Window对象都有一个document属性指向DocumentDocument对象表示窗口的内容.
 
 获取文档元素//ID//返回elementdocument.getElementById(‘ID_K’);//Name//返回NodeListdocument.getElementsByName(“name_K”);//根据标签//返回HTMLCollection 在&amp;lt;&amp;gt;第六版第">
-<meta property="og:updated_time" content="2016-07-13T17:02:01.890Z">
+<meta property="og:updated_time" content="2017-06-28T11:18:53.760Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js dom">
 <meta name="twitter:description" content="每个Window对象都有一个document属性指向DocumentDocument对象表示窗口的内容.
@@ -278,7 +278,6 @@
 <li>URL</li>
 </ol>
 <p>13.查询选取文本判定用户选择了什么文本<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function get_select_text()&#123;&#10;if(window.getSelection)&#123;&#10;//HTML5&#26631;&#20934;&#10;return window.getSelection().toString();&#10;    &#125; else if (&#10;    document.selection)&#123; //IE&#29305;&#26377;&#10;    return documnet.selection.createRange().text;&#10;    &#125;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>14查看原文. 可编辑内容</p>
 <ol>
 <li>HTML设置contenteditable属性</li>
 <li>设置JavaScript<br>some_div.contentDocument.designMode = “on”;</li>
@@ -292,18 +291,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/04/24/LokiJS内存数据库介绍/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/04/25/this指向/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          LokiJS内存数据库介绍
+          this指向
         
       </div>
     </a>
   
   
-    <a href="/2016/04/23/observe.js /" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">observe.js</div>
+    <a href="/2016/04/22/oracle node模块/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">oracle数据库</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -323,7 +322,7 @@
       <footer id="footer">
   <div class="outer">
     <div id="footer-info">
-      <div>&copy; 2016 任先生在路上 的博客 , 技术 
+      <div>&copy; 2017 任先生在路上 的博客 , 技术 
         <a href="http://hexo.io/" target="_blank">Hexo</a>  
       </div>
     </div>

@@ -124,11 +124,11 @@
 
       <div class="body-wrap">
   
-    <article id="post-渲染" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-移动端知识整理" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/06/17/渲染/" class="article-date">
-  	<time datetime="2016-06-16T16:00:00.000Z" itemprop="datePublished">2016-06-17</time>
+      <a href="/2016/10/27/移动端知识整理/" class="article-date">
+  	<time datetime="2016-10-26T16:00:00.000Z" itemprop="datePublished">2016-10-27</time>
 </a>
     </div>
   
@@ -141,7 +141,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/17/渲染/">渲染方式</a>
+      <a class="article-title" href="/2016/10/27/移动端知识整理/">移动端知识整理</a>
     </h1>
   
 
@@ -150,10 +150,506 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ol>
-<li>在服务器端渲染</li>
+        <p>H5页面窗口自动调整到设备宽度，并禁止用户缩放页面</p>
+<p><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" /><br>// width    设置viewport宽度，为一个正整数，或字符串‘device-width’<br>// height   设置viewport高度，一般设置了宽度，会自动解析出高度，可以不用设置<br>// initial-scale    默认缩放比例，为一个数字，可以带小数<br>// minimum-scale    允许用户最小缩放比例，为一个数字，可以带小数<br>// maximum-scale    允许用户最大缩放比例，为一个数字，可以带小数<br>// user-scalable    是否允许手动缩放</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/10/27/移动端知识整理/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-lazyload实现方法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/02/lazyload实现方法/" class="article-date">
+  	<time datetime="2016-10-01T16:00:00.000Z" itemprop="datePublished">2016-10-02</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/02/lazyload实现方法/">lazyload 实现方式</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>第一种：<br>首先将页面上的图片的 src 属性设为 loading.gif，而图片的真实路径则设置在 data-src 属性中，页面滚动的时候计算图片的位置与滚动的位置，当图片出现在浏览器视口内时，将图片的 src 属性设置为 data-src 的值，这样，就可以实现延迟加载。</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/10/02/lazyload实现方法/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-lazyload" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/09/13/lazyload/" class="article-date">
+  	<time datetime="2016-09-12T16:00:00.000Z" itemprop="datePublished">2016-09-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/13/lazyload/">lazyload</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>将页面中的img标签src指向一张小图片或者src为空，然后定义datasrc属性指向真实的图片。src指向一张默认的图片，否则当src为空时也会向服务器发送一次请求。可以指向loading的地址。</p>
+<p><img src="default.jpg" data-src="http://ww4.sinaimg.cn/large/006y8mN6gw1fa5obmqrmvj305k05k3yh.jpg" /><br>当载入页面时，先把可视区域内的img标签的data-src属性值负给src，然后监听滚动事件，把用户即将看到的图片加载。这样便实现了懒加载。</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/09/13/lazyload/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-创建对象" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/08/创建对象/" class="article-date">
+  	<time datetime="2016-07-07T16:00:00.000Z" itemprop="datePublished">2016-07-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/08/创建对象/">创建对象</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一个对象就是一系列属性的集合，一个属性包含一个名字(key)和一个值(value)。</p>
+<p>创建对象</p>
+<p>很多有关于JavaScript书在介绍对象创建的方法时，主要有：</p>
+<p>使用对象字面量创建对象(key-value)<br>使用new创建对象<br>使用Object.create()创建对象<br>使用函数创建对象<br>使用原型创建对象</p>
+<p>使用对象字面量创建对象</p>
+<p>对象字面量是创建对象最简单的一种形式，目的是在于简化创建包含大量属性的对象的过程。对象字面量由若干属性名(keys)和属性值(values)成对组成的映射表，key和value中间使用冒号(:)分隔，每对key/value之间使用逗号(,)分隔，整个映射表用花括号({})括起来。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;&#10;    property_1:   value_1,   // property_# &#21487;&#33021;&#26159;&#19968;&#20010;&#26631;&#35782;&#31526;...&#10;    2:            value_2,   // &#25110;&#32773;&#26159;&#19968;&#20010;&#25968;&#23383;&#10;    // ...,&#10;    &#34;property n&#34;: value_n    // &#25110;&#26159;&#19968;&#20010;&#23383;&#31526;&#20018;&#125;;</span><br></pre></td></tr></table></figure></p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/07/08/创建对象/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-JavaScript学习笔记：数组去重" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/07/JavaScript学习笔记：数组去重/" class="article-date">
+  	<time datetime="2016-07-06T16:00:00.000Z" itemprop="datePublished">2016-07-07</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/07/JavaScript学习笔记：数组去重/">数组去重</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>双重循环去重<br>这个方法使用了两个for循环做遍历。整个思路是：<br>构建一个空数组用来存放去重后的数组<br>外面的for循环对原数组做遍历，每次从数组中取出一个元素与结果数组做对比<br>如果原数组取出的元素与结果数组元素相同，则跳出循环;反之则将其存放到结果数组中<br>代码如下:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.unique1 = function () &#123;&#10;    // &#26500;&#24314;&#19968;&#20010;&#26032;&#25968;&#32452;&#65292;&#23384;&#25918;&#32467;&#26524;&#10;    var newArray = [this[0]];    // for&#24490;&#29615;&#65292;&#27599;&#27425;&#20174;&#21407;&#25968;&#32452;&#20013;&#21462;&#20986;&#19968;&#20010;&#20803;&#32032;&#10;    // &#29992;&#21462;&#20986;&#30340;&#20803;&#32032;&#24490;&#29615;&#19982;&#32467;&#26524;&#25968;&#32452;&#23545;&#27604;&#10;    for (var i = 1; i &#60; this.length; i++) &#123;        var repeat = false;        for (var j=0; j &#60; newArray.length; j++) &#123;            // &#21407;&#25968;&#32452;&#21462;&#20986;&#30340;&#20803;&#32032;&#19982;&#32467;&#26524;&#25968;&#32452;&#20803;&#32032;&#30456;&#21516;&#10;            if(this[i] == newArray[j]) &#123;&#10;                repeat = true;                break;&#10;            &#125;&#10;        &#125;        if(!repeat) &#123;            // &#22914;&#26524;&#32467;&#26524;&#25968;&#32452;&#20013;&#27809;&#26377;&#35813;&#20803;&#32032;&#65292;&#21017;&#23384;&#25918;&#21040;&#32467;&#26524;&#25968;&#32452;&#20013;&#10;            newArray.push(this[i]);&#10;        &#125;&#10;    &#125;    return newArray;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/07/07/JavaScript学习笔记：数组去重/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-express 中间件" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/03/express 中间件/" class="article-date">
+  	<time datetime="2016-07-02T16:00:00.000Z" itemprop="datePublished">2016-07-03</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/03/express 中间件/">express 中间件</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>express 中间件：</p>
+<p>basicAuth()<br>基本的认证中间件，在req.user里添加用户名</p>
+<p>用户名和密码的例子:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(express.basicAuth(&#39;username&#39;, &#39;password&#39;));</span><br></pre></td></tr></table></figure></p>
+<p>校验回调:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(express.basicAuth(function(user, pass)&#123;&#10;  return &#39;tj&#39; == user &#38;&#38; &#39;wahoo&#39; == pass;&#10;&#125;));</span><br></pre></td></tr></table></figure></p>
+<p>异步校验接受参数fn(err, user), 下面的例子req.user 将会作为user对象传递.<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(connect.basicAuth(function(user, pass, fn)&#123;&#10;  User.authenticate(&#123; user: user, pass: pass &#125;, fn);&#10;&#125;))</span><br></pre></td></tr></table></figure></p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/express/">express</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/07/03/express 中间件/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-express app.js" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/01/express app.js/" class="article-date">
+  	<time datetime="2016-06-30T16:00:00.000Z" itemprop="datePublished">2016-07-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/01/express app.js/">express app.js</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&#39;express&#39;)&#10;var path=require(&#39;path&#39;)&#10;&#10;&#10;var mongoose=require(&#39;mongoose&#39;)&#10;var dbUrl=&#39;mongodb://127.0.0.1/zbyou&#39;&#10;&#9;mongoose.connect(dbUrl)&#10;&#10;var session = require(&#39;express-session&#39;)&#10;var mongoStore=require(&#39;connect-mongo&#39;)(session)&#10;&#10;var serveStatic = require(&#39;serve-static&#39;)&#10;var bodyParser=require(&#39;body-parser&#39;)&#10;var cookieParser=require(&#39;cookie-parser&#39;)&#10;&#10;var port=process.env.PORT||3001&#10;var app=express()&#10;&#9;app.listen(port)&#10;&#10;&#60;!--more--&#62;&#10;app.use(bodyParser.json())&#10;app.use(bodyParser.urlencoded(&#123;extended:false&#125;))&#10;app.use(function(req, res, next) &#123;&#10;    res.setHeader(&#39;Access-Control-Allow-Origin&#39;, &#39;*&#39;)&#10;    res.setHeader(&#39;Access-Control-Allow-Methods&#39;, &#39;GET, POST&#39;)&#10;    res.setHeader(&#39;Access-Control-Allow-Headers&#39;, &#39;X-Requested-With,content-type, Authorization&#39;);&#10;    next()&#10;&#125;)&#10;&#10;app.use(cookieParser())&#10;app.use(session(&#123;&#10;&#9;secret:&#39;zbyou&#39;,&#10;&#9;saveUninitialized: true,&#10;&#9;resave: false,&#10;&#9;store: new mongoStore(&#123;&#10;&#9;&#9;url:dbUrl,&#10;&#9;&#9;collection:&#39;sessions&#39;&#10;&#9;&#125;)&#10;&#125;))&#10;&#10;app.set(&#39;views&#39;, path.join(__dirname, &#39;../font-end/managem/views&#39;))//&#35774;&#32622;view&#30340;&#36335;&#24452; &#32534;&#35793;jade&#10;app.set(&#39;view engine&#39;, &#39;jade&#39;)&#10;&#10;app.use(serveStatic(path.join(__dirname,&#39;../&#39;)))//&#30456;&#23545;app.js&#26469;&#35828; &#35774;&#32622;&#38745;&#24577;&#36164;&#28304;&#30340;&#36335;&#21170;&#36215;&#28857;css jpg js&#31561;&#10;app.locals.moment=require(&#39;moment&#39;)&#10;&#10;require(&#39;./config/routes&#39;)(app)&#10;&#10;console.log(&#39;zbyou started on port &#39; + port)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/express/">express</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-canvas图片处理运用" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/27/canvas图片处理运用/" class="article-date">
+  	<time datetime="2016-06-26T16:00:00.000Z" itemprop="datePublished">2016-06-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/27/canvas图片处理运用/">canvas图片处理</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>canvas图片处理运用<br>对于canvas来说，主要是两个方法对图片处理比较重要，一个是通过html5 canvas的 getImageData 方法获取图片的像素信息，可以很方便的通过方法导入到把网络图片或者本地的图片导入至canvas中并获取图片的像素信息，可以修改像素信息后通过另外一个重要的方法putImageData导出处理后的图片。</p>
+<p>1、获取canvas调用<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var c = document.createElement(&#39;canvas&#39;);&#10;context = c.getContext(&#39;2d&#39;);</span><br></pre></td></tr></table></figure></p>
+<p>2、获取导入图像信息<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var hiddenImage = new Image();&#10;hiddenImage.src=&#22270;&#29255;&#22320;&#22336;&#10; context .drawImage(hiddenImage, 0, 0, width, height);&#10;   hiddenImage .onload=function()&#123;&#10;    context.putImageData(hiddenImage, 0, 0);&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/canvas/">canvas</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/06/27/canvas图片处理运用/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Array" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/26/Array/" class="article-date">
+  	<time datetime="2016-06-25T16:00:00.000Z" itemprop="datePublished">2016-06-26</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/26/Array/">array</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一、Array 在内存中的堆栈模型</p>
+<ol>
+<li>Array 的获取</li>
 </ol>
-<p>浏览器发送请求到服务器端，服务器端处理请求并准备好数据，然后将数据写进前端编写的模板中，从而生成html文件，将生成的html发回给浏览器。这样浏览器上就显示页面了。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;table class=&#34;table&#34;&#62;&#10;&#60;tr&#62;&#10;      &#60;td&#62;&#39033;&#30446;&#21517;&#31216;&#60;/td&#62;&#10;      &#60;td&#62;&#32452;&#38271;&#22995;&#21517;&#60;/td&#62;&#10;&#60;/tr&#62;&#10;&#60;% for(var i = 0; i &#60; project.length; i ++)&#123; %&#62;&#60;% &#125; %&#62;&#10;&#60;tr&#62;&#10;      &#60;td&#62;&#60;%= project[i][&#39;project&#39;] %&#62;&#60;/td&#62;&#10;      &#60;td&#62;&#60;%= project[i][&#39;leadername&#39;] %&#62;&#60;/td&#62;&#10;&#60;/tr &#62;&#10;&#60;% &#125; %&#62;&#10;&#60;/table&#62;</span><br></pre></td></tr></table></figure></p>
+<p>Javascript 中如何产生 Array：</p>
+<p>[element0, element1, …, elementN]</p>
+<p>new Array(element0, element1, …, elementN)<br>new Array(arrayLength)</p>
+<p>直接定义，或者通过构造函数创建一个 Array，当然也可以使用其他的手段：</p>
+<p>“array”.split(“”);<br>“array”.match(/a|r/g);</p>
+<p>等等，方式有很多。但是 Array 内部是个什么样的结构，恐怕很多人还不是很清楚。</p>
       
     </div>
     
@@ -168,7 +664,7 @@
 
       
         <p class="article-more-link">
-          <a  href="/2016/06/17/渲染/#more">more >></a>
+          <a  href="/2016/06/26/Array/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -187,11 +683,11 @@
 
 
   
-    <article id="post-截屏方式" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-电商接口" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/06/16/截屏方式/" class="article-date">
-  	<time datetime="2016-06-15T16:00:00.000Z" itemprop="datePublished">2016-06-16</time>
+      <a href="/2016/06/20/电商接口/" class="article-date">
+  	<time datetime="2016-06-19T16:00:00.000Z" itemprop="datePublished">2016-06-20</time>
 </a>
     </div>
   
@@ -204,7 +700,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/16/截屏方式/">截屏</a>
+      <a class="article-title" href="/2016/06/20/电商接口/">一些接口</a>
     </h1>
   
 
@@ -213,8 +709,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>用过 phantomJS 的同学都知道，它提供了一个截屏函数，通过它可以整屏获取页面截图，而且他支持的格式也比较多：JPG/PNG/GIF/PDF。通过简单的两句命令就可以把一个网页截取下来：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// render.js&#10;var webPage = require(&#39;webpage&#39;);&#10;var page = webPage.create();&#10;&#10;page.viewportSize = &#123; width: 1920, height: 1080 &#125;;&#10;page.open(&#34;http://www.taobao.com&#34;, function start(status) &#123;&#10;  page.render(&#39;taobao_home.jpeg&#39;, &#123;format: &#39;jpeg&#39;, quality: &#39;100&#39;&#125;);&#10;  phantom.exit();&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>安装 phantomjs 之后执行下上面的文件：<br>
+        <p>电商接口</p>
+<p>京东获取单个商品价格接口：<br><a href="http://p.3.cn/prices/mgets?skuIds=J_商品ID&amp;type=1">http://p.3.cn/prices/mgets?skuIds=J_商品ID&amp;type=1</a><br>ps:商品ID这么获取:<a href="http://item.jd.com/954086.html">http://item.jd.com/954086.html</a></p>
+<p>物流接口</p>
+<p>快递接口：<br><a href="http://www.kuaidi100.com/query?type=快递公司代号&amp;postid=快递单号">http://www.kuaidi100.com/query?type=快递公司代号&amp;postid=快递单号</a><br>ps:快递公司编码:申通=”shentong” EMS=”ems” 顺丰=”shunfeng” 圆通=”yuantong” 中通=”zhongtong” 韵达=”yunda” 天天=”tiantian” 汇通=”huitongkuaidi” 全峰=”quanfengkuaidi” 德邦=”debangwuliu” 宅急送=”zhaijisong”</p>
+<p>谷歌接口</p>
+<p>FeedXml转json接口：<br><a href="http://ajax.googleapis.com/ajax/services/feed/load?q=Feed地址&amp;v=1.0">http://ajax.googleapis.com/ajax/services/feed/load?q=Feed地址&amp;v=1.0</a><br>备选参数:callback：&amp;callback=foo就会在json外面嵌套foo({})方便做jsonp使用。<br>备选参数:n：返回多少条记录。</p>
       
     </div>
     
@@ -222,514 +722,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/插件/">插件</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其他/">其他</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/06/16/截屏方式/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-居中" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/14/居中/" class="article-date">
-  	<time datetime="2016-06-13T16:00:00.000Z" itemprop="datePublished">2016-06-14</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/14/居中/">css居中</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>水平居中<br>内联元素（inline or inline-*）居中?<br>你可以让他相对父级块级元素居中对齐<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.center-children &#123;&#10;  text-align: center;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>块级元素（block level）居中?<br>你可以通过设置margin-left和margin-right为auto让它居中（同时还要设置width，否则它就会承满整个容器，无法看出居中效果），如。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.center-me &#123;&#10;  margin: 0 auto;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/06/14/居中/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-匿名函数的N种写法" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/11/匿名函数的N种写法/" class="article-date">
-  	<time datetime="2016-06-10T16:00:00.000Z" itemprop="datePublished">2016-06-11</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/11/匿名函数的N种写法/">js一些技巧</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Js 的匿名函数是未声明函数名的自执行函数，格式如下：<br>(function(){})();</p>
-<p>在实际项目中我们经常会在前面加上“;”：<br>;function(){}();<br>因为 Js 的语法是可以省略分号的，但是这种机制也会导致意外的错误。为了避免代码上线后合并压缩成一个文件造成语法错误，所以加上“;”可以避免未知错误。</p>
-<p>但有时我们看见别人的库或是插件里面会这样写匿名函数：<br>+function(){}();<br>“+”在这里是运算符，运算符具有极高的优先级，所以右边的函数声明加上括号的部分（实际上就是函数执行的写法）就直接执行了。其实不止前面可以是“+”号，“-”、“！”、“~”、“++”等运算符均可。这里只是做扩展介绍，具体用哪种写法看团队统一规范。</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/06/11/匿名函数的N种写法/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-深拷贝" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/08/深拷贝/" class="article-date">
-  	<time datetime="2016-06-07T16:00:00.000Z" itemprop="datePublished">2016-06-08</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/08/深拷贝/">克隆或者拷贝</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>克隆或者拷贝分为2种：浅度克隆（拷贝），深度克隆（拷贝）；</p>
-<p>浅度克隆：基本类型为值传递，对象仍为引用传递。</p>
-<p>深度克隆：所有元素或属性均完全克隆，并于原引用类型完全独立，即，在后面修改对象的属性的时候，原对象不会被修改。</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/06/08/深拷贝/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-事件的执行顺序" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/05/事件的执行顺序/" class="article-date">
-  	<time datetime="2016-06-04T16:00:00.000Z" itemprop="datePublished">2016-06-05</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/05/事件的执行顺序/">事件的执行顺序</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>问：点击Li，JS的执行顺序是什么？</p>
-<p>JavaScript捕获和冒泡探讨</p>
-<p>总结就是：先捕获，后冒泡，捕获从上到下，冒泡从下到上（形象点说法：捕获像石头沉入海底，冒泡则像气泡冒出水面）<br>问：假如去掉注释 event.stopPropagation();  结果又会输出什么？</p>
-<p>答：去掉event.stopPropagation() 之后，由于事件有捕获和冒泡时先执行捕获，捕获到div之后，事件被阻止，后面就不在继续传播了。所以只输出divcallback.</p>
-<p>在上面的代码如果增加一个div.addEventListener(‘click’,callbackdiv2,false);</p>
-<p>则div先执行捕获，接着执行上面这句冒泡，所以微博里的一个朋友评论说事件执行过捕获就不会执行冒泡其实是不对的。</p>
-<p>div.addEventListener(‘click’,callbackdiv,true);这一句只能是捕获才执行。</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/06/05/事件的执行顺序/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-老ie解决方法" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/05/30/老ie解决方法/" class="article-date">
-  	<time datetime="2016-05-29T16:00:00.000Z" itemprop="datePublished">2016-05-30</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/30/老ie解决方法/">老ie解决方法</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>一行代码解决各种IE兼容问题,IE6,IE7,IE8,IE9,IE10</p>
-<p>x-ua-compatible 用来指定IE浏览器解析编译页面的model</p>
-<p>x-ua-compatible 头标签大小写不敏感，必须用在 head 中，必须在除 title 外的其他 meta 之前使用。</p>
-<p>1、使用一行代码来指定浏览器使用特定的文档模式。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;meta http-equiv=&#34;x-ua-compatible&#34; content=&#34;IE=9&#34; &#62;&#10;&#60;meta http-equiv=&#34;x-ua-compatible&#34; content=&#34;IE=8&#34; &#62;&#10;&#60;meta http-equiv=&#34;x-ua-compatible&#34; content=&#34;IE=7&#34; &#62;</span><br></pre></td></tr></table></figure></p>
-<p>2、在一些情况下，我们需要限定浏览器对文档的解析到某一特定版本，或者将浏览器限定到一些旧版本的表现中。可以用如下的方式：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;meta http-equiv=&#34;x-ua-compatible&#34; content=&#34;IE=EmulateIE9&#34; &#62;&#10;&#60;meta http-equiv=&#34;x-ua-compatible&#34; content=&#34;IE=EmulateIE8&#34; &#62;&#10;&#60;meta http-equiv=&#34;x-ua-compatible&#34; content=&#34;IE=EmulateIE7&#34; &#62;</span><br></pre></td></tr></table></figure></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/兼容/">兼容</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/05/30/老ie解决方法/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-21" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/05/23/21/" class="article-date">
-  	<time datetime="2016-05-23T14:49:51.993Z" itemprop="datePublished">2016-05-23</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/23/21/">css js兼容性</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>!important (功能有限)随着IE7对!important的支持, !important 方法现在只针对IE6的兼容.<br>例如:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#example &#123;&#10;&#9;width: 100px !important; /* IE7+FF */&#10;&#9;width: 103px; /* IE6 */&#10;&#125;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/兼容性/">兼容性</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/05/23/21/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-localstore介绍" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/05/05/localstore介绍/" class="article-date">
-  	<time datetime="2016-05-04T16:00:00.000Z" itemprop="datePublished">2016-05-05</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/05/localstore介绍/">localstore介绍</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>store.js 是一个实现了浏览器的本地存储的 JavaScript 封装 API，不是通过 Cookie 和 Flash 技术实现，而是使用 localStorage。</p>
-<p>bower<br>$ bower install storejs</p>
-<p>npm<br>$ npm install storejs</p>
-<p>生成压缩文件和开发模式<br>$ npm run build    # 生成带UMD的js原文件 以及 min.js<br>$ npm run watch    # 监听文件改变自动压缩生成js</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/localstore/">localstore</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/05/05/localstore介绍/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-lodash某些好方法" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/05/03/lodash某些好方法/" class="article-date">
-  	<time datetime="2016-05-02T16:00:00.000Z" itemprop="datePublished">2016-05-03</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/03/lodash某些好方法/">lodash某些好方法</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>循环N次<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// 1. Basic for&#10;loop.for(var i = 0; i &#60; 5; i++) &#123;&#10;        // ....&#10;&#125;&#10;&#10;// 2. Using Array&#39;s join and split&#10;methodsArray.apply(null, Array(5)).forEach(function()&#123;&#10;        // ...&#10;&#125;);&#10;&#10;// Lodash&#10;_.times(5, function()&#123;&#10;        // ...&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lodash/">lodash</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/05/03/lodash某些好方法/#more">more >></a>
+          <a  href="/2016/06/20/电商接口/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -750,14 +750,14 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 </div>
       <footer id="footer">
   <div class="outer">
     <div id="footer-info">
-      <div>&copy; 2016 任先生在路上 的博客 , 技术 
+      <div>&copy; 2017 任先生在路上 的博客 , 技术 
         <a href="http://hexo.io/" target="_blank">Hexo</a>  
       </div>
     </div>

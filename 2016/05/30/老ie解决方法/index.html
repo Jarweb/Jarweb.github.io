@@ -18,7 +18,7 @@ x-ua-compatible 头标签大小写不敏感，必须用在 head 中，必须在�
 x-ua-compatible 用来指定IE浏览器解析编译页面的model
 x-ua-compatible 头标签大小写不敏感，必须用在 head 中，必须在除 title 外的其他 meta 之前使用。
 1、使用一行代码来指定浏览器使用特定的文档模式。1&amp;#60;meta http-equiv=&amp;#34;x-ua-compa">
-<meta property="og:updated_time" content="2016-07-16T16:49:15.035Z">
+<meta property="og:updated_time" content="2017-06-28T11:37:37.139Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="老ie解决方法">
 <meta name="twitter:description" content="一行代码解决各种IE兼容问题,IE6,IE7,IE8,IE9,IE10
@@ -176,25 +176,14 @@ x-ua-compatible 头标签大小写不敏感，必须用在 head 中，必须在�
 <p>2、在一些情况下，我们需要限定浏览器对文档的解析到某一特定版本，或者将浏览器限定到一些旧版本的表现中。可以用如下的方式：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;meta http-equiv=&#34;x-ua-compatible&#34; content=&#34;IE=EmulateIE9&#34; &#62;&#10;&#60;meta http-equiv=&#34;x-ua-compatible&#34; content=&#34;IE=EmulateIE8&#34; &#62;&#10;&#60;meta http-equiv=&#34;x-ua-compatible&#34; content=&#34;IE=EmulateIE7&#34; &#62;</span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
 <p>使用这种写法，浏览器或者使用标准模式进行解析，或者使用 IE5 Quirks 模式进行解析。</p>
-<p>3、为了测试，我们也可以使用下面的语句指定浏览器按照最高的标准模式解析页面。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;meta http-equiv=&#34;x-ua-compatible&#34; content=&#34;IE=edge&#34; &#62;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;meta http-equiv=&#34;x-ua-compatible&#34; content=&#34;IE=edge&#34; &#62;</span><br></pre></td></tr></table></figure>
 <p>4、多个模式的指定。我们可以用逗号分割多个版本，这种情况下，浏览器会从这个列表中选择一个他所支持的最高版本来使用标准模式进行渲染。如下面的例子，在IE8进行浏览时，将会使用IE7的标准模式进行渲染，因为他本身不支持IE9和IE10。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;meta http-equiv=&#34;x-ua-compatible&#34; content=&#34;IE=7,9,10&#34; &#62;</span><br></pre></td></tr></table></figure></p>
 <p>参考：<br><a href="http://www.cnblogs.com/cocowool/archive/2013/04/25/3043832.html" target="_blank" rel="external">http://www.cnblogs.com/cocowool/archive/2013/04/25/3043832.html</a><br><a href="http://www.cnblogs.com/nidilzhang/archive/2010/01/09/1642887.html" target="_blank" rel="external">http://www.cnblogs.com/nidilzhang/archive/2010/01/09/1642887.html</a><br><a href="http://msdn.microsoft.com/en-us/library/jj676915(v=vs.85).aspx" target="_blank" rel="external">http://msdn.microsoft.com/en-us/library/jj676915(v=vs.85).aspx</a></p>
 <p>百度也应用了这种方案去解决IE的兼容问题</p>
-<p>百度源代码如下<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;!Doctype html&#62;&#10;&#60;html xmlns=http://www.w3.org/1999/xhtml xmlns:bd=http://www.baidu.com/2010/xbdml&#62;&#10;&#60;head&#62;&#10;&#60;meta http-equiv=Content-Type content=&#8220;text/html;charset=utf-8&#8243;&#62;&#10;&#60;meta http-equiv=X-UA-Compatible content=IE=EmulateIE7&#62;&#10;&#60;title&#62;&#30334;&#24230;&#19968;&#19979;&#65292;&#20320;&#23601;&#30693;&#36947; &#60;/title&#62;&#10;&#60;script&#62;var wpo=&#123;start:new Date*1,pid:109,page:&#8216;superpage&#8217;&#125;&#60;/script&#62;&#10;&#60;meta http-equiv=X-UA-Compatible content=IE=EmulateIE7&#62;</span><br></pre></td></tr></table></figure></p>
-<p>可以打开百度，右键查看源码看下！我们可以看下文件头是否存在这样一行代码！</p>
-<p>这句话的意思是强制使用IE7模式来解析网页代码！</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;meta http-equiv=X-UA-Compatible content=IE=EmulateIE7&#62;</span><br></pre></td></tr></table></figure>
 <p>在这里送上几种IE使用模式！<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;meta http-equiv=&#8220;X-UA-Compatible&#8221; content=&#8220;IE=8&#8243;&#62;&#10;2. Google Chrome Frame&#20063;&#21487;&#20197;&#35753;IE&#29992;&#19978;Chrome&#30340;&#24341;&#25806;:&#10;&#10;&#60;meta http-equiv=&#8220;X-UA-Compatible&#8221; content=&#8220;chrome=1&#8243; /&#62;&#10;3.&#24378;&#21046;IE8&#20351;&#29992;IE7&#27169;&#24335;&#26469;&#35299;&#26512;&#10;&#10;&#60;meta http-equiv=&#8220;X-UA-Compatible&#8221; content=&#8220;IE=EmulateIE7&#8243;&#62;&#60;!&#8211; IE7 mode &#8211;&#62;&#10;//&#25110;&#32773;&#10;&#60;meta http-equiv=&#8220;X-UA-Compatible&#8221; content=&#8220;IE=7&#8243;&#62;&#60;!&#8211; IE7 mode &#8211;&#62;&#10;4.&#24378;&#21046;IE8&#20351;&#29992;IE6&#25110;IE5&#27169;&#24335;&#26469;&#35299;&#26512;&#10;&#10;&#60;meta http-equiv=&#8220;X-UA-Compatible&#8221; content=&#8220;IE=6&#8243;&#62;&#60;!&#8211; IE6 mode &#8211;&#62; &#10;&#10;&#60;meta http-equiv=&#8220;X-UA-Compatible&#8221; content=&#8220;IE=5&#8243;&#62;&#60;!&#8211; IE5 mode &#8211;&#62; &#10;5.&#22914;&#26524;&#19968;&#20010;&#29305;&#23450;&#29256;&#26412;&#30340;IE&#25903;&#25345;&#25152;&#35201;&#27714;&#30340;&#20860;&#23481;&#24615;&#27169;&#24335;&#22810;&#20110;&#19968;&#31181;&#65292;&#22914;&#65306;&#10;&#10;&#60;meta http-equiv=&#8220;X-UA-Compatible&#8221; content=&#8220;IE=5; IE=8&#8243; /&#62;</span><br></pre></td></tr></table></figure></p>
-<p>二.设定网站服务器以指定预设兼容性模式</p>
-<p>如果服务器是自己的话，可以在服务器上定义一个自订标头来为它们的网站预设一个特定的文件兼容性模式。这个特定的方法取决于你的网站服务器。</p>
-<p>录入，下列的 web.config文件使Microsoft Internet Information Services (IIS)能定义一个自订标头以自动使用IE7 mode来编译所有网页。</p>
-<p>另外还有一起其他的解决方案，例如google的</p>
-<p>ie7 – js中是一个JavaScript库（解决IE与W3C标准的冲突的JS库），使微软的Internet Explorer的行为像一个Web标准兼容的浏览器，支持更多的W3C标准，支持CSS2、CSS3选择器。它修复了许多的HTML和CSS问题，并使 得透明PNG在IE5、IE6下正确显示。</p>
 <p>使IE5,IE6兼容到IE7模式（推荐）<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;!&#8211;[if lt IE 7]&#62;&#10;&#60;script src=&#8221;http://ie7-js.googlecode.com/svn/version/2.0(beta)/IE7.js&#8221; type=&#8221;text/javascript&#8221;&#62;&#60;/script&#62;&#10;&#60;![endif]&#8211;&#62;&#10;&#20351;IE5,IE6,IE7&#20860;&#23481;&#21040;IE8&#27169;&#24335;&#10;&#10;&#60;!&#8211;[if lt IE 8]&#62;&#10;&#60;script src=&#8221;http://ie7-js.googlecode.com/svn/version/2.0(beta)/IE8.js&#8221; type=&#8221;text/javascript&#8221;&#62;&#60;/script&#62;&#10;&#60;![endif]&#8211;&#62;&#10;&#20351;IE5,IE6,IE7,IE8&#20860;&#23481;&#21040;IE9&#27169;&#24335;&#10;&#10;&#60;!&#8211;[if lt IE 9]&#62;&#10;&#60;script src=&#8221;http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js&#8221;&#62;&#60;/script&#62;&#10;&#60;![endif]&#8211;&#62;</span><br></pre></td></tr></table></figure></p>
-<p>解决PNG显示问题</p>
-<p>只需将透明png图片命名为*-trans.png</p>
-<p>需要注意的是：此方法对背景平铺(background-repeat)和背景(background-position)无法起到任何作用,默认会占满整个容器。</p>
 <p>三、<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;meta http-equiv=&#34;X-UA-Compatible&#34; content=&#34;IE=edge,chrome=1&#34; /&#62;</span><br></pre></td></tr></table></figure></p>
-<p>创建html5时发现这么一句话，不知其什么意思，百度如下：<br>这样写可以达到的效果是如果安装了GCF，则使用GCF来渲染页面，如果没安装GCF，则使用最高版本的IE内核进行渲染。Google Chrome Frame（谷歌内嵌浏览器框架GCF）。这个插件可以让用户的IE浏览器外不变，但用户在浏览网页时，实际上使用的是Google Chrome浏览器内核，而且支持IE6、7、8等多个版本的IE浏览器。</p>
 
       
     </div>
@@ -204,18 +193,18 @@ x-ua-compatible 头标签大小写不敏感，必须用在 head 中，必须在�
     
 <nav id="article-nav">
   
-    <a href="/2016/06/05/事件的执行顺序/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/06/08/深拷贝/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          事件的执行顺序
+          克隆或者拷贝
         
       </div>
     </a>
   
   
-    <a href="/2016/05/23/21/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">css js兼容性</div>
+    <a href="/2016/05/05/localstore介绍/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">localstore介绍</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -235,7 +224,7 @@ x-ua-compatible 头标签大小写不敏感，必须用在 head 中，必须在�
       <footer id="footer">
   <div class="outer">
     <div id="footer-info">
-      <div>&copy; 2016 任先生在路上 的博客 , 技术 
+      <div>&copy; 2017 任先生在路上 的博客 , 技术 
         <a href="http://hexo.io/" target="_blank">Hexo</a>  
       </div>
     </div>

@@ -124,11 +124,11 @@
 
       <div class="body-wrap">
   
-    <article id="post-Express 4.X API" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-react总结" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/07/10/Express 4.X API/" class="article-date">
-  	<time datetime="2016-07-09T16:00:00.000Z" itemprop="datePublished">2016-07-10</time>
+      <a href="/2017/04/29/react总结/" class="article-date">
+  	<time datetime="2017-04-28T16:00:00.000Z" itemprop="datePublished">2017-04-29</time>
 </a>
     </div>
   
@@ -141,7 +141,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/10/Express 4.X API/">Express 4.X API</a>
+      <a class="article-title" href="/2017/04/29/react总结/">react总结</a>
     </h1>
   
 
@@ -150,73 +150,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Express 4.X API 翻译</p>
-<p>创建一个express应用<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&#39;express&#39;);&#10;var app = express();&#10; &#10;app.get(&#39;/&#39;,function(req,res)&#123;&#10;    res.send(&#39;hello world&#39;);&#10;&#125;);&#10;app.listen(3000);</span><br></pre></td></tr></table></figure></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/express/">express</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/07/10/Express 4.X API/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-创建对象" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/07/08/创建对象/" class="article-date">
-  	<time datetime="2016-07-07T16:00:00.000Z" itemprop="datePublished">2016-07-08</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/08/创建对象/">创建对象</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>一个对象就是一系列属性的集合，一个属性包含一个名字(key)和一个值(value)。</p>
-<p>创建对象</p>
-<p>很多有关于JavaScript书在介绍对象创建的方法时，主要有：</p>
-<p>使用对象字面量创建对象(key-value)<br>使用new创建对象<br>使用Object.create()创建对象<br>使用函数创建对象<br>使用原型创建对象</p>
-<p>使用对象字面量创建对象</p>
-<p>对象字面量是创建对象最简单的一种形式，目的是在于简化创建包含大量属性的对象的过程。对象字面量由若干属性名(keys)和属性值(values)成对组成的映射表，key和value中间使用冒号(:)分隔，每对key/value之间使用逗号(,)分隔，整个映射表用花括号({})括起来。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;&#10;    property_1:   value_1,   // property_# &#21487;&#33021;&#26159;&#19968;&#20010;&#26631;&#35782;&#31526;...&#10;    2:            value_2,   // &#25110;&#32773;&#26159;&#19968;&#20010;&#25968;&#23383;&#10;    // ...,&#10;    &#34;property n&#34;: value_n    // &#25110;&#26159;&#19968;&#20010;&#23383;&#31526;&#20018;&#125;;</span><br></pre></td></tr></table></figure></p>
+        <p>组件书写：<br>es6 class形式，有状态，容器，智能组件<br>functional， 无状态，傻瓜式组件，只接受props属性/props方法<br>react.createClass，</p>
+<p>props传递：<br>root把props传给child<br>props有对象或者方法<br>child可以维护自己的state<br>child通过回调，使得root可以获取child的state</p>
       
     </div>
     
@@ -231,7 +166,7 @@
 
       
         <p class="article-more-link">
-          <a  href="/2016/07/08/创建对象/#more">more >></a>
+          <a  href="/2017/04/29/react总结/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -250,11 +185,11 @@
 
 
   
-    <article id="post-JavaScript学习笔记：数组去重" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-eventloop" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/07/07/JavaScript学习笔记：数组去重/" class="article-date">
-  	<time datetime="2016-07-06T16:00:00.000Z" itemprop="datePublished">2016-07-07</time>
+      <a href="/2017/04/16/eventloop/" class="article-date">
+  	<time datetime="2017-04-15T16:00:00.000Z" itemprop="datePublished">2017-04-16</time>
 </a>
     </div>
   
@@ -267,7 +202,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/07/JavaScript学习笔记：数组去重/">数组去重</a>
+      <a class="article-title" href="/2017/04/16/eventloop/">event loop</a>
     </h1>
   
 
@@ -276,7 +211,74 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>双重循环去重<br>这个方法使用了两个for循环做遍历。整个思路是：<br>构建一个空数组用来存放去重后的数组<br>外面的for循环对原数组做遍历，每次从数组中取出一个元素与结果数组做对比<br>如果原数组取出的元素与结果数组元素相同，则跳出循环;反之则将其存放到结果数组中<br>代码如下:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.unique1 = function () &#123;&#10;    // &#26500;&#24314;&#19968;&#20010;&#26032;&#25968;&#32452;&#65292;&#23384;&#25918;&#32467;&#26524;&#10;    var newArray = [this[0]];    // for&#24490;&#29615;&#65292;&#27599;&#27425;&#20174;&#21407;&#25968;&#32452;&#20013;&#21462;&#20986;&#19968;&#20010;&#20803;&#32032;&#10;    // &#29992;&#21462;&#20986;&#30340;&#20803;&#32032;&#24490;&#29615;&#19982;&#32467;&#26524;&#25968;&#32452;&#23545;&#27604;&#10;    for (var i = 1; i &#60; this.length; i++) &#123;        var repeat = false;        for (var j=0; j &#60; newArray.length; j++) &#123;            // &#21407;&#25968;&#32452;&#21462;&#20986;&#30340;&#20803;&#32032;&#19982;&#32467;&#26524;&#25968;&#32452;&#20803;&#32032;&#30456;&#21516;&#10;            if(this[i] == newArray[j]) &#123;&#10;                repeat = true;                break;&#10;            &#125;&#10;        &#125;        if(!repeat) &#123;            // &#22914;&#26524;&#32467;&#26524;&#25968;&#32452;&#20013;&#27809;&#26377;&#35813;&#20803;&#32032;&#65292;&#21017;&#23384;&#25918;&#21040;&#32467;&#26524;&#25968;&#32452;&#20013;&#10;            newArray.push(this[i]);&#10;        &#125;&#10;    &#125;    return newArray;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+        <h2 id="浏览器线程"><a href="#浏览器线程" class="headerlink" title="浏览器线程"></a>浏览器线程</h2><p>浏览器里常用的线程有，js线程，gui线程，http线程， 事件线程<br>js线程负责js解析执行<br>gui线程负责渲染<br>http负责请求通信<br>事件线程负责处理浏览器事件</p>
+<p>js代码在js线程中执行时， 同步代码在js线程中直接处理<br>异步回调，例如事件回调，setTimeout，promise等 会被推入一个队列里</p>
+<h2 id="event-loop-事件循环"><a href="#event-loop-事件循环" class="headerlink" title="event loop 事件循环"></a>event loop 事件循环</h2><p>这个队列里在前面的是misco 也叫job：<br>process.nextTick, promise, mutationObserver</p>
+<p>后面的是macro 也叫task：<br>setTimeout, setInterval, setImmediate, i/o, ui rending</p>
+<p>promise 会被插入到下一个事件循环的前端， 注意是下一个， 不是当前的事件循环</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-cors" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/04/15/cors/" class="article-date">
+  	<time datetime="2017-04-14T16:00:00.000Z" itemprop="datePublished">2017-04-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/15/cors/">CORS</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>CORS（Cross-origin resource sharing） “跨域资源共享”<br>大多数浏览器都已经支持CORS。（IE10以上）</p>
+<h2 id="CORS概念"><a href="#CORS概念" class="headerlink" title="CORS概念"></a>CORS概念</h2><p>支持CORS请求的浏览器一旦发现ajax请求跨域，会对请求做一些特殊处理，对于已经实现CORS接口的服务端，接受请求，并做出回应。</p>
+<p>有一种情况比较特殊，如果我们发送的跨域请求为“非简单请求”，浏览器会在发出此请求之前首先发送一个请求类型为OPTIONS的“预检请求”，验证请求源是否为服务端允许源，这些对于开发这来说是感觉不到的，由浏览器代理。</p>
+<p>总而言之，客户端不需要对跨域请求做任何特殊处理。</p>
+<p>简单请求与非简单请求</p>
+<p>“简单请求”满足以下特征：</p>
+<p>（1) 请求方法是以下三种方法之一：<br>     HEAD<br>     GET<br>     POST<br>（2）HTTP的头信息不超出以下几种字段：<br>     Accept<br>     Accept-Language<br>     Content-Language<br>     Last-Event-ID<br>     Content-Type：application/x-www-form-urlencoded、 multipart/form-data、text/plain</p>
       
     </div>
     
@@ -291,7 +293,7 @@
 
       
         <p class="article-more-link">
-          <a  href="/2016/07/07/JavaScript学习笔记：数组去重/#more">more >></a>
+          <a  href="/2017/04/15/cors/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -310,11 +312,11 @@
 
 
   
-    <article id="post-gulp 常用插件" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-小程序插件" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/07/06/gulp 常用插件/" class="article-date">
-  	<time datetime="2016-07-05T16:00:00.000Z" itemprop="datePublished">2016-07-06</time>
+      <a href="/2017/04/15/小程序插件/" class="article-date">
+  	<time datetime="2017-04-14T16:00:00.000Z" itemprop="datePublished">2017-04-15</time>
 </a>
     </div>
   
@@ -327,7 +329,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/06/gulp 常用插件/">gulp 常用插件</a>
+      <a class="article-title" href="/2017/04/15/小程序插件/">小程序插件</a>
     </h1>
   
 
@@ -336,7 +338,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>例子一<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#39;use strict&#39;;&#10;&#10;var gulp        = require(&#39;gulp&#39;),&#10;    browserSync = require(&#39;browser-sync&#39;).create(),&#10;    SSI         = require(&#39;browsersync-ssi&#39;),&#10;    concat      = require(&#39;gulp-concat&#39;),&#10;    minify      = require(&#39;gulp-minify&#39;),&#10;    plumber     = require(&#39;gulp-plumber&#39;),&#10;    sass        = require(&#39;gulp-sass&#39;),&#10;    zip         = require(&#39;gulp-zip&#39;);&#10;&#10;&#10;gulp.task(&#39;serve&#39;, function() &#123;&#10;&#10;    browserSync.init(&#123;&#10;        server: &#123;&#10;            baseDir:[&#34;./dist&#34;],&#10;            middleware:SSI(&#123;&#10;                baseDir:&#39;./dist&#39;,&#10;                ext:&#39;.shtml&#39;,&#10;                version:&#39;2.10.0&#39;&#10;            &#125;)&#10;        &#125;&#10;    &#125;);&#10;&#10;    gulp.watch(&#34;app/scss/**/*.scss&#34;, [&#39;sass&#39;]);&#10;    gulp.watch(&#34;app/scripts/**/*.js&#34;, [&#39;js&#39;]);&#10;    gulp.watch(&#34;app/**/*.html&#34;, [&#39;html&#39;]);&#10;    gulp.watch(&#34;dist/**/*.html&#34;).on(&#34;change&#34;,browserSync.reload);&#10;&#125;);&#10;&#10;// Compile sass into CSS &#38; auto-inject into browsers&#10;gulp.task(&#39;sass&#39;, function() &#123;&#10;    &#10;    return gulp.src(&#34;app/scss/**/*.scss&#34;)&#10;        .pipe(plumber())&#10;        .pipe(sass.sync().on(&#39;error&#39;, sass.logError))&#10;        .pipe(sass(&#123;outputStyle:&#34;compact&#34;&#125;))&#10;        .pipe(gulp.dest(&#34;dist/styles&#34;))&#10;        .pipe(browserSync.stream());&#10;&#125;); &#10;&#10;// javscript files operate&#10;gulp.task(&#39;js&#39;, function()&#123;&#10;    return gulp.src(&#39;app/scripts/**/*.js&#39;)&#10;        .pipe(plumber())&#10;        .pipe(minify())&#10;        .pipe(gulp.dest(&#34;dist/scripts&#34;))&#10;        .pipe(browserSync.stream());&#10;&#125;);&#10;&#10;gulp.task(&#39;html&#39;, function() &#123;&#10;    &#10;    return gulp.src(&#34;app/*.html&#34;)&#10;        .pipe(plumber())        &#10;        .pipe(gulp.dest(&#34;dist/&#34;))&#10;        .pipe(browserSync.stream());&#10;&#125;);&#10;&#10;// publish&#10;gulp.task(&#39;publish&#39;, function()&#123;&#10;    return gulp.src(&#39;dist/**/*&#39;)&#10;        .pipe(plumber())&#10;        .pipe(zip(&#39;publish.zip&#39;))&#10;        .pipe(gulp.dest(&#39;release&#39;))&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+        <p>文字跑马灯效果：<a href="http://www.wxapp-union.com/portal.php?mod=view&amp;aid=1038" target="_blank" rel="external">http://www.wxapp-union.com/portal.php?mod=view&amp;aid=1038</a><br>触摸水波涟漪效果：<a href="http://www.wxapp-union.com/portal.php?mod=view&amp;aid=1350" target="_blank" rel="external">http://www.wxapp-union.com/portal.php?mod=view&amp;aid=1350</a><br>下拉菜单效果：<a href="http://www.wxapp-union.com/portal.php?mod=view&amp;aid=1875" target="_blank" rel="external">http://www.wxapp-union.com/portal.php?mod=view&amp;aid=1875</a><br>五星评分效果：<a href="http://www.wxapp-union.com/portal.php?mod=view&amp;aid=1876" target="_blank" rel="external">http://www.wxapp-union.com/portal.php?mod=view&amp;aid=1876</a><br>数字累加，动态效果：<a href="http://www.wxapp-union.com/forum.php?mod=viewthread&amp;tid=1694" target="_blank" rel="external">http://www.wxapp-union.com/forum.php?mod=viewthread&amp;tid=1694</a><br>星战字幕效果：<a href="http://www.wxapp-union.com/forum.php?mod=viewthread&amp;tid=1689" target="_blank" rel="external">http://www.wxapp-union.com/forum.php?mod=viewthread&amp;tid=1689</a><br>动画卡片效果：<a href="http://www.wxapp-union.com/forum.php?mod=viewthread&amp;tid=2193" target="_blank" rel="external">http://www.wxapp-union.com/forum.php?mod=viewthread&amp;tid=2193</a><br>列表项左滑删除效果：<a href="http://www.wxapp-union.com/forum.php?mod=viewthread&amp;tid=2189" target="_blank" rel="external">http://www.wxapp-union.com/forum.php?mod=viewthread&amp;tid=2189</a><br>图片的滤镜效果：<a href="http://www.wxapp-union.com/forum.php?mod=viewthread&amp;tid=3949" target="_blank" rel="external">http://www.wxapp-union.com/forum.php?mod=viewthread&amp;tid=3949</a><br>黑客帝国metrix效果：<a href="http://www.wxapp-union.com/forum.php?mod=viewthread&amp;tid=4670" target="_blank" rel="external">http://www.wxapp-union.com/forum.php?mod=viewthread&amp;tid=4670</a><br>CSS3动画效果：<a href="http://www.wxapp-union.com/forum.php?mod=viewthread&amp;tid=4628" target="_blank" rel="external">http://www.wxapp-union.com/forum.php?mod=viewthread&amp;tid=4628</a><br>仿直播点赞气泡效果：<a href="http://www.wxapp-union.com/forum.php?mod=viewthread&amp;tid=2833" target="_blank" rel="external">http://www.wxapp-union.com/forum.php?mod=viewthread&amp;tid=2833</a><br>文字弹幕效果：<a href="http://www.wxapp-union.com/forum.php?mod=viewthread&amp;tid=4713" target="_blank" rel="external">http://www.wxapp-union.com/forum.php?mod=viewthread&amp;tid=4713</a><br>仿UC宣传页面的简单动画效果：<a href="http://www.wxapp-union.com/forum.php?mod=viewthread&amp;tid=4266" target="_blank" rel="external">http://www.wxapp-union.com/forum.php?mod=viewthread&amp;tid=4266</a><br>发短信验证码倒计时：<a href="http://www.wxapp-union.com/portal.php?mod=view&amp;aid=1671" target="_blank" rel="external">http://www.wxapp-union.com/portal.php?mod=view&amp;aid=1671</a><br>弹出菜单特效：<a href="http://www.wxapp-union.com/portal.php?mod=view&amp;aid=1659" target="_blank" rel="external">http://www.wxapp-union.com/portal.php?mod=view&amp;aid=1659</a><br>滚动动画：<a href="http://www.wxapp-union.com/portal.php?mod=view&amp;aid=1538" target="_blank" rel="external">http://www.wxapp-union.com/portal.php?mod=view&amp;aid=1538</a><br>实时圆形进度条：<a href="http://www.wxapp-union.com/portal.php?mod=view&amp;aid=1456" target="_blank" rel="external">http://www.wxapp-union.com/portal.php?mod=view&amp;aid=1456</a><br>遮罩层：<a href="http://www.wxapp-union.com/forum.php?mod=viewthread&amp;tid=3617" target="_blank" rel="external">http://www.wxapp-union.com/forum.php?mod=viewthread&amp;tid=3617</a><br>仿Table效果：<a href="http://www.wxapp-union.com/portal.php?mod=view&amp;aid=1038" target="_blank" rel="external">http://www.wxapp-union.com/portal.php?mod=view&amp;aid=1038</a><br>操作按钮悬浮固定在底部：<a href="http://www.wxapp-union.com/portal.php?mod=view&amp;aid=1029" target="_blank" rel="external">http://www.wxapp-union.com/portal.php?mod=view&amp;aid=1029</a><br>支付倒计时效果：<a href="http://www.wxapp-union.com/portal.php?mod=view&amp;aid=890" target="_blank" rel="external">http://www.wxapp-union.com/portal.php?mod=view&amp;aid=890</a><br>文字单行背景自适应带角标：<a href="http://www.wxapp-union.com/portal.php?mod=view&amp;aid=636" target="_blank" rel="external">http://www.wxapp-union.com/portal.php?mod=view&amp;aid=636</a><br>侧边栏滑动特效；<a href="http://www.wxapp-union.com/forum.php?mod=viewthread&amp;tid=1202" target="_blank" rel="external">http://www.wxapp-union.com/forum.php?mod=viewthread&amp;tid=1202</a><br>顶部导航效果：<a href="http://www.wxapp-union.com/portal.php?mod=view&amp;aid=1665" target="_blank" rel="external">http://www.wxapp-union.com/portal.php?mod=view&amp;aid=1665</a><br>弹出和隐藏动画：<a href="http://www.wxapp-union.com/portal.php?mod=view&amp;aid=1449" target="_blank" rel="external">http://www.wxapp-union.com/portal.php?mod=view&amp;aid=1449</a><br>切换动画：<a href="http://www.wxapp-union.com/portal.php?mod=view&amp;aid=1113" target="_blank" rel="external">http://www.wxapp-union.com/portal.php?mod=view&amp;aid=1113</a></p>
+
       
     </div>
     
@@ -344,14 +347,71 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gulp/">gulp</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-react生命周期" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/04/09/react生命周期/" class="article-date">
+  	<time datetime="2017-04-08T16:00:00.000Z" itemprop="datePublished">2017-04-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/09/react生命周期/">react 生命周期</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>constructor(props)<br>componentWillMount()<br>render()<br>componentDidMount()<br>componentWillReceiveProps(nextProps)<br>shouldComponentUpdate(nextProps, nextState)<br>componentWillUpdate(nextProps, nextState)<br>render( )<br>componentDidUpdate(prevProps, prevState )<br>componentWillUnmount( )</p>
+<p>constructor<br>constructor(props)，组件形成时调用。<br>constructor 函数可理解为组件的构造函数，从组件的类(class) 实例化一个组件实例。这个函数在组件形成时被调用，是所有生命周期函数中最先执行的。在constructor函数内，如有必要，进行state的初始化以及绑定方法；否则可以省去constructor函数的声明。</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/07/06/gulp 常用插件/#more">more >></a>
+          <a  href="/2017/04/09/react生命周期/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -370,11 +430,11 @@
 
 
   
-    <article id="post-labjs" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-cssmodule" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/07/04/labjs/" class="article-date">
-  	<time datetime="2016-07-03T16:00:00.000Z" itemprop="datePublished">2016-07-04</time>
+      <a href="/2017/03/25/cssmodule/" class="article-date">
+  	<time datetime="2017-03-24T16:00:00.000Z" itemprop="datePublished">2017-03-25</time>
 </a>
     </div>
   
@@ -387,7 +447,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/04/labjs/">labjs</a>
+      <a class="article-title" href="/2017/03/25/cssmodule/">css module</a>
     </h1>
   
 
@@ -396,10 +456,37 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>labjs是一个js文件加载器，而requirejs和seajs则是模块加载器，模块加载器一般可以降级为文件加载器使用。labjs通过优雅的语法（script和wait 链式）实现了这两大特性，核心是性能优化，可以管理文件依赖，并且“异步”执行。下面通过具体的例子来简单讲讲这两大api的用法。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$LAB&#10;  .script(&#34;script1.js&#34;)&#10;  .script(&#34;script2.js&#34;);</span><br></pre></td></tr></table></figure>
-<p>如果说加载完两个文件（或者多个），你需要一个回调，这时候就要用到wait了：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$LAB&#10;  .script(&#34;script1.js&#34;)&#10;  .script(&#34;script2.js&#34;)&#10;  .script(&#34;script3.js&#34;)&#10;  .wait(function() &#123;  // &#31561;&#24453;&#25152;&#26377;script&#21152;&#36733;&#23436;&#20877;&#25191;&#34892;&#36825;&#20010;&#20195;&#30721;&#22359;&#10;      // ...&#10;  &#125;);</span><br></pre></td></tr></table></figure>
+        <h2 id="困扰问题"><a href="#困扰问题" class="headerlink" title="困扰问题"></a>困扰问题</h2><h3 id="CSS全局作用域问题"><a href="#CSS全局作用域问题" class="headerlink" title="CSS全局作用域问题"></a>CSS全局作用域问题</h3><p>CSS的规则都是全局的，任何一个组件的样式规则，都对整个页面有效。相信写css的人都会遇到样式冲突（污染）的问题。</p>
+<ul>
+<li>class命名写长一点吧，降低冲突的几率</li>
+<li>加个父元素的选择器，限制范围</li>
+<li>重新命名个class吧，比较保险</li>
+</ul>
+<h2 id="规范化"><a href="#规范化" class="headerlink" title="规范化"></a>规范化</h2><p>BEM,OOCSS,SMACSS</p>
+<p>BEM：block-element-modify， 解决css命名重复<br>OOCSS: 类， 解决css 重用</p>
+<p>但存在以下问题：</p>
+<ul>
+<li>JS CSS之间依然没有打通变量，css没有局部作用域</li>
+<li>复杂的命名</li>
+</ul>
+<h2 id="CSS-in-JS"><a href="#CSS-in-JS" class="headerlink" title="CSS in JS"></a>CSS in JS</h2><ul>
+<li>样式代码也会出现大量重复。</li>
+<li>不能利用成熟的 CSS 预处理器（或后处理器）</li>
+</ul>
+<p>使用JS 来管理样式模块<br>使用JS编译原生的CSS文件，使其具备模块化的能力</p>
+<p>CSS Modules 能最大化地结合现有 CSS 生态(预处理器/后处理器等)和 JS 模块化能力<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// webpack.config.js&#10;css?modules&#38;localIdentName=[name]__[local]-[hash:base64:5]&#10;&#10;/* components/Button.css */&#10;.normal &#123; /* normal &#30456;&#20851;&#30340;&#25152;&#26377;&#26679;&#24335; */ &#125;&#10;&#10;// components/Button.js&#10;import styles from &#39;./Button.css&#39;;&#10;buttonElem.outerHTML = `&#60;button class=$&#123;styles.normal&#125;&#62;Submit&#60;/button&#62;`&#10; &#10;&#60;button class=&#34;button--normal-abc53&#34;&#62;Submit&#60;/button&#62;</span><br></pre></td></tr></table></figure></p>
+<p>CSS Modules 实现了以下几点：</p>
+<ul>
+<li>所有样式都是局部作用域 的，解决了全局污染问题</li>
+<li>class 名生成规则配置灵活，可以此来压缩 class 名</li>
+<li>更好的压缩</li>
+<li>只需引用组件的 JS 就能搞定组件所有的 JS 和 CSS</li>
+</ul>
+<p>存在问题:</p>
+<ul>
+<li>无法使用伪类，媒体查询等</li>
+</ul>
+
       
     </div>
     
@@ -407,14 +494,131 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/插件/">插件</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-prefetch" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/03/12/prefetch/" class="article-date">
+  	<time datetime="2017-03-11T16:00:00.000Z" itemprop="datePublished">2017-03-12</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/12/prefetch/">prefetch</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><link rel="prefetch" href="xxx"><br>相对subresource 优先级最底</p>
+<p><link rel="subresource" href="xxx"><br>优先级最高 预先请求资源， 但不解析</p>
+<p><link rel="prerender" href="xxx"><br>预先请求资源， 并且解析， 但不改变dom，<br>不是所有资源都会下载，下载类型的，音频视频，ajax（post， put， deleted），https，弹窗</p>
+<p><link rel="dns-prefetch" href="xxx"><br>预先解析dns</p>
+<p><link rel="preload" ...="" as="script"><br>预先下载js</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-axios" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/03/11/axios/" class="article-date">
+  	<time datetime="2017-03-10T16:00:00.000Z" itemprop="datePublished">2017-03-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/11/axios/">axios</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="axios-是一个基于Promise-用于浏览器和-nodejs-的-HTTP-客户端，它本身具有以下特征："><a href="#axios-是一个基于Promise-用于浏览器和-nodejs-的-HTTP-客户端，它本身具有以下特征：" class="headerlink" title="axios 是一个基于Promise 用于浏览器和 nodejs 的 HTTP 客户端，它本身具有以下特征："></a>axios 是一个基于Promise 用于浏览器和 nodejs 的 HTTP 客户端，它本身具有以下特征：</h2><p>从浏览器中创建 XMLHttpRequest<br>从 node.js 发出 http 请求<br>支持 Promise API<br>拦截请求和响应<br>转换请求和响应数据<br>取消请求<br>自动转换JSON数据<br>客户端支持防止 CSRF/XSRF<br>浏览器兼容性</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/07/04/labjs/#more">more >></a>
+          <a  href="/2017/03/11/axios/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -433,11 +637,11 @@
 
 
   
-    <article id="post-express 中间件" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-bind实现" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/07/03/express 中间件/" class="article-date">
-  	<time datetime="2016-07-02T16:00:00.000Z" itemprop="datePublished">2016-07-03</time>
+      <a href="/2017/03/04/bind实现/" class="article-date">
+  	<time datetime="2017-03-03T16:00:00.000Z" itemprop="datePublished">2017-03-04</time>
 </a>
     </div>
   
@@ -450,7 +654,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/03/express 中间件/">express 中间件</a>
+      <a class="article-title" href="/2017/03/04/bind实现/">bind实现</a>
     </h1>
   
 
@@ -459,11 +663,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>express 中间件：</p>
-<p>basicAuth()<br>基本的认证中间件，在req.user里添加用户名</p>
-<p>用户名和密码的例子:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(express.basicAuth(&#39;username&#39;, &#39;password&#39;));</span><br></pre></td></tr></table></figure></p>
-<p>校验回调:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(express.basicAuth(function(user, pass)&#123;&#10;  return &#39;tj&#39; == user &#38;&#38; &#39;wahoo&#39; == pass;&#10;&#125;));</span><br></pre></td></tr></table></figure></p>
-<p>异步校验接受参数fn(err, user), 下面的例子req.user 将会作为user对象传递.<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(connect.basicAuth(function(user, pass, fn)&#123;&#10;  User.authenticate(&#123; user: user, pass: pass &#125;, fn);&#10;&#125;))</span><br></pre></td></tr></table></figure></p>
+        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Function.prototype.bind = function (context) &#123;&#10;    if (typeof this !== &#34;function&#34;) &#123;&#10;      throw new Error(&#34;Function.prototype.bind - what is trying to be bound is not callable&#34;);&#10;    &#125;&#10;&#10;    var self = this;&#10;    var args = Array.prototype.slice.call(arguments, 1);&#10;    var fNOP = function () &#123;&#125;;&#10;&#10;    var fbound = function () &#123;&#10;        self.apply(this instanceof self ? this : context, args.concat(Array.prototype.slice.call(arguments)));&#10;    &#125;&#10;&#10;    fNOP.prototype = this.prototype;&#10;    fbound.prototype = new fNOP();&#10;&#10;    return fbound;&#10;&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -471,135 +671,7 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/express/">express</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/07/03/express 中间件/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-favico.js" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/07/02/favico.js/" class="article-date">
-  	<time datetime="2016-07-01T16:00:00.000Z" itemprop="datePublished">2016-07-02</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/02/favico.js/">favico.js</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>使用方法<br>1、下载favico.js</p>
-<p>可以直接从github上下载 favico.js 文件或者用 bower 安装</p>
-<p>bower install favico.js</p>
-<p>2、引用 favico.js 文件</p>
-<script type="text/javascript" src="favico.js"></script>
-
-
-<p>3、调用方法<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var favicon=new Favico(&#123;&#10;    bgColor : &#39;#5CB85C&#39;,&#10;    textColor : &#39;#ff0&#39;,&#10;&#125;);&#10;favicon.badge(3);</span><br></pre></td></tr></table></figure></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/插件/">插件</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/07/02/favico.js/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-express app.js" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/07/01/express app.js/" class="article-date">
-  	<time datetime="2016-06-30T16:00:00.000Z" itemprop="datePublished">2016-07-01</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/01/express app.js/">express app.js</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&#39;express&#39;)&#10;var path=require(&#39;path&#39;)&#10;&#10;&#10;var mongoose=require(&#39;mongoose&#39;)&#10;var dbUrl=&#39;mongodb://127.0.0.1/zbyou&#39;&#10;&#9;mongoose.connect(dbUrl)&#10;&#10;var session = require(&#39;express-session&#39;)&#10;var mongoStore=require(&#39;connect-mongo&#39;)(session)&#10;&#10;var serveStatic = require(&#39;serve-static&#39;)&#10;var bodyParser=require(&#39;body-parser&#39;)&#10;var cookieParser=require(&#39;cookie-parser&#39;)&#10;&#10;var port=process.env.PORT||3001&#10;var app=express()&#10;&#9;app.listen(port)&#10;&#10;&#60;!--more--&#62;&#10;app.use(bodyParser.json())&#10;app.use(bodyParser.urlencoded(&#123;extended:false&#125;))&#10;app.use(function(req, res, next) &#123;&#10;    res.setHeader(&#39;Access-Control-Allow-Origin&#39;, &#39;*&#39;)&#10;    res.setHeader(&#39;Access-Control-Allow-Methods&#39;, &#39;GET, POST&#39;)&#10;    res.setHeader(&#39;Access-Control-Allow-Headers&#39;, &#39;X-Requested-With,content-type, Authorization&#39;);&#10;    next()&#10;&#125;)&#10;&#10;app.use(cookieParser())&#10;app.use(session(&#123;&#10;&#9;secret:&#39;zbyou&#39;,&#10;&#9;saveUninitialized: true,&#10;&#9;resave: false,&#10;&#9;store: new mongoStore(&#123;&#10;&#9;&#9;url:dbUrl,&#10;&#9;&#9;collection:&#39;sessions&#39;&#10;&#9;&#125;)&#10;&#125;))&#10;&#10;app.set(&#39;views&#39;, path.join(__dirname, &#39;../font-end/managem/views&#39;))//&#35774;&#32622;view&#30340;&#36335;&#24452; &#32534;&#35793;jade&#10;app.set(&#39;view engine&#39;, &#39;jade&#39;)&#10;&#10;app.use(serveStatic(path.join(__dirname,&#39;../&#39;)))//&#30456;&#23545;app.js&#26469;&#35828; &#35774;&#32622;&#38745;&#24577;&#36164;&#28304;&#30340;&#36335;&#21170;&#36215;&#28857;css jpg js&#31561;&#10;app.locals.moment=require(&#39;moment&#39;)&#10;&#10;require(&#39;./config/routes&#39;)(app)&#10;&#10;console.log(&#39;zbyou started on port &#39; + port)</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/express/">express</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
 	</div>
 
       
@@ -621,11 +693,11 @@
 
 
   
-    <article id="post-co" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-防抖" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/06/30/co/" class="article-date">
-  	<time datetime="2016-06-29T16:00:00.000Z" itemprop="datePublished">2016-06-30</time>
+      <a href="/2017/02/25/防抖/" class="article-date">
+  	<time datetime="2017-02-24T16:00:00.000Z" itemprop="datePublished">2017-02-25</time>
 </a>
     </div>
   
@@ -638,7 +710,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/30/co/">co</a>
+      <a class="article-title" href="/2017/02/25/防抖/">防抖</a>
     </h1>
   
 
@@ -647,7 +719,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var co = require(&#39;co&#39;);&#10;&#10;co(function *()&#123;&#10;  // yield any promise&#10;  var result = yield Promise.resolve(true);&#10;&#125;).catch(onerror);&#10;&#10;co(function *()&#123;&#10;  // resolve multiple promises in parallel&#10;  var a = Promise.resolve(1);&#10;  var b = Promise.resolve(2);&#10;  var c = Promise.resolve(3);&#10;  var res = yield [a, b, c];&#10;  console.log(res);&#10;  // =&#62; [1, 2, 3]&#10;&#125;).catch(onerror);&#10;&#10;// errors can be try/catched&#10;co(function *()&#123;&#10;  try &#123;&#10;    yield Promise.reject(new Error(&#39;boom&#39;));&#10;  &#125; catch (err) &#123;&#10;    console.error(err.message); // &#34;boom&#34;&#10; &#125;&#10;&#125;).catch(onerror);&#10;&#10;function onerror(err) &#123;&#10;  // log any uncaught errors&#10;  // co will not throw any errors you do not handle!!!&#10;  // HANDLE ALL YOUR ERRORS!!!&#10;  console.error(err.stack);&#10;&#125;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function debounce(func, wait = 300, immediate) &#123;&#10;&#10;    var timeout, result;&#10;&#10;    var debounced = function () &#123;&#10;        var context = this;&#10;        var args = arguments;&#10;&#10;        if (timeout) clearTimeout(timeout);&#10;        if (immediate) &#123;&#10;            // &#22914;&#26524;&#24050;&#32463;&#25191;&#34892;&#36807;&#65292;&#19981;&#20877;&#25191;&#34892;&#10;            var callNow = !timeout;&#10;            timeout = setTimeout(function()&#123;&#10;                timeout = null;&#10;            &#125;, wait)&#10;            if (callNow) result = func.apply(context, args)&#10;        &#125;&#10;        else &#123;&#10;            timeout = setTimeout(function()&#123;&#10;                result = func.apply(context, args)&#10;            &#125;, wait);&#10;        &#125;&#10;        return result;&#10;    &#125;;&#10;&#10;    debounced.cancel = function() &#123;&#10;        clearTimeout(timeout);&#10;        timeout = null;&#10;    &#125;;&#10;&#10;    return debounced;&#10;&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -655,82 +727,11 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/插件/">插件</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
 	</div>
 
       
 
-      
-        <p class="article-more-link">
-          <a  href="/2016/06/30/co/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Cheerful" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/29/Cheerful/" class="article-date">
-  	<time datetime="2016-06-28T16:00:00.000Z" itemprop="datePublished">2016-06-29</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/29/Cheerful/">Cheerful</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Cheerful</p>
-<p>小巧的JavaScript与Native通信库（JavaScript端实现），拿去即可使用，已经过项目的实际检测。</p>
-<p>iOS实现</p>
-<p>如果你的iOS项目使用了WebViewJavascriptBridge，那么你可不必引入iOS-JavaScriptBridge.js文件，直接引入bridge.js文件即可。</p>
-<p>如果你的iOS项目未使用WebViewJavascriptBridge，那么你需要先引入iOS-JavaScriptBridge.js文件，并且需要在iOS端实现对 CUSTOM_PROTOCOL_SCHEME = ‘wvjbscheme’的截取，并且使用stringByEvaluatingJavaScriptFromString去执行截取的参数QUEUE_HAS_MESSAGE。</p>
-<p>Android 实现</p>
-<p>Android不会存在这个问题，因为它们使用的是对象映射来实现。</p>
-<p>public final String API_KEY = “jsApi”;<br>openWebView.addJavascriptInterface(baseJsApi, API_KEY);<br>不过如果在JS端获取响应，你依然必须在Android实现对JS端的执行：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JSONObject object = new JSONObject(jsonParam);&#10;androidResponseFunSigning = &#34;androidResponseFunSigning.&#34; + object.getString(&#34;funcKey&#34;);&#10;openWebView.loadUrl(&#34;javascript:window.NativeEvaluatingJavaScript.&#34; + androidResponseFunSigning + &#34;(&#39;&#34; + json + &#34;&#39;)&#34;);</span><br></pre></td></tr></table></figure></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/插件/">插件</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/06/29/Cheerful/#more">more >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -750,14 +751,14 @@
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 </div>
       <footer id="footer">
   <div class="outer">
     <div id="footer-info">
-      <div>&copy; 2016 任先生在路上 的博客 , 技术 
+      <div>&copy; 2017 任先生在路上 的博客 , 技术 
         <a href="http://hexo.io/" target="_blank">Hexo</a>  
       </div>
     </div>

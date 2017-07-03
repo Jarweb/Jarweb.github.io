@@ -124,11 +124,11 @@
 
       <div class="body-wrap">
   
-    <article id="post-消息通知框架" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-原型继承" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/14/消息通知框架/" class="article-date">
-  	<time datetime="2016-04-13T16:00:00.000Z" itemprop="datePublished">2016-04-14</time>
+      <a href="/2016/03/30/原型继承/" class="article-date">
+  	<time datetime="2016-03-29T16:00:00.000Z" itemprop="datePublished">2016-03-30</time>
 </a>
     </div>
   
@@ -141,7 +141,129 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/14/消息通知框架/">消息通知框架</a>
+      <a class="article-title" href="/2016/03/30/原型继承/">原型继承</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;&#125;; &#10;console.log(a.prototype); &#10;//=&#62; undefined &#10;var b = function()&#123;&#125;; &#10;console.log(b.prototype); &#10;//=&#62; &#123;&#125; &#10;var c = &#39;Hello&#39;; &#10;console.log(c.prototype); &#10;/=&#62; undefined</span><br></pre></td></tr></table></figure>
+<p>prototype是每个function定义时自带的属性，但是Js中function本身也是对象，我们先来看一下下面几个概念的差别：</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/03/30/原型继承/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-函数编程" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/25/函数编程/" class="article-date">
+  	<time datetime="2016-03-24T16:00:00.000Z" itemprop="datePublished">2016-03-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/25/函数编程/">函数编程</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="纯函数式相同的参数返回相同的结果，它的执行不依赖于系统的状态"><a href="#纯函数式相同的参数返回相同的结果，它的执行不依赖于系统的状态" class="headerlink" title="纯函数式相同的参数返回相同的结果，它的执行不依赖于系统的状态"></a>纯函数式相同的参数返回相同的结果，它的执行不依赖于系统的状态</h1><p>1) 非纯净的<br>let number = 1;<br>const increment = () =&gt; number += 1;<br>increment();<br>// 2</p>
+<p>2) 纯净的<br>const increment = n =&gt; n + 1;<br>increment(1);<br>// 2</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/03/25/函数编程/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-关于对象" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/22/关于对象/" class="article-date">
+  	<time datetime="2016-03-21T16:00:00.000Z" itemprop="datePublished">2016-03-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/22/关于对象/">关于对象</a>
     </h1>
   
 
@@ -151,20 +273,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ol>
-<li>NOTYNoty 是一个很有用的 jQuery 插件，用于创建 alert, success, error和 confirmation 信息提示框，替换浏览器标准的对话框。每个提醒都是添加到队列并进行显示的。</li>
+<li>对象字面值不能正确解析问题：<br>{a:1}.a报错，错误Uncaught SyntaxError: Unexpected token .</li>
 </ol>
-<ol>
-<li>Alertify.jsJavaScript 警告/通知系统。</li>
-</ol>
-<ol>
-<li>Toastrtoastr是一个非阻塞通知JavaScript库。需要依赖jQuery，它的目标是创建一个简单的核心库，可以进行定制和扩展。</li>
-</ol>
-<ol>
-<li>Notie.jsNotie.js 是一个简单的JavaScript通知插件，不需要任何依赖。</li>
-</ol>
-<ol>
-<li>PNotify一个 JavaScript 的消息提醒插件，基于 Bootstrap 框架和 jQuery UI 框架。</li>
-</ol>
+<p>解决：<br>({a:1}.a) // 或({a:1}).a</p>
+<p>原因：<br>就是声明对象字面值时，语句开头不应该用{，因为js解释器会认为这是语句块（block）的开始。<br>同理，类似问题{ name: “mc”, id: 1 }会报错Uncaught SyntaxError: Unexpected token :也是这个道理。({ name: “mc”, id: 1 })即可正确解析。但稍注意下，{name: “mc”}是不会报错的，它等同于name: “mc”，并返回一个字符串”mc”。</p>
       
     </div>
     
@@ -179,7 +291,7 @@
 
       
         <p class="article-more-link">
-          <a  href="/2016/04/14/消息通知框架/#more">more >></a>
+          <a  href="/2016/03/22/关于对象/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -198,11 +310,11 @@
 
 
   
-    <article id="post-栈" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-类型变量" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/12/栈/" class="article-date">
-  	<time datetime="2016-04-11T16:00:00.000Z" itemprop="datePublished">2016-04-12</time>
+      <a href="/2016/03/22/类型变量/" class="article-date">
+  	<time datetime="2016-03-21T16:00:00.000Z" itemprop="datePublished">2016-03-22</time>
 </a>
     </div>
   
@@ -215,7 +327,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/12/栈/">栈</a>
+      <a class="article-title" href="/2016/03/22/类型变量/">类型变量</a>
     </h1>
   
 
@@ -224,21 +336,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>栈。<br>栈是一种遵从后进先出原则(LIFO,全称为Last In First Out)的有序集合。栈顶永远是最新的元素。<br>举个例子就是:栈就像放在箱子里的一叠书 你要拿下面的书先要把上面的书拿开。(当然，你不能先拿下面的书。)<br>看图示也可明白。</p>
-<p>JavaScipt中栈的实现首先，创建一个构造函数。</p>
-<p>/**</p>
+        <p>类型JavaScript中类型主要包括了primitive和object类型，其中primitive类型包括了：<br>null、undefined、boolean、number、string和symbol(es6)。其他所有的都为object类型。</p>
+<p>类型判断类型检测主要包括了：typeof、instanceof和toString的三种方式来判断变量的类型。<br>typeoftypeof接受一个值并返回它的类型，它有两种可能的语法：</p>
 <ul>
-<li>栈的构造函数<br>*/<br>function Stack() { // 用数组来模拟栈 var item = [];<br>}</li>
-</ul>
-<p>栈需要有如下的方法:</p>
-<ul>
-<li>push(element(s)): 添加几个元素到栈顶</li>
-<li>pop(): 移除并返回栈顶元素</li>
-<li>peek(): 返回栈顶元素</li>
-<li>isAmpty: 检查栈是否为空，为空则返回true</li>
-<li>clear: 移除栈中所有元素</li>
-<li>size: 返回栈中元素个数。</li>
-<li>print: 以字符串显示栈中所有内容</li>
+<li>typeof x</li>
+<li>typeof(x)</li>
 </ul>
       
     </div>
@@ -254,7 +356,7 @@
 
       
         <p class="article-more-link">
-          <a  href="/2016/04/12/栈/#more">more >></a>
+          <a  href="/2016/03/22/类型变量/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -273,11 +375,11 @@
 
 
   
-    <article id="post-柯里化" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-了解Object" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/10/柯里化/" class="article-date">
-  	<time datetime="2016-04-09T16:00:00.000Z" itemprop="datePublished">2016-04-10</time>
+      <a href="/2016/03/14/了解Object/" class="article-date">
+  	<time datetime="2016-03-13T16:00:00.000Z" itemprop="datePublished">2016-03-14</time>
 </a>
     </div>
   
@@ -290,7 +392,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/10/柯里化/">柯里化</a>
+      <a class="article-title" href="/2016/03/14/了解Object/">了解Object</a>
     </h1>
   
 
@@ -299,135 +401,27 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>f是一个普通函数，接受两个参数，并返回他们相加的结果<br>function f(x, y) {<br>  return x + y<br>}</p>
-<p>g是一个柯里化函数，接受一个参数，返回一个新的函数<br>function g(x) {<br>  return function(y) {<br>    return x + y<br>  }<br>}</p>
-<p>传统函数调用是接收多个参数返回一个值，而柯里化函数则是接收参数返回新的函数，新的函数又可以接受参数再返回新的函数，直至最后返回结果值使用柯里化函数的优势是我们可以”部分应用”(Partial Application)函数的参数，生成新的函数，这在函数编程中是至关重要的</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/04/10/柯里化/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-this" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/09/this/" class="article-date">
-  	<time datetime="2016-04-08T16:00:00.000Z" itemprop="datePublished">2016-04-09</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/09/this/">this</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>global this</p>
+        <blockquote>
+<p>Object从上面的输出中挑选出一些常用方法和属性，会得到下面的列表：</p>
+</blockquote>
 <ul>
-<li>在浏览器里，在全局范围内，this等价于window对象。</li>
+<li>create⑤</li>
+<li>defineProperty⑤</li>
+<li>defineProperties⑤</li>
+<li>getPrototypeOf⑤</li>
+<li>getOwnPropertyDescriptor⑤</li>
+<li>keys⑤</li>
+<li>getOwnPropertyNames⑤</li>
+<li>preventExtensions⑤</li>
+<li>isExtensible⑤</li>
+<li>seal⑤</li>
+<li>isSealed⑤</li>
+<li>freeze⑤</li>
+<li>isFrozen⑤</li>
 </ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;script type=&#34;text/javascript&#34;&#62;&#10;&#9;onsole.log(this === window);&#10;&#9;//true 3&#10;&#60;/script&#62;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/this/">this</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/04/09/this/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据类型" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/09/数据类型/" class="article-date">
-  	<time datetime="2016-04-08T16:00:00.000Z" itemprop="datePublished">2016-04-09</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/09/数据类型/">数据类型变化</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>例1.1<br>var a = “apple”;<br>var b = a;<br>a = “banana”;<br>b<br>按理说，b = a后，a是啥值b就应该跟着是啥值了~<br>但，b结果是”apple”，还是一开始赋值时a的值。</p>
-<p>例1.2<br>var a = {name: “apple”};<br>var b = a;<br>a.name = “banana”;<br>b.name</p>
-<p>这回，b又不争气的跟着a变了，b.name结果是”banana”</p>
+<blockquote>
+<p>带⑤的为es5新增的方法。</p>
+</blockquote>
       
     </div>
     
@@ -442,7 +436,7 @@
 
       
         <p class="article-more-link">
-          <a  href="/2016/04/09/数据类型/#more">more >></a>
+          <a  href="/2016/03/14/了解Object/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -461,11 +455,11 @@
 
 
   
-    <article id="post-捕获冒泡" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-js异步回调" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/07/捕获冒泡/" class="article-date">
-  	<time datetime="2016-04-06T16:00:00.000Z" itemprop="datePublished">2016-04-07</time>
+      <a href="/2016/03/10/js异步回调/" class="article-date">
+  	<time datetime="2016-03-09T16:00:00.000Z" itemprop="datePublished">2016-03-10</time>
 </a>
     </div>
   
@@ -478,7 +472,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/07/捕获冒泡/">捕获与冒泡</a>
+      <a class="article-title" href="/2016/03/10/js异步回调/">js异步</a>
     </h1>
   
 
@@ -487,15 +481,138 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>总结就是：先捕获，后冒泡，捕获从上到下，冒泡从下到上（形象点说法：捕获像石头沉入海底，冒泡则像气泡冒出水面）</p>
-<p>问：假如去掉注释 event.stopPropagation();  结果又会输出什么？<br>答：去掉event.stopPropagation() 之后，由于事件有捕获和冒泡时先执行捕获，捕获到div之后，事件被阻止，后面就不在继续传播了。所以只输出divcallback.</p>
-<p>div.addEventListener(‘click’,callbackdiv,true);这一句只能是捕获才执行。</p>
-<p>事件不同浏览器处理函数</p>
-<ul>
-<li>element.addEventListener(type, listener[, useCapture]); // IE6~8不支持（捕获和冒泡通过useCapture,默认false）</li>
-<li>element.attachEvent(’on’ + type, listener); // IE6~10，IE11不支持(只执行冒泡事件)</li>
-<li>element[’on’ + type] = function(){} // 所有浏览器（默认执行冒泡事件）</li>
-</ul>
+        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const fs = require(&#39;fs&#39;)&#10;console.log(&#39;start reading a file...&#39;)&#10;fs.readFile(&#39;file.md&#39;, &#39;utf-8&#39;, function (err, content) &#123;  &#10;  if (err) &#123;&#10;    console.log(&#39;error happened during reading the file&#39;)&#10;    return console.log(err)&#10;  &#125;&#10;&#10;  console.log(content)&#10;&#125;)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/03/10/js异步回调/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-20" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/20/20/" class="article-date">
+  	<time datetime="2016-02-19T16:00:00.000Z" itemprop="datePublished">2016-02-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/20/20/">angular 笔记一</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="特性一：双向的数据绑定"><a href="#特性一：双向的数据绑定" class="headerlink" title="特性一：双向的数据绑定"></a>特性一：双向的数据绑定</h3><blockquote>
+<p>我们想象一下Model是你的应用中的简单事实。你的Model是你用来读取或者更新的部分。数据绑定指令提供了你的Model投射到view的方法。这些投射可以无缝的，毫不影响的应用到web应用中。</p>
+</blockquote>
+<h3 id="特性二：模板"><a href="#特性二：模板" class="headerlink" title="特性二：模板"></a>特性二：模板</h3><blockquote>
+<p>在AngularJS中，一个模板就是一个HTML文件。但是HTML的内容扩展了，包含了很多帮助你映射model到view的内容.<br>HTML模板将会被浏览器解析到DOM中。DOM然后成为AngularJS编译器的输入。AngularJS将会遍历DOM模板来生成一些指导，即，directive（指令）。所有的指令都负责针对view来设置数据绑定。</p>
+</blockquote>
+<p>###特性三：MVC</p>
+<blockquote>
+<p>针对客户端应用开发AngularJS吸收了传统的MVC基本原则。MVC或者Model-View-Controll设计模式针对不同的人可能意味不同的东西。AngularJS并不执行传统意义上的MVC，更接近于MVVM（Moodel-View-ViewModel)。</p>
+</blockquote>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/02/20/20/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-js数据结构" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/12/js数据结构/" class="article-date">
+  	<time datetime="2016-02-11T16:00:00.000Z" itemprop="datePublished">2016-02-12</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/12/js数据结构/">js数据结构</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>栈（Stack）是限定仅在表尾进行插入或删除操作的线性表。表尾为栈顶（top），表头为栈底（bottom），不含元素的空表为空栈。</p>
+<p>栈又称为后进先出（last in first out）的线性表。</p>
+<p>堆栈可以用链表和数组两种方式实现，一般为一个堆栈预先分配一个大小固定且较合适的空间并非难事，所以较流行的做法是 Stack 结构下含一个数组。如果空间实在紧张，也可用链表实现，且去掉表头。</p>
       
     </div>
     
@@ -510,7 +627,7 @@
 
       
         <p class="article-more-link">
-          <a  href="/2016/04/07/捕获冒泡/#more">more >></a>
+          <a  href="/2016/02/12/js数据结构/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -529,11 +646,11 @@
 
 
   
-    <article id="post-npm" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-11" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/07/npm/" class="article-date">
-  	<time datetime="2016-04-06T16:00:00.000Z" itemprop="datePublished">2016-04-07</time>
+      <a href="/2016/01/27/11/" class="article-date">
+  	<time datetime="2016-01-26T16:00:00.000Z" itemprop="datePublished">2016-01-27</time>
 </a>
     </div>
   
@@ -546,7 +663,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/07/npm/">npm</a>
+      <a class="article-title" href="/2016/01/27/11/">DNS解析</a>
     </h1>
   
 
@@ -555,19 +672,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>使用nmp来代替gulp等<br>postcss</p>
-<p>npm install –save-dev node-sass<br>node-sass –output-style compressed -o dist/css src/scss<br>npm install –save-dev postcss-cli autoprefixer<br>npm install –save-dev eslint<br>npm i -D uglify-js<br>npm i -D imagemin-cli<br>npm i -D svgo svg-sprite-generator<br>npm i -D browser-sync<br>npm i -D onchange<br>npm i -D parallelshell</p>
-<p>“scripts”: {<br>    “scss”: “node-sass –output-style compressed -o dist/css src/scss”<br>    “autoprefixer”: “postcss -u autoprefixer -r dist/css/<em>“<br>    “lint”: “eslint src/js”<br>    “uglify”: “mkdir -p dist/js &amp;&amp; uglifyjs src/js/</em>.js -m -o dist/js/app.js”<br>    “imagemin”: “imagemin src/images dist/images -p”,<br>    “icons”: “svgo -f src/images/icons &amp;&amp; mkdir -p dist/images &amp;&amp; svg-sprite-generate -d src/images/icons -o dist/images/icons.svg”<br>    “serve”: “browser-sync start –server –files ‘dist/css/<em>.css, dist/js/</em>.js’”</p>
-<pre><code>&quot;build:css&quot;: &quot;npm run scss &amp;&amp; npm run autoprefixer&quot;
-&quot;build:js&quot;: &quot;npm run lint &amp;amp;&amp;amp; npm run uglify&quot;, 
-&quot;build:images&quot;: &quot;npm run imagemin &amp;&amp; npm run icons&quot;, 
-&quot;build:all&quot;: &quot;npm run build:css &amp;&amp; npm run build:js &amp;&amp; npm run build:images&quot;
-&quot;watch:css&quot;: &quot;onchange &apos;src/scss/*.scss&apos; -- npm run build:css&quot;, 
-&quot;watch:js&quot;: &quot;onchange &apos;src/js/*.js&apos; -- npm run build:js&quot;,
-&quot;watch:all&quot;: &quot;parallelshell &apos;npm run serve&apos; &apos;npm run watch:css&apos; &apos;npm run watch:js&apos;&quot;
-&quot;postinstall&quot;: &quot;npm run watch:all&quot;
-</code></pre><p>}</p>
-
+        <h3 id="域名了解"><a href="#域名了解" class="headerlink" title="域名了解"></a>域名了解</h3><p>Baidu.com就是一个顶级域名，而www.baidu.com却不是顶级域名，他是在baidu.com 这个域里的一叫做www的主机。一级域之后还有二级域，三级域，只要我买了一个顶级域，并且我搭建了自己BIND服务器注册到互联网中，那么我就可以随意在前面多加几个域了（当然长度是有限制的）。比如a.www.baidu.com，在这个网址中，www.baidu.com变成了一个二级域而不是一台主机，主机名是a。</p>
+<blockquote>
+<p>1.现在我有一台计算机，通过ISP接入了互联网，那么ISP就会给我分配一个DNS服务器，这个DNS服务器不是权威服务器，而是相当于一个代理的dns解析服务器，他会帮你迭代权威服务器返回的应答，然后把最终查到IP返回给你。</p>
+<p>2.现在的我计算机要向这台ISPDNS发起请求查询www.baidu.com这个域名了。</p>
+<p>3.ISPDNS拿到请求后，先检查一下自己的缓存中有没有这个地址，有的话就直接返回。这个时候拿到的ip地址，会被标记为非权威服务器的应答。</p>
+</blockquote>
       
     </div>
     
@@ -575,71 +685,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm/">npm</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-性能优化的几点" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/06/性能优化的几点/" class="article-date">
-  	<time datetime="2016-04-05T16:00:00.000Z" itemprop="datePublished">2016-04-06</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/06/性能优化的几点/">页面性能优化</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最小化请求所有在你的网站加载时用来渲染页面（外部CSS或JS文件、web字体、图片等等）的资源，都是不同的HTTP请求。一般的网站平均有 93个请求！<br>我的目标是减少HTTP请求。一种方法是分别编译或连接（组合、合并）CSS和javascript到一个文件中。让这个过程自动化（例如使用构建工具 Grunt 或 Gulp）是理想的效果，但至少也应该在生产环境下手动完成。</p>
-<p>压缩、优化现在我找到了减少请求的方法，我开始寻找各种方法来减重。文件越小，加载速度越快。通常平均的页面大小为1950KB。按照内容分类：</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/性能/">性能</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DNS/">DNS</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/04/06/性能优化的几点/#more">more >></a>
+          <a  href="/2016/01/27/11/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -658,11 +711,11 @@
 
 
   
-    <article id="post-影响性能关键" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-10" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/06/影响性能关键/" class="article-date">
-  	<time datetime="2016-04-05T16:00:00.000Z" itemprop="datePublished">2016-04-06</time>
+      <a href="/2016/01/20/10/" class="article-date">
+  	<time datetime="2016-01-19T16:00:00.000Z" itemprop="datePublished">2016-01-20</time>
 </a>
     </div>
   
@@ -675,7 +728,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/06/影响性能关键/">影响网页渲染的关键</a>
+      <a class="article-title" href="/2016/01/20/10/">TCP三次握手</a>
     </h1>
   
 
@@ -684,17 +737,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>路径为了显示一张网页，浏览器必须获取网页所需的所有资源。一个简单的例子：一个网页需要一张图片，一个CSS文件，一个JavaScript文件。<br>我们来看看这张网页在展示之前经历的路径：</p>
-<ol>
-<li>浏览器下载html文件</li>
-<li>浏览器读取html文件，发现里面涉及一个CSS文件，一个JavaScript文件和一张图片</li>
-<li>浏览器开始下载这张图片</li>
-<li>浏览器发现不获取CSS和JavaScript文件就无法显示网页</li>
-<li>浏览器下载CSS文件并读取之，确保除此之外没有别的文件需要被访问</li>
-<li>浏览器发现不获取JavaScript文件还是无法显示网页</li>
-<li>浏览器下载JavaScript文件并读取之，确保除此之外没有别的文件需要被访问</li>
-<li>浏览器发现现在可以显示网页了</li>
-</ol>
+        <h3 id="TCP术语："><a href="#TCP术语：" class="headerlink" title="TCP术语："></a>TCP术语：</h3><blockquote>
+<p>SYN(synchronous建立联机)<br>ACK(acknowledgement 确认)<br>PSH(push传送)<br>FIN(finish结束)<br>RST(reset重置)<br>URG(urgent紧急)<br>URG 紧急指针，告诉接收TCP模块紧要指针域指着紧要数据。<br>ACK 置1时表示确认号（为合法，为0的时候表示数据段不包含确认信息，确认号被忽略。<br>PSH 置1时请求的数据段在接收方得到后就可直接送到应用程序，而不必等到缓冲区满时才传送。<br>RST 置1时重建连接。如果接收到RST位时候，通常发生了某些错误。<br>SYN 置1时用来发起一个连接。<br>FIN 置1时表示发端完成发送任务。用来释放连接，表明发送方已经没有数据发送了。<br>另外还有 Sequence number(顺序号码) 、Acknowledge number(确认号码)在建立握手过程中发送的序列号。<br>
       
     </div>
     
@@ -702,76 +746,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/性能/">性能</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TCP-IP/">TCP/IP</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/04/06/影响性能关键/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-哈希表" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/03/哈希表/" class="article-date">
-  	<time datetime="2016-04-02T16:00:00.000Z" itemprop="datePublished">2016-04-03</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/03/哈希表/">哈希表</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>散列表（Hash table，也叫哈希表），是根据关键字（Key value）而直接访问在内存存储位置的数据结构。摘自 Wiki<br>Hash Map通常在JavaScript中作为一个简单的来存储键值对的地方。然而，Object并不是一个真正的哈希映射，如果使用不当可能会带来潜在的问题。而且JavaScript可能不提供本地哈希映射（至少不是跨浏览器兼容的），有一个更好的声明对象属性的方法。</p>
-<p>在Object声明成员的问题<br>该问题可能缘于对象原型链的继承机制。就拿toString方法来说，如果使用in操作符来判断对象是否存在的话：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var map = &#123;&#125;;&#10;&#39;toString&#39; in map; // true</span><br></pre></td></tr></table></figure></p>
-<p>因为in操作符会从所有原型继续对象查找该对象是否存在。要解决这个问题，可使用hasOwnProperty方法检测该对象是否存在：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var map = &#123;&#125;;&#10;map.hasOwnProperty(&#39;toString&#39;); // false</span><br></pre></td></tr></table></figure></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/04/03/哈希表/#more">more >></a>
+          <a  href="/2016/01/20/10/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -792,14 +774,14 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/7/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/7/">Next &raquo;</a>
     </nav>
   
 </div>
       <footer id="footer">
   <div class="outer">
     <div id="footer-info">
-      <div>&copy; 2016 任先生在路上 的博客 , 技术 
+      <div>&copy; 2017 任先生在路上 的博客 , 技术 
         <a href="http://hexo.io/" target="_blank">Hexo</a>  
       </div>
     </div>

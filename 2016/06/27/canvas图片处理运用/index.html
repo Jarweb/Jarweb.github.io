@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Jar-R">
 <meta property="og:description" content="canvas图片处理运用对于canvas来说，主要是两个方法对图片处理比较重要，一个是通过html5 canvas的 getImageData 方法获取图片的像素信息，可以很方便的通过方法导入到把网络图片或者本地的图片导入至canvas中并获取图片的像素信息，可以修改像素信息后通过另外一个重要的方法putImageData导出处理后的图片。
 1、获取canvas调用1var c = documen">
-<meta property="og:updated_time" content="2016-07-16T16:48:15.627Z">
+<meta property="og:updated_time" content="2017-06-28T11:12:26.745Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="canvas图片处理">
 <meta name="twitter:description" content="canvas图片处理运用对于canvas来说，主要是两个方法对图片处理比较重要，一个是通过html5 canvas的 getImageData 方法获取图片的像素信息，可以很方便的通过方法导入到把网络图片或者本地的图片导入至canvas中并获取图片的像素信息，可以修改像素信息后通过另外一个重要的方法putImageData导出处理后的图片。
@@ -169,7 +169,6 @@
 <a id="more"></a>
 <p>3、获取图片的像素信息<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var imageData = context.getImageData(0, 0, w, h);&#10;&#10;//&#27880;&#24847;&#36825;&#20010;&#33719;&#21462;&#30340;&#26159;&#25968;&#32452;&#65292;&#27880;&#24847;&#27599;1&#20010;&#20687;&#32032;&#30001;&#25968;&#32452;&#30340;4&#20010;&#20803;&#32032;&#32452;&#25104;&#65292;&#22235;&#20010;&#20803;&#32032;&#20998;&#21035;&#20195;&#30721;&#22235;&#20010;&#36890;&#36947;r/g/b/a&#30340;&#20540;&#10;&#10;for(var j=0;j&#60;hiddenImage.height;j+=1)&#123;&#10;  for(var i=0;i&#60;hiddenImage.width;i+=1)&#123;&#10;//&#27880;&#24847;&#36825;&#37324;&#33719;&#21462;&#22270;&#29255;&#20449;&#24687;&#21518;&#21487;&#20197;&#36827;&#34892;&#23450;&#21046;&#21270;&#22788;&#29702;&#10;    offset=4*(hiddenImage.width*j+i);&#10;    var red = sourceImageData[offset];&#10;    var green = sourceImageData[offset + 1];&#10;    var blue = sourceImageData[offset + 2];&#10;    var brightness = getBrightness(red,green,blue);&#10;  &#125;&#10;&#125;&#10;function getBrightness(r,g,b)&#123;&#10;      return 0.3*r + 0.59*g + 0.11*b;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
 <p>4、导出处理过的图片<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">context.putImageData(&#31532;&#19977;&#27493;&#22788;&#29702;&#36807;&#24471;&#20687;&#32032;&#20449;&#24687;,0,0);</span><br></pre></td></tr></table></figure></p>
-<p>二维码识别思路<br>1、设计一个自动等分切割图片的canvas 程序（利用canvas导出原图的二进制数组，然后等分数组后出单个图片的序列库）<br>2、简单做个爬虫程序，利用步骤1完成的程序到需要识别的网站下载该网站的二维码序列图库<br>3、手工翻译二维码序列图库对应的真实含义，并建立图片到真实含义的map表。<br>4、设计自动图片识别程序，导入需要识别的原二维码后，按照1的步骤进行等分，分别拿等分后的图片依次对比步骤2获取的图库，对比出对比度最接近的图片，然后通过步骤三翻译出来的map 表获取对应图片的真实含义<br>好了，授人以鱼不如授人以渔，通过前端进行做坏事的方法告诉你了，如何发扬光大就看你的灵活运用。</p>
 
       
     </div>
@@ -179,18 +178,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/06/29/Cheerful/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/07/01/express app.js/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          Cheerful
+          express app.js
         
       </div>
     </a>
   
   
-    <a href="/2016/06/27/Gulp实现web服务器/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Gulp实现web服务器</div>
+    <a href="/2016/06/26/Array/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">array</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -210,7 +209,7 @@
       <footer id="footer">
   <div class="outer">
     <div id="footer-info">
-      <div>&copy; 2016 任先生在路上 的博客 , 技术 
+      <div>&copy; 2017 任先生在路上 的博客 , 技术 
         <a href="http://hexo.io/" target="_blank">Hexo</a>  
       </div>
     </div>

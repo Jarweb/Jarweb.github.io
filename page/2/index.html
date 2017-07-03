@@ -124,11 +124,11 @@
 
       <div class="body-wrap">
   
-    <article id="post-canvas图片处理运用" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-前端路由实现原理" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/06/27/canvas图片处理运用/" class="article-date">
-  	<time datetime="2016-06-26T16:00:00.000Z" itemprop="datePublished">2016-06-27</time>
+      <a href="/2017/02/19/前端路由实现原理/" class="article-date">
+  	<time datetime="2017-02-18T16:00:00.000Z" itemprop="datePublished">2017-02-19</time>
 </a>
     </div>
   
@@ -141,7 +141,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/27/canvas图片处理运用/">canvas图片处理</a>
+      <a class="article-title" href="/2017/02/19/前端路由实现原理/">前端路由实现</a>
     </h1>
   
 
@@ -150,9 +150,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>canvas图片处理运用<br>对于canvas来说，主要是两个方法对图片处理比较重要，一个是通过html5 canvas的 getImageData 方法获取图片的像素信息，可以很方便的通过方法导入到把网络图片或者本地的图片导入至canvas中并获取图片的像素信息，可以修改像素信息后通过另外一个重要的方法putImageData导出处理后的图片。</p>
-<p>1、获取canvas调用<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var c = document.createElement(&#39;canvas&#39;);&#10;context = c.getContext(&#39;2d&#39;);</span><br></pre></td></tr></table></figure></p>
-<p>2、获取导入图像信息<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var hiddenImage = new Image();&#10;hiddenImage.src=&#22270;&#29255;&#22320;&#22336;&#10; context .drawImage(hiddenImage, 0, 0, width, height);&#10;   hiddenImage .onload=function()&#123;&#10;    context.putImageData(hiddenImage, 0, 0);&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+        <h2 id="前端路由原理"><a href="#前端路由原理" class="headerlink" title="前端路由原理"></a>前端路由原理</h2><p>先按一定的规则， 实现hash表， key是路径， value是处理页面渲染的回调。<br>然后通过监听事件，来循环hash表，执行相应的回调函数。</p>
+<h2 id="location-hash-hashchange事件"><a href="#location-hash-hashchange事件" class="headerlink" title="location.hash + hashchange事件"></a>location.hash + hashchange事件</h2><p>通过location.hash, location.assign(), location.replace()来改变hash<br>然后通过监听hashchange来做相应的处理</p>
+<p>浏览器兼容好</p>
+<h2 id="history-pushState-popState事件"><a href="#history-pushState-popState事件" class="headerlink" title="history.pushState() + popState事件"></a>history.pushState() + popState事件</h2><p>通过pushState() 来想history state 栈中添加新的url<br>然后history.go(), history.back()，来触发页面跳转<br>然后通过popstate监听url的改变</p>
+<p>浏览器兼容相对差点</p>
+
       
     </div>
     
@@ -160,14 +163,195 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/canvas/">canvas</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-new原理" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/02/19/new原理/" class="article-date">
+  	<time datetime="2017-02-18T16:00:00.000Z" itemprop="datePublished">2017-02-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/19/new原理/">new原理</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>用new Object() 的方式新建了一个对象 obj<br>获取出去第一个参数<br>将 obj 的原型指向构造函数，这样 obj 就可以访问到构造函数原型中的属性<br>使用 apply，改变构造函数 this 的指向到新建的对象，这样 obj 就可以访问到构造函数中的属性<br>返回 obj</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function objectFactory() &#123;&#10;    var obj = new Object(),&#10;    Constructor = [].slice.call(arguments);&#10;    obj.__proto__ = Constructor.prototype;&#10;    var ret = Constructor.apply(obj, arguments);&#10;    return typeof ret === &#39;object&#39; ? ret : obj;&#10;&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-节流" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/02/15/节流/" class="article-date">
+  	<time datetime="2017-02-14T16:00:00.000Z" itemprop="datePublished">2017-02-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/15/节流/">节流</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>每隔一段时间，只执行一次事件。</p>
+<p>有两种主流的实现方式，一种是使用时间戳，一种是设置定时器。</p>
+<p>使用时间戳<br>当触发事件的时候，我们取出当前的时间戳，然后减去之前的时间戳(最一开始值设为 0 )，如果大于设置的时间周期，就执行函数，然后更新时间戳为当前的时间戳，如果小于，就不执行。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function throttle(func, wait) &#123;&#10;    var context, args;&#10;    var previous = 0;&#10;&#10;    return function() &#123;&#10;        var now = +new Date();&#10;        context = this;&#10;        args = arguments;&#10;        if (now - previous &#62; wait) &#123;&#10;            func.apply(context, args);&#10;            previous = now;&#10;        &#125;&#10;    &#125;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用定时器。<br>设置一个定时器，再触发事件的时候，如果定时器存在，就不执行，直到定时器执行，然后执行函数，清空定时器，这样就可以设置下个定时器。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function throttle(func, wait) &#123;&#10;    var timeout;&#10;    return function() &#123;&#10;        context = this;&#10;        args = arguments;&#10;        if (!timeout) &#123;&#10;            timeout = setTimeout(function()&#123;&#10;                timeout = null;&#10;                func.apply(context, args)&#10;            &#125;, wait)&#10;        &#125;&#10;&#10;    &#125;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-22" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/02/07/22/" class="article-date">
+  	<time datetime="2017-02-07T08:00:48.177Z" itemprop="datePublished">2017-02-07</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/07/22/">移动开发知识</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>app应用前端开发要注重meta标签<br>webkit内核中有一些私有的meta标签，这些meta标签在开发webapp时起到非常重要的作用 。</p>
+<p><meta content="email=no" name="format-detection" /> //去除Android平台中对邮箱地址的识别怎么做</p>
+<p><meta name="apple-mobile-web-app-capable" content="yes"> //作用是让普通移动网页被添加到主屏幕后</p>
+<p>舍弃CSS float属性<br>在项目开发过程中可以会遇到内容排列显示的布局，假如你遇见这样的视觉稿，建议你放弃float，可以直接使用display:inline-block。</p>
+<p>利用CSS3边框背景属性<br>在app的前端开发中，这个按钮有圆角效果，有内发光效果还有高光效果，这样的按钮使用CSS3写是无法写出来的，当然圆角可以使用CSS3来写，但高光和内发光却无法使用CSS3编写， 这个时候你不妨使用-webkit-border-image来定义这个按钮的样式。</p>
+<p>使用webkit-box<br>webkit为display属性提供了一个webkit-box的值，做到盒子模型灵活控制。</p>
+<p>很多属性极限突破可以使用缩放，倾斜这种手段来hack，比如最小字体，比如各种自己画的伪类图标。<br>能css画的不要用图。<br>能flex布局的不要用浮动，不要用绝对定位（不利于页面布局的扩展）</p>
+</blockquote>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/移动开发/">移动开发</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/06/27/canvas图片处理运用/#more">more >></a>
+          <a  href="/2017/02/07/22/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -186,11 +370,11 @@
 
 
   
-    <article id="post-Gulp实现web服务器" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-21" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/06/27/Gulp实现web服务器/" class="article-date">
-  	<time datetime="2016-06-26T16:00:00.000Z" itemprop="datePublished">2016-06-27</time>
+      <a href="/2017/02/07/21/" class="article-date">
+  	<time datetime="2017-02-07T08:00:48.177Z" itemprop="datePublished">2017-02-07</time>
 </a>
     </div>
   
@@ -203,7 +387,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/27/Gulp实现web服务器/">Gulp实现web服务器</a>
+      <a class="article-title" href="/2017/02/07/21/">css js兼容性</a>
     </h1>
   
 
@@ -212,14 +396,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Gulp实现web服务器</p>
-<p>一：gulp实现web服务器配置：<br>二：添加实时刷新（livereload）支持</p>
-<p>一：gulp实现web服务器配置：<br>    对于前端开发而言，需要在本地搭建一个服务器作为开发使用，虽然有时候也可以直接打开页面进行预览效果，但是有时候页面需要在服务器运行，以前的做法是下载一个php，直接安装下即可，或者使用nodeJS作为web服务器，今天我门可以来学习下使用gulp的一个插件 gulp－connect来配置作为本地服务器来使用；当然该插件也是居于nodeJS环境中的。</p>
-<p>一：gulp实现web服务器配置：</p>
-<p>初始化安装</p>
-<p>首先，使用下面的命令来安装connect插件。</p>
-<p>npm  install –save-dev gulp-connect</p>
-<p>因此package.son内容代码变为如下：<br>
+        <blockquote>
+<p>!important (功能有限)随着IE7对!important的支持, !important 方法现在只针对IE6的兼容.<br>例如:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#example &#123;&#10;&#9;width: 100px !important; /* IE7+FF */&#10;&#9;width: 103px; /* IE6 */&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
       
     </div>
     
@@ -227,14 +406,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gulp/">gulp</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/兼容性/">兼容性</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/06/27/Gulp实现web服务器/#more">more >></a>
+          <a  href="/2017/02/07/21/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -253,11 +432,11 @@
 
 
   
-    <article id="post-Array" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-calc" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/06/26/Array/" class="article-date">
-  	<time datetime="2016-06-25T16:00:00.000Z" itemprop="datePublished">2016-06-26</time>
+      <a href="/2017/01/28/calc/" class="article-date">
+  	<time datetime="2017-01-27T16:00:00.000Z" itemprop="datePublished">2017-01-28</time>
 </a>
     </div>
   
@@ -270,7 +449,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/26/Array/">array</a>
+      <a class="article-title" href="/2017/01/28/calc/">calc()</a>
     </h1>
   
 
@@ -279,16 +458,144 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>一、Array 在内存中的堆栈模型</p>
+        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#25191;&#34892;&#25968;&#23398;&#25805;&#20316;&#10;.foo &#123;&#10;  width: calc(100px + 50px);&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>混合计算绝对单位，用一个百分比减掉一个像素值。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.foo &#123;&#10;    width: calc(100% - 50px);&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2017/01/28/calc/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-o.5px" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/01/22/o.5px/" class="article-date">
+  	<time datetime="2017-01-21T16:00:00.000Z" itemprop="datePublished">2017-01-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/22/o.5px/">0.5px</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1、0.5px边框<br>iOS 8 和 OS X Yosemite 支持 0.5px 的边框.<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if (window.devicePixelRatio &#38;&#38; devicePixelRatio &#62;= 2) &#123;&#10;  var testElem = document.createElement(&#39;div&#39;);&#10;  testElem.style.border = &#39;.5px solid transparent&#39;;&#10;  document.body.appendChild(testElem);&#10;&#125;&#10;if (testElem.offsetHeight == 1) &#123;&#10;  document.querySelector(&#39;html&#39;).classList.add(&#39;hairlines&#39;);&#10;&#125;&#10;  document.body.removeChild(testElem);&#10;&#125;&#10;&#10;div &#123;&#10;  border: 1px solid #bbb;&#10;&#125;&#10;.hairlines div &#123;&#10;  border-width: 0.5px;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>2、使用border-image实现</p>
+<p>准备一张符合你要求的border-image：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.border-bottom-1px &#123;&#10;  border-width: 0 0 1px 0;&#10;  -webkit-border-image: url(linenew.png) 0 0 2 0 stretch;&#10;  border-image: url(linenew.png) 0 0 2 0 stretch;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用的图片是2px高，上部的1px颜色为透明，下部的1px使用视觉规定的border的颜色<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.border-image-1px &#123;&#10;  border-width: 1px 0;&#10;  -webkit-border-image: url(linenew.png) 2 0 stretch;&#10;  border-image: url(linenew.png) 2 0 stretch;&#10;&#125;&#10;&#10;.border-image-1px &#123;&#10;  border-bottom: 1px solid #666;&#10;&#125;&#10;@media only screen and (-webkit-min-device-pixel-ratio: 2) &#123;&#10;  .border-image-1px &#123;&#10;    border-bottom: none;&#10;    border-width: 0 0 1px 0;&#10;    -webkit-border-image: url(../img/linenew.png) 0 0 2 0 stretch;&#10;    border-image: url(../img/linenew.png) 0 0 2 0 stretch;&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>3、使用background-image实现</p>
+<p>background-image 跟border-image的方法一样，你要先准备一张符合你要求的图片。然后将边框模拟在背景上。<br>样式设置：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.background-image-1px &#123;&#10;  background: url(../img/line.png) repeat-x left bottom;&#10;  -webkit-background-size: 100% 1px;&#10;  background-size: 100% 1px;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>4、多背景渐变实现<br>设置1px的渐变背景，50%有颜色，50%透明。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.background-gradient-1px &#123;&#10;  background:&#10;    linear-gradient(#000, #000 100%, transparent 100%) left / 1px 100% no-repeat,&#10;    linear-gradient(#000, #000 100%, transparent 100%) right / 1px 100% no-repeat,&#10;    linear-gradient(#000,#000 100%, transparent 100%) top / 100% 1px no-repeat,&#10;    linear-gradient(#000,#000 100%, transparent 100%) bottom / 100% 1px no-repeat&#10;&#125;&#10;/* &#25110;&#32773; */&#10;.background-gradient-1px&#123;&#10;  background:&#10;    -webkit-gradient(linear, left top, right bottom, color-stop(0, transparent), color-stop(0, #000), to(#000)) left / 1px 100% no-repeat,&#10;    -webkit-gradient(linear, left top, right bottom, color-stop(0, transparent), color-stop(0, #000), to(#000)) right / 1px 100% no-repeat,&#10;    -webkit-gradient(linear, left top, right bottom, color-stop(0, transparent), color-stop(0, #000), to(#000)) top / 100% 1px no-repeat,&#10;    -webkit-gradient(linear, left top, right bottom, color-stop(0, transparent), color-stop(0, #000), to(#000)) bottom / 100% 1px no-repeat&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>5、使用box-shadow模拟边框</p>
+<p>利用css 对阴影处理的方式实现0.5px的效果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.box-shadow-1px &#123;&#10;  box-shadow: inset 0px -1px 1px -1px #c8c7cc;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>6、viewport + rem 实现, flexible也采用这种方法</p>
+<p>同时通过设置对应viewport的rem基准值，这种方式就可以像以前一样轻松愉快的写1px了。<br>在devicePixelRatio = 2 时，输出viewport：</p>
+<p><meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no"><br>在devicePixelRatio = 3 时，输出viewport：</p>
+<meta name="viewport" content="initial-scale=0.3333333333333333, maximum-scale=0.3333333333333333, minimum-scale=0.3333333333333333, user-scalable=no">
+
+
+<p>7、伪类 + transform 实现<br>利用 :before 或者 :after 重做 border ，并 transform 的 scale 缩小一半<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.scale-1px&#123;&#10;  position: relative;&#10;  border:none;&#10;&#125;&#10;.scale-1px:after&#123;&#10;  content: &#39;&#39;;&#10;  position: absolute;&#10;  bottom: 0;&#10;  background: #000;&#10;  width: 100%;&#10;  height: 1px;&#10;  -webkit-transform: scaleY(0.5);&#10;  transform: scaleY(0.5);&#10;  -webkit-transform-origin: 0 0;&#10;  transform-origin: 0 0;&#10;&#125;&#10;&#10;.scale-1px&#123;&#10;  position: relative;&#10;  margin-bottom: 20px;&#10;  border:none;&#10;&#125;&#10;.scale-1px:after&#123;&#10;  content: &#39;&#39;;&#10;  position: absolute;&#10;  top: 0;&#10;  left: 0;&#10;  border: 1px solid #000;&#10;  -webkit-box-sizing: border-box;&#10;  box-sizing: border-box;&#10;  width: 200%;&#10;  height: 200%;&#10;  -webkit-transform: scale(0.5);&#10;  transform: scale(0.5);&#10;  -webkit-transform-origin: left top;&#10;  transform-origin: left top;&#10;&#125;&#10;// &#21512; JS &#20195;&#30721;&#65292;&#21028;&#26029;&#26159;&#21542; Retina &#23631;&#65306;&#10;&#10;if(window.devicePixelRatio &#38;&#38; devicePixelRatio &#62;= 2)&#123;&#10;  document.querySelector(&#39;ul&#39;).className = &#39;scale-1px&#39;;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-worker" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/01/18/worker/" class="article-date">
+  	<time datetime="2017-01-17T16:00:00.000Z" itemprop="datePublished">2017-01-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/18/worker/">Workers</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Web Workers能在后台进程中运行的方法.<br>Web Workers 进程能够在不影响用户界面的情况下处理任务，并且，它还可以使用 XMLHttpRequest 来处理 I/O，但通常，后台进程（包括 Web Workers 进程）不能对 DOM 进行操作。如果希望后台程序处理的结果能够改变 DOM，只能通过返回消息给创建者的回调函数进行处理。</p>
 <ol>
-<li>Array 的获取</li>
+<li>主线程中创建 Worker 实例，并监听 onmessage 事件<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function init()&#123; &#10;    var worker = new Worker(&#39;compute.js&#39;); &#10;    worker.onmessage= function (event) &#123; &#10;        console.log(event.data) &#10;    &#125;; &#10;&#125;</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<p>Javascript 中如何产生 Array：</p>
-<p>[element0, element1, …, elementN]</p>
-<p>new Array(element0, element1, …, elementN)<br>new Array(arrayLength)</p>
-<p>直接定义，或者通过构造函数创建一个 Array，当然也可以使用其他的手段：</p>
-<p>“array”.split(“”);<br>“array”.match(/a|r/g);</p>
-<p>等等，方式有很多。但是 Array 内部是个什么样的结构，恐怕很多人还不是很清楚。</p>
       
     </div>
     
@@ -303,7 +610,7 @@
 
       
         <p class="article-more-link">
-          <a  href="/2016/06/26/Array/#more">more >></a>
+          <a  href="/2017/01/18/worker/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -322,11 +629,11 @@
 
 
   
-    <article id="post-jQuery插件类型" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-xss" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/06/25/jQuery插件类型/" class="article-date">
-  	<time datetime="2016-06-24T16:00:00.000Z" itemprop="datePublished">2016-06-25</time>
+      <a href="/2016/11/22/xss/" class="article-date">
+  	<time datetime="2016-11-21T16:00:00.000Z" itemprop="datePublished">2016-11-22</time>
 </a>
     </div>
   
@@ -339,7 +646,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/25/jQuery插件类型/">jQuery插件</a>
+      <a class="article-title" href="/2016/11/22/xss/">xss</a>
     </h1>
   
 
@@ -348,135 +655,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>jQuery插件类型</p>
-<p>通过$.extend()向jQuery添加新的方法<br>常见用法:$.myPlugin().比较典型的有$.ajax()<br>定义形式及调用方法如下所示:</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.extend(&#123;&#10;&#9;&#9;myPlugin : function(a, b)&#123;&#10;&#9;&#9;&#9;return a + b;&#10;&#9;&#9;&#125;&#10;&#125;)&#10;&#10;//&#31561;&#20215;&#20026;&#10;$.myPlugin = function(a, b)&#123;&#10; return a + b;&#10;&#125;&#10;&#9;&#10;//&#19978;&#38754;&#20004;&#31181;&#24418;&#24335;&#37117;&#26159;&#32473;$&#22686;&#21152;&#20102;&#19968;&#20010;&#26041;&#27861;&#10;//&#35843;&#29992;&#10;$.myPlugin(1, 2)//3</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jq/">jq</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/06/25/jQuery插件类型/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-BASE64编码图片" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/25/BASE64编码图片/" class="article-date">
-  	<time datetime="2016-06-24T16:00:00.000Z" itemprop="datePublished">2016-06-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/25/BASE64编码图片/">BASE64</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>BASE64编码图片</p>
-<p>由build任务执行的最后一个任务是把CSS文件中的小图片替换为Base64编码文件。通过这种方式把图片嵌入CSS文件中减少额外请求。如果图片不大这种做法会大大加快页面载入速度。</p>
-<p>我在网页上用了很多小尺寸图案因为我很不喜欢扁平化设计方法。现实世界不是扁平的。几乎找不到扁平的地方。总是存在结构，图案，阴影和光线。我使用的图案来自超棒的网站Subtle Pattern。它们有接近一百个非常棒的图案。</p>
-<p>载入背景图案的SCSS如下：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%pattern-light-grey &#123;&#10;  background-color: $background-color;&#10;  background-image: url(&#39;/assets/images/patterns/light_grey.png&#39;);&#10;  background-size: 301px 621px;&#10;&#125;&#10;&#10;body &#123;&#10;  @extend %pattern-light-grey;&#10;&#125;&#10;&#29983;&#25104;&#30340;CSS&#22914;&#19979;&#65306;&#10;&#10;body &#123;&#10;  background-color: #fdfdfd;&#10;  background-image: url(&#34;/assets/images/patterns/light_grey.png&#34;);&#10;  background-size: 301px 621px;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gulp/">gulp</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/06/25/BASE64编码图片/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-arguments对象" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/24/arguments对象/" class="article-date">
-  	<time datetime="2016-06-23T16:00:00.000Z" itemprop="datePublished">2016-06-24</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/24/arguments对象/">arguments对象</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>不定参数我们通常使用可变参函数来构造API，可变参函数可接受任意数量的参数。例如，<br>String.prototype.concat</p>
-<p>方法就可以接受任意数量的字符串参数。ES6提供了一种编写可变参函数的新方式——不定参数。<br>我们通过一个简单的可变参数函数containsAll给大家演示不定参数的用法。函数containsAll可以检查一个字符串中是否包含若干个子串，</p>
-<p>例如：<br>containsAll(“banana”, “b”, “nan”)<br>返回true，<br>containsAll(“banana”, “c”, “nan”)返回false。</p>
-<p>首先使用传统方法来实现这个函数：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function containsAll(haystack) &#123;&#10;  for (var i = 1; i &#60; arguments.length; i++) &#123;&#10;    var needle = arguments[i];&#10;    if (haystack.indexOf(needle) === -1) &#123;&#10;      return false;&#10;    &#125;&#10;  &#125;&#10;  return true;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>XSS攻击的全称是 Cross Site Scripting（跨站脚本攻击）</p>
+<p>cookie、session等敏感数据遭到泄露<br>影响用户体验</p>
+<p>基于反射的攻击,一般是服务器端根据用户的输入或者查询条件返回了带有恶意脚本的结果并在客户端执行。这种漏洞常见于各种搜索引擎之中。</p>
+<p>比如当我们在搜索栏中输入对应的恶意脚本代码，服务器端进行处理，当未找到匹配内容时简单返回我们输入的查询字符串。那么，这时候如果网站前端或者服务器端没有对查询字符串做恰当的处理，只是简单返回并插入到页面中，那这段恶意脚本代码很可能被当做正常的script标签解释执行。后果很明显，我们泄露了自己账户的cookie。</p>
       
     </div>
     
@@ -491,7 +673,7 @@
 
       
         <p class="article-more-link">
-          <a  href="/2016/06/24/arguments对象/#more">more >></a>
+          <a  href="/2016/11/22/xss/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -510,11 +692,11 @@
 
 
   
-    <article id="post-Javascript将图片的绝对路径转换为base64编码" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-拖拽" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/06/23/Javascript将图片的绝对路径转换为base64编码/" class="article-date">
-  	<time datetime="2016-06-22T16:00:00.000Z" itemprop="datePublished">2016-06-23</time>
+      <a href="/2016/11/19/拖拽/" class="article-date">
+  	<time datetime="2016-11-18T16:00:00.000Z" itemprop="datePublished">2016-11-19</time>
 </a>
     </div>
   
@@ -527,7 +709,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/23/Javascript将图片的绝对路径转换为base64编码/">图片的绝对路径转换为base64编码</a>
+      <a class="article-title" href="/2016/11/19/拖拽/">拖拽</a>
     </h1>
   
 
@@ -536,9 +718,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>我们可以使用canvas.toDataURL的方法将图片的绝对路径转换为base64编码；在这我们引用的是淘宝首页一张图片如下：</p>
-<p>var img = “<a href="https://img.alicdn.com/bao/uploaded/TB1qimQIpXXXXXbXFXXSutbFXXX.jpg">https://img.alicdn.com/bao/uploaded/TB1qimQIpXXXXXbXFXXSutbFXXX.jpg</a>“;</p>
-<p>我们如下编写代码：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function getBase64Image(img) &#123;&#10;        var canvas = document.createElement(&#34;canvas&#34;);&#10;        canvas.width = img.width;&#10;        canvas.height = img.height;&#10;        var ctx = canvas.getContext(&#34;2d&#34;);&#10;        ctx.drawImage(img, 0, 0, img.width, img.height);&#10;        var ext = img.src.substring(img.src.lastIndexOf(&#34;.&#34;)+1).toLowerCase();&#10;        var dataURL = canvas.toDataURL(&#34;image/&#34;+ext);&#10;        return dataURL;&#10;&#125;&#10;var img = &#34;https://img.alicdn.com/bao/uploaded/TB1qimQIpXXXXXbXFXXSutbFXXX.jpg&#34;;&#10;var image = new Image();&#10;image.src = img;&#10;image.onload = function()&#123;&#10;    var base64 = getBase64Image(image);&#10;    console.log(base64);&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>我们常常会通过修改元素的top，left，translate来其的位置发生改变。</p>
+<p>由于修改一个元素top/left值会引起页面重绘，而translate不会，因此从性能优化上来判断，我们会优先使用translate属性。</p>
+<p>如何获取当前浏览器支持的transform兼容写法</p>
+<p>[‘transform’, ‘webkitTransform’, ‘MozTransform’, ‘msTransform’, ‘OTransform’]<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#33719;&#21462;&#24403;&#21069;&#27983;&#35272;&#22120;&#25903;&#25345;&#30340;transform&#20860;&#23481;&#20889;&#27861;&#10;function getTransform() &#123;&#10;    var transform = &#39;&#39;,&#10;        divStyle = document.createElement(&#39;div&#39;).style,&#10;        // &#21487;&#33021;&#28041;&#21450;&#21040;&#30340;&#20960;&#31181;&#20860;&#23481;&#24615;&#20889;&#27861;&#65292;&#36890;&#36807;&#24490;&#29615;&#25214;&#20986;&#27983;&#35272;&#22120;&#35782;&#21035;&#30340;&#37027;&#19968;&#20010;&#10;        transformArr = [&#39;transform&#39;, &#39;webkitTransform&#39;, &#39;MozTransform&#39;, &#39;msTransform&#39;, &#39;OTransform&#39;],&#10;&#10;        i = 0,&#10;        len = transformArr.length;&#10;&#10;    for(; i &#60; len; i++)  &#123;&#10;        if(transformArr[i] in divStyle) &#123;&#10;            // &#25214;&#21040;&#20043;&#21518;&#31435;&#21363;&#36820;&#22238;&#65292;&#32467;&#26463;&#20989;&#25968;&#10;            return transform = transformArr[i];&#10;        &#125;&#10;    &#125;&#10;&#10;    // &#22914;&#26524;&#27809;&#26377;&#25214;&#21040;&#65292;&#23601;&#30452;&#25509;&#36820;&#22238;&#31354;&#23383;&#31526;&#20018;&#10;    return transform;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>当前浏览器并不支持transform，这个时候我们就需要使用left，top值来改变元素的位置。如果支持，就改变transform的值。</p>
       
     </div>
     
@@ -553,198 +737,7 @@
 
       
         <p class="article-more-link">
-          <a  href="/2016/06/23/Javascript将图片的绝对路径转换为base64编码/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Ajax" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/22/Ajax/" class="article-date">
-  	<time datetime="2016-06-21T16:00:00.000Z" itemprop="datePublished">2016-06-22</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/22/Ajax/">ajax</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>输入参数<br>首先，我们定义一个Ajax函数，并设置了一些输入参数。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function ajax(options)&#123;&#10;&#10;    var url = options.url || &#34;&#34;, //&#35831;&#27714;&#30340;&#38142;&#25509;&#10;        type = (options.type || &#34;get&#34;).toLowerCase(), //&#35831;&#27714;&#30340;&#26041;&#27861;,&#40664;&#35748;&#20026;get&#10;        data = options.data || null, //&#35831;&#27714;&#30340;&#25968;&#25454;&#10;        contentType = options.contentType || &#34;&#34;, //&#35831;&#27714;&#22836;&#10;        dataType = options.dataType || &#34;&#34;, //&#35831;&#27714;&#30340;&#31867;&#22411;&#10;        async = options.async === undefined &#38;&#38; true, //&#26159;&#21542;&#24322;&#27493;&#65292;&#40664;&#35748;&#20026;true.&#10;        timeOut = options.timeOut, //&#36229;&#26102;&#26102;&#38388;&#12290; &#10;        before = options.before || function()&#123;&#125;, //&#21457;&#36865;&#20043;&#21069;&#25191;&#34892;&#30340;&#20989;&#25968;&#10;        error = options.error || function()&#123;&#125;, //&#38169;&#35823;&#25191;&#34892;&#30340;&#20989;&#25968;&#10;        success = options.success || function() &#123;&#125;; //&#35831;&#27714;&#25104;&#21151;&#30340;&#22238;&#35843;&#20989;&#25968;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/06/22/Ajax/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-电商接口" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/20/电商接口/" class="article-date">
-  	<time datetime="2016-06-19T16:00:00.000Z" itemprop="datePublished">2016-06-20</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/20/电商接口/">一些接口</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>电商接口</p>
-<p>京东获取单个商品价格接口：<br><a href="http://p.3.cn/prices/mgets?skuIds=J_商品ID&amp;type=1">http://p.3.cn/prices/mgets?skuIds=J_商品ID&amp;type=1</a><br>ps:商品ID这么获取:<a href="http://item.jd.com/954086.html">http://item.jd.com/954086.html</a></p>
-<p>物流接口</p>
-<p>快递接口：<br><a href="http://www.kuaidi100.com/query?type=快递公司代号&amp;postid=快递单号">http://www.kuaidi100.com/query?type=快递公司代号&amp;postid=快递单号</a><br>ps:快递公司编码:申通=”shentong” EMS=”ems” 顺丰=”shunfeng” 圆通=”yuantong” 中通=”zhongtong” 韵达=”yunda” 天天=”tiantian” 汇通=”huitongkuaidi” 全峰=”quanfengkuaidi” 德邦=”debangwuliu” 宅急送=”zhaijisong”</p>
-<p>谷歌接口</p>
-<p>FeedXml转json接口：<br><a href="http://ajax.googleapis.com/ajax/services/feed/load?q=Feed地址&amp;v=1.0">http://ajax.googleapis.com/ajax/services/feed/load?q=Feed地址&amp;v=1.0</a><br>备选参数:callback：&amp;callback=foo就会在json外面嵌套foo({})方便做jsonp使用。<br>备选参数:n：返回多少条记录。</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其他/">其他</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/06/20/电商接口/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-状态代码" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/18/状态代码/" class="article-date">
-  	<time datetime="2016-06-17T16:00:00.000Z" itemprop="datePublished">2016-06-18</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/18/状态代码/">http状态码</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>100    Continue    初始的请求已经接受，客户应当继续发送请求的其余部分。（HTTP 1.1新）</p>
-<p>101    Switching Protocols    服务器将遵从客户的请求转换到另外一种协议（HTTP 1.1新）</p>
-<p>200    OK    一切正常，对GET和POST请求的应答文档跟在后面。</p>
-<p>201    Created    服务器已经创建了文档，Location头给出了它的URL。</p>
-<p>202    Accepted    已经接受请求，但处理尚未完成。</p>
-<p>203    Non-Authoritative Information<br>文档已经正常地返回，但一些应答头可能不正确，因为使用的是文档的拷贝（HTTP 1.1新）。</p>
-<p>204    No Content    没有新文档，浏览器应该继续显示原来的文档。如果用户定期地刷新页面，而Servlet可以确定用户文档足够新，这个状态代码是很有用的。</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/http/">http</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/06/18/状态代码/#more">more >></a>
+          <a  href="/2016/11/19/拖拽/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -765,14 +758,14 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 </div>
       <footer id="footer">
   <div class="outer">
     <div id="footer-info">
-      <div>&copy; 2016 任先生在路上 的博客 , 技术 
+      <div>&copy; 2017 任先生在路上 的博客 , 技术 
         <a href="http://hexo.io/" target="_blank">Hexo</a>  
       </div>
     </div>

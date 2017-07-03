@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>react 生命周期 | Jar-R</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="constructor(props)componentWillMount()render()componentDidMount()componentWillReceiveProps(nextProps)shouldComponentUpdate(nextProps, nextState)componentWillUpdate(nextProps, nextState)render( )compon">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react 生命周期">
+<meta property="og:url" content="http://Jarweb.com/2017/04/09/react生命周期/index.html">
+<meta property="og:site_name" content="Jar-R">
+<meta property="og:description" content="constructor(props)componentWillMount()render()componentDidMount()componentWillReceiveProps(nextProps)shouldComponentUpdate(nextProps, nextState)componentWillUpdate(nextProps, nextState)render( )compon">
+<meta property="og:updated_time" content="2017-07-03T08:17:21.134Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="react 生命周期">
+<meta name="twitter:description" content="constructor(props)componentWillMount()render()componentDidMount()componentWillReceiveProps(nextProps)shouldComponentUpdate(nextProps, nextState)componentWillUpdate(nextProps, nextState)render( )compon">
+  
+    <link rel="alternative" href="/atom.xml" title="Jar-R" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">任先生在路上</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle" style="margin-bottom:20px;">Good things are coming !</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">列表</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger" style="display:none;"></div>
+  		<h1 class="header-author js-mobile-header hide">任先生在路上</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">任先生在路上</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Good things are coming !</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">列表</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-react生命周期" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/04/09/react生命周期/" class="article-date">
+  	<time datetime="2017-04-08T16:00:00.000Z" itemprop="datePublished">2017-04-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      react 生命周期
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>constructor(props)<br>componentWillMount()<br>render()<br>componentDidMount()<br>componentWillReceiveProps(nextProps)<br>shouldComponentUpdate(nextProps, nextState)<br>componentWillUpdate(nextProps, nextState)<br>render( )<br>componentDidUpdate(prevProps, prevState )<br>componentWillUnmount( )</p>
+<p>constructor<br>constructor(props)，组件形成时调用。<br>constructor 函数可理解为组件的构造函数，从组件的类(class) 实例化一个组件实例。这个函数在组件形成时被调用，是所有生命周期函数中最先执行的。在constructor函数内，如有必要，进行state的初始化以及绑定方法；否则可以省去constructor函数的声明。</p>
+<a id="more"></a>
+<p>constructor 函数内，在执行任何statement之前，必须是super() 函数，如果有参数须将参数带上。<br>在constructor 函数内，this.props 返回 undefined<br>不要在初试化state时引用props 里的值，否则每当props更新时，都需要在componentWillReceiveProps 函数内对state进行更新<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class App extends Component &#123;&#10;  constructor(props) &#123;&#10;    super(props);//------------(1)&#10;    console.log(this.props);// undefined ------------(2)&#10;    //initialize the state&#10;    this.state = &#123;&#10;      value: &#39;&#39;,&#10;      color: props.initialColor  // &#19981;&#21487;&#21462;  ------------(3)&#10;    &#125;&#10;    //bind methods&#10;    this.handleClick = this.handleClick.bind(this);&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>componentWillMount<br>componentWillMount()，在组件首次渲染(render)之前调用。<br>mount有安装之意，我们可以理解为组件首次被加载在web中。因此每次页面加载/刷新，或者某个组件第一次加载进入web时可以调用componentWillMount( ) 函数。举个例子，在首次进入文章列表时时，可在 componentWillMount 对所有文章进行查询。这样，在render之前，就能拿到所有文章的数据，以便在render中使用。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class PostList extends Component &#123;&#10;  //...&#10;  //&#22312;componentWillMount &#32452;&#20214;&#20869;&#33719;&#21462;&#25152;&#26377;&#21338;&#23458;&#21015;&#34920;&#10;  componentWillMount()&#123;&#10;    axios.get(&#39;/posts&#39;)&#10;         .then(res=&#62;&#123;&#10;           //...&#10;         &#125;);&#10;  &#125;&#10;  //&#22312; render &#20989;&#25968;&#20869;&#23558;&#25343;&#21040;&#30340;&#21338;&#23458;&#21015;&#34920; &#28210;&#26579;&#22312;&#39029;&#38754;&#20013;&#10;  render()&#123;&#10;    //...&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>Render<br>render()<br>render 即 渲染函数，是编写组件代码时，唯一一个必须的函数。该函数须有返回值，返回一个组件，即最终渲染出来的组件。在使用组件的class进行组件实例化时，得到的便是其返回值。</p>
+<p>一个父标签，这个父标签内可以包含若干个子标签，在最外层标签必须只有一个。<br>false 或者 null，代表不渲染任何DOM<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class App extends Component &#123;&#10;  //...&#10;  render()&#123;&#10;    return (&#10;      &#60;div&#62;&#10;          //...&#10;      &#60;/div&#62;&#10;    )&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>注意:在render函数中只做与返回组件相关的工作，勿在其中对state进行操作，可以保证每次调用render函数，返回的组件都是相同的。否则将加大项目维护成本。</p>
+<p>componentDidMount<br>componentDidMount()，一旦组件首次加载完成，便会调用<br>如果需要对渲染出来的DOM节点做任何操作，可以在此处进行。(提示: this.refs 可获取真实DOM)。</p>
+<p>在该组件内设置state将会导致组件被重新渲染。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class App extends Component &#123;&#10;  //..&#10;  componentDidMount()&#123;&#10;    //&#23558;&#20250;&#35302;&#21457;&#32452;&#20214;&#37325;&#26032;&#28210;&#26579;&#10;    this.setState(&#123;&#10;      value: &#39;100&#39;&#10;    &#125;)&#65306;&#10;    //&#23545;&#33410;&#28857;&#36827;&#34892;&#25805;&#20316;&#10;      this.refs.div.appendChild(newChild);&#10;  &#125; &#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>componentWillReceiveProps<br>componentWillReceiveProps(nextprops)，已加载的组件在 props 发生变化时调用。<br>如果需要通过监听 props 的改变来修改 state 的值，则可以通过重载该函数实现。</p>
+<p>需要注意，在有些情况下，组件的 props 未发生改变也会调用该函数。因此如果在该函数内的逻辑，只是想捕获当前 props 与 接收的 nextProps 的不同来做出一些操作，则最好先将 props 与 nextProps 进行比较。</p>
+<p>重点：this.setState({…}) 不触发 componentWillReceiveProps 方法。因为该方法只监听 this.props 的改变，不关心 this.state 值的变化。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class App extends Component &#123;&#10;  componentWillReceiveProps(nextProps)&#123;&#10;    //&#25509;&#25910;&#30340;&#39068;&#33394; &#19982; &#24403;&#21069;&#39068;&#33394;&#19981;&#21516;&#26102;&#10;    if (this.props.color !== nextProps.color)&#123;&#10;      ...&#10;    &#125;&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>shouldComponentUpdate<br>shouldComponentUpdate(nextProps, nextState)<br>返回true，重新渲染。紧接着，继续执行 componentWillUpdate() → render() → componentDidUpdate()。<br>false，不重新渲染。不再执行任何生命周期函数函数（亦不执行该组件的 render( ) 函数）<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class PostList extends Component &#123;&#10;  shouldComponentUpdate(nextProps, nextState)&#123;&#10;    //return true;&#40664;&#35748;&#10;    return false;// &#19981;&#26356;&#26032;&#32452;&#20214;&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>componentWillUpdate<br>componentWillUpdate(nextProps, nextState)，当 shouldComponentUpdate( ) 方法返回 true 后调用。<br>这个方法提供了一个为重新渲染作准备的机会，意思是要在这里，趁接下来的 render( ) 方法重新渲染之前，完成该完成的操作。这个方法在 mount 阶段不会被调用，只在 re-render 阶段被调用。</p>
+<p>注意，不要在该方法内调用 this.setState({…})，如有需要，请在 componentWillReceiveProps( ) 方法中完成。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class App extends Component &#123;&#10;  componentWillUpdate(nextProps, nextState)&#123;&#10;    var isLate = this.nextProps.isLate;&#10;    if(isLate)&#123;&#10;      //...&#10;    &#125; else &#123;&#10;      //...&#10;    &#125;&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>componentDidUpdate<br>componentDidUpdate(prevProps, preState)，一旦组件首次更新（重新渲染）完成时调用。<br>因此像 componentDidMount( ) 一样，如果需要对渲染出来的DOM节点做任何操作，可以在此处进行。(提示: this.refs 可获取真实DOM)。</p>
+<p>在该组件内设置state将会导致组件被重新渲染。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class App extends Component &#123;&#10;  //..&#10;  componentDidUpdate()&#123;&#10;    //&#23558;&#20250;&#35302;&#21457;&#32452;&#20214;&#37325;&#26032;&#28210;&#26579;&#10;    this.setState(&#123;&#10;      value: &#39;100&#39;&#10;    &#125;);&#10;    //&#23545;&#33410;&#28857;&#36827;&#34892;&#25805;&#20316;&#10;    this.refs.div.appendChild(newChild);&#10;  &#125;&#10;  &#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>componentWillUnmount<br>componentWillUnmount()，在组件即将被卸载(或销毁)之前调用。<br>在这个方法中，适合做一些清理善后工作。例如清楚timer，取消网络请求，或者清除在 componentDidMount 或 componentDidUpdate 中生成的相关 DOM 节点。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/04/15/小程序插件/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          小程序插件
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/25/cssmodule/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">css module</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div>&copy; 2017 任先生在路上 的博客 , 技术 
+        <a href="http://hexo.io/" target="_blank">Hexo</a>  
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>css module | Jar-R</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="困扰问题CSS全局作用域问题CSS的规则都是全局的，任何一个组件的样式规则，都对整个页面有效。相信写css的人都会遇到样式冲突（污染）的问题。
+
+class命名写长一点吧，降低冲突的几率
+加个父元素的选择器，限制范围
+重新命名个class吧，比较保险
+
+规范化BEM,OOCSS,SMACSS
+BEM：block-element-modify， 解决css命名重复OOCSS: 类， 解决css 重用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css module">
+<meta property="og:url" content="http://Jarweb.com/2017/03/25/cssmodule/index.html">
+<meta property="og:site_name" content="Jar-R">
+<meta property="og:description" content="困扰问题CSS全局作用域问题CSS的规则都是全局的，任何一个组件的样式规则，都对整个页面有效。相信写css的人都会遇到样式冲突（污染）的问题。
+
+class命名写长一点吧，降低冲突的几率
+加个父元素的选择器，限制范围
+重新命名个class吧，比较保险
+
+规范化BEM,OOCSS,SMACSS
+BEM：block-element-modify， 解决css命名重复OOCSS: 类， 解决css 重用">
+<meta property="og:updated_time" content="2017-07-03T04:40:34.906Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css module">
+<meta name="twitter:description" content="困扰问题CSS全局作用域问题CSS的规则都是全局的，任何一个组件的样式规则，都对整个页面有效。相信写css的人都会遇到样式冲突（污染）的问题。
+
+class命名写长一点吧，降低冲突的几率
+加个父元素的选择器，限制范围
+重新命名个class吧，比较保险
+
+规范化BEM,OOCSS,SMACSS
+BEM：block-element-modify， 解决css命名重复OOCSS: 类， 解决css 重用">
+  
+    <link rel="alternative" href="/atom.xml" title="Jar-R" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">任先生在路上</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle" style="margin-bottom:20px;">Good things are coming !</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">列表</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger" style="display:none;"></div>
+  		<h1 class="header-author js-mobile-header hide">任先生在路上</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">任先生在路上</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Good things are coming !</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">列表</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-cssmodule" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/03/25/cssmodule/" class="article-date">
+  	<time datetime="2017-03-24T16:00:00.000Z" itemprop="datePublished">2017-03-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      css module
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="困扰问题"><a href="#困扰问题" class="headerlink" title="困扰问题"></a>困扰问题</h2><h3 id="CSS全局作用域问题"><a href="#CSS全局作用域问题" class="headerlink" title="CSS全局作用域问题"></a>CSS全局作用域问题</h3><p>CSS的规则都是全局的，任何一个组件的样式规则，都对整个页面有效。相信写css的人都会遇到样式冲突（污染）的问题。</p>
+<ul>
+<li>class命名写长一点吧，降低冲突的几率</li>
+<li>加个父元素的选择器，限制范围</li>
+<li>重新命名个class吧，比较保险</li>
+</ul>
+<h2 id="规范化"><a href="#规范化" class="headerlink" title="规范化"></a>规范化</h2><p>BEM,OOCSS,SMACSS</p>
+<p>BEM：block-element-modify， 解决css命名重复<br>OOCSS: 类， 解决css 重用</p>
+<p>但存在以下问题：</p>
+<ul>
+<li>JS CSS之间依然没有打通变量，css没有局部作用域</li>
+<li>复杂的命名</li>
+</ul>
+<h2 id="CSS-in-JS"><a href="#CSS-in-JS" class="headerlink" title="CSS in JS"></a>CSS in JS</h2><ul>
+<li>样式代码也会出现大量重复。</li>
+<li>不能利用成熟的 CSS 预处理器（或后处理器）</li>
+</ul>
+<p>使用JS 来管理样式模块<br>使用JS编译原生的CSS文件，使其具备模块化的能力</p>
+<p>CSS Modules 能最大化地结合现有 CSS 生态(预处理器/后处理器等)和 JS 模块化能力<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// webpack.config.js&#10;css?modules&#38;localIdentName=[name]__[local]-[hash:base64:5]&#10;&#10;/* components/Button.css */&#10;.normal &#123; /* normal &#30456;&#20851;&#30340;&#25152;&#26377;&#26679;&#24335; */ &#125;&#10;&#10;// components/Button.js&#10;import styles from &#39;./Button.css&#39;;&#10;buttonElem.outerHTML = `&#60;button class=$&#123;styles.normal&#125;&#62;Submit&#60;/button&#62;`&#10; &#10;&#60;button class=&#34;button--normal-abc53&#34;&#62;Submit&#60;/button&#62;</span><br></pre></td></tr></table></figure></p>
+<p>CSS Modules 实现了以下几点：</p>
+<ul>
+<li>所有样式都是局部作用域 的，解决了全局污染问题</li>
+<li>class 名生成规则配置灵活，可以此来压缩 class 名</li>
+<li>更好的压缩</li>
+<li>只需引用组件的 JS 就能搞定组件所有的 JS 和 CSS</li>
+</ul>
+<p>存在问题:</p>
+<ul>
+<li>无法使用伪类，媒体查询等</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/04/09/react生命周期/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          react 生命周期
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/12/prefetch/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">prefetch</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div>&copy; 2017 任先生在路上 的博客 , 技术 
+        <a href="http://hexo.io/" target="_blank">Hexo</a>  
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>拖拽 | Jar-R</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="我们常常会通过修改元素的top，left，translate来其的位置发生改变。
+由于修改一个元素top/left值会引起页面重绘，而translate不会，因此从性能优化上来判断，我们会优先使用translate属性。
+如何获取当前浏览器支持的transform兼容写法
+[‘transform’, ‘webkitTransform’, ‘MozTransform’, ‘msTransform’,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="拖拽">
+<meta property="og:url" content="http://Jarweb.com/2016/11/19/拖拽/index.html">
+<meta property="og:site_name" content="Jar-R">
+<meta property="og:description" content="我们常常会通过修改元素的top，left，translate来其的位置发生改变。
+由于修改一个元素top/left值会引起页面重绘，而translate不会，因此从性能优化上来判断，我们会优先使用translate属性。
+如何获取当前浏览器支持的transform兼容写法
+[‘transform’, ‘webkitTransform’, ‘MozTransform’, ‘msTransform’,">
+<meta property="og:updated_time" content="2017-07-03T08:25:57.518Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="拖拽">
+<meta name="twitter:description" content="我们常常会通过修改元素的top，left，translate来其的位置发生改变。
+由于修改一个元素top/left值会引起页面重绘，而translate不会，因此从性能优化上来判断，我们会优先使用translate属性。
+如何获取当前浏览器支持的transform兼容写法
+[‘transform’, ‘webkitTransform’, ‘MozTransform’, ‘msTransform’,">
+  
+    <link rel="alternative" href="/atom.xml" title="Jar-R" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">任先生在路上</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle" style="margin-bottom:20px;">Good things are coming !</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">列表</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger" style="display:none;"></div>
+  		<h1 class="header-author js-mobile-header hide">任先生在路上</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">任先生在路上</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Good things are coming !</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">列表</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-拖拽" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/19/拖拽/" class="article-date">
+  	<time datetime="2016-11-18T16:00:00.000Z" itemprop="datePublished">2016-11-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      拖拽
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我们常常会通过修改元素的top，left，translate来其的位置发生改变。</p>
+<p>由于修改一个元素top/left值会引起页面重绘，而translate不会，因此从性能优化上来判断，我们会优先使用translate属性。</p>
+<p>如何获取当前浏览器支持的transform兼容写法</p>
+<p>[‘transform’, ‘webkitTransform’, ‘MozTransform’, ‘msTransform’, ‘OTransform’]<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#33719;&#21462;&#24403;&#21069;&#27983;&#35272;&#22120;&#25903;&#25345;&#30340;transform&#20860;&#23481;&#20889;&#27861;&#10;function getTransform() &#123;&#10;    var transform = &#39;&#39;,&#10;        divStyle = document.createElement(&#39;div&#39;).style,&#10;        // &#21487;&#33021;&#28041;&#21450;&#21040;&#30340;&#20960;&#31181;&#20860;&#23481;&#24615;&#20889;&#27861;&#65292;&#36890;&#36807;&#24490;&#29615;&#25214;&#20986;&#27983;&#35272;&#22120;&#35782;&#21035;&#30340;&#37027;&#19968;&#20010;&#10;        transformArr = [&#39;transform&#39;, &#39;webkitTransform&#39;, &#39;MozTransform&#39;, &#39;msTransform&#39;, &#39;OTransform&#39;],&#10;&#10;        i = 0,&#10;        len = transformArr.length;&#10;&#10;    for(; i &#60; len; i++)  &#123;&#10;        if(transformArr[i] in divStyle) &#123;&#10;            // &#25214;&#21040;&#20043;&#21518;&#31435;&#21363;&#36820;&#22238;&#65292;&#32467;&#26463;&#20989;&#25968;&#10;            return transform = transformArr[i];&#10;        &#125;&#10;    &#125;&#10;&#10;    // &#22914;&#26524;&#27809;&#26377;&#25214;&#21040;&#65292;&#23601;&#30452;&#25509;&#36820;&#22238;&#31354;&#23383;&#31526;&#20018;&#10;    return transform;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>当前浏览器并不支持transform，这个时候我们就需要使用left，top值来改变元素的位置。如果支持，就改变transform的值。</p>
+<a id="more"></a>
+<p>如何获取元素的初始位置</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function getStyle(elem, property) &#123;&#10;    // ie&#36890;&#36807;currentStyle&#26469;&#33719;&#21462;&#20803;&#32032;&#30340;&#26679;&#24335;&#65292;&#20854;&#20182;&#27983;&#35272;&#22120;&#36890;&#36807;getComputedStyle&#26469;&#33719;&#21462;&#10;    return document.defaultView.getComputedStyle ? document.defaultView.getComputedStyle(elem, false)[property] : elem.currentStyle[property];&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>获取目标元素初始位置<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function getTargetPos(elem) &#123;&#10;    var pos = &#123;x: 0, y: 0&#125;;&#10;    var transform = getTransform();&#10;    if(transform) &#123;&#10;        var transformValue = getStyle(elem, transform);&#10;        if(transformValue == &#39;none&#39;) &#123;&#10;            elem.style[transform] = &#39;translate(0, 0)&#39;;&#10;            return pos;&#10;        &#125; else &#123;&#10;            var temp = transformValue.match(/-?\d+/g);&#10;            return pos = &#123;&#10;                x: parseInt(temp[4].trim()),&#10;                y: parseInt(temp[5].trim())&#10;            &#125;&#10;        &#125;&#10;    &#125; else &#123;&#10;        if(getStyle(elem, &#39;position&#39;) == &#39;static&#39;) &#123;&#10;            elem.style.position = &#39;relative&#39;;&#10;            return pos;&#10;        &#125; else &#123;&#10;            var x = parseInt(getStyle(elem, &#39;left&#39;) ? getStyle(elem, &#39;left&#39;) : 0);&#10;            var y = parseInt(getStyle(elem, &#39;top&#39;) ? getStyle(elem, &#39;top&#39;) : 0);&#10;            return pos = &#123;&#10;                x: x,&#10;                y: y&#10;            &#125;&#10;        &#125;&#10;    &#125;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在拖拽过程中，我们需要不停的设置目标元素的新位置<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// pos = &#123; x: 200, y: 100 &#125;&#10;function setTargetPos(elem, pos) &#123;&#10;    var transform = getTransform();&#10;    if(transform) &#123;&#10;        elem.style[transform] = &#39;translate(&#39;+ pos.x +&#39;px, &#39;+ pos.y +&#39;px)&#39;;&#10;    &#125; else &#123;&#10;        elem.style.left = pos.x + &#39;px&#39;;&#10;        elem.style.top = pos.y + &#39;px&#39;;&#10;    &#125;&#10;    return elem;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>需要用到哪些事件？</p>
+<p>mousedown 鼠标按下时触发<br>mousemove 鼠标按下后拖动时触发<br>mouseup 鼠标松开时触发</p>
+<p>而在移动端则是touchstart、touchmove、touchend。</p>
+<p>拖拽的原理</p>
+<p>移动后的鼠标位置 - 鼠标初始位置 = 移动后的目标元素位置 - 目标元素的初始位置</p>
+<p>移动后目标元素的位置 = dis + 目标元素的初始位置</p>
+<p>而在鼠标松开(mouseup)结束拖拽时，我们需要处理一些收尾工作。详情见代码。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#33719;&#21462;&#30446;&#26631;&#20803;&#32032;&#23545;&#35937;&#10;var oElem = document.getElementById(&#39;target&#39;);&#10;&#10;// &#22768;&#26126;2&#20010;&#21464;&#37327;&#29992;&#26469;&#20445;&#23384;&#40736;&#26631;&#21021;&#22987;&#20301;&#32622;&#30340;x&#65292;y&#22352;&#26631;&#10;var startX = 0;&#10;var startY = 0;&#10;&#10;// &#22768;&#26126;2&#20010;&#21464;&#37327;&#29992;&#26469;&#20445;&#23384;&#30446;&#26631;&#20803;&#32032;&#21021;&#22987;&#20301;&#32622;&#30340;x&#65292;y&#22352;&#26631;&#10;var sourceX = 0;&#10;var sourceY = 0;&#10;part2&#12289;&#21151;&#33021;&#20989;&#25968;&#10;&#10;&#22240;&#20026;&#20043;&#21069;&#24050;&#32463;&#36148;&#36807;&#20195;&#30721;&#65292;&#23601;&#19981;&#20877;&#37325;&#22797;&#10;&#10;// &#33719;&#21462;&#24403;&#21069;&#27983;&#35272;&#22120;&#25903;&#25345;&#30340;transform&#20860;&#23481;&#20889;&#27861;&#10;function getTransform() &#123;&#125;&#10;&#10;// &#33719;&#21462;&#20803;&#32032;&#23646;&#24615;&#10;function getStyle(elem, property) &#123;&#125;&#10;&#10;// &#33719;&#21462;&#20803;&#32032;&#30340;&#21021;&#22987;&#20301;&#32622;&#10;function getTargetPos(elem) &#123;&#125;&#10;&#10;// &#35774;&#32622;&#20803;&#32032;&#30340;&#21021;&#22987;&#20301;&#32622;&#10;function setTargetPos(elem, potions) &#123;&#125;&#10;part3&#12289;&#22768;&#26126;&#19977;&#20010;&#20107;&#20214;&#30340;&#22238;&#35843;&#20989;&#25968;&#10;&#10;&#36825;&#19977;&#20010;&#26041;&#27861;&#23601;&#26159;&#23454;&#29616;&#25302;&#25341;&#30340;&#26680;&#24515;&#25152;&#22312;&#65292;&#25105;&#23558;&#20005;&#26684;&#25353;&#29031;&#19978;&#38754;&#24605;&#32500;&#23548;&#22270;&#20013;&#30340;&#27493;&#39588;&#26469;&#23436;&#25104;&#25105;&#20204;&#30340;&#20195;&#30721;&#12290;&#10;&#10;// &#32465;&#23450;&#22312;mousedown&#19978;&#30340;&#22238;&#35843;&#65292;event&#20026;&#20256;&#20837;&#30340;&#20107;&#20214;&#23545;&#35937;&#10;function start(event) &#123;&#10;    // &#33719;&#21462;&#40736;&#26631;&#21021;&#22987;&#20301;&#32622;&#10;    startX = event.pageX;&#10;    startY = event.pageY;&#10;&#10;    // &#33719;&#21462;&#20803;&#32032;&#21021;&#22987;&#20301;&#32622;&#10;    var pos = getTargetPos(oElem);&#10;&#10;    sourceX = pos.x;&#10;    sourceY = pos.y;&#10;&#10;    // &#32465;&#23450;&#10;    document.addEventListener(&#39;mousemove&#39;, move, false);&#10;    document.addEventListener(&#39;mouseup&#39;, end, false);&#10;&#125;&#10;&#10;function move(event) &#123;&#10;    // &#33719;&#21462;&#40736;&#26631;&#24403;&#21069;&#20301;&#32622;&#10;    var currentX = event.pageX;&#10;    var currentY = event.pageY;&#10;&#10;    // &#35745;&#31639;&#24046;&#20540;&#10;    var distanceX = currentX - startX;&#10;    var distanceY = currentY - startY;&#10;&#10;    // &#35745;&#31639;&#24182;&#35774;&#32622;&#20803;&#32032;&#24403;&#21069;&#20301;&#32622;&#10;    setTargetPos(oElem, &#123;&#10;        x: (sourceX + distanceX).toFixed(),&#10;        y: (sourceY + distanceY).toFixed()&#10;    &#125;)&#10;&#125;&#10;&#10;function end(event) &#123;&#10;    document.removeEventListener(&#39;mousemove&#39;, move);&#10;    document.removeEventListener(&#39;mouseup&#39;, end);&#10;    // do other things&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(function() &#123;&#10;    // &#36825;&#26159;&#19968;&#20010;&#31169;&#26377;&#23646;&#24615;&#65292;&#19981;&#38656;&#35201;&#34987;&#23454;&#20363;&#35775;&#38382;&#10;    var transform = getTransform();&#10;&#10;    function Drag(selector) &#123;&#10;        // &#25918;&#22312;&#26500;&#36896;&#20989;&#25968;&#20013;&#30340;&#23646;&#24615;&#65292;&#37117;&#26159;&#23646;&#20110;&#27599;&#19968;&#20010;&#23454;&#20363;&#21333;&#29420;&#25317;&#26377;&#10;        this.elem = typeof selector == &#39;Object&#39; ? selector : document.getElementById(selector);&#10;        this.startX = 0;&#10;        this.startY = 0;&#10;        this.sourceX = 0;&#10;        this.sourceY = 0;&#10;&#10;        this.init();&#10;    &#125;&#10;&#10;&#10;    // &#21407;&#22411;&#10;    Drag.prototype = &#123;&#10;        constructor: Drag,&#10;&#10;        init: function() &#123;&#10;            // &#21021;&#22987;&#26102;&#38656;&#35201;&#20570;&#20123;&#20160;&#20040;&#20107;&#24773;&#10;            this.setDrag();&#10;        &#125;,&#10;&#10;        // &#31245;&#20316;&#25913;&#36896;&#65292;&#20165;&#29992;&#20110;&#33719;&#21462;&#24403;&#21069;&#20803;&#32032;&#30340;&#23646;&#24615;&#65292;&#31867;&#20284;&#20110;getName&#10;        getStyle: function(property) &#123;&#10;            return document.defaultView.getComputedStyle ? document.defaultView.getComputedStyle(this.elem, false)[property] : this.elem.currentStyle[property];&#10;        &#125;,&#10;&#10;        // &#29992;&#26469;&#33719;&#21462;&#24403;&#21069;&#20803;&#32032;&#30340;&#20301;&#32622;&#20449;&#24687;&#65292;&#27880;&#24847;&#19982;&#20043;&#21069;&#30340;&#19981;&#21516;&#20043;&#22788;&#10;        getPosition: function() &#123;&#10;            var pos = &#123;x: 0, y: 0&#125;;&#10;            if(transform) &#123;&#10;                var transformValue = this.getStyle(transform);&#10;                if(transformValue == &#39;none&#39;) &#123;&#10;                    this.elem.style[transform] = &#39;translate(0, 0)&#39;;&#10;                &#125; else &#123;&#10;                    var temp = transformValue.match(/-?\d+/g);&#10;                    pos = &#123;&#10;                        x: parseInt(temp[4].trim()),&#10;                        y: parseInt(temp[5].trim())&#10;                    &#125;&#10;                &#125;&#10;            &#125; else &#123;&#10;                if(this.getStyle(&#39;position&#39;) == &#39;static&#39;) &#123;&#10;                    this.elem.style.position = &#39;relative&#39;;&#10;                &#125; else &#123;&#10;                    pos = &#123;&#10;                        x: parseInt(this.getStyle(&#39;left&#39;) ? this.getStyle(&#39;left&#39;) : 0),&#10;                        y: parseInt(this.getStyle(&#39;top&#39;) ? this.getStyle(&#39;top&#39;) : 0)&#10;                    &#125;&#10;                &#125;&#10;            &#125;&#10;&#10;            return pos;&#10;        &#125;,&#10;&#10;        // &#29992;&#26469;&#35774;&#32622;&#24403;&#21069;&#20803;&#32032;&#30340;&#20301;&#32622;&#10;        setPostion: function(pos) &#123;&#10;            if(transform) &#123;&#10;                this.elem.style[transform] = &#39;translate(&#39;+ pos.x +&#39;px, &#39;+ pos.y +&#39;px)&#39;;&#10;            &#125; else &#123;&#10;                this.elem.style.left = pos.x + &#39;px&#39;;&#10;                this.elem.style.top = pos.y + &#39;px&#39;;&#10;            &#125;&#10;        &#125;,&#10;&#10;        // &#35813;&#26041;&#27861;&#29992;&#26469;&#32465;&#23450;&#20107;&#20214;&#10;        setDrag: function() &#123;&#10;            var self = this;&#10;            this.elem.addEventListener(&#39;mousedown&#39;, start, false);&#10;            function start(event) &#123;&#10;                self.startX = event.pageX;&#10;                self.startY = event.pageY;&#10;&#10;                var pos = self.getPosition();&#10;&#10;                self.sourceX = pos.x;&#10;                self.sourceY = pos.y;&#10;&#10;                document.addEventListener(&#39;mousemove&#39;, move, false);&#10;                document.addEventListener(&#39;mouseup&#39;, end, false);&#10;            &#125;&#10;&#10;            function move(event) &#123;&#10;                var currentX = event.pageX;&#10;                var currentY = event.pageY;&#10;&#10;                var distanceX = currentX - self.startX;&#10;                var distanceY = currentY - self.startY;&#10;&#10;                self.setPostion(&#123;&#10;                    x: (self.sourceX + distanceX).toFixed(),&#10;                    y: (self.sourceY + distanceY).toFixed()&#10;                &#125;)&#10;            &#125;&#10;&#10;            function end(event) &#123;&#10;                document.removeEventListener(&#39;mousemove&#39;, move);&#10;                document.removeEventListener(&#39;mouseup&#39;, end);&#10;                // do other things&#10;            &#125;&#10;        &#125;&#10;    &#125;&#10;&#10;    // &#31169;&#26377;&#26041;&#27861;&#65292;&#20165;&#20165;&#29992;&#26469;&#33719;&#21462;transform&#30340;&#20860;&#23481;&#20889;&#27861;&#10;    function getTransform() &#123;&#10;        var transform = &#39;&#39;,&#10;            divStyle = document.createElement(&#39;div&#39;).style,&#10;            transformArr = [&#39;transform&#39;, &#39;webkitTransform&#39;, &#39;MozTransform&#39;, &#39;msTransform&#39;, &#39;OTransform&#39;],&#10;&#10;            i = 0,&#10;            len = transformArr.length;&#10;&#10;        for(; i &#60; len; i++)  &#123;&#10;            if(transformArr[i] in divStyle) &#123;&#10;                return transform = transformArr[i];&#10;            &#125;&#10;        &#125;&#10;&#10;        return transform;&#10;    &#125;&#10;&#10;    // &#19968;&#31181;&#23545;&#22806;&#26292;&#38706;&#30340;&#26041;&#24335;&#10;    window.Drag = Drag;&#10;&#125;)();&#10;&#10;// &#20351;&#29992;&#65306;&#22768;&#26126;2&#20010;&#25302;&#25341;&#23454;&#20363;&#10;new Drag(&#39;target&#39;);</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/11/22/xss/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          xss
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/10/27/移动端知识整理/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">移动端知识整理</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div>&copy; 2017 任先生在路上 的博客 , 技术 
+        <a href="http://hexo.io/" target="_blank">Hexo</a>  
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>Workers | Jar-R</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Web Workers能在后台进程中运行的方法.Web Workers 进程能够在不影响用户界面的情况下处理任务，并且，它还可以使用 XMLHttpRequest 来处理 I/O，但通常，后台进程（包括 Web Workers 进程）不能对 DOM 进行操作。如果希望后台程序处理的结果能够改变 DOM，只能通过返回消息给创建者的回调函数进行处理。
+
+主线程中创建 Worker 实例，并监听 onm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Workers">
+<meta property="og:url" content="http://Jarweb.com/2017/01/18/worker/index.html">
+<meta property="og:site_name" content="Jar-R">
+<meta property="og:description" content="Web Workers能在后台进程中运行的方法.Web Workers 进程能够在不影响用户界面的情况下处理任务，并且，它还可以使用 XMLHttpRequest 来处理 I/O，但通常，后台进程（包括 Web Workers 进程）不能对 DOM 进行操作。如果希望后台程序处理的结果能够改变 DOM，只能通过返回消息给创建者的回调函数进行处理。
+
+主线程中创建 Worker 实例，并监听 onm">
+<meta property="og:updated_time" content="2017-07-03T06:31:09.387Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Workers">
+<meta name="twitter:description" content="Web Workers能在后台进程中运行的方法.Web Workers 进程能够在不影响用户界面的情况下处理任务，并且，它还可以使用 XMLHttpRequest 来处理 I/O，但通常，后台进程（包括 Web Workers 进程）不能对 DOM 进行操作。如果希望后台程序处理的结果能够改变 DOM，只能通过返回消息给创建者的回调函数进行处理。
+
+主线程中创建 Worker 实例，并监听 onm">
+  
+    <link rel="alternative" href="/atom.xml" title="Jar-R" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">任先生在路上</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle" style="margin-bottom:20px;">Good things are coming !</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">列表</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger" style="display:none;"></div>
+  		<h1 class="header-author js-mobile-header hide">任先生在路上</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">任先生在路上</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Good things are coming !</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">列表</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-worker" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/01/18/worker/" class="article-date">
+  	<time datetime="2017-01-17T16:00:00.000Z" itemprop="datePublished">2017-01-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Workers
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Web Workers能在后台进程中运行的方法.<br>Web Workers 进程能够在不影响用户界面的情况下处理任务，并且，它还可以使用 XMLHttpRequest 来处理 I/O，但通常，后台进程（包括 Web Workers 进程）不能对 DOM 进行操作。如果希望后台程序处理的结果能够改变 DOM，只能通过返回消息给创建者的回调函数进行处理。</p>
+<ol>
+<li>主线程中创建 Worker 实例，并监听 onmessage 事件<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function init()&#123; &#10;    var worker = new Worker(&#39;compute.js&#39;); &#10;    worker.onmessage= function (event) &#123; &#10;        console.log(event.data) &#10;    &#125;; &#10;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<a id="more"></a>
+<p>在客户端的 compute.js 中，只是简单的重复多次加和操作，最后通过 postMessage 方法把结果返回给主线程。而在这段时间内，主线程不被阻塞，用户可以通过拖拽浏览器，变大缩小浏览器窗口等操作测试这一现象。</p>
+<ol>
+<li><p>compute.js 中调用 postMessage 方法返回计算结果</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var i=0; &#10;function timedCount()&#123; &#10;    for(var j=0,sum=0;j&#60;100;j++)&#123; &#10;        for(var i=0;i&#60;100000000;i++)&#123; &#10;            sum+=i; &#10;        &#125; &#10;    &#125; &#10;    // &#35843;&#29992; postMessage &#21521;&#20027;&#32447;&#31243;&#21457;&#36865;&#28040;&#24687;&#10;    postMessage(sum); &#10;&#125; &#10;postMessage(&#34;Before computing,&#34;+new Date()); &#10;timedCount(); &#10;postMessage(&#34;After computing,&#34;+new Date());</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>父页面中嵌入子页面，调用 postMessage 方法发送数据</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function sendIt()&#123; &#10;  // &#36890;&#36807; postMessage &#21521;&#23376;&#31383;&#21475;&#21457;&#36865;&#25968;&#25454;&#10;  document.getElementById(&#34;otherPage&#34;).contentWindow &#10;      .postMessage( &#10;          document.getElementById(&#34;message&#34;).value, &#10;         &#34;http://child.com:8080&#34;&#10;      ); &#10;&#125; &#10;&#60;!-- &#36890;&#36807; iframe &#23884;&#20837;&#23376;&#39029;&#38754; --&#62;&#10;&#60;iframe src=&#34;//child.com:8080/TestHTML5/other-domain.html&#34;&#10;            id=&#34;otherPage&#34;&#62;&#60;/iframe&#62; &#10;&#60;input type=&#34;text&#34; id=&#34;message&#34;&#62;&#10;&#60;input type=&#34;button&#34; value=&#34;Send to child.com&#34; onclick=&#34;sendIt()&#34; /&#62;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>在子窗口中监听 onmessage 事件，并用 JavaScript 实现显示父窗口发送过来的数据。</p>
+<ol>
+<li>子窗口中监听 onmessage 事件，显示父窗口发送来的数据<br>```dash<br>window.addEventListener(“message”, function( event ) {<br> // 把父窗口发送过来的数据显示在子窗口中<br>document.getElementById(“content”).innerHTML+=event.data+”<br>“;<br>}, false ); </li>
+</ol>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/01/22/o.5px/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          0.5px
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/11/22/xss/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">xss</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div>&copy; 2017 任先生在路上 的博客 , 技术 
+        <a href="http://hexo.io/" target="_blank">Hexo</a>  
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
