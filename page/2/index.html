@@ -124,6 +124,62 @@
 
       <div class="body-wrap">
   
+    <article id="post-防抖" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/02/25/防抖/" class="article-date">
+  	<time datetime="2017-02-24T16:00:00.000Z" itemprop="datePublished">2017-02-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/25/防抖/">防抖</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function debounce(func, wait = 300, immediate) &#123;&#10;&#10;    var timeout, result;&#10;&#10;    var debounced = function () &#123;&#10;        var context = this;&#10;        var args = arguments;&#10;&#10;        if (timeout) clearTimeout(timeout);&#10;        if (immediate) &#123;&#10;            // &#22914;&#26524;&#24050;&#32463;&#25191;&#34892;&#36807;&#65292;&#19981;&#20877;&#25191;&#34892;&#10;            var callNow = !timeout;&#10;            timeout = setTimeout(function()&#123;&#10;                timeout = null;&#10;            &#125;, wait)&#10;            if (callNow) result = func.apply(context, args)&#10;        &#125;&#10;        else &#123;&#10;            timeout = setTimeout(function()&#123;&#10;                result = func.apply(context, args)&#10;            &#125;, wait);&#10;        &#125;&#10;        return result;&#10;    &#125;;&#10;&#10;    debounced.cancel = function() &#123;&#10;        clearTimeout(timeout);&#10;        timeout = null;&#10;    &#125;;&#10;&#10;    return debounced;&#10;&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-前端路由实现原理" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -302,6 +358,68 @@
 
 
   
+    <article id="post-21" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/02/07/21/" class="article-date">
+  	<time datetime="2017-02-07T08:00:48.177Z" itemprop="datePublished">2017-02-07</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/07/21/">css js兼容性</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>!important (功能有限)随着IE7对!important的支持, !important 方法现在只针对IE6的兼容.<br>例如:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#example &#123;&#10;&#9;width: 100px !important; /* IE7+FF */&#10;&#9;width: 103px; /* IE6 */&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/兼容性/">兼容性</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2017/02/07/21/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-22" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -352,68 +470,6 @@
       
         <p class="article-more-link">
           <a  href="/2017/02/07/22/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-21" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/02/07/21/" class="article-date">
-  	<time datetime="2017-02-07T08:00:48.177Z" itemprop="datePublished">2017-02-07</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/07/21/">css js兼容性</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>!important (功能有限)随着IE7对!important的支持, !important 方法现在只针对IE6的兼容.<br>例如:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#example &#123;&#10;&#9;width: 100px !important; /* IE7+FF */&#10;&#9;width: 103px; /* IE6 */&#10;&#125;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/兼容性/">兼容性</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2017/02/07/21/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -674,70 +730,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/11/22/xss/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-拖拽" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/11/19/拖拽/" class="article-date">
-  	<time datetime="2016-11-18T16:00:00.000Z" itemprop="datePublished">2016-11-19</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/19/拖拽/">拖拽</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>我们常常会通过修改元素的top，left，translate来其的位置发生改变。</p>
-<p>由于修改一个元素top/left值会引起页面重绘，而translate不会，因此从性能优化上来判断，我们会优先使用translate属性。</p>
-<p>如何获取当前浏览器支持的transform兼容写法</p>
-<p>[‘transform’, ‘webkitTransform’, ‘MozTransform’, ‘msTransform’, ‘OTransform’]<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#33719;&#21462;&#24403;&#21069;&#27983;&#35272;&#22120;&#25903;&#25345;&#30340;transform&#20860;&#23481;&#20889;&#27861;&#10;function getTransform() &#123;&#10;    var transform = &#39;&#39;,&#10;        divStyle = document.createElement(&#39;div&#39;).style,&#10;        // &#21487;&#33021;&#28041;&#21450;&#21040;&#30340;&#20960;&#31181;&#20860;&#23481;&#24615;&#20889;&#27861;&#65292;&#36890;&#36807;&#24490;&#29615;&#25214;&#20986;&#27983;&#35272;&#22120;&#35782;&#21035;&#30340;&#37027;&#19968;&#20010;&#10;        transformArr = [&#39;transform&#39;, &#39;webkitTransform&#39;, &#39;MozTransform&#39;, &#39;msTransform&#39;, &#39;OTransform&#39;],&#10;&#10;        i = 0,&#10;        len = transformArr.length;&#10;&#10;    for(; i &#60; len; i++)  &#123;&#10;        if(transformArr[i] in divStyle) &#123;&#10;            // &#25214;&#21040;&#20043;&#21518;&#31435;&#21363;&#36820;&#22238;&#65292;&#32467;&#26463;&#20989;&#25968;&#10;            return transform = transformArr[i];&#10;        &#125;&#10;    &#125;&#10;&#10;    // &#22914;&#26524;&#27809;&#26377;&#25214;&#21040;&#65292;&#23601;&#30452;&#25509;&#36820;&#22238;&#31354;&#23383;&#31526;&#20018;&#10;    return transform;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>当前浏览器并不支持transform，这个时候我们就需要使用left，top值来改变元素的位置。如果支持，就改变transform的值。</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/11/19/拖拽/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
