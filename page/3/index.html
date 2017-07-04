@@ -124,6 +124,70 @@
 
       <div class="body-wrap">
   
+    <article id="post-拖拽" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/19/拖拽/" class="article-date">
+  	<time datetime="2016-11-18T16:00:00.000Z" itemprop="datePublished">2016-11-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/19/拖拽/">拖拽</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我们常常会通过修改元素的top，left，translate来其的位置发生改变。</p>
+<p>由于修改一个元素top/left值会引起页面重绘，而translate不会，因此从性能优化上来判断，我们会优先使用translate属性。</p>
+<p>如何获取当前浏览器支持的transform兼容写法</p>
+<p>[‘transform’, ‘webkitTransform’, ‘MozTransform’, ‘msTransform’, ‘OTransform’]<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#33719;&#21462;&#24403;&#21069;&#27983;&#35272;&#22120;&#25903;&#25345;&#30340;transform&#20860;&#23481;&#20889;&#27861;&#10;function getTransform() &#123;&#10;    var transform = &#39;&#39;,&#10;        divStyle = document.createElement(&#39;div&#39;).style,&#10;        // &#21487;&#33021;&#28041;&#21450;&#21040;&#30340;&#20960;&#31181;&#20860;&#23481;&#24615;&#20889;&#27861;&#65292;&#36890;&#36807;&#24490;&#29615;&#25214;&#20986;&#27983;&#35272;&#22120;&#35782;&#21035;&#30340;&#37027;&#19968;&#20010;&#10;        transformArr = [&#39;transform&#39;, &#39;webkitTransform&#39;, &#39;MozTransform&#39;, &#39;msTransform&#39;, &#39;OTransform&#39;],&#10;&#10;        i = 0,&#10;        len = transformArr.length;&#10;&#10;    for(; i &#60; len; i++)  &#123;&#10;        if(transformArr[i] in divStyle) &#123;&#10;            // &#25214;&#21040;&#20043;&#21518;&#31435;&#21363;&#36820;&#22238;&#65292;&#32467;&#26463;&#20989;&#25968;&#10;            return transform = transformArr[i];&#10;        &#125;&#10;    &#125;&#10;&#10;    // &#22914;&#26524;&#27809;&#26377;&#25214;&#21040;&#65292;&#23601;&#30452;&#25509;&#36820;&#22238;&#31354;&#23383;&#31526;&#20018;&#10;    return transform;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>当前浏览器并不支持transform，这个时候我们就需要使用left，top值来改变元素的位置。如果支持，就改变transform的值。</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/11/19/拖拽/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-移动端知识整理" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -665,71 +729,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/06/26/Array/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-电商接口" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/20/电商接口/" class="article-date">
-  	<time datetime="2016-06-19T16:00:00.000Z" itemprop="datePublished">2016-06-20</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/20/电商接口/">一些接口</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>电商接口</p>
-<p>京东获取单个商品价格接口：<br><a href="http://p.3.cn/prices/mgets?skuIds=J_商品ID&amp;type=1">http://p.3.cn/prices/mgets?skuIds=J_商品ID&amp;type=1</a><br>ps:商品ID这么获取:<a href="http://item.jd.com/954086.html">http://item.jd.com/954086.html</a></p>
-<p>物流接口</p>
-<p>快递接口：<br><a href="http://www.kuaidi100.com/query?type=快递公司代号&amp;postid=快递单号">http://www.kuaidi100.com/query?type=快递公司代号&amp;postid=快递单号</a><br>ps:快递公司编码:申通=”shentong” EMS=”ems” 顺丰=”shunfeng” 圆通=”yuantong” 中通=”zhongtong” 韵达=”yunda” 天天=”tiantian” 汇通=”huitongkuaidi” 全峰=”quanfengkuaidi” 德邦=”debangwuliu” 宅急送=”zhaijisong”</p>
-<p>谷歌接口</p>
-<p>FeedXml转json接口：<br><a href="http://ajax.googleapis.com/ajax/services/feed/load?q=Feed地址&amp;v=1.0">http://ajax.googleapis.com/ajax/services/feed/load?q=Feed地址&amp;v=1.0</a><br>备选参数:callback：&amp;callback=foo就会在json外面嵌套foo({})方便做jsonp使用。<br>备选参数:n：返回多少条记录。</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其他/">其他</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/06/20/电商接口/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>

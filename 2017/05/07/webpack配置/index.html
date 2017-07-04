@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>webpack配置 | Jar-R</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="var path = require(‘path’)var webpack = require(‘webpack’)// ….">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack配置">
+<meta property="og:url" content="http://Jarweb.com/2017/05/07/webpack配置/index.html">
+<meta property="og:site_name" content="Jar-R">
+<meta property="og:description" content="var path = require(‘path’)var webpack = require(‘webpack’)// ….">
+<meta property="og:updated_time" content="2017-07-04T10:59:32.198Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="webpack配置">
+<meta name="twitter:description" content="var path = require(‘path’)var webpack = require(‘webpack’)// ….">
+  
+    <link rel="alternative" href="/atom.xml" title="Jar-R" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">任先生在路上</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle" style="margin-bottom:20px;">Good things are coming !</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">列表</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger" style="display:none;"></div>
+  		<h1 class="header-author js-mobile-header hide">任先生在路上</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">任先生在路上</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Good things are coming !</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">列表</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-webpack配置" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/05/07/webpack配置/" class="article-date">
+  	<time datetime="2017-05-06T16:00:00.000Z" itemprop="datePublished">2017-05-07</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      webpack配置
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>var path = require(‘path’)<br>var webpack = require(‘webpack’)<br>// ….</p>
+<a id="more"></a>
+<p>module.exports = {<br>    // 输入<br>    // 如果传递一个数组，那么数组的每一项都会执行。<br>    // 动态加载的模块不是入口起点。<br>    // 每个 HTML 页面都有一个入口起点。<br>    // 单页应用(SPA)：一个入口起点，<br>    // 多页应用(MPA)：多个入口起点。<br>    entry: {<br>        main: ‘/index.js’,<br>        // 标记momnet是第三方资源，独立入口<br>        // 打包到一个不需每次更新的bundle里<br>        vendor: ‘moment’<br>    }<br>    // 输出<br>    output: {<br>        // dev环境<br>        // 每个输出 bundle 的名称。<br>        // 这些 bundle 将写入到 output.path 选项指定的目录下。<br>        // 当通过多个入口起点(entry point)、代码拆分(code splitting)或各种插件(plugin)创建多个 bundle<br>        //<br>        filename: ‘[name].js’,<br>        // pro环境，chunkhash会增加编译时间<br>        // filename: ‘[name].[chunkhash].js’,<br>        // 使用基于每个 chunk 内容的 hash<br>        // filename: “[chunkhash].bundle.js”<br>        path: path.resolve(<strong>dirname, ‘dist’),<br>        // 帮助你为项目中的所有资源指定一个基础路径。它被称为公共路径<br>        // 用于告知 webpack 从哪里按需加载 bundle<br>        // 相对于服务的 URL<br>        // publicPath 为基准，使用它来决定在哪个目录下启用服务，来访问 webpack 输出的文件。<br>        publicPath: ‘/‘,<br>        sourceMapFilename: ‘[name].map’,<br>        // 通过 script 标签的 JSONP 来按需加载 chunk。<br>        // crossOriginLoading: false - 禁用跨域加载（默认）<br>        // crossOriginLoading: “use-credentials” - 带凭据(credential)启用跨域加载 with credentials<br>    },<br>    // webpack 将继续监听任何已解析文件的更改<br>    watch: true,<br>    devServer: {<br>        // 启用 webpack 的模块热替换特性<br>        hot: true, // 告诉dev-server，使用了HMP<br>        contentBase: path.resolve(</strong>dirname, ‘dist’),<br>        publicPath: ‘/‘,<br>        port: 8888,<br>        // dev-server 通过 HTTP 提供服务。<br>        // 也可以选择带有 HTTPS 的 HTTP/2 提供服务<br>        https: true,<br>        host: ‘localhost’,<br>        // 任意的 404 响应都可能需要被替代为 index.html<br>        historyApiFallback: true,<br>        // true, 那些显示的 webpack 包(bundle)信息」的消息将被隐藏。<br>        // 错误和警告仍然会显示。<br>        noInfi: false,<br>        //允许你精确控制 bundle 信息展示<br>        stats: ‘minimal’,<br>        // 在所有响应中添加首部内容<br>        headers: {<br>             “X-Custom-Foo”: “bar”<br>        }<br>        // 惰性模式中，此选项可减少编译。<br>        // 默认在惰性模式，每个请求结果都会产生全新的编译。<br>        lazy: true,<br>        // 希望在同域名下发送 API 请求 ，那么代理某些 URL 会很有用。<br>        proxy: {<br>            ‘/api’: {<br>                target: “<a href="http://localhost:3000" target="_blank" rel="external">http://localhost:3000</a>“,<br>                // 接受使用了无效证书的后端服务器<br>                secure: false,<br>            }<br>        }<br>    }<br>    // 加入模块<br>    module: {<br>        // 防止 webpack 解析那些任何与给定正则表达式相匹配的文件<br>        noParse: /jquery/,<br>        rules: [<br>            enforce: “pre” | “post”<br>            {<br>                // 匹配.css文件<br>                // 默认情况下，CSS 将所有的类名暴露到全局的选择器作用域中。<br>                // 样式可以在局部作用域中，避免全局作用域的样式。<br>                test: /.css$/,<br>                // 对这些文件使用以下loader处理<br>                // 让css文件成为一个模块<br>                // 这样在js模块中就可以使用css模块了<br>                // 一个文件一个模块<br>                // CSS 会跟你的 JavaScript 打包在一起，<br>                // 并且在初始加载后，通过一个 <style> 标签注入样式，然后作用于页面。<br>                // 你无法使用浏览器的能力，去异步且并行去加载 CSS。<br>                // 取而代之的是，你的页面需要等待整个 JavaScript 文件加载完，才能进行样式渲染。<br>                // use: [‘style-loader’, ‘css-loader’]<br>                // ExtractTextWebpackPlugin 帮助你将 CSS 单独打包。<br>                use:  ExtractTextPlugin.extract({<br>                    use: [<br>                        //  将 JS 字符串生成为 style 节点<br>                        ‘style-loader’,<br>                        {<br>                            // 将 CSS 转化成 CommonJS 模块<br>                            loader: ‘css-loader’,<br>                            options: {<br>                                // 使用css module<br>                                modules: true,<br>                                // minimize 查询参数，来禁用或强制压缩<br>                                localIdentName: ‘[path][name]<strong>[local]–[hash:base64:5]’,<br>                                minimize: true || {cssnano options},<br>                                // 默认情况下不启用它们，因为它们会导致运行时的额外开销，<br>                                // 并增加了 bundle 大小(JS source map 不会)<br>                                sourceMap: true,<br>                            }<br>                        },<br>                        ‘postcss-loader’,<br>                        // 将 Sass 编译成 CSS<br>                        ‘sass-loader’,<br>                        {<br>                            loader: ‘less-loader’,<br>                            options: {<br>                                strictMath: true,<br>                                noIeCompat: true,<br>                                sourceMap: true,<br>                            }<br>                        }<br>                    ],<br>                    // 在开发环境使用 style-loader<br>                    // 为什么要放到外面？<br>                    fallback: “style-loader”<br>                })<br>            },<br>            {<br>                // 匹配.scss<br>                test: /.scss$/,<br>                use: ExtractTextPlugin.extract({<br>                    // 应用于当时CSS没有被提取<br>                    fallback: ‘style-loader’,<br>                    use: [‘css-loader’, ‘sass-loader’]<br>                })<br>            }<br>            // 创建多个实例<br>            // const extractCSS = new ExtractTextPlugin(‘stylesheets/[name]-one.css’);<br>            // const extractLESS = new ExtractTextPlugin(‘stylesheets/[name]-two.css’);<br>            // {<br>            //     test: /.css$/,<br>            //     use: extractCSS.extract([‘css-loader’, ‘postcss-loader’])<br>            // },<br>            // {<br>            //     test: /.less$/i,<br>            //     use: extractLESS.extract([‘css-loader’, ‘less-loader’])<br>            // },<br>            {<br>                // 匹配图片<br>                test: /.(png|svg|jpg|gif)$/,<br>                // 对图片文件使用以下loader<br>                // 让每个图片成为一个模块<br>                // 这样就可以在css/js模块中使用<br>                // loader会找到图片,并且把图片拷贝到output的目录下<br>                // url以hash值命名<br>                // file-loader url-loader 可以接收并加载任何文件，然后将其输出到构建目录。<br>                // JSON 的loader已经内置的<br>                // CSV、TSV 和 XML可以用csv-loader xml-loader<br>                // 生成的文件的文件名就是文件内容的 MD5 哈希值并会保留所引用资源的原始扩展名<br>                // 会按照你指定的路径和文件名输出文件，且使用相同的 URL 路径来访问文件。<br>                // 你可以使用 outputPath, publicPath 和 publicPath 查询名称参数，<br>                // 来指定自定义的输出路径和发布目录<br>                use: [‘file-loader’]<br>            },<br>            {<br>                test: /.(woff|woff2|ttf|eot|svg)$/,<br>                use: {<br>                    // 在文件大小低于指定的限制时，可以返回一个 data URL<br>                    // 如果文件大小超过限制，将转为使用 file-loader，所有的查询参数也会透传过去。<br>                    loader: ‘url-loader’,<br>                    options: {<br>                        limit: 100000<br>                    }<br>                }<br>            },<br>            {<br>                test: /.js$/,<br>                exclude: /(node_modules)/,<br>                use: [<br>                // 一些性能开销较大的 loader 之前添加此 loader，以将结果缓存到磁盘里。<br>                // 保存和读取这些缓存文件会有一些时间开销，<br>                // 所以请只对性能开销较大的 loader 使用此 loader。<br>                {<br>                    loader: ‘“cachce-loader”‘,<br>                    options: {<br>                        // 指定缓存文件存放的目录<br>                        cacheDirectory: path.resovle(‘.cache’)<br>                    }<br>                },<br>                {<br>                    // babel-loader 很慢<br>                    // 要排除 node_modules 配置exclude<br>                    // 使用 cacheDirectory 选项，将 babel-loader 提速至少两倍。<br>                    // 这会将转译的结果缓存到文件系统中。<br>                    // 需要将babel runtime 作为一个独立模块，来避免重复引入。<br>                    // 必须执行 npm install babel-plugin-transform-runtime –save-dev<br>                    // 来把它包含到你的项目中，也要使用 npm install babel-runtime –save 把 babel-runtime 安装为一个依赖<br>                    loader: ‘babel-loader’,<br>                    options: {<br>                        presets: [[‘es2015’, {modules: false}]],<br>                        plugins: [<br>                            ‘synctax-async-functions’,<br>                            ‘syntax-dynamic-import’,<br>                            ‘transform-async-to-generator’,<br>                            ‘transform-regenerator’,<br>                            ‘transform-runtime’<br>                        ]<br>                    }<br>                }]<br>            },<br>            {<br>                test: /.gz$/,<br>                enforce: ‘pre’,<br>                uxe: ‘gzip-loader’<br>            }<br>        ]<br>    },<br>     // 构建优化插件<br>     // CommonsChunkPlugin UglifyJsPlugin ExtractTextPlugin IgnorePlugin<br>     // 编译时(compile time)插件<br>     // DefinePlugin<br>     // webpack-dev-server 强化插件<br>     // DashboardPlugin HotModuleReplacementPlugin<br>    plugins: [<br>        // 在运行时更新各种模块，而无需进行完全刷新<br>        // 启用HMR是容易的，在大多数情况下不需要选项。<br>        // 会在程序运行过程中替换、添加或删除模块，而无需重新加载整个页面<br>        // 通过以下几种方式，来显著加快开发速度:<br>        // 保留在完全重新加载页面时丢失的应用程序状态。<br>        // 只更新变更内容，以节省宝贵的开发时间。<br>        // 调整样式更加快速 - 几乎相当于在浏览器调试器中更改样式。<br>        new webpack.HotModuleReplacementPlugin(),<br>        // 开启js压缩，生成sourcemap，<br>        // UglifyJsPlugin是webpack内置的<br>        // 在生产环境中使用 source map，帮助debug<br>        new webpack.optimize.UglifyJsPlugin({<br>            sourceMao: options.devtool &amp;&amp; (options.devtool.indexIf(“sourcemao”) &gt;= 0 || options.devtool.indexOf(“source-map”) &gt;= 0),<br>            beautify: false,<br>            comments: false,<br>            compress: {<br>                screw_ie8: true<br>            }<br>        }),<br>        // 允许创建一个在编译时可以配置的全局常量<br>        // DefinePlugin作用是查找代码和替换<br>        // 这里是查找process.env.NODE_ENV<br>        // 替换成production<br>        // NODE_ENV是一个Node.js暴露给运行脚本的系统环境变量<br>        new webpack.DefinePlugin({<br>            ‘process.env.NODE_ENV’: JSON.stringify(‘production’)<br>        }),<br>        new ForkCheckerPlugin(),<br>        // 允许我们从不同的 bundle 中提取所有的公共模块，并且将他们加入公共 bundle 中。<br>        // 如果公共 bundle 不存在，那么它将会创建一个出来。<br>        // 通过将公共模块拆出来，最终合成的文件能够在最开始的时候加载一次，<br>        // 便存起来到缓存中供后续使用。这个带来速度上的提升，<br>        // 因为浏览器会迅速将公共的代码从缓存中取出来，而不是每次访问一个新页面时，<br>        // 再去加载一个更大的文件。<br>        new webpack.optimize.CommonsChunkPlugin({<br>            // 指定公共bundle的名称<br>            name: [‘polyfills’, ‘vendor’, ‘manifest’].reverse(),<br>            // 在传入  公共chunk(commons chunk) 之前所需要包含的最少数量的 chunks 。<br>              // 数量必须大于等于2，或者少于等于 chunks的数量<br>              // 传入 <code>Infinity</code> 会马上生成 公共chunk，但里面没有模块。<br>            minChunks: infinity,<br>            // 模块至少必须被3个 入口chunk 共享<br>            // minChunks: 3,<br>            // 在 公共chunk 被创建立之前，<br>            // 所有 公共模块 (common module) 的最少大小。<br>            minSzie: 1000<br>        }),<br>        new webpack.HashedModuleIdsPlugin(),<br>        new webpackChunkHash(),<br>        new ChunkManifestPlugin({<br>            filename: ‘chunk-manifest.json’,<br>            manifestVariable: ‘webpackManifest’<br>        }),<br>        // 自动创建HTML文件<br>        // 其中包括使用script标签的body中的所有webpack包<br>        // 如果有多个webpack入口点，都会在生成的HTML文件中的script标签内。<br>        new HtmlWebpackPlugin({<br>            // filename: ‘test.html’,<br>            // title: ‘xxx’,<br>            // 拷贝自定义模板<br>            tempalte: ‘src/index.html’,<br>            // 决定chunk引进的顺序<br>            chunksSorttMode: ‘dependency’<br>        }),<br>        // 配置全局/共享的 loader 配置，使所有的 loader 都能收到这些配置。<br>        new webpack.LoaderOptionsPlugin({<br>            minimize: true,<br>            debug: false<br>        }),<br>        // 它会所有的入​​口chunk（entry chunks）中引用的*.css，<br>        // 移动到独立分离的CSS文件。因此，你的样式将不再内嵌到JS bundle中，<br>        // 而是会放到一个单独的CSS文件styles.css）当中。<br>        // 如果你的样式文件大小较大，这会做更快提前加载，<br>        // 因为CSS bundle会跟JS捆绑并行加载。<br>        new ExtractTextPlugin(‘style.css’),<br>        // 合并小于 minChunkSize 大小的 chunk，<br>        // 将 chunk 体积保持在指定大小限制以上<br>        new webpacl.optimize.MinChunkSizePlugin({<br>            minChunkSize: 10000<br>        }),<br>        new CompressionPlugin({<br>            asset: ‘[path].gz[query]’,<br>            algorithm: ‘gzip’,<br>            // 匹配该正则的资源都会被处理<br>            test: /.(js|html)$/,<br>            // 只有大于该值的资源会被处理<br>            threshold: 10240,<br>            // 只有压缩率小于这个值的资源才会被处理<br>            minRatio: 0.8<br>        }),<br>        // 可以大幅度地提高编译时间性能的方式来分割包<br>        // 它创建一个manifest.json文件，用于DllReferencePlugin映射依赖关系。<br>        new webpack.DllPlugin({<br>            context: </strong>dirname,<br>            name: ‘[name]<em>[hash]’,<br>            path: path.resolve(<strong>dirname, ‘manifest.json’)<br>        }),<br>        new webpack.DllReferencePlugin({<br>            context: </strong>dirname,<br>            manifest: require(‘./manifest.json’),<br>            name: ‘./my-dll.js’,<br>            scope: ‘xyz’,<br>            sourceType: ‘commonsjs2’<br>        }),<br>        // 已经添加了许多代码分离点(code split point)来实现按需加载(load stuff on demand)<br>        // 可能会有一些很小的 chunk - 这产生了大量 HTTP 请求开销。<br>        // 此插件可以通过合并的方式，处理你的 chunk，以减少请求数。<br>        new webpack.optimize.LimitChunkCountPlugin({<br>            // 来限制 chunk 的最大数量<br>            maxChunks: 5,<br>            // 设置 chunk 的最小大小。<br>            minChunkSize: 1000<br>        }),<br>        // 在编译出现错误时,跳过输出阶段<br>        new webpack.NoEmitOnErrorsPlugin()<br>    ],<br>    // 剥离了那些不需要改动的依赖模块<br>    externals: {<br>        jquery: ‘jquery’,<br>        // 外部 library 可以在 AMD 和 CommonJS 模块系统中通过 lodash 访问，在全局变量形式下用 </em> 访问。<br>        lodash: {<br>            commonjs: ‘lodash’,<br>            amd: ‘lodash’,<br>            root: ‘_’<br>        }<br>    }<br>}</p>
+</style></p>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/04/29/react总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">react总结</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div>&copy; 2017 任先生在路上 的博客 , 技术 
+        <a href="http://hexo.io/" target="_blank">Hexo</a>  
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

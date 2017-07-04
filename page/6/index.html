@@ -124,6 +124,67 @@
 
       <div class="body-wrap">
   
+    <article id="post-原型链" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/31/原型链/" class="article-date">
+  	<time datetime="2016-03-30T16:00:00.000Z" itemprop="datePublished">2016-03-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/31/原型链/">原型链</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Function.<strong>proto</strong> === Object.prototype // false<br>擦，假设失败了呢，让我们来看看为什么不对，Function.<strong>proto</strong>到底指哪去了<br>Function.<strong>proto</strong> === Function.prototype //true<br>原来指向自己的prototype了呢，那就意味着…<br>Function instanceof Function //true<br>yes，然而 Function instanceof Object似乎也能解释了<br>Function.<strong>proto</strong> === Function.prototype Function.<strong>proto</strong>.<strong>proto</strong> === Object.prototype </p>
+<p>所以如果我们让<br>Function.<strong>proto</strong>.<strong>proto</strong> = null Function instanceof Object //false<br>这回知道为什么不要用 <strong>proto</strong> 了吧，一不小心重写了会导致所有继承自它的对象都受影响。<br>为了养成良好的习惯，实际项目最好使用 getPrototypeOf 取原型链，这里只是为了方便我采用<strong>proto</strong></p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/03/31/原型链/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-原型继承" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -246,70 +307,6 @@
 
 
   
-    <article id="post-关于对象" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/22/关于对象/" class="article-date">
-  	<time datetime="2016-03-21T16:00:00.000Z" itemprop="datePublished">2016-03-22</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/22/关于对象/">关于对象</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>对象字面值不能正确解析问题：<br>{a:1}.a报错，错误Uncaught SyntaxError: Unexpected token .</li>
-</ol>
-<p>解决：<br>({a:1}.a) // 或({a:1}).a</p>
-<p>原因：<br>就是声明对象字面值时，语句开头不应该用{，因为js解释器会认为这是语句块（block）的开始。<br>同理，类似问题{ name: “mc”, id: 1 }会报错Uncaught SyntaxError: Unexpected token :也是这个道理。({ name: “mc”, id: 1 })即可正确解析。但稍注意下，{name: “mc”}是不会报错的，它等同于name: “mc”，并返回一个字符串”mc”。</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/03/22/关于对象/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-类型变量" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -357,6 +354,70 @@
       
         <p class="article-more-link">
           <a  href="/2016/03/22/类型变量/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-关于对象" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/22/关于对象/" class="article-date">
+  	<time datetime="2016-03-21T16:00:00.000Z" itemprop="datePublished">2016-03-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/22/关于对象/">关于对象</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>对象字面值不能正确解析问题：<br>{a:1}.a报错，错误Uncaught SyntaxError: Unexpected token .</li>
+</ol>
+<p>解决：<br>({a:1}.a) // 或({a:1}).a</p>
+<p>原因：<br>就是声明对象字面值时，语句开头不应该用{，因为js解释器会认为这是语句块（block）的开始。<br>同理，类似问题{ name: “mc”, id: 1 }会报错Uncaught SyntaxError: Unexpected token :也是这个道理。({ name: “mc”, id: 1 })即可正确解析。但稍注意下，{name: “mc”}是不会报错的，它等同于name: “mc”，并返回一个字符串”mc”。</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/03/22/关于对象/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -693,67 +754,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/01/27/11/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-10" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/01/20/10/" class="article-date">
-  	<time datetime="2016-01-19T16:00:00.000Z" itemprop="datePublished">2016-01-20</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/20/10/">TCP三次握手</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="TCP术语："><a href="#TCP术语：" class="headerlink" title="TCP术语："></a>TCP术语：</h3><blockquote>
-<p>SYN(synchronous建立联机)<br>ACK(acknowledgement 确认)<br>PSH(push传送)<br>FIN(finish结束)<br>RST(reset重置)<br>URG(urgent紧急)<br>URG 紧急指针，告诉接收TCP模块紧要指针域指着紧要数据。<br>ACK 置1时表示确认号（为合法，为0的时候表示数据段不包含确认信息，确认号被忽略。<br>PSH 置1时请求的数据段在接收方得到后就可直接送到应用程序，而不必等到缓冲区满时才传送。<br>RST 置1时重建连接。如果接收到RST位时候，通常发生了某些错误。<br>SYN 置1时用来发起一个连接。<br>FIN 置1时表示发端完成发送任务。用来释放连接，表明发送方已经没有数据发送了。<br>另外还有 Sequence number(顺序号码) 、Acknowledge number(确认号码)在建立握手过程中发送的序列号。<br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TCP-IP/">TCP/IP</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/01/20/10/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
