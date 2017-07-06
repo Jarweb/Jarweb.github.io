@@ -4,24 +4,21 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>event loop | Jar-R</title>
+  <title>vue | Jar-R</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="浏览器线程浏览器里常用的线程有，js线程，gui线程，http线程， 事件线程js线程负责js解析执行gui线程负责渲染http负责请求通信事件线程负责处理浏览器事件
-js代码在js线程中执行时， 同步代码在js线程中直接处理异步回调，例如事件回调，setTimeout，promise等 会被推入一个队列里
-event loop 事件循环这个队列里在前面的是misco 也叫job：process.">
+  <meta name="description" content="计算属性：数据来源：接收的props，data组件自己的状态vuex的store全局的router抽出的context组件输入
+数去去向：view派生的状态data子组件的props">
 <meta property="og:type" content="article">
-<meta property="og:title" content="event loop">
-<meta property="og:url" content="http://Jarweb.com/2017/04/16/eventloop/index.html">
+<meta property="og:title" content="vue">
+<meta property="og:url" content="http://Jarweb.com/2017/05/13/vue总结/index.html">
 <meta property="og:site_name" content="Jar-R">
-<meta property="og:description" content="浏览器线程浏览器里常用的线程有，js线程，gui线程，http线程， 事件线程js线程负责js解析执行gui线程负责渲染http负责请求通信事件线程负责处理浏览器事件
-js代码在js线程中执行时， 同步代码在js线程中直接处理异步回调，例如事件回调，setTimeout，promise等 会被推入一个队列里
-event loop 事件循环这个队列里在前面的是misco 也叫job：process.">
-<meta property="og:updated_time" content="2017-07-03T03:56:13.414Z">
+<meta property="og:description" content="计算属性：数据来源：接收的props，data组件自己的状态vuex的store全局的router抽出的context组件输入
+数去去向：view派生的状态data子组件的props">
+<meta property="og:updated_time" content="2017-07-06T09:03:32.233Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="event loop">
-<meta name="twitter:description" content="浏览器线程浏览器里常用的线程有，js线程，gui线程，http线程， 事件线程js线程负责js解析执行gui线程负责渲染http负责请求通信事件线程负责处理浏览器事件
-js代码在js线程中执行时， 同步代码在js线程中直接处理异步回调，例如事件回调，setTimeout，promise等 会被推入一个队列里
-event loop 事件循环这个队列里在前面的是misco 也叫job：process.">
+<meta name="twitter:title" content="vue">
+<meta name="twitter:description" content="计算属性：数据来源：接收的props，data组件自己的状态vuex的store全局的router抽出的context组件输入
+数去去向：view派生的状态data子组件的props">
   
     <link rel="alternative" href="/atom.xml" title="Jar-R" type="application/atom+xml">
   
@@ -129,11 +126,11 @@ event loop 事件循环这个队列里在前面的是misco 也叫job：process."
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-eventloop" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-vue总结" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/04/16/eventloop/" class="article-date">
-  	<time datetime="2017-04-15T16:00:00.000Z" itemprop="datePublished">2017-04-16</time>
+      <a href="/2017/05/13/vue总结/" class="article-date">
+  	<time datetime="2017-05-12T16:00:00.000Z" itemprop="datePublished">2017-05-13</time>
 </a>
     </div>
   
@@ -146,7 +143,7 @@ event loop 事件循环这个队列里在前面的是misco 也叫job：process."
         
   
     <h1 class="article-title" itemprop="name">
-      event loop
+      vue
     </h1>
   
 
@@ -166,11 +163,20 @@ event loop 事件循环这个队列里在前面的是misco 也叫job：process."
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="浏览器线程"><a href="#浏览器线程" class="headerlink" title="浏览器线程"></a>浏览器线程</h2><p>浏览器里常用的线程有，js线程，gui线程，http线程， 事件线程<br>js线程负责js解析执行<br>gui线程负责渲染<br>http负责请求通信<br>事件线程负责处理浏览器事件</p>
-<p>js代码在js线程中执行时， 同步代码在js线程中直接处理<br>异步回调，例如事件回调，setTimeout，promise等 会被推入一个队列里</p>
-<h2 id="event-loop-事件循环"><a href="#event-loop-事件循环" class="headerlink" title="event loop 事件循环"></a>event loop 事件循环</h2><p>这个队列里在前面的是misco 也叫job：<br>process.nextTick, promise, mutationObserver</p>
-<p>后面的是macro 也叫task：<br>setTimeout, setInterval, setImmediate, i/o, ui rending</p>
-<p>promise 会被插入到下一个事件循环的前端， 注意是下一个， 不是当前的事件循环</p>
+        <p>计算属性：<br>数据来源：<br>接收的props，<br>data组件自己的状态<br>vuex的store<br>全局的router<br>抽出的context<br>组件输入</p>
+<p>数去去向：<br>view<br>派生的状态data<br>子组件的props</p>
+<a id="more"></a>
+<p>组件间通信：<br>props down  emit up<br>子emit 父on<br>父brocast 子on<br>.sync 子改变props 同步到 父<br>event bus<br>eventemmiter<br>vuex状态管理</p>
+<p>响应原理：<br>Object.defineProperty把组件的data函数返回的数据进行getter/setter 拦截，对数据进行依赖收集，交给实例的watcher来监听，当数据改变setter会调用，通知watcher重新计算.vue不能检测对象属性的添加和删除，需要挂到data上转化才可以。$set可以追加到data状态上。<br>vue异步更新dom，数据变化后，会被推入一个队列中，推入前会做去重，然后插入到下一个eventloop的前端。等待浏览器执行。内部使用的是promise，所以是job类型，会加入到下个事件循环的前面。采用setTimeout(fn, 0)兼容。会被插入到task的后面，即队列的后面。<br>这时候$nextTick(cb), 可以在dom更新后调用cb</p>
+<p>watch：<br>对某个对象进行监听, 对比前后数据变化<br>数据来源：data computed</p>
+<p>生命周期：<br>beforeCreate 进行组件初始化，数据观测和 event/watcher 事件配置之前<br>created 实例完成创建 数据观测和 event/watcher 事件配置完成，$el还不可见,没挂载， 可以进行接口请求<br>beforemount render函数调用<br>mounted $el创建， dom挂载，可以调用dom，通常这时候开始接口请求<br>beforeUpdate 数据更新时调用，但是vdom还没rerender，可以更改state<br>updated vdomrerender完成， 可以操作dom，不应该更新state，最好computed或者watch<br>actived keep-alive组件激活<br>deactivated keep-alive组件停用<br>breforeDestroyed 销毁前调用， 实例仍可用<br>destroyed 组件销毁，绑定解除，子实例也销毁</p>
+<p>vuex：<br>组件dispatch action type 和 payload<br>action接收type 执行异步接口， commit回掉结果<br>mutation同步处理state<br>state需要初始化默认值<br>getters直接获取state返回<br>store合并所有的module<br>组件通过$store获取所有数据</p>
+<p>slot 内容分发，混合父组件的内容与子组件自己的模板<br>name具名，没name的是default<br>作用域槽，能在父中读取子的props</p>
+<p>动态组件<br>component元素，is来绑定组件，组件由变量控制，可以灵活切换组件</p>
+<p>keep-alive：<br>组件浏览内存，保留它的状态或避免重新渲染</p>
+<p>自定义指令<br>vue.directive(‘demo’, {<br>    // 执行一次 初始化<br>    bind() {<br>        el //绑定的元素<br>        binding{<br>            name //指令名<br>            value //绑定值<br>            oldvalue //前一个绑定的值<br>            expression 绑定值的表达式<br>            arg // 参数<br>            modifiers //修饰符<br>        }<br>    }<br>    inserted //插入父时执行<br>    update // 元素所在的模板更新时调用<br>    componentUpdated //模板完成一次更新周期时调用<br>    unbind //执行一次 指令与元素解绑<br>})</p>
+<p>混合：mixin<br>生命周期同名，推入一个数组全部执行，mixin的生命周期先执行，然后到组件的<br>methods、directive等同名，只执行主件的函数</p>
+<p>组件定义方式<br>functional<br>component</p>
 
       
     </div>
@@ -180,18 +186,9 @@ event loop 事件循环这个队列里在前面的是misco 也叫job：process."
     
 <nav id="article-nav">
   
-    <a href="/2017/04/29/react总结/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          react总结
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/04/15/小程序插件/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">小程序插件</div>
+    <a href="/2017/05/07/webpack配置/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">webpack配置</div>
       <strong class="article-nav-caption">></strong>
     </a>
   

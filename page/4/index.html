@@ -124,6 +124,258 @@
 
       <div class="body-wrap">
   
+    <article id="post-express 中间件" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/03/express 中间件/" class="article-date">
+  	<time datetime="2016-07-02T16:00:00.000Z" itemprop="datePublished">2016-07-03</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/03/express 中间件/">express 中间件</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>express 中间件：</p>
+<p>basicAuth()<br>基本的认证中间件，在req.user里添加用户名</p>
+<p>用户名和密码的例子:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(express.basicAuth(&#39;username&#39;, &#39;password&#39;));</span><br></pre></td></tr></table></figure></p>
+<p>校验回调:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(express.basicAuth(function(user, pass)&#123;&#10;  return &#39;tj&#39; == user &#38;&#38; &#39;wahoo&#39; == pass;&#10;&#125;));</span><br></pre></td></tr></table></figure></p>
+<p>异步校验接受参数fn(err, user), 下面的例子req.user 将会作为user对象传递.<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(connect.basicAuth(function(user, pass, fn)&#123;&#10;  User.authenticate(&#123; user: user, pass: pass &#125;, fn);&#10;&#125;))</span><br></pre></td></tr></table></figure></p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/express/">express</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/07/03/express 中间件/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-express app.js" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/01/express app.js/" class="article-date">
+  	<time datetime="2016-06-30T16:00:00.000Z" itemprop="datePublished">2016-07-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/01/express app.js/">express app.js</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&#39;express&#39;)&#10;var path=require(&#39;path&#39;)&#10;&#10;&#10;var mongoose=require(&#39;mongoose&#39;)&#10;var dbUrl=&#39;mongodb://127.0.0.1/zbyou&#39;&#10;&#9;mongoose.connect(dbUrl)&#10;&#10;var session = require(&#39;express-session&#39;)&#10;var mongoStore=require(&#39;connect-mongo&#39;)(session)&#10;&#10;var serveStatic = require(&#39;serve-static&#39;)&#10;var bodyParser=require(&#39;body-parser&#39;)&#10;var cookieParser=require(&#39;cookie-parser&#39;)&#10;&#10;var port=process.env.PORT||3001&#10;var app=express()&#10;&#9;app.listen(port)&#10;&#10;&#60;!--more--&#62;&#10;app.use(bodyParser.json())&#10;app.use(bodyParser.urlencoded(&#123;extended:false&#125;))&#10;app.use(function(req, res, next) &#123;&#10;    res.setHeader(&#39;Access-Control-Allow-Origin&#39;, &#39;*&#39;)&#10;    res.setHeader(&#39;Access-Control-Allow-Methods&#39;, &#39;GET, POST&#39;)&#10;    res.setHeader(&#39;Access-Control-Allow-Headers&#39;, &#39;X-Requested-With,content-type, Authorization&#39;);&#10;    next()&#10;&#125;)&#10;&#10;app.use(cookieParser())&#10;app.use(session(&#123;&#10;&#9;secret:&#39;zbyou&#39;,&#10;&#9;saveUninitialized: true,&#10;&#9;resave: false,&#10;&#9;store: new mongoStore(&#123;&#10;&#9;&#9;url:dbUrl,&#10;&#9;&#9;collection:&#39;sessions&#39;&#10;&#9;&#125;)&#10;&#125;))&#10;&#10;app.set(&#39;views&#39;, path.join(__dirname, &#39;../font-end/managem/views&#39;))//&#35774;&#32622;view&#30340;&#36335;&#24452; &#32534;&#35793;jade&#10;app.set(&#39;view engine&#39;, &#39;jade&#39;)&#10;&#10;app.use(serveStatic(path.join(__dirname,&#39;../&#39;)))//&#30456;&#23545;app.js&#26469;&#35828; &#35774;&#32622;&#38745;&#24577;&#36164;&#28304;&#30340;&#36335;&#21170;&#36215;&#28857;css jpg js&#31561;&#10;app.locals.moment=require(&#39;moment&#39;)&#10;&#10;require(&#39;./config/routes&#39;)(app)&#10;&#10;console.log(&#39;zbyou started on port &#39; + port)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/express/">express</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-canvas图片处理运用" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/27/canvas图片处理运用/" class="article-date">
+  	<time datetime="2016-06-26T16:00:00.000Z" itemprop="datePublished">2016-06-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/27/canvas图片处理运用/">canvas图片处理</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>canvas图片处理运用<br>对于canvas来说，主要是两个方法对图片处理比较重要，一个是通过html5 canvas的 getImageData 方法获取图片的像素信息，可以很方便的通过方法导入到把网络图片或者本地的图片导入至canvas中并获取图片的像素信息，可以修改像素信息后通过另外一个重要的方法putImageData导出处理后的图片。</p>
+<p>1、获取canvas调用<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var c = document.createElement(&#39;canvas&#39;);&#10;context = c.getContext(&#39;2d&#39;);</span><br></pre></td></tr></table></figure></p>
+<p>2、获取导入图像信息<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var hiddenImage = new Image();&#10;hiddenImage.src=&#22270;&#29255;&#22320;&#22336;&#10; context .drawImage(hiddenImage, 0, 0, width, height);&#10;   hiddenImage .onload=function()&#123;&#10;    context.putImageData(hiddenImage, 0, 0);&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/canvas/">canvas</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/06/27/canvas图片处理运用/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Array" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/26/Array/" class="article-date">
+  	<time datetime="2016-06-25T16:00:00.000Z" itemprop="datePublished">2016-06-26</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/26/Array/">array</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一、Array 在内存中的堆栈模型</p>
+<ol>
+<li>Array 的获取</li>
+</ol>
+<p>Javascript 中如何产生 Array：</p>
+<p>[element0, element1, …, elementN]</p>
+<p>new Array(element0, element1, …, elementN)<br>new Array(arrayLength)</p>
+<p>直接定义，或者通过构造函数创建一个 Array，当然也可以使用其他的手段：</p>
+<p>“array”.split(“”);<br>“array”.match(/a|r/g);</p>
+<p>等等，方式有很多。但是 Array 内部是个什么样的结构，恐怕很多人还不是很清楚。</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/06/26/Array/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-电商接口" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1020,252 +1272,9 @@ window.ajax = new outputObj();
 
 
   
-    <article id="post-localstore介绍" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/05/05/localstore介绍/" class="article-date">
-  	<time datetime="2016-05-04T16:00:00.000Z" itemprop="datePublished">2016-05-05</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/05/localstore介绍/">localstore介绍</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>store.js 是一个实现了浏览器的本地存储的 JavaScript 封装 API，不是通过 Cookie 和 Flash 技术实现，而是使用 localStorage。</p>
-<p>bower<br>$ bower install storejs</p>
-<p>npm<br>$ npm install storejs</p>
-<p>生成压缩文件和开发模式<br>$ npm run build    # 生成带UMD的js原文件 以及 min.js<br>$ npm run watch    # 监听文件改变自动压缩生成js</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/localstore/">localstore</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/05/05/localstore介绍/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-滚动条样式" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/05/01/滚动条样式/" class="article-date">
-  	<time datetime="2016-04-30T16:00:00.000Z" itemprop="datePublished">2016-05-01</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/01/滚动条样式/">滚动条样式</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>ie<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*&#123;  &#10;    scrollbar-face-color:#F3F3F3; /*&#38754;&#23376;*/  &#10;    scrollbar-arrow-color:#C0C0C0; /*&#31661;&#22836;*/  &#10;    scrollbar-3dlight-color:#C0C0C0; /*&#26368;&#22806;&#24038;*/  &#10;    scrollbar-highlight-color:#FFFFFF; /*&#24038;&#20108;*/  &#10;    scrollbar-shadow-color:#FFFFFF; /*&#21491;&#20108;*/  &#10;    scrollbar-darkshadow-color:#C0C0C0; /*&#21491;&#19968;*/  &#10;    scrollbar-track-color:#F3F3F3; /*&#28369;&#36947;*/  &#10;&#125;</span><br></pre></td></tr></table></figure></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/05/01/滚动条样式/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-模板引擎" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/29/模板引擎/" class="article-date">
-  	<time datetime="2016-04-28T16:00:00.000Z" itemprop="datePublished">2016-04-29</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/29/模板引擎/">模板引擎</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>什么是模板引擎，说的简单点，就是一个字符串中有几个变量待定。比如：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var tpl = &#39;Hei, my name is &#60;%name%&#62;, and I\&#39;m &#60;%age%&#62; years old.&#39;;&#10;//&#36890;&#36807;&#27169;&#26495;&#24341;&#25806;&#20989;&#25968;&#25226;&#25968;&#25454;&#22622;&#36827;&#21435;&#65292;&#10;var data = &#123; &#34;name&#34;: &#34;Barret Lee&#34;, &#34;age&#34;: &#34;20&#34; &#125;;&#10;var result = tplEngine(tpl, data);&#10;//Hei, my name is Barret Lee, and I&#39;m 20 years old.</span><br></pre></td></tr></table></figure></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/04/29/模板引擎/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-模块化深入" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/28/模块化深入/" class="article-date">
-  	<time datetime="2016-04-27T16:00:00.000Z" itemprop="datePublished">2016-04-28</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/28/模块化深入/">模块化深入</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>装饰者（Decorator）模式：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// mylib/UpdatableObservable&#65306;dojo/store/Observable &#30340;&#19968;&#20010;&#35013;&#39280;&#32773;&#10;define([&#39;dojo&#39;, &#39;dojo/store/Observable&#39;], function ( dojo, Observable ) &#123;&#10;    return function UpdatableObservable ( store ) &#123;&#10;        var observable = dojo.isFunction(store.notify) ? store :new Observable(store);&#10;        observable.updated = function( object ) &#123;&#10;            dojo.when(object, function ( itemOrArray ) &#123;&#10;                dojo.forEach( [].concat(itemOrArray), this.notify, this );&#10;            &#125;;&#10;        &#125;;&#10;        return observable; // &#35753; `new` &#25104;&#20026;&#21487;&#36873;&#30340;&#10;    &#125;;&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/模块化/">模块化</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/04/28/模块化深入/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
     </nav>
   
 </div>

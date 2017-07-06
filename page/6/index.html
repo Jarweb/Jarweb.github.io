@@ -124,6 +124,269 @@
 
       <div class="body-wrap">
   
+    <article id="post-继承" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/15/继承/" class="article-date">
+  	<time datetime="2016-04-14T16:00:00.000Z" itemprop="datePublished">2016-04-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/15/继承/">继承</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>js里常用的如下两种继承方式：</p>
+<ul>
+<li>原型链继承（对象间的继承）</li>
+<li>类式继承（构造函数间的继承）</li>
+</ul>
+<p>原型式继承与类式继承类式继承是在子类型构造函数的内部调用超类型的构造函数。<br>严格的类式继承并不是很常见，一般都是组合着用：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function Super()&#123;&#10; this.colors=[&#34;red&#34;,&#34;blue&#34;];&#10;&#125;&#10;&#10;function Sub()&#123;&#10; Super.call(this);&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/15/继承/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-柯里化" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/10/柯里化/" class="article-date">
+  	<time datetime="2016-04-09T16:00:00.000Z" itemprop="datePublished">2016-04-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/10/柯里化/">柯里化</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>f是一个普通函数，接受两个参数，并返回他们相加的结果<br>function f(x, y) {<br>  return x + y<br>}</p>
+<p>g是一个柯里化函数，接受一个参数，返回一个新的函数<br>function g(x) {<br>  return function(y) {<br>    return x + y<br>  }<br>}</p>
+<p>传统函数调用是接收多个参数返回一个值，而柯里化函数则是接收参数返回新的函数，新的函数又可以接受参数再返回新的函数，直至最后返回结果值使用柯里化函数的优势是我们可以”部分应用”(Partial Application)函数的参数，生成新的函数，这在函数编程中是至关重要的</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/10/柯里化/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-捕获冒泡" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/07/捕获冒泡/" class="article-date">
+  	<time datetime="2016-04-06T16:00:00.000Z" itemprop="datePublished">2016-04-07</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/07/捕获冒泡/">捕获与冒泡</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>总结就是：先捕获，后冒泡，捕获从上到下，冒泡从下到上（形象点说法：捕获像石头沉入海底，冒泡则像气泡冒出水面）</p>
+<p>问：假如去掉注释 event.stopPropagation();  结果又会输出什么？<br>答：去掉event.stopPropagation() 之后，由于事件有捕获和冒泡时先执行捕获，捕获到div之后，事件被阻止，后面就不在继续传播了。所以只输出divcallback.</p>
+<p>div.addEventListener(‘click’,callbackdiv,true);这一句只能是捕获才执行。</p>
+<p>事件不同浏览器处理函数</p>
+<ul>
+<li>element.addEventListener(type, listener[, useCapture]); // IE6~8不支持（捕获和冒泡通过useCapture,默认false）</li>
+<li>element.attachEvent(’on’ + type, listener); // IE6~10，IE11不支持(只执行冒泡事件)</li>
+<li>element[’on’ + type] = function(){} // 所有浏览器（默认执行冒泡事件）</li>
+</ul>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/07/捕获冒泡/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-npm" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/07/npm/" class="article-date">
+  	<time datetime="2016-04-06T16:00:00.000Z" itemprop="datePublished">2016-04-07</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/07/npm/">npm</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>使用nmp来代替gulp等<br>postcss</p>
+<p>npm install –save-dev node-sass<br>node-sass –output-style compressed -o dist/css src/scss<br>npm install –save-dev postcss-cli autoprefixer<br>npm install –save-dev eslint<br>npm i -D uglify-js<br>npm i -D imagemin-cli<br>npm i -D svgo svg-sprite-generator<br>npm i -D browser-sync<br>npm i -D onchange<br>npm i -D parallelshell</p>
+<p>“scripts”: {<br>    “scss”: “node-sass –output-style compressed -o dist/css src/scss”<br>    “autoprefixer”: “postcss -u autoprefixer -r dist/css/<em>“<br>    “lint”: “eslint src/js”<br>    “uglify”: “mkdir -p dist/js &amp;&amp; uglifyjs src/js/</em>.js -m -o dist/js/app.js”<br>    “imagemin”: “imagemin src/images dist/images -p”,<br>    “icons”: “svgo -f src/images/icons &amp;&amp; mkdir -p dist/images &amp;&amp; svg-sprite-generate -d src/images/icons -o dist/images/icons.svg”<br>    “serve”: “browser-sync start –server –files ‘dist/css/<em>.css, dist/js/</em>.js’”</p>
+<pre><code>&quot;build:css&quot;: &quot;npm run scss &amp;&amp; npm run autoprefixer&quot;
+&quot;build:js&quot;: &quot;npm run lint &amp;amp;&amp;amp; npm run uglify&quot;, 
+&quot;build:images&quot;: &quot;npm run imagemin &amp;&amp; npm run icons&quot;, 
+&quot;build:all&quot;: &quot;npm run build:css &amp;&amp; npm run build:js &amp;&amp; npm run build:images&quot;
+&quot;watch:css&quot;: &quot;onchange &apos;src/scss/*.scss&apos; -- npm run build:css&quot;, 
+&quot;watch:js&quot;: &quot;onchange &apos;src/js/*.js&apos; -- npm run build:js&quot;,
+&quot;watch:all&quot;: &quot;parallelshell &apos;npm run serve&apos; &apos;npm run watch:css&apos; &apos;npm run watch:js&apos;&quot;
+&quot;postinstall&quot;: &quot;npm run watch:all&quot;
+</code></pre><p>}</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm/">npm</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-原型链" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -307,6 +570,70 @@
 
 
   
+    <article id="post-关于对象" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/22/关于对象/" class="article-date">
+  	<time datetime="2016-03-21T16:00:00.000Z" itemprop="datePublished">2016-03-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/22/关于对象/">关于对象</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>对象字面值不能正确解析问题：<br>{a:1}.a报错，错误Uncaught SyntaxError: Unexpected token .</li>
+</ol>
+<p>解决：<br>({a:1}.a) // 或({a:1}).a</p>
+<p>原因：<br>就是声明对象字面值时，语句开头不应该用{，因为js解释器会认为这是语句块（block）的开始。<br>同理，类似问题{ name: “mc”, id: 1 }会报错Uncaught SyntaxError: Unexpected token :也是这个道理。({ name: “mc”, id: 1 })即可正确解析。但稍注意下，{name: “mc”}是不会报错的，它等同于name: “mc”，并返回一个字符串”mc”。</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/03/22/关于对象/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-类型变量" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -354,70 +681,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/03/22/类型变量/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-关于对象" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/22/关于对象/" class="article-date">
-  	<time datetime="2016-03-21T16:00:00.000Z" itemprop="datePublished">2016-03-22</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/22/关于对象/">关于对象</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>对象字面值不能正确解析问题：<br>{a:1}.a报错，错误Uncaught SyntaxError: Unexpected token .</li>
-</ol>
-<p>解决：<br>({a:1}.a) // 或({a:1}).a</p>
-<p>原因：<br>就是声明对象字面值时，语句开头不应该用{，因为js解释器会认为这是语句块（block）的开始。<br>同理，类似问题{ name: “mc”, id: 1 }会报错Uncaught SyntaxError: Unexpected token :也是这个道理。({ name: “mc”, id: 1 })即可正确解析。但稍注意下，{name: “mc”}是不会报错的，它等同于name: “mc”，并返回一个字符串”mc”。</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/03/22/关于对象/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -516,265 +779,9 @@
 
 
   
-    <article id="post-js异步回调" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/10/js异步回调/" class="article-date">
-  	<time datetime="2016-03-09T16:00:00.000Z" itemprop="datePublished">2016-03-10</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/10/js异步回调/">js异步</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const fs = require(&#39;fs&#39;)&#10;console.log(&#39;start reading a file...&#39;)&#10;fs.readFile(&#39;file.md&#39;, &#39;utf-8&#39;, function (err, content) &#123;  &#10;  if (err) &#123;&#10;    console.log(&#39;error happened during reading the file&#39;)&#10;    return console.log(err)&#10;  &#125;&#10;&#10;  console.log(content)&#10;&#125;)</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/03/10/js异步回调/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-20" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/20/20/" class="article-date">
-  	<time datetime="2016-02-19T16:00:00.000Z" itemprop="datePublished">2016-02-20</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/20/20/">angular 笔记一</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="特性一：双向的数据绑定"><a href="#特性一：双向的数据绑定" class="headerlink" title="特性一：双向的数据绑定"></a>特性一：双向的数据绑定</h3><blockquote>
-<p>我们想象一下Model是你的应用中的简单事实。你的Model是你用来读取或者更新的部分。数据绑定指令提供了你的Model投射到view的方法。这些投射可以无缝的，毫不影响的应用到web应用中。</p>
-</blockquote>
-<h3 id="特性二：模板"><a href="#特性二：模板" class="headerlink" title="特性二：模板"></a>特性二：模板</h3><blockquote>
-<p>在AngularJS中，一个模板就是一个HTML文件。但是HTML的内容扩展了，包含了很多帮助你映射model到view的内容.<br>HTML模板将会被浏览器解析到DOM中。DOM然后成为AngularJS编译器的输入。AngularJS将会遍历DOM模板来生成一些指导，即，directive（指令）。所有的指令都负责针对view来设置数据绑定。</p>
-</blockquote>
-<p>###特性三：MVC</p>
-<blockquote>
-<p>针对客户端应用开发AngularJS吸收了传统的MVC基本原则。MVC或者Model-View-Controll设计模式针对不同的人可能意味不同的东西。AngularJS并不执行传统意义上的MVC，更接近于MVVM（Moodel-View-ViewModel)。</p>
-</blockquote>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/20/20/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-js数据结构" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/12/js数据结构/" class="article-date">
-  	<time datetime="2016-02-11T16:00:00.000Z" itemprop="datePublished">2016-02-12</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/12/js数据结构/">js数据结构</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>栈（Stack）是限定仅在表尾进行插入或删除操作的线性表。表尾为栈顶（top），表头为栈底（bottom），不含元素的空表为空栈。</p>
-<p>栈又称为后进先出（last in first out）的线性表。</p>
-<p>堆栈可以用链表和数组两种方式实现，一般为一个堆栈预先分配一个大小固定且较合适的空间并非难事，所以较流行的做法是 Stack 结构下含一个数组。如果空间实在紧张，也可用链表实现，且去掉表头。</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/12/js数据结构/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-11" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/01/27/11/" class="article-date">
-  	<time datetime="2016-01-26T16:00:00.000Z" itemprop="datePublished">2016-01-27</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/27/11/">DNS解析</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="域名了解"><a href="#域名了解" class="headerlink" title="域名了解"></a>域名了解</h3><p>Baidu.com就是一个顶级域名，而www.baidu.com却不是顶级域名，他是在baidu.com 这个域里的一叫做www的主机。一级域之后还有二级域，三级域，只要我买了一个顶级域，并且我搭建了自己BIND服务器注册到互联网中，那么我就可以随意在前面多加几个域了（当然长度是有限制的）。比如a.www.baidu.com，在这个网址中，www.baidu.com变成了一个二级域而不是一台主机，主机名是a。</p>
-<blockquote>
-<p>1.现在我有一台计算机，通过ISP接入了互联网，那么ISP就会给我分配一个DNS服务器，这个DNS服务器不是权威服务器，而是相当于一个代理的dns解析服务器，他会帮你迭代权威服务器返回的应答，然后把最终查到IP返回给你。</p>
-<p>2.现在的我计算机要向这台ISPDNS发起请求查询www.baidu.com这个域名了。</p>
-<p>3.ISPDNS拿到请求后，先检查一下自己的缓存中有没有这个地址，有的话就直接返回。这个时候拿到的ip地址，会被标记为非权威服务器的应答。</p>
-</blockquote>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DNS/">DNS</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/01/27/11/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/7/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/7/">Next &raquo;</a>
     </nav>
   
 </div>

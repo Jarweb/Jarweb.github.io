@@ -124,6 +124,258 @@
 
       <div class="body-wrap">
   
+    <article id="post-8" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/28/8/" class="article-date">
+  	<time datetime="2015-12-27T16:00:00.000Z" itemprop="datePublished">2015-12-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/28/8/">git 笔记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>命令：</p>
+<blockquote>
+<p>git config –global user.name “Your Name”<br>git config –global user.email “email@example.com”<br>git init  把这个目录变成git可以管理的仓库<br>git add readme.txt  添加到缓存区<br>git commit -m “注释描述”  提交到仓库<br>git status  来查看是否还有文件未提交<br>git diff readme.txt  查看该文件该了的内容<br>git log  显示从最近到最远的显示日志，我们可以看到最近三次提交<br>git reset –hard HEAD~100  版本回退操作 这里是退回到第100个版本<br>git reflog  即可获取到版本号<br>git rm b.txt 如果我想彻底从版本库中删掉了此文件的话，可以再执行commit命令 提交掉.<br>git push 实际上是把当前分支master推送到远程。<br>git branch 查看分支<br>git branch name 创建分支<br>git checkout name 切换分支</p>
+</blockquote>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/12/28/8/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-12" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/28/12/" class="article-date">
+  	<time datetime="2015-12-27T16:00:00.000Z" itemprop="datePublished">2015-12-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/28/12/">css 笔记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h3><p>id: 0100<br>class: 0010<br>属性: 0010<br>伪类: 0010<br>伪元素 : 0001<br>元素: 0001</p>
+<ul>
+<li>: 0000<br>文内样式: 1000<br>!important 优先级最高<br>同优先级 比较先后顺序 后来居上</li>
+</ul>
+<p>h2{color:red;} 0001<br>h2.caption {color:red;} 0011</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/12/28/12/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-15" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/28/15/" class="article-date">
+  	<time datetime="2015-12-27T16:00:00.000Z" itemprop="datePublished">2015-12-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/28/15/">browserify 笔记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>Browserify 可以让你使用类似于 node 的 require() 的方式来组织浏览器端的 Javascript 代码，通过预编译让前端 Javascript 可以直接使用 Node NPM 安装的一些库。<br>一种解决方法是使用UMD的方式，前端使用requirejs，同时兼容nodejs的情况,例如：</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(function (window, factory) &#123;&#10;    if (typeod exports === &#39;object&#39;) &#123;&#10;        module.exports = factory();&#10;    &#125; else if (typeof define === &#39;function&#39; &#38;&#38; define.amd) &#123;&#10;        define(factory);&#10;    &#125; else &#123;&#10;        window.eventUtil = factory();&#10;    &#125;&#10;&#125;)(this, function () &#123;&#10;//module ...&#10;&#125;)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/browserify/">browserify</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/12/28/15/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-19" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/28/19/" class="article-date">
+  	<time datetime="2015-12-27T16:00:00.000Z" itemprop="datePublished">2015-12-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/28/19/">前端性能 总结</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><blockquote>
+<p>使用 CSS Sprites 对图片优化 简单的说就是”利用 CSSbackground相关元素进行背景图绝对定位”，把多次HTTP 调用变为一次调用：因为CSS Sprites<br>不要在 HTML 中缩放图片<br>用工具压缩图片<br>尽可能的使用PNG格式的图片，因为和GIF相比，PNG有更多的功能和更小的体积<br>选择合适的图片(1. webP优于JPG 2. PNG8优于GIF)<br>DNSlookup是很耗费时间的 减少DNS 查找<br>使用智图( <a href="http://zhitu.tencent.com/">http://zhitu.tencent.com/</a> )<br>使用其它方式代替图片(1. 使用CSS3 2. 使用SVG 3. 使用IconFont)<br>尽量避免重设图片大小 ，多次重设图片大小会引发图片的多次重绘，影响性能<br>DataURL图片没有使用图片的压缩算法文件会变大，并且要解码后再渲染，加载慢耗时长 合理使用<br>字体图标<br>内容图片多为照片之类的，适用于JPEG。而修饰图片通常更适合用无损压缩的PNG。而GIF基本上除了GIF动画外不要使用。且动画的话，也更建议用video元素和视频格式，或用SVG动画取代。<br>使用cdn，例如七牛<br>浏览器对单个域名下的请求并发数是有限制的，如果是图片量很多的页面，需要考虑使用多域名。<br>尽量使用png格式的图片来代替滤镜效果，因为开启滤镜会加大浏览器的开销。<br>方向代理nginx缓存静态文件<br>不要对image和pdf等二进制文件进行gzip压缩</p>
+</blockquote>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端性能/">前端性能</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/12/28/19/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-flexbox制作footer" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -493,195 +745,9 @@
 
 
   
-    <article id="post-7" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/11/16/7/" class="article-date">
-  	<time datetime="2015-11-15T16:00:00.000Z" itemprop="datePublished">2015-11-16</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/16/7/">jade 笔记</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>按tab书写 按空格书写 缩进标示嵌套</p>
-<p>.class.class.class#id css的写法<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//html&#10;&#60;span class=&#34;abc&#34;&#62;hi&#60;/span&#62;&#10;//jade&#10;span.abc hi</span><br></pre></td></tr></table></figure></p>
-<p>incude<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">doctype html&#10;html&#10;&#9;include ./header&#10;&#9;body&#10;&#9;include ./footer</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jade/">jade</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/11/16/7/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-18" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/11/15/18/" class="article-date">
-  	<time datetime="2015-11-14T16:00:00.000Z" itemprop="datePublished">2015-11-15</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/15/18/">Handlebars 笔记</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>表达式<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;div class=&#34;entry&#34;&#62;&#10;    &#60;h1&#62;&#123;&#123;title&#125;&#125;&#60;/h1&#62;&#10;    &#60;div class=&#34;body&#34;&#62;&#10;        //&#123;&#123;body&#125;&#125;&#10;    &#60;/div&#62;&#10;&#60;/div&#62;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/handlebars/">handlebars</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/11/15/18/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-快捷" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/10/08/快捷/" class="article-date">
-  	<time datetime="2015-10-07T16:00:00.000Z" itemprop="datePublished">2015-10-08</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/08/快捷/">sublime快捷键</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="sublime-快捷方式"><a href="#sublime-快捷方式" class="headerlink" title="sublime 快捷方式"></a>sublime 快捷方式</h2><p>Ctrl+D 选词 （反复按快捷键，即可继续向下同时选中下一个相同的文本进行同时编辑）<br>Ctrl+G 跳转到相应的行<br>Ctrl+J 合并行（已选择需要合并的多行时）<br>Ctrl+L 选择整行（按住-继续选择下行）<br>Ctrl+M 光标移动至括号内开始或结束的位置<br>Ctrl+T 词互换<br>Ctrl+U 软撤销<br>Ctrl+P 查找当前项目中的文件和快速搜索；输入 @ 查找文件主标题/函数；或者输入 : 跳转到文件某行；<br>Ctrl+R 快速列出/跳转到某个函数<br>Ctrl+K Backspace 从光标处删除至行首<br>Ctrl+K+B 开启/关闭侧边栏<br>Ctrl+KK 从光标处删除至行尾<br>Ctrl+K+T 折叠属性<br>Ctrl+K+U 改为大写<br>Ctrl+K+L 改为小写<br>Ctrl+K+0 展开所有<br>Ctrl+Enter 插入行后（快速换行）<br>Ctrl+Tab 当前窗口中的标签页切换</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sublime/">sublime</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/10/08/快捷/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/7/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span>
+      <a class="extend prev" rel="prev" href="/page/7/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/9/">Next &raquo;</a>
     </nav>
   
 </div>

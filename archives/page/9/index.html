@@ -4,24 +4,17 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>event loop | Jar-R</title>
+  <title>Archives | Jar-R</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="浏览器线程浏览器里常用的线程有，js线程，gui线程，http线程， 事件线程js线程负责js解析执行gui线程负责渲染http负责请求通信事件线程负责处理浏览器事件
-js代码在js线程中执行时， 同步代码在js线程中直接处理异步回调，例如事件回调，setTimeout，promise等 会被推入一个队列里
-event loop 事件循环这个队列里在前面的是misco 也叫job：process.">
-<meta property="og:type" content="article">
-<meta property="og:title" content="event loop">
-<meta property="og:url" content="http://Jarweb.com/2017/04/16/eventloop/index.html">
+  <meta name="description" content="Hi">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Jar-R">
+<meta property="og:url" content="http://Jarweb.com/archives/page/9/index.html">
 <meta property="og:site_name" content="Jar-R">
-<meta property="og:description" content="浏览器线程浏览器里常用的线程有，js线程，gui线程，http线程， 事件线程js线程负责js解析执行gui线程负责渲染http负责请求通信事件线程负责处理浏览器事件
-js代码在js线程中执行时， 同步代码在js线程中直接处理异步回调，例如事件回调，setTimeout，promise等 会被推入一个队列里
-event loop 事件循环这个队列里在前面的是misco 也叫job：process.">
-<meta property="og:updated_time" content="2017-07-03T03:56:13.414Z">
+<meta property="og:description" content="Hi">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="event loop">
-<meta name="twitter:description" content="浏览器线程浏览器里常用的线程有，js线程，gui线程，http线程， 事件线程js线程负责js解析执行gui线程负责渲染http负责请求通信事件线程负责处理浏览器事件
-js代码在js线程中执行时， 同步代码在js线程中直接处理异步回调，例如事件回调，setTimeout，promise等 会被推入一个队列里
-event loop 事件循环这个队列里在前面的是misco 也叫job：process.">
+<meta name="twitter:title" content="Jar-R">
+<meta name="twitter:description" content="Hi">
   
     <link rel="alternative" href="/atom.xml" title="Jar-R" type="application/atom+xml">
   
@@ -129,83 +122,119 @@ event loop 事件循环这个队列里在前面的是misco 也叫job：process."
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-eventloop" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap">
   
-    <div class="article-meta">
-      <a href="/2017/04/16/eventloop/" class="article-date">
-  	<time datetime="2017-04-15T16:00:00.000Z" itemprop="datePublished">2017-04-16</time>
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2015" class="archive-year">2015</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2015/11/16/7/" class="archive-article-date">
+  	<time datetime="2015-11-15T16:00:00.000Z" itemprop="datePublished">11月 16</time>
 </a>
-    </div>
+        </div>
+    	 
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      event loop
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2015/11/16/7/">jade 笔记</a>
     </h1>
   
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jade/">jade</a></li></ul>
 	</div>
 
-        
+          
 
+        </div>
         <div class="clearfix"></div>
-      </div>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="浏览器线程"><a href="#浏览器线程" class="headerlink" title="浏览器线程"></a>浏览器线程</h2><p>浏览器里常用的线程有，js线程，gui线程，http线程， 事件线程<br>js线程负责js解析执行<br>gui线程负责渲染<br>http负责请求通信<br>事件线程负责处理浏览器事件</p>
-<p>js代码在js线程中执行时， 同步代码在js线程中直接处理<br>异步回调，例如事件回调，setTimeout，promise等 会被推入一个队列里</p>
-<h2 id="event-loop-事件循环"><a href="#event-loop-事件循环" class="headerlink" title="event loop 事件循环"></a>event loop 事件循环</h2><p>这个队列里在前面的是misco 也叫job：<br>process.nextTick, promise, mutationObserver</p>
-<p>后面的是macro 也叫task：<br>setTimeout, setInterval, setImmediate, i/o, ui rending</p>
-<p>promise 会被插入到下一个事件循环的前端， 注意是下一个， 不是当前的事件循环</p>
-
-      
-    </div>
-    
+    </header>
   </div>
+</article>
   
     
-<nav id="article-nav">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2015/11/15/18/" class="archive-article-date">
+  	<time datetime="2015-11-14T16:00:00.000Z" itemprop="datePublished">11月 15</time>
+</a>
+        </div>
+    	 
   
-    <a href="/2017/04/29/react总结/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          react总结
-        
-      </div>
-    </a>
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2015/11/15/18/">Handlebars 笔记</a>
+    </h1>
   
-  
-    <a href="/2017/04/15/小程序插件/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">小程序插件</div>
-      <strong class="article-nav-caption">></strong>
-    </a>
-  
-</nav>
 
-  
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/handlebars/">handlebars</a></li></ul>
+	</div>
+
+          
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
 </article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2015/10/08/快捷/" class="archive-article-date">
+  	<time datetime="2015-10-07T16:00:00.000Z" itemprop="datePublished">10月 8</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2015/10/08/快捷/">sublime快捷键</a>
+    </h1>
+  
 
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sublime/">sublime</a></li></ul>
+	</div>
 
+          
 
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+  
+    </div></section>
+  
 
-
-
-
+    
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/archives/page/8/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/7/">7</a><a class="page-number" href="/archives/page/8/">8</a><span class="page-number current">9</span>
+    </nav>
+  
 
 </div>
       <footer id="footer">
@@ -228,8 +257,8 @@ event loop 事件循环这个队列里在前面的是misco 也叫job：process."
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false

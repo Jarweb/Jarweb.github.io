@@ -124,6 +124,265 @@
 
       <div class="body-wrap">
   
+    <article id="post-o.5px" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/01/22/o.5px/" class="article-date">
+  	<time datetime="2017-01-21T16:00:00.000Z" itemprop="datePublished">2017-01-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/22/o.5px/">0.5px</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1、0.5px边框<br>iOS 8 和 OS X Yosemite 支持 0.5px 的边框.<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if (window.devicePixelRatio &#38;&#38; devicePixelRatio &#62;= 2) &#123;&#10;  var testElem = document.createElement(&#39;div&#39;);&#10;  testElem.style.border = &#39;.5px solid transparent&#39;;&#10;  document.body.appendChild(testElem);&#10;&#125;&#10;if (testElem.offsetHeight == 1) &#123;&#10;  document.querySelector(&#39;html&#39;).classList.add(&#39;hairlines&#39;);&#10;&#125;&#10;  document.body.removeChild(testElem);&#10;&#125;&#10;&#10;div &#123;&#10;  border: 1px solid #bbb;&#10;&#125;&#10;.hairlines div &#123;&#10;  border-width: 0.5px;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>2、使用border-image实现</p>
+<p>准备一张符合你要求的border-image：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.border-bottom-1px &#123;&#10;  border-width: 0 0 1px 0;&#10;  -webkit-border-image: url(linenew.png) 0 0 2 0 stretch;&#10;  border-image: url(linenew.png) 0 0 2 0 stretch;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用的图片是2px高，上部的1px颜色为透明，下部的1px使用视觉规定的border的颜色<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.border-image-1px &#123;&#10;  border-width: 1px 0;&#10;  -webkit-border-image: url(linenew.png) 2 0 stretch;&#10;  border-image: url(linenew.png) 2 0 stretch;&#10;&#125;&#10;&#10;.border-image-1px &#123;&#10;  border-bottom: 1px solid #666;&#10;&#125;&#10;@media only screen and (-webkit-min-device-pixel-ratio: 2) &#123;&#10;  .border-image-1px &#123;&#10;    border-bottom: none;&#10;    border-width: 0 0 1px 0;&#10;    -webkit-border-image: url(../img/linenew.png) 0 0 2 0 stretch;&#10;    border-image: url(../img/linenew.png) 0 0 2 0 stretch;&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>3、使用background-image实现</p>
+<p>background-image 跟border-image的方法一样，你要先准备一张符合你要求的图片。然后将边框模拟在背景上。<br>样式设置：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.background-image-1px &#123;&#10;  background: url(../img/line.png) repeat-x left bottom;&#10;  -webkit-background-size: 100% 1px;&#10;  background-size: 100% 1px;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>4、多背景渐变实现<br>设置1px的渐变背景，50%有颜色，50%透明。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.background-gradient-1px &#123;&#10;  background:&#10;    linear-gradient(#000, #000 100%, transparent 100%) left / 1px 100% no-repeat,&#10;    linear-gradient(#000, #000 100%, transparent 100%) right / 1px 100% no-repeat,&#10;    linear-gradient(#000,#000 100%, transparent 100%) top / 100% 1px no-repeat,&#10;    linear-gradient(#000,#000 100%, transparent 100%) bottom / 100% 1px no-repeat&#10;&#125;&#10;/* &#25110;&#32773; */&#10;.background-gradient-1px&#123;&#10;  background:&#10;    -webkit-gradient(linear, left top, right bottom, color-stop(0, transparent), color-stop(0, #000), to(#000)) left / 1px 100% no-repeat,&#10;    -webkit-gradient(linear, left top, right bottom, color-stop(0, transparent), color-stop(0, #000), to(#000)) right / 1px 100% no-repeat,&#10;    -webkit-gradient(linear, left top, right bottom, color-stop(0, transparent), color-stop(0, #000), to(#000)) top / 100% 1px no-repeat,&#10;    -webkit-gradient(linear, left top, right bottom, color-stop(0, transparent), color-stop(0, #000), to(#000)) bottom / 100% 1px no-repeat&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>5、使用box-shadow模拟边框</p>
+<p>利用css 对阴影处理的方式实现0.5px的效果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.box-shadow-1px &#123;&#10;  box-shadow: inset 0px -1px 1px -1px #c8c7cc;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>6、viewport + rem 实现, flexible也采用这种方法</p>
+<p>同时通过设置对应viewport的rem基准值，这种方式就可以像以前一样轻松愉快的写1px了。<br>在devicePixelRatio = 2 时，输出viewport：</p>
+<p><meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no"><br>在devicePixelRatio = 3 时，输出viewport：</p>
+<meta name="viewport" content="initial-scale=0.3333333333333333, maximum-scale=0.3333333333333333, minimum-scale=0.3333333333333333, user-scalable=no">
+
+
+<p>7、伪类 + transform 实现<br>利用 :before 或者 :after 重做 border ，并 transform 的 scale 缩小一半<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.scale-1px&#123;&#10;  position: relative;&#10;  border:none;&#10;&#125;&#10;.scale-1px:after&#123;&#10;  content: &#39;&#39;;&#10;  position: absolute;&#10;  bottom: 0;&#10;  background: #000;&#10;  width: 100%;&#10;  height: 1px;&#10;  -webkit-transform: scaleY(0.5);&#10;  transform: scaleY(0.5);&#10;  -webkit-transform-origin: 0 0;&#10;  transform-origin: 0 0;&#10;&#125;&#10;&#10;.scale-1px&#123;&#10;  position: relative;&#10;  margin-bottom: 20px;&#10;  border:none;&#10;&#125;&#10;.scale-1px:after&#123;&#10;  content: &#39;&#39;;&#10;  position: absolute;&#10;  top: 0;&#10;  left: 0;&#10;  border: 1px solid #000;&#10;  -webkit-box-sizing: border-box;&#10;  box-sizing: border-box;&#10;  width: 200%;&#10;  height: 200%;&#10;  -webkit-transform: scale(0.5);&#10;  transform: scale(0.5);&#10;  -webkit-transform-origin: left top;&#10;  transform-origin: left top;&#10;&#125;&#10;// &#21512; JS &#20195;&#30721;&#65292;&#21028;&#26029;&#26159;&#21542; Retina &#23631;&#65306;&#10;&#10;if(window.devicePixelRatio &#38;&#38; devicePixelRatio &#62;= 2)&#123;&#10;  document.querySelector(&#39;ul&#39;).className = &#39;scale-1px&#39;;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-worker" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/01/18/worker/" class="article-date">
+  	<time datetime="2017-01-17T16:00:00.000Z" itemprop="datePublished">2017-01-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/18/worker/">Workers</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Web Workers能在后台进程中运行的方法.<br>Web Workers 进程能够在不影响用户界面的情况下处理任务，并且，它还可以使用 XMLHttpRequest 来处理 I/O，但通常，后台进程（包括 Web Workers 进程）不能对 DOM 进行操作。如果希望后台程序处理的结果能够改变 DOM，只能通过返回消息给创建者的回调函数进行处理。</p>
+<ol>
+<li>主线程中创建 Worker 实例，并监听 onmessage 事件<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function init()&#123; &#10;    var worker = new Worker(&#39;compute.js&#39;); &#10;    worker.onmessage= function (event) &#123; &#10;        console.log(event.data) &#10;    &#125;; &#10;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2017/01/18/worker/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-curry实现" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/01/15/curry实现/" class="article-date">
+  	<time datetime="2017-01-14T16:00:00.000Z" itemprop="datePublished">2017-01-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/15/curry实现/">curry化</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>curry实现<br>利用闭包访问上下文对象，把参数记忆起来<br>获取每层的参数<br>返回每层的闭包</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2017/01/15/curry实现/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-xss" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/22/xss/" class="article-date">
+  	<time datetime="2016-11-21T16:00:00.000Z" itemprop="datePublished">2016-11-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/22/xss/">xss</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>XSS攻击的全称是 Cross Site Scripting（跨站脚本攻击）</p>
+<p>cookie、session等敏感数据遭到泄露<br>影响用户体验</p>
+<p>基于反射的攻击,一般是服务器端根据用户的输入或者查询条件返回了带有恶意脚本的结果并在客户端执行。这种漏洞常见于各种搜索引擎之中。</p>
+<p>比如当我们在搜索栏中输入对应的恶意脚本代码，服务器端进行处理，当未找到匹配内容时简单返回我们输入的查询字符串。那么，这时候如果网站前端或者服务器端没有对查询字符串做恰当的处理，只是简单返回并插入到页面中，那这段恶意脚本代码很可能被当做正常的script标签解释执行。后果很明显，我们泄露了自己账户的cookie。</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/11/22/xss/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-拖拽" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -495,261 +754,9 @@
 
 
   
-    <article id="post-express 中间件" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/07/03/express 中间件/" class="article-date">
-  	<time datetime="2016-07-02T16:00:00.000Z" itemprop="datePublished">2016-07-03</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/03/express 中间件/">express 中间件</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>express 中间件：</p>
-<p>basicAuth()<br>基本的认证中间件，在req.user里添加用户名</p>
-<p>用户名和密码的例子:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(express.basicAuth(&#39;username&#39;, &#39;password&#39;));</span><br></pre></td></tr></table></figure></p>
-<p>校验回调:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(express.basicAuth(function(user, pass)&#123;&#10;  return &#39;tj&#39; == user &#38;&#38; &#39;wahoo&#39; == pass;&#10;&#125;));</span><br></pre></td></tr></table></figure></p>
-<p>异步校验接受参数fn(err, user), 下面的例子req.user 将会作为user对象传递.<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(connect.basicAuth(function(user, pass, fn)&#123;&#10;  User.authenticate(&#123; user: user, pass: pass &#125;, fn);&#10;&#125;))</span><br></pre></td></tr></table></figure></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/express/">express</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/07/03/express 中间件/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-express app.js" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/07/01/express app.js/" class="article-date">
-  	<time datetime="2016-06-30T16:00:00.000Z" itemprop="datePublished">2016-07-01</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/01/express app.js/">express app.js</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&#39;express&#39;)&#10;var path=require(&#39;path&#39;)&#10;&#10;&#10;var mongoose=require(&#39;mongoose&#39;)&#10;var dbUrl=&#39;mongodb://127.0.0.1/zbyou&#39;&#10;&#9;mongoose.connect(dbUrl)&#10;&#10;var session = require(&#39;express-session&#39;)&#10;var mongoStore=require(&#39;connect-mongo&#39;)(session)&#10;&#10;var serveStatic = require(&#39;serve-static&#39;)&#10;var bodyParser=require(&#39;body-parser&#39;)&#10;var cookieParser=require(&#39;cookie-parser&#39;)&#10;&#10;var port=process.env.PORT||3001&#10;var app=express()&#10;&#9;app.listen(port)&#10;&#10;&#60;!--more--&#62;&#10;app.use(bodyParser.json())&#10;app.use(bodyParser.urlencoded(&#123;extended:false&#125;))&#10;app.use(function(req, res, next) &#123;&#10;    res.setHeader(&#39;Access-Control-Allow-Origin&#39;, &#39;*&#39;)&#10;    res.setHeader(&#39;Access-Control-Allow-Methods&#39;, &#39;GET, POST&#39;)&#10;    res.setHeader(&#39;Access-Control-Allow-Headers&#39;, &#39;X-Requested-With,content-type, Authorization&#39;);&#10;    next()&#10;&#125;)&#10;&#10;app.use(cookieParser())&#10;app.use(session(&#123;&#10;&#9;secret:&#39;zbyou&#39;,&#10;&#9;saveUninitialized: true,&#10;&#9;resave: false,&#10;&#9;store: new mongoStore(&#123;&#10;&#9;&#9;url:dbUrl,&#10;&#9;&#9;collection:&#39;sessions&#39;&#10;&#9;&#125;)&#10;&#125;))&#10;&#10;app.set(&#39;views&#39;, path.join(__dirname, &#39;../font-end/managem/views&#39;))//&#35774;&#32622;view&#30340;&#36335;&#24452; &#32534;&#35793;jade&#10;app.set(&#39;view engine&#39;, &#39;jade&#39;)&#10;&#10;app.use(serveStatic(path.join(__dirname,&#39;../&#39;)))//&#30456;&#23545;app.js&#26469;&#35828; &#35774;&#32622;&#38745;&#24577;&#36164;&#28304;&#30340;&#36335;&#21170;&#36215;&#28857;css jpg js&#31561;&#10;app.locals.moment=require(&#39;moment&#39;)&#10;&#10;require(&#39;./config/routes&#39;)(app)&#10;&#10;console.log(&#39;zbyou started on port &#39; + port)</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/express/">express</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-canvas图片处理运用" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/27/canvas图片处理运用/" class="article-date">
-  	<time datetime="2016-06-26T16:00:00.000Z" itemprop="datePublished">2016-06-27</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/27/canvas图片处理运用/">canvas图片处理</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>canvas图片处理运用<br>对于canvas来说，主要是两个方法对图片处理比较重要，一个是通过html5 canvas的 getImageData 方法获取图片的像素信息，可以很方便的通过方法导入到把网络图片或者本地的图片导入至canvas中并获取图片的像素信息，可以修改像素信息后通过另外一个重要的方法putImageData导出处理后的图片。</p>
-<p>1、获取canvas调用<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var c = document.createElement(&#39;canvas&#39;);&#10;context = c.getContext(&#39;2d&#39;);</span><br></pre></td></tr></table></figure></p>
-<p>2、获取导入图像信息<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var hiddenImage = new Image();&#10;hiddenImage.src=&#22270;&#29255;&#22320;&#22336;&#10; context .drawImage(hiddenImage, 0, 0, width, height);&#10;   hiddenImage .onload=function()&#123;&#10;    context.putImageData(hiddenImage, 0, 0);&#10;&#125;</span><br></pre></td></tr></table></figure></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/canvas/">canvas</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/06/27/canvas图片处理运用/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Array" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/26/Array/" class="article-date">
-  	<time datetime="2016-06-25T16:00:00.000Z" itemprop="datePublished">2016-06-26</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/26/Array/">array</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>一、Array 在内存中的堆栈模型</p>
-<ol>
-<li>Array 的获取</li>
-</ol>
-<p>Javascript 中如何产生 Array：</p>
-<p>[element0, element1, …, elementN]</p>
-<p>new Array(element0, element1, …, elementN)<br>new Array(arrayLength)</p>
-<p>直接定义，或者通过构造函数创建一个 Array，当然也可以使用其他的手段：</p>
-<p>“array”.split(“”);<br>“array”.match(/a|r/g);</p>
-<p>等等，方式有很多。但是 Array 内部是个什么样的结构，恐怕很多人还不是很清楚。</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/06/26/Array/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 </div>

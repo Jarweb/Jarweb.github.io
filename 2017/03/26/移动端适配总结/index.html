@@ -4,24 +4,30 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>event loop | Jar-R</title>
+  <title>移动适配总结 | Jar-R</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="浏览器线程浏览器里常用的线程有，js线程，gui线程，http线程， 事件线程js线程负责js解析执行gui线程负责渲染http负责请求通信事件线程负责处理浏览器事件
-js代码在js线程中执行时， 同步代码在js线程中直接处理异步回调，例如事件回调，setTimeout，promise等 会被推入一个队列里
-event loop 事件循环这个队列里在前面的是misco 也叫job：process.">
+  <meta name="description" content="rem,em,px,vw,vh
+px绝对单位
+rem相对body的fontsize
+em相对自身的fontsize或者父的fontsize， 都是fontsize的计算值假设font-size 20px1.5em 1.520 = 30px150% 150%20 = 30px1.5 1.5*20 = 30px
+vw 相对浏览器视口宽的1%vh 相对浏览器视口高的1%">
 <meta property="og:type" content="article">
-<meta property="og:title" content="event loop">
-<meta property="og:url" content="http://Jarweb.com/2017/04/16/eventloop/index.html">
+<meta property="og:title" content="移动适配总结">
+<meta property="og:url" content="http://Jarweb.com/2017/03/26/移动端适配总结/index.html">
 <meta property="og:site_name" content="Jar-R">
-<meta property="og:description" content="浏览器线程浏览器里常用的线程有，js线程，gui线程，http线程， 事件线程js线程负责js解析执行gui线程负责渲染http负责请求通信事件线程负责处理浏览器事件
-js代码在js线程中执行时， 同步代码在js线程中直接处理异步回调，例如事件回调，setTimeout，promise等 会被推入一个队列里
-event loop 事件循环这个队列里在前面的是misco 也叫job：process.">
-<meta property="og:updated_time" content="2017-07-03T03:56:13.414Z">
+<meta property="og:description" content="rem,em,px,vw,vh
+px绝对单位
+rem相对body的fontsize
+em相对自身的fontsize或者父的fontsize， 都是fontsize的计算值假设font-size 20px1.5em 1.520 = 30px150% 150%20 = 30px1.5 1.5*20 = 30px
+vw 相对浏览器视口宽的1%vh 相对浏览器视口高的1%">
+<meta property="og:updated_time" content="2017-07-06T09:27:45.988Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="event loop">
-<meta name="twitter:description" content="浏览器线程浏览器里常用的线程有，js线程，gui线程，http线程， 事件线程js线程负责js解析执行gui线程负责渲染http负责请求通信事件线程负责处理浏览器事件
-js代码在js线程中执行时， 同步代码在js线程中直接处理异步回调，例如事件回调，setTimeout，promise等 会被推入一个队列里
-event loop 事件循环这个队列里在前面的是misco 也叫job：process.">
+<meta name="twitter:title" content="移动适配总结">
+<meta name="twitter:description" content="rem,em,px,vw,vh
+px绝对单位
+rem相对body的fontsize
+em相对自身的fontsize或者父的fontsize， 都是fontsize的计算值假设font-size 20px1.5em 1.520 = 30px150% 150%20 = 30px1.5 1.5*20 = 30px
+vw 相对浏览器视口宽的1%vh 相对浏览器视口高的1%">
   
     <link rel="alternative" href="/atom.xml" title="Jar-R" type="application/atom+xml">
   
@@ -129,11 +135,11 @@ event loop 事件循环这个队列里在前面的是misco 也叫job：process."
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-eventloop" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-移动端适配总结" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/04/16/eventloop/" class="article-date">
-  	<time datetime="2017-04-15T16:00:00.000Z" itemprop="datePublished">2017-04-16</time>
+      <a href="/2017/03/26/移动端适配总结/" class="article-date">
+  	<time datetime="2017-03-25T16:00:00.000Z" itemprop="datePublished">2017-03-26</time>
 </a>
     </div>
   
@@ -146,7 +152,7 @@ event loop 事件循环这个队列里在前面的是misco 也叫job：process."
         
   
     <h1 class="article-title" itemprop="name">
-      event loop
+      移动适配总结
     </h1>
   
 
@@ -166,11 +172,25 @@ event loop 事件循环这个队列里在前面的是misco 也叫job：process."
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="浏览器线程"><a href="#浏览器线程" class="headerlink" title="浏览器线程"></a>浏览器线程</h2><p>浏览器里常用的线程有，js线程，gui线程，http线程， 事件线程<br>js线程负责js解析执行<br>gui线程负责渲染<br>http负责请求通信<br>事件线程负责处理浏览器事件</p>
-<p>js代码在js线程中执行时， 同步代码在js线程中直接处理<br>异步回调，例如事件回调，setTimeout，promise等 会被推入一个队列里</p>
-<h2 id="event-loop-事件循环"><a href="#event-loop-事件循环" class="headerlink" title="event loop 事件循环"></a>event loop 事件循环</h2><p>这个队列里在前面的是misco 也叫job：<br>process.nextTick, promise, mutationObserver</p>
-<p>后面的是macro 也叫task：<br>setTimeout, setInterval, setImmediate, i/o, ui rending</p>
-<p>promise 会被插入到下一个事件循环的前端， 注意是下一个， 不是当前的事件循环</p>
+        <p>rem,em,px,vw,vh</p>
+<p>px绝对单位</p>
+<p>rem相对body的fontsize</p>
+<p>em相对自身的fontsize或者父的fontsize， 都是fontsize的计算值<br>假设font-size 20px<br>1.5em 1.5<em>20 = 30px<br>150% 150%</em>20 = 30px<br>1.5 1.5*20 = 30px</p>
+<p>vw 相对浏览器视口宽的1%<br>vh 相对浏览器视口高的1%</p>
+<a id="more"></a>
+<p>body 设置fontsize， 然后其他元素的单位用rem来做适配。</p>
+<p>关键是如何定body的fontsize – 基数</p>
+<p>淘宝的flexble的实现方式：</p>
+<p>i4 i5 i6的dpr是2</p>
+<p>那么 1/2 = 基数/视口 = 基数/320 = 基数/375</p>
+<p>所以等到基数 640 750 ，未来计算方便，750/10 = 75</p>
+<p>一般设计图取750来做，body fontsize 取75， 其他元素按75px为1rem</p>
+<p>i6plus的dpr是3 414</p>
+<p>那么基数是 414*3/10 = 124.2</p>
+<p>其他的手机按dpr=1来做。</p>
+<p>这个方案解决了：<br>border: 1px问题<br>图片高清问题<br>屏幕适配布局问题</p>
+<p>其他的适配方式：</p>
+<p>直接使用css，媒体查询，查询各种屏的尺寸、dpr，然后来确定body fontsize </p>
 
       
     </div>
@@ -180,18 +200,18 @@ event loop 事件循环这个队列里在前面的是misco 也叫job：process."
     
 <nav id="article-nav">
   
-    <a href="/2017/04/29/react总结/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/04/02/去重方法总结/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          react总结
+          去重总结
         
       </div>
     </a>
   
   
-    <a href="/2017/04/15/小程序插件/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">小程序插件</div>
+    <a href="/2017/03/25/cssmodule/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">css module</div>
       <strong class="article-nav-caption">></strong>
     </a>
   

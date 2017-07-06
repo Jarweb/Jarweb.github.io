@@ -124,6 +124,183 @@
 
       <div class="body-wrap">
   
+    <article id="post-prefetch" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/03/12/prefetch/" class="article-date">
+  	<time datetime="2017-03-11T16:00:00.000Z" itemprop="datePublished">2017-03-12</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/12/prefetch/">prefetch</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><link rel="prefetch" href="xxx"><br>相对subresource 优先级最底</p>
+<p><link rel="subresource" href="xxx"><br>优先级最高 预先请求资源， 但不解析</p>
+<p><link rel="prerender" href="xxx"><br>预先请求资源， 并且解析， 但不改变dom，<br>不是所有资源都会下载，下载类型的，音频视频，ajax（post， put， deleted），https，弹窗</p>
+<p><link rel="dns-prefetch" href="xxx"><br>预先解析dns</p>
+<p><link rel="preload" ...="" as="script"><br>预先下载js</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-axios" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/03/11/axios/" class="article-date">
+  	<time datetime="2017-03-10T16:00:00.000Z" itemprop="datePublished">2017-03-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/11/axios/">axios</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="axios-是一个基于Promise-用于浏览器和-nodejs-的-HTTP-客户端，它本身具有以下特征："><a href="#axios-是一个基于Promise-用于浏览器和-nodejs-的-HTTP-客户端，它本身具有以下特征：" class="headerlink" title="axios 是一个基于Promise 用于浏览器和 nodejs 的 HTTP 客户端，它本身具有以下特征："></a>axios 是一个基于Promise 用于浏览器和 nodejs 的 HTTP 客户端，它本身具有以下特征：</h2><p>从浏览器中创建 XMLHttpRequest<br>从 node.js 发出 http 请求<br>支持 Promise API<br>拦截请求和响应<br>转换请求和响应数据<br>取消请求<br>自动转换JSON数据<br>客户端支持防止 CSRF/XSRF<br>浏览器兼容性</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2017/03/11/axios/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-bind实现" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/03/04/bind实现/" class="article-date">
+  	<time datetime="2017-03-03T16:00:00.000Z" itemprop="datePublished">2017-03-04</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/04/bind实现/">bind实现</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Function.prototype.bind = function (context) &#123;&#10;    if (typeof this !== &#34;function&#34;) &#123;&#10;      throw new Error(&#34;Function.prototype.bind - what is trying to be bound is not callable&#34;);&#10;    &#125;&#10;&#10;    var self = this;&#10;    var args = Array.prototype.slice.call(arguments, 1);&#10;    var fNOP = function () &#123;&#125;;&#10;&#10;    var fbound = function () &#123;&#10;        self.apply(this instanceof self ? this : context, args.concat(Array.prototype.slice.call(arguments)));&#10;    &#125;&#10;&#10;    fNOP.prototype = this.prototype;&#10;    fbound.prototype = new fNOP();&#10;&#10;    return fbound;&#10;&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-防抖" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -151,6 +328,63 @@
     <div class="article-entry" itemprop="articleBody">
       
         <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function debounce(func, wait = 300, immediate) &#123;&#10;&#10;    var timeout, result;&#10;&#10;    var debounced = function () &#123;&#10;        var context = this;&#10;        var args = arguments;&#10;&#10;        if (timeout) clearTimeout(timeout);&#10;        if (immediate) &#123;&#10;            // &#22914;&#26524;&#24050;&#32463;&#25191;&#34892;&#36807;&#65292;&#19981;&#20877;&#25191;&#34892;&#10;            var callNow = !timeout;&#10;            timeout = setTimeout(function()&#123;&#10;                timeout = null;&#10;            &#125;, wait)&#10;            if (callNow) result = func.apply(context, args)&#10;        &#125;&#10;        else &#123;&#10;            timeout = setTimeout(function()&#123;&#10;                result = func.apply(context, args)&#10;            &#125;, wait);&#10;        &#125;&#10;        return result;&#10;    &#125;;&#10;&#10;    debounced.cancel = function() &#123;&#10;        clearTimeout(timeout);&#10;        timeout = null;&#10;    &#125;;&#10;&#10;    return debounced;&#10;&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-new原理" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/02/19/new原理/" class="article-date">
+  	<time datetime="2017-02-18T16:00:00.000Z" itemprop="datePublished">2017-02-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/19/new原理/">new原理</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>用new Object() 的方式新建了一个对象 obj<br>获取出去第一个参数<br>将 obj 的原型指向构造函数，这样 obj 就可以访问到构造函数原型中的属性<br>使用 apply，改变构造函数 this 的指向到新建的对象，这样 obj 就可以访问到构造函数中的属性<br>返回 obj</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function objectFactory() &#123;&#10;    var obj = new Object(),&#10;    Constructor = [].slice.call(arguments);&#10;    obj.__proto__ = Constructor.prototype;&#10;    var ret = Constructor.apply(obj, arguments);&#10;    return typeof ret === &#39;object&#39; ? ret : obj;&#10;&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -241,63 +475,6 @@
 
 
   
-    <article id="post-new原理" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/02/19/new原理/" class="article-date">
-  	<time datetime="2017-02-18T16:00:00.000Z" itemprop="datePublished">2017-02-19</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/19/new原理/">new原理</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>用new Object() 的方式新建了一个对象 obj<br>获取出去第一个参数<br>将 obj 的原型指向构造函数，这样 obj 就可以访问到构造函数原型中的属性<br>使用 apply，改变构造函数 this 的指向到新建的对象，这样 obj 就可以访问到构造函数中的属性<br>返回 obj</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function objectFactory() &#123;&#10;    var obj = new Object(),&#10;    Constructor = [].slice.call(arguments);&#10;    obj.__proto__ = Constructor.prototype;&#10;    var ret = Constructor.apply(obj, arguments);&#10;    return typeof ret === &#39;object&#39; ? ret : obj;&#10;&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-节流" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -341,68 +518,6 @@
 
       
 
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-21" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/02/07/21/" class="article-date">
-  	<time datetime="2017-02-07T08:00:48.177Z" itemprop="datePublished">2017-02-07</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/07/21/">css js兼容性</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>!important (功能有限)随着IE7对!important的支持, !important 方法现在只针对IE6的兼容.<br>例如:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#example &#123;&#10;&#9;width: 100px !important; /* IE7+FF */&#10;&#9;width: 103px; /* IE6 */&#10;&#125;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/兼容性/">兼容性</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2017/02/07/21/#more">more >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -488,6 +603,68 @@
 
 
   
+    <article id="post-21" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/02/07/21/" class="article-date">
+  	<time datetime="2017-02-07T08:00:48.177Z" itemprop="datePublished">2017-02-07</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/07/21/">css js兼容性</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>!important (功能有限)随着IE7对!important的支持, !important 方法现在只针对IE6的兼容.<br>例如:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#example &#123;&#10;&#9;width: 100px !important; /* IE7+FF */&#10;&#9;width: 103px; /* IE6 */&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/兼容性/">兼容性</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2017/02/07/21/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-calc" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -549,208 +726,9 @@
 
 
   
-    <article id="post-o.5px" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/01/22/o.5px/" class="article-date">
-  	<time datetime="2017-01-21T16:00:00.000Z" itemprop="datePublished">2017-01-22</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/22/o.5px/">0.5px</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1、0.5px边框<br>iOS 8 和 OS X Yosemite 支持 0.5px 的边框.<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if (window.devicePixelRatio &#38;&#38; devicePixelRatio &#62;= 2) &#123;&#10;  var testElem = document.createElement(&#39;div&#39;);&#10;  testElem.style.border = &#39;.5px solid transparent&#39;;&#10;  document.body.appendChild(testElem);&#10;&#125;&#10;if (testElem.offsetHeight == 1) &#123;&#10;  document.querySelector(&#39;html&#39;).classList.add(&#39;hairlines&#39;);&#10;&#125;&#10;  document.body.removeChild(testElem);&#10;&#125;&#10;&#10;div &#123;&#10;  border: 1px solid #bbb;&#10;&#125;&#10;.hairlines div &#123;&#10;  border-width: 0.5px;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>2、使用border-image实现</p>
-<p>准备一张符合你要求的border-image：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.border-bottom-1px &#123;&#10;  border-width: 0 0 1px 0;&#10;  -webkit-border-image: url(linenew.png) 0 0 2 0 stretch;&#10;  border-image: url(linenew.png) 0 0 2 0 stretch;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>使用的图片是2px高，上部的1px颜色为透明，下部的1px使用视觉规定的border的颜色<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.border-image-1px &#123;&#10;  border-width: 1px 0;&#10;  -webkit-border-image: url(linenew.png) 2 0 stretch;&#10;  border-image: url(linenew.png) 2 0 stretch;&#10;&#125;&#10;&#10;.border-image-1px &#123;&#10;  border-bottom: 1px solid #666;&#10;&#125;&#10;@media only screen and (-webkit-min-device-pixel-ratio: 2) &#123;&#10;  .border-image-1px &#123;&#10;    border-bottom: none;&#10;    border-width: 0 0 1px 0;&#10;    -webkit-border-image: url(../img/linenew.png) 0 0 2 0 stretch;&#10;    border-image: url(../img/linenew.png) 0 0 2 0 stretch;&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>3、使用background-image实现</p>
-<p>background-image 跟border-image的方法一样，你要先准备一张符合你要求的图片。然后将边框模拟在背景上。<br>样式设置：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.background-image-1px &#123;&#10;  background: url(../img/line.png) repeat-x left bottom;&#10;  -webkit-background-size: 100% 1px;&#10;  background-size: 100% 1px;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>4、多背景渐变实现<br>设置1px的渐变背景，50%有颜色，50%透明。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.background-gradient-1px &#123;&#10;  background:&#10;    linear-gradient(#000, #000 100%, transparent 100%) left / 1px 100% no-repeat,&#10;    linear-gradient(#000, #000 100%, transparent 100%) right / 1px 100% no-repeat,&#10;    linear-gradient(#000,#000 100%, transparent 100%) top / 100% 1px no-repeat,&#10;    linear-gradient(#000,#000 100%, transparent 100%) bottom / 100% 1px no-repeat&#10;&#125;&#10;/* &#25110;&#32773; */&#10;.background-gradient-1px&#123;&#10;  background:&#10;    -webkit-gradient(linear, left top, right bottom, color-stop(0, transparent), color-stop(0, #000), to(#000)) left / 1px 100% no-repeat,&#10;    -webkit-gradient(linear, left top, right bottom, color-stop(0, transparent), color-stop(0, #000), to(#000)) right / 1px 100% no-repeat,&#10;    -webkit-gradient(linear, left top, right bottom, color-stop(0, transparent), color-stop(0, #000), to(#000)) top / 100% 1px no-repeat,&#10;    -webkit-gradient(linear, left top, right bottom, color-stop(0, transparent), color-stop(0, #000), to(#000)) bottom / 100% 1px no-repeat&#10;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>5、使用box-shadow模拟边框</p>
-<p>利用css 对阴影处理的方式实现0.5px的效果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.box-shadow-1px &#123;&#10;  box-shadow: inset 0px -1px 1px -1px #c8c7cc;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>6、viewport + rem 实现, flexible也采用这种方法</p>
-<p>同时通过设置对应viewport的rem基准值，这种方式就可以像以前一样轻松愉快的写1px了。<br>在devicePixelRatio = 2 时，输出viewport：</p>
-<p><meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no"><br>在devicePixelRatio = 3 时，输出viewport：</p>
-<meta name="viewport" content="initial-scale=0.3333333333333333, maximum-scale=0.3333333333333333, minimum-scale=0.3333333333333333, user-scalable=no">
-
-
-<p>7、伪类 + transform 实现<br>利用 :before 或者 :after 重做 border ，并 transform 的 scale 缩小一半<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.scale-1px&#123;&#10;  position: relative;&#10;  border:none;&#10;&#125;&#10;.scale-1px:after&#123;&#10;  content: &#39;&#39;;&#10;  position: absolute;&#10;  bottom: 0;&#10;  background: #000;&#10;  width: 100%;&#10;  height: 1px;&#10;  -webkit-transform: scaleY(0.5);&#10;  transform: scaleY(0.5);&#10;  -webkit-transform-origin: 0 0;&#10;  transform-origin: 0 0;&#10;&#125;&#10;&#10;.scale-1px&#123;&#10;  position: relative;&#10;  margin-bottom: 20px;&#10;  border:none;&#10;&#125;&#10;.scale-1px:after&#123;&#10;  content: &#39;&#39;;&#10;  position: absolute;&#10;  top: 0;&#10;  left: 0;&#10;  border: 1px solid #000;&#10;  -webkit-box-sizing: border-box;&#10;  box-sizing: border-box;&#10;  width: 200%;&#10;  height: 200%;&#10;  -webkit-transform: scale(0.5);&#10;  transform: scale(0.5);&#10;  -webkit-transform-origin: left top;&#10;  transform-origin: left top;&#10;&#125;&#10;// &#21512; JS &#20195;&#30721;&#65292;&#21028;&#26029;&#26159;&#21542; Retina &#23631;&#65306;&#10;&#10;if(window.devicePixelRatio &#38;&#38; devicePixelRatio &#62;= 2)&#123;&#10;  document.querySelector(&#39;ul&#39;).className = &#39;scale-1px&#39;;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-worker" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/01/18/worker/" class="article-date">
-  	<time datetime="2017-01-17T16:00:00.000Z" itemprop="datePublished">2017-01-18</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/18/worker/">Workers</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Web Workers能在后台进程中运行的方法.<br>Web Workers 进程能够在不影响用户界面的情况下处理任务，并且，它还可以使用 XMLHttpRequest 来处理 I/O，但通常，后台进程（包括 Web Workers 进程）不能对 DOM 进行操作。如果希望后台程序处理的结果能够改变 DOM，只能通过返回消息给创建者的回调函数进行处理。</p>
-<ol>
-<li>主线程中创建 Worker 实例，并监听 onmessage 事件<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function init()&#123; &#10;    var worker = new Worker(&#39;compute.js&#39;); &#10;    worker.onmessage= function (event) &#123; &#10;        console.log(event.data) &#10;    &#125;; &#10;&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2017/01/18/worker/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-xss" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/11/22/xss/" class="article-date">
-  	<time datetime="2016-11-21T16:00:00.000Z" itemprop="datePublished">2016-11-22</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/22/xss/">xss</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>XSS攻击的全称是 Cross Site Scripting（跨站脚本攻击）</p>
-<p>cookie、session等敏感数据遭到泄露<br>影响用户体验</p>
-<p>基于反射的攻击,一般是服务器端根据用户的输入或者查询条件返回了带有恶意脚本的结果并在客户端执行。这种漏洞常见于各种搜索引擎之中。</p>
-<p>比如当我们在搜索栏中输入对应的恶意脚本代码，服务器端进行处理，当未找到匹配内容时简单返回我们输入的查询字符串。那么，这时候如果网站前端或者服务器端没有对查询字符串做恰当的处理，只是简单返回并插入到页面中，那这段恶意脚本代码很可能被当做正常的script标签解释执行。后果很明显，我们泄露了自己账户的cookie。</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/11/22/xss/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 </div>
