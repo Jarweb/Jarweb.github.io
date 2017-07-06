@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Jar-R">
 <meta property="og:description" content="计算属性：数据来源：接收的props，data组件自己的状态vuex的store全局的router抽出的context组件输入
 数去去向：view派生的状态data子组件的props">
-<meta property="og:updated_time" content="2017-07-06T09:40:56.738Z">
+<meta property="og:updated_time" content="2017-07-06T09:45:17.515Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue">
 <meta name="twitter:description" content="计算属性：数据来源：接收的props，data组件自己的状态vuex的store全局的router抽出的context组件输入
@@ -167,9 +167,9 @@
 <p>数去去向：<br>view<br>派生的状态data<br>子组件的props</p>
 <a id="more"></a>
 <p>组件间通信：<br>props down  emit up<br>子emit 父on<br>父brocast 子on<br>.sync 子改变props 同步到 父<br>event bus<br>eventemmiter<br>vuex状态管理</p>
-<p>响应原理：<br>Object.defineProperty把组件的data函数返回的数据进行getter/setter 拦截，对数据进行依赖收集，交给实例的watcher来监听，<br>当数据改变setter会调用，通知watcher重新计算.vue不能检测对象属性的添加和删除，需要挂到data上转化才可以。$set可以追加到data状态上。<br>vue异步更新dom，数据变化后，会被推入一个队列中，推入前会做去重，然后插入到下一个eventloop的前端。<br>等待浏览器执行。内部使用的是promise，所以是job类型，会加入到下个事件循环的前面。采用setTimeout(fn, 0)兼容。会被插入到task的后面，即队列的后面。<br>这时候$nextTick(cb), 可以在dom更新后调用cb</p>
+<p>响应原理：<br>Object.defineProperty 把组件的data函数返回的数据进行 getter/setter 拦截，对数据进行依赖收集，交给实例的 watcher 来监听，<br>当数据改变 setter 会调用，通知 watcher 重新计算。<br>vue 不能检测对象属性的添加和删除，需要挂到data上转化才可以。$set可以追加到 data 状态上。<br>vue 异步更新 dom，数据变化后，会被推入一个队列中，推入前会做去重，然后插入到下一个 eventloop 的前端。<br>等待浏览器执行。内部使用的是 promise ，所以是job类型，会加入到下个事件循环的前面。<br>采用 setTimeout(fn, 0)兼容。会被插入到task的后面，即队列的后面。<br>这时候$nextTick(cb), 可以在dom更新后调用cb</p>
 <p>watch：<br>对某个对象进行监听, 对比前后数据变化<br>数据来源：data computed</p>
-<p>生命周期：<br>beforeCreate 进行组件初始化，数据观测和 event/watcher 事件配置之前<br>created 实例完成创建 数据观测和 event/watcher 事件配置完成，$el还不可见,没挂载，可以进行接口请求<br>beforemount render函数调用<br>mounted $el创建， dom挂载，可以调用dom，通常这时候开始接口请求<br>beforeUpdate 数据更新时调用，但是vdom还没rerender，可以更改state<br>updated vdomrerender完成， 可以操作dom，不应该更新state，最好computed或者watch<br>actived keep-alive组件激活<br>deactivated keep-alive组件停用<br>breforeDestroyed 销毁前调用， 实例仍可用<br>destroyed 组件销毁，绑定解除，子实例也销毁</p>
+<p>生命周期：<br>beforeCreate 进行组件初始化，数据观测和 event/watcher 事件配置之前<br>created 实例完成创建 数据观测和 event/watcher 事件配置完成，$el 还不可见,没挂载，可以进行接口请求<br>beforemount render 函数调用<br>mounted $el 创建， dom挂载，可以调用dom，通常这时候开始接口请求<br>beforeUpdate 数据更新时调用，但是vdom还没 rerender，可以更改state<br>updated vdomrerender 完成， 可以操作dom，不应该更新state，最好computed或者watch<br>actived keep-alive 组件激活<br>deactivated keep-alive 组件停用<br>breforeDestroyed 销毁前调用， 实例仍可用<br>destroyed 组件销毁，绑定解除，子实例也销毁</p>
 <p>vuex：<br>组件dispatch action type 和 payload<br>action接收type 执行异步接口， commit回掉结果<br>mutation同步处理state<br>state需要初始化默认值<br>getters直接获取state返回<br>store合并所有的module<br>组件通过$store获取所有数据</p>
 <p>slot 内容分发，混合父组件的内容与子组件自己的模板<br>name具名，没name的是default<br>作用域槽，能在父中读取子的props</p>
 <p>动态组件<br>component元素，is来绑定组件，组件由变量控制，可以灵活切换组件</p>
