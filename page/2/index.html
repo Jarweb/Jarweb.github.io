@@ -124,6 +124,92 @@
 
       <div class="body-wrap">
   
+    <article id="post-cssmodule" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/03/25/cssmodule/" class="article-date">
+  	<time datetime="2017-03-24T16:00:00.000Z" itemprop="datePublished">2017-03-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/25/cssmodule/">css module</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="困扰问题"><a href="#困扰问题" class="headerlink" title="困扰问题"></a>困扰问题</h2><h3 id="CSS全局作用域问题"><a href="#CSS全局作用域问题" class="headerlink" title="CSS全局作用域问题"></a>CSS全局作用域问题</h3><p>CSS的规则都是全局的，任何一个组件的样式规则，都对整个页面有效。相信写css的人都会遇到样式冲突（污染）的问题。</p>
+<ul>
+<li>class命名写长一点吧，降低冲突的几率</li>
+<li>加个父元素的选择器，限制范围</li>
+<li>重新命名个class吧，比较保险</li>
+</ul>
+<h2 id="规范化"><a href="#规范化" class="headerlink" title="规范化"></a>规范化</h2><p>BEM,OOCSS,SMACSS</p>
+<p>BEM：block-element-modify， 解决css命名重复<br>OOCSS: 类， 解决css 重用</p>
+<p>但存在以下问题：</p>
+<ul>
+<li>JS CSS之间依然没有打通变量，css没有局部作用域</li>
+<li>复杂的命名</li>
+</ul>
+<h2 id="CSS-in-JS"><a href="#CSS-in-JS" class="headerlink" title="CSS in JS"></a>CSS in JS</h2><ul>
+<li>样式代码也会出现大量重复。</li>
+<li>不能利用成熟的 CSS 预处理器（或后处理器）</li>
+</ul>
+<p>使用JS 来管理样式模块<br>使用JS编译原生的CSS文件，使其具备模块化的能力</p>
+<p>CSS Modules 能最大化地结合现有 CSS 生态(预处理器/后处理器等)和 JS 模块化能力<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// webpack.config.js&#10;css?modules&#38;localIdentName=[name]__[local]-[hash:base64:5]&#10;&#10;/* components/Button.css */&#10;.normal &#123; /* normal &#30456;&#20851;&#30340;&#25152;&#26377;&#26679;&#24335; */ &#125;&#10;&#10;// components/Button.js&#10;import styles from &#39;./Button.css&#39;;&#10;buttonElem.outerHTML = `&#60;button class=$&#123;styles.normal&#125;&#62;Submit&#60;/button&#62;`&#10; &#10;&#60;button class=&#34;button--normal-abc53&#34;&#62;Submit&#60;/button&#62;</span><br></pre></td></tr></table></figure></p>
+<p>CSS Modules 实现了以下几点：</p>
+<ul>
+<li>所有样式都是局部作用域 的，解决了全局污染问题</li>
+<li>class 名生成规则配置灵活，可以此来压缩 class 名</li>
+<li>更好的压缩</li>
+<li>只需引用组件的 JS 就能搞定组件所有的 JS 和 CSS</li>
+</ul>
+<p>存在问题:</p>
+<ul>
+<li>无法使用伪类，媒体查询等</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-prefetch" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -535,74 +621,6 @@
 
 
   
-    <article id="post-22" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/02/07/22/" class="article-date">
-  	<time datetime="2017-02-07T08:00:48.177Z" itemprop="datePublished">2017-02-07</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/07/22/">移动开发知识</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>app应用前端开发要注重meta标签<br>webkit内核中有一些私有的meta标签，这些meta标签在开发webapp时起到非常重要的作用 。</p>
-<p><meta content="email=no" name="format-detection" /> //去除Android平台中对邮箱地址的识别怎么做</p>
-<p><meta name="apple-mobile-web-app-capable" content="yes"> //作用是让普通移动网页被添加到主屏幕后</p>
-<p>舍弃CSS float属性<br>在项目开发过程中可以会遇到内容排列显示的布局，假如你遇见这样的视觉稿，建议你放弃float，可以直接使用display:inline-block。</p>
-<p>利用CSS3边框背景属性<br>在app的前端开发中，这个按钮有圆角效果，有内发光效果还有高光效果，这样的按钮使用CSS3写是无法写出来的，当然圆角可以使用CSS3来写，但高光和内发光却无法使用CSS3编写， 这个时候你不妨使用-webkit-border-image来定义这个按钮的样式。</p>
-<p>使用webkit-box<br>webkit为display属性提供了一个webkit-box的值，做到盒子模型灵活控制。</p>
-<p>很多属性极限突破可以使用缩放，倾斜这种手段来hack，比如最小字体，比如各种自己画的伪类图标。<br>能css画的不要用图。<br>能flex布局的不要用浮动，不要用绝对定位（不利于页面布局的扩展）</p>
-</blockquote>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/移动开发/">移动开发</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2017/02/07/22/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-21" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -665,11 +683,11 @@
 
 
   
-    <article id="post-calc" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-22" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/01/28/calc/" class="article-date">
-  	<time datetime="2017-01-27T16:00:00.000Z" itemprop="datePublished">2017-01-28</time>
+      <a href="/2017/02/07/22/" class="article-date">
+  	<time datetime="2017-02-07T08:00:48.177Z" itemprop="datePublished">2017-02-07</time>
 </a>
     </div>
   
@@ -682,7 +700,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/28/calc/">calc()</a>
+      <a class="article-title" href="/2017/02/07/22/">移动开发知识</a>
     </h1>
   
 
@@ -691,8 +709,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#25191;&#34892;&#25968;&#23398;&#25805;&#20316;&#10;.foo &#123;&#10;  width: calc(100px + 50px);&#10;&#125;</span><br></pre></td></tr></table></figure>
-<p>混合计算绝对单位，用一个百分比减掉一个像素值。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.foo &#123;&#10;    width: calc(100% - 50px);&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+        <blockquote>
+<p>app应用前端开发要注重meta标签<br>webkit内核中有一些私有的meta标签，这些meta标签在开发webapp时起到非常重要的作用 。</p>
+<p><meta content="email=no" name="format-detection" /> //去除Android平台中对邮箱地址的识别怎么做</p>
+<p><meta name="apple-mobile-web-app-capable" content="yes"> //作用是让普通移动网页被添加到主屏幕后</p>
+<p>舍弃CSS float属性<br>在项目开发过程中可以会遇到内容排列显示的布局，假如你遇见这样的视觉稿，建议你放弃float，可以直接使用display:inline-block。</p>
+<p>利用CSS3边框背景属性<br>在app的前端开发中，这个按钮有圆角效果，有内发光效果还有高光效果，这样的按钮使用CSS3写是无法写出来的，当然圆角可以使用CSS3来写，但高光和内发光却无法使用CSS3编写， 这个时候你不妨使用-webkit-border-image来定义这个按钮的样式。</p>
+<p>使用webkit-box<br>webkit为display属性提供了一个webkit-box的值，做到盒子模型灵活控制。</p>
+<p>很多属性极限突破可以使用缩放，倾斜这种手段来hack，比如最小字体，比如各种自己画的伪类图标。<br>能css画的不要用图。<br>能flex布局的不要用浮动，不要用绝对定位（不利于页面布局的扩展）</p>
+</blockquote>
       
     </div>
     
@@ -700,14 +725,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/移动开发/">移动开发</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2017/01/28/calc/#more">more >></a>
+          <a  href="/2017/02/07/22/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>

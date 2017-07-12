@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>webpack 优化 | Jar-R</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="webpack特点：对 CommonJS 、 AMD 、ES6 的语法做了兼容对 js、css、图片等资源文件都支持打包串联式模块加载器以及插件机制，让其具有更好的灵活性和扩展性，例如提供对 CoffeeScript、ES6的支持有独立的配置文件 webpack.config.js可以将代码切割成不同的 chunk，实现按需加载，降低了初始化时间支持 SourceUrls 和 SourceMaps">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack 优化">
+<meta property="og:url" content="http://Jarweb.com/2017/05/08/webpack优化/index.html">
+<meta property="og:site_name" content="Jar-R">
+<meta property="og:description" content="webpack特点：对 CommonJS 、 AMD 、ES6 的语法做了兼容对 js、css、图片等资源文件都支持打包串联式模块加载器以及插件机制，让其具有更好的灵活性和扩展性，例如提供对 CoffeeScript、ES6的支持有独立的配置文件 webpack.config.js可以将代码切割成不同的 chunk，实现按需加载，降低了初始化时间支持 SourceUrls 和 SourceMaps">
+<meta property="og:updated_time" content="2017-07-12T04:43:28.755Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="webpack 优化">
+<meta name="twitter:description" content="webpack特点：对 CommonJS 、 AMD 、ES6 的语法做了兼容对 js、css、图片等资源文件都支持打包串联式模块加载器以及插件机制，让其具有更好的灵活性和扩展性，例如提供对 CoffeeScript、ES6的支持有独立的配置文件 webpack.config.js可以将代码切割成不同的 chunk，实现按需加载，降低了初始化时间支持 SourceUrls 和 SourceMaps">
+  
+    <link rel="alternative" href="/atom.xml" title="Jar-R" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">任先生在路上</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle" style="margin-bottom:20px;">Good things are coming !</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">列表</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger" style="display:none;"></div>
+  		<h1 class="header-author js-mobile-header hide">任先生在路上</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://img.ycwb.com/news/attachement/jpg/site2/20120717/001e90704bd5116f25f84a.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">任先生在路上</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Good things are coming !</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">列表</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/Jarweb" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-webpack优化" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/05/08/webpack优化/" class="article-date">
+  	<time datetime="2017-05-07T16:00:00.000Z" itemprop="datePublished">2017-05-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      webpack 优化
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>webpack特点：<br>对 CommonJS 、 AMD 、ES6 的语法做了兼容<br>对 js、css、图片等资源文件都支持打包<br>串联式模块加载器以及插件机制，让其具有更好的灵活性和扩展性，<br>例如提供对 CoffeeScript、ES6的支持<br>有独立的配置文件 webpack.config.js<br>可以将代码切割成不同的 chunk，实现按需加载，降低了初始化时间<br>支持 SourceUrls 和 SourceMaps，易于调试<br>具有强大的 Plugin 接口，大多是内部插件，使用起来比较灵活<br>使用异步 IO 并具有多级缓存。这使得 webpack 很快且在增量编译上更加快</p>
+<p>webpack 的核心在于静态资源打包。gulp 的核心在于任务集成。</p>
+<a id="more"></a>
+<p>常用Loaders介绍<br>处理样式，转成css，如：less-loader, sass-loader<br>图片处理，如: url-loader, file-loader。两个都必须用上。<br>否则超过大小限制的图片无法生成到目标文件夹中<br>处理js，将es6或更高级的代码转成es5的代码。如：<br>babel-loader，babel-preset-es2015，babel-preset-react<br>将js模块暴露到全局，如果expose-loader</p>
+<p>常用Plugins介绍<br>代码热替换, HotModuleReplacementPlugin<br>生成html文件，HtmlWebpackPlugin<br>将css成生文件，而非内联，ExtractTextPlugin<br>报错但不退出webpack进程，NoErrorsPlugin<br>代码丑化，UglifyJsPlugin，开发过程中不建议打开<br>多个 html共用一个js文件(chunk)，可用CommonsChunkPlugin<br>清理文件夹，Clean<br>调用模块的别名ProvidePlugin，<br>例如想在js中用$，如果通过webpack加载，需要将$与jQuery对应起来</p>
+<p>webpack.optimize.CommonsChunkPlugin<br>提取公共代码<br>提取第三方库<br>配置manifest，不用改变hash值，直接浏览器缓存<br>将webpack的运行时代码提取到独立的manifest文件中，<br>这样每次修改业务代码只重新打包生成业务代码模块 main.js 和运行时代码模块 manifest.js 就实现了业务模块和公共基础库模块的分离。</p>
+<p>对「低频库/工具/代码」的处理，对于这类代码最好的办法是做代码分割（Code Splitting）<br>做到按需加载，进一步加速应用</p>
+<p>webpack 提供了几种添加分割点的方法：<br>CommonJs: require.ensure<br>AMD: require<br>ES6 Modules import</p>
+<p>分割点可以主动将指定的模块分离成另一个 chunk，而不是随当前 chunk 一起打包</p>
+<p>code split  按需，import, require.ensure()，加载需要的JS代码，减少首次请求的时间<br>webpack提供的require.ensure可以定义分割点来打包独立的chunk</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#21516;&#27493;&#21152;&#36733;&#30340;&#20889;&#27861;&#65292;&#22914;&#65306;&#10;var TopicItem = require(&#39;../topic/topicitem&#39;);&#10;&#10;// &#24322;&#27493;&#21152;&#36733;&#30340;&#20889;&#27861;&#10;require.ensure([], function()&#123;&#10;&#9;var dialog = require(&#39;...&#39;);&#10;&#9;var $ = require(&#39;....&#39;)&#10;&#9;var util = require(&#39;...&#39;)&#10;&#125;)</span><br></pre></td></tr></table></figure>
+<p>首屏需要的同步加载，首屏过后才需要的则按需加载（异步）</p>
+<p>提取频繁共用的模块，将 webpack runtime 构建为内联 script。<br>使用 Commons-chunk-plugin，我们只需要将共用的模块打包到 libs/vendor 中即可,<br>minChunks 是指限定模块被 chunks 依赖的最少次数，低于设定值（2 ≤ n ≤ chunks 总数）将不会被提取到公共 chunk 中。如果 chunks 太多，又不想让所有公共模块被分离到 vendor 中，可以将 minChunks 设为 Infinity，则公共 chunk 仅仅包含在 entry 中指定的模块，而不会把其他共用的模块提取进去。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new webpack.optimize.CommonsChunkPlugin(&#123;  &#10;  names: [&#39;libs&#39;, &#39;vendor&#39;].reverse(),&#10;  minChunks: Infinity&#10;&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>尽管已经划分好了 chunks，也提取了公共的模块，但仅改动一个模块的代码还是会造成 Initial chunk (libs) 的变化。原因是这个初始块包含着 webpack runtime，而 runtime 还包含 chunks ID 及其对应 chunkhash 的对象。因此当任何 chunks 内容发生变化，webpack runtime 均会随之改变。<br>可以通过增加一个指定的公共 chunk 来提取 runtime<br>manifest 只是个特定的名字（可能是包含了 chunks 清单，所以起名 manifest），如果仅仅是为了分离 webpack runtime，可以将 manifest 替换成任意你想要的名字。</p>
+<p>manifest.js 实在是太小了，以至于不值得再为一个小 js 增加资源请求数量。</p>
+<p>这时候我们可以引入另一个插件：<br>inline-manifest-webpack-plugin。<br>它可以将 manifest 转为内联在 html 内的 inline script，因为 manifest 经常随着构建而变化，写入到 html 中便不需要每次构建再下载新的 manifest 了，从而减少了一个小文件请求。此插件依赖 html-webpack-plugin 和 manifest 公共块</p>
+<p>UglifyJsPlugin压缩代码<br>webpack -p 也是压缩<br>生产环境版本时使用如下命令:<br>env NODE_ENV=production webpack -p<br>不仅可以将未使用的 exports 清除，还能去掉很多不必要的代码，如无用的条件代码、未使用的变量、不可达代码等。</p>
+<p>webpack-uglify-parallel的是实现原理是采用了多核并行压缩的方式来提升我们的压缩速度。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const os = require(&#39;os&#39;);&#10;const UglifyJsParallelPlugin = require(&#39;webpack-uglify-parallel&#39;);&#10;&#10;new UglifyJsParallelPlugin(&#123;&#10;  workers: os.cpus().length,&#10;  mangle: true,&#10;  compressor: &#123;&#10;    warnings: false,&#10;    drop_console: true,&#10;    drop_debugger: true&#10;   &#125;&#10;&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>利用 DllPlugin 和 DllReferencePlugin 预编译资源模块<br>dll,完全不管第三方库,webpack只打包项目的业务代码。<br>DllPlugin的作用是预先编译一些模块，而DllReferencePlugin则是把这些预先编译好的模块引用起来。这边需要注意的是DllPlugin必须要在DllReferencePlugin执行前先执行一次，dll这个概念应该也是借鉴了windows程序开发中的dll文件的设计理念。</p>
+<p>相对于externals，dllPlugin有如下几点优势：</p>
+<p>dll预编译出来的模块可以作为静态资源链接库可被重复使用，尤其适合多个项目之间的资源共享，如同一个站点pc和手机版等；<br>dll资源能有效地解决资源循环依赖的问题，<br>由于externals的配置项需要对每个依赖库进行逐个定制，所以每次增加一个组件都需要手动修改，略微繁琐，而通过dllPlugin则能完全通过配置读取，减少维护的成本；</p>
+<p>热更新：<br>–watch cli 增量更新，缓存在内存中<br>监控目录下的文件变化并实时重新构建。但不会把结果通知给浏览器页面</p>
+<p>hotdevserver, gzip压缩，开启服务热更新<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">devServer: &#123;&#10;    contentBase: path.resolve(__dirname, &#39;dist&#39;),&#10;    compress: true,&#10;    historyApiFallback: true,&#10;&#125;,</span><br></pre></td></tr></table></figure></p>
+<p>hotdevserver 会完全刷新，结合HMR, 可以实现局部刷新<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if (module.hot) &#123;&#10;    module.hot.accept();&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>“inline”选项为整个页面添加了”Live Reloading”功能，而”hot”选项开启了”Hot Module Reloading”功能，这样就会尝试着重载发生变化的组件，而不是整个页面</p>
+<p>sourcemap 配置，选择sourcemap类型，css 的sourcemap会增加编译时间，js sourcemap不会</p>
+<p>profile true 优化<br>cache true 缓存临时文件</p>
+<p>webpack的hash字段是根据每次编译compilation的内容计算所得，<br>也可以理解为项目总体文件的hash值，<br>而不是针对每个具体文件的。<br>当使用–hot参数时，只能使用hash，如果使用chunkhash会报错</p>
+<p>chunkhash是根据模块内容计算出的hash值。<br>使用–inline时，hash和chunkhash都可以使用。</p>
+<p>hash 与 chunkhash<br>文件的hash指纹通常作为前端静态资源实现增量更新的方案之一<br>chunkhash代表的是chunk的hash值<br>chunkhash是根据具体模块文件的内容计算所得的hash值，所以某个文件的改动只会影响它本身的hash<br>hash代表的是compilation的hash值</p>
+<p>计算所有 chunks 的 hash —— [hash]<br>为每个 chunk 计算 hash —— [chunkhash]</p>
+<p>new ExtractTextPlugin(“app.css”)<br>抽离样式，独立打包，利用缓存</p>
+<p>npm script<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#34;dev&#34;: &#34;webpack-dev-server --config webpack.develop.config.js --devtool eval --progress --colors --hot --content-base src&#34;&#10;&#34;dev&#34;: &#34;webpack --config webpack.config.js --watch&#34;</span><br></pre></td></tr></table></figure></p>
+<p>合理划分公共模块:<br>库和工具 - libs<br>定制 UI 库和工具 - vendor<br>业务模块 - entries<br>低频库/工具/代码 - 分割为 chunk<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#10;  entry: &#123;&#10;    libs: [&#10;      &#39;es6-promise/auto&#39;,&#10;      &#39;whatwg-fetch&#39;,&#10;      &#39;vue&#39;,&#10;      &#39;vue-router&#39;&#10;    ],&#10;    vendor: [&#10;      /*&#10;       * vendor &#20013;&#22343;&#26159;&#38750; npm &#27169;&#22359;&#65292;&#10;       * &#29992; resolve.alias &#20462;&#25913;&#36335;&#24452;&#65292;&#10;       * &#36991;&#20813;&#20887;&#38271;&#30340;&#30456;&#23545;&#36335;&#24452;&#12290;&#10;       */&#10;      &#39;assets/libs/fastclick&#39;,&#10;      &#39;components/request&#39;,&#10;      &#39;components/ui&#39;,&#10;      &#39;components/bootstrap&#39; // &#21021;&#22987;&#21270;&#33050;&#26412;&#10;    ],&#10;    page1: &#39;src/pages/page1&#39;,&#10;    page2: &#39;src/pages/page2&#39;&#10;&#125;,</span><br></pre></td></tr></table></figure></p>
+<p>DedupePlugin插件可以在打包的时候删除重复或者相似的文件，实际测试中应该是文件级别的重复的文件</p>
+<p>happypack加速构建<br>webpack中为了方便各种资源和类型的加载，设计了以loader加载器的形式读取资源，但是受限于node的编程模型影响，所有的loader虽然以async的形式来并发调用，但是还是运行在单个 node的进程以及在同一个事件循环中，这就直接导致了当我们需要同时读取多个loader文件资源时，比如babel-loader需要transform各种jsx，es6的资源文件。在这种同步计算同时需要大量耗费cpu运算的过程中，node的单进程模型就无优势了，那么happypack就针对解决此类问题而生。</p>
+<p>happypack的处理思路是将原有的webpack对loader的执行过程从单一进程的形式扩展多进程模式，原本的流程保持不变，这样可以在不修改原有配置的基础上来完成对编译过程的优化<br>happypack在编译过程中除了利用多进程的模式加速编译，还同时开启了cache计算，能充分利用缓存读取构建文件，对构建的速度提升也是非常明显的</p>
+<p>resolve 加快webpack查找文件：<br>root 和 moduledirectories 如果只从用法上来看，似乎是可以互相替代的。但因为 moduledirectories 从设计上是取相对路径，所以比起 root ，所以会多 parse 很多路径。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">resolve: &#123;&#10;    root: path.resolve(&#39;src/node_modules&#39;),&#10;    extensions: [&#39;&#39;, &#39;.js&#39;, &#39;.jsx&#39;]&#10;&#125;,&#10;resolve: &#123;&#10;    modulesDirectories: [&#39;node_modules&#39;, &#39;./src&#39;],&#10;    extensions: [&#39;&#39;, &#39;.js&#39;, &#39;.jsx&#39;]&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用 include 来限定 babel 的使用范围，进一步提高效率。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var path = require(&#39;path&#39;);&#10;module.exports = &#123;&#10;    module: &#123;&#10;        loaders: [&#10;          &#123;&#10;              test: /\.js(x)*$/,&#10;              loader: &#39;babel-loader&#39;,&#10;              include: [&#10;                // &#21482;&#21435;&#35299;&#26512;&#36816;&#34892;&#30446;&#24405;&#19979;&#30340; src &#21644; demo &#25991;&#20214;&#22841;&#10;                path.join(process.cwd(), &#39;./src&#39;),&#10;                path.join(process.cwd(), &#39;./demo&#39;)&#10;              ],&#10;              query: &#123;&#10;                  presets: [&#39;react&#39;, &#39;es2015-ie&#39;, &#39;stage-1&#39;]&#10;              &#125;&#10;          &#125;&#10;        ]&#10;    &#125;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>webpack 中对 chunks 做优化：<br>OccurrenceOrderPlugin （webpack 2 默认启用）<br>LimitChunkCountPlugin<br>MinChunkSizePlugin<br>UglifyJsPlugin<br>AggressiveMergingPlugin<br>DllPlugin<br>DllReferencePlugin</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/05/13/vue总结/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          vue
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/05/07/webpack配置/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">webpack配置</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div>&copy; 2017 任先生在路上 的博客 , 技术 
+        <a href="http://hexo.io/" target="_blank">Hexo</a>  
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

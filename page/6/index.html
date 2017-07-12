@@ -124,6 +124,79 @@
 
       <div class="body-wrap">
   
+    <article id="post-script异步加载" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/19/script异步加载/" class="article-date">
+  	<time datetime="2016-04-18T16:00:00.000Z" itemprop="datePublished">2016-04-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/19/script异步加载/">script异步加载</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>DOM 渲染流程要理解异步脚本载入的用处首先要了解浏览器渲染DOM的流程，以及各阶段用户体验的差别。 一般地，一个包含外部样式表文件和外部脚本文件的HTML载入和渲染过程是这样的：</p>
+<ol>
+<li>浏览器下载HTML文件并开始解析DOM。</li>
+<li>遇到样式表文件link[rel=stylesheet]时，将其加入资源文件下载队列，继续解析DOM。</li>
+<li>遇到脚本文件时，暂停DOM解析并立即下载脚本文件。</li>
+<li>下载结束后立即执行脚本，在脚本中可访问当前<script>以上的DOM。</li>
+<li>脚本执行结束，继续解析DOM。</li>
+<li>整个DOM解析完成，触发DOMContentLoaded事件。</li>
+</ol>
+<p>上述步骤只是大致的描述，你可能还会关心下面两个问题：</p>
+<ul>
+<li>资源文件下载队列。样式表、图片等资源文件的下载不会暂停DOM解析。浏览器会并行地下载这些文件，但通常会限制并发下载数，一般为3-5个。可以在开发者工具的Network标签页中看到。</li>
+<li>执行脚本文件前，浏览器可能会等待该<script>之前的样式下载完成并渲染结束。</li>
+</ul>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/19/script异步加载/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-继承" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -681,86 +754,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/03/22/类型变量/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-了解Object" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/14/了解Object/" class="article-date">
-  	<time datetime="2016-03-13T16:00:00.000Z" itemprop="datePublished">2016-03-14</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/14/了解Object/">了解Object</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>Object从上面的输出中挑选出一些常用方法和属性，会得到下面的列表：</p>
-</blockquote>
-<ul>
-<li>create⑤</li>
-<li>defineProperty⑤</li>
-<li>defineProperties⑤</li>
-<li>getPrototypeOf⑤</li>
-<li>getOwnPropertyDescriptor⑤</li>
-<li>keys⑤</li>
-<li>getOwnPropertyNames⑤</li>
-<li>preventExtensions⑤</li>
-<li>isExtensible⑤</li>
-<li>seal⑤</li>
-<li>isSealed⑤</li>
-<li>freeze⑤</li>
-<li>isFrozen⑤</li>
-</ul>
-<blockquote>
-<p>带⑤的为es5新增的方法。</p>
-</blockquote>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/03/14/了解Object/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>

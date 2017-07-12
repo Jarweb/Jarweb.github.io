@@ -124,6 +124,67 @@
 
       <div class="body-wrap">
   
+    <article id="post-calc" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/01/28/calc/" class="article-date">
+  	<time datetime="2017-01-27T16:00:00.000Z" itemprop="datePublished">2017-01-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/28/calc/">calc()</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#25191;&#34892;&#25968;&#23398;&#25805;&#20316;&#10;.foo &#123;&#10;  width: calc(100px + 50px);&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>混合计算绝对单位，用一个百分比减掉一个像素值。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.foo &#123;&#10;    width: calc(100% - 50px);&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2017/01/28/calc/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-o.5px" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -676,66 +737,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/07/08/创建对象/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-JavaScript学习笔记：数组去重" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/07/07/JavaScript学习笔记：数组去重/" class="article-date">
-  	<time datetime="2016-07-06T16:00:00.000Z" itemprop="datePublished">2016-07-07</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/07/JavaScript学习笔记：数组去重/">数组去重</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>双重循环去重<br>这个方法使用了两个for循环做遍历。整个思路是：<br>构建一个空数组用来存放去重后的数组<br>外面的for循环对原数组做遍历，每次从数组中取出一个元素与结果数组做对比<br>如果原数组取出的元素与结果数组元素相同，则跳出循环;反之则将其存放到结果数组中<br>代码如下:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.unique1 = function () &#123;&#10;    // &#26500;&#24314;&#19968;&#20010;&#26032;&#25968;&#32452;&#65292;&#23384;&#25918;&#32467;&#26524;&#10;    var newArray = [this[0]];    // for&#24490;&#29615;&#65292;&#27599;&#27425;&#20174;&#21407;&#25968;&#32452;&#20013;&#21462;&#20986;&#19968;&#20010;&#20803;&#32032;&#10;    // &#29992;&#21462;&#20986;&#30340;&#20803;&#32032;&#24490;&#29615;&#19982;&#32467;&#26524;&#25968;&#32452;&#23545;&#27604;&#10;    for (var i = 1; i &#60; this.length; i++) &#123;        var repeat = false;        for (var j=0; j &#60; newArray.length; j++) &#123;            // &#21407;&#25968;&#32452;&#21462;&#20986;&#30340;&#20803;&#32032;&#19982;&#32467;&#26524;&#25968;&#32452;&#20803;&#32032;&#30456;&#21516;&#10;            if(this[i] == newArray[j]) &#123;&#10;                repeat = true;                break;&#10;            &#125;&#10;        &#125;        if(!repeat) &#123;            // &#22914;&#26524;&#32467;&#26524;&#25968;&#32452;&#20013;&#27809;&#26377;&#35813;&#20803;&#32032;&#65292;&#21017;&#23384;&#25918;&#21040;&#32467;&#26524;&#25968;&#32452;&#20013;&#10;            newArray.push(this[i]);&#10;        &#125;&#10;    &#125;    return newArray;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/07/07/JavaScript学习笔记：数组去重/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>

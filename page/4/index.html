@@ -124,6 +124,66 @@
 
       <div class="body-wrap">
   
+    <article id="post-JavaScript学习笔记：数组去重" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/07/JavaScript学习笔记：数组去重/" class="article-date">
+  	<time datetime="2016-07-06T16:00:00.000Z" itemprop="datePublished">2016-07-07</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/07/JavaScript学习笔记：数组去重/">数组去重</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>双重循环去重<br>这个方法使用了两个for循环做遍历。整个思路是：<br>构建一个空数组用来存放去重后的数组<br>外面的for循环对原数组做遍历，每次从数组中取出一个元素与结果数组做对比<br>如果原数组取出的元素与结果数组元素相同，则跳出循环;反之则将其存放到结果数组中<br>代码如下:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.unique1 = function () &#123;&#10;    // &#26500;&#24314;&#19968;&#20010;&#26032;&#25968;&#32452;&#65292;&#23384;&#25918;&#32467;&#26524;&#10;    var newArray = [this[0]];    // for&#24490;&#29615;&#65292;&#27599;&#27425;&#20174;&#21407;&#25968;&#32452;&#20013;&#21462;&#20986;&#19968;&#20010;&#20803;&#32032;&#10;    // &#29992;&#21462;&#20986;&#30340;&#20803;&#32032;&#24490;&#29615;&#19982;&#32467;&#26524;&#25968;&#32452;&#23545;&#27604;&#10;    for (var i = 1; i &#60; this.length; i++) &#123;        var repeat = false;        for (var j=0; j &#60; newArray.length; j++) &#123;            // &#21407;&#25968;&#32452;&#21462;&#20986;&#30340;&#20803;&#32032;&#19982;&#32467;&#26524;&#25968;&#32452;&#20803;&#32032;&#30456;&#21516;&#10;            if(this[i] == newArray[j]) &#123;&#10;                repeat = true;                break;&#10;            &#125;&#10;        &#125;        if(!repeat) &#123;            // &#22914;&#26524;&#32467;&#26524;&#25968;&#32452;&#20013;&#27809;&#26377;&#35813;&#20803;&#32032;&#65292;&#21017;&#23384;&#25918;&#21040;&#32467;&#26524;&#25968;&#32452;&#20013;&#10;            newArray.push(this[i]);&#10;        &#125;&#10;    &#125;    return newArray;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/07/07/JavaScript学习笔记：数组去重/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-express 中间件" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1190,70 +1250,6 @@ window.ajax = new outputObj();
       
         <p class="article-more-link">
           <a  href="/2016/06/08/深拷贝/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-老ie解决方法" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/05/30/老ie解决方法/" class="article-date">
-  	<time datetime="2016-05-29T16:00:00.000Z" itemprop="datePublished">2016-05-30</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/30/老ie解决方法/">老ie解决方法</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>一行代码解决各种IE兼容问题,IE6,IE7,IE8,IE9,IE10</p>
-<p>x-ua-compatible 用来指定IE浏览器解析编译页面的model</p>
-<p>x-ua-compatible 头标签大小写不敏感，必须用在 head 中，必须在除 title 外的其他 meta 之前使用。</p>
-<p>1、使用一行代码来指定浏览器使用特定的文档模式。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;meta http-equiv=&#34;x-ua-compatible&#34; content=&#34;IE=9&#34; &#62;&#10;&#60;meta http-equiv=&#34;x-ua-compatible&#34; content=&#34;IE=8&#34; &#62;&#10;&#60;meta http-equiv=&#34;x-ua-compatible&#34; content=&#34;IE=7&#34; &#62;</span><br></pre></td></tr></table></figure></p>
-<p>2、在一些情况下，我们需要限定浏览器对文档的解析到某一特定版本，或者将浏览器限定到一些旧版本的表现中。可以用如下的方式：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;meta http-equiv=&#34;x-ua-compatible&#34; content=&#34;IE=EmulateIE9&#34; &#62;&#10;&#60;meta http-equiv=&#34;x-ua-compatible&#34; content=&#34;IE=EmulateIE8&#34; &#62;&#10;&#60;meta http-equiv=&#34;x-ua-compatible&#34; content=&#34;IE=EmulateIE7&#34; &#62;</span><br></pre></td></tr></table></figure></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/兼容/">兼容</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/05/30/老ie解决方法/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>

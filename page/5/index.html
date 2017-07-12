@@ -124,6 +124,70 @@
 
       <div class="body-wrap">
   
+    <article id="post-老ie解决方法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/30/老ie解决方法/" class="article-date">
+  	<time datetime="2016-05-29T16:00:00.000Z" itemprop="datePublished">2016-05-30</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/30/老ie解决方法/">老ie解决方法</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一行代码解决各种IE兼容问题,IE6,IE7,IE8,IE9,IE10</p>
+<p>x-ua-compatible 用来指定IE浏览器解析编译页面的model</p>
+<p>x-ua-compatible 头标签大小写不敏感，必须用在 head 中，必须在除 title 外的其他 meta 之前使用。</p>
+<p>1、使用一行代码来指定浏览器使用特定的文档模式。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;meta http-equiv=&#34;x-ua-compatible&#34; content=&#34;IE=9&#34; &#62;&#10;&#60;meta http-equiv=&#34;x-ua-compatible&#34; content=&#34;IE=8&#34; &#62;&#10;&#60;meta http-equiv=&#34;x-ua-compatible&#34; content=&#34;IE=7&#34; &#62;</span><br></pre></td></tr></table></figure></p>
+<p>2、在一些情况下，我们需要限定浏览器对文档的解析到某一特定版本，或者将浏览器限定到一些旧版本的表现中。可以用如下的方式：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;meta http-equiv=&#34;x-ua-compatible&#34; content=&#34;IE=EmulateIE9&#34; &#62;&#10;&#60;meta http-equiv=&#34;x-ua-compatible&#34; content=&#34;IE=EmulateIE8&#34; &#62;&#10;&#60;meta http-equiv=&#34;x-ua-compatible&#34; content=&#34;IE=EmulateIE7&#34; &#62;</span><br></pre></td></tr></table></figure></p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/兼容/">兼容</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/05/30/老ie解决方法/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-localstore介绍" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -656,79 +720,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/04/21/模块化进化/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-script异步加载" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/19/script异步加载/" class="article-date">
-  	<time datetime="2016-04-18T16:00:00.000Z" itemprop="datePublished">2016-04-19</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/19/script异步加载/">script异步加载</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>DOM 渲染流程要理解异步脚本载入的用处首先要了解浏览器渲染DOM的流程，以及各阶段用户体验的差别。 一般地，一个包含外部样式表文件和外部脚本文件的HTML载入和渲染过程是这样的：</p>
-<ol>
-<li>浏览器下载HTML文件并开始解析DOM。</li>
-<li>遇到样式表文件link[rel=stylesheet]时，将其加入资源文件下载队列，继续解析DOM。</li>
-<li>遇到脚本文件时，暂停DOM解析并立即下载脚本文件。</li>
-<li>下载结束后立即执行脚本，在脚本中可访问当前<script>以上的DOM。</li>
-<li>脚本执行结束，继续解析DOM。</li>
-<li>整个DOM解析完成，触发DOMContentLoaded事件。</li>
-</ol>
-<p>上述步骤只是大致的描述，你可能还会关心下面两个问题：</p>
-<ul>
-<li>资源文件下载队列。样式表、图片等资源文件的下载不会暂停DOM解析。浏览器会并行地下载这些文件，但通常会限制并发下载数，一般为3-5个。可以在开发者工具的Network标签页中看到。</li>
-<li>执行脚本文件前，浏览器可能会等待该<script>之前的样式下载完成并渲染结束。</li>
-</ul>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/04/19/script异步加载/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
