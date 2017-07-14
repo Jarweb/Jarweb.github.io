@@ -381,6 +381,65 @@
 
 
   
+    <article id="post-flex" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/26/flex/" class="article-date">
+  	<time datetime="2016-11-25T16:00:00.000Z" itemprop="datePublished">2016-11-26</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/26/flex/">flex笔记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>父：<br>display: flex;<br>flex-direction: row/column;<br>flex-wrap: nowrap/wrap; 是否换行<br>flex-flow: direction wrap; 简写</p>
+<p>justify-content:<br>flex-start/flex-end/center/space-between/space-around 水平<br>align-items:<br>flex-start/flex-end/center/baseline/stretch 垂直<br>align-content:<br>flex-start/flex-end/center/baseline/stretch 每行的个性化，一行时无效</p>
+<p>子:<br>align-self:<br>auto/flex-start/flex-end/center/baseline/stretch 相对父，在垂直方向个性化<br>flex-grow: 拉伸 不接受负值 0<br>flex-shrink: 收缩 不接受负值 1<br>flex-basis: 伸缩的基准值 不接受负值<br>flex: grow shrink basis 简写</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-xss" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -569,6 +628,67 @@
 
 
   
+    <article id="post-尾递归" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/08/尾递归/" class="article-date">
+  	<time datetime="2016-10-07T16:00:00.000Z" itemprop="datePublished">2016-10-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/08/尾递归/">尾递归优化</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>尾递归：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function f(a)&#123;&#10;&#9;if(a == 1) return a&#10;&#10;&#9;return a + f(a-1)&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>每次递归有一个变量a在内存中<br>应该每次更新这个a，而不是在内存中，扩展更多的a</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/10/08/尾递归/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-lazyload实现方法" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -611,132 +731,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/10/02/lazyload实现方法/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-lazyload" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/09/13/lazyload/" class="article-date">
-  	<time datetime="2016-09-12T16:00:00.000Z" itemprop="datePublished">2016-09-13</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/13/lazyload/">lazyload</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>将页面中的img标签src指向一张小图片或者src为空，然后定义datasrc属性指向真实的图片。src指向一张默认的图片，否则当src为空时也会向服务器发送一次请求。可以指向loading的地址。</p>
-<p><img src="default.jpg" data-src="http://ww4.sinaimg.cn/large/006y8mN6gw1fa5obmqrmvj305k05k3yh.jpg" /><br>当载入页面时，先把可视区域内的img标签的data-src属性值负给src，然后监听滚动事件，把用户即将看到的图片加载。这样便实现了懒加载。</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/09/13/lazyload/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-创建对象" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/07/08/创建对象/" class="article-date">
-  	<time datetime="2016-07-07T16:00:00.000Z" itemprop="datePublished">2016-07-08</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/08/创建对象/">创建对象</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>一个对象就是一系列属性的集合，一个属性包含一个名字(key)和一个值(value)。</p>
-<p>创建对象</p>
-<p>很多有关于JavaScript书在介绍对象创建的方法时，主要有：</p>
-<p>使用对象字面量创建对象(key-value)<br>使用new创建对象<br>使用Object.create()创建对象<br>使用函数创建对象<br>使用原型创建对象</p>
-<p>使用对象字面量创建对象</p>
-<p>对象字面量是创建对象最简单的一种形式，目的是在于简化创建包含大量属性的对象的过程。对象字面量由若干属性名(keys)和属性值(values)成对组成的映射表，key和value中间使用冒号(:)分隔，每对key/value之间使用逗号(,)分隔，整个映射表用花括号({})括起来。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;&#10;    property_1:   value_1,   // property_# &#21487;&#33021;&#26159;&#19968;&#20010;&#26631;&#35782;&#31526;...&#10;    2:            value_2,   // &#25110;&#32773;&#26159;&#19968;&#20010;&#25968;&#23383;&#10;    // ...,&#10;    &#34;property n&#34;: value_n    // &#25110;&#26159;&#19968;&#20010;&#23383;&#31526;&#20018;&#125;;</span><br></pre></td></tr></table></figure></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/07/08/创建对象/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>

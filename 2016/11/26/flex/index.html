@@ -4,18 +4,21 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>防抖 | Jar-R</title>
+  <title>flex笔记 | Jar-R</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1function debounce(func, wait = 300, immediate) &amp;#123;&amp;#10;&amp;#10;    var timeout, result;&amp;#10;&amp;#10;    var debounced = function () &amp;#123;&amp;#10;        var context = this;&amp;#10;        var args = argument">
+  <meta name="description" content="父：display: flex;flex-direction: row/column;flex-wrap: nowrap/wrap; 是否换行flex-flow: direction wrap; 简写
+justify-content:flex-start/flex-end/center/space-between/space-around 水平align-items:flex-start/flex">
 <meta property="og:type" content="article">
-<meta property="og:title" content="防抖">
-<meta property="og:url" content="http://Jarweb.com/2017/02/25/防抖/index.html">
+<meta property="og:title" content="flex笔记">
+<meta property="og:url" content="http://Jarweb.com/2016/11/26/flex/index.html">
 <meta property="og:site_name" content="Jar-R">
-<meta property="og:description" content="1function debounce(func, wait = 300, immediate) &amp;#123;&amp;#10;&amp;#10;    var timeout, result;&amp;#10;&amp;#10;    var debounced = function () &amp;#123;&amp;#10;        var context = this;&amp;#10;        var args = argument">
-<meta property="og:updated_time" content="2017-07-03T06:37:11.047Z">
+<meta property="og:description" content="父：display: flex;flex-direction: row/column;flex-wrap: nowrap/wrap; 是否换行flex-flow: direction wrap; 简写
+justify-content:flex-start/flex-end/center/space-between/space-around 水平align-items:flex-start/flex">
+<meta property="og:updated_time" content="2017-07-14T02:46:40.617Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="防抖">
-<meta name="twitter:description" content="1function debounce(func, wait = 300, immediate) &amp;#123;&amp;#10;&amp;#10;    var timeout, result;&amp;#10;&amp;#10;    var debounced = function () &amp;#123;&amp;#10;        var context = this;&amp;#10;        var args = argument">
+<meta name="twitter:title" content="flex笔记">
+<meta name="twitter:description" content="父：display: flex;flex-direction: row/column;flex-wrap: nowrap/wrap; 是否换行flex-flow: direction wrap; 简写
+justify-content:flex-start/flex-end/center/space-between/space-around 水平align-items:flex-start/flex">
   
     <link rel="alternative" href="/atom.xml" title="Jar-R" type="application/atom+xml">
   
@@ -123,11 +126,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-防抖" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-flex" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/02/25/防抖/" class="article-date">
-  	<time datetime="2017-02-24T16:00:00.000Z" itemprop="datePublished">2017-02-25</time>
+      <a href="/2016/11/26/flex/" class="article-date">
+  	<time datetime="2016-11-25T16:00:00.000Z" itemprop="datePublished">2016-11-26</time>
 </a>
     </div>
   
@@ -140,7 +143,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      防抖
+      flex笔记
     </h1>
   
 
@@ -149,7 +152,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
 	</div>
 
         
@@ -160,7 +163,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function debounce(func, wait = 300, immediate) &#123;&#10;&#10;    var timeout, result;&#10;&#10;    var debounced = function () &#123;&#10;        var context = this;&#10;        var args = arguments;&#10;&#10;        if (timeout) clearTimeout(timeout);&#10;        if (immediate) &#123;&#10;            // &#22914;&#26524;&#24050;&#32463;&#25191;&#34892;&#36807;&#65292;&#19981;&#20877;&#25191;&#34892;&#10;            var callNow = !timeout;&#10;            timeout = setTimeout(function()&#123;&#10;                timeout = null;&#10;            &#125;, wait)&#10;            if (callNow) result = func.apply(context, args)&#10;        &#125;&#10;        else &#123;&#10;            timeout = setTimeout(function()&#123;&#10;                result = func.apply(context, args)&#10;            &#125;, wait);&#10;        &#125;&#10;        return result;&#10;    &#125;;&#10;&#10;    debounced.cancel = function() &#123;&#10;        clearTimeout(timeout);&#10;        timeout = null;&#10;    &#125;;&#10;&#10;    return debounced;&#10;&#125;</span><br></pre></td></tr></table></figure>
+        <p>父：<br>display: flex;<br>flex-direction: row/column;<br>flex-wrap: nowrap/wrap; 是否换行<br>flex-flow: direction wrap; 简写</p>
+<p>justify-content:<br>flex-start/flex-end/center/space-between/space-around 水平<br>align-items:<br>flex-start/flex-end/center/baseline/stretch 垂直<br>align-content:<br>flex-start/flex-end/center/baseline/stretch 每行的个性化，一行时无效</p>
+<p>子:<br>align-self:<br>auto/flex-start/flex-end/center/baseline/stretch 相对父，在垂直方向个性化<br>flex-grow: 拉伸 不接受负值 0<br>flex-shrink: 收缩 不接受负值 1<br>flex-basis: 伸缩的基准值 不接受负值<br>flex: grow shrink basis 简写</p>
+
       
     </div>
     
@@ -169,18 +175,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/03/04/bind实现/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/01/15/curry实现/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          bind实现
+          curry化
         
       </div>
     </a>
   
   
-    <a href="/2017/02/19/前端路由实现原理/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">前端路由实现</div>
+    <a href="/2016/11/22/xss/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">xss</div>
       <strong class="article-nav-caption">></strong>
     </a>
   

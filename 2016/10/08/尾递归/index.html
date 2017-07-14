@@ -4,18 +4,21 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>防抖 | Jar-R</title>
+  <title>尾递归优化 | Jar-R</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1function debounce(func, wait = 300, immediate) &amp;#123;&amp;#10;&amp;#10;    var timeout, result;&amp;#10;&amp;#10;    var debounced = function () &amp;#123;&amp;#10;        var context = this;&amp;#10;        var args = argument">
+  <meta name="description" content="尾递归：1function f(a)&amp;#123;&amp;#10;&amp;#9;if(a == 1) return a&amp;#10;&amp;#10;&amp;#9;return a + f(a-1)&amp;#10;&amp;#125;
+每次递归有一个变量a在内存中应该每次更新这个a，而不是在内存中，扩展更多的a">
 <meta property="og:type" content="article">
-<meta property="og:title" content="防抖">
-<meta property="og:url" content="http://Jarweb.com/2017/02/25/防抖/index.html">
+<meta property="og:title" content="尾递归优化">
+<meta property="og:url" content="http://Jarweb.com/2016/10/08/尾递归/index.html">
 <meta property="og:site_name" content="Jar-R">
-<meta property="og:description" content="1function debounce(func, wait = 300, immediate) &amp;#123;&amp;#10;&amp;#10;    var timeout, result;&amp;#10;&amp;#10;    var debounced = function () &amp;#123;&amp;#10;        var context = this;&amp;#10;        var args = argument">
-<meta property="og:updated_time" content="2017-07-03T06:37:11.047Z">
+<meta property="og:description" content="尾递归：1function f(a)&amp;#123;&amp;#10;&amp;#9;if(a == 1) return a&amp;#10;&amp;#10;&amp;#9;return a + f(a-1)&amp;#10;&amp;#125;
+每次递归有一个变量a在内存中应该每次更新这个a，而不是在内存中，扩展更多的a">
+<meta property="og:updated_time" content="2017-07-14T02:50:22.699Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="防抖">
-<meta name="twitter:description" content="1function debounce(func, wait = 300, immediate) &amp;#123;&amp;#10;&amp;#10;    var timeout, result;&amp;#10;&amp;#10;    var debounced = function () &amp;#123;&amp;#10;        var context = this;&amp;#10;        var args = argument">
+<meta name="twitter:title" content="尾递归优化">
+<meta name="twitter:description" content="尾递归：1function f(a)&amp;#123;&amp;#10;&amp;#9;if(a == 1) return a&amp;#10;&amp;#10;&amp;#9;return a + f(a-1)&amp;#10;&amp;#125;
+每次递归有一个变量a在内存中应该每次更新这个a，而不是在内存中，扩展更多的a">
   
     <link rel="alternative" href="/atom.xml" title="Jar-R" type="application/atom+xml">
   
@@ -123,11 +126,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-防抖" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-尾递归" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/02/25/防抖/" class="article-date">
-  	<time datetime="2017-02-24T16:00:00.000Z" itemprop="datePublished">2017-02-25</time>
+      <a href="/2016/10/08/尾递归/" class="article-date">
+  	<time datetime="2016-10-07T16:00:00.000Z" itemprop="datePublished">2016-10-08</time>
 </a>
     </div>
   
@@ -140,7 +143,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      防抖
+      尾递归优化
     </h1>
   
 
@@ -160,7 +163,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function debounce(func, wait = 300, immediate) &#123;&#10;&#10;    var timeout, result;&#10;&#10;    var debounced = function () &#123;&#10;        var context = this;&#10;        var args = arguments;&#10;&#10;        if (timeout) clearTimeout(timeout);&#10;        if (immediate) &#123;&#10;            // &#22914;&#26524;&#24050;&#32463;&#25191;&#34892;&#36807;&#65292;&#19981;&#20877;&#25191;&#34892;&#10;            var callNow = !timeout;&#10;            timeout = setTimeout(function()&#123;&#10;                timeout = null;&#10;            &#125;, wait)&#10;            if (callNow) result = func.apply(context, args)&#10;        &#125;&#10;        else &#123;&#10;            timeout = setTimeout(function()&#123;&#10;                result = func.apply(context, args)&#10;            &#125;, wait);&#10;        &#125;&#10;        return result;&#10;    &#125;;&#10;&#10;    debounced.cancel = function() &#123;&#10;        clearTimeout(timeout);&#10;        timeout = null;&#10;    &#125;;&#10;&#10;    return debounced;&#10;&#125;</span><br></pre></td></tr></table></figure>
+        <p>尾递归：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function f(a)&#123;&#10;&#9;if(a == 1) return a&#10;&#10;&#9;return a + f(a-1)&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>每次递归有一个变量a在内存中<br>应该每次更新这个a，而不是在内存中，扩展更多的a</p>
+<a id="more"></a>
+<p>1, 递归转化为循环迭代<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function f(a)&#123;&#10;&#9;var result =0&#10;&#10;&#9;while(true)&#123;&#10;&#9;&#9;if(a==0) break;&#10;&#9;&#9;result = result + a&#10;&#9;&#9;a = a - 1&#10;&#9;&#125;&#10;&#9;reutrn result&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>2, 尾递归优化<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function f(a, b=0)&#123;&#10;&#9;if(a==0) return b&#10;&#9;return f(a-1, a+b)&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>return 只返回一个纯函数，这就是尾递归优化</p>
+
       
     </div>
     
@@ -169,18 +178,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/03/04/bind实现/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/10/27/移动端知识整理/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          bind实现
+          移动端知识整理
         
       </div>
     </a>
   
   
-    <a href="/2017/02/19/前端路由实现原理/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">前端路由实现</div>
+    <a href="/2016/10/02/lazyload实现方法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">lazyload 实现方式</div>
       <strong class="article-nav-caption">></strong>
     </a>
   

@@ -124,6 +124,196 @@
 
       <div class="body-wrap">
   
+    <article id="post-函数编程" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/25/函数编程/" class="article-date">
+  	<time datetime="2016-03-24T16:00:00.000Z" itemprop="datePublished">2016-03-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/25/函数编程/">函数编程</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="纯函数式相同的参数返回相同的结果，它的执行不依赖于系统的状态"><a href="#纯函数式相同的参数返回相同的结果，它的执行不依赖于系统的状态" class="headerlink" title="纯函数式相同的参数返回相同的结果，它的执行不依赖于系统的状态"></a>纯函数式相同的参数返回相同的结果，它的执行不依赖于系统的状态</h1><p>1) 非纯净的<br>let number = 1;<br>const increment = () =&gt; number += 1;<br>increment();<br>// 2</p>
+<p>2) 纯净的<br>const increment = n =&gt; n + 1;<br>increment(1);<br>// 2</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/03/25/函数编程/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-关于对象" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/22/关于对象/" class="article-date">
+  	<time datetime="2016-03-21T16:00:00.000Z" itemprop="datePublished">2016-03-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/22/关于对象/">关于对象</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>对象字面值不能正确解析问题：<br>{a:1}.a报错，错误Uncaught SyntaxError: Unexpected token .</li>
+</ol>
+<p>解决：<br>({a:1}.a) // 或({a:1}).a</p>
+<p>原因：<br>就是声明对象字面值时，语句开头不应该用{，因为js解释器会认为这是语句块（block）的开始。<br>同理，类似问题{ name: “mc”, id: 1 }会报错Uncaught SyntaxError: Unexpected token :也是这个道理。({ name: “mc”, id: 1 })即可正确解析。但稍注意下，{name: “mc”}是不会报错的，它等同于name: “mc”，并返回一个字符串”mc”。</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/03/22/关于对象/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-类型变量" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/22/类型变量/" class="article-date">
+  	<time datetime="2016-03-21T16:00:00.000Z" itemprop="datePublished">2016-03-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/22/类型变量/">类型变量</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>类型JavaScript中类型主要包括了primitive和object类型，其中primitive类型包括了：<br>null、undefined、boolean、number、string和symbol(es6)。其他所有的都为object类型。</p>
+<p>类型判断类型检测主要包括了：typeof、instanceof和toString的三种方式来判断变量的类型。<br>typeoftypeof接受一个值并返回它的类型，它有两种可能的语法：</p>
+<ul>
+<li>typeof x</li>
+<li>typeof(x)</li>
+</ul>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/03/22/类型变量/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-了解Object" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -569,192 +759,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/01/12/9/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-设计工具" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/01/08/设计工具/" class="article-date">
-  	<time datetime="2016-01-07T16:00:00.000Z" itemprop="datePublished">2016-01-08</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/08/设计工具/">设计工具</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Figma"><a href="#Figma" class="headerlink" title="Figma"></a>Figma</h2><p>在会议中，团队成员同时在看一个项目，并实时提供反馈来修改项目，Figma将是最合适不过的解决方案。<br>官网: <a href="https://www.figma.com" target="_blank" rel="external">https://www.figma.com</a></p>
-<h2 id="Adobe-XD"><a href="#Adobe-XD" class="headerlink" title="Adobe XD"></a>Adobe XD</h2><p>官网: <a href="http://www.adobe.com/products/experience-design.html" target="_blank" rel="external">http://www.adobe.com/products/experience-design.html</a></p>
-<p>##Sketch &amp; Plugins<br>官网: <a href="https://www.sketchapp.com/" target="_blank" rel="external">https://www.sketchapp.com/</a><br>插件市场: <a href="https://speckyboy.com/plugins-sketch-app/" target="_blank" rel="external">https://speckyboy.com/plugins-sketch-app/</a></p>
-<h2 id="Zeplin"><a href="#Zeplin" class="headerlink" title="Zeplin"></a>Zeplin</h2><p>它可帮助开发人员轻松检查画板中的UI规格。 此外，他们可以直接通过Zeplin在画板上标注或下载必要的资源进行开发。<br>官网: <a href="https://zeplin.io" target="_blank" rel="external">https://zeplin.io</a></p>
-<h2 id="Stage-amp-Gallery"><a href="#Stage-amp-Gallery" class="headerlink" title="Stage &amp; Gallery"></a>Stage &amp; Gallery</h2><p>官网: <a href="https://material.io/stage/" target="_blank" rel="external">https://material.io/stage/</a>, <a href="https://material.io/gallery/" target="_blank" rel="external">https://material.io/gallery/</a></p>
-<h2 id="Framer"><a href="#Framer" class="headerlink" title="Framer"></a>Framer</h2><p>Framer是利用代码（Coffeescript）进行原型设计。<br>官网: <a href="https://framerjs.com/" target="_blank" rel="external">https://framerjs.com/</a></p>
-<h2 id="ProtoPie"><a href="#ProtoPie" class="headerlink" title="ProtoPie"></a>ProtoPie</h2><p>创建简单交互原型而无需输入任何代码成为可能。<br>官网: <a href="https://www.protopie.io/" target="_blank" rel="external">https://www.protopie.io/</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-4" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/01/03/4/" class="article-date">
-  	<time datetime="2016-01-02T16:00:00.000Z" itemprop="datePublished">2016-01-03</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/03/4/">js模块化</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="commonjs-AMD-CMD"><a href="#commonjs-AMD-CMD" class="headerlink" title="commonjs AMD CMD"></a>commonjs AMD CMD</h2><h4 id="node-用commonjs"><a href="#node-用commonjs" class="headerlink" title="node 用commonjs"></a>node 用commonjs</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&#39;express&#39;)&#10;//&#21516;&#27493;&#20840;&#37096;&#21152;&#36733;&#27169;&#22359; &#22312;&#26381;&#21153;&#22120;&#31471;&#27809;&#20107; &#22312;&#21069;&#31471;&#19981;ok</span><br></pre></td></tr></table></figure>
-<h3 id="AMD-requirejs"><a href="#AMD-requirejs" class="headerlink" title="AMD requirejs"></a>AMD requirejs</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">require([&#8216;jquery&#8217;, &#8216;underscore&#8217;, &#8216;backbone&#8217;], function ($, _, Backbone)&#123;&#10;&#12288;&#12288;&#12288;&#12288;// &#24178;&#27963;&#10;&#12288;&#125;)&#10;//&#24322;&#27493;&#21435;&#21152;&#36733;3&#20010;&#27169;&#22359; &#21152;&#36733;&#23436;&#20102;&#25165;&#25191;&#34892;&#22238;&#35843; &#22238;&#35843;&#37324;&#26159;&#25972;&#20010;&#31243;&#24207;&#20381;&#36182;&#21069;&#38754;&#27169;&#22359;&#35201;&#20570;&#30340;&#20107;</span><br></pre></td></tr></table></figure>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//module.js&#10;define([&#20381;&#36182;&#27169;&#22359;],funciton(&#20381;&#36182;&#27169;&#22359;)&#123;&#10;&#9;//&#23548;&#20986;&#32473;&#21035;&#30340;&#27169;&#22359;&#24341;&#29992;&#30340;&#26041;&#27861;&#10;&#125;)&#10;&#10;//main.js&#10;require([&#39;module&#39;],function(module)&#123;&#10;&#9;//do something&#10;&#125;)</span><br></pre></td></tr></table></figure>
-<p>所以 依赖的模块必须要符合AMD的规范 引入了才起作用</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/模块化/">模块化</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/01/03/4/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-13" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/12/30/13/" class="article-date">
-  	<time datetime="2015-12-29T16:00:00.000Z" itemprop="datePublished">2015-12-30</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/30/13/">HTML笔记</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>格式化标签<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;br&#62;&#10;&#60;hr&#62;&#10;&#60;i&#62;&#60;/i&#62;&#10;&#60;b&#62;&#60;/b&#62;&#10;&#60;tt&#62;&#60;/tt&#62;&#10;&#60;big&#62;&#60;/big&#62;&#10;&#60;small&#62;&#60;/small&#62;&#10;&#60;strong&#62;&#60;/strong&#62;&#10;&#60;sub&#62;&#60;/sub&#62;&#10;&#60;sup&#62;&#60;/sup&#62;&#10;&#60;bdo dir=&#34;ltr rtl&#34;&#62;&#60;/bdo&#62;&#10;&#60;pre&#62;&#60;/pre&#62;&#10;&#60;code&#62;&#60;/code&#62;&#10;&#60;var&#62;&#60;/var&#62;&#10;&#60;samp&#62;&#60;/samp&#62;&#10;&#60;abbr title=&#34;&#34;&#62;&#60;/abbr&#62;&#10;&#60;address&#62;&#60;/address&#62;&#10;&#60;blockquote&#62;&#60;/blockquote&#62;&#10;&#60;q&#62;&#60;/q&#62;&#10;&#60;ins&#62;&#60;/ins&#62;&#10;&#60;del&#62;&#60;/del&#62;&#10;&#60;cite&#62;&#60;/cite&#62;</span><br></pre></td></tr></table></figure></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/12/30/13/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>

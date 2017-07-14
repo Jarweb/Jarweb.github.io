@@ -124,6 +124,190 @@
 
       <div class="body-wrap">
   
+    <article id="post-js dom" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/23/js dom/" class="article-date">
+  	<time datetime="2016-04-22T16:00:00.000Z" itemprop="datePublished">2016-04-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/23/js dom/">js dom</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>每个Window对象都有一个document属性指向Document<br>Document对象表示窗口的内容.</p>
+<ol>
+<li>获取文档元素<br>//ID<br>//返回<code>element</code><br>document.getElementById(‘ID_K’);<br>//Name<br>//返回NodeList<br>document.getElementsByName(“name_K”);<br>//根据标签<br>//返回HTMLCollection 在&lt;<JavaScript权威指南>&gt;第六版第367页中写的是返回NodeList,但是查了官网API是返回HTMLCollection的.<br>//因为HTML不区分大小写,所以这个也不区分大小写.<br>var first_p = document.getElementsTagName(“p”)[0];<br>first_p_span = first_p.getElementsTagName(“span”);<br>//通过Class<br>document.getElementsByClassName(“K container”);<br>//通过CSS选择器 返回NodeList<br>document.querySelectorAll(“#K div”);<br>document.querySelector(“#K div”);<br>//返回第一个匹配的.</li>
+</ol>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/23/js dom/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-oracle node模块" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/22/oracle node模块/" class="article-date">
+  	<time datetime="2016-04-21T16:00:00.000Z" itemprop="datePublished">2016-04-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/22/oracle node模块/">oracle数据库</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var oracledb = require(&#39;oracledb&#39;);&#10;oracledb.getConnection( &#123;&#10;&#9;user : &#34;hr&#34;,&#10;&#9;password : &#34;welcome&#34;,&#10;&#9;connectString : &#34;localhost/XE&#34;&#10;&#125;,&#10;function(err, connection) &#123;&#10;&#9;if (err) &#123;&#10;&#9;console.error(err.message);&#10;&#9;return;&#10;&#9;&#125;&#10;&#9;connection.execute( &#34;SELECT department_id, department_name &#34; + &#34;FROM departments &#34; + &#34;WHERE department_id = :did&#34;, [180], function(err, result) &#123;&#10;&#9;&#9;if (err) &#123;&#10;&#9;&#9;&#9;console.error(err.message);&#10;&#9;&#9;return;&#10;&#9;&#9;&#125;&#10;&#9;&#9;console.log(result.rows);&#10;&#9;&#125;);&#10;&#125;);</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oracle数据库/">oracle数据库</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/22/oracle node模块/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-模块化进化" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/21/模块化进化/" class="article-date">
+  	<time datetime="2016-04-20T16:00:00.000Z" itemprop="datePublished">2016-04-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/21/模块化进化/">模块化进化</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>传统用法<script src="lodjs.js"></script></p>
+<p>Bower<br>$ bower install lodjs<br>$ bower install git://github.com/yanhaijing/lodjs.git<br>快速上手定义模块使用lodJS的全局函数define定义一个模块，例如在 mod.js中有如下代码：<br>define(function () {<br>    return 123;<br>});</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/21/模块化进化/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-script异步加载" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -324,74 +508,6 @@
 
 
   
-    <article id="post-捕获冒泡" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/07/捕获冒泡/" class="article-date">
-  	<time datetime="2016-04-06T16:00:00.000Z" itemprop="datePublished">2016-04-07</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/07/捕获冒泡/">捕获与冒泡</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>总结就是：先捕获，后冒泡，捕获从上到下，冒泡从下到上（形象点说法：捕获像石头沉入海底，冒泡则像气泡冒出水面）</p>
-<p>问：假如去掉注释 event.stopPropagation();  结果又会输出什么？<br>答：去掉event.stopPropagation() 之后，由于事件有捕获和冒泡时先执行捕获，捕获到div之后，事件被阻止，后面就不在继续传播了。所以只输出divcallback.</p>
-<p>div.addEventListener(‘click’,callbackdiv,true);这一句只能是捕获才执行。</p>
-<p>事件不同浏览器处理函数</p>
-<ul>
-<li>element.addEventListener(type, listener[, useCapture]); // IE6~8不支持（捕获和冒泡通过useCapture,默认false）</li>
-<li>element.attachEvent(’on’ + type, listener); // IE6~10，IE11不支持(只执行冒泡事件)</li>
-<li>element[’on’ + type] = function(){} // 所有浏览器（默认执行冒泡事件）</li>
-</ul>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/04/07/捕获冒泡/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-npm" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -443,6 +559,74 @@
 
       
 
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-捕获冒泡" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/07/捕获冒泡/" class="article-date">
+  	<time datetime="2016-04-06T16:00:00.000Z" itemprop="datePublished">2016-04-07</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/07/捕获冒泡/">捕获与冒泡</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>总结就是：先捕获，后冒泡，捕获从上到下，冒泡从下到上（形象点说法：捕获像石头沉入海底，冒泡则像气泡冒出水面）</p>
+<p>问：假如去掉注释 event.stopPropagation();  结果又会输出什么？<br>答：去掉event.stopPropagation() 之后，由于事件有捕获和冒泡时先执行捕获，捕获到div之后，事件被阻止，后面就不在继续传播了。所以只输出divcallback.</p>
+<p>div.addEventListener(‘click’,callbackdiv,true);这一句只能是捕获才执行。</p>
+<p>事件不同浏览器处理函数</p>
+<ul>
+<li>element.addEventListener(type, listener[, useCapture]); // IE6~8不支持（捕获和冒泡通过useCapture,默认false）</li>
+<li>element.attachEvent(’on’ + type, listener); // IE6~10，IE11不支持(只执行冒泡事件)</li>
+<li>element[’on’ + type] = function(){} // 所有浏览器（默认执行冒泡事件）</li>
+</ul>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/07/捕获冒泡/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -564,196 +748,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/03/30/原型继承/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-函数编程" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/25/函数编程/" class="article-date">
-  	<time datetime="2016-03-24T16:00:00.000Z" itemprop="datePublished">2016-03-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/25/函数编程/">函数编程</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="纯函数式相同的参数返回相同的结果，它的执行不依赖于系统的状态"><a href="#纯函数式相同的参数返回相同的结果，它的执行不依赖于系统的状态" class="headerlink" title="纯函数式相同的参数返回相同的结果，它的执行不依赖于系统的状态"></a>纯函数式相同的参数返回相同的结果，它的执行不依赖于系统的状态</h1><p>1) 非纯净的<br>let number = 1;<br>const increment = () =&gt; number += 1;<br>increment();<br>// 2</p>
-<p>2) 纯净的<br>const increment = n =&gt; n + 1;<br>increment(1);<br>// 2</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/03/25/函数编程/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-关于对象" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/22/关于对象/" class="article-date">
-  	<time datetime="2016-03-21T16:00:00.000Z" itemprop="datePublished">2016-03-22</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/22/关于对象/">关于对象</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>对象字面值不能正确解析问题：<br>{a:1}.a报错，错误Uncaught SyntaxError: Unexpected token .</li>
-</ol>
-<p>解决：<br>({a:1}.a) // 或({a:1}).a</p>
-<p>原因：<br>就是声明对象字面值时，语句开头不应该用{，因为js解释器会认为这是语句块（block）的开始。<br>同理，类似问题{ name: “mc”, id: 1 }会报错Uncaught SyntaxError: Unexpected token :也是这个道理。({ name: “mc”, id: 1 })即可正确解析。但稍注意下，{name: “mc”}是不会报错的，它等同于name: “mc”，并返回一个字符串”mc”。</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/03/22/关于对象/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-类型变量" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/22/类型变量/" class="article-date">
-  	<time datetime="2016-03-21T16:00:00.000Z" itemprop="datePublished">2016-03-22</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/22/类型变量/">类型变量</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>类型JavaScript中类型主要包括了primitive和object类型，其中primitive类型包括了：<br>null、undefined、boolean、number、string和symbol(es6)。其他所有的都为object类型。</p>
-<p>类型判断类型检测主要包括了：typeof、instanceof和toString的三种方式来判断变量的类型。<br>typeoftypeof接受一个值并返回它的类型，它有两种可能的语法：</p>
-<ul>
-<li>typeof x</li>
-<li>typeof(x)</li>
-</ul>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/03/22/类型变量/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
