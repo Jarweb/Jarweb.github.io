@@ -124,6 +124,72 @@
 
       <div class="body-wrap">
   
+    <article id="post-状态代码" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/18/状态代码/" class="article-date">
+  	<time datetime="2016-06-17T16:00:00.000Z" itemprop="datePublished">2016-06-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/18/状态代码/">http状态码</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>100    Continue    初始的请求已经接受，客户应当继续发送请求的其余部分。（HTTP 1.1新）</p>
+<p>101    Switching Protocols    服务器将遵从客户的请求转换到另外一种协议（HTTP 1.1新）</p>
+<p>200    OK    一切正常，对GET和POST请求的应答文档跟在后面。</p>
+<p>201    Created    服务器已经创建了文档，Location头给出了它的URL。</p>
+<p>202    Accepted    已经接受请求，但处理尚未完成。</p>
+<p>203    Non-Authoritative Information<br>文档已经正常地返回，但一些应答头可能不正确，因为使用的是文档的拷贝（HTTP 1.1新）。</p>
+<p>204    No Content    没有新文档，浏览器应该继续显示原来的文档。如果用户定期地刷新页面，而Servlet可以确定用户文档足够新，这个状态代码是很有用的。</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/http/">http</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/06/18/状态代码/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-居中" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1175,68 +1241,6 @@ window.ajax = new outputObj();
       
         <p class="article-more-link">
           <a  href="/2016/04/27/js作用域/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-this指向" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/25/this指向/" class="article-date">
-  	<time datetime="2016-04-24T16:00:00.000Z" itemprop="datePublished">2016-04-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/25/this指向/">this指向</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>this指向的四中情况在javascript里面，this的指向可以归纳为以下四种情况。只要能牢记这四种情况，大部分情况下就已经够用了。</p>
-<p>1.在全局代码或者普通的函数调用中，this指向全局对象，在浏览器里面既为window对象<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(this);&#10;//&#36755;&#20986;window&#10;function foo()&#123;&#10;console.log(this);&#10;&#125;&#10;foo();&#10;//&#36755;&#20986;window</span><br></pre></td></tr></table></figure></p>
-<p>在浏览器环境里运行上述代码，两处输出结果均为window对象。</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/04/25/this指向/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>

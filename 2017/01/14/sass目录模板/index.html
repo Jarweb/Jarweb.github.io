@@ -4,18 +4,21 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>curry化 | Jar-R</title>
+  <title>sass 目录建设 | Jar-R</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="curry实现利用闭包访问上下文对象，把参数记忆起来获取每层的参数返回每层的闭包">
+  <meta name="description" content="1modules/&amp;#10;&amp;#9;_color.scss&amp;#10;&amp;#9;_typography.scss&amp;#10;partials/&amp;#10;&amp;#9;_base.scss&amp;#10;&amp;#9;_navigation.scss&amp;#10;vendor/&amp;#10;&amp;#9;_ico-moon.scss&amp;#10;main.scss
+1base/&amp;#10;&amp;#9;_reset.scss&amp;#10;_typogr">
 <meta property="og:type" content="article">
-<meta property="og:title" content="curry化">
-<meta property="og:url" content="http://Jarweb.com/2017/01/15/curry实现/index.html">
+<meta property="og:title" content="sass 目录建设">
+<meta property="og:url" content="http://Jarweb.com/2017/01/14/sass目录模板/index.html">
 <meta property="og:site_name" content="Jar-R">
-<meta property="og:description" content="curry实现利用闭包访问上下文对象，把参数记忆起来获取每层的参数返回每层的闭包">
-<meta property="og:updated_time" content="2017-07-06T07:32:46.945Z">
+<meta property="og:description" content="1modules/&amp;#10;&amp;#9;_color.scss&amp;#10;&amp;#9;_typography.scss&amp;#10;partials/&amp;#10;&amp;#9;_base.scss&amp;#10;&amp;#9;_navigation.scss&amp;#10;vendor/&amp;#10;&amp;#9;_ico-moon.scss&amp;#10;main.scss
+1base/&amp;#10;&amp;#9;_reset.scss&amp;#10;_typogr">
+<meta property="og:updated_time" content="2017-07-03T04:55:59.893Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="curry化">
-<meta name="twitter:description" content="curry实现利用闭包访问上下文对象，把参数记忆起来获取每层的参数返回每层的闭包">
+<meta name="twitter:title" content="sass 目录建设">
+<meta name="twitter:description" content="1modules/&amp;#10;&amp;#9;_color.scss&amp;#10;&amp;#9;_typography.scss&amp;#10;partials/&amp;#10;&amp;#9;_base.scss&amp;#10;&amp;#9;_navigation.scss&amp;#10;vendor/&amp;#10;&amp;#9;_ico-moon.scss&amp;#10;main.scss
+1base/&amp;#10;&amp;#9;_reset.scss&amp;#10;_typogr">
   
     <link rel="alternative" href="/atom.xml" title="Jar-R" type="application/atom+xml">
   
@@ -123,11 +126,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-curry实现" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-sass目录模板" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/01/15/curry实现/" class="article-date">
-  	<time datetime="2017-01-14T16:00:00.000Z" itemprop="datePublished">2017-01-15</time>
+      <a href="/2017/01/14/sass目录模板/" class="article-date">
+  	<time datetime="2017-01-13T16:00:00.000Z" itemprop="datePublished">2017-01-14</time>
 </a>
     </div>
   
@@ -140,7 +143,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      curry化
+      sass 目录建设
     </h1>
   
 
@@ -149,7 +152,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
 	</div>
 
         
@@ -160,9 +163,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>curry实现<br>利用闭包访问上下文对象，把参数记忆起来<br>获取每层的参数<br>返回每层的闭包</p>
-<a id="more"></a>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function curry()&#123;&#10;&#9;var args = Array.prototype.slice.apply(arguments)&#10;&#9;var context = this &#10;&#9;return function()&#123;&#10;&#9;&#9;return context.apply(null, args.concat(Array.prototype.slice.apply(arguments)))&#10;&#9;&#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">modules/&#10;&#9;_color.scss&#10;&#9;_typography.scss&#10;partials/&#10;&#9;_base.scss&#10;&#9;_navigation.scss&#10;vendor/&#10;&#9;_ico-moon.scss&#10;main.scss</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">base/&#10;&#9;_reset.scss&#10;_typography.scss&#10;&#9;_color.scss&#10;components/&#10;&#9;_buttons.scss&#10;&#9;_navigation.scss&#10;&#9;_gallery.scss&#10;layout/&#10;&#9;_header.scss&#10;&#9;_grid.scss&#10;&#9;_sidebar.scss&#10;pages/&#10;&#9;_home.scss&#10;&#9;_about.scss&#10;&#9;_contact.scss&#10;themes/&#10;&#9;_theme.scss&#10;&#9;_admin.scss&#10;helpers/ (or utils/)&#10;&#9;_variables.scss&#10;&#9;_functions.scss&#10;&#9;_mixins.scss&#10;vendors/&#10;&#9;_bootstrap.scss&#10;main.scss</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vendor/&#10;&#9;_bootstrap.scss&#10;&#9;_jquery-ui.scss&#10;base/&#10;&#9;_functions.scss&#10;&#9;_mixins.scss&#10;&#9;_variables.scss&#10;&#9;_base.scss&#10;layout/&#10;&#9;_grid.scss&#10;&#9;_header.scss&#10;&#9;_sidebar.scss&#10;module/&#10;&#9;_navigations.scss&#10;&#9;_buttons.scss&#10;&#9;_forms.scss&#10;state/&#10;&#9;_state.scss&#10;hacks/&#10;&#9;_shame.scss&#10;main.scss</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -171,18 +175,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/01/18/worker/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/01/15/curry实现/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          Workers
+          curry化
         
       </div>
     </a>
   
   
-    <a href="/2017/01/14/sass目录模板/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">sass 目录建设</div>
+    <a href="/2016/11/26/flex/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">flex笔记</div>
       <strong class="article-nav-caption">></strong>
     </a>
   

@@ -124,6 +124,68 @@
 
       <div class="body-wrap">
   
+    <article id="post-this指向" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/25/this指向/" class="article-date">
+  	<time datetime="2016-04-24T16:00:00.000Z" itemprop="datePublished">2016-04-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/25/this指向/">this指向</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>this指向的四中情况在javascript里面，this的指向可以归纳为以下四种情况。只要能牢记这四种情况，大部分情况下就已经够用了。</p>
+<p>1.在全局代码或者普通的函数调用中，this指向全局对象，在浏览器里面既为window对象<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(this);&#10;//&#36755;&#20986;window&#10;function foo()&#123;&#10;console.log(this);&#10;&#125;&#10;foo();&#10;//&#36755;&#20986;window</span><br></pre></td></tr></table></figure></p>
+<p>在浏览器环境里运行上述代码，两处输出结果均为window对象。</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/25/this指向/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-js dom" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -687,67 +749,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/03/31/原型链/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-原型继承" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/30/原型继承/" class="article-date">
-  	<time datetime="2016-03-29T16:00:00.000Z" itemprop="datePublished">2016-03-30</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/30/原型继承/">原型继承</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;&#125;; &#10;console.log(a.prototype); &#10;//=&#62; undefined &#10;var b = function()&#123;&#125;; &#10;console.log(b.prototype); &#10;//=&#62; &#123;&#125; &#10;var c = &#39;Hello&#39;; &#10;console.log(c.prototype); &#10;/=&#62; undefined</span><br></pre></td></tr></table></figure>
-<p>prototype是每个function定义时自带的属性，但是Js中function本身也是对象，我们先来看一下下面几个概念的差别：</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js原生/">js原生</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/03/30/原型继承/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>

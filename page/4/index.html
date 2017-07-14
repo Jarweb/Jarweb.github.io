@@ -124,6 +124,66 @@
 
       <div class="body-wrap">
   
+    <article id="post-lazyload实现方法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/02/lazyload实现方法/" class="article-date">
+  	<time datetime="2016-10-01T16:00:00.000Z" itemprop="datePublished">2016-10-02</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/02/lazyload实现方法/">lazyload 实现方式</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>第一种：<br>首先将页面上的图片的 src 属性设为 loading.gif，而图片的真实路径则设置在 data-src 属性中，页面滚动的时候计算图片的位置与滚动的位置，当图片出现在浏览器视口内时，将图片的 src 属性设置为 data-src 的值，这样，就可以实现延迟加载。</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/10/02/lazyload实现方法/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-lazyload" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -671,72 +731,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/06/20/电商接口/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-状态代码" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/18/状态代码/" class="article-date">
-  	<time datetime="2016-06-17T16:00:00.000Z" itemprop="datePublished">2016-06-18</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/18/状态代码/">http状态码</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>100    Continue    初始的请求已经接受，客户应当继续发送请求的其余部分。（HTTP 1.1新）</p>
-<p>101    Switching Protocols    服务器将遵从客户的请求转换到另外一种协议（HTTP 1.1新）</p>
-<p>200    OK    一切正常，对GET和POST请求的应答文档跟在后面。</p>
-<p>201    Created    服务器已经创建了文档，Location头给出了它的URL。</p>
-<p>202    Accepted    已经接受请求，但处理尚未完成。</p>
-<p>203    Non-Authoritative Information<br>文档已经正常地返回，但一些应答头可能不正确，因为使用的是文档的拷贝（HTTP 1.1新）。</p>
-<p>204    No Content    没有新文档，浏览器应该继续显示原来的文档。如果用户定期地刷新页面，而Servlet可以确定用户文档足够新，这个状态代码是很有用的。</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/http/">http</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/06/18/状态代码/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
